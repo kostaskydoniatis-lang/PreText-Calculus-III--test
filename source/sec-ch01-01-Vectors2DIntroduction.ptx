@@ -65,6 +65,7 @@
       </p>
 
       <image source="/images/Example 1.1.png"/>
+        <shortdescription>  Two vectors drawn in the xy-plane: PQ from (0,0) to (3,2) and RS from (0.5,2) to (3.5,4).</shortdescription>
       <p>
         What can we say about the vectors <m>\overrightarrow{P Q}</m> and
         <m>\overrightarrow{R S}</m>?
