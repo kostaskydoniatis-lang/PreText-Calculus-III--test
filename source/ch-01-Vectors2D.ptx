@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-01-Vectors2D" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>1. Vectors in 2D</title>
+
+  <introduction>
+    <p> This chapter introduces vectors in two-dimensional space, covering their properties, operations, and applications. </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-ch01-01-Vectors2DIntroduction.ptx" />
+
+</chapter>

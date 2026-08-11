@@ -6,15 +6,14 @@
 
   <book xml:id="my-great-book">
     <title>Calculus III Notes</title>
-    <subtitle>These notes are meant for use by students enrolled in my Calculus III course
-      at the university level, providing a comprehensive overview of multivariable calculus concepts.
+    <subtitle>These notes are meant for use by students enrolled in my Calculus III course.
     </subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+    <xi:include href="./ch-01-Vectors2D.ptx" />
 
 
     <!-- Include backmatter -->
