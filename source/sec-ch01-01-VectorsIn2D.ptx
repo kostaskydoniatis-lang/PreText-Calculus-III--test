@@ -687,7 +687,7 @@
         information in the definition above.
       </p>
 
-      <image source="/images/Example 1.10.png">
+      <image source="/images/Example 1.10.png" width="50%">
        <shortdescription> A vector v with coordinates x =v1, y= v2 in standard position with the angle theta from the positive x-axis, showing v1 = magnitude of v times cos(theta) as the horizontal component and v2 = magnitude of v times sin(theta) as the vertical component.</shortdescription> 
       </image>          
     </statement>
@@ -776,7 +776,7 @@
         <m>\mathbf{v}_{2}</m>. (Round to the nearest integer.)
       </p>
 
-      <image source="/images/08ef1dafa6bfde7460b7a5d7416128ad6e67d50b.png">
+      <image source="/images/08ef1dafa6bfde7460b7a5d7416128ad6e67d50b.jpg" width="50%">
        <shortdescription> A boat on a ramp inclined at 30 degrees, with the weight vector pointing downward decomposed into v1 parallel to the ramp and v2 perpendicular to the ramp.</shortdescription>
        <description>    Openstax, Calculus Volume 3, Section 2.1, Question 57</description>
       </image>        
