@@ -125,6 +125,688 @@
       </p>
     </statement>
   </definition>
+ <remark>
+    <p>
+      [Writing a Vector in Standard Position]
+    </p>
 
+    <p>
+      Suppose a vector <m>\mathbf{v}</m> has starting point
+      <m>P\left(x_{1}, y_{1}\right)</m> and ending point
+      <m>Q\left(x_{2}, y_{2}\right)</m>. The ending point of <m>\mathbf{v}</m>,
+      in standard position, is <m>\left(x_{2}-x_{1}, y_{2}-y_{1}\right)</m>.
+    </p>
+
+    <p>
+      In other words,
+    </p>
+
+    <p>
+      <md>
+        \mathbf{v}=\left\langle x_{2}-x_{1}, y_{2}-y_{1}\right\rangle
+      </md>
+    </p>
+
+    <p>
+      Writing a vector in standard position simply shifts the vector so that its
+      starting point is the origin.
+    </p>
+  </remark>
+
+  <example>
+    <statement>
+      <p>
+        Graph the vector with starting point <m>P(2,1)</m> and ending point
+        <m>Q(-1,0)</m>; write the vector in standard position; and then graph
+        the vector in standard position.
+      </p>
+
+      <image source="../images/Example 1.2.png"/>
+      <p/>
+    </statement>
+
+    <solution>
+      <p>
+        Both graphs are shown above. Using the formula, the ending point of the
+        vector in standard position is
+        <m>\left(x_{2}-x_{1}, y_{2}-y_{1}\right)</m>, so
+      </p>
+      <md>
+        \mathbf{v}= \langle -1-2, 0-1 \rangle = \langle -3,-1 \rangle
+      </md>
+
+      <p>
+        This is the arrow starting at the origin and ending at <m>(-3,-1)</m>:
+        the original vector shifted so that its starting point is the origin.
+      </p>
+    </solution>
+  </example>
+  <definition>
+    <title>Magnitude of a Vector</title>
+
+    <statement>
+      <p>
+        To find the magnitude/length of a vector:
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              Put the vector in standard position.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              If the vector is given by
+              <m>\mathbf{v}=\left\langle v_{1}, v_{2}\right\rangle</m>, then its
+              magnitude, denoted by |v|, is given by
+            </p>
+          </li>
+        </ol>
+      </p>
+
+      <p>
+        <md>
+          |\mathbf{v}|=\sqrt{v_{1}^{2}+v_{2}^{2}}.
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <example>
+    <statement>
+      <p>
+        Find the length of the vector with starting point <m>P(1,-2)</m> and
+        ending point <m>Q(4,2)</m>. Graph this vector (in standard position) and
+        verify that the formula for length is the Pythagorean Theorem.
+      </p>
+
+      <image source="../images/Example 1.3.png"/>
+      <p/>
+    </statement>
+
+    <solution>
+      <p>
+        In standard position the vector is
+      </p>
+      <md>
+        \mathbf{v}= \langle 4-1, 2-(-2) \rangle = \langle 3,4 \rangle
+      </md>
+
+      <p>
+        so its length is
+      </p>
+      <md>
+        |\mathbf{v}| = \sqrt{3^{2}+4^{2}}= \sqrt{9+16}= \sqrt{25}= 5
+      </md>
+
+      <p>
+        As the graph above shows, in standard position the vector is the
+        hypotenuse of a right triangle whose horizontal leg has length 3 (the
+        <m>x</m>-component) and whose vertical leg has length 4 (the
+        <m>y</m>-component). The magnitude formula squares the two legs, adds
+        them, and takes the square root, which is exactly the Pythagorean
+        Theorem: <m>3^{2}+4^{2} = 5^{2}</m>.
+      </p>
+    </solution>
+  </example>
+
+ 
+
+  <definition>
+    <title>Direction of a Vector</title>
+
+    <statement>
+      <p>
+        To find the direction of a vector:
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              Put the vector in standard position.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              If the vector is given by
+              <m>\mathbf{v}=\left\langle v_{1}, v_{2}\right\rangle</m>, its
+              direction is the angle <m>\theta</m> starting on the positive x
+              -axis and measured counter-clockwise ending on the vector
+              <m>\mathbf{v}=\left\langle v_{1}, v_{2}\right\rangle</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </definition>
+
+  <example>
+    <statement>
+      <p>
+        Find the direction of <m>\mathbf{v}=\langle-2,-4\rangle</m>.
+      </p>
+
+      <image source="../images/Example 1.4.png"/>
+      <p/>
+    </statement>
+
+    <solution>
+      <p>
+        Both components of <m>\mathbf{v}= \langle -2,-4 \rangle</m> are
+        negative, so the vector lies in the third quadrant and its direction
+        angle satisfies <m>\pi &lt; \theta &lt; \frac{3\pi}{2}</m>. The angle
+        <m>\phi</m> that <m>\mathbf{v}</m> makes with the negative <m>x</m>-axis
+        satisfies
+      </p>
+      <md>
+        \tan(\phi) = \frac{4}{2}= 2 \Rightarrow \phi = \arctan(2)
+      </md>
+
+      <p>
+        Hence, measuring counter-clockwise from the positive <m>x</m>-axis,
+      </p>
+      <md>
+        \theta = \pi+\arctan(2) \approx 4.25 \text{ radians}\approx 243.43^{\circ}
+      </md>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      The zero vector <m>\mathbf{0}=\langle 0,0\rangle</m> is the only vector
+      with zero magnitude and no direction.
+    </p>
+  </remark>
+  <!--\section*{Vector Addition/Subtraction}-->
+  <note>
+    <p>
+      From now on, any time a vector is mentioned, assume it is in standard
+      position (unless stated otherwise).
+    </p>
+  </note>
+
+  <remark>
+    <p>
+      [Adding and Subtracting Vectors]
+    </p>
+
+    <p>
+      To add/subtract two vectors <m>\mathbf{v}</m> and <m>\mathbf{u}</m>, you
+      add/subtract the corresponding <m>x</m> and <m>y</m> components.
+    </p>
+    <!--$$ $$\vspace{&#x2D;.5cm}-->
+    <p>
+      The result of adding/subtracting two vectors is again a vector.
+    </p>
+
+    <p/>
+    <!--$$ $$-->
+    <p>
+      Important: Vector subtraction is not commutative. Hence,
+      <m>\mathbf{v}-\mathbf{u}\neq \mathbf{u}-\mathbf{v}</m> (unless
+      <m>\mathbf{v}=\mathbf{u}</m> ).
+    </p>
+  </remark>
+
+  <example>
+    <statement>
+      <p>
+        Compute <m>\mathbf{v}+\mathbf{u}</m> and <m>\mathbf{v}-\mathbf{u}</m>
+        where <m>\mathbf{v}=\langle 3,-2\rangle</m> and
+        <m>\mathbf{u}=\langle 5,-1\rangle</m>.
+      </p>
+
+      <p/>
+    </statement>
+
+    <solution>
+      <p>
+        Adding and subtracting the corresponding components:
+      </p>
+      <md>
+        \mathbf{v}+\mathbf{u}= \langle 3+5, -2+(-1) \rangle = \langle 8,-3 \rangle \\  \mathbf{v}-\mathbf{u}= \langle 3-5, -2-(-1) \rangle = \langle -2,-1 \rangle
+      </md>
+
+      <p>
+        Note that both results are again vectors, and that computing
+        <m>\mathbf{u}-\mathbf{v}= \langle 2,1 \rangle</m> instead would give a
+        different (opposite) vector.
+      </p>
+    </solution>
+  </example>
+
+ 
+
+  <note>
+    <p>
+      There is a geometric interpretation for vector addition/subtraction. We
+      can see it using the Triangle Rule.
+    </p>
+
+    <p>
+      The Triangle Rule states that in order to compute
+      <m>\mathbf{v}+\mathbf{u}</m>:
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p>
+            Draw <m>\mathbf{v}</m> in standard position.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Starting at the endpoint of <m>\mathbf{v}</m>, draw the vector
+            <m>\mathbf{u}</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Draw a vector starting at <m>(0,0)</m> and ending at the end of the
+            vector <m>\mathbf{u}</m> as drawn in step 2.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </note>
+
+  <example>
+    <statement>
+      <p>
+        Given <m>\mathbf{v}=\langle 1,1\rangle</m> and
+        <m>\mathbf{u}=\langle 1,-2\rangle</m>, graph
+        <m>\mathbf{v}+\mathbf{u}</m> using the Triangle rule.
+      </p>
+
+      <image source="../images/Example 1.6.png"/>
+      <p/>
+    </statement>
+
+    <solution>
+      <p>
+        Following the Triangle Rule, we first draw <m>\mathbf{v}</m> in standard
+        position, ending at <m>(1,1)</m>. Starting at that endpoint we draw
+        <m>\mathbf{u}</m>, which takes us 1 unit right and 2 units down, ending
+        at <m>(1+1, 1-2) = (2,-1)</m>. Finally we draw the vector starting at
+        <m>(0,0)</m> and ending at <m>(2,-1)</m>, which is the sum
+      </p>
+      <md>
+        \mathbf{v}+\mathbf{u}= \langle 2,-1 \rangle
+      </md>
+
+      <p>
+        in agreement with adding the vectors component-wise, as the graph above
+        shows.
+      </p>
+    </solution>
+  </example>
+
+
+  <p>
+    In order to graph <m>\mathbf{v}-\mathbf{u}</m> using the Triangle Rule, draw
+    it as <m>\mathbf{v}+(-\mathbf{u})</m>. We define the meaning of
+    <m>-\mathbf{u}</m> next.
+  </p>
+
+  <remark>
+    <title>Multiplying a Vector by a Scalar (Number)</title>
+
+    <p>
+      To multiply a vector <m>\mathbf{v}</m> by a scalar (number) <m>c</m>, you
+      multiply the <m>x</m> and <m>y</m> components of <m>\mathbf{v}</m> by
+      <m>c</m>.
+    </p>
+
+    <p>
+      The result of multiplying a vector by a scalar is again a vector denoted
+      by <m>c \mathbf{v}</m>.
+    </p>
+  </remark>
+
+  <example>
+    <statement>
+      <p>
+        Given the vector <m>\mathbf{v}=\langle-1,1\rangle</m>, compute:
+      </p>
+
+      <p>
+        (a) <m>4 \mathbf{v}</m>
+      </p>
+
+      <p>
+        (b) <m>-\frac{1}{2}\mathbf{v}</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Multiplying each component of <m>\mathbf{v}</m> by 4:
+      </p>
+      <md>
+        4\mathbf{v}= \langle 4(-1), 4(1) \rangle = \langle -4,4 \rangle
+      </md>
+    </solution>
+
+    <solution>
+      <p>
+        Multiplying each component of <m>\mathbf{v}</m> by <m>-\frac{1}{2}</m>:
+      </p>
+      <md>
+        -\frac{1}{2}\mathbf{v}= \left\langle -\frac{1}{2}(-1), -\frac{1}{2}(1) \right\rangle = \left\langle \frac{1}{2},-\frac{1}{2}\right\rangle
+      </md>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      There is a geometric interpretation for multiplying a vector
+      <m>\mathbf{v}</m> by a number <m>c</m>:
+    </p>
+
+    <p>
+      (a) If <m>c&gt;1</m>, you stretch <m>\mathbf{v}</m> to a length of
+      <m>c|\mathbf{v}|</m>.
+    </p>
+
+    <p>
+      (b) If <m>0&lt;c&lt;1</m>, you compress <m>\mathbf{v}</m> to a length of
+      <m>c|\mathbf{v}|</m>.
+    </p>
+
+    <p>
+      (c) If <m>c=-1</m>, you flip the direction of <m>\mathbf{v}</m>.
+    </p>
+
+    <p>
+      (d) You can combine (c) with (a) and (b) to flip and stretch/compress at
+      the same time.
+    </p>
+  </note>
+
+  <example>
+    <statement>
+      <p>
+        Graph the vectors in example 1.7 by first graphing <m>\mathbf{v}</m> and
+        then using the above note.
+      </p>
+      <!--\includegraphics[max width=0.5 \textwidth, left]{2025_08_01_3432b3c41241484aef56g&#x2D;08(1)}-->
+      <!--\includegraphics[max width=0.5\textwidth, right]{2025_08_01_3432b3c41241484aef56g&#x2D;08}-->
+      <p/>
+    </statement>
+
+    <solution>
+      <p>
+        We first graph <m>\mathbf{v}= \langle -1,1 \rangle</m>, which has length
+        <m>|\mathbf{v}| = \sqrt{2}</m>. For <m>4\mathbf{v}</m>: since
+        <m>c=4&gt;1</m>, we stretch <m>\mathbf{v}</m> to a length of
+        <m>4|\mathbf{v}| = 4\sqrt{2}</m> keeping its direction, ending at
+        <m>(-4,4)</m>. For <m>-\frac{1}{2}\mathbf{v}</m>: combining (c) with (b)
+        in the note above, we flip the direction of <m>\mathbf{v}</m> and
+        compress it to a length of
+        <m>\frac{1}{2}|\mathbf{v}| = \frac{\sqrt{2}}{2}</m>, ending at
+        <m>\left( \frac{1}{2},-\frac{1}{2}\right)</m>. Both graphs are shown in
+        the figures below.
+      </p>
+    </solution>
+  </example>
+<image source="../images/Example 1.8-1.png"/>
+<image source="../images/Example 1.8-2.png"/>
+<!--   <figure>
+    <TODO type="unknown-environment">
+      <!--todo: unknown environment "subfigure"-->
+      <pre>\begin{subfigure}{0.4\textwidth}
+         \centering
+         \includegraphics[width=\linewidth, alt={The vector v = (-1,1) and the scaled vector 4v = (-4,4).}]{Example 1.8-1}
+         %\caption{The refractive index against wavelength of multilayer flakes of WS$_2$[38]}
+         %\label{fig:1a}
+     \end{subfigure}</pre>
+    </TODO>
+    <TODO type="unknown-environment">
+      <!--todo: unknown environment "subfigure"-->
+      <pre>\begin{subfigure}{0.4\textwidth}
+         \centering
+         \includegraphics[width=\linewidth, alt={The vector v = (-1,1) and the scaled vector - 0.5v = (0.5,-0.5).}]{Example 1.8-2}
+         %\caption{The refractive index against wavelength of monolayer WS$_2$[39]}
+         %\label{fig:1b}
+     \end{subfigure}</pre>
+    </TODO>
+    <!--\caption*{From openstax, Calculus Volume 3, Section 2.2}-->
+  </figure> -->
+
+
+
+  <definition>
+    <title>Unit and Parallel Vectors</title>
+
+    <statement>
+      <p>
+        A vector of length 1 is called a unit vector.
+      </p>
+
+      <p>
+        Given a nonzero vector
+        <m>\mathbf{v}=\left\langle v_{1}, v_{2}\right\rangle</m>, the vector
+      </p>
+
+      <p>
+        <md>
+          \mathbf{u}=\frac{1}{|\mathbf{v}|}\mathbf{v}=\frac{\mathbf{v}}{|\mathbf{v}|}
+        </md>
+      </p>
+
+      <p>
+        is a unit vector with the same direction as <m>\mathbf{v}</m>.
+      </p>
+
+      <p>
+        <m/>
+      </p>
+
+      <p>
+        Two vectors <m>\mathbf{u}</m> and <m>\mathbf{v}</m> are parallel if they
+        lie on the same line.
+      </p>
+    </statement>
+  </definition>
+
+  <example>
+    <statement>
+      <p>
+        Find a unit vector in the direction of
+        <m>\mathbf{v}=\langle 1,2\rangle</m>.
+      </p>
+
+      <p/>
+      <p>
+        Find all vectors of length 3 parallel to the vector
+        <m>\mathbf{v}=\langle 1,2\rangle</m>.
+      </p>
+
+      <p/>
+    </statement>
+
+    <solution>
+      <p>
+        The magnitude of <m>\mathbf{v}</m> is
+        <m>|\mathbf{v}| = \sqrt{1^{2}+2^{2}}= \sqrt{5}</m>, so a unit vector in
+        the direction of <m>\mathbf{v}</m> is
+      </p>
+      <md>
+        \mathbf{u}= \frac{\mathbf{v}}{|\mathbf{v}|}= \frac{1}{\sqrt{5}}\langle 1,2 \rangle = \left\langle \frac{1}{\sqrt{5}}, \frac{2}{\sqrt{5}}\right\rangle
+      </md>
+
+      <p>
+        Indeed,
+        <m>|\mathbf{u}| = \sqrt{\frac{1}{5}+\frac{4}{5}}= \sqrt{1}= 1</m>.
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        A vector of length 3 parallel to <m>\mathbf{v}</m> must point either in
+        the direction of <m>\mathbf{v}</m> or in the direction opposite of
+        <m>\mathbf{v}</m>, so we scale the unit vector <m>\mathbf{u}</m> from
+        the first part by <m>3</m> and by <m>-3</m>:
+      </p>
+      <md>
+        3\mathbf{u}= \left\langle \frac{3}{\sqrt{5}}, \frac{6}{\sqrt{5}}\right\rangle \quad \text{and}\quad -3\mathbf{u}= \left\langle -\frac{3}{\sqrt{5}}, -\frac{6}{\sqrt{5}}\right\rangle
+      </md>
+
+      <p>
+        These are the only two such vectors.
+      </p>
+    </solution>
+  </example>
+
+
+  <definition>
+    <title>Components of a Vector</title>
+
+    <statement>
+      <p>
+        Given a vector <m>\mathbf{v}=\left\langle v_{1}, v_{2}\right\rangle</m>,
+        we have the formulas
+      </p>
+
+      <p>
+        <md>
+          v_{1}=|\mathbf{v}| \cos (\theta) \quad \text{ and }\quad v_{2}=|\mathbf{v}| \sin (\theta),
+        </md>
+      </p>
+
+      <p>
+        where <m>\theta</m> is the angle giving the direction of
+        <m>\mathbf{v}</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <example>
+    <statement>
+      <p>
+        Given a vector <m>\mathbf{v}</m>, draw a picture summarizing the
+        information in the definition above.
+      </p>
+
+      <image source="../images/Example 1.10.png"/>
+    </statement>
+  </example>
+
+
+
+  <note>
+    <p>
+      You can represent a force by using a vector. In this context, the length
+      of the vector is the magnitude of the force.
+    </p>
+  </note>
+
+  <example>
+    <title>Openstax, Calculus Volume 3, Section 2.1, Question 49</title>
+
+    <statement>
+      <p>
+        Two forces, a horizontal force of 45 lb and another of 52 lb, act on the
+        same object. The angle between these forces is <m>25^{\circ}</m>. Find
+        the magnitude and direction angle from the positive x-axis of the
+        resultant force that acts on the object. (Round to two decimal places.)
+      </p>
+
+      <p/>
+    </statement>
+
+    <solution>
+      <p>
+        We place the horizontal 45 lb force along the positive <m>x</m>-axis, so
+        that <m>\mathbf{F}_{1} = \langle 45,0 \rangle</m>. The 52 lb force then
+        makes an angle of <m>25^{\circ}</m> with the positive <m>x</m>-axis, so
+        using the component formulas:
+      </p>
+      <md>
+        \mathbf{F}_{2} = \langle 52\cos(25^{\circ}), 52\sin(25^{\circ}) \rangle \approx \langle 47.128, 21.976 \rangle
+      </md>
+
+      <p>
+        The resultant force is the sum of the two forces:
+      </p>
+      <md>
+        \mathbf{F}= \mathbf{F}_{1}+\mathbf{F}_{2} \approx \langle 45+47.128, 0+21.976 \rangle = \langle 92.128, 21.976 \rangle
+      </md>
+
+      <p>
+        Its magnitude is
+      </p>
+      <md>
+        |\mathbf{F}| \approx \sqrt{92.128^{2}+21.976^{2}}= \sqrt{8487.568+482.945}= \sqrt{8970.513}\approx 94.71 \text{ lb}
+      </md>
+
+      <p>
+        Since both components of <m>\mathbf{F}</m> are positive, the resultant
+        lies in the first quadrant, so its direction angle <m>\theta</m> from
+        the positive <m>x</m>-axis satisfies
+      </p>
+      <md>
+        \tan(\theta) \approx \frac{21.976}{92.128}\Rightarrow \theta \approx \arctan(0.2385) \approx 13.42^{\circ}
+      </md>
+    </solution>
+  </example>
+
+
+  <remark>
+    <p>
+      The net force acting on an object is the sum of all individual forces
+      acting on it.
+    </p>
+  </remark>
+
+  <example>
+    <title>Openstax, Calculus Volume 3, Section 2.1, Question 57</title>
+
+    <statement>
+      <p>
+        A 1500-lb boat is parked on a ramp that makes an angle of
+        <m>30^{\circ}</m> with the horizontal. The boat's weight vector points
+        downward and is a sum of two vectors: a vector <m>\mathbf{v}_{1}</m>
+        that is parallel to the ramp and a vector <m>\mathbf{v}_{2}</m> that is
+        perpendicular to the inclined surface. The magnitudes of vectors
+        <m>\mathbf{v}_{1}</m> and <m>\mathbf{v}_{2}</m> are the components of
+        the boat's weight vector parallel and perpendicular to the ramp,
+        respectively. Find the magnitudes of <m>\mathbf{v}_{1}</m> and
+        <m>\mathbf{v}_{2}</m>. (Round to the nearest integer.)
+      </p>
+
+      <image source="../images/08ef1dafa6bfde7460b7a5d7416128ad6e67d50b.png"/>
+      <!--\caption{Openstax, Calculus Volume 3, Section 2.1, Question 57}-->
+      <p/>
+    </statement>
+
+    <solution>
+      <p>
+        The weight vector <m>\mathbf{w}</m> points straight down and has
+        magnitude <m>|\mathbf{w}| = 1500</m> lb. Since the ramp makes an angle
+        of <m>30^{\circ}</m> with the horizontal, the direction perpendicular to
+        the ramp makes that same angle of <m>30^{\circ}</m> with the vertical;
+        that is, the angle between <m>\mathbf{w}</m> and <m>\mathbf{v}_{2}</m>
+        is <m>30^{\circ}</m>, as in the picture above. Decomposing
+        <m>\mathbf{w}</m> into these two perpendicular components:
+      </p>
+      <md>
+        |\mathbf{v}_{1}| = 1500\sin(30^{\circ}) = 1500 \cdot \frac{1}{2}= 750 \text{ lb}\\  |\mathbf{v}_{2}| = 1500\cos(30^{\circ}) = 1500 \cdot \frac{\sqrt{3}}{2}= 750 \sqrt{3} \text{ lb}
+      </md>
+
+      <p>
+        As a check, <m>\sqrt{750^{2}+1299^{2}}\approx 1500</m>, the magnitude of
+        the weight vector.
+      </p>
+    </solution>
+  </example>
 
 </section>
