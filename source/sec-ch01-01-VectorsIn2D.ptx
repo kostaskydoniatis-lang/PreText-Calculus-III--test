@@ -563,17 +563,18 @@
         <m>\left( \frac{1}{2},-\frac{1}{2}\right)</m>. Both graphs are shown in
         the figures below.
       </p>
+
+      <sidebyside widths="45%  45%" margins="auto" valign="middle">
+        <image source="/images/Example 1.8-1.png">  
+          <shortdescription>The vector v with coordinates x = -1,y = 1 and the scaled vector 4v with coordinates x = -4, y = 4.</shortdescription>
+        </image>
+        <image source="/images/Example 1.8-2.png">  
+          <shortdescription>The vector v with coordinates x = -1,y = 1 and the scaled vector - 0.5v with coordinates x = 0.5, y = -0.5.</shortdescription>
+        </image>
+
+      </sidebyside>
     </solution>
   </example>
-  <sidebyside widths="45%  45%" margins="auto" valign="middle">
-<image source="/images/Example 1.8-1.png">  <shortdescription>The vector v with coordinates x = -1,y = 1 and the scaled vector 4v with coordinates x = -4, y = 4.</shortdescription>
-      </image>
-<image source="/images/Example 1.8-2.png">  <shortdescription>The vector v with coordinates x = -1,y = 1 and the scaled vector - 0.5v with coordinates x = 0.5, y = -0.5.</shortdescription>
-      </image>
-
-
-
-  </sidebyside>
   <definition>
     <title>Unit and Parallel Vectors</title>
 
