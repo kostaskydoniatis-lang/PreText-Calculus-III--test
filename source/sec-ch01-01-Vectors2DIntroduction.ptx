@@ -1,8 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-ch01-01-Vectors2DIntroduction" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Introduction to Vectors in 2D</title>
 
-  <p> Text of section. </p>
+  <title>Vectors in 2D</title>
+
+  <definition>
+    <title>Vectors</title>
+
+    <statement>
+      <p>
+        A vector is an object defined by
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              its magnitude (length)
+            </p>
+          </li>
+
+          <li>
+            <p>
+              and its direction.
+            </p>
+          </li>
+        </ol>
+      </p>
+
+      <p>
+        They are geometrically represented by rays/arrows and symbolically with
+        a lowercase letter with an arrow above it or in bold face (such as
+        <m>\vec{u}</m> or <m>\mathbf{u}, \vec{v}</m> or <m>\mathbf{v}</m>,
+        etc.).
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    We will be drawing 2D vectors in the <m>x y</m>-plane (Cartesian plane). In
+    this setting, we can define a vector by stating its starting point
+    <m>P\left(x_{1}, y_{1}\right)</m> (arrow tail) and ending point
+    <m>Q\left(x_{2}, y_{2}\right)</m> (arrow head).
+  </p>
+
+  <p>
+    When a vector is given by its starting point <m>P</m> and ending point
+    <m>Q</m>, we can represent the vector symbolically using
+    <m>\overrightarrow{P Q}</m>.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Draw the vectors below with given starting and ending points:
+      </p>
+
+      <p>
+        (a) <m>P(0,0)</m> and <m>Q(3,2)</m>
+      </p>
+
+      <p>
+        (b) <m>R(0.5,2)</m> and <m>S(3.5,4)</m>
+      </p>
+
+      <image source="/images/Example 1.1.png"/>
+      <p>
+        What can we say about the vectors <m>\overrightarrow{P Q}</m> and
+        <m>\overrightarrow{R S}</m>?
+      </p>
+
+      <p/>
+    </statement>
+
+    <solution>
+      <p>
+        Moving from <m>P(0,0)</m> to <m>Q(3,2)</m> we travel 3 units in the
+        <m>x</m> direction and 2 units in the <m>y</m> direction. Moving from
+        <m>R(0.5,2)</m> to <m>S(3.5,4)</m> we travel <m>3.5-0.5 = 3</m> units in
+        the <m>x</m> direction and <m>4-2 = 2</m> units in the <m>y</m>
+        direction. Since the two arrows describe the same displacement, they
+        have the same magnitude and the same direction; the only difference
+        between them is where they start.
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <title>Equivalent Vectors</title>
+
+    <p>
+      Vectors are said to be equivalent vectors if they have the same magnitude
+      and direction (independent of their starting and ending points).
+    </p>
+  </remark>
+
+  <definition>
+    <title>Vectors in Standard Position</title>
+
+    <statement>
+      <p>
+        If the starting point of a vector is the origin (the point <m>(0,0)</m>
+        ), we say the vector is in standard position.
+      </p>
+
+      <p>
+        Given a vector <m>\mathbf{v}</m> in standard position, if its ending
+        point is ( <m>v_{1}, v_{2}</m> ), we write down the vector
+        <m>\mathbf{v}</m> as
+      </p>
+
+      <p>
+        <md>
+          \mathbf{v}=\left\langle v_{1}, v_{2}\right\rangle
+        </md>
+      </p>
+
+      <p>
+        and we say that <m>v_{1}</m> is the <m>x</m>-component of
+        <m>\mathbf{v}</m> and <m>v_{2}</m> is the <m>y</m>-component of
+        <m>\mathbf{v}</m>.
+      </p>
+    </statement>
+  </definition>
+
 
 </section>
