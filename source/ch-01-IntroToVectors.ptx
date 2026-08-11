@@ -8,6 +8,6 @@
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="sec-ch01-01-Vectors2DIntroduction.ptx" />
+  <xi:include href="sec-ch01-01-VectorsIn2D.ptx" />
 
 </chapter>
