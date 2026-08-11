@@ -161,7 +161,9 @@
         the vector in standard position.
       </p>
 
-      <image source="../images/Example 1.2.png"/>
+      <image source="/images/Example 1.2.png">
+       <shortdescription> A vector from P(2,1) to Q(-1,0) and the same vector in standard position from (0,0) to (-3,-1).</shortdescription> 
+      </image>
       <p/>
     </statement>
 
@@ -223,7 +225,9 @@
         verify that the formula for length is the Pythagorean Theorem.
       </p>
 
-      <image source="../images/Example 1.3.png"/>
+      <image source="/images/Example 1.3.png">
+       <shortdescription> The vector from P(1,-2) to Q(4,2). In standard position, forms a right triangle with legs 3 and 4 and hypotenuse 5.</shortdescription> 
+      </image>      
       <p/>
     </statement>
 
@@ -291,7 +295,9 @@
         Find the direction of <m>\mathbf{v}=\langle-2,-4\rangle</m>.
       </p>
 
-      <image source="../images/Example 1.4.png"/>
+      <image source="/images/Example 1.4.png">
+       <shortdescription> The vector v = (-2,-4) in standard position in the third quadrant, with the angle theta measured counter-clockwise from the positive x-axis. The angle phi is the portion of theta past the negative x-axis.</shortdescription> 
+      </image>        
       <p/>
     </statement>
 
@@ -426,7 +432,9 @@
         <m>\mathbf{v}+\mathbf{u}</m> using the Triangle rule.
       </p>
 
-      <image source="../images/Example 1.6.png"/>
+      <image source="/images/Example 1.6.png">
+       <shortdescription> The Triangle Rule for adding the vector v with coordinates x = 1, y = 1 and u with coordinates x = 1, y = -2: v is drawn from the origin, u is drawn from the tip of v, and the sum v+u is drawn from the origin to the tip of u.</shortdescription> 
+      </image>        
       <p/>
     </statement>
 
@@ -557,32 +565,15 @@
       </p>
     </solution>
   </example>
-<image source="../images/Example 1.8-1.png"/>
-<image source="../images/Example 1.8-2.png"/>
-<!--   <figure>
-    <TODO type="unknown-environment">
-      <!--todo: unknown environment "subfigure"-->
-      <pre>\begin{subfigure}{0.4\textwidth}
-         \centering
-         \includegraphics[width=\linewidth, alt={The vector v = (-1,1) and the scaled vector 4v = (-4,4).}]{Example 1.8-1}
-         %\caption{The refractive index against wavelength of multilayer flakes of WS$_2$[38]}
-         %\label{fig:1a}
-     \end{subfigure}</pre>
-    </TODO>
-    <TODO type="unknown-environment">
-      <!--todo: unknown environment "subfigure"-->
-      <pre>\begin{subfigure}{0.4\textwidth}
-         \centering
-         \includegraphics[width=\linewidth, alt={The vector v = (-1,1) and the scaled vector - 0.5v = (0.5,-0.5).}]{Example 1.8-2}
-         %\caption{The refractive index against wavelength of monolayer WS$_2$[39]}
-         %\label{fig:1b}
-     \end{subfigure}</pre>
-    </TODO>
-    <!--\caption*{From openstax, Calculus Volume 3, Section 2.2}-->
-  </figure> -->
+  <sidebyside widths="45%  45%" margins="auto" valign="middle">
+<image source="/images/Example 1.8-1.png">  <shortdescription>The vector v with coordinates x = -1,y = 1 and the scaled vector 4v with coordinates x = -4, y = 4.</shortdescription>
+      </image>
+<image source="/images/Example 1.8-2.png">  <shortdescription>The vector v with coordinates x = -1,y = 1 and the scaled vector - 0.5v with coordinates x = 0.5, y = -0.5.</shortdescription>
+      </image>
 
 
 
+  </sidebyside>
   <definition>
     <title>Unit and Parallel Vectors</title>
 
@@ -696,7 +687,9 @@
         information in the definition above.
       </p>
 
-      <image source="../images/Example 1.10.png"/>
+      <image source="/images/Example 1.10.png">
+       <shortdescription> A vector v with coordinates x =v1, y= v2 in standard position with the angle theta from the positive x-axis, showing v1 = magnitude of v times cos(theta) as the horizontal component and v2 = magnitude of v times sin(theta) as the vertical component.</shortdescription> 
+      </image>          
     </statement>
   </example>
 
@@ -783,8 +776,11 @@
         <m>\mathbf{v}_{2}</m>. (Round to the nearest integer.)
       </p>
 
-      <image source="../images/08ef1dafa6bfde7460b7a5d7416128ad6e67d50b.png"/>
-      <!--\caption{Openstax, Calculus Volume 3, Section 2.1, Question 57}-->
+      <image source="/images/08ef1dafa6bfde7460b7a5d7416128ad6e67d50b.png">
+       <shortdescription> A boat on a ramp inclined at 30 degrees, with the weight vector pointing downward decomposed into v1 parallel to the ramp and v2 perpendicular to the ramp.</shortdescription>
+       <description>    Openstax, Calculus Volume 3, Section 2.1, Question 57</description>
+      </image>        
+
       <p/>
     </statement>
 
