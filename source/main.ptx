@@ -5,8 +5,10 @@
   <xi:include href="./docinfo.ptx" />
 
   <book xml:id="my-great-book">
-    <title>My Great Book</title>
-    <subtitle>An example to get you started</subtitle>
+    <title>Calculus III Notes</title>
+    <subtitle>These notes are meant for use by students enrolled in my Calculus III course
+      at the university level, providing a comprehensive overview of multivariable calculus concepts.
+    </subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
