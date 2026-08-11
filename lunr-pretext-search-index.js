@@ -10,13 +10,13 @@ var ptx_lunr_docs = [
   "body": "  "
 },
 {
-  "id": "sec-section-name",
+  "id": "sec-ch01-01-Vectors2DIntroduction",
   "level": "1",
-  "url": "sec-section-name.html",
+  "url": "sec-ch01-01-Vectors2DIntroduction.html",
   "type": "Section",
   "number": "1.1",
-  "title": "Section Title",
-  "body": " Section Title  Text of section.  "
+  "title": "Introduction to Vectors in 2D",
+  "body": " Introduction to Vectors in 2D  Text of section.  "
 },
 {
   "id": "backmatter-2",
