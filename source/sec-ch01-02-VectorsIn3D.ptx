@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-ch01-02-VectorsIn3D" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Vectors in 3D</title>
+
+  <note>
+    <p>
+      Everything we did with vectors in the previous section transfers to
+      vectors in 3D (almost identically). Hence, we will focus first on
+      getting used to three dimensions.
+    </p>
+  </note>
+
+  <definition>
+    <title><m>xyz</m>-Coordinate System</title>
+
+    <statement>
+      <p>
+        The 3-dimensional coordinate system represented by the <m>x</m>,
+        <m>y</m>, and <m>z</m> axes is called the <m>xyz</m>-coordinate
+        system.
+      </p>
+
+      <p>
+        Other names for this coordinate system are:
+      </p>
+
+      <p>
+        <ul>
+          <li>
+            <p>
+              Euclidean space
+            </p>
+          </li>
+
+          <li>
+            <p>
+              3-dimensional space (3D space)
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>xyz</m>-space
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>\mathbb{R}^{3}=\{(x, y, z) \mid x, y, z \in
+              \mathbb{R}\}</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      You can draw a 2D representation of 3D space as follows:
+    </p>
+
+    <image source="/images/Note 2.1.png" width="70%">
+      <shortdescription>The three dimensional space with the axes x, y, and z.</shortdescription>
+    </image>
+  </note>
+
+  <note>
+    <p>
+      For consistency, we will always draw the <m>xyz</m>-space following the
+      right-hand rule as shown below:
+    </p>
+  </note>
+
+  <figure>
+    <caption>From OpenStax, Calculus Volume 3, Section 2.2</caption>
+
+    <sidebyside widths="45% 45%" margins="auto" valign="middle">
+      <image source="/images/2025_08_01_578ccdf8ba98801b0a3bg-1.jpg">
+        <shortdescription>The xyz-coordinate system with axes arranged using the right-hand rule.</shortdescription>
+      </image>
+
+      <image source="/images/2025_08_01_578ccdf8ba98801b0a3bg-1-1.jpg">
+        <shortdescription>The right-hand rule: a right hand, with the thumb pointing upwards, defining the z axis, while the rest of the fingers move from the x axis to the y axis.</shortdescription>
+      </image>
+    </sidebyside>
+  </figure>
+
+  <definition>
+    <title>Points in <m>xyz</m>-Space</title>
+
+    <statement>
+      <p>
+        In the <m>xy</m>-plane, we represent points by ordered pairs of the
+        form <m>\left(x_{1}, y_{1}\right)</m>. In <m>xyz</m>-space, we
+        represent points by ordered triples of the form
+        <m>\left(x_{1}, y_{1}, z_{1}\right)</m>.
+      </p>
+
+      <p>
+        Given a point <m>\left(x_{1}, y_{1}, z_{1}\right)</m>, we call
+        <m>x_{1}</m>, <m>y_{1}</m>, and <m>z_{1}</m> the <m>x</m>, <m>y</m>,
+        and <m>z</m> coordinates of the point, respectively.
+      </p>
+    </statement>
+  </definition>
+
+  <figure>
+    <caption>Point <m>(6, 4.5, 8)</m></caption>
+
+    <image source="/images/2025_08_01_578ccdf8ba98801b0a3bg-2.jpg" width="50%">
+      <shortdescription>The point (6, 4.5, 8) plotted in xyz-space.</shortdescription>
+    </image>
+  </figure>
+
+  <p>
+    We have infinitely many planes. The <q>main</q> planes are:
+  </p>
+
+  <p>
+    <ul>
+      <li>
+        <p>
+          The <m>xy</m>-plane: Consists of all points with <m>z</m>-coordinate
+          equal to zero. Defined by the equation <m>z=0</m>. Contains the
+          <m>x</m> and <m>y</m> axes.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          The <m>xz</m>-plane: Consists of all points with <m>y</m>-coordinate
+          equal to zero. Defined by the equation <m>y=0</m>. Contains the
+          <m>x</m> and <m>z</m> axes.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          The <m>yz</m>-plane: Consists of all points with <m>x</m>-coordinate
+          equal to zero. Defined by the equation <m>x=0</m>. Contains the
+          <m>y</m> and <m>z</m> axes.
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <figure>
+    <caption>From OpenStax, Calculus Volume 3, Section 2.2</caption>
+
+    <image source="/images/2025_08_01_578ccdf8ba98801b0a3bg-3.jpg" width="50%">
+      <shortdescription>The three coordinate planes xy, xz, and yz shown in xyz-space.</shortdescription>
+    </image>
+  </figure>
+
+  <example>
+    <statement>
+      <p>
+        Sketch the plane parallel to the <m>xz</m>-plane through
+        <m>(1,9,4)</m>. Moreover, write an equation for this plane.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The <m>xz</m>-plane is defined by the equation <m>y=0</m>, and any
+        plane parallel to it consists of all points whose <m>y</m>-coordinate
+        is equal to one fixed constant. Since our plane must contain the point
+        <m>(1,9,4)</m>, that constant is 9, so the plane is defined by the
+        equation
+        <md>
+          y = 9
+        </md>
+      </p>
+
+      <p>
+        To sketch it, draw the <m>xyz</m>-axes (following the right-hand
+        rule), mark the value 9 on the <m>y</m>-axis, and through that mark
+        draw a copy of the <m>xz</m>-plane. The plane contains the point
+        <m>(1,9,4)</m> and, more generally, every point of the form
+        <m>(x, 9, z)</m>.
+      </p>
+
+      <image source="/images/Example 2.1.png" width="50%">
+        <shortdescription>The plane parallel to the x z-plane through the point (1,9,4).</shortdescription>
+      </image>
+    </solution>
+  </example>
+
+  <definition>
+    <title>Vectors in <m>xyz</m>-Space</title>
+
+    <statement>
+      <p>
+        In the <m>xy</m>-plane, we represent vectors in standard position
+        using the notation
+        <m>\mathbf{v}=\left\langle x_{1}, y_{1}\right\rangle</m>. In
+        <m>xyz</m>-space, we represent vectors in standard position using the
+        notation
+        <m>\mathbf{v}=\left\langle x_{1}, y_{1}, z_{1}\right\rangle</m>.
+      </p>
+
+      <p>
+        If a vector is given by its starting point
+        <m>P\left(x_{1}, y_{1}, z_{1}\right)</m> and ending point
+        <m>Q\left(x_{2}, y_{2}, z_{2}\right)</m>, we can shift it to standard
+        position by using the formula
+        <md>
+          \mathbf{v}=\left\langle x_{2}-x_{1}, y_{2}-y_{1}, z_{2}-z_{1}\right\rangle .
+        </md>
+      </p>
+
+      <p>
+        A vector in standard position is also called a position vector.
+      </p>
+    </statement>
+  </definition>
+
+  <figure>
+    <caption>Vector <m>\mathbf{v}=\langle 2,5,3\rangle</m></caption>
+
+    <image source="/images/2025_08_01_578ccdf8ba98801b0a3bg-5.jpg" width="50%">
+      <shortdescription>The vector v = (2,5,3) drawn in standard position in xyz-space.</shortdescription>
+    </image>
+  </figure>
+
+  <remark>
+    <title>Vector Operations in <m>xyz</m>-Space</title>
+
+    <p>
+      Vector operations in <m>xyz</m>-space work exactly the same as in the
+      <m>xy</m>-plane. We do operations coordinate-wise.
+    </p>
+
+    <p>
+      Let <m>\mathbf{v}=\left\langle v_{1}, v_{2}, v_{3}\right\rangle</m>,
+      <m>\mathbf{u}=\left\langle u_{1}, u_{2}, u_{3}\right\rangle</m>, and
+      <m>c</m> be a real number (scalar). Then
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            <m>\mathbf{v}+\mathbf{u}=\left\langle v_{1}+u_{1}, v_{2}+u_{2},
+            v_{3}+u_{3}\right\rangle</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\mathbf{v}-\mathbf{u}=\left\langle v_{1}-u_{1}, v_{2}-u_{2},
+            v_{3}-u_{3}\right\rangle</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>c \mathbf{v}=\left\langle c v_{1}, c v_{2}, c
+            v_{3}\right\rangle</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Note: Geometrically, everything works the same. Adding/subtracting
+      vectors can be done using the Triangle Rule. Scaling a vector changes
+      its length and potentially flips the direction of the vector. It is
+      harder to draw now, though...
+    </p>
+  </remark>
+
+  <example>
+    <statement>
+      <p>
+        Given <m>\mathbf{v}=\langle 3,2,3\rangle</m> and
+        <m>\mathbf{u}=\langle 1,2,1\rangle</m>, compute
+        <m>2|\mathbf{v}-2\mathbf{u}|</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Working from the inside out, we first compute the vector
+        <m>\mathbf{v}-2\mathbf{u}</m> coordinate-wise:
+        <md>
+          \mathbf{v}-2\mathbf{u} = \langle 3,2,3 \rangle - \langle 2,4,2 \rangle = \langle 1,-2,1 \rangle
+        </md>
+      </p>
+
+      <p>
+        Its magnitude is
+        <md>
+          |\mathbf{v}-2\mathbf{u}| = \sqrt{1^{2}+(-2)^{2}+1^{2}} = \sqrt{6}
+        </md>
+      </p>
+
+      <p>
+        and hence <m>2|\mathbf{v}-2\mathbf{u}| = 2\sqrt{6}</m>.
+      </p>
+    </solution>
+  </example>
+
+  <definition>
+    <title>Distance and Midpoint Formula</title>
+
+    <statement>
+      <p>
+        Given two points <m>P\left(x_{1}, y_{1}, z_{1}\right)</m> and
+        <m>Q\left(x_{2}, y_{2}, z_{2}\right)</m> in <m>xyz</m>-space, we
+        denote the line segment connecting <m>P</m> and <m>Q</m> by
+        <m>PQ</m>. Moreover, we have that
+      </p>
+
+      <p>
+        <ul>
+          <li>
+            <p>
+              The distance between the points <m>P</m> and <m>Q</m> (the
+              length of the line segment <m>PQ</m>) is given by
+              <md>
+                |P Q|=\sqrt{\left(x_{2}-x_{1}\right)^{2}+\left(y_{2}-y_{1}\right)^{2}+\left(z_{2}-z_{1}\right)^{2}}
+              </md>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The midpoint on the line segment <m>PQ</m> is given by
+              <md>
+                \left(\frac{x_{1}+x_{2}}{2}, \frac{y_{1}+y_{2}}{2}, \frac{z_{1}+z_{2}}{2}\right)
+              </md>
+            </p>
+          </li>
+        </ul>
+      </p>
+
+      <p>
+        Note that the distance between <m>P</m> and <m>Q</m> is simply
+        <m>|\overrightarrow{P Q}|</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <figure>
+    <caption>From Briggs, et al., Calculus Early Transcendentals (3e), Figure 13.33</caption>
+
+    <image source="/images/2025_08_01_578ccdf8ba98801b0a3bg-7.jpg" width="60%">
+      <shortdescription>Two points P and Q in xyz-space connected by a line segment, illustrating the midpoint formula.</shortdescription>
+    </image>
+  </figure>
+
+  <remark>
+    <title>Magnitude</title>
+
+    <p>
+      Given a 3D vector
+      <m>\mathbf{v}=\left\langle v_{1}, v_{2}, v_{3}\right\rangle</m>, then
+      <m>|\mathbf{v}|=\sqrt{v_{1}^{2}+v_{2}^{2}+v_{3}^{2}}</m>. As before,
+      <m>\mathbf{v}</m> is a unit vector if <m>|\mathbf{v}|=1</m>.
+    </p>
+  </remark>
+
+  <remark>
+    <title>Recall: Unit Vector in the Direction of <m>\mathbf{v}</m></title>
+
+    <p>
+      When working with a 3D vector <m>\mathbf{v}</m>, we can't define its
+      direction by a single angle anymore (since <m>\mathbf{v}</m> is
+      contained in infinitely many planes). Instead, we focus on the unit
+      vector in the direction of <m>\mathbf{v}</m>.
+    </p>
+
+    <p>
+      Given a nonzero vector
+      <m>\mathbf{v}=\left\langle v_{1}, v_{2}, v_{3}\right\rangle</m>, the
+      vector <m>\mathbf{u}=\frac{\mathbf{v}}{|\mathbf{v}|}</m> is a unit
+      vector in the direction of <m>\mathbf{v}</m>.
+    </p>
+  </remark>
+
+  <example>
+    <statement>
+      <p>
+        Given <m>\mathbf{v}=\langle 1,2,1\rangle</m>, find:
+      </p>
+
+      <p>
+        (a) A unit vector in the direction of <m>\mathbf{v}</m>.
+      </p>
+
+      <p>
+        (b) All vectors of length 3 parallel to <m>\mathbf{v}</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The magnitude of <m>\mathbf{v}</m> is
+        <m>|\mathbf{v}| = \sqrt{1^{2}+2^{2}+1^{2}} = \sqrt{6}</m>, so a unit
+        vector in the direction of <m>\mathbf{v}</m> is
+        <md>
+          \mathbf{u} = \frac{\mathbf{v}}{|\mathbf{v}|} = \frac{1}{\sqrt{6}}\langle 1,2,1 \rangle = \left\langle \frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}} \right\rangle
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        A vector of length 3 parallel to <m>\mathbf{v}</m> points either in
+        the direction of <m>\mathbf{v}</m> or in the direction opposite of
+        <m>\mathbf{v}</m>, so the only two such vectors are
+        <md alignment="gather">
+          <mrow>3\mathbf{u} = \left\langle \frac{3}{\sqrt{6}}, \frac{6}{\sqrt{6}}, \frac{3}{\sqrt{6}} \right\rangle \quad \text{and} \quad -3\mathbf{u} = \left\langle -\frac{3}{\sqrt{6}}, -\frac{6}{\sqrt{6}}, -\frac{3}{\sqrt{6}} \right\rangle</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <definition>
+    <title>Coordinate Vectors</title>
+
+    <statement>
+      <p>
+        In <m>xyz</m>-space, the following vectors are called coordinate
+        vectors:
+      </p>
+
+      <p>
+        <ul>
+          <li>
+            <p>
+              <m>\mathbf{i}=\langle 1,0,0\rangle</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>\mathbf{j}=\langle 0,1,0\rangle</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>\mathbf{k}=\langle 0,0,1\rangle</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+
+      <p>
+        Given a vector
+        <m>\mathbf{v}=\left\langle v_{1}, v_{2}, v_{3}\right\rangle</m>, we
+        can also write <m>\mathbf{v}</m> in the form
+        <md>
+          \mathbf{v}=v_{1} \mathbf{i}+v_{2} \mathbf{j}+v_{3} \mathbf{k} .
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <example>
+    <statement>
+      <p>
+        Verify that
+        <m>\langle -2,3,1\rangle=-2 \mathbf{i}+3 \mathbf{j}+ \mathbf{k}</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Writing each scaled coordinate vector in component form and adding
+        coordinate-wise:
+        <md alignment="gather">
+          <mrow>-2\mathbf{i}+3\mathbf{j}+\mathbf{k} = -2 \langle 1,0,0\rangle + 3 \langle 0,1,0\rangle + \langle 0,0,1\rangle = \langle -2,0,0 \rangle + \langle 0,3,0 \rangle + \langle 0,0,1 \rangle</mrow>
+          <mrow>= \langle -2+0+0, 0+3+0, 0+0+1 \rangle = \langle -2,3,1 \rangle</mrow>
+        </md>
+      </p>
+
+      <p>
+        as claimed.
+      </p>
+    </solution>
+  </example>
+
+</section>
