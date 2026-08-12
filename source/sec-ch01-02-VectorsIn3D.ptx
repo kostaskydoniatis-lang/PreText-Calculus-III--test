@@ -413,8 +413,8 @@
         A vector of length 3 parallel to <m>\mathbf{v}</m> points either in
         the direction of <m>\mathbf{v}</m> or in the direction opposite of
         <m>\mathbf{v}</m>, so the only two such vectors are
-        <md alignment="gather">
-          <mrow>3\mathbf{u} = \left\langle \frac{3}{\sqrt{6}}, \frac{6}{\sqrt{6}}, \frac{3}{\sqrt{6}} \right\rangle \quad \text{and} \quad -3\mathbf{u} = \left\langle -\frac{3}{\sqrt{6}}, -\frac{6}{\sqrt{6}}, -\frac{3}{\sqrt{6}} \right\rangle</mrow>
+        <md>
+          3\mathbf{u} = \left\langle \frac{3}{\sqrt{6}}, \frac{6}{\sqrt{6}}, \frac{3}{\sqrt{6}} \right\rangle \quad \text{and} \quad -3\mathbf{u} = \left\langle -\frac{3}{\sqrt{6}}, -\frac{6}{\sqrt{6}}, -\frac{3}{\sqrt{6}} \right\rangle
         </md>
       </p>
     </solution>
