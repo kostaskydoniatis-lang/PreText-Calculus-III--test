@@ -271,6 +271,195 @@ var ptx_lunr_docs = [
   "body": " Openstax, Calculus Volume 3, Section 2.1, Question 57   A 1500-lb boat is parked on a ramp that makes an angle of with the horizontal. The boat's weight vector points downward and is a sum of two vectors: a vector that is parallel to the ramp and a vector that is perpendicular to the inclined surface. The magnitudes of vectors and are the components of the boat's weight vector parallel and perpendicular to the ramp, respectively. Find the magnitudes of and . (Round to the nearest integer.)   A boat on a ramp inclined at 30 degrees, with the weight vector pointing downward decomposed into v1 parallel to the ramp and v2 perpendicular to the ramp.  Openstax, Calculus Volume 3, Section 2.1, Question 57      The weight vector points straight down and has magnitude lb. Since the ramp makes an angle of with the horizontal, the direction perpendicular to the ramp makes that same angle of with the vertical; that is, the angle between and is , as in the picture above. Decomposing into these two perpendicular components:   As a check, , the magnitude of the weight vector.   "
 },
 {
+  "id": "sec-ch01-02-VectorsIn3D",
+  "level": "1",
+  "url": "sec-ch01-02-VectorsIn3D.html",
+  "type": "Section",
+  "number": "1.2",
+  "title": "Vectors in 3D",
+  "body": " Vectors in 3D   Everything we did with vectors in the previous section transfers to vectors in 3D (almost identically). Hence, we will focus first on getting used to three dimensions.    -Coordinate System   The 3-dimensional coordinate system represented by the , , and axes is called the -coordinate system.  Other names for this coordinate system are:     Euclidean space    3-dimensional space (3D space)     -space     .        You can draw a 2D representation of 3D space as follows:   The three dimensional space with the axes x, y, and z.     For consistency, we will always draw the -space following the right-hand rule as shown below:    From OpenStax, Calculus Volume 3, Section 2.2    The xyz-coordinate system with axes arranged using the right-hand rule.    The right-hand rule: a right hand, with the thumb pointing upwards, defining the z axis, while the rest of the fingers move from the x axis to the y axis.      Points in -Space   In the -plane, we represent points by ordered pairs of the form . In -space, we represent points by ordered triples of the form .  Given a point , we call , , and the , , and coordinates of the point, respectively.     Point   The point (6, 4.5, 8) plotted in xyz-space.    We have infinitely many planes. The main planes are:     The -plane: Consists of all points with -coordinate equal to zero. Defined by the equation . Contains the and axes.    The -plane: Consists of all points with -coordinate equal to zero. Defined by the equation . Contains the and axes.    The -plane: Consists of all points with -coordinate equal to zero. Defined by the equation . Contains the and axes.      From OpenStax, Calculus Volume 3, Section 2.2   The three coordinate planes xy, xz, and yz shown in xyz-space.      Sketch the plane parallel to the -plane through . Moreover, write an equation for this plane.    The -plane is defined by the equation , and any plane parallel to it consists of all points whose -coordinate is equal to one fixed constant. Since our plane must contain the point , that constant is 9, so the plane is defined by the equation   To sketch it, draw the -axes (following the right-hand rule), mark the value 9 on the -axis, and through that mark draw a copy of the -plane. The plane contains the point and, more generally, every point of the form .   The plane parallel to the x z-plane through the point (1,9,4).      Vectors in -Space   In the -plane, we represent vectors in standard position using the notation . In -space, we represent vectors in standard position using the notation .  If a vector is given by its starting point and ending point , we can shift it to standard position by using the formula   A vector in standard position is also called a position vector.     Vector   The vector v = (2,5,3) drawn in standard position in xyz-space.     Vector Operations in -Space  Vector operations in -space work exactly the same as in the -plane. We do operations coordinate-wise.  Let , , and be a real number (scalar). Then                .     Note: Geometrically, everything works the same. Adding\/subtracting vectors can be done using the Triangle Rule. Scaling a vector changes its length and potentially flips the direction of the vector. It is harder to draw now, though...     Given and , compute .    Working from the inside out, we first compute the vector coordinate-wise:   Its magnitude is   and hence .     Distance and Midpoint Formula   Given two points and in -space, we denote the line segment connecting and by . Moreover, we have that     The distance between the points and (the length of the line segment ) is given by     The midpoint on the line segment is given by      Note that the distance between and is simply .     From Briggs, et al., Calculus Early Transcendentals (3e), Figure 13.33   Two points P and Q in xyz-space connected by a line segment, illustrating the midpoint formula.     Magnitude  Given a 3D vector , then . As before, is a unit vector if .    Recall: Unit Vector in the Direction of  When working with a 3D vector , we can't define its direction by a single angle anymore (since is contained in infinitely many planes). Instead, we focus on the unit vector in the direction of .  Given a nonzero vector , the vector is a unit vector in the direction of .     Given , find:  (a) A unit vector in the direction of .  (b) All vectors of length 3 parallel to .    The magnitude of is , so a unit vector in the direction of is     A vector of length 3 parallel to points either in the direction of or in the direction opposite of , so the only two such vectors are      Coordinate Vectors   In -space, the following vectors are called coordinate vectors:      .     .     .     Given a vector , we can also write in the form       Verify that .    Writing each scaled coordinate vector in component form and adding coordinate-wise:   as claimed.    "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-2",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-2",
+  "type": "Note",
+  "number": "1.2.1",
+  "title": "",
+  "body": " Everything we did with vectors in the previous section transfers to vectors in 3D (almost identically). Hence, we will focus first on getting used to three dimensions.  "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-3",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-3",
+  "type": "Definition",
+  "number": "1.2.2",
+  "title": "<span class=\"process-math\">\\(xyz\\)<\/span>-Coordinate System.",
+  "body": " -Coordinate System   The 3-dimensional coordinate system represented by the , , and axes is called the -coordinate system.  Other names for this coordinate system are:     Euclidean space    3-dimensional space (3D space)     -space     .      "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-4",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-4",
+  "type": "Note",
+  "number": "1.2.3",
+  "title": "",
+  "body": " You can draw a 2D representation of 3D space as follows:   The three dimensional space with the axes x, y, and z.   "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-5",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-5",
+  "type": "Note",
+  "number": "1.2.4",
+  "title": "",
+  "body": " For consistency, we will always draw the -space following the right-hand rule as shown below:  "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-6",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-6",
+  "type": "Figure",
+  "number": "1.2.5",
+  "title": "",
+  "body": " From OpenStax, Calculus Volume 3, Section 2.2    The xyz-coordinate system with axes arranged using the right-hand rule.    The right-hand rule: a right hand, with the thumb pointing upwards, defining the z axis, while the rest of the fingers move from the x axis to the y axis.    "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-7",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-7",
+  "type": "Definition",
+  "number": "1.2.6",
+  "title": "Points in <span class=\"process-math\">\\(xyz\\)<\/span>-Space.",
+  "body": " Points in -Space   In the -plane, we represent points by ordered pairs of the form . In -space, we represent points by ordered triples of the form .  Given a point , we call , , and the , , and coordinates of the point, respectively.   "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-8",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-8",
+  "type": "Figure",
+  "number": "1.2.7",
+  "title": "",
+  "body": " Point   The point (6, 4.5, 8) plotted in xyz-space.   "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-11",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-11",
+  "type": "Figure",
+  "number": "1.2.8",
+  "title": "",
+  "body": " From OpenStax, Calculus Volume 3, Section 2.2   The three coordinate planes xy, xz, and yz shown in xyz-space.   "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-12",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-12",
+  "type": "Example",
+  "number": "1.2.9",
+  "title": "",
+  "body": "  Sketch the plane parallel to the -plane through . Moreover, write an equation for this plane.    The -plane is defined by the equation , and any plane parallel to it consists of all points whose -coordinate is equal to one fixed constant. Since our plane must contain the point , that constant is 9, so the plane is defined by the equation   To sketch it, draw the -axes (following the right-hand rule), mark the value 9 on the -axis, and through that mark draw a copy of the -plane. The plane contains the point and, more generally, every point of the form .   The plane parallel to the x z-plane through the point (1,9,4).    "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-13",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-13",
+  "type": "Definition",
+  "number": "1.2.10",
+  "title": "Vectors in <span class=\"process-math\">\\(xyz\\)<\/span>-Space.",
+  "body": " Vectors in -Space   In the -plane, we represent vectors in standard position using the notation . In -space, we represent vectors in standard position using the notation .  If a vector is given by its starting point and ending point , we can shift it to standard position by using the formula   A vector in standard position is also called a position vector.   "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-14",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-14",
+  "type": "Figure",
+  "number": "1.2.11",
+  "title": "",
+  "body": " Vector   The vector v = (2,5,3) drawn in standard position in xyz-space.   "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-15",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-15",
+  "type": "Remark",
+  "number": "1.2.12",
+  "title": "Vector Operations in <span class=\"process-math\">\\(xyz\\)<\/span>-Space.",
+  "body": " Vector Operations in -Space  Vector operations in -space work exactly the same as in the -plane. We do operations coordinate-wise.  Let , , and be a real number (scalar). Then                .     Note: Geometrically, everything works the same. Adding\/subtracting vectors can be done using the Triangle Rule. Scaling a vector changes its length and potentially flips the direction of the vector. It is harder to draw now, though...  "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-16",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-16",
+  "type": "Example",
+  "number": "1.2.13",
+  "title": "",
+  "body": "  Given and , compute .    Working from the inside out, we first compute the vector coordinate-wise:   Its magnitude is   and hence .   "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-17",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-17",
+  "type": "Definition",
+  "number": "1.2.14",
+  "title": "Distance and Midpoint Formula.",
+  "body": " Distance and Midpoint Formula   Given two points and in -space, we denote the line segment connecting and by . Moreover, we have that     The distance between the points and (the length of the line segment ) is given by     The midpoint on the line segment is given by      Note that the distance between and is simply .   "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-18",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-18",
+  "type": "Figure",
+  "number": "1.2.15",
+  "title": "",
+  "body": " From Briggs, et al., Calculus Early Transcendentals (3e), Figure 13.33   Two points P and Q in xyz-space connected by a line segment, illustrating the midpoint formula.   "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-19",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-19",
+  "type": "Remark",
+  "number": "1.2.16",
+  "title": "Magnitude.",
+  "body": " Magnitude  Given a 3D vector , then . As before, is a unit vector if .  "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-20",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-20",
+  "type": "Remark",
+  "number": "1.2.17",
+  "title": "Recall: Unit Vector in the Direction of <span class=\"process-math\">\\(\\mathbf{v}\\)<\/span>.",
+  "body": " Recall: Unit Vector in the Direction of  When working with a 3D vector , we can't define its direction by a single angle anymore (since is contained in infinitely many planes). Instead, we focus on the unit vector in the direction of .  Given a nonzero vector , the vector is a unit vector in the direction of .  "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-21",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-21",
+  "type": "Example",
+  "number": "1.2.18",
+  "title": "",
+  "body": "  Given , find:  (a) A unit vector in the direction of .  (b) All vectors of length 3 parallel to .    The magnitude of is , so a unit vector in the direction of is     A vector of length 3 parallel to points either in the direction of or in the direction opposite of , so the only two such vectors are    "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-22",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-22",
+  "type": "Definition",
+  "number": "1.2.19",
+  "title": "Coordinate Vectors.",
+  "body": " Coordinate Vectors   In -space, the following vectors are called coordinate vectors:      .     .     .     Given a vector , we can also write in the form    "
+},
+{
+  "id": "sec-ch01-02-VectorsIn3D-23",
+  "level": "2",
+  "url": "sec-ch01-02-VectorsIn3D.html#sec-ch01-02-VectorsIn3D-23",
+  "type": "Example",
+  "number": "1.2.20",
+  "title": "",
+  "body": "  Verify that .    Writing each scaled coordinate vector in component form and adding coordinate-wise:   as claimed.   "
+},
+{
   "id": "backmatter-2",
   "level": "1",
   "url": "backmatter-2.html",
