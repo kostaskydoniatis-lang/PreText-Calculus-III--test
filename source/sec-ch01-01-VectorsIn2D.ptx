@@ -488,28 +488,28 @@
 
     <p>
       The Triangle Rule states that in order to compute
-      <m>\vec{v}+\vec{u}</m>:
+      <m>\vec{u}+\vec{v}</m>:
     </p>
 
     <p>
       <ol>
         <li>
           <p>
-            Draw <m>\vec{v}</m> in standard position.
+            Draw <m>\vec{u}</m> in standard position.
           </p>
         </li>
 
         <li>
           <p>
-            Starting at the endpoint of <m>\vec{v}</m>, draw the vector
-            <m>\vec{u}</m>.
+            Starting at the endpoint of <m>\vec{u}</m>, draw the vector
+            <m>\vec{v}</m>.
           </p>
         </li>
 
         <li>
           <p>
             Draw a vector starting at <m>(0,0)</m> and ending at the end of the
-            vector <m>\vec{u}</m> as drawn in step 2.
+            vector <m>\vec{v}</m> as drawn in step 2.
           </p>
         </li>
       </ol>
