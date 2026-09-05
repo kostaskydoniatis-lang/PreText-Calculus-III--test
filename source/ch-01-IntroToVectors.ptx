@@ -10,5 +10,5 @@
   <!-- include sections -->
   <xi:include href="sec-ch01-01-VectorsIn2D.ptx" />
   <xi:include href="sec-ch01-02-VectorsIn3D.ptx" />
-
+  <xi:include href="sec-ch01-03-DotProduct.ptx" />
 </chapter>
