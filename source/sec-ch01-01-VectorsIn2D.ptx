@@ -31,7 +31,7 @@
       <p>
         They are geometrically represented by rays/arrows and symbolically with
         a lowercase letter with an arrow above it or in bold face (such as
-        <m>\vec{u}</m> or <m>\mathbf{u}, \vec{v}</m> or <m>\mathbf{v}</m>,
+        <m>\vec{u}</m> or <m>\vec{u}, \vec{v}</m> or <m>\vec{v}</m>,
         etc.).
       </p>
     </statement>
@@ -47,7 +47,7 @@
   <p>
     When a vector is given by its starting point <m>P</m> and ending point
     <m>Q</m>, we can represent the vector symbolically using
-    <m>\ve{P Q}</m>.
+    <m>\vec{P Q}</m>.
   </p>
 
   <example>
@@ -132,21 +132,21 @@ c      </figure>
       </p>
 
       <p>
-        Given a vector <m>\mathbf{v}</m> in standard position, if its ending
+        Given a vector <m>\vec{v}</m> in standard position, if its ending
         point is ( <m>v_{1}, v_{2}</m> ), we write down the vector
-        <m>\mathbf{v}</m> as
+        <m>\vec{v}</m> as
       </p>
 
       <p>
         <md>
-          \mathbf{v}=\left\langle v_{1}, v_{2}\right\rangle
+          \vec{v}=\left\langle v_{1}, v_{2}\right\rangle
         </md>
       </p>
 
       <p>
         and we say that <m>v_{1}</m> is the <m>x</m>-component of
-        <m>\mathbf{v}</m> and <m>v_{2}</m> is the <m>y</m>-component of
-        <m>\mathbf{v}</m>.
+        <m>\vec{v}</m> and <m>v_{2}</m> is the <m>y</m>-component of
+        <m>\vec{v}</m>.
       </p>
     </statement>
   </definition>
@@ -156,9 +156,9 @@ c      </figure>
     </p>
 
     <p>
-      Suppose a vector <m>\mathbf{v}</m> has starting point
+      Suppose a vector <m>\vec{v}</m> has starting point
       <m>P\left(x_{1}, y_{1}\right)</m> and ending point
-      <m>Q\left(x_{2}, y_{2}\right)</m>. The ending point of <m>\mathbf{v}</m>,
+      <m>Q\left(x_{2}, y_{2}\right)</m>. The ending point of <m>\vec{v}</m>,
       in standard position, is <m>\left(x_{2}-x_{1}, y_{2}-y_{1}\right)</m>.
     </p>
 
@@ -168,7 +168,7 @@ c      </figure>
 
     <p>
       <md>
-        \mathbf{v}=\left\langle x_{2}-x_{1}, y_{2}-y_{1}\right\rangle
+        \vec{v}=\left\langle x_{2}-x_{1}, y_{2}-y_{1}\right\rangle
       </md>
     </p>
 
@@ -192,7 +192,7 @@ c      </figure>
     <solution>
       <figure xml:id="fig-ch01-01-ex-1-2">
         <caption>
-          A vector from <m>P(2,1)</m> to <m>Q(-1,0)</m> and the same vector in standard position, namely <m>\mathbf{v} = \langle -3, -1 \rangle</m>.
+          A vector from <m>P(2,1)</m> to <m>Q(-1,0)</m> and the same vector in standard position, namely <m>\vec{v} = \langle -3, -1 \rangle</m>.
         </caption>
 
         <interactive xml:id="interactive-ch01-01-ex-1-2" width="85%" aspect="4:3"
@@ -208,7 +208,7 @@ c      </figure>
               <shortdescription> A vector from P, x = 2, y = 1, to Q, x = -1, y = 0, and the same vector in standard position, namely vector v with coordinates x = -3, y = -1.</shortdescription>
               <description>
                 <p>
-                  A vector from <m>P(2,1)</m> to <m>Q(-1,0)</m> and the same vector in standard position, namely <m>\mathbf{v} = \langle -3, -1 \rangle</m>.
+                  A vector from <m>P(2,1)</m> to <m>Q(-1,0)</m> and the same vector in standard position, namely <m>\vec{v} = \langle -3, -1 \rangle</m>.
                 </p>
               </description>
             </image>
@@ -220,7 +220,7 @@ c      </figure>
         vector in standard position is
         <m>\left(x_{2}-x_{1}, y_{2}-y_{1}\right)</m>, so
         <md>
-          \mathbf{v}= \langle -1-2, 0-1 \rangle = \langle -3,-1 \rangle
+          \vec{v}= \langle -1-2, 0-1 \rangle = \langle -3,-1 \rangle
         </md>
       </p>
 
@@ -249,7 +249,7 @@ c      </figure>
           <li>
             <p>
               If the vector is given by
-              <m>\mathbf{v}=\left\langle v_{1}, v_{2}\right\rangle</m>, then its
+              <m>\vec{v}=\left\langle v_{1}, v_{2}\right\rangle</m>, then its
               magnitude, denoted by |v|, is given by
             </p>
           </li>
@@ -258,7 +258,7 @@ c      </figure>
 
       <p>
         <md>
-          |\mathbf{v}|=\sqrt{v_{1}^{2}+v_{2}^{2}}.
+          |\vec{v}|=\sqrt{v_{1}^{2}+v_{2}^{2}}.
         </md>
       </p>
     </statement>
@@ -305,14 +305,14 @@ c      </figure>
       <p>
         In standard position the vector is
         <md>
-          \mathbf{v}= \langle 4-1, 2-(-2) \rangle = \langle 3,4 \rangle
+          \vec{v}= \langle 4-1, 2-(-2) \rangle = \langle 3,4 \rangle
         </md>
       </p>
 
       <p>
         so its length is
         <md>
-          |\mathbf{v}| = \sqrt{3^{2}+4^{2}}= \sqrt{9+16}= \sqrt{25}= 5
+          |\vec{v}| = \sqrt{3^{2}+4^{2}}= \sqrt{9+16}= \sqrt{25}= 5
         </md>
       </p>
 
@@ -348,10 +348,10 @@ c      </figure>
           <li>
             <p>
               If the vector is given by
-              <m>\mathbf{v}=\left\langle v_{1}, v_{2}\right\rangle</m>, its
+              <m>\vec{v}=\left\langle v_{1}, v_{2}\right\rangle</m>, its
               direction is the angle <m>\theta</m> starting on the positive x
               -axis and measured counter-clockwise ending on the vector
-              <m>\mathbf{v}=\left\langle v_{1}, v_{2}\right\rangle</m>.
+              <m>\vec{v}=\left\langle v_{1}, v_{2}\right\rangle</m>.
             </p>
           </li>
         </ol>
@@ -362,14 +362,14 @@ c      </figure>
   <example>
     <statement>
       <p>
-        Find the direction of <m>\mathbf{v}=\langle-2,-4\rangle</m>.
+        Find the direction of <m>\vec{v}=\langle-2,-4\rangle</m>.
       </p>
     </statement>
 
     <solution>
       <figure xml:id="fig-ch01-01-ex-1-4">
         <caption>
-         The vector <m>\mathbf{v}=\langle -2,-4\rangle</m>, in standard position in the third quadrant, with the angle <m>\theta</m> measured counter-clockwise from the positive <m>x</m>-axis. The angle <m>\phi</m> is the portion of <m>\theta</m> past the negative <m>x</m>-axis.
+         The vector <m>\vec{v}=\langle -2,-4\rangle</m>, in standard position in the third quadrant, with the angle <m>\theta</m> measured counter-clockwise from the positive <m>x</m>-axis. The angle <m>\phi</m> is the portion of <m>\theta</m> past the negative <m>x</m>-axis.
         </caption>
 
         <interactive xml:id="interactive-ch01-01-ex-1-4" width="85%" aspect="4:2"
@@ -385,7 +385,7 @@ c      </figure>
               <shortdescription> The vector v with coordinates x = -2, y = -4, in standard position in the third quadrant, with the angle theta measured counter-clockwise from the positive x-axis. The angle phi is the portion of theta past the negative x-axis.</shortdescription>
               <description>
                 <p>
-                  The vector <m>\mathbf{v}=\langle -2,-4\rangle</m>, in standard position in the third quadrant, with the angle <m>\theta</m> measured counter-clockwise from the positive <m>x</m>-axis. The angle <m>\phi</m> is the portion of <m>\theta</m> past the negative <m>x</m>-axis.
+                  The vector <m>\vec{v}=\langle -2,-4\rangle</m>, in standard position in the third quadrant, with the angle <m>\theta</m> measured counter-clockwise from the positive <m>x</m>-axis. The angle <m>\phi</m> is the portion of <m>\theta</m> past the negative <m>x</m>-axis.
                 </p>
               </description>
             </image>
@@ -394,10 +394,10 @@ c      </figure>
       </figure>
 
       <p>
-        Both components of <m>\mathbf{v}= \langle -2,-4 \rangle</m> are
+        Both components of <m>\vec{v}= \langle -2,-4 \rangle</m> are
         negative, so the vector lies in the third quadrant and its direction
         angle satisfies <m>\pi &lt; \theta &lt; \frac{3\pi}{2}</m>. The angle
-        <m>\phi</m> that <m>\mathbf{v}</m> makes with the negative <m>x</m>-axis
+        <m>\phi</m> that <m>\vec{v}</m> makes with the negative <m>x</m>-axis
         satisfies
         <md>
           \tan(\phi) = \frac{4}{2}= 2 \Rightarrow \phi = \arctan(2)
@@ -415,7 +415,7 @@ c      </figure>
 
   <remark>
     <p>
-      The zero vector <m>\mathbf{0}=\langle 0,0\rangle</m> is the only vector
+      The zero vector <m>\vec{0}=\langle 0,0\rangle</m> is the only vector
       with zero magnitude and no direction.
     </p>
   </remark>
@@ -433,7 +433,7 @@ c      </figure>
     </p>
 
     <p>
-      To add/subtract two vectors <m>\mathbf{v}</m> and <m>\mathbf{u}</m>, you
+      To add/subtract two vectors <m>\vec{v}</m> and <m>\vec{u}</m>, you
       add/subtract the corresponding <m>x</m> and <m>y</m> components.
     </p>
     <!--$$ $$\vspace{&#x2D;.5cm}-->
@@ -445,17 +445,17 @@ c      </figure>
     <!--$$ $$-->
     <p>
       Important: Vector subtraction is not commutative. Hence,
-      <m>\mathbf{v}-\mathbf{u}\neq \mathbf{u}-\mathbf{v}</m> (unless
-      <m>\mathbf{v}=\mathbf{u}</m> ).
+      <m>\vec{v}-\vec{u}\neq \vec{u}-\vec{v}</m> (unless
+      <m>\vec{v}=\vec{u}</m> ).
     </p>
   </remark>
 
   <example>
     <statement>
       <p>
-        Compute <m>\mathbf{v}+\mathbf{u}</m> and <m>\mathbf{v}-\mathbf{u}</m>
-        where <m>\mathbf{v}=\langle 3,-2\rangle</m> and
-        <m>\mathbf{u}=\langle 5,-1\rangle</m>.
+        Compute <m>\vec{v}+\vec{u}</m> and <m>\vec{v}-\vec{u}</m>
+        where <m>\vec{v}=\langle 3,-2\rangle</m> and
+        <m>\vec{u}=\langle 5,-1\rangle</m>.
       </p>
 
       <p/>
@@ -465,14 +465,14 @@ c      </figure>
       <p>
         Adding and subtracting the corresponding components:
         <md alignment="gather">
-          <mrow>\mathbf{v}+\mathbf{u}= \langle 3+5, -2+(-1) \rangle = \langle 8,-3 \rangle</mrow>
-          <mrow>\mathbf{v}-\mathbf{u}= \langle 3-5, -2-(-1) \rangle = \langle -2,-1 \rangle</mrow>
+          <mrow>\vec{v}+\vec{u}= \langle 3+5, -2+(-1) \rangle = \langle 8,-3 \rangle</mrow>
+          <mrow>\vec{v}-\vec{u}= \langle 3-5, -2-(-1) \rangle = \langle -2,-1 \rangle</mrow>
         </md>
       </p>
 
       <p>
         Note that both results are again vectors, and that computing
-        <m>\mathbf{u}-\mathbf{v}= \langle 2,1 \rangle</m> instead would give a
+        <m>\vec{u}-\vec{v}= \langle 2,1 \rangle</m> instead would give a
         different (opposite) vector.
       </p>
     </solution>
@@ -488,28 +488,28 @@ c      </figure>
 
     <p>
       The Triangle Rule states that in order to compute
-      <m>\mathbf{v}+\mathbf{u}</m>:
+      <m>\vec{v}+\vec{u}</m>:
     </p>
 
     <p>
       <ol>
         <li>
           <p>
-            Draw <m>\mathbf{v}</m> in standard position.
+            Draw <m>\vec{v}</m> in standard position.
           </p>
         </li>
 
         <li>
           <p>
-            Starting at the endpoint of <m>\mathbf{v}</m>, draw the vector
-            <m>\mathbf{u}</m>.
+            Starting at the endpoint of <m>\vec{v}</m>, draw the vector
+            <m>\vec{u}</m>.
           </p>
         </li>
 
         <li>
           <p>
             Draw a vector starting at <m>(0,0)</m> and ending at the end of the
-            vector <m>\mathbf{u}</m> as drawn in step 2.
+            vector <m>\vec{u}</m> as drawn in step 2.
           </p>
         </li>
       </ol>
@@ -519,14 +519,14 @@ c      </figure>
   <example>
     <statement>
       <p>
-        Given <m>\mathbf{v}=\langle 1,1\rangle</m> and
-        <m>\mathbf{u}=\langle 1,-2\rangle</m>, graph
-        <m>\mathbf{v}+\mathbf{u}</m> using the Triangle rule.
+        Given <m>\vec{v}=\langle 1,1\rangle</m> and
+        <m>\vec{u}=\langle 1,-2\rangle</m>, graph
+        <m>\vec{v}+\vec{u}</m> using the Triangle rule.
       </p>
 
       <figure xml:id="fig-ch01-01-ex-1-6">
         <caption>
-          The Triangle Rule for adding vector <m>\mathbf{v}=\langle 1,1\rangle</m> and vector <m>\mathbf{u}=\langle 1,-2\rangle</m>: <m>\mathbf{v}</m> is drawn from the origin, <m>\mathbf{u}</m> is drawn from the tip of <m>\mathbf{v}</m>, and the sum <m>\mathbf{v}+\mathbf{u}</m> is drawn from the origin to the tip of <m>\mathbf{u}</m>.
+          The Triangle Rule for adding vector <m>\vec{v}=\langle 1,1\rangle</m> and vector <m>\vec{u}=\langle 1,-2\rangle</m>: <m>\vec{v}</m> is drawn from the origin, <m>\vec{u}</m> is drawn from the tip of <m>\vec{v}</m>, and the sum <m>\vec{v}+\vec{u}</m> is drawn from the origin to the tip of <m>\vec{u}</m>.
         </caption>
 
         <interactive xml:id="interactive-ch01-01-ex-1-6" width="85%" aspect="4:3"
@@ -542,7 +542,7 @@ c      </figure>
               <shortdescription> The Triangle Rule for adding vector v with coordinates x = 1, y = 1 and vector u with coordinates x = 1, y = -2: v is drawn from the origin, u is drawn from the tip of v, and the sum v plus u is drawn from the origin to the tip of u.</shortdescription>
               <description>
                 <p>
-                  The Triangle Rule for adding vector <m>\mathbf{v}=\langle 1,1\rangle</m> and vector <m>\mathbf{u}=\langle 1,-2\rangle</m>: <m>\mathbf{v}</m> is drawn from the origin, <m>\mathbf{u}</m> is drawn from the tip of <m>\mathbf{v}</m>, and the sum <m>\mathbf{v}+\mathbf{u}</m> is drawn from the origin to the tip of <m>\mathbf{u}</m>.
+                  The Triangle Rule for adding vector <m>\vec{v}=\langle 1,1\rangle</m> and vector <m>\vec{u}=\langle 1,-2\rangle</m>: <m>\vec{v}</m> is drawn from the origin, <m>\vec{u}</m> is drawn from the tip of <m>\vec{v}</m>, and the sum <m>\vec{v}+\vec{u}</m> is drawn from the origin to the tip of <m>\vec{u}</m>.
                 </p>
               </description>
             </image>
@@ -554,13 +554,13 @@ c      </figure>
 
     <solution>
       <p>
-        Following the Triangle Rule, we first draw <m>\mathbf{v}</m> in standard
+        Following the Triangle Rule, we first draw <m>\vec{v}</m> in standard
         position, ending at <m>(1,1)</m>. Starting at that endpoint we draw
-        <m>\mathbf{u}</m>, which takes us 1 unit right and 2 units down, ending
+        <m>\vec{u}</m>, which takes us 1 unit right and 2 units down, ending
         at <m>(1+1, 1-2) = (2,-1)</m>. Finally we draw the vector starting at
         <m>(0,0)</m> and ending at <m>(2,-1)</m>, which is the sum
         <md>
-          \mathbf{v}+\mathbf{u}= \langle 2,-1 \rangle
+          \vec{v}+\vec{u}= \langle 2,-1 \rangle
         </md>
       </p>
 
@@ -573,55 +573,55 @@ c      </figure>
 
 
   <p>
-    In order to graph <m>\mathbf{v}-\mathbf{u}</m> using the Triangle Rule, draw
-    it as <m>\mathbf{v}+(-\mathbf{u})</m>. We define the meaning of
-    <m>-\mathbf{u}</m> next.
+    In order to graph <m>\vec{v}-\vec{u}</m> using the Triangle Rule, draw
+    it as <m>\vec{v}+(-\vec{u})</m>. We define the meaning of
+    <m>-\vec{u}</m> next.
   </p>
 
   <remark>
     <title>Multiplying a Vector by a Scalar (Number)</title>
 
     <p>
-      To multiply a vector <m>\mathbf{v}</m> by a scalar (number) <m>c</m>, you
-      multiply the <m>x</m> and <m>y</m> components of <m>\mathbf{v}</m> by
+      To multiply a vector <m>\vec{v}</m> by a scalar (number) <m>c</m>, you
+      multiply the <m>x</m> and <m>y</m> components of <m>\vec{v}</m> by
       <m>c</m>.
     </p>
 
     <p>
       The result of multiplying a vector by a scalar is again a vector denoted
-      by <m>c \mathbf{v}</m>.
+      by <m>c \vec{v}</m>.
     </p>
   </remark>
 
   <example xml:id="example-ch01-01-ex-1-7">
     <statement>
       <p>
-        Given the vector <m>\mathbf{v}=\langle-1,1\rangle</m>, compute:
+        Given the vector <m>\vec{v}=\langle-1,1\rangle</m>, compute:
       </p>
 
       <p>
-        (a) <m>4 \mathbf{v}</m>
+        (a) <m>4 \vec{v}</m>
       </p>
 
       <p>
-        (b) <m>-\frac{1}{2}\mathbf{v}</m>
+        (b) <m>-\frac{1}{2}\vec{v}</m>
       </p>
     </statement>
 
     <solution>
       <p>
-        Multiplying each component of <m>\mathbf{v}</m> by 4:
+        Multiplying each component of <m>\vec{v}</m> by 4:
         <md>
-          4\mathbf{v}= \langle 4(-1), 4(1) \rangle = \langle -4,4 \rangle
+          4\vec{v}= \langle 4(-1), 4(1) \rangle = \langle -4,4 \rangle
         </md>
       </p>
     </solution>
 
     <solution>
       <p>
-        Multiplying each component of <m>\mathbf{v}</m> by <m>-\frac{1}{2}</m>:
+        Multiplying each component of <m>\vec{v}</m> by <m>-\frac{1}{2}</m>:
         <md>
-          -\frac{1}{2}\mathbf{v}= \left\langle -\frac{1}{2}(-1), -\frac{1}{2}(1) \right\rangle = \left\langle \frac{1}{2},-\frac{1}{2}\right\rangle
+          -\frac{1}{2}\vec{v}= \left\langle -\frac{1}{2}(-1), -\frac{1}{2}(1) \right\rangle = \left\langle \frac{1}{2},-\frac{1}{2}\right\rangle
         </md>
       </p>
     </solution>
@@ -630,21 +630,21 @@ c      </figure>
   <note>
     <p>
       There is a geometric interpretation for multiplying a vector
-      <m>\mathbf{v}</m> by a number <m>c</m>:
+      <m>\vec{v}</m> by a number <m>c</m>:
     </p>
 
     <p>
-      (a) If <m>c&gt;1</m>, you stretch <m>\mathbf{v}</m> to a length of
-      <m>c|\mathbf{v}|</m>.
+      (a) If <m>c&gt;1</m>, you stretch <m>\vec{v}</m> to a length of
+      <m>c|\vec{v}|</m>.
     </p>
 
     <p>
-      (b) If <m>0&lt;c&lt;1</m>, you compress <m>\mathbf{v}</m> to a length of
-      <m>c|\mathbf{v}|</m>.
+      (b) If <m>0&lt;c&lt;1</m>, you compress <m>\vec{v}</m> to a length of
+      <m>c|\vec{v}|</m>.
     </p>
 
     <p>
-      (c) If <m>c=-1</m>, you flip the direction of <m>\mathbf{v}</m>.
+      (c) If <m>c=-1</m>, you flip the direction of <m>\vec{v}</m>.
     </p>
 
     <p>
@@ -656,7 +656,7 @@ c      </figure>
   <example>
     <statement>
       <p>
-        Graph the vectors in <xref ref="example-ch01-01-ex-1-7"/> by first graphing <m>\mathbf{v}</m> and
+        Graph the vectors in <xref ref="example-ch01-01-ex-1-7"/> by first graphing <m>\vec{v}</m> and
         then using the above note.
       </p>
       <!--\includegraphics[max width=0.5 \textwidth, left]{2025_08_01_3432b3c41241484aef56g&#x2D;08(1)}-->
@@ -666,14 +666,14 @@ c      </figure>
 
     <solution>
       <p>
-        We first graph <m>\mathbf{v}= \langle -1,1 \rangle</m>, which has length
-        <m>|\mathbf{v}| = \sqrt{2}</m>. For <m>4\mathbf{v}</m>: since
-        <m>c=4&gt;1</m>, we stretch <m>\mathbf{v}</m> to a length of
-        <m>4|\mathbf{v}| = 4\sqrt{2}</m> keeping its direction, ending at
-        <m>(-4,4)</m>. For <m>-\frac{1}{2}\mathbf{v}</m>: combining (c) with (b)
-        in the note above, we flip the direction of <m>\mathbf{v}</m> and
+        We first graph <m>\vec{v}= \langle -1,1 \rangle</m>, which has length
+        <m>|\vec{v}| = \sqrt{2}</m>. For <m>4\vec{v}</m>: since
+        <m>c=4&gt;1</m>, we stretch <m>\vec{v}</m> to a length of
+        <m>4|\vec{v}| = 4\sqrt{2}</m> keeping its direction, ending at
+        <m>(-4,4)</m>. For <m>-\frac{1}{2}\vec{v}</m>: combining (c) with (b)
+        in the note above, we flip the direction of <m>\vec{v}</m> and
         compress it to a length of
-        <m>\frac{1}{2}|\mathbf{v}| = \frac{\sqrt{2}}{2}</m>, ending at
+        <m>\frac{1}{2}|\vec{v}| = \frac{\sqrt{2}}{2}</m>, ending at
         <m>\left( \frac{1}{2},-\frac{1}{2}\right)</m>. Both graphs are shown in
         the figures below.
       </p>
@@ -681,7 +681,7 @@ c      </figure>
       <sidebyside widths="45%  45%" margins="auto" valign="middle">
         <figure xml:id="fig-ch01-01-ex-1-8a">
           <caption>
-           The vector <m>\mathbf{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>4\mathbf{v}</m> with coordinates <m>x = -4, y = 4</m>.
+           The vector <m>\vec{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>4\vec{v}</m> with coordinates <m>x = -4, y = 4</m>.
           </caption>
 
           <interactive xml:id="interactive-ch01-01-ex-1-8a" width="85%" aspect="4:3"
@@ -697,7 +697,7 @@ c      </figure>
                 <shortdescription>The vector v with coordinates x = -1, y = 1, and the scaled vector 4 v with coordinates x = -4, y = 4.</shortdescription>
                 <description>
                   <p>
-                    The vector <m>\mathbf{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>4\mathbf{v}</m> with coordinates <m>x = -4, y = 4</m>.
+                    The vector <m>\vec{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>4\vec{v}</m> with coordinates <m>x = -4, y = 4</m>.
                     </p>
                 </description>
               </image>
@@ -706,7 +706,7 @@ c      </figure>
         </figure>
         <figure xml:id="fig-ch01-01-ex-1-8b">
           <caption>
-           The vector <m>\mathbf{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>-\frac{1}{2}\mathbf{v}</m> with coordinates <m>x = \frac{1}{2}, y = -\frac{1}{2}</m>.
+           The vector <m>\vec{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>-\frac{1}{2}\vec{v}</m> with coordinates <m>x = \frac{1}{2}, y = -\frac{1}{2}</m>.
           </caption>
 
           <interactive xml:id="interactive-ch01-01-ex-1-8b" width="85%" aspect="4:3"
@@ -722,7 +722,7 @@ c      </figure>
                 <shortdescription>The vector v with coordinates x = -1, y = 1, and the scaled vector negative 0.5 v with coordinates x = 0.5, y = -0.5.</shortdescription>
                 <description>
                   <p>
-                  The vector <m>\mathbf{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>-\frac{1}{2}\mathbf{v}</m> with coordinates <m>x = \frac{1}{2}, y = -\frac{1}{2}</m>.
+                  The vector <m>\vec{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>-\frac{1}{2}\vec{v}</m> with coordinates <m>x = \frac{1}{2}, y = -\frac{1}{2}</m>.
                   </p>
                 </description>
               </image>
@@ -743,17 +743,17 @@ c      </figure>
 
       <p>
         Given a nonzero vector
-        <m>\mathbf{v}=\left\langle v_{1}, v_{2}\right\rangle</m>, the vector
+        <m>\vec{v}=\left\langle v_{1}, v_{2}\right\rangle</m>, the vector
       </p>
 
       <p>
         <md>
-          \mathbf{u}=\frac{1}{|\mathbf{v}|}\mathbf{v}=\frac{\mathbf{v}}{|\mathbf{v}|}
+          \vec{u}=\frac{1}{|\vec{v}|}\vec{v}=\frac{\vec{v}}{|\vec{v}|}
         </md>
       </p>
 
       <p>
-        is a unit vector with the same direction as <m>\mathbf{v}</m>.
+        is a unit vector with the same direction as <m>\vec{v}</m>.
       </p>
 
       <p>
@@ -761,7 +761,7 @@ c      </figure>
       </p>
 
       <p>
-        Two vectors <m>\mathbf{u}</m> and <m>\mathbf{v}</m> are parallel if they
+        Two vectors <m>\vec{u}</m> and <m>\vec{v}</m> are parallel if they
         lie on the same line.
       </p>
     </statement>
@@ -771,13 +771,13 @@ c      </figure>
     <statement>
       <p>
         Find a unit vector in the direction of
-        <m>\mathbf{v}=\langle 1,2\rangle</m>.
+        <m>\vec{v}=\langle 1,2\rangle</m>.
       </p>
 
       <p/>
       <p>
         Find all vectors of length 3 parallel to the vector
-        <m>\mathbf{v}=\langle 1,2\rangle</m>.
+        <m>\vec{v}=\langle 1,2\rangle</m>.
       </p>
 
       <p/>
@@ -785,28 +785,28 @@ c      </figure>
 
     <solution>
       <p>
-        The magnitude of <m>\mathbf{v}</m> is
-        <m>|\mathbf{v}| = \sqrt{1^{2}+2^{2}}= \sqrt{5}</m>, so a unit vector in
-        the direction of <m>\mathbf{v}</m> is
+        The magnitude of <m>\vec{v}</m> is
+        <m>|\vec{v}| = \sqrt{1^{2}+2^{2}}= \sqrt{5}</m>, so a unit vector in
+        the direction of <m>\vec{v}</m> is
         <md>
-          \mathbf{u}= \frac{\mathbf{v}}{|\mathbf{v}|}= \frac{1}{\sqrt{5}}\langle 1,2 \rangle = \left\langle \frac{1}{\sqrt{5}}, \frac{2}{\sqrt{5}}\right\rangle
+          \vec{u}= \frac{\vec{v}}{|\vec{v}|}= \frac{1}{\sqrt{5}}\langle 1,2 \rangle = \left\langle \frac{1}{\sqrt{5}}, \frac{2}{\sqrt{5}}\right\rangle
         </md>
       </p>
 
       <p>
         Indeed,
-        <m>|\mathbf{u}| = \sqrt{\frac{1}{5}+\frac{4}{5}}= \sqrt{1}= 1</m>.
+        <m>|\vec{u}| = \sqrt{\frac{1}{5}+\frac{4}{5}}= \sqrt{1}= 1</m>.
       </p>
     </solution>
 
     <solution>
       <p>
-        A vector of length 3 parallel to <m>\mathbf{v}</m> must point either in
-        the direction of <m>\mathbf{v}</m> or in the direction opposite of
-        <m>\mathbf{v}</m>, so we scale the unit vector <m>\mathbf{u}</m> from
+        A vector of length 3 parallel to <m>\vec{v}</m> must point either in
+        the direction of <m>\vec{v}</m> or in the direction opposite of
+        <m>\vec{v}</m>, so we scale the unit vector <m>\vec{u}</m> from
         the first part by <m>3</m> and by <m>-3</m>:
         <md>
-          3\mathbf{u}= \left\langle \frac{3}{\sqrt{5}}, \frac{6}{\sqrt{5}}\right\rangle \quad \text{and}\quad -3\mathbf{u}= \left\langle -\frac{3}{\sqrt{5}}, -\frac{6}{\sqrt{5}}\right\rangle
+          3\vec{u}= \left\langle \frac{3}{\sqrt{5}}, \frac{6}{\sqrt{5}}\right\rangle \quad \text{and}\quad -3\vec{u}= \left\langle -\frac{3}{\sqrt{5}}, -\frac{6}{\sqrt{5}}\right\rangle
         </md>
       </p>
 
@@ -822,19 +822,19 @@ c      </figure>
 
     <statement>
       <p>
-        Given a vector <m>\mathbf{v}=\left\langle v_{1}, v_{2}\right\rangle</m>,
+        Given a vector <m>\vec{v}=\left\langle v_{1}, v_{2}\right\rangle</m>,
         we have the formulas
       </p>
 
       <p>
         <md>
-          v_{1}=|\mathbf{v}| \cos (\theta) \quad \text{ and }\quad v_{2}=|\mathbf{v}| \sin (\theta),
+          v_{1}=|\vec{v}| \cos (\theta) \quad \text{ and }\quad v_{2}=|\vec{v}| \sin (\theta),
         </md>
       </p>
 
       <p>
         where <m>\theta</m> is the angle giving the direction of
-        <m>\mathbf{v}</m>.
+        <m>\vec{v}</m>.
       </p>
     </statement>
   </definition>
@@ -842,13 +842,13 @@ c      </figure>
   <example>
     <statement>
       <p>
-        Given a vector <m>\mathbf{v}</m>, draw a picture summarizing the
+        Given a vector <m>\vec{v}</m>, draw a picture summarizing the
         information in the definition above.
       </p>
 
       <figure xml:id="fig-ch01-01-ex-1-10">
         <caption>
-          A vector <m>\mathbf{v}=\langle v_{1}, v_{2}\rangle</m>, in standard position with the angle <m>\theta</m> from the positive <m>x</m>-axis, showing <m>v_{1}=|\mathbf{v}|\cos(\theta)</m> as the horizontal component and <m>v_{2}=|\mathbf{v}|\sin(\theta)</m> as the vertical component.
+          A vector <m>\vec{v}=\langle v_{1}, v_{2}\rangle</m>, in standard position with the angle <m>\theta</m> from the positive <m>x</m>-axis, showing <m>v_{1}=|\vec{v}|\cos(\theta)</m> as the horizontal component and <m>v_{2}=|\vec{v}|\sin(\theta)</m> as the vertical component.
         </caption>
 
         <interactive xml:id="interactive-ch01-01-ex-1-10" width="60%" aspect="3:2"
@@ -864,7 +864,7 @@ c      </figure>
               <shortdescription> A vector v with coordinates x = v 1, y = v 2, in standard position with the angle theta from the positive x-axis, showing v 1 equals the magnitude of v times the cosine of theta as the horizontal component and v 2 equals the magnitude of v times the sine of theta as the vertical component.</shortdescription>
               <description>
                 <p>
-                 A vector <m>\mathbf{v}=\langle v_{1}, v_{2}\rangle</m>, in standard position with the angle <m>\theta</m> from the positive <m>x</m>-axis, showing <m>v_{1}=|\mathbf{v}|\cos(\theta)</m> as the horizontal component and <m>v_{2}=|\mathbf{v}|\sin(\theta)</m> as the vertical component.
+                 A vector <m>\vec{v}=\langle v_{1}, v_{2}\rangle</m>, in standard position with the angle <m>\theta</m> from the positive <m>x</m>-axis, showing <m>v_{1}=|\vec{v}|\cos(\theta)</m> as the horizontal component and <m>v_{2}=|\vec{v}|\sin(\theta)</m> as the vertical component.
                 </p>
               </description>
             </image>
@@ -900,30 +900,30 @@ c      </figure>
     <solution>
       <p>
         We place the horizontal 45 lb force along the positive <m>x</m>-axis, so
-        that <m>\mathbf{F}_{1} = \langle 45,0 \rangle</m>. The 52 lb force then
+        that <m>\vec{F}_{1} = \langle 45,0 \rangle</m>. The 52 lb force then
         makes an angle of <m>25^{\circ}</m> with the positive <m>x</m>-axis, so
         using the component formulas:
         <md>
-          \mathbf{F}_{2} = \langle 52\cos(25^{\circ}), 52\sin(25^{\circ}) \rangle \approx \langle 47.128, 21.976 \rangle
+          \vec{F}_{2} = \langle 52\cos(25^{\circ}), 52\sin(25^{\circ}) \rangle \approx \langle 47.128, 21.976 \rangle
         </md>
       </p>
 
       <p>
         The resultant force is the sum of the two forces:
         <md>
-          \mathbf{F}= \mathbf{F}_{1}+\mathbf{F}_{2} \approx \langle 45+47.128, 0+21.976 \rangle = \langle 92.128, 21.976 \rangle
+          \vec{F}= \vec{F}_{1}+\vec{F}_{2} \approx \langle 45+47.128, 0+21.976 \rangle = \langle 92.128, 21.976 \rangle
         </md>
       </p>
 
       <p>
         Its magnitude is
         <md>
-          |\mathbf{F}| \approx \sqrt{92.128^{2}+21.976^{2}}= \sqrt{8487.568+482.945}= \sqrt{8970.513}\approx 94.71 \text{ lb}
+          |\vec{F}| \approx \sqrt{92.128^{2}+21.976^{2}}= \sqrt{8487.568+482.945}= \sqrt{8970.513}\approx 94.71 \text{ lb}
         </md>
       </p>
 
       <p>
-        Since both components of <m>\mathbf{F}</m> are positive, the resultant
+        Since both components of <m>\vec{F}</m> are positive, the resultant
         lies in the first quadrant, so its direction angle <m>\theta</m> from
         the positive <m>x</m>-axis satisfies
         <md>
@@ -948,19 +948,19 @@ c      </figure>
       <p>
         A 1500-lb boat is parked on a ramp that makes an angle of
         <m>30^{\circ}</m> with the horizontal. The boat's weight vector points
-        downward and is a sum of two vectors: a vector <m>\mathbf{v}_{1}</m>
-        that is parallel to the ramp and a vector <m>\mathbf{v}_{2}</m> that is
+        downward and is a sum of two vectors: a vector <m>\vec{v}_{1}</m>
+        that is parallel to the ramp and a vector <m>\vec{v}_{2}</m> that is
         perpendicular to the inclined surface. The magnitudes of vectors
-        <m>\mathbf{v}_{1}</m> and <m>\mathbf{v}_{2}</m> are the components of
+        <m>\vec{v}_{1}</m> and <m>\vec{v}_{2}</m> are the components of
         the boat's weight vector parallel and perpendicular to the ramp,
-        respectively. Find the magnitudes of <m>\mathbf{v}_{1}</m> and
-        <m>\mathbf{v}_{2}</m>. (Round to the nearest integer.)
+        respectively. Find the magnitudes of <m>\vec{v}_{1}</m> and
+        <m>\vec{v}_{2}</m>. (Round to the nearest integer.)
       </p>
 
       <image source="/images/08ef1dafa6bfde7460b7a5d7416128ad6e67d50b.jpg" width="50%">
        <shortdescription> A boat on a ramp inclined at 30 degrees, with the weight vector pointing downward decomposed into v 1 parallel to the ramp and v 2 perpendicular to the ramp.</shortdescription>
        <description>
-         <p>A boat on a ramp inclined at <m>30^{\circ}</m>, with the weight vector pointing downward decomposed into <m>\mathbf{v}_{1}</m> parallel to the ramp and <m>\mathbf{v}_{2}</m> perpendicular to the ramp.</p>
+         <p>A boat on a ramp inclined at <m>30^{\circ}</m>, with the weight vector pointing downward decomposed into <m>\vec{v}_{1}</m> parallel to the ramp and <m>\vec{v}_{2}</m> perpendicular to the ramp.</p>
        </description>
       </image>
 
@@ -969,16 +969,16 @@ c      </figure>
 
     <solution>
       <p>
-        The weight vector <m>\mathbf{w}</m> points straight down and has
-        magnitude <m>|\mathbf{w}| = 1500</m> lb. Since the ramp makes an angle
+        The weight vector <m>\vec{w}</m> points straight down and has
+        magnitude <m>|\vec{w}| = 1500</m> lb. Since the ramp makes an angle
         of <m>30^{\circ}</m> with the horizontal, the direction perpendicular to
         the ramp makes that same angle of <m>30^{\circ}</m> with the vertical;
-        that is, the angle between <m>\mathbf{w}</m> and <m>\mathbf{v}_{2}</m>
+        that is, the angle between <m>\vec{w}</m> and <m>\vec{v}_{2}</m>
         is <m>30^{\circ}</m>, as in the picture above. Decomposing
-        <m>\mathbf{w}</m> into these two perpendicular components:
+        <m>\vec{w}</m> into these two perpendicular components:
         <md alignment="gather">
-          <mrow>|\mathbf{v}_{1}| = 1500\sin(30^{\circ}) = 1500 \cdot \frac{1}{2}= 750 \text{ lb}</mrow>
-          <mrow>|\mathbf{v}_{2}| = 1500\cos(30^{\circ}) = 1500 \cdot \frac{\sqrt{3}}{2}= 750 \sqrt{3} \text{ lb}</mrow>
+          <mrow>|\vec{v}_{1}| = 1500\sin(30^{\circ}) = 1500 \cdot \frac{1}{2}= 750 \text{ lb}</mrow>
+          <mrow>|\vec{v}_{2}| = 1500\cos(30^{\circ}) = 1500 \cdot \frac{\sqrt{3}}{2}= 750 \sqrt{3} \text{ lb}</mrow>
         </md>
       </p>
 
