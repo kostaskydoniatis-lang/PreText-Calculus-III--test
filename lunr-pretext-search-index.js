@@ -466,7 +466,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.3",
   "title": "The Dot Product",
-  "body": " The Dot Product   Dot Product   Let m> and be two vectors in the -plane (or in -space; just add an extra entry). Then the dot product of and , denoted by , is given by: . If and , the dot product can also be written as where , and is the angle between and .       The dot product of two vectors is a scalar (number), not a vector.  Even though formulas 1 and 2 are equivalent, formula 1 is more useful for computation, formula 2 is more useful for applications.  Formula 2 also works in 3D space. Any two nonzero vectors, not on the same line, define a unique plane (later we will see how to write an equation for this plane). The formula uses the angle between the vectors in this unique plane.  Formula 2 is undefined if or equal .      Two non-parallel vectors u and v in xyz-space and the plane they define.    "
+  "body": " The Dot Product   Dot Product   Let m> and be two vectors in the -plane (or in -space; just add an extra entry). Then the dot product of and , denoted by , is given by: . If and , the dot product can also be written as where , and is the angle between and .       The dot product of two vectors is a scalar (number), not a vector.  Even though formulas 1 and 2 are equivalent, formula 1 is more useful for computation, formula 2 is more useful for applications.  Formula 2 also works in 3D space. Any two nonzero vectors, not on the same line, define a unique plane (later we will see how to write an equation for this plane). The formula uses the angle between the vectors in this unique plane.  Formula 2 is undefined if or equal .        "
 },
 {
   "id": "sec-ch01-03-DotProduct-2",
@@ -484,7 +484,7 @@ var ptx_lunr_docs = [
   "type": "Remark",
   "number": "1.3.2",
   "title": "",
-  "body": "   The dot product of two vectors is a scalar (number), not a vector.  Even though formulas 1 and 2 are equivalent, formula 1 is more useful for computation, formula 2 is more useful for applications.  Formula 2 also works in 3D space. Any two nonzero vectors, not on the same line, define a unique plane (later we will see how to write an equation for this plane). The formula uses the angle between the vectors in this unique plane.  Formula 2 is undefined if or equal .      Two non-parallel vectors u and v in xyz-space and the plane they define.   "
+  "body": "   The dot product of two vectors is a scalar (number), not a vector.  Even though formulas 1 and 2 are equivalent, formula 1 is more useful for computation, formula 2 is more useful for applications.  Formula 2 also works in 3D space. Any two nonzero vectors, not on the same line, define a unique plane (later we will see how to write an equation for this plane). The formula uses the angle between the vectors in this unique plane.  Formula 2 is undefined if or equal .       "
 },
 {
   "id": "backmatter-2",
