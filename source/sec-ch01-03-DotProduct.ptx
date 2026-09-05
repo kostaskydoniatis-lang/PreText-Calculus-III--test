@@ -19,26 +19,25 @@
         </statement>
     </definition>
     <remark>
-
         <p>
             <ul>
-                <li> The dot product of two vectors is a scalar (number), not a vector.</li>
-                <li> Even though formulas 1 and 2 are equivalent, formula 1 is more useful for computation, formula 2 is more
-                 useful for applications.</li>
-                <li> Formula 2 also works in 3D space. Any two nonzero vectors, not on the same line, define a unique plane 
-                    (later we will see how to write an equation for this plane). The formula uses the angle between the vectors in this unique plane.
-                        <figure xml:id="fig-calcplot3d-surface">
-                            <caption>An interactive 3D plot of <m>f(x,y) = \frac{7xy}{e^{x^2+y^2}}</m></caption>
-                                <interactive xml:id="interactive-surface-plot" platform="calcplot3d" width="100%" aspect="4:3">
-                                    <calcplot3d variant="controls" encoded="type=z;z=7xy/e%5E(x%5E2%20+%20y%5E2);funname=f;visible=true;umin=-2;umax=2;vmin=-2;vmax=2;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.236391035463319,4.755282581475766,3.0901699437494745,1;focus=0,0,0,1;up=0,0,2,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=1.0" />
-                                </interactive>
-                        </figure>
-                            <image source="2025_08_04_6f11792a371c74850db7g-1.pmg">
-                                <shortdescription>Two non-parallel vectors u and v in xyz-space and the plane they define.</shortdescription>
-                            </image>
-                </li>
-                <li>Formula 2 is undefined if $\mathbf{u}$ or $\mathbf{v}$ equal $\mathbf{0}$.</li>
-         </ul>
+                <li>The dot product of two vectors is a scalar (number), not a vector.</li>
+                <li>Even though formulas 1 and 2 are equivalent, formula 1 is more useful for
+                    computation, formula 2 is more useful for applications.</li>
+                <li>Formula 2 also works in 3D space. Any two nonzero vectors, not on the same
+                    line, define a unique plane (later we will see how to write an equation for
+                    this plane). The formula uses the angle between the vectors in this unique
+                    plane.</li>
+                <li>Formula 2 is undefined if <m>\mathbf{u}</m> or <m>\mathbf{v}</m> equal
+                    <m>\mathbf{0}</m>.</li>
+            </ul>
         </p>
+
+<figure xml:id="fig-calcplot3d-surface">
+    <interactive xml:id="interactive-surface-plot" variant="controls"
+        width="70%" aspect="3:2"
+        calcplot3d="type=z;z=y;funname=f;visible=true;umin=-2;umax=2;vmin=-2;vmax=2;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=vector;vector=%3C-1,%201,%201%3E;label=;showlabel=false;labelposition=end;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0)&amp;type=vector;vector=%3C-1,%20-1,%20-1%3E;label=v-%3E_%7B1%7D;showlabel=true;labelposition=end;visible=true;color=rgb(255,255,255);size=2;initialpt=(0,0,0)&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.577426865460591,4.916907810546503,-1.5005885346290089,1;focus=0,0,0,1;up=0.29409352696871394,-0.07190374909237375,0.953068123620533,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;=0.58"/>zoom
+    <shortdescription>Two non-parallel vectors u and v in xyz-space and the plane they define.</shortdescription>
+</figure>
     </remark>
 </section>
