@@ -31,7 +31,7 @@
       <p>
         They are geometrically represented by rays/arrows and symbolically with
         a lowercase letter with an arrow above it or in bold face (such as
-        <m>\vec{u}</m> or <m>\vec{u}, \vec{v}</m> or <m>\vec{v}</m>,
+        <m>\vec{u}</m> or <m>\mathbf{u}, \vec{v}</m> or <m>\mathbf{v}</m>,
         etc.).
       </p>
     </statement>
@@ -84,7 +84,7 @@
           desmos="ffkjxxfmap">
           <instructions>
             <p>
-              You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
             </p>
           </instructions>
 
@@ -99,7 +99,7 @@
             </image>
           </static>
         </interactive>
-c      </figure>
+      </figure>
 
       <p>
         Moving from <m>P(0,0)</m> to <m>Q(3,2)</m> we travel 3 units in the
@@ -199,7 +199,7 @@ c      </figure>
           desmos="jppqa3slgf">
           <instructions>
             <p>
-              You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
             </p>
           </instructions>
 
@@ -285,7 +285,7 @@ c      </figure>
           desmos="ysp6xaf8mq">
           <instructions>
             <p>
-              You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
             </p>
           </instructions>
 
@@ -376,7 +376,7 @@ c      </figure>
           desmos="u2zjru9ihk">
           <instructions>
             <p>
-              You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
             </p>
           </instructions>
 
@@ -533,7 +533,7 @@ c      </figure>
           desmos="bdv2oivnna">
           <instructions>
             <p>
-              You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
             </p>
           </instructions>
 
@@ -688,7 +688,7 @@ c      </figure>
             desmos="wyy5tliu4r">
             <instructions>
               <p>
-                You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
+                You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
               </p>
             </instructions>
 
@@ -713,7 +713,7 @@ c      </figure>
             desmos="9hybq5dgmi">
             <instructions>
               <p>
-                You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
+                You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
               </p>
             </instructions>
 
@@ -855,7 +855,7 @@ c      </figure>
           desmos="vqavop8m24">
           <instructions>
             <p>
-              You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
             </p>
           </instructions>
 
