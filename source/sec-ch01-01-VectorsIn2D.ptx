@@ -64,9 +64,24 @@
         (b) <m>R(0.5,2)</m> and <m>S(3.5,4)</m>
       </p>
 
-      <image source="/images/Example 1.1.png">
-        <shortdescription>Two vectors drawn in the xy-plane: vector PQ with initial point x = 0, y = 0 and terminal point x = 3, y = 2, and vector RS with initial point x = 0.5, y = 2 and terminal point x = 3.5, y = 4.</shortdescription>
-      </image>
+      <figure xml:id="fig-ch01-01-ex-1-1">
+        <caption>Vectors <m>\overrightarrow{P Q}</m> and <m>\overrightarrow{R S}</m>.</caption>
+
+        <interactive xml:id="interactive-ch01-01-ex-1-1" width="60%" aspect="3:2"
+          desmos="vqavop8m24">
+          <instructions>
+            <p>
+              PENDING
+            </p>
+          </instructions>
+
+          <static>
+            <image source="/images/Example 1.1.png">
+              <shortdescription>Two vectors drawn in the xy-plane: vector PQ with initial point x = 0, y = 0 and terminal point x = 3, y = 2, and vector RS with initial point x = 0.5, y = 2 and terminal point x = 3.5, y = 4.</shortdescription>
+            </image>
+          </static>
+        </interactive>
+      </figure>
       <p>
         What can we say about the vectors <m>\overrightarrow{P Q}</m> and
         <m>\overrightarrow{R S}</m>?
@@ -161,9 +176,24 @@
         the vector in standard position.
       </p>
 
-      <image source="/images/Example 1.2.png">
-       <shortdescription> A vector from P, x = 2, y = 1, to Q, x = -1, y = 0, and the same vector in standard position, namely vector v with coordinates x = -3, y = -1.</shortdescription>
-      </image>
+      <figure xml:id="fig-ch01-01-ex-1-2">
+        <caption>The vector <m>\overrightarrow{P Q}</m> and the same vector in standard position.</caption>
+
+        <interactive xml:id="interactive-ch01-01-ex-1-2" width="60%" aspect="3:2"
+          desmos="vqavop8m24">
+          <instructions>
+            <p>
+              PENDING
+            </p>
+          </instructions>
+
+          <static>
+            <image source="/images/Example 1.2.png">
+              <shortdescription> A vector from P, x = 2, y = 1, to Q, x = -1, y = 0, and the same vector in standard position, namely vector v with coordinates x = -3, y = -1.</shortdescription>
+            </image>
+          </static>
+        </interactive>
+      </figure>
       <p/>
     </statement>
 
@@ -225,9 +255,24 @@
         verify that the formula for length is the Pythagorean Theorem.
       </p>
 
-      <image source="/images/Example 1.3.png">
-       <shortdescription> The vector from P, x = 1, y = -2, to Q, x = 4, y = 2 (the vector with coordinates x = 3, y = 4), in standard position, forming a right triangle with legs 3 and 4 and hypotenuse 5.</shortdescription>
-      </image>      
+      <figure xml:id="fig-ch01-01-ex-1-3">
+        <caption>The vector <m>\langle 3,4\rangle</m> in standard position as the hypotenuse of a right triangle.</caption>
+
+        <interactive xml:id="interactive-ch01-01-ex-1-3" width="60%" aspect="3:2"
+          desmos="vqavop8m24">
+          <instructions>
+            <p>
+              PENDING
+            </p>
+          </instructions>
+
+          <static>
+            <image source="/images/Example 1.3.png">
+              <shortdescription> The vector from P, x = 1, y = -2, to Q, x = 4, y = 2 (the vector with coordinates x = 3, y = 4), in standard position, forming a right triangle with legs 3 and 4 and hypotenuse 5.</shortdescription>
+            </image>
+          </static>
+        </interactive>
+      </figure>
       <p/>
     </statement>
 
@@ -295,9 +340,24 @@
         Find the direction of <m>\mathbf{v}=\langle-2,-4\rangle</m>.
       </p>
 
-      <image source="/images/Example 1.4.png">
-       <shortdescription> The vector v with coordinates x = -2, y = -4, in standard position in the third quadrant, with the angle theta measured counter-clockwise from the positive x-axis. The angle phi is the portion of theta past the negative x-axis.</shortdescription>
-      </image>        
+      <figure xml:id="fig-ch01-01-ex-1-4">
+        <caption>The direction angle <m>\theta</m> of <m>\mathbf{v}=\langle -2,-4\rangle</m>.</caption>
+
+        <interactive xml:id="interactive-ch01-01-ex-1-4" width="60%" aspect="3:2"
+          desmos="vqavop8m24">
+          <instructions>
+            <p>
+              PENDING
+            </p>
+          </instructions>
+
+          <static>
+            <image source="/images/Example 1.4.png">
+              <shortdescription> The vector v with coordinates x = -2, y = -4, in standard position in the third quadrant, with the angle theta measured counter-clockwise from the positive x-axis. The angle phi is the portion of theta past the negative x-axis.</shortdescription>
+            </image>
+          </static>
+        </interactive>
+      </figure>
       <p/>
     </statement>
 
@@ -433,9 +493,24 @@
         <m>\mathbf{v}+\mathbf{u}</m> using the Triangle rule.
       </p>
 
-      <image source="/images/Example 1.6.png">
-       <shortdescription> The Triangle Rule for adding vector v with coordinates x = 1, y = 1 and vector u with coordinates x = 1, y = -2: v is drawn from the origin, u is drawn from the tip of v, and the sum v plus u is drawn from the origin to the tip of u.</shortdescription>
-      </image>        
+      <figure xml:id="fig-ch01-01-ex-1-6">
+        <caption>The Triangle Rule applied to <m>\mathbf{v}+\mathbf{u}</m>.</caption>
+
+        <interactive xml:id="interactive-ch01-01-ex-1-6" width="60%" aspect="3:2"
+          desmos="vqavop8m24">
+          <instructions>
+            <p>
+              PENDING
+            </p>
+          </instructions>
+
+          <static>
+            <image source="/images/Example 1.6.png">
+              <shortdescription> The Triangle Rule for adding vector v with coordinates x = 1, y = 1 and vector u with coordinates x = 1, y = -2: v is drawn from the origin, u is drawn from the tip of v, and the sum v plus u is drawn from the origin to the tip of u.</shortdescription>
+            </image>
+          </static>
+        </interactive>
+      </figure>
       <p/>
     </statement>
 
@@ -566,12 +641,42 @@
       </p>
 
       <sidebyside widths="45%  45%" margins="auto" valign="middle">
-        <image source="/images/Example 1.8-1.png">  
-          <shortdescription>The vector v with coordinates x = -1, y = 1, and the scaled vector 4 v with coordinates x = -4, y = 4.</shortdescription>
-        </image>
-        <image source="/images/Example 1.8-2.png">  
-          <shortdescription>The vector v with coordinates x = -1, y = 1, and the scaled vector negative 0.5 v with coordinates x = 0.5, y = -0.5.</shortdescription>
-        </image>
+        <figure xml:id="fig-ch01-01-ex-1-8a">
+          <caption>The vector <m>\mathbf{v}</m> and the scalar multiple <m>4\mathbf{v}</m>.</caption>
+
+          <interactive xml:id="interactive-ch01-01-ex-1-8a" width="100%" aspect="3:2"
+            desmos="vqavop8m24">
+            <instructions>
+              <p>
+                PENDING
+              </p>
+            </instructions>
+
+            <static>
+              <image source="/images/Example 1.8-1.png">
+                <shortdescription>The vector v with coordinates x = -1, y = 1, and the scaled vector 4 v with coordinates x = -4, y = 4.</shortdescription>
+              </image>
+            </static>
+          </interactive>
+        </figure>
+        <figure xml:id="fig-ch01-01-ex-1-8b">
+          <caption>The vector <m>\mathbf{v}</m> and the scalar multiple <m>-\frac{1}{2}\mathbf{v}</m>.</caption>
+
+          <interactive xml:id="interactive-ch01-01-ex-1-8b" width="100%" aspect="3:2"
+            desmos="vqavop8m24">
+            <instructions>
+              <p>
+                PENDING
+              </p>
+            </instructions>
+
+            <static>
+              <image source="/images/Example 1.8-2.png">
+                <shortdescription>The vector v with coordinates x = -1, y = 1, and the scaled vector negative 0.5 v with coordinates x = 0.5, y = -0.5.</shortdescription>
+              </image>
+            </static>
+          </interactive>
+        </figure>
 
       </sidebyside>
     </solution>
@@ -689,9 +794,24 @@
         information in the definition above.
       </p>
 
-      <image source="/images/Example 1.10.png" width="50%">
-       <shortdescription> A vector v with coordinates x = v 1, y = v 2, in standard position with the angle theta from the positive x-axis, showing v 1 equals the magnitude of v times the cosine of theta as the horizontal component and v 2 equals the magnitude of v times the sine of theta as the vertical component.</shortdescription>
-      </image>          
+      <figure xml:id="fig-ch01-01-ex-1-10">
+        <caption>The components of <m>\mathbf{v}</m> in terms of <m>|\mathbf{v}|</m> and <m>\theta</m>.</caption>
+
+        <interactive xml:id="interactive-ch01-01-ex-1-10" width="60%" aspect="3:2"
+          desmos="vqavop8m24">
+          <instructions>
+            <p>
+              PENDING
+            </p>
+          </instructions>
+
+          <static>
+            <image source="/images/Example 1.10.png" width="50%">
+              <shortdescription> A vector v with coordinates x = v 1, y = v 2, in standard position with the angle theta from the positive x-axis, showing v 1 equals the magnitude of v times the cosine of theta as the horizontal component and v 2 equals the magnitude of v times the sine of theta as the vertical component.</shortdescription>
+            </image>
+          </static>
+        </interactive>
+      </figure>
     </statement>
   </example>
 
