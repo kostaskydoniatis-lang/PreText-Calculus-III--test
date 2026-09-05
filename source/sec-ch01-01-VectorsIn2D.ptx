@@ -47,7 +47,7 @@
   <p>
     When a vector is given by its starting point <m>P</m> and ending point
     <m>Q</m>, we can represent the vector symbolically using
-    <m>\overrightarrow{P Q}</m>.
+    <m>\ve{P Q}</m>.
   </p>
 
   <example>
@@ -63,34 +63,44 @@
       <p>
         (b) <m>R(0.5,2)</m> and <m>S(3.5,4)</m>
       </p>
-
-      <figure xml:id="fig-ch01-01-ex-1-1">
-        <caption>Vectors <m>\overrightarrow{P Q}</m> and <m>\overrightarrow{R S}</m>.</caption>
-
-        <interactive xml:id="interactive-ch01-01-ex-1-1" width="60%" aspect="3:2"
-          desmos="vqavop8m24">
-          <instructions>
-            <p>
-              PENDING
-            </p>
-          </instructions>
-
-          <static>
-            <image source="/images/Example 1.1.png">
-              <shortdescription>Two vectors drawn in the xy-plane: vector PQ with initial point x = 0, y = 0 and terminal point x = 3, y = 2, and vector RS with initial point x = 0.5, y = 2 and terminal point x = 3.5, y = 4.</shortdescription>
-            </image>
-          </static>
-        </interactive>
-      </figure>
       <p>
-        What can we say about the vectors <m>\overrightarrow{P Q}</m> and
-        <m>\overrightarrow{R S}</m>?
+        What can we say about the vectors <m>\vec{P Q}</m> and
+        <m>\vec{R S}</m>?
       </p>
 
       <p/>
     </statement>
 
     <solution>
+
+      <figure xml:id="fig-ch01-01-ex-1-1">
+        <caption>
+          <p>
+            Two vectors drawn in the <m>xy</m>-plane: <m> \vec{PQ} </m> with initial point  <m>(0,0)</m> and terminal point <m>(3,2)</m>, and vector <m> \vec{RS} </m> with initial point <m>(0.5,2)</m> and terminal point <m>(3.5,4)</m>.
+          </p>
+        </caption>
+
+        <interactive xml:id="interactive-ch01-01-ex-1-1" width="85%" aspect="4:3"
+          desmos="ffkjxxfmap">
+          <instructions>
+            <p>
+              You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
+            </p>
+          </instructions>
+
+          <static>
+            <image source="/images/Example 1.1.png">
+              <shortdescription>Two vectors drawn in the xy-plane: vector PQ with initial point x = 0, y = 0 and terminal point x = 3, y = 2, and vector RS with initial point x = 0.5, y = 2 and terminal point x = 3.5, y = 4.</shortdescription>
+              <description>
+                <p>
+                  Two vectors drawn in the <m>xy</m>-plane: <m> \vec{PQ} </m> with initial point  <m>(0,0)</m> and terminal point <m>(3,2)</m>, and vector <m> \vec{RS} </m> with initial point <m>(0.5,2)</m> and terminal point <m>(3.5,4)</m>.
+                </p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+c      </figure>
+
       <p>
         Moving from <m>P(0,0)</m> to <m>Q(3,2)</m> we travel 3 units in the
         <m>x</m> direction and 2 units in the <m>y</m> direction. Moving from
@@ -176,28 +186,35 @@
         the vector in standard position.
       </p>
 
-      <figure xml:id="fig-ch01-01-ex-1-2">
-        <caption>The vector <m>\overrightarrow{P Q}</m> and the same vector in standard position.</caption>
 
-        <interactive xml:id="interactive-ch01-01-ex-1-2" width="60%" aspect="3:2"
-          desmos="vqavop8m24">
+    </statement>
+
+    <solution>
+      <figure xml:id="fig-ch01-01-ex-1-2">
+        <caption>
+          A vector from <m>P(2,1)</m> to <m>Q(-1,0)</m> and the same vector in standard position, namely <m>\mathbf{v} = \langle -3, -1 \rangle</m>.
+        </caption>
+
+        <interactive xml:id="interactive-ch01-01-ex-1-2" width="85%" aspect="4:3"
+          desmos="jppqa3slgf">
           <instructions>
             <p>
-              PENDING
+              You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
             </p>
           </instructions>
 
           <static>
             <image source="/images/Example 1.2.png">
               <shortdescription> A vector from P, x = 2, y = 1, to Q, x = -1, y = 0, and the same vector in standard position, namely vector v with coordinates x = -3, y = -1.</shortdescription>
+              <description>
+                <p>
+                  A vector from <m>P(2,1)</m> to <m>Q(-1,0)</m> and the same vector in standard position, namely <m>\mathbf{v} = \langle -3, -1 \rangle</m>.
+                </p>
+              </description>
             </image>
           </static>
         </interactive>
       </figure>
-      <p/>
-    </statement>
-
-    <solution>
       <p>
         Both graphs are shown above. Using the formula, the ending point of the
         vector in standard position is
@@ -255,28 +272,36 @@
         verify that the formula for length is the Pythagorean Theorem.
       </p>
 
-      <figure xml:id="fig-ch01-01-ex-1-3">
-        <caption>The vector <m>\langle 3,4\rangle</m> in standard position as the hypotenuse of a right triangle.</caption>
 
-        <interactive xml:id="interactive-ch01-01-ex-1-3" width="60%" aspect="3:2"
-          desmos="vqavop8m24">
+    </statement>
+
+    <solution>
+      <figure xml:id="fig-ch01-01-ex-1-3">
+        <caption>
+          The vector from <m>P(1,-2)</m> to <m>Q(4,2)</m> (the vector with coordinates <m>\langle 3,4\rangle</m>), in standard position, forming a right triangle with legs 3 and 4 and hypotenuse 5.
+        </caption>
+
+        <interactive xml:id="interactive-ch01-01-ex-1-3" width="85%" aspect="4:3"
+          desmos="ysp6xaf8mq">
           <instructions>
             <p>
-              PENDING
+              You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
             </p>
           </instructions>
 
           <static>
             <image source="/images/Example 1.3.png">
               <shortdescription> The vector from P, x = 1, y = -2, to Q, x = 4, y = 2 (the vector with coordinates x = 3, y = 4), in standard position, forming a right triangle with legs 3 and 4 and hypotenuse 5.</shortdescription>
+              <description>
+                <p>
+                  The vector from <m>P(1,-2)</m> to <m>Q(4,2)</m> (the vector with coordinates <m>\langle 3,4\rangle</m>), in standard position, forming a right triangle with legs 3 and 4 and hypotenuse 5.
+                </p>
+              </description>
             </image>
           </static>
         </interactive>
       </figure>
-      <p/>
-    </statement>
 
-    <solution>
       <p>
         In standard position the vector is
         <md>
@@ -339,29 +364,35 @@
       <p>
         Find the direction of <m>\mathbf{v}=\langle-2,-4\rangle</m>.
       </p>
+    </statement>
 
+    <solution>
       <figure xml:id="fig-ch01-01-ex-1-4">
-        <caption>The direction angle <m>\theta</m> of <m>\mathbf{v}=\langle -2,-4\rangle</m>.</caption>
+        <caption>
+         The vector <m>\mathbf{v}=\langle -2,-4\rangle</m>, in standard position in the third quadrant, with the angle <m>\theta</m> measured counter-clockwise from the positive <m>x</m>-axis. The angle <m>\phi</m> is the portion of <m>\theta</m> past the negative <m>x</m>-axis.
+        </caption>
 
-        <interactive xml:id="interactive-ch01-01-ex-1-4" width="60%" aspect="3:2"
-          desmos="vqavop8m24">
+        <interactive xml:id="interactive-ch01-01-ex-1-4" width="85%" aspect="4:2"
+          desmos="u2zjru9ihk">
           <instructions>
             <p>
-              PENDING
+              You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
             </p>
           </instructions>
 
           <static>
             <image source="/images/Example 1.4.png">
               <shortdescription> The vector v with coordinates x = -2, y = -4, in standard position in the third quadrant, with the angle theta measured counter-clockwise from the positive x-axis. The angle phi is the portion of theta past the negative x-axis.</shortdescription>
+              <description>
+                <p>
+                  The vector <m>\mathbf{v}=\langle -2,-4\rangle</m>, in standard position in the third quadrant, with the angle <m>\theta</m> measured counter-clockwise from the positive <m>x</m>-axis. The angle <m>\phi</m> is the portion of <m>\theta</m> past the negative <m>x</m>-axis.
+                </p>
+              </description>
             </image>
           </static>
         </interactive>
       </figure>
-      <p/>
-    </statement>
 
-    <solution>
       <p>
         Both components of <m>\mathbf{v}= \langle -2,-4 \rangle</m> are
         negative, so the vector lies in the third quadrant and its direction
@@ -494,19 +525,26 @@
       </p>
 
       <figure xml:id="fig-ch01-01-ex-1-6">
-        <caption>The Triangle Rule applied to <m>\mathbf{v}+\mathbf{u}</m>.</caption>
+        <caption>
+          The Triangle Rule for adding vector <m>\mathbf{v}=\langle 1,1\rangle</m> and vector <m>\mathbf{u}=\langle 1,-2\rangle</m>: <m>\mathbf{v}</m> is drawn from the origin, <m>\mathbf{u}</m> is drawn from the tip of <m>\mathbf{v}</m>, and the sum <m>\mathbf{v}+\mathbf{u}</m> is drawn from the origin to the tip of <m>\mathbf{u}</m>.
+        </caption>
 
-        <interactive xml:id="interactive-ch01-01-ex-1-6" width="60%" aspect="3:2"
-          desmos="vqavop8m24">
+        <interactive xml:id="interactive-ch01-01-ex-1-6" width="85%" aspect="4:3"
+          desmos="bdv2oivnna">
           <instructions>
             <p>
-              PENDING
+              You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
             </p>
           </instructions>
 
           <static>
             <image source="/images/Example 1.6.png">
               <shortdescription> The Triangle Rule for adding vector v with coordinates x = 1, y = 1 and vector u with coordinates x = 1, y = -2: v is drawn from the origin, u is drawn from the tip of v, and the sum v plus u is drawn from the origin to the tip of u.</shortdescription>
+              <description>
+                <p>
+                  The Triangle Rule for adding vector <m>\mathbf{v}=\langle 1,1\rangle</m> and vector <m>\mathbf{u}=\langle 1,-2\rangle</m>: <m>\mathbf{v}</m> is drawn from the origin, <m>\mathbf{u}</m> is drawn from the tip of <m>\mathbf{v}</m>, and the sum <m>\mathbf{v}+\mathbf{u}</m> is drawn from the origin to the tip of <m>\mathbf{u}</m>.
+                </p>
+              </description>
             </image>
           </static>
         </interactive>
@@ -555,7 +593,7 @@
     </p>
   </remark>
 
-  <example>
+  <example xml:id="example-ch01-01-ex-1-7">
     <statement>
       <p>
         Given the vector <m>\mathbf{v}=\langle-1,1\rangle</m>, compute:
@@ -618,7 +656,7 @@
   <example>
     <statement>
       <p>
-        Graph the vectors in example 1.7 by first graphing <m>\mathbf{v}</m> and
+        Graph the vectors in <xref ref="example-ch01-01-ex-1-7"/> by first graphing <m>\mathbf{v}</m> and
         then using the above note.
       </p>
       <!--\includegraphics[max width=0.5 \textwidth, left]{2025_08_01_3432b3c41241484aef56g&#x2D;08(1)}-->
@@ -642,37 +680,51 @@
 
       <sidebyside widths="45%  45%" margins="auto" valign="middle">
         <figure xml:id="fig-ch01-01-ex-1-8a">
-          <caption>The vector <m>\mathbf{v}</m> and the scalar multiple <m>4\mathbf{v}</m>.</caption>
+          <caption>
+           The vector <m>\mathbf{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>4\mathbf{v}</m> with coordinates <m>x = -4, y = 4</m>.
+          </caption>
 
-          <interactive xml:id="interactive-ch01-01-ex-1-8a" width="100%" aspect="3:2"
-            desmos="vqavop8m24">
+          <interactive xml:id="interactive-ch01-01-ex-1-8a" width="85%" aspect="4:3"
+            desmos="wyy5tliu4r">
             <instructions>
               <p>
-                PENDING
+                You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
               </p>
             </instructions>
 
             <static>
               <image source="/images/Example 1.8-1.png">
                 <shortdescription>The vector v with coordinates x = -1, y = 1, and the scaled vector 4 v with coordinates x = -4, y = 4.</shortdescription>
+                <description>
+                  <p>
+                    The vector <m>\mathbf{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>4\mathbf{v}</m> with coordinates <m>x = -4, y = 4</m>.
+                    </p>
+                </description>
               </image>
             </static>
           </interactive>
         </figure>
         <figure xml:id="fig-ch01-01-ex-1-8b">
-          <caption>The vector <m>\mathbf{v}</m> and the scalar multiple <m>-\frac{1}{2}\mathbf{v}</m>.</caption>
+          <caption>
+           The vector <m>\mathbf{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>-\frac{1}{2}\mathbf{v}</m> with coordinates <m>x = \frac{1}{2}, y = -\frac{1}{2}</m>.
+          </caption>
 
-          <interactive xml:id="interactive-ch01-01-ex-1-8b" width="100%" aspect="3:2"
-            desmos="vqavop8m24">
+          <interactive xml:id="interactive-ch01-01-ex-1-8b" width="85%" aspect="4:3"
+            desmos="9hybq5dgmi">
             <instructions>
               <p>
-                PENDING
+                You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
               </p>
             </instructions>
 
             <static>
               <image source="/images/Example 1.8-2.png">
                 <shortdescription>The vector v with coordinates x = -1, y = 1, and the scaled vector negative 0.5 v with coordinates x = 0.5, y = -0.5.</shortdescription>
+                <description>
+                  <p>
+                  The vector <m>\mathbf{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>-\frac{1}{2}\mathbf{v}</m> with coordinates <m>x = \frac{1}{2}, y = -\frac{1}{2}</m>.
+                  </p>
+                </description>
               </image>
             </static>
           </interactive>
@@ -795,19 +847,26 @@
       </p>
 
       <figure xml:id="fig-ch01-01-ex-1-10">
-        <caption>The components of <m>\mathbf{v}</m> in terms of <m>|\mathbf{v}|</m> and <m>\theta</m>.</caption>
+        <caption>
+          A vector <m>\mathbf{v}=\langle v_{1}, v_{2}\rangle</m>, in standard position with the angle <m>\theta</m> from the positive <m>x</m>-axis, showing <m>v_{1}=|\mathbf{v}|\cos(\theta)</m> as the horizontal component and <m>v_{2}=|\mathbf{v}|\sin(\theta)</m> as the vertical component.
+        </caption>
 
         <interactive xml:id="interactive-ch01-01-ex-1-10" width="60%" aspect="3:2"
           desmos="vqavop8m24">
           <instructions>
             <p>
-              PENDING
+              You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
             </p>
           </instructions>
 
           <static>
             <image source="/images/Example 1.10.png" width="50%">
               <shortdescription> A vector v with coordinates x = v 1, y = v 2, in standard position with the angle theta from the positive x-axis, showing v 1 equals the magnitude of v times the cosine of theta as the horizontal component and v 2 equals the magnitude of v times the sine of theta as the vertical component.</shortdescription>
+              <description>
+                <p>
+                 A vector <m>\mathbf{v}=\langle v_{1}, v_{2}\rangle</m>, in standard position with the angle <m>\theta</m> from the positive <m>x</m>-axis, showing <m>v_{1}=|\mathbf{v}|\cos(\theta)</m> as the horizontal component and <m>v_{2}=|\mathbf{v}|\sin(\theta)</m> as the vertical component.
+                </p>
+              </description>
             </image>
           </static>
         </interactive>
@@ -901,7 +960,7 @@
       <image source="/images/08ef1dafa6bfde7460b7a5d7416128ad6e67d50b.jpg" width="50%">
        <shortdescription> A boat on a ramp inclined at 30 degrees, with the weight vector pointing downward decomposed into v 1 parallel to the ramp and v 2 perpendicular to the ramp.</shortdescription>
        <description>
-         <p>Boat on a ramp with the weight vector decomposed into components parallel and perpendicular to the ramp.</p>
+         <p>A boat on a ramp inclined at <m>30^{\circ}</m>, with the weight vector pointing downward decomposed into <m>\mathbf{v}_{1}</m> parallel to the ramp and <m>\mathbf{v}_{2}</m> perpendicular to the ramp.</p>
        </description>
       </image>
 
