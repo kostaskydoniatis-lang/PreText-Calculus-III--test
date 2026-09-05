@@ -519,14 +519,14 @@
   <example>
     <statement>
       <p>
-        Given <m>\vec{v}=\langle 1,1\rangle</m> and
-        <m>\vec{u}=\langle 1,-2\rangle</m>, graph
-        <m>\vec{v}+\vec{u}</m> using the Triangle rule.
+        Given <m>\vec{u}=\langle 1,1\rangle</m> and
+        <m>\vec{v}=\langle 1,-2\rangle</m>, graph
+        <m>\vec{u}+\vec{v}</m> using the Triangle rule.
       </p>
 
       <figure xml:id="fig-ch01-01-ex-1-6">
         <caption>
-          The Triangle Rule for adding vector <m>\vec{v}=\langle 1,1\rangle</m> and vector <m>\vec{u}=\langle 1,-2\rangle</m>: <m>\vec{v}</m> is drawn from the origin, <m>\vec{u}</m> is drawn from the tip of <m>\vec{v}</m>, and the sum <m>\vec{v}+\vec{u}</m> is drawn from the origin to the tip of <m>\vec{u}</m>.
+          The Triangle Rule for adding vector <m>\vec{u}=\langle 1,1\rangle</m> and vector <m>\vec{v}=\langle 1,-2\rangle</m>: <m>\vec{u}</m> is drawn from the origin, <m>\vec{v}</m> is drawn from the tip of <m>\vec{u}</m>, and the sum <m>\vec{u}+\vec{v}</m> is drawn from the origin to the tip of <m>\vec{v}</m>.
         </caption>
 
         <interactive xml:id="interactive-ch01-01-ex-1-6" width="85%" aspect="4:3"
@@ -539,10 +539,10 @@
 
           <static>
             <image source="/images/Example 1.6.png">
-              <shortdescription> The Triangle Rule for adding vector v with coordinates x = 1, y = 1 and vector u with coordinates x = 1, y = -2: v is drawn from the origin, u is drawn from the tip of v, and the sum v plus u is drawn from the origin to the tip of u.</shortdescription>
+              <shortdescription> The Triangle Rule for adding vector u with coordinates x = 1, y = 1 and vector v with coordinates x = 1, y = -2: u is drawn from the origin, v is drawn from the tip of u, and the sum u plus v is drawn from the origin to the tip of v.</shortdescription>
               <description>
                 <p>
-                  The Triangle Rule for adding vector <m>\vec{v}=\langle 1,1\rangle</m> and vector <m>\vec{u}=\langle 1,-2\rangle</m>: <m>\vec{v}</m> is drawn from the origin, <m>\vec{u}</m> is drawn from the tip of <m>\vec{v}</m>, and the sum <m>\vec{v}+\vec{u}</m> is drawn from the origin to the tip of <m>\vec{u}</m>.
+                  The Triangle Rule for adding vector <m>\vec{u}=\langle 1,1\rangle</m> and vector <m>\vec{v}=\langle 1,-2\rangle</m>: <m>\vec{u}</m> is drawn from the origin, <m>\vec{v}</m> is drawn from the tip of <m>\vec{u}</m>, and the sum <m>\vec{u}+\vec{v}</m> is drawn from the origin to the tip of <m>\vec{v}</m>.
                 </p>
               </description>
             </image>
@@ -554,13 +554,13 @@
 
     <solution>
       <p>
-        Following the Triangle Rule, we first draw <m>\vec{v}</m> in standard
+        Following the Triangle Rule, we first draw <m>\vec{u}</m> in standard
         position, ending at <m>(1,1)</m>. Starting at that endpoint we draw
-        <m>\vec{u}</m>, which takes us 1 unit right and 2 units down, ending
+        <m>\vec{v}</m>, which takes us 1 unit right and 2 units down, ending
         at <m>(1+1, 1-2) = (2,-1)</m>. Finally we draw the vector starting at
         <m>(0,0)</m> and ending at <m>(2,-1)</m>, which is the sum
         <md>
-          \vec{v}+\vec{u}= \langle 2,-1 \rangle
+          \vec{u}+\vec{v}= \langle 2,-1 \rangle
         </md>
       </p>
 
