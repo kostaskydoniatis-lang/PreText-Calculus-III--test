@@ -75,11 +75,8 @@
 
       <figure xml:id="fig-ch01-01-ex-1-1">
         <caption>
-          <p>
             Two vectors drawn in the <m>xy</m>-plane: <m> \vec{PQ} </m> with initial point  <m>(0,0)</m> and terminal point <m>(3,2)</m>, and vector <m> \vec{RS} </m> with initial point <m>(0.5,2)</m> and terminal point <m>(3.5,4)</m>.
-          </p>
         </caption>
-
         <interactive xml:id="interactive-ch01-01-ex-1-1" width="85%" aspect="4:3"
           desmos="ffkjxxfmap">
           <instructions>
