@@ -84,7 +84,7 @@
           desmos="ffkjxxfmap">
           <instructions>
             <p>
-              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a href="https://www.desmos.com/calculator/ffkjxxfmap" target="_blank">https://www.desmos.com/calculator/ffkjxxfmap</a>
             </p>
           </instructions>
 
@@ -199,7 +199,7 @@
           desmos="jppqa3slgf">
           <instructions>
             <p>
-              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a href="https://www.desmos.com/calculator/jppqa3slgf" target="_blank">link to the graph</a>
             </p>
           </instructions>
 
@@ -285,7 +285,7 @@
           desmos="ysp6xaf8mq">
           <instructions>
             <p>
-              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a href="https://www.desmos.com/calculator/ysp6xaf8mq" target="_blank">link to the graph</a>
             </p>
           </instructions>
 
@@ -376,7 +376,7 @@
           desmos="u2zjru9ihk">
           <instructions>
             <p>
-              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a href="https://www.desmos.com/calculator/u2zjru9ihk" target="_blank">link to the graph</a>
             </p>
           </instructions>
 
@@ -533,7 +533,7 @@
           desmos="bdv2oivnna">
           <instructions>
             <p>
-              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a href="https://www.desmos.com/calculator/bdv2oivnna" target="_blank">link to the graph</a>
             </p>
           </instructions>
 
@@ -677,60 +677,63 @@
         <m>\left( \frac{1}{2},-\frac{1}{2}\right)</m>. Both graphs are shown in
         the figures below.
       </p>
+      <figure>
+        <caption>
+          The graph of the two vectors <m>4\vec{v}</m> and <m>-\frac{1}{2}\vec{v}</m> along with the original vector <m>\vec{v}</m>.
+        </caption>
+        <sidebyside widths="45%  45%" margins="auto" valign="middle">
+          <figure xml:id="fig-ch01-01-ex-1-8a">
+            <caption>
+            The vector <m>\vec{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>4\vec{v}</m> with coordinates <m>x = -4, y = 4</m>.
+            </caption>
+            <interactive xml:id="interactive-ch01-01-ex-1-8a" width="85%" aspect="4:3"
+              desmos="wyy5tliu4r">
+              <instructions>
+                <p>
+                  You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a href="https://www.desmos.com/calculator/wyy5tliu4r" target="_blank">link to the graph</a>
+                </p>
+              </instructions>
 
-      <sidebyside widths="45%  45%" margins="auto" valign="middle">
-        <figure xml:id="fig-ch01-01-ex-1-8a">
-          <caption>
-           The vector <m>\vec{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>4\vec{v}</m> with coordinates <m>x = -4, y = 4</m>.
-          </caption>
+              <static>
+                <image source="/images/Example 1.8-1.png">
+                  <shortdescription>The vector v with coordinates x = -1, y = 1, and the scaled vector 4 v with coordinates x = -4, y = 4.</shortdescription>
+                  <description>
+                    <p>
+                      The vector <m>\vec{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>4\vec{v}</m> with coordinates <m>x = -4, y = 4</m>.
+                      </p>
+                  </description>
+                </image>
+              </static>
+            </interactive>
+          </figure>
+          <figure xml:id="fig-ch01-01-ex-1-8b">
+            <caption>
+            The vector <m>\vec{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>-\frac{1}{2}\vec{v}</m> with coordinates <m>x = \frac{1}{2}, y = -\frac{1}{2}</m>.
+            </caption>
 
-          <interactive xml:id="interactive-ch01-01-ex-1-8a" width="85%" aspect="4:3"
-            desmos="wyy5tliu4r">
-            <instructions>
-              <p>
-                You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
-              </p>
-            </instructions>
+            <interactive xml:id="interactive-ch01-01-ex-1-8b" width="85%" aspect="4:3"
+              desmos="9hybq5dgmi">
+              <instructions>
+                <p>
+                  You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a href="https://www.desmos.com/calculator/ysp6xaf8mq" target="_blank">link to the graph</a>
+                </p>
+              </instructions>
 
-            <static>
-              <image source="/images/Example 1.8-1.png">
-                <shortdescription>The vector v with coordinates x = -1, y = 1, and the scaled vector 4 v with coordinates x = -4, y = 4.</shortdescription>
-                <description>
-                  <p>
-                    The vector <m>\vec{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>4\vec{v}</m> with coordinates <m>x = -4, y = 4</m>.
+              <static>
+                <image source="/images/Example 1.8-2.png">
+                  <shortdescription>The vector v with coordinates x = -1, y = 1, and the scaled vector negative 0.5 v with coordinates x = 0.5, y = -0.5.</shortdescription>
+                  <description>
+                    <p>
+                    The vector <m>\vec{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>-\frac{1}{2}\vec{v}</m> with coordinates <m>x = \frac{1}{2}, y = -\frac{1}{2}</m>.
                     </p>
-                </description>
-              </image>
-            </static>
-          </interactive>
-        </figure>
-        <figure xml:id="fig-ch01-01-ex-1-8b">
-          <caption>
-           The vector <m>\vec{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>-\frac{1}{2}\vec{v}</m> with coordinates <m>x = \frac{1}{2}, y = -\frac{1}{2}</m>.
-          </caption>
+                  </description>
+                </image>
+              </static>
+            </interactive>
+          </figure>
 
-          <interactive xml:id="interactive-ch01-01-ex-1-8b" width="85%" aspect="4:3"
-            desmos="9hybq5dgmi">
-            <instructions>
-              <p>
-                You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
-              </p>
-            </instructions>
-
-            <static>
-              <image source="/images/Example 1.8-2.png">
-                <shortdescription>The vector v with coordinates x = -1, y = 1, and the scaled vector negative 0.5 v with coordinates x = 0.5, y = -0.5.</shortdescription>
-                <description>
-                  <p>
-                  The vector <m>\vec{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>-\frac{1}{2}\vec{v}</m> with coordinates <m>x = \frac{1}{2}, y = -\frac{1}{2}</m>.
-                  </p>
-                </description>
-              </image>
-            </static>
-          </interactive>
-        </figure>
-
-      </sidebyside>
+        </sidebyside>
+      </figure>
     </solution>
   </example>
   <definition>
@@ -855,7 +858,7 @@
           desmos="vqavop8m24">
           <instructions>
             <p>
-              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph.
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a>
             </p>
           </instructions>
 
