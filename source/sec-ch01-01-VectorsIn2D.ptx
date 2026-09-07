@@ -724,18 +724,18 @@
         <caption>
           The graph of the two vectors <m>4\vec{v}</m> and <m>-\frac{1}{2}\vec{v}</m> along with the original vector <m>\vec{v}</m>.
         </caption>
-        <sidebyside widths="45%  45%" margins="auto" valign="middle">
+        <sidebyside widths="45%  45%" margins="auto" valign="top">
           <figure xml:id="fig-ch01-01-ex-1-8a">
             <caption>
             The vector <m>\vec{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>4\vec{v}</m> with coordinates <m>x = -4, y = 4</m>.
             </caption>
             <interactive xml:id="interactive-ch01-01-ex-1-8a" width="85%" aspect="4:3"
               desmos="wyy5tliu4r">
-              <instructions>
+              <!--<instructions>
                 <p>
                   You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/wyy5tliu4r" target="_blank" rel="noopener noreferrer">link to the graph</url>
                 </p>
-              </instructions>
+              </instructions>-->
 
               <static>
                 <image source="/images/Example-1.8-1.png">
@@ -756,11 +756,11 @@
 
             <interactive xml:id="interactive-ch01-01-ex-1-8b" width="85%" aspect="4:3"
               desmos="9hybq5dgmi">
-              <instructions>
+              <!--<instructions>
                 <p>
                   You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/9hybq5dgmi" target="_blank" rel="noopener noreferrer">link to the graph</url>
                 </p>
-              </instructions>
+              </instructions>-->
 
               <static>
                 <image source="/images/Example-1.8-2.png">
@@ -772,11 +772,18 @@
                   </description>
                 </image>
               </static>
+            
             </interactive>
           </figure>
 
         </sidebyside>
+
+
+
       </figure>
+      <p>
+         You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:<url href="https://www.desmos.com/calculator/wyy5tliu4r" target="_blank" rel="noopener noreferrer">link to the left graph</url>, <url href="https://www.desmos.com/calculator/9hybq5dgmi" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+      </p>
     </solution>
   </example>
   <definition>

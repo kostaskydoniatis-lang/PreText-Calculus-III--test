@@ -57,6 +57,12 @@
  15. Commented-out placeholders kept as XML comments where they stood:
      %\includegraphics[max width=0.7\textwidth]{2025_08_04_6f11792a371c74850db7g-5}
      and the OpenStax caption in item 4.
+ 16. Side-by-side interactives follow the fix you made in sec-ch01-01-VectorsIn2D.ptx:
+     each panel's <instructions> block is commented out rather than deleted, and one
+     <p> after the outer figure carries the boilerplate once, with a positional link
+     per panel (left, right). Uncomment to restore the per-panel form.
+     NOTE: all these panels still share the placeholder graph, so every link below
+     goes to the same page until the real graph ids land.
 -->
 
 <section xml:id="sec-ch01-03-DotProduct" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -350,9 +356,10 @@
       <figure xml:id="fig-ch01-03-projection-cases-a">
         <caption><m>0\leq \theta \lt \frac{\pi}{2}</m>. This interactive is PENDING, it should correspond to 2025_08_04_6f11792a371c74850db7g-5.</caption>
         <interactive xml:id="interactive-ch01-03-projection-cases-a" width="85%" aspect="4:3" desmos="vqavop8m24">
-          <instructions>
+          <!--<instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
-          </instructions>
+          </instructions>-->
+
           <static>
             <image source="/images/2025_08_04_6f11792a371c74850db7g-5.png">
               <shortdescription>The orthogonal projection of u onto v when the angle theta between them is at least 0 and less than pi over 2.</shortdescription>
@@ -367,9 +374,10 @@
       <figure xml:id="fig-ch01-03-projection-cases-b">
         <caption><m>\frac{\pi}{2} \lt \theta \leq \pi</m>. This interactive is PENDING, it should correspond to 2025_08_04_6f11792a371c74850db7g-5-1.</caption>
         <interactive xml:id="interactive-ch01-03-projection-cases-b" width="85%" aspect="4:3" desmos="vqavop8m24">
-          <instructions>
+          <!--<instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
-          </instructions>
+          </instructions>-->
+
           <static>
             <image source="/images/2025_08_04_6f11792a371c74850db7g-5-1.png">
               <shortdescription>The orthogonal projection of u onto v when the angle theta between them is greater than pi over 2 and at most pi.</shortdescription>
@@ -382,6 +390,9 @@
       </figure>
     </sidebyside>
   </figure>
+  <p>
+     You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:<url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+  </p>
   <!--\caption*{From openstax, Calculus Volume 3, Section 2.2}-->
   <!--\includegraphics[max width=0.7\textwidth]{2025_08_04_6f11792a371c74850db7g-5}-->
 

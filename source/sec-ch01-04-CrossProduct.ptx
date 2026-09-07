@@ -49,6 +49,12 @@
      \mathbf{u}$ ?" spacing.
  14. Every \newpage/\vspace/\hspace, the figure[H] wrappers and the hand a/b/c/d
      label rows dropped.
+ 15. Side-by-side interactives follow the fix you made in sec-ch01-01-VectorsIn2D.ptx:
+     each panel's <instructions> block is commented out rather than deleted, and one
+     <p> after the outer figure carries the boilerplate once, with a positional link
+     per panel (top left, top right, bottom left, bottom right). Uncomment to restore the per-panel form.
+     NOTE: all these panels still share the placeholder graph, so every link below
+     goes to the same page until the real graph ids land.
 -->
 
 <section xml:id="sec-ch01-04-CrossProduct" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -148,9 +154,10 @@
             <figure xml:id="fig-ch01-04-ex-4-1a">
               <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3.</caption>
               <interactive xml:id="interactive-ch01-04-ex-4-1a" width="85%" aspect="4:3" desmos="vqavop8m24">
-                <instructions>
+                <!--<instructions>
                   <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
-                </instructions>
+                </instructions>-->
+
                 <static>
                   <image source="/images/2025_08_04_6cd67e91fafb048556b2g-3.png">
                     <shortdescription>Pair of vectors u and v in the xy-plane for case a. The angle from u to v is 3 pi over 4.</shortdescription>
@@ -165,9 +172,10 @@
             <figure xml:id="fig-ch01-04-ex-4-1b">
               <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3-2.</caption>
               <interactive xml:id="interactive-ch01-04-ex-4-1b" width="85%" aspect="4:3" desmos="vqavop8m24">
-                <instructions>
+                <!--<instructions>
                   <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
-                </instructions>
+                </instructions>-->
+
                 <static>
                   <image source="/images/2025_08_04_6cd67e91fafb048556b2g-3-2.png">
                     <shortdescription>Pair of vectors u and v in the xy-plane for case b. The angle from u to v is 13 pi over 12.</shortdescription>
@@ -184,9 +192,10 @@
             <figure xml:id="fig-ch01-04-ex-4-1c">
               <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3-3.</caption>
               <interactive xml:id="interactive-ch01-04-ex-4-1c" width="85%" aspect="4:3" desmos="vqavop8m24">
-                <instructions>
+                <!--<instructions>
                   <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
-                </instructions>
+                </instructions>-->
+
                 <static>
                   <image source="/images/2025_08_04_6cd67e91fafb048556b2g-3-3.png">
                     <shortdescription>Pair of vectors u and v in the xy-plane for case c. The angle from u to v is 5 pi over 4.</shortdescription>
@@ -201,9 +210,10 @@
             <figure xml:id="fig-ch01-04-ex-4-1d">
               <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3-1.</caption>
               <interactive xml:id="interactive-ch01-04-ex-4-1d" width="85%" aspect="4:3" desmos="vqavop8m24">
-                <instructions>
+                <!--<instructions>
                   <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
-                </instructions>
+                </instructions>-->
+
                 <static>
                   <image source="/images/2025_08_04_6cd67e91fafb048556b2g-3-1.png">
                     <shortdescription>Pair of vectors u and v in the xy-plane for case d. The angle from u to v is 5 pi over 12.</shortdescription>
@@ -217,6 +227,9 @@
           </sidebyside>
         </sbsgroup>
       </figure>
+      <p>
+         You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:<url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the top left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the top right graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the bottom left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the bottom right graph</url>
+      </p>
     </statement>
 
     <solution>

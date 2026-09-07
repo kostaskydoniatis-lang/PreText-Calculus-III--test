@@ -48,6 +48,12 @@
      following" (right-to-left remark), Example 5.3's second sentence has no final
      period, "\mathbf{v} \neq 0" style; the \textbf{Option A/B/C} labels are <alert>s.
  15. Every \newpage/\vspace, the figure[H]/center wrappers and \\ dropped.
+ 16. Side-by-side interactives follow the fix you made in sec-ch01-01-VectorsIn2D.ptx:
+     each panel's <instructions> block is commented out rather than deleted, and one
+     <p> after the outer figure carries the boilerplate once, with a positional link
+     per panel (left, middle, right). Uncomment to restore the per-panel form.
+     NOTE: all these panels still share the placeholder graph, so every link below
+     goes to the same page until the real graph ids land.
 -->
 
 <section xml:id="sec-ch02-01-VectorValuedFunctions" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -96,9 +102,10 @@
       <figure xml:id="fig-ch02-01-position-vectors-a">
         <caption><m>\vec{r}\left(t_{0}\right)=\left\langle x\left(t_{0}\right), y\left(t_{0}\right), z\left(t_{0}\right)\right\rangle</m>. This interactive is PENDING, it should correspond to 2025_08_04_3d11211490a50caa278ag-1.</caption>
         <interactive xml:id="interactive-ch02-01-position-vectors-a" width="85%" aspect="4:3" desmos="vqavop8m24">
-          <instructions>
+          <!--<instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
-          </instructions>
+          </instructions>-->
+
           <static>
             <image source="/images/2025_08_04_3d11211490a50caa278ag-1.png">
               <shortdescription>A point on a curve in xyz-space at time t0 with position vector r(t0).</shortdescription>
@@ -113,9 +120,10 @@
       <figure xml:id="fig-ch02-01-position-vectors-b">
         <caption><m>\vec{r}\left(t_{1}\right)=\left\langle x\left(t_{1}\right), y\left(t_{1}\right), z\left(t_{1}\right)\right\rangle</m>. This interactive is PENDING, it should correspond to 2025_08_04_3d11211490a50caa278ag-1-2.</caption>
         <interactive xml:id="interactive-ch02-01-position-vectors-b" width="85%" aspect="4:3" desmos="vqavop8m24">
-          <instructions>
+          <!--<instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
-          </instructions>
+          </instructions>-->
+
           <static>
             <image source="/images/2025_08_04_3d11211490a50caa278ag-1-2.png">
               <shortdescription>A point on a curve in xyz-space at time t1 with position vector r(t1).</shortdescription>
@@ -130,9 +138,10 @@
       <figure xml:id="fig-ch02-01-position-vectors-c">
         <caption><m>\vec{r}\left(t_{2}\right)=\left\langle x\left(t_{2}\right), y\left(t_{2}\right), z\left(t_{2}\right)\right\rangle</m>. This interactive is PENDING, it should correspond to 2025_08_04_3d11211490a50caa278ag-1-1.</caption>
         <interactive xml:id="interactive-ch02-01-position-vectors-c" width="85%" aspect="4:3" desmos="vqavop8m24">
-          <instructions>
+          <!--<instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
-          </instructions>
+          </instructions>-->
+
           <static>
             <image source="/images/2025_08_04_3d11211490a50caa278ag-1-1.png">
               <shortdescription>A point on a curve in xyz-space at time t2 with position vector r(t2).</shortdescription>
@@ -145,6 +154,9 @@
       </figure>
     </sidebyside>
   </figure>
+  <p>
+     You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:<url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the middle graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+  </p>
   <!--\caption*{From openstax, Calculus Volume 3, Section 2.2}-->
 
   <definition>
