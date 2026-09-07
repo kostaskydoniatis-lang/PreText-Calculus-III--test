@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Vector-Valued Functions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Calculus III Notes">
+<meta property="og:title" content="Calculus III Notes">
+<meta property="book:title" content="Calculus III Notes">
+<meta name="twitter:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
+<meta property="og:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.10';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.e3f9706509fcf6f7.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.c5ba0ffa5f963084.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="CalculusIIINotes2026.html"><span class="title">Calculus III Notes</span> <span class="subtitle">These notes are meant for use by students enrolled in my Calculus III course.</span></a></div>
+<p class="byline">Konstantinos (Kostas) Kydoniatis</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="ch-02-IntroductionVectorandScalarValuedFunctions-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-02-IntroductionVectorandScalarValuedFunctions.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-01-IntroToVectors.html" class="internal"><span class="codenumber">1</span> <span class="title">1. Introduction to Vectors</span></a></div>
+<ul id="ptx-toc-group-ch-01-IntroToVectors" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-01-IntroToVectors-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-01-Vectors2DIntroduction.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vectors in 2D</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-02-VectorsIn3D.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Vectors in 3D</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-03-DotProduct.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Dot Product</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-04-CrossProduct.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Cross Product</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">2. Introduction to Vector and Scalar Valued Functions</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-02-IntroductionVectorandScalarValuedFunctions">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-ch02-01-VectorValuedFunctions.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vector-Valued Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-ch02-01-VectorValuedFunctions">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vector-Valued Functions</span>
+</h1>
+<article class="note remark-like" id="sec-ch02-01-VectorValuedFunctions-2"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-2-1">Think of a point tracing a path as it moves through <span class="process-math">\(x y z\)</span>-space (for example, think of tracing the path a mosquito travels as it flies through a room). We can think of the curve traced by this point in two ways:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch02-01-VectorValuedFunctions-2-2">
+<ol class="decimal" id="sec-ch02-01-VectorValuedFunctions-2-2-1">
+<li id="sec-ch02-01-VectorValuedFunctions-2-2-1-1">
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-2-2-1-1-1">The position of the point at a time <span class="process-math">\(t\text{,}\)</span> given by <span class="process-math">\((x(t), y(t), z(t))\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-ch02-01-VectorValuedFunctions-2-2-1-2">
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-2-2-1-2-1">The position of the point at a time <span class="process-math">\(t\text{,}\)</span> given by the endpoint of the vector <span class="process-math">\(\vec{r}(t)=\langle x(t), y(t), z(t)\rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 2.1.1"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-2" title="Copy heading and permalink for Note 2.1.1" aria-label="Copy heading and permalink for Note 2.1.1">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="fig-ch02-01-position-vectors">
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;grid-template-columns:31.0344827586207% 31.0344827586207% 31.0344827586207%;column-gap:3.333333333333333%;">
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch02-01-position-vectors-a"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-01-position-vectors-a" style="width:180px; height:135px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-01-position-vectors-a.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-01-position-vectors-a-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-01-position-vectors-a-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-01-position-vectors-a-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-01-position-vectors-a-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="process-math">\(\vec{r}\left(t_{0}\right)=\left\langle x\left(t_{0}\right), y\left(t_{0}\right), z\left(t_{0}\right)\right\rangle\text{.}\)</span> This interactive is PENDING, it should correspond to 2025_08_04_3d11211490a50caa278ag-1.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.1.1(a)"><a tabindex="-1" href="#fig-ch02-01-position-vectors-a" title="Copy heading and permalink for Figure 2.1.1(a)" aria-label="Copy heading and permalink for Figure 2.1.1(a)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch02-01-position-vectors-b"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-01-position-vectors-b" style="width:180px; height:135px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-01-position-vectors-b.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-01-position-vectors-b-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-01-position-vectors-b-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-01-position-vectors-b-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-01-position-vectors-b-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="process-math">\(\vec{r}\left(t_{1}\right)=\left\langle x\left(t_{1}\right), y\left(t_{1}\right), z\left(t_{1}\right)\right\rangle\text{.}\)</span> This interactive is PENDING, it should correspond to 2025_08_04_3d11211490a50caa278ag-1-2.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.1.1(b)"><a tabindex="-1" href="#fig-ch02-01-position-vectors-b" title="Copy heading and permalink for Figure 2.1.1(b)" aria-label="Copy heading and permalink for Figure 2.1.1(b)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch02-01-position-vectors-c"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-01-position-vectors-c" style="width:180px; height:135px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-01-position-vectors-c.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-01-position-vectors-c-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-01-position-vectors-c-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-01-position-vectors-c-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-01-position-vectors-c-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="codenumber">(c)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="process-math">\(\vec{r}\left(t_{2}\right)=\left\langle x\left(t_{2}\right), y\left(t_{2}\right), z\left(t_{2}\right)\right\rangle\text{.}\)</span> This interactive is PENDING, it should correspond to 2025_08_04_3d11211490a50caa278ag-1-1.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.1.1(c)"><a tabindex="-1" href="#fig-ch02-01-position-vectors-c" title="Copy heading and permalink for Figure 2.1.1(c)" aria-label="Copy heading and permalink for Figure 2.1.1(c)">🔗</a></div></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The position of a point on a curve in <span class="process-math">\(xyz\)</span>-space at three times <span class="process-math">\(t_{0}\text{,}\)</span> <span class="process-math">\(t_{1}\text{,}\)</span> <span class="process-math">\(t_{2}\text{,}\)</span> given by the position vectors <span class="process-math">\(\vec{r}(t_{0})\text{,}\)</span> <span class="process-math">\(\vec{r}(t_{1})\text{,}\)</span> <span class="process-math">\(\vec{r}(t_{2})\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 2.1.1"><a tabindex="-1" href="#fig-ch02-01-position-vectors" title="Copy heading and permalink for Figure 2.1.1" aria-label="Copy heading and permalink for Figure 2.1.1">🔗</a></div></figcaption>
+</figure>
+<article class="definition definition-like" id="sec-ch02-01-VectorValuedFunctions-4"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vector-Valued Function.</span>
+</h2>
+<div class="para logical" id="sec-ch02-01-VectorValuedFunctions-4-2-1">
+<div class="para">A vector-valued function is a function which assigns to each input <span class="process-math">\(t\)</span> (the independent variable), an output of a vector. Mathematically, a vector-valued function can be written in the form</div>
+<div class="displaymath process-math" id="sec-ch02-01-VectorValuedFunctions-4-2-1-2">
+\begin{equation*}
+\vec{r}(t)=\langle f(t), g(t), h(t)\rangle, a \leq t \leq b
+\end{equation*}
+</div>
+<div class="para">where each component of <span class="process-math">\(\vec{r}(t)\)</span> is a function of <span class="process-math">\(t\)</span> (each component is a dependent variable).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 2.1.2: Vector-Valued Function"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-4" title="Copy heading and permalink for Definition 2.1.2: Vector-Valued Function" aria-label="Copy heading and permalink for Definition 2.1.2: Vector-Valued Function">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch02-01-VectorValuedFunctions-5"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-5-1">The domain of <span class="process-math">\(\vec{r}(t)=\langle f(t), g(t), h(t)\rangle\)</span> is the intersection of the domains of <span class="process-math">\(f(t), g(t)\text{,}\)</span> and <span class="process-math">\(h(t)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 2.1.3"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-5" title="Copy heading and permalink for Remark 2.1.3" aria-label="Copy heading and permalink for Remark 2.1.3">🔗</a></div>
+</article>
+<details id="example-ch02-01-ex-5-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch02-01-ex-5-1-1-1">The graph of <span class="process-math">\(\vec{r}(t)=\left\langle\cos (t), \sin (t), \frac{t}{10}\right\rangle\text{,}\)</span> <span class="process-math">\(0 \leq t \leq 10\)</span> is shown below. If we don’t restrict <span class="process-math">\(t\text{,}\)</span> what is the domain of <span class="process-math">\(\vec{r}(t)\)</span> ?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch02-01-ex-5-1"><div class="interactive-iframe-container"><iframe src="https://c3d.libretexts.org/CalcPlot3D/dynamicFigureWCP/index.html?type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=sin(t);y=cos(t);z=0.1t;visible=true;width=2;view=0;tmin=0;tmax=10;tsteps=500;color=rgb(30,136,229);showtrace=false;tval=1;constcol=true;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=true;acc=true;veceqs=true;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=false;tanline=false;dropcurtain=false;showtvector=false;shownvector=false;showbvector=false;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=vector;vector=%3Csin(1.7),%20cos(1.7),%20.17%3E;visible=false;color=rgb(216,27,96);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=4.941834621277992,2.85316954888546,1.8541019662496847,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-1;xmax=1;ymin=-1;ymax=1;zmin=-1;zmax=1;xscale=0.5;yscale=0.5;zscale=0.5;zcmin=-2;zcmax=2;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=3.357333" id="interactive-ch02-01-ex-5-1" style="width:540px; height:360px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-01-ex-5-1.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-01-ex-5-1-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-01-ex-5-1-1-1">Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <a class="external" href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=sin(t);y=cos(t);z=0.1t;visible=true;width=2;view=0;tmin=0;tmax=10;tsteps=500;color=rgb(30,136,229);showtrace=false;tval=1;constcol=true;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=true;acc=true;veceqs=true;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=false;tanline=false;dropcurtain=false;showtvector=false;shownvector=false;showbvector=false;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=vector;vector=%3Csin(1.7),%20cos(1.7),%20.17%3E;visible=false;color=rgb(216,27,96);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=4.941834621277992,2.85316954888546,1.8541019662496847,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-1;xmax=1;ymin=-1;ymax=1;zmin=-1;zmax=1;xscale=0.5;yscale=0.5;zscale=0.5;zcmin=-2;zcmax=2;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=3.357333" target="_blank">link to the plot</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-01-ex-5-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-01-ex-5-1-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The helix traced by the vector <span class="process-math">\(\vec{r}(t)=\left\langle\cos (t), \sin (t), \frac{t}{10}\right\rangle\text{,}\)</span> for <span class="process-math">\(t\)</span> from 0 to 10, in <span class="process-math">\(xyz\)</span>-space.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.1.2"><a tabindex="-1" href="#fig-ch02-01-ex-5-1" title="Copy heading and permalink for Figure 2.1.2" aria-label="Copy heading and permalink for Figure 2.1.2">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch02-01-ex-5-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch02-01-ex-5-1-2-1">
+<div class="para">The domain of <span class="process-math">\(\vec{r}(t)\)</span> is the intersection of the domains of its three components. Each of <span class="process-math">\(\cos(t)\text{,}\)</span> <span class="process-math">\(\sin(t)\text{,}\)</span> and <span class="process-math">\(\frac{t}{10}\)</span> is defined for every real number <span class="process-math">\(t\text{,}\)</span> so</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-1-2-1-6">
+\begin{equation*}
+\operatorname{dom}(\vec{r}) = (-\infty, \infty)
+\end{equation*}
+</div>
+<div class="para">that is, the domain is all real numbers (and the graph becomes a helix spiraling upwards forever in both directions).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.1.4.1"><a tabindex="-1" href="#example-ch02-01-ex-5-1-2" title="Copy heading and permalink for Solution 2.1.4.1" aria-label="Copy heading and permalink for Solution 2.1.4.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.1.4"><a tabindex="-1" href="#example-ch02-01-ex-5-1" title="Copy heading and permalink for Example 2.1.4" aria-label="Copy heading and permalink for Example 2.1.4">🔗</a></div>
+</article></details>
+<article class="note remark-like" id="sec-ch02-01-VectorValuedFunctions-7"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-7-1">If we write <span class="process-math">\(\vec{r}(t)=\langle f(t), g(t), h(t)\rangle\)</span> and don’t specify an interval, assume that <span class="process-math">\(t\)</span> can take any possible value in the domain of <span class="process-math">\(\vec{r}(t)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 2.1.5"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-7" title="Copy heading and permalink for Note 2.1.5" aria-label="Copy heading and permalink for Note 2.1.5">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch02-01-VectorValuedFunctions-8"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-8-1">The output vector of a vector-valued function doesn’t have to be three dimensional. For example, the function <span class="process-math">\(\vec{r}(t)=\langle t, -\frac{t}{2}+1\rangle,0 \leq t \leq 2\)</span> traces the graph of <span class="process-math">\(y=-\frac{x}{2}+1\)</span> on the interval <span class="process-math">\([0,2]\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch02-01-line-segment"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-01-line-segment" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-01-line-segment.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-01-line-segment-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-01-line-segment-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-01-line-segment-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-01-line-segment-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>This interactive is PENDING, it should correspond to 2025_08_04_3d11211490a50caa278ag-2-1.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.1.3"><a tabindex="-1" href="#fig-ch02-01-line-segment" title="Copy heading and permalink for Figure 2.1.3" aria-label="Copy heading and permalink for Figure 2.1.3">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Remark 2.1.6"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-8" title="Copy heading and permalink for Remark 2.1.6" aria-label="Copy heading and permalink for Remark 2.1.6">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch02-01-VectorValuedFunctions-9"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-9-1">Since vector-valued functions trace a curve as time passes by, we can talk about the orientation (or direction) in which the curve is traced.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 2.1.7"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-9" title="Copy heading and permalink for Note 2.1.7" aria-label="Copy heading and permalink for Note 2.1.7">🔗</a></div>
+</article>
+<details id="example-ch02-01-ex-5-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch02-01-ex-5-2-1-1">For each of the following planar curves, write a vector-valued function which traces them with the specified orientation. Moreover, graph the given curves using arrows to indicate the orientation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="example-ch02-01-ex-5-2-1-2">
+<ol class="decimal" id="example-ch02-01-ex-5-2-1-2-1">
+<li id="example-ch02-01-ex-5-2-1-2-1-1">
+<div class="para" id="example-ch02-01-ex-5-2-1-2-1-1-1">A circle of radius 1 (traced once) oriented counterclockwise, starting at <span class="process-math">\((1,0)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-2-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#example-ch02-01-ex-5-2-1-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="example-ch02-01-ex-5-2-1-2-1-2">
+<div class="para" id="example-ch02-01-ex-5-2-1-2-1-2-1">The graph of <span class="process-math">\(y=x^{2}-1\text{,}\)</span> on the interval <span class="process-math">\([-1,1]\text{,}\)</span> traced from left to right (relative to the <span class="process-math">\(x\)</span>-axis).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-2-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#example-ch02-01-ex-5-2-1-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch02-01-ex-5-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch02-01-ex-5-2-2-1">
+<div class="para">The function</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-2-2-1-1">
+\begin{equation*}
+\vec{r}(t) = \langle \cos(t), \sin(t) \rangle, \quad 0 \leq t \leq 2\pi
+\end{equation*}
+</div>
+<div class="para">traces the circle of radius 1 centered at the origin, since <span class="process-math">\(x(t)^2+y(t)^2 = \cos^2(t)+\sin^2(t) = 1\text{.}\)</span> It starts at <span class="process-math">\(\vec{r}(0) = \langle 1,0 \rangle\text{,}\)</span> passes through <span class="process-math">\((0,1)\)</span> at <span class="process-math">\(t=\frac{\pi}{2}\text{,}\)</span> through <span class="process-math">\((-1,0)\)</span> at <span class="process-math">\(t=\pi\text{,}\)</span> and through <span class="process-math">\((0,-1)\)</span> at <span class="process-math">\(t=\frac{3\pi}{2}\)</span> – a counterclockwise motion – and returns to <span class="process-math">\((1,0)\)</span> at <span class="process-math">\(t=2\pi\text{,}\)</span> tracing the circle exactly once. To graph it, draw the unit circle with the arrows on it pointing counterclockwise.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch02-01-ex-5-2a"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-01-ex-5-2a" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-01-ex-5-2a.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-01-ex-5-2a-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-01-ex-5-2a-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-01-ex-5-2a-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-01-ex-5-2a-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>This interactive is PENDING, it should correspond to Example 5.2-1.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.1.4"><a tabindex="-1" href="#fig-ch02-01-ex-5-2a" title="Copy heading and permalink for Figure 2.1.4" aria-label="Copy heading and permalink for Figure 2.1.4">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 2.1.8.1"><a tabindex="-1" href="#example-ch02-01-ex-5-2-2" title="Copy heading and permalink for Solution 2.1.8.1" aria-label="Copy heading and permalink for Solution 2.1.8.1">🔗</a></div>
+</div></details>
+<details id="example-ch02-01-ex-5-2-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch02-01-ex-5-2-3-1">
+<div class="para">Letting <span class="process-math">\(x=t\text{,}\)</span> the point on the graph above <span class="process-math">\(x\)</span> is <span class="process-math">\((t, t^2-1)\text{,}\)</span> so</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-2-3-1-4">
+\begin{equation*}
+\vec{r}(t) = \langle t, t^2-1 \rangle, \quad -1 \leq t \leq 1
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="example-ch02-01-ex-5-2-3-2">Since <span class="process-math">\(x(t)=t\)</span> increases as <span class="process-math">\(t\)</span> increases, the parabola is traced from left to right: starting at <span class="process-math">\((-1,0)\text{,}\)</span> down to the vertex <span class="process-math">\((0,-1)\text{,}\)</span> and up to <span class="process-math">\((1,0)\text{.}\)</span> To graph it, draw this piece of the upward parabola with the arrows on it pointing from left to right.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-2-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch02-01-ex-5-2b"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-01-ex-5-2b" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-01-ex-5-2b.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-01-ex-5-2b-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-01-ex-5-2b-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-01-ex-5-2b-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-01-ex-5-2b-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>This interactive is PENDING, it should correspond to Example 5.2-2.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.1.5"><a tabindex="-1" href="#fig-ch02-01-ex-5-2b" title="Copy heading and permalink for Figure 2.1.5" aria-label="Copy heading and permalink for Figure 2.1.5">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 2.1.8.2"><a tabindex="-1" href="#example-ch02-01-ex-5-2-3" title="Copy heading and permalink for Solution 2.1.8.2" aria-label="Copy heading and permalink for Solution 2.1.8.2">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.1.8"><a tabindex="-1" href="#example-ch02-01-ex-5-2" title="Copy heading and permalink for Example 2.1.8" aria-label="Copy heading and permalink for Example 2.1.8">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="sec-ch02-01-VectorValuedFunctions-11"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-11-1">Generally if you want to quickly parametrize a function <span class="process-math">\(f(x)\)</span> on the interval <span class="process-math">\(x\in [a,b]\)</span> from left to right, then you can use <span class="process-math">\(\vec{r}(t) = \langle t, f(t) \rangle\)</span> for <span class="process-math">\(t\in [a,b]\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 2.1.9"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-11" title="Copy heading and permalink for Remark 2.1.9" aria-label="Copy heading and permalink for Remark 2.1.9">🔗</a></div>
+</article>
+<details id="example-ch02-01-ex-5-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch02-01-ex-5-3-1-1">For the following planar curve, write a vector-valued function which traces it with the specified orientation. Moreover, graph the given curve using arrows to indicate the orientation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch02-01-ex-5-3-1-2">The graph of <span class="process-math">\(y=x^{2}-4 x+3\text{,}\)</span> on the interval <span class="process-math">\([1,5]\text{,}\)</span> traced from right to left (relative to the <span class="process-math">\(x\)</span>-axis)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch02-01-ex-5-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch02-01-ex-5-3-2-1">To trace the graph from right to left we need the <span class="process-math">\(x\)</span>-coordinate to decrease as <span class="process-math">\(t\)</span> increases and there multiple options to achieve this. Here are three:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch02-01-ex-5-3-2-2">
+<div class="para">
+<em class="alert">Option A</em> Let <span class="process-math">\(x = 5-t\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-3-2-2-3">
+\begin{equation*}
+y = x^2-4x+3 = (5-t)^2-4(5-t)+3 = t^2-6t+8
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(x=5-t\)</span> runs from 5 down to 1 as <span class="process-math">\(t\)</span> runs from 0 to 4. Hence</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-3-2-2-6">
+\begin{equation*}
+\vec{r}(t) = \langle 5-t, t^2-6t+8 \rangle, \quad 0 \leq t \leq 4
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="example-ch02-01-ex-5-3-2-3">Indeed, <span class="process-math">\(\vec{r}(0) = \langle 5,8 \rangle\)</span> and <span class="process-math">\(\vec{r}(4) = \langle 1,0 \rangle\text{,}\)</span> so the curve starts at the right endpoint <span class="process-math">\((5,8)\)</span> and ends at the left endpoint <span class="process-math">\((1,0)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-3-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch02-01-ex-5-3-2-4">
+<div class="para">
+<em class="alert">Option B</em> Let <span class="process-math">\(x = 6-t\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-3-2-4-3">
+\begin{equation*}
+y = x^2-4x+3 = (6-t)^2-4(6-t)+3 = t^2-8t+15
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(x=6-t\)</span> runs from 5 down to 1 as <span class="process-math">\(t\)</span> runs from 1 to 5. Hence</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-3-2-4-6">
+\begin{equation*}
+\vec{r}(t) = \langle 6-t, t^2-8t+15 \rangle, \quad 1 \leq t \leq 5
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-3-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="example-ch02-01-ex-5-3-2-5">Indeed, <span class="process-math">\(\vec{r}(1) = \langle 5,8 \rangle\)</span> and <span class="process-math">\(\vec{r}(5) = \langle 1,0 \rangle\text{,}\)</span> so the curve starts at the right endpoint <span class="process-math">\((5,8)\)</span> and ends at the left endpoint <span class="process-math">\((1,0)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-3-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch02-01-ex-5-3-2-6">
+<div class="para">
+<em class="alert">Option C</em> Let <span class="process-math">\(x = -t\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-3-2-6-3">
+\begin{equation*}
+y = x^2-4x+3 = (-t)^2-4(-t)+3 = t^2+4t+3
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(x=-t\)</span> runs from 5 down to 1 as <span class="process-math">\(t\)</span> runs from <span class="process-math">\(-5\)</span> to <span class="process-math">\(-1\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-3-2-6-8">
+\begin{equation*}
+\vec{r}(t) = \langle -t, t^2+4t+3 \rangle, \quad -5 \leq t \leq -1
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-3-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="example-ch02-01-ex-5-3-2-7">Indeed, <span class="process-math">\(\vec{r}(-5) = \langle 5,8 \rangle\)</span> and <span class="process-math">\(\vec{r}(-1) = \langle 1,0 \rangle\text{,}\)</span> so the curve starts at the right endpoint <span class="process-math">\((5,8)\)</span> and ends at the left endpoint <span class="process-math">\((1,0)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-3-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="example-ch02-01-ex-5-3-2-8">To graph it, draw the piece of the upward parabola with vertex <span class="process-math">\((2,-1)\)</span> and <span class="process-math">\(x\)</span>-intercepts <span class="process-math">\((1,0)\)</span> and <span class="process-math">\((3,0)\text{,}\)</span> between <span class="process-math">\(x=1\)</span> and <span class="process-math">\(x=5\text{,}\)</span> with the arrows on it pointing from right to left.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-3-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch02-01-ex-5-3"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-01-ex-5-3" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-01-ex-5-3.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-01-ex-5-3-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-01-ex-5-3-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-01-ex-5-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-01-ex-5-3-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>This interactive is PENDING, it should correspond to Example 5.3.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.1.6"><a tabindex="-1" href="#fig-ch02-01-ex-5-3" title="Copy heading and permalink for Figure 2.1.6" aria-label="Copy heading and permalink for Figure 2.1.6">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 2.1.10.1"><a tabindex="-1" href="#example-ch02-01-ex-5-3-2" title="Copy heading and permalink for Solution 2.1.10.1" aria-label="Copy heading and permalink for Solution 2.1.10.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.1.10"><a tabindex="-1" href="#example-ch02-01-ex-5-3" title="Copy heading and permalink for Example 2.1.10" aria-label="Copy heading and permalink for Example 2.1.10">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="sec-ch02-01-VectorValuedFunctions-13"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-13-1">Generally if you want to quickly parametrize a function <span class="process-math">\(f(x)\)</span> on the interval <span class="process-math">\(x\in [a,b]\)</span> from right to left, then you can use on of the following.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch02-01-VectorValuedFunctions-13-2">
+<ol class="decimal" id="sec-ch02-01-VectorValuedFunctions-13-2-1">
+<li id="sec-ch02-01-VectorValuedFunctions-13-2-1-1">
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-13-2-1-1-1">
+<span class="process-math">\(\vec{r}(t) = \langle b-t, f(b-t) \rangle\)</span> for <span class="process-math">\(t\in [0,b-a]\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-13-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-13-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-ch02-01-VectorValuedFunctions-13-2-1-2">
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-13-2-1-2-1">
+<span class="process-math">\(\vec{r}(t) = \langle b+a-t, f(b+a-t) \rangle\)</span> for <span class="process-math">\(t\in [a,b]\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-13-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-13-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-ch02-01-VectorValuedFunctions-13-2-1-3">
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-13-2-1-3-1">
+<span class="process-math">\(\vec{r}(t) = \langle -t, f(-t) \rangle\)</span> for <span class="process-math">\(t\in [-b,-a]\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-13-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-13-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 2.1.11"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-13" title="Copy heading and permalink for Remark 2.1.11" aria-label="Copy heading and permalink for Remark 2.1.11">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch02-01-VectorValuedFunctions-14"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Parametric Equations for a Line.</span>
+</h2>
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-14-2">The components <span class="process-math">\(f(t), g(t)\text{,}\)</span> and <span class="process-math">\(h(t)\)</span> of <span class="process-math">\(\vec{r}(t)=\langle f(t), g(t), h(t)\rangle\)</span> are also called parametric equations.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-14-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 2.1.12: Parametric Equations for a Line"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-14" title="Copy heading and permalink for Remark 2.1.12: Parametric Equations for a Line" aria-label="Copy heading and permalink for Remark 2.1.12: Parametric Equations for a Line">🔗</a></div>
+</article>
+<article class="definition definition-like" id="sec-ch02-01-VectorValuedFunctions-15"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Line in Parametric Form.</span>
+</h2>
+<div class="para logical" id="sec-ch02-01-VectorValuedFunctions-15-2-1">
+<div class="para">A line in <span class="process-math">\(x y z\)</span>-space (or in 2D space) can be defined as a vector-valued function by the equation</div>
+<div class="displaymath process-math" id="sec-ch02-01-VectorValuedFunctions-15-2-1-2">
+\begin{align*}
+\vec{r}(t) \amp =\vec{r}_{0}+t \vec{v}\\
+\amp =\left\langle x_{0}, y_{0}, z_{0}\right\rangle+t\langle a, b, c\rangle\\
+\amp =\left\langle x_{0}+a t, y_{0}+b t, z_{0}+c t\right\rangle
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(-\infty \lt t \lt \infty, P_{0}\left(x_{0}, y_{0}, z_{0}\right)\)</span> is any point on the line, and <span class="process-math">\(\vec{v}=\langle a, b, c\rangle\)</span> (the direction vector) gives you the change in each coordinate.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-15-2-2">The equations <span class="process-math">\(f(t)=x_{0}+a t, g(t)=y_{0}+b t\text{,}\)</span> and <span class="process-math">\(h(t)=z_{0}+c t\)</span> are the parametric equations that define the line.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-15-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 2.1.13: Line in Parametric Form"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-15" title="Copy heading and permalink for Definition 2.1.13: Line in Parametric Form" aria-label="Copy heading and permalink for Definition 2.1.13: Line in Parametric Form">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch02-01-VectorValuedFunctions-16"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-16-1">Geometrically, the definition above says that you take the line containing <span class="process-math">\(\vec{v}\)</span> (represented by <span class="process-math">\(t \vec{v}\)</span> ), and shift it so it passes through the endpoint of <span class="process-math">\(\vec{r}_{0}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch02-01-line-parametric"><div class="interactive-iframe-container"><iframe src="https://c3d.libretexts.org/CalcPlot3D/dynamicFigureWCP/index.html?type=vector;vector=%3C20,%20-20,%200%3E;visible=true;color=rgb(255,193,7);size=2;initialpt=(-8,8,8);dashed=undefined&amp;type=vector;vector=%3C-8,%208,%208%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=vector;vector=%3C4,%20-4,%208%3E;visible=true;color=rgb(30,136,229);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=-8+t;y=8-t;z=8;visible=true;width=2;view=0;tmin=-100;tmax=100;tsteps=500;color=rgb(0,0,0);showtrace=false;tval=0;constcol=true;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=true;acc=true;veceqs=true;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=true;tanline=false;dropcurtain=false;showtvector=false;shownvector=false;showbvector=false;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=text;text=r;visible=true;point=(2,-2,4);color=rgb(30,136,229);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=text;text=V;visible=true;point=(0,0,8);color=rgb(255,193,0);font=Times%20New%20Roman;fontsize=18pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=text;text=r_0;visible=true;point=(-4,4,4);color=rgb(216,27,96);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-left&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=79.06935394044787,45.65071278216736,29.665631459994955,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-16;xmax=16;ymin=-16;ymax=16;zmin=-16;zmax=16;xscale=8;yscale=8;zscale=8;zcmin=-32;zcmax=32;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.191083" id="interactive-ch02-01-line-parametric" style="width:540px; height:360px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-01-line-parametric.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-01-line-parametric-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-01-line-parametric-1-1">Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <a class="external" href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=vector;vector=%3C20,%20-20,%200%3E;visible=true;color=rgb(255,193,7);size=2;initialpt=(-8,8,8);dashed=undefined&amp;type=vector;vector=%3C-8,%208,%208%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=vector;vector=%3C4,%20-4,%208%3E;visible=true;color=rgb(30,136,229);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=-8+t;y=8-t;z=8;visible=true;width=2;view=0;tmin=-100;tmax=100;tsteps=500;color=rgb(0,0,0);showtrace=false;tval=0;constcol=true;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=true;acc=true;veceqs=true;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=true;tanline=false;dropcurtain=false;showtvector=false;shownvector=false;showbvector=false;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=text;text=r;visible=true;point=(2,-2,4);color=rgb(30,136,229);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=text;text=V;visible=true;point=(0,0,8);color=rgb(255,193,0);font=Times%20New%20Roman;fontsize=18pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=text;text=r_0;visible=true;point=(-4,4,4);color=rgb(216,27,96);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-left&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=79.06935394044787,45.65071278216736,29.665631459994955,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-16;xmax=16;ymin=-16;ymax=16;zmin=-16;zmax=16;xscale=8;yscale=8;zscale=8;zcmin=-32;zcmax=32;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.191083" target="_blank">link to the plot</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-01-line-parametric-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-01-line-parametric-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A line in <span class="process-math">\(xyz\)</span>-space defined by the position vector <span class="process-math">\(\vec{r}_{0}\)</span> and a direction vector <span class="process-math">\(\vec{v}\text{,}\)</span> illustrating the parametric form: <span class="process-math">\(\vec{r}(t)=\vec{r}_{0}+t\vec{v}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 2.1.7"><a tabindex="-1" href="#fig-ch02-01-line-parametric" title="Copy heading and permalink for Figure 2.1.7" aria-label="Copy heading and permalink for Figure 2.1.7">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Note 2.1.14"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-16" title="Copy heading and permalink for Note 2.1.14" aria-label="Copy heading and permalink for Note 2.1.14">🔗</a></div>
+</article>
+<details id="example-ch02-01-ex-5-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch02-01-ex-5-4-1-1">Find both the vector equation and the parametric equations of the line through <span class="process-math">\(P(1,2,3)\)</span> in the direction of the vector <span class="process-math">\(\vec{v}=\langle 3,2,1 \rangle\text{.}\)</span> Does the point <span class="process-math">\(\left(\frac{5}{4},\frac{13}{6},\frac{37}{12}\right)\)</span> lie on this line?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch02-01-ex-5-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch02-01-ex-5-4-2-1">
+<div class="para">Using <span class="process-math">\(P(1,2,3)\)</span> as the point on the line and <span class="process-math">\(\vec{v}=\langle 3,2,1 \rangle\)</span> as the direction vector, the vector equation of the line is</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-4-2-1-3">
+\begin{equation*}
+\vec{r}(t) = \vec{r}_0+t\vec{v} = \langle 1,2,3 \rangle + t\langle 3,2,1 \rangle = \langle 1+3t, 2+2t, 3+t \rangle, \quad -\infty \lt t \lt \infty
+\end{equation*}
+</div>
+<div class="para">and the parametric equations are</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-4-2-1-4">
+\begin{equation*}
+x = 1+3t, \quad y = 2+2t, \quad z = 3+t
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch02-01-ex-5-4-2-2">
+<div class="para">For the point <span class="process-math">\(\left(\frac{5}{4},\frac{13}{6},\frac{37}{12}\right)\)</span> to lie on the line, all three parametric equations must be satisfied by the same value of <span class="process-math">\(t\text{.}\)</span> From the first equation:</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-4-2-2-3">
+\begin{equation*}
+1+3t = \frac{5}{4} \Rightarrow 3t = \frac{1}{4} \Rightarrow t = \frac{1}{12}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch02-01-ex-5-4-2-3">
+<div class="para">Checking this value in the other two equations:</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-4-2-3-1">
+\begin{equation*}
+y = 2+2 \cdot \frac{1}{12} = 2+\frac{1}{6} = \frac{13}{6}, \quad z = 3+\frac{1}{12} = \frac{37}{12}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="example-ch02-01-ex-5-4-2-4">Both match, so yes: the point lies on the line (it is reached at <span class="process-math">\(t = \frac{1}{12}\)</span>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-4-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.1.15.1"><a tabindex="-1" href="#example-ch02-01-ex-5-4-2" title="Copy heading and permalink for Solution 2.1.15.1" aria-label="Copy heading and permalink for Solution 2.1.15.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.1.15"><a tabindex="-1" href="#example-ch02-01-ex-5-4" title="Copy heading and permalink for Example 2.1.15" aria-label="Copy heading and permalink for Example 2.1.15">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="sec-ch02-01-VectorValuedFunctions-18"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch02-01-VectorValuedFunctions-18-1">Given a line <span class="process-math">\(\vec{r}(t)=\vec{r}_{0}+t \vec{v}\text{,}\)</span> since <span class="process-math">\(\vec{v}\)</span> represents the direction of the line, we can compare lines by comparing their direction vectors.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 2.1.16"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions-18" title="Copy heading and permalink for Remark 2.1.16" aria-label="Copy heading and permalink for Remark 2.1.16">🔗</a></div>
+</article>
+<details id="example-ch02-01-ex-5-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="example-ch02-01-ex-5-5-1-1">
+<div class="para">Determine whether the following pair of lines are parallel, intersect at a single point, or are skew. If they are parallel, determine whether they are the same line. If they intersect at a single point, determine the point of intersection.</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-5-1-1-1">
+\begin{align*}
+\amp \vec{r}_{1}(t)=\langle 3,2,1\rangle+\langle 1,2,3 \rangle t,\quad -\infty \lt t \lt \infty\\
+\amp \vec{r}_{2}(t)=\langle 1,2,3\rangle+\langle 3,2,1 \rangle t,\quad -\infty \lt t \lt \infty
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch02-01-ex-5-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch02-01-ex-5-5-2-1">The direction vectors are <span class="process-math">\(\vec{v}_1 = \langle 1,2,3 \rangle\)</span> for the first line and <span class="process-math">\(\vec{v}_2 = \langle 3,2,1 \rangle\)</span> for the second. If the lines were parallel there would be a scalar <span class="process-math">\(c\)</span> with <span class="process-math">\(c\vec{v}_1 = \vec{v}_2\text{;}\)</span> comparing components gives <span class="process-math">\(c=3\text{,}\)</span> <span class="process-math">\(c=1\text{,}\)</span> and <span class="process-math">\(c=\frac{1}{3}\)</span> respectively, which is impossible. Hence the lines are not parallel (and in particular they are not the same line).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch02-01-ex-5-5-2-2">
+<div class="para">It remains to determine whether the lines intersect at a single point or are skew. An intersection point may be reached by each line at a different time, so we rename the parameter of the second line and look for values <span class="process-math">\(t\)</span> and <span class="process-math">\(s\)</span> with <span class="process-math">\(\vec{r}_1(t) = \vec{r}_2(s)\text{.}\)</span> Comparing components gives the system</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-5-2-2-4">
+\begin{gather*}
+3+t = 1+3s\\
+2+2t = 2+2s\\
+1+3t = 3+s
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch02-01-ex-5-5-2-3">
+<div class="para">The second equation of the system gives <span class="process-math">\(2t = 2s \Rightarrow t = s\text{.}\)</span> Substituting into the first equation:</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-5-2-3-2">
+\begin{equation*}
+3+t = 1+3t \Rightarrow 2 = 2t \Rightarrow t = 1, \quad s = 1
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-5-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch02-01-ex-5-5-2-4">
+<div class="para">Since we only used the first two equations, we must check these values in the third: <span class="process-math">\(1+3(1) = 4\)</span> and <span class="process-math">\(3+1 = 4\text{,}\)</span> so the third equation is also satisfied. Hence the system is consistent and the lines intersect at the single point</div>
+<div class="displaymath process-math" id="example-ch02-01-ex-5-5-2-4-3">
+\begin{equation*}
+\vec{r}_1(1) = \langle 3+1, 2+2, 1+3 \rangle = \langle 4,4,4 \rangle
+\end{equation*}
+</div>
+<div class="para">that is, at the point <span class="process-math">\((4,4,4)\text{.}\)</span> (Indeed, <span class="process-math">\(\vec{r}_2(1) = \langle 1+3, 2+2, 3+1 \rangle = \langle 4,4,4 \rangle\)</span> as well.)</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-01-ex-5-5-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.1.17.1"><a tabindex="-1" href="#example-ch02-01-ex-5-5-2" title="Copy heading and permalink for Solution 2.1.17.1" aria-label="Copy heading and permalink for Solution 2.1.17.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.1.17"><a tabindex="-1" href="#example-ch02-01-ex-5-5" title="Copy heading and permalink for Example 2.1.17" aria-label="Copy heading and permalink for Example 2.1.17">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Section 2.1: Vector-Valued Functions"><a tabindex="-1" href="#sec-ch02-01-VectorValuedFunctions" title="Copy heading and permalink for Section 2.1: Vector-Valued Functions" aria-label="Copy heading and permalink for Section 2.1: Vector-Valued Functions">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-02-IntroductionVectorandScalarValuedFunctions-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

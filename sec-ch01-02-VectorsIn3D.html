@@ -36,7 +36,7 @@ lang: "en-US",
 <meta name="twitter:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
 <meta property="og:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
 <meta name="twitter:card" content="summary">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.48"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.48"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -134,6 +134,14 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-01-Vectors2DIntroduction.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vectors in 2D</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-ch01-02-VectorsIn3D.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Vectors in 3D</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-03-DotProduct.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Dot Product</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-04-CrossProduct.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Cross Product</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">2. Introduction to Vector and Scalar Valued Functions</span></a></div>
+<ul id="ptx-toc-group-ch-02-IntroductionVectorandScalarValuedFunctions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch02-01-VectorValuedFunctions.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vector-Valued Functions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -192,341 +200,402 @@ eBookConfig.enable_chatcodes =  false;
 </h2>
 <div class="para" id="sec-ch01-02-VectorsIn3D-4-1">You can draw a 2D representation of 3D space as follows:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external//images/Note%202.1.png" class="contained" alt="The three dimensional space with the axes x, y, and z."></div>
-<div class="autopermalink" aria-hidden="true" data-description="Note 1.2.3"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-4" title="Copy heading and permalink for Note 1.2.3" aria-label="Copy heading and permalink for Note 1.2.3">🔗</a></div>
+<figure class="figure figure-like" id="fig-ch01-02-note-2-1"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/mf8ycttl9c" id="interactive-ch01-02-note-2-1" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch01-02-note-2-1.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch01-02-note-2-1-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch01-02-note-2-1-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/mf8ycttl9c" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch01-02-note-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch01-02-note-2-1-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>This interactive is PENDING, it should correspond to Note 2.1.<div class="autopermalink" aria-hidden="true" data-description="Figure 1.2.1"><a tabindex="-1" href="#fig-ch01-02-note-2-1" title="Copy heading and permalink for Figure 1.2.1" aria-label="Copy heading and permalink for Figure 1.2.1">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Note 1.2.3"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-4" title="Copy heading and permalink for Note 1.2.3" aria-label="Copy heading and permalink for Note 1.2.3">🔗</a></div>
 </article>
 <article class="note remark-like" id="sec-ch01-02-VectorsIn3D-5"><h2 class="heading">
 <span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h2>
 <div class="para" id="sec-ch01-02-VectorsIn3D-5-1">For consistency, we will always draw the <span class="process-math">\(xyz\)</span>-space following the right-hand rule as shown below:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Note 1.2.4"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-5" title="Copy heading and permalink for Note 1.2.4" aria-label="Copy heading and permalink for Note 1.2.4">🔗</a></div>
-</article>
-<figure class="figure figure-like" id="sec-ch01-02-VectorsIn3D-6">
+<figure class="figure figure-like" id="fig-ch01-02-right-hand-rule">
 <div class="sidebyside">
 <div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;grid-template-columns:47.3684210526316% 47.3684210526316%;column-gap:5%;">
-<div class="sbspanel sbspanel--middle middle" style=""><div class="image-box"><img src="external//images/2025_08_01_578ccdf8ba98801b0a3bg-1.jpg" class="contained" alt="The xyz-coordinate system with axes arranged using the right-hand rule."></div></div>
-<div class="sbspanel sbspanel--middle middle" style=""><div class="image-box"><img src="external//images/2025_08_01_578ccdf8ba98801b0a3bg-1-1.jpg" class="contained" alt="The right-hand rule: a right hand, with the thumb pointing upwards, defining the z axis, while the rest of the fingers move from the x axis to the y axis."></div></div>
+<div class="sbspanel sbspanel--middle middle" style=""><div class="image-box">
+<img src="external//images/2025_08_01_578ccdf8ba98801b0a3bg-1.jpg" class="contained" alt="The xyz-coordinate system with axes arranged using the right-hand rule."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="fig-ch01-02-right-hand-rule-2-1-description">
+<div class="para" id="fig-ch01-02-right-hand-rule-2-1-2-1">The <span class="process-math">\(xyz\)</span>-coordinate system with axes arranged using the right-hand rule.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#fig-ch01-02-right-hand-rule-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div></div>
+<div class="sbspanel sbspanel--middle middle" style=""><div class="image-box">
+<img src="external//images/2025_08_01_578ccdf8ba98801b0a3bg-1-1.jpg" class="contained" alt="The right-hand rule: a right hand, with the thumb pointing upwards, defining the z axis, while the rest of the fingers move from the x axis to the y axis."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="fig-ch01-02-right-hand-rule-2-2-description">
+<div class="para" id="fig-ch01-02-right-hand-rule-2-2-2-1">The right-hand rule: a right hand, with the thumb pointing upwards, defining the <span class="process-math">\(z\)</span> axis, while the rest of the fingers move from the <span class="process-math">\(x\)</span> axis to the <span class="process-math">\(y\)</span> axis.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#fig-ch01-02-right-hand-rule-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div></div>
 </div>
 </div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>From OpenStax, Calculus Volume 3, Section 2.2<div class="autopermalink" aria-hidden="true" data-description="Figure 1.2.5"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-6" title="Copy heading and permalink for Figure 1.2.5" aria-label="Copy heading and permalink for Figure 1.2.5">🔗</a></div></figcaption>
-</figure>
-<article class="definition definition-like" id="sec-ch01-02-VectorsIn3D-7"><h2 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Points in <span class="process-math">\(xyz\)</span>-Space.</span>
-</h2>
-<div class="para" id="sec-ch01-02-VectorsIn3D-7-2-1">In the <span class="process-math">\(xy\)</span>-plane, we represent points by ordered pairs of the form <span class="process-math">\(\left(x_{1}, y_{1}\right)\text{.}\)</span> In <span class="process-math">\(xyz\)</span>-space, we represent points by ordered triples of the form <span class="process-math">\(\left(x_{1}, y_{1}, z_{1}\right)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para" id="sec-ch01-02-VectorsIn3D-7-2-2">Given a point <span class="process-math">\(\left(x_{1}, y_{1}, z_{1}\right)\text{,}\)</span> we call <span class="process-math">\(x_{1}\text{,}\)</span> <span class="process-math">\(y_{1}\text{,}\)</span> and <span class="process-math">\(z_{1}\)</span> the <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\)</span> coordinates of the point, respectively.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-7-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Definition 1.2.6: Points in xyz-Space"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-7" title="Copy heading and permalink for Definition 1.2.6: Points in xyz-Space" aria-label="Copy heading and permalink for Definition 1.2.6: Points in xyz-Space">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>From OpenStax, Calculus Volume 3, Section 2.2<div class="autopermalink" aria-hidden="true" data-description="Figure 1.2.2"><a tabindex="-1" href="#fig-ch01-02-right-hand-rule" title="Copy heading and permalink for Figure 1.2.2" aria-label="Copy heading and permalink for Figure 1.2.2">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Note 1.2.4"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-5" title="Copy heading and permalink for Note 1.2.4" aria-label="Copy heading and permalink for Note 1.2.4">🔗</a></div>
 </article>
-<figure class="figure figure-like" id="sec-ch01-02-VectorsIn3D-8"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external//images/2025_08_01_578ccdf8ba98801b0a3bg-2.jpg" class="contained" alt="The point (6, 4.5, 8) plotted in xyz-space."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Point <span class="process-math">\((6, 4.5, 8)\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 1.2.7"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-8" title="Copy heading and permalink for Figure 1.2.7" aria-label="Copy heading and permalink for Figure 1.2.7">🔗</a></div></figcaption>
+<article class="definition definition-like" id="sec-ch01-02-VectorsIn3D-6"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Points in <span class="process-math">\(xyz\)</span>-Space.</span>
+</h2>
+<div class="para" id="sec-ch01-02-VectorsIn3D-6-2-1">In the <span class="process-math">\(xy\)</span>-plane, we represent points by ordered pairs of the form <span class="process-math">\(\left(x_{1}, y_{1}\right)\text{.}\)</span> In <span class="process-math">\(xyz\)</span>-space, we represent points by ordered triples of the form <span class="process-math">\(\left(x_{1}, y_{1}, z_{1}\right)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sec-ch01-02-VectorsIn3D-6-2-2">Given a point <span class="process-math">\(\left(x_{1}, y_{1}, z_{1}\right)\text{,}\)</span> we call <span class="process-math">\(x_{1}\text{,}\)</span> <span class="process-math">\(y_{1}\text{,}\)</span> and <span class="process-math">\(z_{1}\)</span> the <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\)</span> coordinates of the point, respectively.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-6-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.2.5: Points in xyz-Space"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-6" title="Copy heading and permalink for Definition 1.2.5: Points in xyz-Space" aria-label="Copy heading and permalink for Definition 1.2.5: Points in xyz-Space">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="fig-ch01-02-point-6-4-5-8"><div class="interactive-iframe-container"><iframe src="https://c3d.libretexts.org/CalcPlot3D/dynamicFigureWCP/index.html?type=text;text=(6%2C4.5%2C8);visible=true;point=(6,4.5,8);color=rgb(51,34,136);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Lower-right&amp;type=vector;vector=%3C6,%200,%200%3E;label=v-%3E_%7B10%7D;showlabel=false;labelposition=end;visible=true;color=rgb(204,102,119);size=4.9;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,%204.5,%200%3E;label=v-%3E_%7B11%7D;showlabel=false;labelposition=end;visible=true;color=rgb(136,205,238);size=2;initialpt=(6,0,0);dashed=false&amp;type=vector;vector=%3C0,%200,%208%3E;label=v-%3E_%7B12%7D;showlabel=false;labelposition=end;visible=true;color=rgb(51,34,136);size=2;initialpt=(6,4.5,0);dashed=false&amp;type=window;showfunnot=true;hsrmode=0;nomidpts=false;anaglyph=-1;center=32.945564141853275,19.021130325903066,12.360679774997898,1;focus=0,0,0,1;up=0,0,2,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-8;xmax=8;ymin=-8;ymax=8;zmin=-8;zmax=8;xscale=4;yscale=4;zscale=4;zcmin=-16;zcmax=16;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.25" id="interactive-ch01-02-point-6-4-5-8" style="width:600px; height:600px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch01-02-point-6-4-5-8.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch01-02-point-6-4-5-8-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch01-02-point-6-4-5-8-1-1">Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <a class="external" href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=text;text=(6%2C4.5%2C8);visible=true;point=(6,4.5,8);color=rgb(51,34,136);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Lower-right&amp;type=vector;vector=%3C6,%200,%200%3E;label=v-%3E_%7B10%7D;showlabel=false;labelposition=end;visible=true;color=rgb(204,102,119);size=4.9;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,%204.5,%200%3E;label=v-%3E_%7B11%7D;showlabel=false;labelposition=end;visible=true;color=rgb(136,205,238);size=2;initialpt=(6,0,0);dashed=false&amp;type=vector;vector=%3C0,%200,%208%3E;label=v-%3E_%7B12%7D;showlabel=false;labelposition=end;visible=true;color=rgb(51,34,136);size=2;initialpt=(6,4.5,0);dashed=false&amp;type=window;showfunnot=true;hsrmode=0;nomidpts=false;anaglyph=-1;center=32.945564141853275,19.021130325903066,12.360679774997898,1;focus=0,0,0,1;up=0,0,2,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-8;xmax=8;ymin=-8;ymax=8;zmin=-8;zmax=8;xscale=4;yscale=4;zscale=4;zcmin=-16;zcmax=16;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.5" target="_blank">link to the plot</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch01-02-point-6-4-5-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch01-02-point-6-4-5-8-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The point <span class="process-math">\((6, 4.5, 8)\)</span> plotted in <span class="process-math">\(xyz\)</span>-space.<div class="autopermalink" aria-hidden="true" data-description="Figure 1.2.3"><a tabindex="-1" href="#fig-ch01-02-point-6-4-5-8" title="Copy heading and permalink for Figure 1.2.3" aria-label="Copy heading and permalink for Figure 1.2.3">🔗</a></div></figcaption>
 </figure>
-<div class="para" id="sec-ch01-02-VectorsIn3D-9">We have infinitely many planes. The “main” planes are:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="remark remark-like" id="sec-ch01-02-VectorsIn3D-8"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch01-02-VectorsIn3D-8-1">We have infinitely many planes. The “main” planes are:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec-ch01-02-VectorsIn3D-10">
-<ul class="disc" id="sec-ch01-02-VectorsIn3D-10-1">
-<li id="sec-ch01-02-VectorsIn3D-10-1-1">
-<div class="para" id="sec-ch01-02-VectorsIn3D-10-1-1-1">The <span class="process-math">\(xy\)</span>-plane: Consists of all points with <span class="process-math">\(z\)</span>-coordinate equal to zero. Defined by the equation <span class="process-math">\(z=0\text{.}\)</span> Contains the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> axes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-10-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="sec-ch01-02-VectorsIn3D-8-2">
+<ul class="disc" id="sec-ch01-02-VectorsIn3D-8-2-1">
+<li id="sec-ch01-02-VectorsIn3D-8-2-1-1">
+<div class="para" id="sec-ch01-02-VectorsIn3D-8-2-1-1-1">The <span class="process-math">\(xy\)</span>-plane: Consists of all points with <span class="process-math">\(z\)</span>-coordinate equal to zero. Defined by the equation <span class="process-math">\(z=0\text{.}\)</span> Contains the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> axes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-8-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-10-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-8-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="sec-ch01-02-VectorsIn3D-10-1-2">
-<div class="para" id="sec-ch01-02-VectorsIn3D-10-1-2-1">The <span class="process-math">\(xz\)</span>-plane: Consists of all points with <span class="process-math">\(y\)</span>-coordinate equal to zero. Defined by the equation <span class="process-math">\(y=0\text{.}\)</span> Contains the <span class="process-math">\(x\)</span> and <span class="process-math">\(z\)</span> axes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-10-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="sec-ch01-02-VectorsIn3D-8-2-1-2">
+<div class="para" id="sec-ch01-02-VectorsIn3D-8-2-1-2-1">The <span class="process-math">\(xz\)</span>-plane: Consists of all points with <span class="process-math">\(y\)</span>-coordinate equal to zero. Defined by the equation <span class="process-math">\(y=0\text{.}\)</span> Contains the <span class="process-math">\(x\)</span> and <span class="process-math">\(z\)</span> axes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-8-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-10-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-8-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="sec-ch01-02-VectorsIn3D-10-1-3">
-<div class="para" id="sec-ch01-02-VectorsIn3D-10-1-3-1">The <span class="process-math">\(yz\)</span>-plane: Consists of all points with <span class="process-math">\(x\)</span>-coordinate equal to zero. Defined by the equation <span class="process-math">\(x=0\text{.}\)</span> Contains the <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> axes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-10-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="sec-ch01-02-VectorsIn3D-8-2-1-3">
+<div class="para" id="sec-ch01-02-VectorsIn3D-8-2-1-3-1">The <span class="process-math">\(yz\)</span>-plane: Consists of all points with <span class="process-math">\(x\)</span>-coordinate equal to zero. Defined by the equation <span class="process-math">\(x=0\text{.}\)</span> Contains the <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> axes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-8-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-10-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-8-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 </ul>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="sec-ch01-02-VectorsIn3D-11"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external//images/2025_08_01_578ccdf8ba98801b0a3bg-3.jpg" class="contained" alt="The three coordinate planes xy, xz, and yz shown in xyz-space."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>From OpenStax, Calculus Volume 3, Section 2.2<div class="autopermalink" aria-hidden="true" data-description="Figure 1.2.8"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-11" title="Copy heading and permalink for Figure 1.2.8" aria-label="Copy heading and permalink for Figure 1.2.8">🔗</a></div></figcaption>
-</figure>
-<details id="sec-ch01-02-VectorsIn3D-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<figure class="figure figure-like" id="fig-ch01-02-coordinate-planes"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
+<img src="external//images/2025_08_01_578ccdf8ba98801b0a3bg-3.jpg" class="contained" alt="The three coordinate planes xy, xz, and yz shown in xyz-space."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="fig-ch01-02-coordinate-planes-2-description">
+<div class="para" id="fig-ch01-02-coordinate-planes-2-2-1">The three coordinate planes <span class="process-math">\(xy\text{,}\)</span> <span class="process-math">\(xz\text{,}\)</span> and <span class="process-math">\(yz\)</span> shown in <span class="process-math">\(xyz\)</span>-space.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#fig-ch01-02-coordinate-planes-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>From OpenStax, Calculus Volume 3, Section 2.2<div class="autopermalink" aria-hidden="true" data-description="Figure 1.2.4"><a tabindex="-1" href="#fig-ch01-02-coordinate-planes" title="Copy heading and permalink for Figure 1.2.4" aria-label="Copy heading and permalink for Figure 1.2.4">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Remark 1.2.6"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-8" title="Copy heading and permalink for Remark 1.2.6" aria-label="Copy heading and permalink for Remark 1.2.6">🔗</a></div>
+</article>
+<details id="example-ch01-02-ex-2-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h2></summary>
 <article class="example example-like knowl__content">
-<div class="para" id="sec-ch01-02-VectorsIn3D-12-1-1">Sketch the plane parallel to the <span class="process-math">\(xz\)</span>-plane through <span class="process-math">\((1,9,4)\text{.}\)</span> Moreover, write an equation for this plane.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="example-ch01-02-ex-2-1-1-1">Sketch the plane parallel to the <span class="process-math">\(xz\)</span>-plane through <span class="process-math">\((1,9,4)\text{.}\)</span> Moreover, write an equation for this plane.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch01-02-ex-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
-<details id="sec-ch01-02-VectorsIn3D-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<details id="example-ch01-02-ex-2-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
-<div class="para logical" id="sec-ch01-02-VectorsIn3D-12-2-1">
+<div class="para logical" id="example-ch01-02-ex-2-1-2-1">
 <div class="para">The <span class="process-math">\(xz\)</span>-plane is defined by the equation <span class="process-math">\(y=0\text{,}\)</span> and any plane parallel to it consists of all points whose <span class="process-math">\(y\)</span>-coordinate is equal to one fixed constant. Since our plane must contain the point <span class="process-math">\((1,9,4)\text{,}\)</span> that constant is 9, so the plane is defined by the equation</div>
-<div class="displaymath process-math" id="sec-ch01-02-VectorsIn3D-12-2-1-5">
+<div class="displaymath process-math" id="example-ch01-02-ex-2-1-2-1-5">
 \begin{equation*}
 y = 9
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch01-02-ex-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-ch01-02-VectorsIn3D-12-2-2">To sketch it, draw the <span class="process-math">\(xyz\)</span>-axes (following the right-hand rule), mark the value 9 on the <span class="process-math">\(y\)</span>-axis, and through that mark draw a copy of the <span class="process-math">\(xz\)</span>-plane. The plane contains the point <span class="process-math">\((1,9,4)\)</span> and, more generally, every point of the form <span class="process-math">\((x, 9, z)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="example-ch01-02-ex-2-1-2-2">To sketch it, draw the <span class="process-math">\(xyz\)</span>-axes (following the right-hand rule), mark the value 9 on the <span class="process-math">\(y\)</span>-axis, and through that mark draw a copy of the <span class="process-math">\(xz\)</span>-plane. The plane contains the point <span class="process-math">\((1,9,4)\)</span> and, more generally, every point of the form <span class="process-math">\((x, 9, z)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch01-02-ex-2-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external//images/Example%202.1.png" class="contained" alt="The plane parallel to the x z-plane through the point (1,9,4)."></div>
-<div class="autopermalink" aria-hidden="true" data-description="Solution 1.2.9.1"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12-2" title="Copy heading and permalink for Solution 1.2.9.1" aria-label="Copy heading and permalink for Solution 1.2.9.1">🔗</a></div>
+<figure class="figure figure-like" id="fig-ch01-02-ex-2-1"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch01-02-ex-2-1" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch01-02-ex-2-1.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch01-02-ex-2-1-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch01-02-ex-2-1-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch01-02-ex-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch01-02-ex-2-1-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 1.2.9"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12" title="Copy heading and permalink for Example 1.2.9" aria-label="Copy heading and permalink for Example 1.2.9">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>This interactive is PENDING, it should correspond to Example 2.1.<div class="autopermalink" aria-hidden="true" data-description="Figure 1.2.5"><a tabindex="-1" href="#fig-ch01-02-ex-2-1" title="Copy heading and permalink for Figure 1.2.5" aria-label="Copy heading and permalink for Figure 1.2.5">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 1.2.7.1"><a tabindex="-1" href="#example-ch01-02-ex-2-1-2" title="Copy heading and permalink for Solution 1.2.7.1" aria-label="Copy heading and permalink for Solution 1.2.7.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.2.7"><a tabindex="-1" href="#example-ch01-02-ex-2-1" title="Copy heading and permalink for Example 1.2.7" aria-label="Copy heading and permalink for Example 1.2.7">🔗</a></div>
 </article></details>
-<article class="definition definition-like" id="sec-ch01-02-VectorsIn3D-13"><h2 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vectors in <span class="process-math">\(xyz\)</span>-Space.</span>
+<article class="definition definition-like" id="sec-ch01-02-VectorsIn3D-10"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vectors in <span class="process-math">\(xyz\)</span>-Space.</span>
 </h2>
-<div class="para" id="sec-ch01-02-VectorsIn3D-13-2-1">In the <span class="process-math">\(xy\)</span>-plane, we represent vectors in standard position using the notation <span class="process-math">\(\mathbf{v}=\left\langle x_{1}, y_{1}\right\rangle\text{.}\)</span> In <span class="process-math">\(xyz\)</span>-space, we represent vectors in standard position using the notation <span class="process-math">\(\mathbf{v}=\left\langle x_{1}, y_{1}, z_{1}\right\rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-ch01-02-VectorsIn3D-10-2-1">In the <span class="process-math">\(xy\)</span>-plane, we represent vectors in standard position using the notation <span class="process-math">\(\vec{v}=\left\langle x_{1}, y_{1}\right\rangle\text{.}\)</span> In <span class="process-math">\(xyz\)</span>-space, we represent vectors in standard position using the notation <span class="process-math">\(\vec{v}=\left\langle x_{1}, y_{1}, z_{1}\right\rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para logical" id="sec-ch01-02-VectorsIn3D-13-2-2">
+<div class="para logical" id="sec-ch01-02-VectorsIn3D-10-2-2">
 <div class="para">If a vector is given by its starting point <span class="process-math">\(P\left(x_{1}, y_{1}, z_{1}\right)\)</span> and ending point <span class="process-math">\(Q\left(x_{2}, y_{2}, z_{2}\right)\text{,}\)</span> we can shift it to standard position by using the formula</div>
-<div class="displaymath process-math" id="sec-ch01-02-VectorsIn3D-13-2-2-3">
+<div class="displaymath process-math" id="sec-ch01-02-VectorsIn3D-10-2-2-3">
 \begin{equation*}
-\mathbf{v}=\left\langle x_{2}-x_{1}, y_{2}-y_{1}, z_{2}-z_{1}\right\rangle .
+\vec{v}=\left\langle x_{2}-x_{1}, y_{2}-y_{1}, z_{2}-z_{1}\right\rangle\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-13-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-10-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para" id="sec-ch01-02-VectorsIn3D-13-2-3">A vector in standard position is also called a position vector.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-13-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-ch01-02-VectorsIn3D-10-2-3">A vector in standard position is also called a position vector.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-10-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Definition 1.2.10: Vectors in xyz-Space"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-13" title="Copy heading and permalink for Definition 1.2.10: Vectors in xyz-Space" aria-label="Copy heading and permalink for Definition 1.2.10: Vectors in xyz-Space">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.2.8: Vectors in xyz-Space"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-10" title="Copy heading and permalink for Definition 1.2.8: Vectors in xyz-Space" aria-label="Copy heading and permalink for Definition 1.2.8: Vectors in xyz-Space">🔗</a></div>
 </article>
-<figure class="figure figure-like" id="sec-ch01-02-VectorsIn3D-14"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external//images/2025_08_01_578ccdf8ba98801b0a3bg-5.jpg" class="contained" alt="The vector v with coordinates x = 2, y = 5, z = 3, drawn in standard position in xyz-space."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Vector <span class="process-math">\(\mathbf{v}=\langle 2,5,3\rangle\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 1.2.11"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-14" title="Copy heading and permalink for Figure 1.2.11" aria-label="Copy heading and permalink for Figure 1.2.11">🔗</a></div></figcaption>
+<figure class="figure figure-like" id="fig-ch01-02-vector-2-5-3"><div class="interactive-iframe-container"><iframe src="https://c3d.libretexts.org/CalcPlot3D/dynamicFigureWCP/index.html?type=text;text=%3C2%2C5%2C3%3E;visible=true;point=(2,5,3);color=rgb(51,34,136);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Lower-right&amp;type=vector;vector=%3C2,%200,%200%3E;label=v-%3E_%7B10%7D;showlabel=false;labelposition=end;visible=true;color=rgb(204,102,119);size=4.9;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,%205,%200%3E;label=v-%3E_%7B11%7D;showlabel=false;labelposition=end;visible=true;color=rgb(136,205,238);size=2;initialpt=(2,0,0);dashed=false&amp;type=vector;vector=%3C0,%200,%203%3E;label=v-%3E_%7B12%7D;showlabel=false;labelposition=end;visible=true;color=rgb(221,204,119);size=2;initialpt=(2,5,0);dashed=false&amp;type=vector;vector=%3C2,5,3%3E;label=v-%3E_%7B3%7D;showlabel=false;labelposition=end;visible=true;color=rgb(51,34,136);size=2;initialpt=(0,0,0);dashed=false&amp;type=window;showfunnot=true;hsrmode=0;nomidpts=false;anaglyph=-1;center=9.688401334708512,38.231027746872904,6.672585480563284,1;focus=0,0,0,1;up=-0.0621161537973817,-0.26172402004813805,0.9631417968125264,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-6;xmax=6;ymin=-6;ymax=6;zmin=-6;zmax=6;xscale=3;yscale=3;zscale=3;zcmin=-12;zcmax=12;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.5" id="interactive-ch01-02-vector-2-5-3" style="width:600px; height:600px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch01-02-vector-2-5-3.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch01-02-vector-2-5-3-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch01-02-vector-2-5-3-1-1">Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <a class="external" href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=text;text=%3C2%2C5%2C3%3E;visible=true;point=(2,5,3);color=rgb(51,34,136);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Lower-right&amp;type=vector;vector=%3C2,%200,%200%3E;label=v-%3E_%7B10%7D;showlabel=false;labelposition=end;visible=true;color=rgb(204,102,119);size=4.9;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,%205,%200%3E;label=v-%3E_%7B11%7D;showlabel=false;labelposition=end;visible=true;color=rgb(136,205,238);size=2;initialpt=(2,0,0);dashed=false&amp;type=vector;vector=%3C0,%200,%203%3E;label=v-%3E_%7B12%7D;showlabel=false;labelposition=end;visible=true;color=rgb(221,204,119);size=2;initialpt=(2,5,0);dashed=false&amp;type=vector;vector=%3C2,5,3%3E;label=v-%3E_%7B3%7D;showlabel=false;labelposition=end;visible=true;color=rgb(51,34,136);size=2;initialpt=(0,0,0);dashed=false&amp;type=window;showfunnot=true;hsrmode=0;nomidpts=false;anaglyph=-1;center=9.688401334708512,38.231027746872904,6.672585480563284,1;focus=0,0,0,1;up=-0.0621161537973817,-0.26172402004813805,0.9631417968125264,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-6;xmax=6;ymin=-6;ymax=6;zmin=-6;zmax=6;xscale=3;yscale=3;zscale=3;zcmin=-12;zcmax=12;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.5" target="_blank">link to the plot</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch01-02-vector-2-5-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch01-02-vector-2-5-3-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The vector <span class="process-math">\(\vec{v}=\langle 2,5,3\rangle\text{,}\)</span> drawn in standard position in <span class="process-math">\(xyz\)</span>-space.<div class="autopermalink" aria-hidden="true" data-description="Figure 1.2.6"><a tabindex="-1" href="#fig-ch01-02-vector-2-5-3" title="Copy heading and permalink for Figure 1.2.6" aria-label="Copy heading and permalink for Figure 1.2.6">🔗</a></div></figcaption>
 </figure>
-<article class="remark remark-like" id="sec-ch01-02-VectorsIn3D-15"><h2 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vector Operations in <span class="process-math">\(xyz\)</span>-Space.</span>
+<article class="remark remark-like" id="sec-ch01-02-VectorsIn3D-12"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vector Operations in <span class="process-math">\(xyz\)</span>-Space.</span>
 </h2>
-<div class="para" id="sec-ch01-02-VectorsIn3D-15-2">Vector operations in <span class="process-math">\(xyz\)</span>-space work exactly the same as in the <span class="process-math">\(xy\)</span>-plane. We do operations coordinate-wise.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-ch01-02-VectorsIn3D-12-2">Vector operations in <span class="process-math">\(xyz\)</span>-space work exactly the same as in the <span class="process-math">\(xy\)</span>-plane. We do operations coordinate-wise.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-ch01-02-VectorsIn3D-15-3">Let <span class="process-math">\(\mathbf{v}=\left\langle v_{1}, v_{2}, v_{3}\right\rangle\text{,}\)</span> <span class="process-math">\(\mathbf{u}=\left\langle u_{1}, u_{2}, u_{3}\right\rangle\text{,}\)</span> and <span class="process-math">\(c\)</span> be a real number (scalar). Then<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-15-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-ch01-02-VectorsIn3D-12-3">Let <span class="process-math">\(\vec{v}=\left\langle v_{1}, v_{2}, v_{3}\right\rangle\text{,}\)</span> <span class="process-math">\(\vec{u}=\left\langle u_{1}, u_{2}, u_{3}\right\rangle\text{,}\)</span> and <span class="process-math">\(c\)</span> be a real number (scalar). Then<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec-ch01-02-VectorsIn3D-15-4">
-<ul class="disc" id="sec-ch01-02-VectorsIn3D-15-4-1">
-<li id="sec-ch01-02-VectorsIn3D-15-4-1-1">
-<div class="para" id="sec-ch01-02-VectorsIn3D-15-4-1-1-1">
-<span class="process-math">\(\displaystyle \mathbf{v}+\mathbf{u}=\left\langle v_{1}+u_{1}, v_{2}+u_{2},
-v_{3}+u_{3}\right\rangle\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-15-4-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="sec-ch01-02-VectorsIn3D-12-4">
+<ul class="disc" id="sec-ch01-02-VectorsIn3D-12-4-1">
+<li id="sec-ch01-02-VectorsIn3D-12-4-1-1">
+<div class="para" id="sec-ch01-02-VectorsIn3D-12-4-1-1-1">
+<span class="process-math">\(\displaystyle \vec{v}+\vec{u}=\left\langle v_{1}+u_{1}, v_{2}+u_{2},
+v_{3}+u_{3}\right\rangle\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12-4-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-15-4-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12-4-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="sec-ch01-02-VectorsIn3D-15-4-1-2">
-<div class="para" id="sec-ch01-02-VectorsIn3D-15-4-1-2-1">
-<span class="process-math">\(\displaystyle \mathbf{v}-\mathbf{u}=\left\langle v_{1}-u_{1}, v_{2}-u_{2},
-v_{3}-u_{3}\right\rangle\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-15-4-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="sec-ch01-02-VectorsIn3D-12-4-1-2">
+<div class="para" id="sec-ch01-02-VectorsIn3D-12-4-1-2-1">
+<span class="process-math">\(\displaystyle \vec{v}-\vec{u}=\left\langle v_{1}-u_{1}, v_{2}-u_{2},
+v_{3}-u_{3}\right\rangle\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12-4-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-15-4-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12-4-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="sec-ch01-02-VectorsIn3D-15-4-1-3">
-<div class="para" id="sec-ch01-02-VectorsIn3D-15-4-1-3-1">
-<span class="process-math">\(c \mathbf{v}=\left\langle c v_{1}, c v_{2}, c
-v_{3}\right\rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-15-4-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="sec-ch01-02-VectorsIn3D-12-4-1-3">
+<div class="para" id="sec-ch01-02-VectorsIn3D-12-4-1-3-1">
+<span class="process-math">\(c \vec{v}=\left\langle c v_{1}, c v_{2}, c
+v_{3}\right\rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12-4-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-15-4-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12-4-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 </ul>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-15-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-ch01-02-VectorsIn3D-15-5">Note: Geometrically, everything works the same. Adding/subtracting vectors can be done using the Triangle Rule. Scaling a vector changes its length and potentially flips the direction of the vector. It is harder to draw now, though...<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-15-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-ch01-02-VectorsIn3D-12-5">Note: Geometrically, everything works the same. Adding/subtracting vectors can be done using the Triangle Rule. Scaling a vector changes its length and potentially flips the direction of the vector. It is harder to draw now, though...<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Remark 1.2.12: Vector Operations in xyz-Space"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-15" title="Copy heading and permalink for Remark 1.2.12: Vector Operations in xyz-Space" aria-label="Copy heading and permalink for Remark 1.2.12: Vector Operations in xyz-Space">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 1.2.9: Vector Operations in xyz-Space"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-12" title="Copy heading and permalink for Remark 1.2.9: Vector Operations in xyz-Space" aria-label="Copy heading and permalink for Remark 1.2.9: Vector Operations in xyz-Space">🔗</a></div>
 </article>
-<details id="sec-ch01-02-VectorsIn3D-16" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<details id="example-ch01-02-ex-2-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h2></summary>
 <article class="example example-like knowl__content">
-<div class="para" id="sec-ch01-02-VectorsIn3D-16-1-1">Given <span class="process-math">\(\mathbf{v}=\langle 3,2,3\rangle\)</span> and <span class="process-math">\(\mathbf{u}=\langle 1,2,1\rangle\text{,}\)</span> compute <span class="process-math">\(2|\mathbf{v}-2\mathbf{u}|\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="example-ch01-02-ex-2-2-1-1">Given <span class="process-math">\(\vec{v}=\langle 3,2,3\rangle\)</span> and <span class="process-math">\(\vec{u}=\langle 1,2,1\rangle\text{,}\)</span> compute <span class="process-math">\(2|\vec{v}-2\vec{u}|\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch01-02-ex-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
-<details id="sec-ch01-02-VectorsIn3D-16-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<details id="example-ch01-02-ex-2-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
-<div class="para logical" id="sec-ch01-02-VectorsIn3D-16-2-1">
-<div class="para">Working from the inside out, we first compute the vector <span class="process-math">\(\mathbf{v}-2\mathbf{u}\)</span> coordinate-wise:</div>
-<div class="displaymath process-math" id="sec-ch01-02-VectorsIn3D-16-2-1-2">
+<div class="para logical" id="example-ch01-02-ex-2-2-2-1">
+<div class="para">Working from the inside out, we first compute the vector <span class="process-math">\(\vec{v}-2\vec{u}\)</span> coordinate-wise:</div>
+<div class="displaymath process-math" id="example-ch01-02-ex-2-2-2-1-2">
 \begin{equation*}
-\mathbf{v}-2\mathbf{u} = \langle 3,2,3 \rangle - \langle 2,4,2 \rangle = \langle 1,-2,1 \rangle
+\vec{v}-2\vec{u} = \langle 3,2,3 \rangle - \langle 2,4,2 \rangle = \langle 1,-2,1 \rangle
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch01-02-ex-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec-ch01-02-VectorsIn3D-16-2-2">
+<div class="para logical" id="example-ch01-02-ex-2-2-2-2">
 <div class="para">Its magnitude is</div>
-<div class="displaymath process-math" id="sec-ch01-02-VectorsIn3D-16-2-2-1">
+<div class="displaymath process-math" id="example-ch01-02-ex-2-2-2-2-1">
 \begin{equation*}
-|\mathbf{v}-2\mathbf{u}| = \sqrt{1^{2}+(-2)^{2}+1^{2}} = \sqrt{6}
+|\vec{v}-2\vec{u}| = \sqrt{1^{2}+(-2)^{2}+1^{2}} = \sqrt{6}
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-16-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch01-02-ex-2-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-ch01-02-VectorsIn3D-16-2-3">and hence <span class="process-math">\(2|\mathbf{v}-2\mathbf{u}| = 2\sqrt{6}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-16-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="example-ch01-02-ex-2-2-2-3">and hence <span class="process-math">\(2|\vec{v}-2\vec{u}| = 2\sqrt{6}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch01-02-ex-2-2-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Solution 1.2.13.1"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-16-2" title="Copy heading and permalink for Solution 1.2.13.1" aria-label="Copy heading and permalink for Solution 1.2.13.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.2.10.1"><a tabindex="-1" href="#example-ch01-02-ex-2-2-2" title="Copy heading and permalink for Solution 1.2.10.1" aria-label="Copy heading and permalink for Solution 1.2.10.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 1.2.13"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-16" title="Copy heading and permalink for Example 1.2.13" aria-label="Copy heading and permalink for Example 1.2.13">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.2.10"><a tabindex="-1" href="#example-ch01-02-ex-2-2" title="Copy heading and permalink for Example 1.2.10" aria-label="Copy heading and permalink for Example 1.2.10">🔗</a></div>
 </article></details>
-<article class="definition definition-like" id="sec-ch01-02-VectorsIn3D-17"><h2 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Distance and Midpoint Formula.</span>
+<article class="definition definition-like" id="sec-ch01-02-VectorsIn3D-14"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Distance and Midpoint Formula.</span>
 </h2>
-<div class="para" id="sec-ch01-02-VectorsIn3D-17-2-1">Given two points <span class="process-math">\(P\left(x_{1}, y_{1}, z_{1}\right)\)</span> and <span class="process-math">\(Q\left(x_{2}, y_{2}, z_{2}\right)\)</span> in <span class="process-math">\(xyz\)</span>-space, we denote the line segment connecting <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> by <span class="process-math">\(PQ\text{.}\)</span> Moreover, we have that<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-ch01-02-VectorsIn3D-14-2-1">Given two points <span class="process-math">\(P\left(x_{1}, y_{1}, z_{1}\right)\)</span> and <span class="process-math">\(Q\left(x_{2}, y_{2}, z_{2}\right)\)</span> in <span class="process-math">\(xyz\)</span>-space, we denote the line segment connecting <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> by <span class="process-math">\(PQ\text{.}\)</span> Moreover, we have that<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-14-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para logical" id="sec-ch01-02-VectorsIn3D-17-2-2">
-<ul class="disc" id="sec-ch01-02-VectorsIn3D-17-2-2-1">
-<li id="sec-ch01-02-VectorsIn3D-17-2-2-1-1">
-<div class="para logical" id="sec-ch01-02-VectorsIn3D-17-2-2-1-1-1">
+<div class="para logical" id="sec-ch01-02-VectorsIn3D-14-2-2">
+<ul class="disc" id="sec-ch01-02-VectorsIn3D-14-2-2-1">
+<li id="sec-ch01-02-VectorsIn3D-14-2-2-1-1">
+<div class="para logical" id="sec-ch01-02-VectorsIn3D-14-2-2-1-1-1">
 <div class="para">The distance between the points <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> (the length of the line segment <span class="process-math">\(PQ\)</span>) is given by</div>
-<div class="displaymath process-math" id="sec-ch01-02-VectorsIn3D-17-2-2-1-1-1-4">
+<div class="displaymath process-math" id="sec-ch01-02-VectorsIn3D-14-2-2-1-1-1-4">
 \begin{equation*}
 |P Q|=\sqrt{\left(x_{2}-x_{1}\right)^{2}+\left(y_{2}-y_{1}\right)^{2}+\left(z_{2}-z_{1}\right)^{2}}
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-17-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-14-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-17-2-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-14-2-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="sec-ch01-02-VectorsIn3D-17-2-2-1-2">
-<div class="para logical" id="sec-ch01-02-VectorsIn3D-17-2-2-1-2-1">
+<li id="sec-ch01-02-VectorsIn3D-14-2-2-1-2">
+<div class="para logical" id="sec-ch01-02-VectorsIn3D-14-2-2-1-2-1">
 <div class="para">The midpoint on the line segment <span class="process-math">\(PQ\)</span> is given by</div>
-<div class="displaymath process-math" id="sec-ch01-02-VectorsIn3D-17-2-2-1-2-1-2">
+<div class="displaymath process-math" id="sec-ch01-02-VectorsIn3D-14-2-2-1-2-1-2">
 \begin{equation*}
 \left(\frac{x_{1}+x_{2}}{2}, \frac{y_{1}+y_{2}}{2}, \frac{z_{1}+z_{2}}{2}\right)
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-17-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-14-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-17-2-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-14-2-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 </ul>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-17-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-14-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para" id="sec-ch01-02-VectorsIn3D-17-2-3">Note that the distance between <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> is simply <span class="process-math">\(|\overrightarrow{P Q}|\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-17-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-ch01-02-VectorsIn3D-14-2-3">Note that the distance between <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> is simply <span class="process-math">\(|\vec{P Q}|\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-14-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Definition 1.2.14: Distance and Midpoint Formula"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-17" title="Copy heading and permalink for Definition 1.2.14: Distance and Midpoint Formula" aria-label="Copy heading and permalink for Definition 1.2.14: Distance and Midpoint Formula">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.2.11: Distance and Midpoint Formula"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-14" title="Copy heading and permalink for Definition 1.2.11: Distance and Midpoint Formula" aria-label="Copy heading and permalink for Definition 1.2.11: Distance and Midpoint Formula">🔗</a></div>
 </article>
-<figure class="figure figure-like" id="sec-ch01-02-VectorsIn3D-18"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external//images/2025_08_01_578ccdf8ba98801b0a3bg-7.jpg" class="contained" alt="Two points P and Q in xyz-space connected by a line segment, illustrating the midpoint formula."></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>From Briggs, et al., Calculus Early Transcendentals (3e), Figure 13.33<div class="autopermalink" aria-hidden="true" data-description="Figure 1.2.15"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-18" title="Copy heading and permalink for Figure 1.2.15" aria-label="Copy heading and permalink for Figure 1.2.15">🔗</a></div></figcaption>
+<figure class="figure figure-like" id="fig-ch01-02-midpoint"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;">
+<img src="external//images/2025_08_01_578ccdf8ba98801b0a3bg-7.jpg" class="contained" alt="Two points P and Q in xyz-space connected by a line segment, illustrating the midpoint formula."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="fig-ch01-02-midpoint-2-description">
+<div class="para" id="fig-ch01-02-midpoint-2-2-1">Two points <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> in <span class="process-math">\(xyz\)</span>-space connected by a line segment, illustrating the midpoint formula.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#fig-ch01-02-midpoint-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>From Briggs, et al., Calculus Early Transcendentals (3e), Figure 13.33<div class="autopermalink" aria-hidden="true" data-description="Figure 1.2.7"><a tabindex="-1" href="#fig-ch01-02-midpoint" title="Copy heading and permalink for Figure 1.2.7" aria-label="Copy heading and permalink for Figure 1.2.7">🔗</a></div></figcaption>
 </figure>
-<article class="remark remark-like" id="sec-ch01-02-VectorsIn3D-19"><h2 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Magnitude.</span>
+<article class="remark remark-like" id="sec-ch01-02-VectorsIn3D-16"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Magnitude.</span>
 </h2>
-<div class="para" id="sec-ch01-02-VectorsIn3D-19-2">Given a 3D vector <span class="process-math">\(\mathbf{v}=\left\langle v_{1}, v_{2}, v_{3}\right\rangle\text{,}\)</span> then <span class="process-math">\(|\mathbf{v}|=\sqrt{v_{1}^{2}+v_{2}^{2}+v_{3}^{2}}\text{.}\)</span> As before, <span class="process-math">\(\mathbf{v}\)</span> is a unit vector if <span class="process-math">\(|\mathbf{v}|=1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-19-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-ch01-02-VectorsIn3D-16-2">Given a 3D vector <span class="process-math">\(\vec{v}=\left\langle v_{1}, v_{2}, v_{3}\right\rangle\text{,}\)</span> then <span class="process-math">\(|\vec{v}|=\sqrt{v_{1}^{2}+v_{2}^{2}+v_{3}^{2}}\text{.}\)</span> As before, <span class="process-math">\(\vec{v}\)</span> is a unit vector if <span class="process-math">\(|\vec{v}|=1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Remark 1.2.16: Magnitude"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-19" title="Copy heading and permalink for Remark 1.2.16: Magnitude" aria-label="Copy heading and permalink for Remark 1.2.16: Magnitude">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 1.2.12: Magnitude"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-16" title="Copy heading and permalink for Remark 1.2.12: Magnitude" aria-label="Copy heading and permalink for Remark 1.2.12: Magnitude">🔗</a></div>
 </article>
-<article class="remark remark-like" id="sec-ch01-02-VectorsIn3D-20"><h2 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Recall: Unit Vector in the Direction of <span class="process-math">\(\mathbf{v}\)</span>.</span>
+<article class="remark remark-like" id="sec-ch01-02-VectorsIn3D-17"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Recall: Unit Vector in the Direction of <span class="process-math">\(\vec{v}\)</span>.</span>
 </h2>
-<div class="para" id="sec-ch01-02-VectorsIn3D-20-2">When working with a 3D vector <span class="process-math">\(\mathbf{v}\text{,}\)</span> we can’t define its direction by a single angle anymore (since <span class="process-math">\(\mathbf{v}\)</span> is contained in infinitely many planes). Instead, we focus on the unit vector in the direction of <span class="process-math">\(\mathbf{v}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-20-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-ch01-02-VectorsIn3D-17-2">When working with a 3D vector <span class="process-math">\(\vec{v}\text{,}\)</span> we can’t define its direction by a single angle anymore (since <span class="process-math">\(\vec{v}\)</span> is contained in infinitely many planes). Instead, we focus on the unit vector in the direction of <span class="process-math">\(\vec{v}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-17-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-ch01-02-VectorsIn3D-20-3">Given a nonzero vector <span class="process-math">\(\mathbf{v}=\left\langle v_{1}, v_{2}, v_{3}\right\rangle\text{,}\)</span> the vector <span class="process-math">\(\mathbf{u}=\frac{\mathbf{v}}{|\mathbf{v}|}\)</span> is a unit vector in the direction of <span class="process-math">\(\mathbf{v}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-20-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-ch01-02-VectorsIn3D-17-3">Given a nonzero vector <span class="process-math">\(\vec{v}=\left\langle v_{1}, v_{2}, v_{3}\right\rangle\text{,}\)</span> the vector <span class="process-math">\(\vec{u}=\frac{\vec{v}}{|\vec{v}|}\)</span> is a unit vector in the direction of <span class="process-math">\(\vec{v}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-17-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Remark 1.2.17: Recall: Unit Vector in the Direction of \mathbf{v}"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-20" title="Copy heading and permalink for Remark 1.2.17: Recall: Unit Vector in the Direction of \mathbf{v}" aria-label="Copy heading and permalink for Remark 1.2.17: Recall: Unit Vector in the Direction of \mathbf{v}">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 1.2.13: Recall: Unit Vector in the Direction of \vec{v}"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-17" title="Copy heading and permalink for Remark 1.2.13: Recall: Unit Vector in the Direction of \vec{v}" aria-label="Copy heading and permalink for Remark 1.2.13: Recall: Unit Vector in the Direction of \vec{v}">🔗</a></div>
 </article>
-<details id="sec-ch01-02-VectorsIn3D-21" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<details id="example-ch01-02-ex-2-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h2></summary>
 <article class="example example-like knowl__content">
-<div class="para" id="sec-ch01-02-VectorsIn3D-21-1-1">Given <span class="process-math">\(\mathbf{v}=\langle 1,2,1\rangle\text{,}\)</span> find:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-21-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="example-ch01-02-ex-2-3-1-1">Given <span class="process-math">\(\vec{v}=\langle 1,2,1\rangle\text{,}\)</span> find:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch01-02-ex-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para" id="sec-ch01-02-VectorsIn3D-21-1-2">(a) A unit vector in the direction of <span class="process-math">\(\mathbf{v}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-21-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="example-ch01-02-ex-2-3-1-2">(a) A unit vector in the direction of <span class="process-math">\(\vec{v}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch01-02-ex-2-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para" id="sec-ch01-02-VectorsIn3D-21-1-3">(b) All vectors of length 3 parallel to <span class="process-math">\(\mathbf{v}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-21-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="example-ch01-02-ex-2-3-1-3">(b) All vectors of length 3 parallel to <span class="process-math">\(\vec{v}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch01-02-ex-2-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
-<details id="sec-ch01-02-VectorsIn3D-21-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<details id="example-ch01-02-ex-2-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
-<div class="para logical" id="sec-ch01-02-VectorsIn3D-21-2-1">
-<div class="para">The magnitude of <span class="process-math">\(\mathbf{v}\)</span> is <span class="process-math">\(|\mathbf{v}| = \sqrt{1^{2}+2^{2}+1^{2}} = \sqrt{6}\text{,}\)</span> so a unit vector in the direction of <span class="process-math">\(\mathbf{v}\)</span> is</div>
-<div class="displaymath process-math" id="sec-ch01-02-VectorsIn3D-21-2-1-4">
+<div class="para logical" id="example-ch01-02-ex-2-3-2-1">
+<div class="para">The magnitude of <span class="process-math">\(\vec{v}\)</span> is <span class="process-math">\(|\vec{v}| = \sqrt{1^{2}+2^{2}+1^{2}} = \sqrt{6}\text{,}\)</span> so a unit vector in the direction of <span class="process-math">\(\vec{v}\)</span> is</div>
+<div class="displaymath process-math" id="example-ch01-02-ex-2-3-2-1-4">
 \begin{equation*}
-\mathbf{u} = \frac{\mathbf{v}}{|\mathbf{v}|} = \frac{1}{\sqrt{6}}\langle 1,2,1 \rangle = \left\langle \frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}} \right\rangle
+\vec{u} = \frac{\vec{v}}{|\vec{v}|} = \frac{1}{\sqrt{6}}\langle 1,2,1 \rangle = \left\langle \frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}} \right\rangle
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-21-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch01-02-ex-2-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Solution 1.2.18.1"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-21-2" title="Copy heading and permalink for Solution 1.2.18.1" aria-label="Copy heading and permalink for Solution 1.2.18.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.2.14.1"><a tabindex="-1" href="#example-ch01-02-ex-2-3-2" title="Copy heading and permalink for Solution 1.2.14.1" aria-label="Copy heading and permalink for Solution 1.2.14.1">🔗</a></div>
 </div></details>
-<details id="sec-ch01-02-VectorsIn3D-21-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<details id="example-ch01-02-ex-2-3-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
-<div class="para logical" id="sec-ch01-02-VectorsIn3D-21-3-1">
-<div class="para">A vector of length 3 parallel to <span class="process-math">\(\mathbf{v}\)</span> points either in the direction of <span class="process-math">\(\mathbf{v}\)</span> or in the direction opposite of <span class="process-math">\(\mathbf{v}\text{,}\)</span> so the only two such vectors are</div>
-<div class="displaymath process-math" id="sec-ch01-02-VectorsIn3D-21-3-1-4">
+<div class="para logical" id="example-ch01-02-ex-2-3-3-1">
+<div class="para">A vector of length 3 parallel to <span class="process-math">\(\vec{v}\)</span> points either in the direction of <span class="process-math">\(\vec{v}\)</span> or in the direction opposite of <span class="process-math">\(\vec{v}\text{,}\)</span> so the only two such vectors are</div>
+<div class="displaymath process-math" id="example-ch01-02-ex-2-3-3-1-4">
 \begin{equation*}
-3\mathbf{u} = \left\langle \frac{3}{\sqrt{6}}, \frac{6}{\sqrt{6}}, \frac{3}{\sqrt{6}} \right\rangle \quad \text{and} \quad -3\mathbf{u} = \left\langle -\frac{3}{\sqrt{6}}, -\frac{6}{\sqrt{6}}, -\frac{3}{\sqrt{6}} \right\rangle
+3\vec{u} = \left\langle \frac{3}{\sqrt{6}}, \frac{6}{\sqrt{6}}, \frac{3}{\sqrt{6}} \right\rangle \quad \text{and} \quad -3\vec{u} = \left\langle -\frac{3}{\sqrt{6}}, -\frac{6}{\sqrt{6}}, -\frac{3}{\sqrt{6}} \right\rangle
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-21-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch01-02-ex-2-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Solution 1.2.18.2"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-21-3" title="Copy heading and permalink for Solution 1.2.18.2" aria-label="Copy heading and permalink for Solution 1.2.18.2">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.2.14.2"><a tabindex="-1" href="#example-ch01-02-ex-2-3-3" title="Copy heading and permalink for Solution 1.2.14.2" aria-label="Copy heading and permalink for Solution 1.2.14.2">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 1.2.18"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-21" title="Copy heading and permalink for Example 1.2.18" aria-label="Copy heading and permalink for Example 1.2.18">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.2.14"><a tabindex="-1" href="#example-ch01-02-ex-2-3" title="Copy heading and permalink for Example 1.2.14" aria-label="Copy heading and permalink for Example 1.2.14">🔗</a></div>
 </article></details>
-<article class="definition definition-like" id="sec-ch01-02-VectorsIn3D-22"><h2 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Coordinate Vectors.</span>
+<article class="definition definition-like" id="sec-ch01-02-VectorsIn3D-19"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Coordinate Vectors.</span>
 </h2>
-<div class="para" id="sec-ch01-02-VectorsIn3D-22-2-1">In <span class="process-math">\(xyz\)</span>-space, the following vectors are called coordinate vectors:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-22-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-ch01-02-VectorsIn3D-19-2-1">In <span class="process-math">\(xyz\)</span>-space, the following vectors are called coordinate vectors:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-19-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para logical" id="sec-ch01-02-VectorsIn3D-22-2-2">
-<ul class="disc" id="sec-ch01-02-VectorsIn3D-22-2-2-1">
-<li id="sec-ch01-02-VectorsIn3D-22-2-2-1-1">
-<div class="para" id="sec-ch01-02-VectorsIn3D-22-2-2-1-1-1">
-<span class="process-math">\(\mathbf{i}=\langle 1,0,0\rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-22-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="sec-ch01-02-VectorsIn3D-19-2-2">
+<ul class="disc" id="sec-ch01-02-VectorsIn3D-19-2-2-1">
+<li id="sec-ch01-02-VectorsIn3D-19-2-2-1-1">
+<div class="para" id="sec-ch01-02-VectorsIn3D-19-2-2-1-1-1">
+<span class="process-math">\(\vec{i}=\langle 1,0,0\rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-19-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-22-2-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-19-2-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="sec-ch01-02-VectorsIn3D-22-2-2-1-2">
-<div class="para" id="sec-ch01-02-VectorsIn3D-22-2-2-1-2-1">
-<span class="process-math">\(\mathbf{j}=\langle 0,1,0\rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-22-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="sec-ch01-02-VectorsIn3D-19-2-2-1-2">
+<div class="para" id="sec-ch01-02-VectorsIn3D-19-2-2-1-2-1">
+<span class="process-math">\(\vec{j}=\langle 0,1,0\rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-19-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-22-2-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-19-2-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="sec-ch01-02-VectorsIn3D-22-2-2-1-3">
-<div class="para" id="sec-ch01-02-VectorsIn3D-22-2-2-1-3-1">
-<span class="process-math">\(\mathbf{k}=\langle 0,0,1\rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-22-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<li id="sec-ch01-02-VectorsIn3D-19-2-2-1-3">
+<div class="para" id="sec-ch01-02-VectorsIn3D-19-2-2-1-3-1">
+<span class="process-math">\(\vec{k}=\langle 0,0,1\rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-19-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-22-2-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-19-2-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 </ul>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-22-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-19-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
-<div class="para logical" id="sec-ch01-02-VectorsIn3D-22-2-3">
-<div class="para">Given a vector <span class="process-math">\(\mathbf{v}=\left\langle v_{1}, v_{2}, v_{3}\right\rangle\text{,}\)</span> we can also write <span class="process-math">\(\mathbf{v}\)</span> in the form</div>
-<div class="displaymath process-math" id="sec-ch01-02-VectorsIn3D-22-2-3-3">
+<div class="para logical" id="sec-ch01-02-VectorsIn3D-19-2-3">
+<div class="para">Given a vector <span class="process-math">\(\vec{v}=\left\langle v_{1}, v_{2}, v_{3}\right\rangle\text{,}\)</span> we can also write <span class="process-math">\(\vec{v}\)</span> in the form</div>
+<div class="displaymath process-math" id="sec-ch01-02-VectorsIn3D-19-2-3-3">
 \begin{equation*}
-\mathbf{v}=v_{1} \mathbf{i}+v_{2} \mathbf{j}+v_{3} \mathbf{k} .
+\vec{v}=v_{1} \vec{i}+v_{2} \vec{j}+v_{3} \vec{k}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-22-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-19-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Definition 1.2.19: Coordinate Vectors"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-22" title="Copy heading and permalink for Definition 1.2.19: Coordinate Vectors" aria-label="Copy heading and permalink for Definition 1.2.19: Coordinate Vectors">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 1.2.15: Coordinate Vectors"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-19" title="Copy heading and permalink for Definition 1.2.15: Coordinate Vectors" aria-label="Copy heading and permalink for Definition 1.2.15: Coordinate Vectors">🔗</a></div>
 </article>
-<details id="sec-ch01-02-VectorsIn3D-23" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<details id="example-ch01-02-ex-2-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h2></summary>
 <article class="example example-like knowl__content">
-<div class="para" id="sec-ch01-02-VectorsIn3D-23-1-1">Verify that <span class="process-math">\(\langle -2,3,1\rangle=-2 \mathbf{i}+3 \mathbf{j}+ \mathbf{k}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-23-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="example-ch01-02-ex-2-4-1-1">Verify that <span class="process-math">\(\langle -2,3,1\rangle=-2 \vec{i}+3 \vec{j}+ \vec{k}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch01-02-ex-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions">
-<details id="sec-ch01-02-VectorsIn3D-23-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<details id="example-ch01-02-ex-2-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="solution solution-like knowl__content">
-<div class="para logical" id="sec-ch01-02-VectorsIn3D-23-2-1">
+<div class="para logical" id="example-ch01-02-ex-2-4-2-1">
 <div class="para">Writing each scaled coordinate vector in component form and adding coordinate-wise:</div>
-<div class="displaymath process-math" id="sec-ch01-02-VectorsIn3D-23-2-1-1">
+<div class="displaymath process-math" id="example-ch01-02-ex-2-4-2-1-1">
 \begin{gather*}
--2\mathbf{i}+3\mathbf{j}+\mathbf{k} = -2 \langle 1,0,0\rangle + 3 \langle 0,1,0\rangle + \langle 0,0,1\rangle = \langle -2,0,0 \rangle + \langle 0,3,0 \rangle + \langle 0,0,1 \rangle\\
+-2\vec{i}+3\vec{j}+\vec{k} = -2 \langle 1,0,0\rangle + 3 \langle 0,1,0\rangle + \langle 0,0,1\rangle = \langle -2,0,0 \rangle + \langle 0,3,0 \rangle + \langle 0,0,1 \rangle\\
 = \langle -2+0+0, 0+3+0, 0+0+1 \rangle = \langle -2,3,1 \rangle
 \end{gather*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-23-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch01-02-ex-2-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-ch01-02-VectorsIn3D-23-2-2">as claimed.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-23-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="example-ch01-02-ex-2-4-2-2">as claimed.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch01-02-ex-2-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Solution 1.2.20.1"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-23-2" title="Copy heading and permalink for Solution 1.2.20.1" aria-label="Copy heading and permalink for Solution 1.2.20.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 1.2.16.1"><a tabindex="-1" href="#example-ch01-02-ex-2-4-2" title="Copy heading and permalink for Solution 1.2.16.1" aria-label="Copy heading and permalink for Solution 1.2.16.1">🔗</a></div>
 </div></details>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 1.2.20"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D-23" title="Copy heading and permalink for Example 1.2.20" aria-label="Copy heading and permalink for Example 1.2.20">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 1.2.16"><a tabindex="-1" href="#example-ch01-02-ex-2-4" title="Copy heading and permalink for Example 1.2.16" aria-label="Copy heading and permalink for Example 1.2.16">🔗</a></div>
 </article></details><div class="autopermalink" aria-hidden="true" data-description="Section 1.2: Vectors in 3D"><a tabindex="-1" href="#sec-ch01-02-VectorsIn3D" title="Copy heading and permalink for Section 1.2: Vectors in 3D" aria-label="Copy heading and permalink for Section 1.2: Vectors in 3D">🔗</a></div>
 </section>
 </div>
