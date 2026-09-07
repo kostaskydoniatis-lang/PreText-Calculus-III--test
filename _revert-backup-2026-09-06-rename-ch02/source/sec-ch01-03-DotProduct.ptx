@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-ch01-03-DotProduct" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>The Dot Product</title>
+
+
+    <definition>
+        <title>Dot Product</title>
+        <statement>
+            <p>Let <m>\vec{u}=\left\langle u_{1}, u_{2}\right\rangle</m> and <m>\vec{v}=\left\langle v_{1}, v_{2}\right\rangle</m> be two vectors in the <m>x y</m>-plane 
+                (or in <m>x y z</m>-space; just add an extra entry). Then the dot product of <m>\vec{u}</m> and <m>\vec{v}</m>, denoted by <m>\vec{u} \cdot \vec{v}</m>, is given by:
+
+                 <md>\vec{u} \cdot \vec{v}=u_{1} v_{1}+u_{2} v_{2}</md>.
+
+                If <m>\vec{u} \neq 0</m> and <m>\vec{v} \neq 0</m>, the dot product can also be written as
+                 <md>\vec{u} \cdot \vec{v}=|\vec{u}||\vec{v}| \cos (\theta)</md>,
+
+                where <m>0 \leq \theta \leq \pi</m>, and <m>\theta</m> is the angle between <m>\vec{u}</m> and <m>\vec{v}</m>.
+            </p>
+        </statement>
+    </definition>
+    <remark>
+        <p>
+            <ul>
+                <li>The dot product of two vectors is a scalar (number), not a vector.</li>
+                <li>Even though formulas 1 and 2 are equivalent, formula 1 is more useful for
+                    computation, formula 2 is more useful for applications.</li>
+                <li>
+                    <p>Formula 2 also works in 3D space. Any two nonzero vectors, not on the same
+                    line, define a unique plane (later we will see how to write an equation for
+                    this plane). The formula uses the angle between the vectors in this unique
+                    plane.</p>
+                    <figure xml:id="fig-ch01-03-vectors-plane">
+                        <caption>Two non-parallel vectors <m>\vec{u}</m> and <m>\vec{v}</m> in <m>xyz</m>-space and the plane they define.</caption>
+                        <interactive xml:id="interactive-ch01-03-vectors-plane" variant="controls"
+                            width="90%" aspect="3:2"
+                            calcplot3d="type=z;z=y;funname=f;visible=true;umin=-2;umax=2;vmin=-2;vmax=2;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=vector;vector=%3C-1,%201,%201%3E;label=;showlabel=false;labelposition=end;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0)&amp;type=vector;vector=%3C-1,%20-1,%20-1%3E;label=v-%3E_%7B1%7D;showlabel=true;labelposition=end;visible=true;color=rgb(255,255,255);size=2;initialpt=(0,0,0)&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.577426865460591,4.916907810546503,-1.5005885346290089,1;focus=0,0,0,1;up=0.29409352696871394,-0.07190374909237375,0.953068123620533,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.58">
+                            <instructions>
+                                <p>
+                                    Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=z;z=y;funname=f;visible=true;umin=-2;umax=2;vmin=-2;vmax=2;grid=31;format=normal;alpha=-1;revorient=false;shownormals=false;showvf=false;numnormals=;normalscale=;normalwidth=;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=vector;vector=%3C-1,%201,%201%3E;label=;showlabel=false;labelposition=end;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C-1,%20-1,%20-1%3E;label=v-%3E_%7B1%7D;showlabel=true;labelposition=end;visible=true;color=rgb(255,255,255);size=2;initialpt=(0,0,0);dashed=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.577426865460591,4.916907810546503,-1.5005885346290089,1;focus=0,0,0,1;up=0.29409352696871394,-0.07190374909237375,0.953068123620533,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=1.02" target="_blank" rel="noopener noreferrer">link to the plot</url>
+                                </p>
+                            </instructions>
+                            <static>
+                                <image source="/images/2025_08_04_6f11792a371c74850db7g-1.png">
+                                    <shortdescription>Two non-parallel vectors u and v in xyz-space and the plane they define.</shortdescription>
+                                    <description>
+                                        <p>Two non-parallel vectors <m>\vec{u}</m> and <m>\vec{v}</m> in <m>xyz</m>-space and the plane they define.</p>
+                                    </description>
+                                </image>
+                            </static>
+                        </interactive>
+                    </figure>
+                </li>
+                <li>Formula 2 is undefined if <m>\vec{u}</m> or <m>\vec{v}</m> equal
+                    <m>\vec{0}</m>.</li>
+            </ul>
+        </p>
+    </remark>
+</section>

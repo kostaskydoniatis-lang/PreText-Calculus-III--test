@@ -6,7 +6,22 @@
 
 
 
-
+<figure xml:id="fig-region-of-integration">
+    <caption>The region <m>D</m> of integration.</caption>
+    <image source="/images/GIF/L1 AnimatedExample" width="50%">
+        <shortdescription>
+            The region between the parabola y equals x squared and the line y equals x.
+        </shortdescription>
+        <description>
+            <p>
+                In the first quadrant, the parabola <m>y = x^2</m> and the line
+                <m>y = x</m> meet at the origin and at <m>(1,1)</m>. The shaded
+                region <m>D</m> lies between them, with the line above the
+                parabola for <m>0 \lt x \lt 1</m>.
+            </p>
+        </description>
+    </image>
+</figure>
 
 
   <definition>
@@ -53,10 +68,10 @@
   <p>
     When a vector is given by its starting point <m>P</m> and ending point
     <m>Q</m>, we can represent the vector symbolically using
-    <m>\vec{PQ}</m>.
+    <m>\vec{P Q}</m>.
   </p>
 
-  <example xml:id="example-ch01-01-ex-1-1">
+  <example>
     <statement>
       <p>
         Draw the vectors below with given starting and ending points:
@@ -70,9 +85,11 @@
         (b) <m>R(0.5,2)</m> and <m>S(3.5,4)</m>
       </p>
       <p>
-        What can we say about the vectors <m>\vec{PQ}</m> and
-        <m>\vec{RS}</m>?
+        What can we say about the vectors <m>\vec{P Q}</m> and
+        <m>\vec{R S}</m>?
       </p>
+
+      <p/>
     </statement>
 
     <solution>
@@ -90,7 +107,7 @@
           </instructions>
 
           <static>
-            <image source="/images/Example-1.1.png">
+            <image source="/images/Example 1.1.png">
               <shortdescription>Two vectors drawn in the xy-plane: vector PQ with initial point x = 0, y = 0 and terminal point x = 3, y = 2, and vector RS with initial point x = 0.5, y = 2 and terminal point x = 3.5, y = 4.</shortdescription>
               <description>
                 <p>
@@ -152,9 +169,9 @@
     </statement>
   </definition>
  <remark>
-    <title>
-      Writing a Vector in Standard Position
-    </title>
+    <p>
+      [Writing a Vector in Standard Position]
+    </p>
 
     <p>
       Suppose a vector <m>\vec{v}</m> has starting point
@@ -179,7 +196,7 @@
     </p>
   </remark>
 
-  <example xml:id="example-ch01-01-ex-1-2">
+  <example>
     <statement>
       <p>
         Graph the vector with starting point <m>P(2,1)</m> and ending point
@@ -205,7 +222,7 @@
           </instructions>
 
           <static>
-            <image source="/images/Example-1.2.png">
+            <image source="/images/Example 1.2.png">
               <shortdescription> A vector from P, x = 2, y = 1, to Q, x = -1, y = 0, and the same vector in standard position, namely vector v with coordinates x = -3, y = -1.</shortdescription>
               <description>
                 <p>
@@ -259,13 +276,13 @@
 
       <p>
         <md>
-          |\vec{v}|=\sqrt{v_{1}^{2}+v_{2}^{2}}
-        </md>.
+          |\vec{v}|=\sqrt{v_{1}^{2}+v_{2}^{2}}.
+        </md>
       </p>
     </statement>
   </definition>
 
-  <example xml:id="example-ch01-01-ex-1-3">
+  <example>
     <statement>
       <p>
         Find the length of the vector with starting point <m>P(1,-2)</m> and
@@ -291,7 +308,7 @@
           </instructions>
 
           <static>
-            <image source="/images/Example-1.3.png">
+            <image source="/images/Example 1.3.png">
               <shortdescription> The vector from P, x = 1, y = -2, to Q, x = 4, y = 2 (the vector with coordinates x = 3, y = 4), in standard position, forming a right triangle with legs 3 and 4 and hypotenuse 5.</shortdescription>
               <description>
                 <p>
@@ -360,7 +377,7 @@
     </statement>
   </definition>
 
-  <example xml:id="example-ch01-01-ex-1-4">
+  <example>
     <statement>
       <p>
         Find the direction of <m>\vec{v}=\langle-2,-4\rangle</m>.
@@ -382,7 +399,7 @@
           </instructions>
 
           <static>
-            <image source="/images/Example-1.4.png">
+            <image source="/images/Example 1.4.png">
               <shortdescription> The vector v with coordinates x = -2, y = -4, in standard position in the third quadrant, with the angle theta measured counter-clockwise from the positive x-axis. The angle phi is the portion of theta past the negative x-axis.</shortdescription>
               <description>
                 <p>
@@ -429,9 +446,9 @@
   </note>
 
   <remark>
-    <title>
+    <p>
       [Adding and Subtracting Vectors]
-    </title>
+    </p>
 
     <p>
       To add/subtract two vectors <m>\vec{v}</m> and <m>\vec{u}</m>, you
@@ -442,7 +459,8 @@
       The result of adding/subtracting two vectors is again a vector.
     </p>
 
-
+    <p/>
+    <!--$$ $$-->
     <p>
       Important: Vector subtraction is not commutative. Hence,
       <m>\vec{v}-\vec{u}\neq \vec{u}-\vec{v}</m> (unless
@@ -450,7 +468,7 @@
     </p>
   </remark>
 
-  <example xml:id="example-ch01-01-ex-1-5">
+  <example>
     <statement>
       <p>
         Compute <m>\vec{v}+\vec{u}</m> and <m>\vec{v}-\vec{u}</m>
@@ -458,7 +476,7 @@
         <m>\vec{u}=\langle 5,-1\rangle</m>.
       </p>
 
-      
+      <p/>
     </statement>
 
     <solution>
@@ -516,31 +534,7 @@
     </p>
   </note>
 
-<!-- CLAUDE 2026-09-06: figure split into a "web" version (animated GIF) and a  -->
-<!-- "print" version (static JPG).  Which one survives is decided by the         -->
-<!-- <version include="..."/> line in the publication file bound to each target. -->
-<!-- See REVERT.md at the project root to undo.                                  -->
-<figure xml:id="Vector-Addition-Animation-Web" component="web">
-    <caption>Vector Addition</caption>
-    <image source="images/GIF/L1-AnimatedExample.gif" width="50%">
-        <shortdescription>
-            An animation that slides vector u from the origin to the tip of vector v, showing the sum u plus v.
-        </shortdescription>
-    </image>
-</figure>
-
-<figure xml:id="Vector-Addition-Animation-Print" component="print">
-    <caption>For an animated version of this figure, see the web version of this figure at the <url href="https://kostaskydoniatis-lang.github.io/PreText-Calculus-III--test" target="_blank" rel="noopener noreferrer">online notes</url></caption>
-    <image source="images/GIF/L1-AnimatedExample.jpg" width="50%">
-        <shortdescription>
-            An animation that slides vector u from the origin to the tip of vector v, showing the sum u plus v.
-        </shortdescription>
-    </image>
-</figure>
-
-
-
-  <example xml:id="example-ch01-01-ex-1-6">
+  <example>
     <statement>
       <p>
         Given <m>\vec{u}=\langle 1,1\rangle</m> and
@@ -562,7 +556,7 @@
           </instructions>
 
           <static>
-            <image source="/images/Example-1.6.png">
+            <image source="/images/Example 1.6.png">
               <shortdescription> The Triangle Rule for adding vector u with coordinates x = 1, y = 1 and vector v with coordinates x = 1, y = -2: u is drawn from the origin, v is drawn from the tip of u, and the sum u plus v is drawn from the origin to the tip of v.</shortdescription>
               <description>
                 <p>
@@ -573,7 +567,7 @@
           </static>
         </interactive>
       </figure>
-      
+      <p/>
     </statement>
 
     <solution>
@@ -677,26 +671,7 @@
     </p>
   </note>
 
-<figure xml:id="Vector-Multiplication-Animation-Web" component="web">
-    <caption>Vector Multiplication</caption>
-    <image source="images/GIF/L2-AnimatedExample.gif" width="50%">
-        <shortdescription>
-            An animation that illustrates the geometric interpretation of multiplying a vector u by a scalar c, showing how the vector is stretched, compressed, or flipped depending on the value of c.
-        </shortdescription>
-    </image>
-</figure>
-
-<figure xml:id="Vector-Multiplication-Animation-Print" component="print">
-    <caption>For an animated version of this figure, see the web version of this figure at the <url href="https://kostaskydoniatis-lang.github.io/PreText-Calculus-III--test" target="_blank" rel="noopener noreferrer">online notes</url></caption>
-    <image source="images/GIF/L2-AnimatedExample.jpg" width="50%">
-        <shortdescription>
-            An animation that illustrates the geometric interpretation of multiplying a vector u by a scalar c, showing how the vector is stretched, compressed, or flipped depending on the value of c.
-        </shortdescription>
-    </image>
-</figure>
-
-
-  <example xml:id="example-ch01-01-ex-1-8">
+  <example>
     <statement>
       <p>
         Graph the vectors in <xref ref="example-ch01-01-ex-1-7"/> by first graphing <m>\vec{v}</m> and
@@ -704,7 +679,7 @@
       </p>
       <!--\includegraphics[max width=0.5 \textwidth, left]{2025_08_01_3432b3c41241484aef56g&#x2D;08(1)}-->
       <!--\includegraphics[max width=0.5\textwidth, right]{2025_08_01_3432b3c41241484aef56g&#x2D;08}-->
-      
+      <p/>
     </statement>
 
     <solution>
@@ -738,7 +713,7 @@
               </instructions>
 
               <static>
-                <image source="/images/Example-1.8-1.png">
+                <image source="/images/Example 1.8-1.png">
                   <shortdescription>The vector v with coordinates x = -1, y = 1, and the scaled vector 4 v with coordinates x = -4, y = 4.</shortdescription>
                   <description>
                     <p>
@@ -758,12 +733,12 @@
               desmos="9hybq5dgmi">
               <instructions>
                 <p>
-                  You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/9hybq5dgmi" target="_blank" rel="noopener noreferrer">link to the graph</url>
+                  You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/ysp6xaf8mq" target="_blank" rel="noopener noreferrer">link to the graph</url>
                 </p>
               </instructions>
 
               <static>
-                <image source="/images/Example-1.8-2.png">
+                <image source="/images/Example 1.8-2.png">
                   <shortdescription>The vector v with coordinates x = -1, y = 1, and the scaled vector negative 0.5 v with coordinates x = 0.5, y = -0.5.</shortdescription>
                   <description>
                     <p>
@@ -802,9 +777,9 @@
         is a unit vector with the same direction as <m>\vec{v}</m>.
       </p>
 
-      
-        
-      
+      <p>
+        <m/>
+      </p>
 
       <p>
         Two vectors <m>\vec{u}</m> and <m>\vec{v}</m> are parallel if they
@@ -813,20 +788,20 @@
     </statement>
   </definition>
 
-  <example xml:id="example-ch01-01-ex-1-9">
+  <example>
     <statement>
       <p>
         Find a unit vector in the direction of
         <m>\vec{v}=\langle 1,2\rangle</m>.
       </p>
 
-      
+      <p/>
       <p>
         Find all vectors of length 3 parallel to the vector
         <m>\vec{v}=\langle 1,2\rangle</m>.
       </p>
 
-      
+      <p/>
     </statement>
 
     <solution>
@@ -874,8 +849,8 @@
 
       <p>
         <md>
-          v_{1}=|\vec{v}| \cos (\theta) \quad \text{ and }\quad v_{2}=|\vec{v}| \sin (\theta)
-        </md>,
+          v_{1}=|\vec{v}| \cos (\theta) \quad \text{ and }\quad v_{2}=|\vec{v}| \sin (\theta),
+        </md>
       </p>
 
       <p>
@@ -885,7 +860,7 @@
     </statement>
   </definition>
 
-  <example xml:id="example-ch01-01-ex-1-10">
+  <example>
     <statement>
       <p>
         Given a vector <m>\vec{v}</m>, draw a picture summarizing the
@@ -906,7 +881,7 @@
           </instructions>
 
           <static>
-            <image source="/images/Example-1.10.png" width="50%">
+            <image source="/images/Example 1.10.png" width="50%">
               <shortdescription> A vector v with coordinates x = v 1, y = v 2, in standard position with the angle theta from the positive x-axis, showing v 1 equals the magnitude of v times the cosine of theta as the horizontal component and v 2 equals the magnitude of v times the sine of theta as the vertical component.</shortdescription>
               <description>
                 <p>
@@ -929,7 +904,7 @@
     </p>
   </note>
 
-  <example xml:id="example-ch01-01-ex-1-11">
+  <example>
     <title>Openstax, Calculus Volume 3, Section 2.1, Question 49</title>
 
     <statement>
@@ -940,7 +915,7 @@
         resultant force that acts on the object. (Round to two decimal places.)
       </p>
 
-      
+      <p/>
     </statement>
 
     <solution>
@@ -987,7 +962,7 @@
     </p>
   </remark>
 
-  <example xml:id="example-ch01-01-ex-1-12">
+  <example>
     <title>Openstax, Calculus Volume 3, Section 2.1, Question 57</title>
 
     <statement>
@@ -1010,7 +985,7 @@
        </description>
       </image>
 
-      
+      <p/>
     </statement>
 
     <solution>

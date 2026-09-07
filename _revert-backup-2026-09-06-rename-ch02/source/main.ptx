@@ -14,8 +14,6 @@
 
     <!-- Include chapters -->
     <xi:include href="./ch-01-IntroToVectors.ptx" />
-    <!-- CLAUDE 2026-09-06: chapter 2 (lecture file 5). Delete this line to undo. -->
-    <xi:include href="./ch-02-IntroductionVectorandScalarValuedFunctions.ptx" />
 
 
     <!-- Include backmatter -->

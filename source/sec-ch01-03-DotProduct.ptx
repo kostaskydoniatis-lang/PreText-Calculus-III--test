@@ -1,55 +1,633 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--
+  sec-ch01-03-DotProduct.ptx : converted from "3. The Dot Product - Solutions.tex"
+  by the bbeaccess-pretext skill (2026-09-06). Fragment for xi:include into
+  ch-01-IntroToVectors.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. This file replaces your hand-written stub of the same name (2026-09-06, on your
+     instruction). The stub's Dot Product definition, its first remark and its
+     CalcPlot3D figure are the first three blocks below, with the stub's own ids
+     fig-ch01-03-vectors-plane / interactive-ch01-03-vectors-plane, followed by the
+     rest of the chapter. The stub as it was is backed up at
+     _revert-backup-2026-09-06-rename-ch02/source/sec-ch01-03-DotProduct.ptx.
+  2. The "Two non-parallel vectors ... plane" figure re-uses the CalcPlot3D interactive
+     from your stub verbatim (calcplot3d= attribute, instructions link, caption). The
+     attribute string you tuned (zoom=0.58, a few keys dropped) differs from the .tex
+     link (zoom=1.02); the <url> in the instructions carries the .tex link. Kept as you
+     had it; the checker reports the token difference.
+  3. Known interactives (CalcPlot3D links in the .tex): fig-ch01-03-vectors-plane,
+     fig-ch01-03-orthogonal-vectors. PENDING (placeholder Desmos graph vqavop8m24):
+     Note-3.1.png, 2025_08_04_6f11792a371c74850db7g-5.png,
+     2025_08_04_6f11792a371c74850db7g-5-1.png (side-by-side pair), Example-3.5.png.
+  4. The projection pair (...g-5 / ...g-5-1) carries a commented-out
+     "%\caption*{From openstax, Calculus Volume 3, Section 2.2}" in the .tex. The live
+     source credits nothing, so the pair got the interactive template; if these really
+     are OpenStax figures, replace the pair with a plain captioned figure (as in
+     fig-ch01-02-right-hand-rule). The dead caption is kept as an XML comment.
+  5. "Example 3.5" and "\begin{example}[Continuation of 3.5]" (a page split with
+     \setcounter{tcb@cnt@example}{4}) are merged into ONE <example>: statement + figure
+     from the first box, solution from the continuation. ptx_check therefore reports
+     6 examples in the .tex vs 5 here; that mismatch is this merge.
+  6. Image file names: the project files were renamed today (spaces/parentheses to
+     hyphens); sources here use the NEW names (Note-3.1.png, Example-3.5.png,
+     ...g-5-1.png). Extensions confirmed on disk: all .png.
+  7. Typeset <description>s are the conversion's own text (alt text with the maths set
+     in <m>); review them. The alt text of ...g-4 had no final period; one was added
+     in its <shortdescription>.
+  8. Template width constants replace the .tex widths (max width=0.5\textwidth,
+     width=0.63\linewidth, subfigure 0.4\textwidth, max width=0.7/0.3\textwidth).
+  9. Example 3.1's two numbered parts (a LaTeX enumerate with a solution box inside
+     each item) are an <ol> in the statement plus one <solution> per box, in order
+     (PreTeXt labels them Solution 1 / Solution 2). <task>s would pair each part with
+     its own solution; not switched unasked.
+ 10. The caption "The vectors u and v are orthogonal" is the .tex's own \begin{center}
+     line under the picture, kept verbatim (no final period in the source).
+ 11. Relative/stale prose references left as prose: "As seen in the pictures" (x2),
+     "From Note 6" (no Note 6 exists in this chapter; the notes here are 3.1 to 3.3),
+     "as the picture above shows", "the result of item 1".
+ 12. Source quirks preserved, not corrected: "using formula 1 ." (space before the
+     period), "allows us define projections", "proj $_{\mathbf{v}} \mathbf{u}$" with
+     "proj" outside the maths (Example 3.4), "opposite of $\mathbf{v}$ ." (space
+     before the period), the note "...between 0 and $\pi$" with no final period,
+     "\mathbf{u} \neq 0" (0, not \mathbf{0}) in the Dot Product definition.
+ 13. \mathbf to \vec throughout (no notation-contrast sentence in this file).
+ 14. {\doublespacing ...} around the last remark and every \newpage/\vspace dropped.
+ 15. Commented-out placeholders kept as XML comments where they stood:
+     %\includegraphics[max width=0.7\textwidth]{2025_08_04_6f11792a371c74850db7g-5}
+     and the OpenStax caption in item 4.
+-->
+
 <section xml:id="sec-ch01-03-DotProduct" xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <title>The Dot Product</title>
 
+  <definition>
+    <title>Dot Product</title>
 
-    <definition>
-        <title>Dot Product</title>
-        <statement>
-            <p>Let <m>\mathbf{u}=\left\langle u_{1}, u_{2}\right\rangle\</m>m> and <m>\mathbf{v}=\left\langle v_{1}, v_{2}\right\rangle</m> be two vectors in the <m>x y</m>-plane 
-                (or in <m>x y z</m>-space; just add an extra entry). Then the dot product of <m>\mathbf{u}</m> and <m>\mathbf{v}</m>, denoted by <m>\mathbf{u} \cdot \mathbf{v}</m>, is given by:
+    <statement>
+      <p>
+        Let <m>\vec{u}=\left\langle u_{1}, u_{2}\right\rangle</m> and
+        <m>\vec{v}=\left\langle v_{1}, v_{2}\right\rangle</m> be two vectors
+        in the <m>x y</m>-plane (or in <m>x y z</m>-space; just add an extra
+        entry). Then the dot product of <m>\vec{u}</m> and <m>\vec{v}</m>,
+        denoted by <m>\vec{u} \cdot \vec{v}</m>, is given by:
+        <md>
+          \vec{u} \cdot \vec{v}=u_{1} v_{1}+u_{2} v_{2}
+        </md>.
+      </p>
 
-                 <md alignment="gather">\mathbf{u} \cdot \mathbf{v}=u_{1} v_{1}+u_{2} v_{2}</md> .
+      <p>
+        If <m>\vec{u} \neq 0</m> and <m>\vec{v} \neq 0</m>, the dot product
+        can also be written as
+        <md>
+          \vec{u} \cdot \vec{v}=|\vec{u}||\vec{v}| \cos (\theta)
+        </md>, where <m>0 \leq \theta \leq \pi</m>, and <m>\theta</m> is the
+        angle between <m>\vec{u}</m> and <m>\vec{v}</m>.
+      </p>
+    </statement>
+  </definition>
 
-                If <m>\mathbf{u} \neq 0</m> and <m>\mathbf{v} \neq 0</m>, the dot product can also be written as
-                 <md alignment="gather">\mathbf{u} \cdot \mathbf{v}=|\mathbf{u}||\mathbf{v}| \cos (\theta),</md>
+  <remark>
+    <p>
+      <ul>
+        <li>
+          <p>
+            The dot product of two vectors is a scalar (number), not a vector.
+          </p>
+        </li>
 
-                where <m>0 \leq \theta \leq \pi</m>, and <m>\theta</m> is the angle between <m>\mathbf{u}</m> and <m>\mathbf{v}</m>.
-            </p>
-        </statement>
-    </definition>
-    <remark>
-        <p>
-            <ul>
-                <li>The dot product of two vectors is a scalar (number), not a vector.</li>
-                <li>Even though formulas 1 and 2 are equivalent, formula 1 is more useful for
-                    computation, formula 2 is more useful for applications.</li>
-                <li>Formula 2 also works in 3D space. Any two nonzero vectors, not on the same
-                    line, define a unique plane (later we will see how to write an equation for
-                    this plane). The formula uses the angle between the vectors in this unique
-                    plane.</li>
-                <li>Formula 2 is undefined if <m>\mathbf{u}</m> or <m>\mathbf{v}</m> equal
-                    <m>\mathbf{0}</m>.</li>
-            </ul>
-        </p>
+        <li>
+          <p>
+            Even though formulas 1 and 2 are equivalent, formula 1 is more
+            useful for computation, formula 2 is more useful for applications.
+          </p>
+        </li>
 
-        <figure xml:id="fig-calcplot3d-surface">
-            <interactive xml:id="interactive-surface-plot" variant="controls"
-                width="90%" aspect="3:2"
-                calcplot3d="type=z;z=y;funname=f;visible=true;umin=-2;umax=2;vmin=-2;vmax=2;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=vector;vector=%3C-1,%201,%201%3E;label=;showlabel=false;labelposition=end;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0)&amp;type=vector;vector=%3C-1,%20-1,%20-1%3E;label=v-%3E_%7B1%7D;showlabel=true;labelposition=end;visible=true;color=rgb(255,255,255);size=2;initialpt=(0,0,0)&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.577426865460591,4.916907810546503,-1.5005885346290089,1;focus=0,0,0,1;up=0.29409352696871394,-0.07190374909237375,0.953068123620533,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;=0.58">
-                <instructions>
+        <li>
+          <p>
+            Formula 2 also works in 3D space. Any two nonzero vectors, not on
+            the same line, define a unique plane (later we will see how to
+            write an equation for this plane). The formula uses the angle
+            between the vectors in this unique plane.
+          </p>
+
+          <figure xml:id="fig-ch01-03-vectors-plane">
+            <caption>Two non-parallel vectors <m>\vec{u}</m> and <m>\vec{v}</m> in <m>xyz</m>-space and the plane they define.</caption>
+            <interactive xml:id="interactive-ch01-03-vectors-plane" variant="controls" width="90%" aspect="3:2"
+              calcplot3d="type=z;z=y;funname=f;visible=true;umin=-2;umax=2;vmin=-2;vmax=2;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=vector;vector=%3C-1,%201,%201%3E;label=;showlabel=false;labelposition=end;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0)&amp;type=vector;vector=%3C-1,%20-1,%20-1%3E;label=v-%3E_%7B1%7D;showlabel=true;labelposition=end;visible=true;color=rgb(255,255,255);size=2;initialpt=(0,0,0)&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.577426865460591,4.916907810546503,-1.5005885346290089,1;focus=0,0,0,1;up=0.29409352696871394,-0.07190374909237375,0.953068123620533,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.58">
+              <instructions>
                 <p>
-                    Drag with the mouse to rotate the surface. 
+                  Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=z;z=y;funname=f;visible=true;umin=-2;umax=2;vmin=-2;vmax=2;grid=31;format=normal;alpha=-1;revorient=false;shownormals=false;showvf=false;numnormals=;normalscale=;normalwidth=;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=vector;vector=%3C-1,%201,%201%3E;label=;showlabel=false;labelposition=end;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C-1,%20-1,%20-1%3E;label=v-%3E_%7B1%7D;showlabel=true;labelposition=end;visible=true;color=rgb(255,255,255);size=2;initialpt=(0,0,0);dashed=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.577426865460591,4.916907810546503,-1.5005885346290089,1;focus=0,0,0,1;up=0.29409352696871394,-0.07190374909237375,0.953068123620533,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=1.02" target="_blank" rel="noopener noreferrer">link to the plot</url>
                 </p>
-                </instructions>
-                <static>
-                <image source="images/2025_08_04_6f11792a371c74850db7g-4.png" width="90%" aspect="3:2">
-                    <shortdescription>Two non-parallel vectors u and v in xyz-space and the plane they define.</shortdescription>
+              </instructions>
+              <static>
+                <image source="/images/2025_08_04_6f11792a371c74850db7g-1.png">
+                  <shortdescription>Two non-parallel vectors u and v in xyz-space and the plane they define.</shortdescription>
+                  <description>
+                    <p>Two non-parallel vectors <m>\vec{u}</m> and <m>\vec{v}</m> in <m>xyz</m>-space and the plane they define.</p>
+                  </description>
                 </image>
-                </static>
+              </static>
             </interactive>
-</figure>
-    </remark>
+          </figure>
+        </li>
+
+        <li>
+          <p>
+            Formula 2 is undefined if <m>\vec{u}</m> or <m>\vec{v}</m> equal
+            <m>\vec{0}</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+  <note>
+    <p>
+      Any time we say <q>the angle between the vectors</q>, unless otherwise
+      stated, we mean the angle that is between 0 and <m>\pi</m>
+    </p>
+
+    <figure xml:id="fig-ch01-03-note-3-1">
+      <caption>This interactive is PENDING, it should correspond to Note 3.1.</caption>
+      <interactive xml:id="interactive-ch01-03-note-3-1" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <instructions>
+          <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+        </instructions>
+        <static>
+          <image source="/images/Note-3.1.png">
+            <shortdescription>Two vectors and their interior and exterior angles.</shortdescription>
+            <description>
+              <p>Two vectors and their interior and exterior angles.</p>
+            </description>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+  </note>
+
+  <example xml:id="example-ch01-03-ex-3-1">
+    <statement>
+      <p>
+        Compute the following:
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>\langle 0, 1\rangle \cdot\langle 1, 1\rangle</m>, using
+              formula 1 .
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>\langle1, 1\rangle \cdot\langle 0, 1\rangle</m>, using
+              formula 2 (you may assume the angle between the vectors is
+              <m>\frac{\pi}{4}</m> ).
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Formula 1 multiplies the corresponding components and adds the
+        results:
+        <md>
+          \langle 0,1 \rangle \cdot \langle 1,1 \rangle = 0(1)+1(1) = 1
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        The magnitudes are
+        <m>|\langle 1,1 \rangle| = \sqrt{1^2+1^2} = \sqrt{2}</m> and
+        <m>|\langle 0,1 \rangle| = \sqrt{0^2+1^2} = 1</m>, so formula 2 gives
+        <md>
+          \langle 1,1 \rangle \cdot \langle 0,1 \rangle = \sqrt{2} \cdot 1 \cdot \cos\left( \frac{\pi}{4} \right) = \sqrt{2} \cdot \frac{\sqrt{2}}{2} = 1
+        </md>
+        which agrees with the result of item 1: the two formulas are
+        equivalent, and the dot product does not depend on the order of the
+        vectors.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch01-03-ex-3-2">
+    <statement>
+      <p>
+        Find the angle between <m>\vec{u}=\langle 2,1,2\rangle</m> and
+        <m>\vec{v}=\langle 3,-1,1\rangle</m>. What happens if we use the dot
+        product to find the angle between <m>\vec{u}=\langle 1,0\rangle</m>
+        and <m>\vec{v}=\langle 0,-1\rangle</m> ?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Since both vectors are nonzero, we can solve formula 2 for
+        <m>\cos(\theta)</m>, computing the dot product with formula 1:
+        <md alignment="gather">
+          <mrow>\vec{u} \cdot \vec{v} = 2(3)+1(-1)+2(1) = 7, \quad |\vec{u}| = \sqrt{4+1+4} = 3, \quad |\vec{v}| = \sqrt{9+1+1} = \sqrt{11}</mrow>
+          <mrow>\cos(\theta) = \frac{\vec{u} \cdot \vec{v}}{|\vec{u}||\vec{v}|} = \frac{7}{3\sqrt{11}} \Rightarrow \theta = \arccos\left( \frac{7}{3\sqrt{11}} \right)</mrow>
+        </md>
+      </p>
+
+      <p>
+        For <m>\vec{u}=\langle 1,0\rangle</m> and
+        <m>\vec{v}=\langle 0,-1\rangle</m> the dot product is
+        <m>\vec{u} \cdot \vec{v} = 1(0)+0(-1) = 0</m>, so
+        <md>
+          \cos(\theta) = \frac{0}{1 \cdot 1} = 0 \Rightarrow \theta = \frac{\pi}{2}
+        </md>
+      </p>
+
+      <p>
+        We get a right angle: even though <m>\vec{v}</m> points along the
+        negative <m>y</m>-axis, the angle between the two vectors that lies
+        between 0 and <m>\pi</m> is <m>\frac{\pi}{2}</m>, so the vectors are
+        perpendicular.
+      </p>
+    </solution>
+  </example>
+
+  <definition>
+    <title>Orthogonality</title>
+
+    <statement>
+      <p>
+        Two vectors <m>\vec{u}</m> and <m>\vec{v}</m> in 2D or 3D are
+        orthogonal if <m>\vec{u} \cdot \vec{v}=0</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <remark>
+    <p>
+      Orthogonal is another word for perpendicular (as defined in geometry).
+      In 3D, the vectors are perpendicular in the plane they define.
+    </p>
+
+    <figure xml:id="fig-ch01-03-orthogonal-vectors">
+      <caption>The vectors <m>\vec{u}</m> and <m>\vec{v}</m> are orthogonal</caption>
+      <interactive xml:id="interactive-ch01-03-orthogonal-vectors" variant="controls" width="90%" aspect="3:2"
+        calcplot3d="type=implicit;equation=y~0;cubes=16;visible=true;fixdomain=false;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;alpha=-1;revorient=false;showvf=false;shownormals=false;numnormals=10;normalscale=0.5;normalwidth=1;hidemyedges=false;view=0;format=normal;constcol=rgb(255,0,0)&amp;type=vector;vector=%3C1.5,%200,%202%3E;label=v-%3E_%7B2%7D;showlabel=false;labelposition=end;visible=true;color=rgb(255,255,255);size=2;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,3,0%3E;label=v-%3E_%7B3%7D;showlabel=false;labelposition=end;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0);dashed=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.236391035463319,4.755282581475766,3.0901699437494745,1;focus=0,0,0,1;up=0,0,2,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=1.74">
+        <instructions>
+          <p>
+            Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=implicit;equation=y~0;cubes=16;visible=true;fixdomain=false;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;alpha=-1;revorient=false;showvf=false;shownormals=false;numnormals=10;normalscale=0.5;normalwidth=1;hidemyedges=false;view=0;format=normal;constcol=rgb(255,0,0)&amp;type=vector;vector=%3C1.5,%200,%202%3E;label=v-%3E_%7B2%7D;showlabel=false;labelposition=end;visible=true;color=rgb(255,255,255);size=2;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,3,0%3E;label=v-%3E_%7B3%7D;showlabel=false;labelposition=end;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0);dashed=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.236391035463319,4.755282581475766,3.0901699437494745,1;focus=0,0,0,1;up=0,0,2,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=1.74" target="_blank" rel="noopener noreferrer">link to the plot</url>
+          </p>
+        </instructions>
+        <static>
+          <image source="/images/2025_08_04_6f11792a371c74850db7g-4.png">
+            <shortdescription>Two orthogonal vectors u and v meeting at a right angle. On the background the plane perpendicular to v that contains u passing from the origin of the axes.</shortdescription>
+            <description>
+              <p>Two orthogonal vectors <m>\vec{u}</m> and <m>\vec{v}</m> meeting at a right angle. On the background the plane perpendicular to <m>\vec{v}</m> that contains <m>\vec{u}</m> passing from the origin of the axes.</p>
+            </description>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+  </remark>
+
+  <example xml:id="example-ch01-03-ex-3-3">
+    <statement>
+      <p>
+        Determine whether the vectors <m>\vec{u}=\langle 5,-2\rangle</m> and
+        <m>\vec{v}=\langle 1,5/2\rangle</m> are perpendicular using the dot
+        product.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We compute the dot product using formula 1:
+        <md>
+          \vec{u} \cdot \vec{v} = 5(1)+(-2)\left( \frac{5}{2} \right) = 5-5 = 0
+        </md>
+      </p>
+
+      <p>
+        Since <m>\vec{u} \cdot \vec{v} = 0</m>, the vectors are orthogonal,
+        i.e. perpendicular.
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <title>Orthogonal Projections</title>
+
+    <p>
+      The dot product allows us define projections. Think of projections as
+      squishing (casting a shadow of) one vector into another.
+    </p>
+  </note>
+
+  <definition>
+    <title>Orthogonal Projections</title>
+
+    <statement>
+      <p>
+        Let <m>\vec{u}</m> and <m>\vec{v}</m> be two vectors (in 2D or 3D),
+        with <m>\vec{v} \neq 0</m>. The orthogonal projection (or simply
+        <q>projection</q>) of <m>\vec{u}</m> into <m>\vec{v}</m> is given by
+        <md>
+          \operatorname{proj}_{\vec{v}} \vec{u}=\left(\frac{\vec{u} \cdot \vec{v}}{\vec{v} \cdot \vec{v}}\right) \vec{v}
+        </md>.
+      </p>
+    </statement>
+  </definition>
+
+  <figure xml:id="fig-ch01-03-projection-cases">
+    <caption>The orthogonal projection of <m>\vec{u}</m> onto <m>\vec{v}</m> for the two possible ranges of the angle <m>\theta</m> between them.</caption>
+
+    <sidebyside widths="45% 45%" margins="auto" valign="middle">
+      <figure xml:id="fig-ch01-03-projection-cases-a">
+        <caption><m>0\leq \theta \lt \frac{\pi}{2}</m>. This interactive is PENDING, it should correspond to 2025_08_04_6f11792a371c74850db7g-5.</caption>
+        <interactive xml:id="interactive-ch01-03-projection-cases-a" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_08_04_6f11792a371c74850db7g-5.png">
+              <shortdescription>The orthogonal projection of u onto v when the angle theta between them is at least 0 and less than pi over 2.</shortdescription>
+              <description>
+                <p>The orthogonal projection of <m>\vec{u}</m> onto <m>\vec{v}</m> when the angle <m>\theta</m> between them is at least 0 and less than <m>\frac{\pi}{2}</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch01-03-projection-cases-b">
+        <caption><m>\frac{\pi}{2} \lt \theta \leq \pi</m>. This interactive is PENDING, it should correspond to 2025_08_04_6f11792a371c74850db7g-5-1.</caption>
+        <interactive xml:id="interactive-ch01-03-projection-cases-b" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_08_04_6f11792a371c74850db7g-5-1.png">
+              <shortdescription>The orthogonal projection of u onto v when the angle theta between them is greater than pi over 2 and at most pi.</shortdescription>
+              <description>
+                <p>The orthogonal projection of <m>\vec{u}</m> onto <m>\vec{v}</m> when the angle <m>\theta</m> between them is greater than <m>\frac{\pi}{2}</m> and at most <m>\pi</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </sidebyside>
+  </figure>
+  <!--\caption*{From openstax, Calculus Volume 3, Section 2.2}-->
+  <!--\includegraphics[max width=0.7\textwidth]{2025_08_04_6f11792a371c74850db7g-5}-->
+
+  <remark>
+    <p>
+      <ul>
+        <li>
+          <p>
+            When we say that we are projecting <m>\vec{u}</m> into
+            <m>\vec{v}</m>, we are actually projecting <m>\vec{u}</m> into
+            the line containing <m>\vec{v}</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            As seen in the pictures, <m>\operatorname{proj}_{\vec{v}} \vec{u}</m>
+            is a vector. Specifically, a scalar multiple of <m>\vec{v}</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Important: As seen in the pictures, if the angle <m>\theta</m>
+            between <m>\vec{u}</m> and <m>\vec{v}</m> satisfies
+            <m>0 \leq \theta \lt \frac{\pi}{2}, \operatorname{proj}_{\vec{v}} \vec{u}</m>
+            is in the direction of <m>\vec{v}</m>. If
+            <m>\frac{\pi}{2} \lt \theta \leq \pi, \operatorname{proj}_{\vec{v}} \vec{u}</m>
+            is in the direction opposite of <m>\vec{v}</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            What happens if the angle between <m>\vec{u}</m> and
+            <m>\vec{v}</m> is <m>\frac{\pi}{2}</m> or <m>\vec{u}=\vec{0}</m> ?
+          </p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch01-03-ex-3-4">
+    <statement>
+      <p>
+        Given <m>\vec{u}=\langle1,2,3\rangle</m> and
+        <m>\vec{v}=\langle -3,-2,-1\rangle</m>, compute
+        <m>\operatorname{proj}_{\vec{v}} \vec{u}</m>. Are <m>\vec{v}</m> and
+        proj <m>_{\vec{v}} \vec{u}</m> parallel? Justify your answer.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We compute the two dot products in the projection formula:
+        <md>
+          \vec{u} \cdot \vec{v} = 1(-3)+2(-2)+3(-1) = -10, \quad \vec{v} \cdot \vec{v} = (-3)^2+(-2)^2+(-1)^2 = 14
+        </md>
+      </p>
+
+      <p>
+        Hence
+        <md>
+          \operatorname{proj}_{\vec{v}} \vec{u} = \left( \frac{\vec{u} \cdot \vec{v}}{\vec{v} \cdot \vec{v}} \right) \vec{v} = -\frac{10}{14}\langle -3,-2,-1 \rangle = -\frac{5}{7}\langle -3,-2,-1 \rangle = \left\langle \frac{15}{7}, \frac{10}{7}, \frac{5}{7} \right\rangle
+        </md>
+      </p>
+
+      <p>
+        Yes, they are parallel:
+        <m>\operatorname{proj}_{\vec{v}} \vec{u} = -\frac{5}{7}\vec{v}</m> is a
+        scalar multiple of <m>\vec{v}</m>, so the two vectors lie on the same
+        line. Since the scalar <m>-\frac{5}{7}</m> is negative,
+        <m>\operatorname{proj}_{\vec{v}} \vec{u}</m> points in the direction
+        opposite of <m>\vec{v}</m>.
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      Given any nonzero vector <m>\vec{v}</m>, we have that
+      <md>
+        \vec{v} \cdot \vec{v}=v_{1}^{2}+v_{2}^{2}=|\vec{v}|^{2}
+      </md>
+    </p>
+
+    <p>
+      We can use this fact to re-write the projection formula as follows:
+      <md>
+        <mrow>\operatorname{proj}_{\vec{v}} \vec{u} \amp =\left(\frac{\vec{u} \cdot \vec{v}}{\vec{v} \cdot \vec{v}}\right) \vec{v}</mrow>
+        <mrow>\amp =\left(\frac{\vec{u} \cdot \vec{v}}{|\vec{v}|^{2}}\right) \vec{v}</mrow>
+        <mrow>\amp =\left(\frac{\vec{u} \cdot \vec{v}}{|\vec{v}|}\right) \frac{\vec{v}}{|\vec{v}|}</mrow>
+      </md>.
+    </p>
+  </remark>
+
+  <definition>
+    <title>Scalar Component in the Direction of a Vector</title>
+
+    <statement>
+      <p>
+        Let <m>\vec{u}</m> and <m>\vec{v}</m> be two vectors with
+        <m>\vec{v} \neq \vec{0}</m>. The scalar component of <m>\vec{u}</m>
+        in the direction of <m>\vec{v}</m> is given by
+        <md>
+          \operatorname{scal}_{\vec{v}} \vec{u}=\frac{\vec{u} \cdot \vec{v}}{|\vec{v}|}
+        </md>
+      </p>
+
+      <p>
+        Moreover, we have that
+        <md>
+          \left|\operatorname{scal}_{\vec{v}} \vec{u}\right|=\left|\operatorname{proj}_{\vec{v}} \vec{u}\right|
+        </md>.
+      </p>
+    </statement>
+  </definition>
+
+  <remark>
+    <title>The importance of the quantity scal <m>{ }_{\vec{v}} \vec{u}</m></title>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            <m>\left|\operatorname{scal}_{\vec{v}} \vec{u}\right|</m> is a
+            shortcut to compute
+            <m>\left|\operatorname{proj}_{\vec{v}} \vec{u}\right|</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            From Note 6, if <m>\vec{u} \cdot \vec{v} \gt 0</m>, then
+            <m>\operatorname{scal}_{\vec{v}} \vec{u} \gt 0</m>, and hence
+            <m>\operatorname{proj}_{\vec{v}} \vec{u}</m> is in the direction
+            of <m>\vec{v}</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>\vec{u} \cdot \vec{v} \lt 0</m>, then
+            <m>\operatorname{proj}_{\vec{v}} \vec{u}</m> is in the direction
+            opposite of <m>\vec{v}</m> .
+          </p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch01-03-ex-3-5">
+    <statement>
+      <p>
+        Given <m>\vec{u}=\langle 4,3\rangle, \vec{v}=\langle 5,12\rangle</m>,
+        and <m>\vec{w}=\langle-4,-3\rangle</m>, find
+        <m>\operatorname{scal}_{\vec{v}} \vec{u}</m> and
+        <m>\operatorname{scal}_{\vec{v}} \vec{w}</m>. Moreover, determine
+        whether <m>\operatorname{proj}_{\vec{v}} \vec{u}</m> and
+        <m>\operatorname{proj}_{\vec{v}} \vec{w}</m> are in the direction of
+        <m>\vec{v}</m> or opposite to it.
+      </p>
+
+      <figure xml:id="fig-ch01-03-ex-3-5">
+        <caption>This interactive is PENDING, it should correspond to Example 3.5.</caption>
+        <interactive xml:id="interactive-ch01-03-ex-3-5" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/Example-3.5.png">
+              <shortdescription>Vectors u, v, and w with their projections onto v shown in the xy-plane.</shortdescription>
+              <description>
+                <p>Vectors <m>\vec{u}</m>, <m>\vec{v}</m>, and <m>\vec{w}</m> with their projections onto <m>\vec{v}</m> shown in the <m>xy</m>-plane.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        First, <m>|\vec{v}| = \sqrt{5^2+12^2} = \sqrt{169} = 13</m>. Then
+        <md alignment="gather">
+          <mrow>\operatorname{scal}_{\vec{v}} \vec{u} = \frac{\vec{u} \cdot \vec{v}}{|\vec{v}|} = \frac{4(5)+3(12)}{13} = \frac{56}{13}</mrow>
+          <mrow>\operatorname{scal}_{\vec{v}} \vec{w} = \frac{\vec{w} \cdot \vec{v}}{|\vec{v}|} = \frac{-4(5)+(-3)(12)}{13} = -\frac{56}{13}</mrow>
+        </md>
+      </p>
+
+      <p>
+        Since <m>\operatorname{scal}_{\vec{v}} \vec{u} = \frac{56}{13} \gt 0</m>,
+        the projection <m>\operatorname{proj}_{\vec{v}} \vec{u}</m> is in the
+        direction of <m>\vec{v}</m>; since
+        <m>\operatorname{scal}_{\vec{v}} \vec{w} = -\frac{56}{13} \lt 0</m>, the
+        projection <m>\operatorname{proj}_{\vec{v}} \vec{w}</m> is in the
+        direction opposite of <m>\vec{v}</m>, as the picture above shows.
+        (Note that <m>\vec{w} = -\vec{u}</m>, which is why the two scalar
+        components are negatives of each other.)
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <title>Summary</title>
+
+    <p>
+      Given two vectors <m>\vec{u}</m> and <m>\vec{v}</m> with
+      <m>\vec{v} \neq 0</m>; and <m>0 \leq \theta \leq \pi</m> the angle
+      between <m>\vec{u}</m> and <m>\vec{v}</m>, then:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            If <m>0 \leq \theta \lt \frac{\pi}{2}</m> or
+            <m>\vec{u} \cdot \vec{v} \gt 0 \Rightarrow \operatorname{proj}_{\vec{v}} \vec{u}</m>
+            is in the direction of <m>\vec{v}</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>\frac{\pi}{2} \lt \theta \leq \pi</m> or
+            <m>\vec{u} \cdot \vec{v} \lt 0 \Rightarrow \operatorname{proj}_{\vec{v}} \vec{u}</m>
+            is in the direction opposite of <m>\vec{v}</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>\theta=\frac{\pi}{2}</m> or
+            <m>\vec{u}=0 \Rightarrow \operatorname{proj}_{\vec{v}} \vec{u}=0</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            A shortcut to find
+            <m>\left|\operatorname{proj}_{\vec{v}} \vec{u}\right|</m> is to
+            compute it as <m>\left|\operatorname{scal}_{\vec{v}} \vec{u}\right|</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </note>
+
 </section>

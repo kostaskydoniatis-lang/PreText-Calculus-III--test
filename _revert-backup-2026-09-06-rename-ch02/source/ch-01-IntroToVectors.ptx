@@ -10,8 +10,5 @@
   <!-- include sections -->
   <xi:include href="sec-ch01-01-VectorsIn2D.ptx" />
   <xi:include href="sec-ch01-02-VectorsIn3D.ptx" />
-  <!-- CLAUDE 2026-09-06: sec-ch01-03 is now the full dot-product conversion (your stub merged -->
-  <!-- into it) and sec-ch01-04 is new. See REVERT-2026-09-06-rename-ch02.md to undo.            -->
   <xi:include href="sec-ch01-03-DotProduct.ptx" />
-  <xi:include href="sec-ch01-04-CrossProduct.ptx" />
 </chapter>

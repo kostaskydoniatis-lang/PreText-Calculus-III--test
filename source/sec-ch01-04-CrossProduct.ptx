@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch01-04-CrossProduct.ptx : converted from "4. The Cross Product - Solutions.tex"
+  by the bbeaccess-pretext skill (2026-09-06). Fragment for xi:include into
+  ch-01-IntroToVectors.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch01-04 (chapter 1, right after the dot product) on your
+     instruction.
+  2. Three OpenStax figures (...6cd67e91fafb048556b2g-1.jpg, -2.jpg, -6.jpg) are plain
+     captioned figures, no interactive; caption written "From OpenStax, ..." following
+     your ch01-02 capitalisation (the .tex says "openstax"). These three files are .jpg
+     on disk; all other images in this section are .png.
+  3. Known interactive: fig-ch01-04-ex-4-2 (the CalcPlot3D "figure" link of Example 4.2;
+     the .tex link is http://, kept verbatim in the <url>; ptx_check only recognises
+     https:// links, so it reports this interactive as "web-only", which it is not).
+     PENDING (placeholder Desmos graph vqavop8m24): the four Example 4.1 panels
+     ...g-3.png, ...g-3-2.png, ...g-3-3.png, ...g-3-1.png.
+  4. Example 4.1's four pictures (two rows of two, hand-labelled a b / c d) are one
+     outer figure holding an <sbsgroup> with two <sidebyside> rows; PreTeXt sub-labels
+     the panels (a) to (d) itself, so the hand labels are dropped. Each panel is a full
+     PENDING interactive figure.
+  5. "Example 4.2" + "[Continuation of 4.2]" merged into ONE <example>: statement,
+     list and figure from the first box, the three numbered solutions from the
+     continuation as three <solution>s (Solution 1/2/3 = parts 1/2/3). ptx_check
+     therefore reports 7 examples in the .tex vs 6 here.
+  6. The hyperlinked word "figure" in Example 4.2 ("Given the {figure} below") is
+     plain prose here; the link lives in the figure's interactive and <url>.
+  7. Determinants: the 3x3 and 2x2 determinants use \begin{array}/\begin{matrix} with
+     \\ row separators and \amp column separators, exactly as the .tex. ptx_check flags
+     "\\ inside <mrow>" and "LaTeX environment remnant" for every one of them; those
+     are false positives (MathJax needs them). 6 displays affected.
+  8. The last remark opens with the line "Properties of the Cross Product\\", body
+     text in the .tex, not a bracket title. Kept as its own <p>; make it a <title> if
+     you prefer.
+  9. \overrightarrow{AB}, \overrightarrow{AC} to \vec{AB}, \vec{AC} (house rule).
+     \mathbf{i}, \mathbf{j}, \mathbf{k} to \vec{i}, \vec{j}, \vec{k} (dotless
+     \vec{\imath}/\vec{\jmath} is the alternative). The .tex's own \vec{0} kept.
+ 10. Typeset <description>s are the conversion's own text; review. The four panel alt
+     texts of Example 4.1 had no final period; one was added in <shortdescription>.
+ 11. Template width constants replace the .tex widths (max width=0.7/0.33/0.8\textwidth).
+ 12. Relative references left as prose: "In each of the figures (a)-(d) above",
+     "From the figure", "Combining the two previous parts".
+ 13. Source quirks preserved: "$\mathbf{u} \times \mathbf{v}=$ $-(\mathbf{v} \times
+     \mathbf{u})$" as two adjacent <m>s; "(if $\theta=0$ or $\theta=\pi$ )" spacing;
+     "$\mathbf{u} \times \mathbf{v}=\vec{0}, \mathbf{u}$ and $\mathbf{v}$" comma
+     inside the maths (Note: Parallel Vectors); "What is $\mathbf{v} \times
+     \mathbf{u}$ ?" spacing.
+ 14. Every \newpage/\vspace/\hspace, the figure[H] wrappers and the hand a/b/c/d
+     label rows dropped.
+-->
+
+<section xml:id="sec-ch01-04-CrossProduct" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>The Cross Product</title>
+
+  <definition>
+    <title>The Cross Product Geometric Definition</title>
+
+    <statement>
+      <p>
+        Given two nonzero vectors <m>\vec{u}</m> and <m>\vec{v}</m> in
+        <m>x y z</m>-space, their cross product, denoted by
+        <m>\vec{u} \times \vec{v}</m>, is a vector orthogonal to both
+        <m>\vec{u}</m> and <m>\vec{v}</m> with length given by the formula
+        <md>
+          |\vec{u} \times \vec{v}|=|\vec{u}||\vec{v}| \sin (\theta)
+        </md>, where <m>0 \leq \theta \leq \pi</m> is the angle between
+        <m>\vec{u}</m> and <m>\vec{v}</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <figure xml:id="fig-ch01-04-cross-product-orthogonal">
+    <caption>From OpenStax, Calculus Volume 3, Section 2.4</caption>
+
+    <image source="/images/2025_08_04_6cd67e91fafb048556b2g-1.jpg" width="50%">
+      <shortdescription>Two vectors u and v in xyz-space with their cross product u times v shown as a vector orthogonal to both.</shortdescription>
+      <description>
+        <p>Two vectors <m>\vec{u}</m> and <m>\vec{v}</m> in <m>xyz</m>-space with their cross product <m>\vec{u} \times \vec{v}</m> shown as a vector orthogonal to both.</p>
+      </description>
+    </image>
+  </figure>
+
+  <note>
+    <title>Direction of <m>\vec{u} \times \vec{v}</m></title>
+
+    <p>
+      Given two nonzero vectors <m>\vec{u}</m> and <m>\vec{v}</m> not on the
+      same line, to find the direction of <m>\vec{u} \times \vec{v}</m> :
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p>
+            Put <m>\vec{u}</m> and <m>\vec{v}</m> in standard position.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Let the fingers of your right hand curl from <m>\vec{u}</m> to
+            <m>\vec{v}</m> along <m>\theta</m> (along the angle that is
+            between 0 and <m>\pi</m> ).
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The direction of your thumb as you curl in step 2 is the direction
+            of <m>\vec{u} \times \vec{v}</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </note>
+
+  <p>
+    We call this method to find the direction of <m>\vec{u} \times \vec{v}</m>
+    the right-hand rule.
+  </p>
+
+  <figure xml:id="fig-ch01-04-right-hand-rule">
+    <caption>From OpenStax, Calculus Volume 3, Section 2.4</caption>
+
+    <image source="/images/2025_08_04_6cd67e91fafb048556b2g-2.jpg" width="50%">
+      <shortdescription>An illustration of the right-hand rule: fingers curl from u to v and the thumb points in the direction of u times v.</shortdescription>
+      <description>
+        <p>An illustration of the right-hand rule: fingers curl from <m>\vec{u}</m> to <m>\vec{v}</m> and the thumb points in the direction of <m>\vec{u} \times \vec{v}</m>.</p>
+      </description>
+    </image>
+  </figure>
+
+  <example xml:id="example-ch01-04-ex-4-1">
+    <statement>
+      <p>
+        Determine which of the following cross product vectors
+        <m>\vec{u} \times \vec{v}</m> point in the positive <m>z</m>-direction.
+      </p>
+
+      <figure xml:id="fig-ch01-04-ex-4-1">
+        <caption>Four pairs of vectors <m>\vec{u}</m> and <m>\vec{v}</m> in the <m>xy</m>-plane, cases (a) to (d).</caption>
+
+        <sbsgroup>
+          <sidebyside widths="45% 45%" margins="auto" valign="middle">
+            <figure xml:id="fig-ch01-04-ex-4-1a">
+              <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3.</caption>
+              <interactive xml:id="interactive-ch01-04-ex-4-1a" width="85%" aspect="4:3" desmos="vqavop8m24">
+                <instructions>
+                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                </instructions>
+                <static>
+                  <image source="/images/2025_08_04_6cd67e91fafb048556b2g-3.png">
+                    <shortdescription>Pair of vectors u and v in the xy-plane for case a. The angle from u to v is 3 pi over 4.</shortdescription>
+                    <description>
+                      <p>Pair of vectors <m>\vec{u}</m> and <m>\vec{v}</m> in the <m>xy</m>-plane for case a. The angle from <m>\vec{u}</m> to <m>\vec{v}</m> is <m>\frac{3\pi}{4}</m>.</p>
+                    </description>
+                  </image>
+                </static>
+              </interactive>
+            </figure>
+
+            <figure xml:id="fig-ch01-04-ex-4-1b">
+              <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3-2.</caption>
+              <interactive xml:id="interactive-ch01-04-ex-4-1b" width="85%" aspect="4:3" desmos="vqavop8m24">
+                <instructions>
+                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                </instructions>
+                <static>
+                  <image source="/images/2025_08_04_6cd67e91fafb048556b2g-3-2.png">
+                    <shortdescription>Pair of vectors u and v in the xy-plane for case b. The angle from u to v is 13 pi over 12.</shortdescription>
+                    <description>
+                      <p>Pair of vectors <m>\vec{u}</m> and <m>\vec{v}</m> in the <m>xy</m>-plane for case b. The angle from <m>\vec{u}</m> to <m>\vec{v}</m> is <m>\frac{13\pi}{12}</m>.</p>
+                    </description>
+                  </image>
+                </static>
+              </interactive>
+            </figure>
+          </sidebyside>
+
+          <sidebyside widths="45% 45%" margins="auto" valign="middle">
+            <figure xml:id="fig-ch01-04-ex-4-1c">
+              <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3-3.</caption>
+              <interactive xml:id="interactive-ch01-04-ex-4-1c" width="85%" aspect="4:3" desmos="vqavop8m24">
+                <instructions>
+                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                </instructions>
+                <static>
+                  <image source="/images/2025_08_04_6cd67e91fafb048556b2g-3-3.png">
+                    <shortdescription>Pair of vectors u and v in the xy-plane for case c. The angle from u to v is 5 pi over 4.</shortdescription>
+                    <description>
+                      <p>Pair of vectors <m>\vec{u}</m> and <m>\vec{v}</m> in the <m>xy</m>-plane for case c. The angle from <m>\vec{u}</m> to <m>\vec{v}</m> is <m>\frac{5\pi}{4}</m>.</p>
+                    </description>
+                  </image>
+                </static>
+              </interactive>
+            </figure>
+
+            <figure xml:id="fig-ch01-04-ex-4-1d">
+              <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3-1.</caption>
+              <interactive xml:id="interactive-ch01-04-ex-4-1d" width="85%" aspect="4:3" desmos="vqavop8m24">
+                <instructions>
+                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                </instructions>
+                <static>
+                  <image source="/images/2025_08_04_6cd67e91fafb048556b2g-3-1.png">
+                    <shortdescription>Pair of vectors u and v in the xy-plane for case d. The angle from u to v is 5 pi over 12.</shortdescription>
+                    <description>
+                      <p>Pair of vectors <m>\vec{u}</m> and <m>\vec{v}</m> in the <m>xy</m>-plane for case d. The angle from <m>\vec{u}</m> to <m>\vec{v}</m> is <m>\frac{5\pi}{12}</m>.</p>
+                    </description>
+                  </image>
+                </static>
+              </interactive>
+            </figure>
+          </sidebyside>
+        </sbsgroup>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        In each of the figures (a)<ndash/>(d) above, both vectors lie in the
+        <m>xy</m>-plane, so <m>\vec{u} \times \vec{v}</m> points either in the
+        positive or in the negative <m>z</m>-direction. By the right-hand
+        rule, it points in the positive <m>z</m>-direction exactly when curling
+        from <m>\vec{u}</m> to <m>\vec{v}</m> along the angle <m>\theta</m>
+        between them (<m>0 \leq \theta \leq \pi</m>) is a counterclockwise
+        rotation.
+      </p>
+
+      <p>
+        In (a) the counterclockwise rotation from <m>\vec{u}</m> to
+        <m>\vec{v}</m> is <m>\frac{3\pi}{4} \lt \pi</m>, so this rotation is
+        along the angle between the vectors, and <m>\vec{u} \times \vec{v}</m>
+        points in the positive <m>z</m>-direction. The same happens in (d),
+        where the counterclockwise rotation is <m>\frac{5\pi}{12} \lt \pi</m>.
+      </p>
+
+      <p>
+        In (b) the counterclockwise rotation from <m>\vec{u}</m> to
+        <m>\vec{v}</m> is <m>\frac{13\pi}{12} \gt \pi</m>, so the angle between
+        the vectors is <m>2\pi-\frac{13\pi}{12} = \frac{11\pi}{12}</m>, and
+        curling from <m>\vec{u}</m> to <m>\vec{v}</m> along this angle is a
+        clockwise rotation: <m>\vec{u} \times \vec{v}</m> points in the
+        negative <m>z</m>-direction. The same happens in (c), where the angle
+        between the vectors is <m>2\pi-\frac{5\pi}{4} = \frac{3\pi}{4}</m>,
+        again traversed clockwise.
+      </p>
+
+      <p>
+        Hence only the cross products in (a) and (d) point in the positive
+        <m>z</m>-direction.
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      <ul>
+        <li>
+          <p>
+            If <m>\vec{u} \times \vec{v}=\vec{0}</m> (if <m>\theta=0</m> or
+            <m>\theta=\pi</m> ), the direction of <m>\vec{u} \times \vec{v}</m>
+            is undefined.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            For nonzero <m>\vec{u}</m> and <m>\vec{v}</m>, the cross product
+            is not commutative. In fact, <m>\vec{u} \times \vec{v}=</m>
+            <m>-(\vec{v} \times \vec{u})</m> (they have the same length, but
+            point in opposite directions).
+          </p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch01-04-ex-4-2">
+    <statement>
+      <p>
+        Given the figure below, find:
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              The direction of <m>\vec{u} \times \vec{v}</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The magnitude of <m>\vec{u} \times \vec{v}</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The vector <m>\vec{u} \times \vec{v}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+
+      <figure xml:id="fig-ch01-04-ex-4-2">
+        <caption>Vector <m>\vec{u}=\langle 0,2,0\rangle</m>, and vector <m>\vec{v}=\langle 0,0,4\rangle</m>, in <m>xyz</m>-space.</caption>
+        <interactive xml:id="interactive-ch01-04-ex-4-2" variant="controls" width="90%" aspect="3:2"
+          calcplot3d="type=vector;vector=%3C0,%202,%200%3E;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,%200,%204%3E;visible=true;color=rgb(30,136,229);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=text;text=v~%3C0%2C0%2C4%3E;visible=true;point=(0,0.2,4);color=rgb(30,136,229);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Lower-right&amp;type=text;text=u~%3C0%2C2%2C0%3E;visible=true;point=(0,2.5,0);color=rgb(255,193,7);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.236391035463319,4.755282581475766,3.0901699437494745,1;focus=0,0,0,1;up=0,0,2,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-4;xmax=4;ymin=-4;ymax=4;zmin=-4;zmax=4;xscale=2;yscale=2;zscale=2;zcmin=-8;zcmax=8;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.51">
+          <instructions>
+            <p>
+              Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="http://c3d.libretexts.org/CalcPlot3D/index.html?type=vector;vector=%3C0,%202,%200%3E;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,%200,%204%3E;visible=true;color=rgb(30,136,229);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=text;text=v~%3C0%2C0%2C4%3E;visible=true;point=(0,0.2,4);color=rgb(30,136,229);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Lower-right&amp;type=text;text=u~%3C0%2C2%2C0%3E;visible=true;point=(0,2.5,0);color=rgb(255,193,7);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.236391035463319,4.755282581475766,3.0901699437494745,1;focus=0,0,0,1;up=0,0,2,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-4;xmax=4;ymin=-4;ymax=4;zmin=-4;zmax=4;xscale=2;yscale=2;zscale=2;zcmin=-8;zcmax=8;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.51" target="_blank" rel="noopener noreferrer">link to the plot</url>
+            </p>
+          </instructions>
+          <static>
+            <image source="/images/2025_08_04_6cd67e91fafb048556b2g-4.png">
+              <shortdescription>Vector u with coordinates x = 0, y = 2, z = 0, and vector v with coordinates x = 0, y = 0, z = 4, in xyz-space.</shortdescription>
+              <description>
+                <p>Vector <m>\vec{u}=\langle 0,2,0\rangle</m>, and vector <m>\vec{v}=\langle 0,0,4\rangle</m>, in <m>xyz</m>-space.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        From the figure, <m>\vec{u} = \langle 0,2,0 \rangle</m> lies on the
+        positive <m>y</m>-axis and <m>\vec{v} = \langle 0,0,4 \rangle</m> lies
+        on the positive <m>z</m>-axis. Curling the fingers of the right hand
+        from the positive <m>y</m>-axis towards the positive <m>z</m>-axis,
+        the thumb points in the positive <m>x</m>-direction. Hence
+        <m>\vec{u} \times \vec{v}</m> points in the positive
+        <m>x</m>-direction (the direction of <m>\vec{i}</m>).
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        The angle between the positive <m>y</m>-axis and the positive
+        <m>z</m>-axis is <m>\theta = \frac{\pi}{2}</m>, so
+        <md>
+          |\vec{u} \times \vec{v}| = |\vec{u}||\vec{v}|\sin\left( \frac{\pi}{2} \right) = 2 \cdot 4 \cdot 1 = 8
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Combining the two previous parts, <m>\vec{u} \times \vec{v}</m> is
+        the vector of length 8 pointing in the positive <m>x</m>-direction:
+        <md>
+          \vec{u} \times \vec{v} = 8\vec{i} = \langle 8,0,0 \rangle
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <definition>
+    <title>Cross Products Computational Definition</title>
+
+    <statement>
+      <p>
+        Given two vectors
+        <m>\vec{u}=\left\langle u_{1}, u_{2}, u_{3}\right\rangle</m> and
+        <m>\vec{v}=\left\langle v_{1}, v_{2}, v_{3}\right\rangle</m> (they
+        could be the zero vector) in <m>x y z</m>-space,
+        <md>
+          <mrow>\vec{u} \times \vec{v} \amp =\left|\begin{array}{ccc} \vec{i} \amp \vec{j} \amp \vec{k} \\ u_{1} \amp u_{2} \amp u_{3} \\ v_{1} \amp v_{2} \amp v_{3} \end{array}\right|=\left|\begin{array}{ll} u_{2} \amp u_{3} \\ v_{2} \amp v_{3} \end{array}\right| \vec{i}-\left|\begin{array}{ll} u_{1} \amp u_{3} \\ v_{1} \amp v_{3} \end{array}\right| \vec{j}+\left|\begin{array}{ll} u_{1} \amp u_{2} \\ v_{1} \amp v_{2} \end{array}\right| \vec{k}</mrow>
+          <mrow>\amp =\left(u_{2} v_{3}-u_{3} v_{2}\right) \vec{i}-\left(u_{1} v_{3}-u_{3} v_{1}\right) \vec{j}+\left(u_{1} v_{2}-u_{2} v_{1}\right) \vec{k}</mrow>
+        </md>.
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch01-04-ex-4-3">
+    <statement>
+      <p>
+        Compute <m>\vec{u} \times \vec{v}</m> given that
+        <m>\vec{u}=\langle 1,2,3\rangle</m> and
+        <m>\vec{v}=\langle 2,1,3\rangle</m>. What is
+        <m>\vec{v} \times \vec{u}</m> ?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Using the computational definition:
+        <md alignment="gather">
+          <mrow>\vec{u} \times \vec{v} = \left| \begin{matrix} \vec{i} \amp \vec{j} \amp \vec{k} \\ 1 \amp 2 \amp 3 \\ 2 \amp 1 \amp 3 \end{matrix}\right|</mrow>
+          <mrow>= \left| \begin{matrix} 2 \amp 3 \\ 1 \amp 3 \end{matrix}\right|\vec{i} - \left| \begin{matrix} 1 \amp 3 \\ 2 \amp 3 \end{matrix}\right|\vec{j} + \left| \begin{matrix} 1 \amp 2 \\ 2 \amp 1 \end{matrix}\right|\vec{k}</mrow>
+          <mrow>= \left( 2(3)-3(1) \right)\vec{i} - \left( 1(3)-3(2) \right)\vec{j} + \left( 1(1)-2(2) \right)\vec{k}</mrow>
+          <mrow>= 3\vec{i}+3\vec{j}-3\vec{k} = \langle 3,3,-3 \rangle</mrow>
+        </md>
+      </p>
+
+      <p>
+        For the second question there is no need to compute another
+        determinant: since
+        <m>\vec{v} \times \vec{u} = -(\vec{u} \times \vec{v})</m>,
+        <md>
+          \vec{v} \times \vec{u} = -\langle 3,3,-3 \rangle = \langle -3,-3,3 \rangle
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <title>The Cross Product and Parallel Vectors</title>
+
+    <p>
+      Given two vectors <m>\vec{u}</m> and <m>\vec{v}</m>, if
+      <m>\vec{u} \times \vec{v}=\vec{0}, \vec{u}</m> and <m>\vec{v}</m> are
+      parallel (lie on the same line).
+    </p>
+  </note>
+
+  <example xml:id="example-ch01-04-ex-4-4">
+    <statement>
+      <p>
+        Determine whether the vectors <m>\vec{u}=\langle -3,6,0\rangle</m>
+        and <m>\vec{v}=\langle1,-2,0\rangle</m> lie on the same line.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We compute the cross product:
+        <md alignment="gather">
+          <mrow>\vec{u} \times \vec{v} = \left| \begin{matrix} \vec{i} \amp \vec{j} \amp \vec{k} \\ -3 \amp 6 \amp 0 \\ 1 \amp -2 \amp 0 \end{matrix}\right|</mrow>
+          <mrow>= \left| \begin{matrix} 6 \amp 0 \\ -2 \amp 0 \end{matrix}\right|\vec{i} - \left| \begin{matrix} -3 \amp 0 \\ 1 \amp 0 \end{matrix}\right|\vec{j} + \left| \begin{matrix} -3 \amp 6 \\ 1 \amp -2 \end{matrix}\right|\vec{k}</mrow>
+          <mrow>= \left( 6(0)-0(-2) \right)\vec{i} - \left( (-3)(0)-0(1) \right)\vec{j} + \left( (-3)(-2)-6(1) \right)\vec{k}</mrow>
+          <mrow>= 0\vec{i}-0\vec{j}+(6-6)\vec{k} = \vec{0}</mrow>
+        </md>
+      </p>
+
+      <p>
+        Since <m>\vec{u} \times \vec{v} = \vec{0}</m>, the vectors are
+        parallel, and hence they lie on the same line.
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      Another way to determine whether two vectors <m>\vec{u}</m> and
+      <m>\vec{v}</m> are parallel is to check whether there exists a scalar
+      <m>c</m> such that <m>c \vec{u}=\vec{v}</m>.
+    </p>
+  </note>
+
+  <example xml:id="example-ch01-04-ex-4-5">
+    <statement>
+      <p>
+        Determine whether <m>\vec{u}=\langle 1,2,1\rangle</m> and
+        <m>\vec{v}=\langle 2,-1,2\rangle</m> are parallel.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Suppose there were a scalar <m>c</m> such that
+        <m>c\vec{u} = \vec{v}</m>. Comparing components:
+        <md>
+          c\cdot 1 = 2 \Rightarrow c = 2, \quad c \cdot  2 = -1 \Rightarrow c = -\frac{1}{2}, \quad c \cdot 1 = 2 \Rightarrow c = 2
+        </md>
+      </p>
+
+      <p>
+        The second component requires a different scalar than the other two,
+        so no such <m>c</m> exists and the vectors are not parallel. We can
+        confirm this with the cross product:
+        <md alignment="gather">
+          <mrow>\vec{u} \times \vec{v} = \left| \begin{matrix} \vec{i} \amp \vec{j} \amp \vec{k} \\ 1 \amp 2 \amp 1 \\ 2 \amp -1 \amp 2 \end{matrix}\right|</mrow>
+          <mrow>= \left| \begin{matrix} 2 \amp 1 \\ -1 \amp 2 \end{matrix}\right|\vec{i} - \left| \begin{matrix} 1 \amp 1 \\ 2 \amp 2 \end{matrix}\right|\vec{j} + \left| \begin{matrix} 1 \amp 2 \\ 2 \amp -1 \end{matrix}\right|\vec{k}</mrow>
+          <mrow>= \left( 2(2)-1(-1) \right)\vec{i} - \left( 1(2)-1(2) \right)\vec{j} + \left( 1(-1)-2(2) \right)\vec{k} = \langle 5,0,-5 \rangle \neq \vec{0}</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <title>The Cross Product and Parallelograms</title>
+
+    <p>
+      Given two nonzero vectors <m>\vec{u}</m> and
+      <m>\vec{v},|\vec{u} \times \vec{v}|</m> is the area of the
+      parallelogram defined by <m>\vec{u}</m> and <m>\vec{v}</m>.
+    </p>
+  </remark>
+
+  <figure xml:id="fig-ch01-04-parallelogram">
+    <caption>From OpenStax, Calculus Volume 3, Section 2.4</caption>
+
+    <image source="/images/2025_08_04_6cd67e91fafb048556b2g-6.jpg" width="50%">
+      <shortdescription>A parallelogram defined by vectors u and v, with the area equal to the magnitude of u cross product v.</shortdescription>
+      <description>
+        <p>A parallelogram defined by vectors <m>\vec{u}</m> and <m>\vec{v}</m>, with the area equal to the magnitude of <m>\vec{u} \times \vec{v}</m>.</p>
+      </description>
+    </image>
+  </figure>
+
+  <example xml:id="example-ch01-04-ex-4-6">
+    <statement>
+      <p>
+        Find the area of the triangle with vertices given by the points
+        <m>A(1,2,3), B(2,3,4), C(4,3,2)</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The triangle is half of the parallelogram defined by the vectors
+        <m>\vec{AB}</m> and <m>\vec{AC}</m>, so its area is
+        <m>\frac{1}{2}\left| \vec{AB} \times \vec{AC} \right|</m>. In standard
+        position:
+        <md>
+          \vec{AB} = \langle 2-1, 3-2, 4-3 \rangle = \langle 1,1,1 \rangle, \quad \vec{AC} = \langle 4-1, 3-2, 2-3 \rangle = \langle 3,1,-1 \rangle
+        </md>
+      </p>
+
+      <p>
+        Their cross product is
+        <md alignment="gather">
+          <mrow>\vec{AB} \times \vec{AC} = \left| \begin{matrix} \vec{i} \amp \vec{j} \amp \vec{k} \\ 1 \amp 1 \amp 1 \\ 3 \amp 1 \amp -1 \end{matrix}\right|</mrow>
+          <mrow>= \left| \begin{matrix} 1 \amp 1 \\ 1 \amp -1 \end{matrix}\right|\vec{i} - \left| \begin{matrix} 1 \amp 1 \\ 3 \amp -1 \end{matrix}\right|\vec{j} + \left| \begin{matrix} 1 \amp 1 \\ 3 \amp 1 \end{matrix}\right|\vec{k}</mrow>
+          <mrow>= \left( 1(-1)-1(1) \right)\vec{i} - \left( 1(-1)-1(3) \right)\vec{j} + \left( 1(1)-1(3) \right)\vec{k} = \langle -2,4,-2 \rangle</mrow>
+        </md>
+      </p>
+
+      <p>
+        with magnitude
+        <md>
+          \left| \vec{AB} \times \vec{AC} \right| = \sqrt{(-2)^2+4^2+(-2)^2} = \sqrt{24} = 2\sqrt{6}
+        </md>
+      </p>
+
+      <p>
+        Hence the area of the triangle is
+        <m>\frac{1}{2} \cdot 2\sqrt{6} = \sqrt{6}</m>.
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      Properties of the Cross Product
+    </p>
+
+    <p>
+      Given two vectors <m>\vec{u}</m> and <m>\vec{v}</m> in
+      <m>x y z</m>-space and <m>a, b</m> real numbers, then
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            <m>\vec{u} \times \vec{v}=-(\vec{v} \times \vec{u})</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>(a \vec{u}) \times(b \vec{v})=a b(\vec{u} \times \vec{v})</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\vec{u} \times(\vec{v}+\vec{w})=(\vec{u} \times \vec{v})+(\vec{u} \times \vec{w})</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>(\vec{u}+\vec{v}) \times \vec{w}=(\vec{u} \times \vec{w})+(\vec{v} \times \vec{w})</m>
+          </p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+</section>

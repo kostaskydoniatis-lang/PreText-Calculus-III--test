@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch02-01-VectorValuedFunctions.ptx : converted from
+  "5. Vector-Valued Functions - Solutions.tex" by the bbeaccess-pretext skill
+  (2026-09-06). Fragment for xi:include into ch-02-IntroductionVectorandScalarValuedFunctions.ptx;
+  not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch02-01 (the first section of chapter 2) on your instruction.
+  2. Known interactives (CalcPlot3D links in the .tex): fig-ch02-01-ex-5-1 (helix) and
+     fig-ch02-01-line-parametric (the "(graph)" link in the parametric-form note).
+     PENDING (placeholder Desmos graph vqavop8m24): the three position-vector panels
+     ...3d11211490a50caa278ag-1.png, ...g-1-2.png, ...g-1-1.png (3D pictures; the real
+     interactive will probably be CalcPlot3D), ...g-2-1.png (line segment),
+     Example-5.2-1.png, Example-5.2-2.png, Example-5.3.png.
+  3. RENAME COLLISION: the helix picture "...3d11211490a50caa278ag-2(1)" is now
+     ...g-2-1-b.png because ...g-2-1.png (the line-segment picture, a different file)
+     already existed. ptx_check normalises both names to the same key and therefore
+     mis-pairs them in its report; the two <image> sources here are correct.
+  4. The CalcPlot3D scene of Example 5.1 plots x=sin(t), y=cos(t) while the text and
+     the picture have r(t)=<cos t, sin t, t/10>; copied verbatim from the .tex, not fixed.
+  5. The hyperlinked words "graph" (Example 5.1) and "(graph)" (parametric note) are
+     plain prose / dropped; each link lives in its figure's interactive and <url>.
+  6. "Example 5.3" + "[Continuation of 5.3]" merged into ONE <example> with ONE
+     <solution> (Options A, B from the first box, Option C and the graph from the
+     continuation). ptx_check reports 6 examples / 7 solutions in the .tex vs 5 / 6 here.
+  7. Example 5.2: the two answer graphs stay inside their <solution>s at the position
+     they have in the .tex (after "To graph it, ..."), not lifted to the top of the
+     solution. Its two numbered parts are an <ol> in the statement plus one <solution>
+     per box (Solution 1 / 2); <task>s not used unasked.
+  8. The three position-vector pictures (one figure[H] with three subfigures) are one
+     outer figure with a three-panel <sidebyside widths="30% 30% 30%">; each panel's
+     \caption* ( r(t0)=... ) comes first in its PENDING caption. The commented-out
+     "%\caption*{From openstax...}" and the three commented-out \includegraphics lines
+     with their r(t_i) labels are kept as XML comments where they stood.
+  9. \mathbf r (t) (no braces, three remarks) to \vec{r}(t) (braces added; \vec r
+     would also work). Everything else byte-for-byte.
+ 10. The two \begin{aligned} displays: Line-in-Parametric-Form keeps its alignment
+     (\amp before =); Example 5.5's system has "& r_1(t)=..." with a leading & on each
+     line, kept as a leading \amp so the two lines stay left-aligned as in the PDF.
+ 11. Typeset <description>s are the conversion's own text; review. The .tex alt texts
+     write "r of t", "r 0", "t0"; set as \vec{r}(t), \vec{r}_{0}, t_{0}.
+ 12. Template width constants replace the .tex widths (max width=0.35/0.3/0.7\textwidth,
+     subfigure 0.3\textwidth, max height=0.4\textheight).
+ 13. Relative reference left as prose: "the definition above" (parametric note).
+ 14. Source quirks preserved: "there multiple options" (Example 5.3), "use on of the
+     following" (right-to-left remark), Example 5.3's second sentence has no final
+     period, "\mathbf{v} \neq 0" style; the \textbf{Option A/B/C} labels are <alert>s.
+ 15. Every \newpage/\vspace, the figure[H]/center wrappers and \\ dropped.
+-->
+
+<section xml:id="sec-ch02-01-VectorValuedFunctions" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Vector-Valued Functions</title>
+
+  <note>
+    <p>
+      Think of a point tracing a path as it moves through <m>x y z</m>-space
+      (for example, think of tracing the path a mosquito travels as it flies
+      through a room). We can think of the curve traced by this point in two
+      ways:
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p>
+            The position of the point at a time <m>t</m>, given by
+            <m>(x(t), y(t), z(t))</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The position of the point at a time <m>t</m>, given by the
+            endpoint of the vector
+            <m>\vec{r}(t)=\langle x(t), y(t), z(t)\rangle</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </note>
+
+  <!--\includegraphics[max width=\textwidth, center]{2025_08_04_3d11211490a50caa278ag-1}
+      $\mathbf{r}\left(t_{0}\right)=\left\langle x\left(t_{0}\right), y\left(t_{0}\right), z\left(t_{0}\right)\right\rangle$
+      \includegraphics[max width=\textwidth, center]{2025_08_04_3d11211490a50caa278ag-1(2)}
+      $\mathbf{r}\left(t_{1}\right)=\left\langle x\left(t_{1}\right), y\left(t_{1}\right), z\left(t_{1}\right)\right\rangle$
+      \includegraphics[max width=\textwidth, center]{2025_08_04_3d11211490a50caa278ag-1(1)}
+      $\mathbf{r}\left(t_{2}\right)=\left\langle x\left(t_{2}\right), y\left(t_{2}\right), z\left(t_{2}\right)\right\rangle$-->
+
+  <figure xml:id="fig-ch02-01-position-vectors">
+    <caption>The position of a point on a curve in <m>xyz</m>-space at three times <m>t_{0}</m>, <m>t_{1}</m>, <m>t_{2}</m>, given by the position vectors <m>\vec{r}(t_{0})</m>, <m>\vec{r}(t_{1})</m>, <m>\vec{r}(t_{2})</m>.</caption>
+
+    <sidebyside widths="30% 30% 30%" margins="auto" valign="middle">
+      <figure xml:id="fig-ch02-01-position-vectors-a">
+        <caption><m>\vec{r}\left(t_{0}\right)=\left\langle x\left(t_{0}\right), y\left(t_{0}\right), z\left(t_{0}\right)\right\rangle</m>. This interactive is PENDING, it should correspond to 2025_08_04_3d11211490a50caa278ag-1.</caption>
+        <interactive xml:id="interactive-ch02-01-position-vectors-a" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_08_04_3d11211490a50caa278ag-1.png">
+              <shortdescription>A point on a curve in xyz-space at time t0 with position vector r(t0).</shortdescription>
+              <description>
+                <p>A point on a curve in <m>xyz</m>-space at time <m>t_{0}</m> with position vector <m>\vec{r}(t_{0})</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch02-01-position-vectors-b">
+        <caption><m>\vec{r}\left(t_{1}\right)=\left\langle x\left(t_{1}\right), y\left(t_{1}\right), z\left(t_{1}\right)\right\rangle</m>. This interactive is PENDING, it should correspond to 2025_08_04_3d11211490a50caa278ag-1-2.</caption>
+        <interactive xml:id="interactive-ch02-01-position-vectors-b" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_08_04_3d11211490a50caa278ag-1-2.png">
+              <shortdescription>A point on a curve in xyz-space at time t1 with position vector r(t1).</shortdescription>
+              <description>
+                <p>A point on a curve in <m>xyz</m>-space at time <m>t_{1}</m> with position vector <m>\vec{r}(t_{1})</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch02-01-position-vectors-c">
+        <caption><m>\vec{r}\left(t_{2}\right)=\left\langle x\left(t_{2}\right), y\left(t_{2}\right), z\left(t_{2}\right)\right\rangle</m>. This interactive is PENDING, it should correspond to 2025_08_04_3d11211490a50caa278ag-1-1.</caption>
+        <interactive xml:id="interactive-ch02-01-position-vectors-c" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_08_04_3d11211490a50caa278ag-1-1.png">
+              <shortdescription>A point on a curve in xyz-space at time t2 with position vector r(t2).</shortdescription>
+              <description>
+                <p>A point on a curve in <m>xyz</m>-space at time <m>t_{2}</m> with position vector <m>\vec{r}(t_{2})</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </sidebyside>
+  </figure>
+  <!--\caption*{From openstax, Calculus Volume 3, Section 2.2}-->
+
+  <definition>
+    <title>Vector-Valued Function</title>
+
+    <statement>
+      <p>
+        A vector-valued function is a function which assigns to each input
+        <m>t</m> (the independent variable), an output of a vector.
+        Mathematically, a vector-valued function can be written in the form
+        <md>
+          \vec{r}(t)=\langle f(t), g(t), h(t)\rangle, a \leq t \leq b
+        </md> where each component of <m>\vec{r}(t)</m> is a function of
+        <m>t</m> (each component is a dependent variable).
+      </p>
+    </statement>
+  </definition>
+
+  <remark>
+    <p>
+      The domain of <m>\vec{r}(t)=\langle f(t), g(t), h(t)\rangle</m> is the
+      intersection of the domains of <m>f(t), g(t)</m>, and <m>h(t)</m>.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch02-01-ex-5-1">
+    <statement>
+      <p>
+        The graph of
+        <m>\vec{r}(t)=\left\langle\cos (t), \sin (t), \frac{t}{10}\right\rangle</m>,
+        <m>0 \leq t \leq 10</m> is shown below. If we don't restrict <m>t</m>,
+        what is the domain of <m>\vec{r}(t)</m> ?
+      </p>
+
+      <figure xml:id="fig-ch02-01-ex-5-1">
+        <caption>The helix traced by the vector <m>\vec{r}(t)=\left\langle\cos (t), \sin (t), \frac{t}{10}\right\rangle</m>, for <m>t</m> from 0 to 10, in <m>xyz</m>-space.</caption>
+        <interactive xml:id="interactive-ch02-01-ex-5-1" variant="controls" width="90%" aspect="3:2"
+          calcplot3d="type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=sin(t);y=cos(t);z=0.1t;visible=true;width=2;view=0;tmin=0;tmax=10;tsteps=500;color=rgb(30,136,229);showtrace=false;tval=1;constcol=true;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=true;acc=true;veceqs=true;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=false;tanline=false;dropcurtain=false;showtvector=false;shownvector=false;showbvector=false;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=vector;vector=%3Csin(1.7),%20cos(1.7),%20.17%3E;visible=false;color=rgb(216,27,96);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=4.941834621277992,2.85316954888546,1.8541019662496847,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-1;xmax=1;ymin=-1;ymax=1;zmin=-1;zmax=1;xscale=0.5;yscale=0.5;zscale=0.5;zcmin=-2;zcmax=2;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=3.357333">
+          <instructions>
+            <p>
+              Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=sin(t);y=cos(t);z=0.1t;visible=true;width=2;view=0;tmin=0;tmax=10;tsteps=500;color=rgb(30,136,229);showtrace=false;tval=1;constcol=true;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=true;acc=true;veceqs=true;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=false;tanline=false;dropcurtain=false;showtvector=false;shownvector=false;showbvector=false;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=vector;vector=%3Csin(1.7),%20cos(1.7),%20.17%3E;visible=false;color=rgb(216,27,96);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=4.941834621277992,2.85316954888546,1.8541019662496847,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-1;xmax=1;ymin=-1;ymax=1;zmin=-1;zmax=1;xscale=0.5;yscale=0.5;zscale=0.5;zcmin=-2;zcmax=2;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=3.357333" target="_blank" rel="noopener noreferrer">link to the plot</url>
+            </p>
+          </instructions>
+          <static>
+            <image source="/images/2025_08_04_3d11211490a50caa278ag-2-1-b.png">
+              <shortdescription>The helix traced by the vector r of t with coordinates x = cosine of t, y = sine of t, z = t over 10, for t from 0 to 10, in xyz-space.</shortdescription>
+              <description>
+                <p>The helix traced by the vector <m>\vec{r}(t)=\left\langle\cos (t), \sin (t), \frac{t}{10}\right\rangle</m>, for <m>t</m> from 0 to 10, in <m>xyz</m>-space.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        The domain of <m>\vec{r}(t)</m> is the intersection of the domains of
+        its three components. Each of <m>\cos(t)</m>, <m>\sin(t)</m>, and
+        <m>\frac{t}{10}</m> is defined for every real number <m>t</m>, so
+        <md>
+          \operatorname{dom}(\vec{r}) = (-\infty, \infty)
+        </md>
+        that is, the domain is all real numbers (and the graph becomes a helix
+        spiraling upwards forever in both directions).
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      If we write <m>\vec{r}(t)=\langle f(t), g(t), h(t)\rangle</m> and don't
+      specify an interval, assume that <m>t</m> can take any possible value in
+      the domain of <m>\vec{r}(t)</m>.
+    </p>
+  </note>
+
+  <remark>
+    <p>
+      The output vector of a vector-valued function doesn't have to be three
+      dimensional. For example, the function
+      <m>\vec{r}(t)=\langle t, -\frac{t}{2}+1\rangle,0 \leq t \leq 2</m>
+      traces the graph of <m>y=-\frac{x}{2}+1</m> on the interval
+      <m>[0,2]</m>.
+    </p>
+
+    <figure xml:id="fig-ch02-01-line-segment">
+      <caption>This interactive is PENDING, it should correspond to 2025_08_04_3d11211490a50caa278ag-2-1.</caption>
+      <interactive xml:id="interactive-ch02-01-line-segment" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <instructions>
+          <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+        </instructions>
+        <static>
+          <image source="/images/2025_08_04_3d11211490a50caa278ag-2-1.png">
+            <shortdescription>The line segment traced by the vector r of t with coordinates x = t, y = negative t over 2, plus 1, for t from 0 to 2, in the xy-plane.</shortdescription>
+            <description>
+              <p>The line segment traced by the vector <m>\vec{r}(t)=\langle t, -\frac{t}{2}+1\rangle</m>, for <m>t</m> from 0 to 2, in the <m>xy</m>-plane.</p>
+            </description>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+  </remark>
+
+  <note>
+    <p>
+      Since vector-valued functions trace a curve as time passes by, we can
+      talk about the orientation (or direction) in which the curve is traced.
+    </p>
+  </note>
+
+  <example xml:id="example-ch02-01-ex-5-2">
+    <statement>
+      <p>
+        For each of the following planar curves, write a vector-valued
+        function which traces them with the specified orientation. Moreover,
+        graph the given curves using arrows to indicate the orientation.
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              A circle of radius 1 (traced once) oriented counterclockwise,
+              starting at <m>(1,0)</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The graph of <m>y=x^{2}-1</m>, on the interval <m>[-1,1]</m>,
+              traced from left to right (relative to the <m>x</m>-axis).
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The function
+        <md>
+          \vec{r}(t) = \langle \cos(t), \sin(t) \rangle, \quad 0 \leq t \leq 2\pi
+        </md>
+        traces the circle of radius 1 centered at the origin, since
+        <m>x(t)^2+y(t)^2 = \cos^2(t)+\sin^2(t) = 1</m>. It starts at
+        <m>\vec{r}(0) = \langle 1,0 \rangle</m>, passes through <m>(0,1)</m>
+        at <m>t=\frac{\pi}{2}</m>, through <m>(-1,0)</m> at <m>t=\pi</m>, and
+        through <m>(0,-1)</m> at <m>t=\frac{3\pi}{2}</m> <ndash/> a
+        counterclockwise motion <ndash/> and returns to <m>(1,0)</m> at
+        <m>t=2\pi</m>, tracing the circle exactly once. To graph it, draw the
+        unit circle with the arrows on it pointing counterclockwise.
+      </p>
+
+      <figure xml:id="fig-ch02-01-ex-5-2a">
+        <caption>This interactive is PENDING, it should correspond to Example 5.2-1.</caption>
+        <interactive xml:id="interactive-ch02-01-ex-5-2a" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/Example-5.2-1.png">
+              <shortdescription>The unit circle oriented counter-clockwise.</shortdescription>
+              <description>
+                <p>The unit circle oriented counter-clockwise.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </solution>
+
+    <solution>
+      <p>
+        Letting <m>x=t</m>, the point on the graph above <m>x</m> is
+        <m>(t, t^2-1)</m>, so
+        <md>
+          \vec{r}(t) = \langle t, t^2-1 \rangle, \quad -1 \leq t \leq 1
+        </md>
+      </p>
+
+      <p>
+        Since <m>x(t)=t</m> increases as <m>t</m> increases, the parabola is
+        traced from left to right: starting at <m>(-1,0)</m>, down to the
+        vertex <m>(0,-1)</m>, and up to <m>(1,0)</m>. To graph it, draw this
+        piece of the upward parabola with the arrows on it pointing from left
+        to right.
+      </p>
+
+      <figure xml:id="fig-ch02-01-ex-5-2b">
+        <caption>This interactive is PENDING, it should correspond to Example 5.2-2.</caption>
+        <interactive xml:id="interactive-ch02-01-ex-5-2b" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/Example-5.2-2.png">
+              <shortdescription>The parabola y equals x squared minus one, from x equals -1 to x equals 1, traversed from left to right.</shortdescription>
+              <description>
+                <p>The parabola <m>y=x^{2}-1</m>, from <m>x=-1</m> to <m>x=1</m>, traversed from left to right.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      Generally if you want to quickly parametrize a function <m>f(x)</m> on
+      the interval <m>x\in [a,b]</m> from left to right, then you can use
+      <m>\vec{r}(t) = \langle t, f(t) \rangle</m> for <m>t\in [a,b]</m>.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch02-01-ex-5-3">
+    <statement>
+      <p>
+        For the following planar curve, write a vector-valued function which
+        traces it with the specified orientation. Moreover, graph the given
+        curve using arrows to indicate the orientation.
+      </p>
+
+      <p>
+        The graph of <m>y=x^{2}-4 x+3</m>, on the interval <m>[1,5]</m>,
+        traced from right to left (relative to the <m>x</m>-axis)
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        To trace the graph from right to left we need the <m>x</m>-coordinate
+        to decrease as <m>t</m> increases and there multiple options to
+        achieve this. Here are three:
+      </p>
+
+      <p>
+        <alert>Option A</alert> Let <m>x = 5-t</m>. Then
+        <md>
+          y = x^2-4x+3 = (5-t)^2-4(5-t)+3 = t^2-6t+8
+        </md>
+        and <m>x=5-t</m> runs from 5 down to 1 as <m>t</m> runs from 0 to 4.
+        Hence
+        <md>
+          \vec{r}(t) = \langle 5-t, t^2-6t+8 \rangle, \quad 0 \leq t \leq 4
+        </md>
+      </p>
+
+      <p>
+        Indeed, <m>\vec{r}(0) = \langle 5,8 \rangle</m> and
+        <m>\vec{r}(4) = \langle 1,0 \rangle</m>, so the curve starts at the
+        right endpoint <m>(5,8)</m> and ends at the left endpoint
+        <m>(1,0)</m>.
+      </p>
+
+      <p>
+        <alert>Option B</alert> Let <m>x = 6-t</m>. Then
+        <md>
+          y = x^2-4x+3 = (6-t)^2-4(6-t)+3 = t^2-8t+15
+        </md>
+        and <m>x=6-t</m> runs from 5 down to 1 as <m>t</m> runs from 1 to 5.
+        Hence
+        <md>
+          \vec{r}(t) = \langle 6-t, t^2-8t+15 \rangle, \quad 1 \leq t \leq 5
+        </md>
+      </p>
+
+      <p>
+        Indeed, <m>\vec{r}(1) = \langle 5,8 \rangle</m> and
+        <m>\vec{r}(5) = \langle 1,0 \rangle</m>, so the curve starts at the
+        right endpoint <m>(5,8)</m> and ends at the left endpoint
+        <m>(1,0)</m>.
+      </p>
+
+      <p>
+        <alert>Option C</alert> Let <m>x = -t</m>. Then
+        <md>
+          y = x^2-4x+3 = (-t)^2-4(-t)+3 = t^2+4t+3
+        </md>
+        and <m>x=-t</m> runs from 5 down to 1 as <m>t</m> runs from
+        <m>-5</m> to <m>-1</m>. Hence
+        <md>
+          \vec{r}(t) = \langle -t, t^2+4t+3 \rangle, \quad -5 \leq t \leq -1
+        </md>
+      </p>
+
+      <p>
+        Indeed, <m>\vec{r}(-5) = \langle 5,8 \rangle</m> and
+        <m>\vec{r}(-1) = \langle 1,0 \rangle</m>, so the curve starts at the
+        right endpoint <m>(5,8)</m> and ends at the left endpoint
+        <m>(1,0)</m>.
+      </p>
+
+      <p>
+        To graph it, draw the piece of the upward parabola with vertex
+        <m>(2,-1)</m> and <m>x</m>-intercepts <m>(1,0)</m> and <m>(3,0)</m>,
+        between <m>x=1</m> and <m>x=5</m>, with the arrows on it pointing from
+        right to left.
+      </p>
+
+      <figure xml:id="fig-ch02-01-ex-5-3">
+        <caption>This interactive is PENDING, it should correspond to Example 5.3.</caption>
+        <interactive xml:id="interactive-ch02-01-ex-5-3" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/Example-5.3.png">
+              <shortdescription>The parabola y equals x squared minus 4 x plus three, from x equals 1 to x equals 5, traversed from right to left.</shortdescription>
+              <description>
+                <p>The parabola <m>y=x^{2}-4x+3</m>, from <m>x=1</m> to <m>x=5</m>, traversed from right to left.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      Generally if you want to quickly parametrize a function <m>f(x)</m> on
+      the interval <m>x\in [a,b]</m> from right to left, then you can use on
+      of the following.
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p>
+            <m>\vec{r}(t) = \langle b-t, f(b-t) \rangle</m> for
+            <m>t\in [0,b-a]</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\vec{r}(t) = \langle b+a-t, f(b+a-t) \rangle</m> for
+            <m>t\in [a,b]</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\vec{r}(t) = \langle -t, f(-t) \rangle</m> for
+            <m>t\in [-b,-a]</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </remark>
+
+  <remark>
+    <title>Parametric Equations for a Line</title>
+
+    <p>
+      The components <m>f(t), g(t)</m>, and <m>h(t)</m> of
+      <m>\vec{r}(t)=\langle f(t), g(t), h(t)\rangle</m> are also called
+      parametric equations.
+    </p>
+  </remark>
+
+  <definition>
+    <title>Line in Parametric Form</title>
+
+    <statement>
+      <p>
+        A line in <m>x y z</m>-space (or in 2D space) can be defined as a
+        vector-valued function by the equation
+        <md>
+          <mrow>\vec{r}(t) \amp =\vec{r}_{0}+t \vec{v}</mrow>
+          <mrow>\amp =\left\langle x_{0}, y_{0}, z_{0}\right\rangle+t\langle a, b, c\rangle</mrow>
+          <mrow>\amp =\left\langle x_{0}+a t, y_{0}+b t, z_{0}+c t\right\rangle</mrow>
+        </md> where <m>-\infty \lt t \lt \infty, P_{0}\left(x_{0}, y_{0}, z_{0}\right)</m>
+        is any point on the line, and <m>\vec{v}=\langle a, b, c\rangle</m>
+        (the direction vector) gives you the change in each coordinate.
+      </p>
+
+      <p>
+        The equations <m>f(t)=x_{0}+a t, g(t)=y_{0}+b t</m>, and
+        <m>h(t)=z_{0}+c t</m> are the parametric equations that define the
+        line.
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      Geometrically, the definition above says that you take the line
+      containing <m>\vec{v}</m> (represented by <m>t \vec{v}</m> ), and shift
+      it so it passes through the endpoint of <m>\vec{r}_{0}</m>.
+    </p>
+
+    <figure xml:id="fig-ch02-01-line-parametric">
+      <caption>A line in <m>xyz</m>-space defined by the position vector <m>\vec{r}_{0}</m> and a direction vector <m>\vec{v}</m>, illustrating the parametric form: <m>\vec{r}(t)=\vec{r}_{0}+t\vec{v}</m>.</caption>
+      <interactive xml:id="interactive-ch02-01-line-parametric" variant="controls" width="90%" aspect="3:2"
+        calcplot3d="type=vector;vector=%3C20,%20-20,%200%3E;visible=true;color=rgb(255,193,7);size=2;initialpt=(-8,8,8);dashed=undefined&amp;type=vector;vector=%3C-8,%208,%208%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=vector;vector=%3C4,%20-4,%208%3E;visible=true;color=rgb(30,136,229);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=-8+t;y=8-t;z=8;visible=true;width=2;view=0;tmin=-100;tmax=100;tsteps=500;color=rgb(0,0,0);showtrace=false;tval=0;constcol=true;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=true;acc=true;veceqs=true;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=true;tanline=false;dropcurtain=false;showtvector=false;shownvector=false;showbvector=false;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=text;text=r;visible=true;point=(2,-2,4);color=rgb(30,136,229);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=text;text=V;visible=true;point=(0,0,8);color=rgb(255,193,0);font=Times%20New%20Roman;fontsize=18pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=text;text=r_0;visible=true;point=(-4,4,4);color=rgb(216,27,96);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-left&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=79.06935394044787,45.65071278216736,29.665631459994955,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-16;xmax=16;ymin=-16;ymax=16;zmin=-16;zmax=16;xscale=8;yscale=8;zscale=8;zcmin=-32;zcmax=32;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.191083">
+        <instructions>
+          <p>
+            Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=vector;vector=%3C20,%20-20,%200%3E;visible=true;color=rgb(255,193,7);size=2;initialpt=(-8,8,8);dashed=undefined&amp;type=vector;vector=%3C-8,%208,%208%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=vector;vector=%3C4,%20-4,%208%3E;visible=true;color=rgb(30,136,229);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=-8+t;y=8-t;z=8;visible=true;width=2;view=0;tmin=-100;tmax=100;tsteps=500;color=rgb(0,0,0);showtrace=false;tval=0;constcol=true;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=true;acc=true;veceqs=true;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=true;tanline=false;dropcurtain=false;showtvector=false;shownvector=false;showbvector=false;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=text;text=r;visible=true;point=(2,-2,4);color=rgb(30,136,229);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=text;text=V;visible=true;point=(0,0,8);color=rgb(255,193,0);font=Times%20New%20Roman;fontsize=18pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=text;text=r_0;visible=true;point=(-4,4,4);color=rgb(216,27,96);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-left&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=79.06935394044787,45.65071278216736,29.665631459994955,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-16;xmax=16;ymin=-16;ymax=16;zmin=-16;zmax=16;xscale=8;yscale=8;zscale=8;zcmin=-32;zcmax=32;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.191083" target="_blank" rel="noopener noreferrer">link to the plot</url>
+          </p>
+        </instructions>
+        <static>
+          <image source="/images/2025_08_04_3d11211490a50caa278ag-5.png">
+            <shortdescription>A line in xyz-space defined by the position vector r 0 and a direction vector v, illustrating the parametric form: vector r of t equals vector r 0 plus t times vector v.</shortdescription>
+            <description>
+              <p>A line in <m>xyz</m>-space defined by the position vector <m>\vec{r}_{0}</m> and a direction vector <m>\vec{v}</m>, illustrating the parametric form: <m>\vec{r}(t)=\vec{r}_{0}+t\vec{v}</m>.</p>
+            </description>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+  </note>
+
+  <example xml:id="example-ch02-01-ex-5-4">
+    <statement>
+      <p>
+        Find both the vector equation and the parametric equations of the
+        line through <m>P(1,2,3)</m> in the direction of the vector
+        <m>\vec{v}=\langle 3,2,1 \rangle</m>. Does the point
+        <m>\left(\frac{5}{4},\frac{13}{6},\frac{37}{12}\right)</m> lie on
+        this line?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Using <m>P(1,2,3)</m> as the point on the line and
+        <m>\vec{v}=\langle 3,2,1 \rangle</m> as the direction vector, the
+        vector equation of the line is
+        <md>
+          \vec{r}(t) = \vec{r}_0+t\vec{v} = \langle 1,2,3 \rangle + t\langle 3,2,1 \rangle = \langle 1+3t, 2+2t, 3+t \rangle, \quad -\infty \lt t \lt \infty
+        </md>
+        and the parametric equations are
+        <md>
+          x = 1+3t, \quad y = 2+2t, \quad z = 3+t
+        </md>
+      </p>
+
+      <p>
+        For the point
+        <m>\left(\frac{5}{4},\frac{13}{6},\frac{37}{12}\right)</m> to lie on
+        the line, all three parametric equations must be satisfied by the same
+        value of <m>t</m>. From the first equation:
+        <md>
+          1+3t = \frac{5}{4} \Rightarrow 3t = \frac{1}{4} \Rightarrow t = \frac{1}{12}
+        </md>
+      </p>
+
+      <p>
+        Checking this value in the other two equations:
+        <md>
+          y = 2+2 \cdot \frac{1}{12} = 2+\frac{1}{6} = \frac{13}{6}, \quad z = 3+\frac{1}{12} = \frac{37}{12}
+        </md>
+      </p>
+
+      <p>
+        Both match, so yes: the point lies on the line (it is reached at
+        <m>t = \frac{1}{12}</m>).
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      Given a line <m>\vec{r}(t)=\vec{r}_{0}+t \vec{v}</m>, since
+      <m>\vec{v}</m> represents the direction of the line, we can compare
+      lines by comparing their direction vectors.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch02-01-ex-5-5">
+    <statement>
+      <p>
+        Determine whether the following pair of lines are parallel, intersect
+        at a single point, or are skew. If they are parallel, determine
+        whether they are the same line. If they intersect at a single point,
+        determine the point of intersection.
+        <md>
+          <mrow>\amp \vec{r}_{1}(t)=\langle 3,2,1\rangle+\langle 1,2,3 \rangle t,\quad -\infty \lt t \lt \infty</mrow>
+          <mrow>\amp \vec{r}_{2}(t)=\langle 1,2,3\rangle+\langle 3,2,1 \rangle t,\quad -\infty \lt t \lt \infty</mrow>
+        </md>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The direction vectors are <m>\vec{v}_1 = \langle 1,2,3 \rangle</m>
+        for the first line and <m>\vec{v}_2 = \langle 3,2,1 \rangle</m> for
+        the second. If the lines were parallel there would be a scalar
+        <m>c</m> with <m>c\vec{v}_1 = \vec{v}_2</m>; comparing components
+        gives <m>c=3</m>, <m>c=1</m>, and <m>c=\frac{1}{3}</m> respectively,
+        which is impossible. Hence the lines are not parallel (and in
+        particular they are not the same line).
+      </p>
+
+      <p>
+        It remains to determine whether the lines intersect at a single point
+        or are skew. An intersection point may be reached by each line at a
+        different time, so we rename the parameter of the second line and
+        look for values <m>t</m> and <m>s</m> with
+        <m>\vec{r}_1(t) = \vec{r}_2(s)</m>. Comparing components gives the
+        system
+        <md alignment="gather">
+          <mrow>3+t = 1+3s</mrow>
+          <mrow>2+2t = 2+2s</mrow>
+          <mrow>1+3t = 3+s</mrow>
+        </md>
+      </p>
+
+      <p>
+        The second equation of the system gives
+        <m>2t = 2s \Rightarrow t = s</m>. Substituting into the first
+        equation:
+        <md>
+          3+t = 1+3t \Rightarrow 2 = 2t \Rightarrow t = 1, \quad s = 1
+        </md>
+      </p>
+
+      <p>
+        Since we only used the first two equations, we must check these
+        values in the third: <m>1+3(1) = 4</m> and <m>3+1 = 4</m>, so the
+        third equation is also satisfied. Hence the system is consistent and
+        the lines intersect at the single point
+        <md>
+          \vec{r}_1(1) = \langle 3+1, 2+2, 1+3 \rangle = \langle 4,4,4 \rangle
+        </md>
+        that is, at the point <m>(4,4,4)</m>. (Indeed,
+        <m>\vec{r}_2(1) = \langle 1+3, 2+2, 3+1 \rangle = \langle 4,4,4 \rangle</m>
+        as well.)
+      </p>
+    </solution>
+  </example>
+
+</section>

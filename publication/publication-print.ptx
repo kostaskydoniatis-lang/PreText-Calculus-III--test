@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- CLAUDE 2026-09-06: publication file for the "print" (pdf) target.          -->
+<!-- Added so that elements carrying component="print" are built and elements   -->
+<!-- carrying component="web" are dropped.  Everything with no @component   -->
+<!-- at all is unaffected and appears in every version.                       -->
+<!--                                                                          -->
+<!-- The only real (uncommented) setting in the original publication.ptx was   -->
+<!-- the generated-assets directory, reproduced below.  publication.ptx itself -->
+<!-- is untouched and still holds the full commented reference of options.     -->
+<!-- See REVERT.md at the project root to undo.                                -->
+
+<publication>
+  <source>
+    <directories generated="../generated-assets" />
+    <version include="print" />
+  </source>
+  <latex>
+    <insertions pagebreaks="fig-calcplot3d-surface"/>
+  </latex>
+</publication>

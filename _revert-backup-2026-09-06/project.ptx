@@ -4,14 +4,9 @@
 
 <!-- This file, the project manifest, provides the overall configuration for your PreTeXt project. To edit the content of your document, open `source/main.ptx`. See https://pretextbook.org/doc/guide/html/processing-CLI.html#cli-project-manifest. -->
 <project ptx-version="2">
-  <!-- CLAUDE 2026-09-06: each target now names its own publication file so     -->
-  <!-- that <version include="..."/> can pick the animated or the static copy   -->
-  <!-- of a figure marked with @component.  @publication is resolved relative   -->
-  <!-- to the project's publication directory.  See REVERT.md at the project    -->
-  <!-- root to undo.                                                            -->
   <targets>
-    <target name="web" format="html" publication="publication-web.ptx" />
-    <target name="print" format="pdf" publication="publication-print.ptx" />
+    <target name="web" format="html" />
+    <target name="print" format="pdf" />
   </targets>
 </project>
 
