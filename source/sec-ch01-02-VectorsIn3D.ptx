@@ -531,6 +531,24 @@
       </p>
     </statement>
   </definition>
+  
+  <figure xml:id="Coordinate-Vectors-Animation-Web" component="web">
+    <caption>Vector Addition</caption>
+    <image source="images/GIF/L3-AnimatedExample.gif" width="50%">
+        <shortdescription>
+            An animation that expresses a vector as the sum of its coordinate vectors.
+        </shortdescription>
+    </image>
+  </figure>
+
+  <figure xml:id="Coordinate-Vectors-Animation-Print" component="print">
+    <caption>For an animated version of this figure, see the web version of this figure at the <url href="https://kostaskydoniatis-lang.github.io/PreText-Calculus-III--test" target="_blank" rel="noopener noreferrer">online notes</url></caption>
+    <image source="images/GIF/L3-AnimatedExample.jpg" width="50%">
+        <shortdescription>
+            An animation that expresses a vector as the sum of its coordinate vectors.
+        </shortdescription>
+    </image>
+  </figure>
 
   <example xml:id="example-ch01-02-ex-2-4">
     <statement>

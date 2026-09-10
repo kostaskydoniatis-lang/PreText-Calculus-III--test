@@ -158,9 +158,9 @@
 
     <figure xml:id="fig-ch01-03-note-3-1">
       <caption>This interactive is PENDING, it should correspond to Note 3.1.</caption>
-      <interactive xml:id="interactive-ch01-03-note-3-1" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <interactive xml:id="interactive-ch01-03-note-3-1" width="85%" aspect="4:3" desmos="hpfn5up5tn">
         <instructions>
-          <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/hpfn5up5tn" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
         </instructions>
         <static>
           <image source="/images/Note-3.1.png">
@@ -283,10 +283,10 @@
     <figure xml:id="fig-ch01-03-orthogonal-vectors">
       <caption>The vectors <m>\vec{u}</m> and <m>\vec{v}</m> are orthogonal</caption>
       <interactive xml:id="interactive-ch01-03-orthogonal-vectors" variant="controls" width="90%" aspect="3:2"
-        calcplot3d="type=implicit;equation=y~0;cubes=16;visible=true;fixdomain=false;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;alpha=-1;revorient=false;showvf=false;shownormals=false;numnormals=10;normalscale=0.5;normalwidth=1;hidemyedges=false;view=0;format=normal;constcol=rgb(255,0,0)&amp;type=vector;vector=%3C1.5,%200,%202%3E;label=v-%3E_%7B2%7D;showlabel=false;labelposition=end;visible=true;color=rgb(255,255,255);size=2;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,3,0%3E;label=v-%3E_%7B3%7D;showlabel=false;labelposition=end;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0);dashed=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.236391035463319,4.755282581475766,3.0901699437494745,1;focus=0,0,0,1;up=0,0,2,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=1.74">
+        calcplot3d="type=implicit;equation=y~0;cubes=16;visible=true;fixdomain=false;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;alpha=-1;revorient=false;showvf=false;shownormals=false;numnormals=10;normalscale=0.5;normalwidth=1;hidemyedges=false;view=0;format=normal;constcol=rgb(255,0,0)&amp;type=vector;vector=%3C1.5,%200,%202%3E;label=v-%3E_%7B2%7D;showlabel=false;labelposition=end;visible=true;color=rgb(255,255,255);size=2;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,3,0%3E;label=v-%3E_%7B3%7D;showlabel=false;labelposition=end;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0);dashed=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.236391035463319,4.755282581475766,3.0901699437494745,1;focus=0,0,0,1;up=0,0,2,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=.5">
         <instructions>
           <p>
-            Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=implicit;equation=y~0;cubes=16;visible=true;fixdomain=false;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;alpha=-1;revorient=false;showvf=false;shownormals=false;numnormals=10;normalscale=0.5;normalwidth=1;hidemyedges=false;view=0;format=normal;constcol=rgb(255,0,0)&amp;type=vector;vector=%3C1.5,%200,%202%3E;label=v-%3E_%7B2%7D;showlabel=false;labelposition=end;visible=true;color=rgb(255,255,255);size=2;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,3,0%3E;label=v-%3E_%7B3%7D;showlabel=false;labelposition=end;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0);dashed=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.236391035463319,4.755282581475766,3.0901699437494745,1;focus=0,0,0,1;up=0,0,2,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=1.74" target="_blank" rel="noopener noreferrer">link to the plot</url>
+            Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=implicit;equation=y~0;cubes=16;visible=true;fixdomain=false;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;alpha=-1;revorient=false;showvf=false;shownormals=false;numnormals=10;normalscale=0.5;normalwidth=1;hidemyedges=false;view=0;format=normal;constcol=rgb(255,0,0)&amp;type=vector;vector=%3C1.5,%200,%202%3E;label=v-%3E_%7B2%7D;showlabel=false;labelposition=end;visible=true;color=rgb(255,255,255);size=2;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,3,0%3E;label=v-%3E_%7B3%7D;showlabel=false;labelposition=end;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0);dashed=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.236391035463319,4.755282581475766,3.0901699437494745,1;focus=0,0,0,1;up=0,0,2,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=.5" target="_blank" rel="noopener noreferrer">link to the plot</url>
           </p>
         </instructions>
         <static>
@@ -355,7 +355,7 @@
     <sidebyside widths="45% 45%" margins="auto" valign="middle">
       <figure xml:id="fig-ch01-03-projection-cases-a">
         <caption><m>0\leq \theta \lt \frac{\pi}{2}</m>. This interactive is PENDING, it should correspond to 2025_08_04_6f11792a371c74850db7g-5.</caption>
-        <interactive xml:id="interactive-ch01-03-projection-cases-a" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <interactive xml:id="interactive-ch01-03-projection-cases-a" width="85%" aspect="4:3" desmos="d6jcpar33o">
           <!--<instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
           </instructions>-->
@@ -373,7 +373,7 @@
 
       <figure xml:id="fig-ch01-03-projection-cases-b">
         <caption><m>\frac{\pi}{2} \lt \theta \leq \pi</m>. This interactive is PENDING, it should correspond to 2025_08_04_6f11792a371c74850db7g-5-1.</caption>
-        <interactive xml:id="interactive-ch01-03-projection-cases-b" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <interactive xml:id="interactive-ch01-03-projection-cases-b" width="85%" aspect="4:3" desmos="bhkhtavyvj">
           <!--<instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
           </instructions>-->
@@ -391,7 +391,7 @@
     </sidebyside>
   </figure>
   <p>
-     You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:<url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+     You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:<url href="https://www.desmos.com/calculator/hpfn5up5tn" target="_blank" rel="noopener noreferrer">link to the left graph</url>, <url href="https://www.desmos.com/calculator/bhkhtavyvj" target="_blank" rel="noopener noreferrer">link to the right graph</url>
   </p>
   <!--\caption*{From openstax, Calculus Volume 3, Section 2.2}-->
   <!--\includegraphics[max width=0.7\textwidth]{2025_08_04_6f11792a371c74850db7g-5}-->
@@ -558,9 +558,9 @@
 
       <figure xml:id="fig-ch01-03-ex-3-5">
         <caption>This interactive is PENDING, it should correspond to Example 3.5.</caption>
-        <interactive xml:id="interactive-ch01-03-ex-3-5" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <interactive xml:id="interactive-ch01-03-ex-3-5" width="85%" aspect="4:3" desmos="ojxbsovmu1">
           <instructions>
-            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/ojxbsovmu1" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
           </instructions>
           <static>
             <image source="/images/Example-3.5.png">

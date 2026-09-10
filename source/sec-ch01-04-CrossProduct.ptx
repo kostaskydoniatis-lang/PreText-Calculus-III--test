@@ -153,7 +153,7 @@
           <sidebyside widths="45% 45%" margins="auto" valign="middle">
             <figure xml:id="fig-ch01-04-ex-4-1a">
               <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3.</caption>
-              <interactive xml:id="interactive-ch01-04-ex-4-1a" width="85%" aspect="4:3" desmos="vqavop8m24">
+              <interactive xml:id="interactive-ch01-04-ex-4-1a" width="85%" aspect="4:3" desmos="vt5wf6hrh7">
                 <!--<instructions>
                   <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
                 </instructions>-->
@@ -171,7 +171,7 @@
 
             <figure xml:id="fig-ch01-04-ex-4-1b">
               <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3-2.</caption>
-              <interactive xml:id="interactive-ch01-04-ex-4-1b" width="85%" aspect="4:3" desmos="vqavop8m24">
+              <interactive xml:id="interactive-ch01-04-ex-4-1b" width="85%" aspect="4:3" desmos="iz99n4chok">
                 <!--<instructions>
                   <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
                 </instructions>-->
@@ -191,7 +191,7 @@
           <sidebyside widths="45% 45%" margins="auto" valign="middle">
             <figure xml:id="fig-ch01-04-ex-4-1c">
               <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3-3.</caption>
-              <interactive xml:id="interactive-ch01-04-ex-4-1c" width="85%" aspect="4:3" desmos="vqavop8m24">
+              <interactive xml:id="interactive-ch01-04-ex-4-1c" width="85%" aspect="4:3" desmos="6afpkg7emn">
                 <!--<instructions>
                   <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
                 </instructions>-->
@@ -209,7 +209,7 @@
 
             <figure xml:id="fig-ch01-04-ex-4-1d">
               <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3-1.</caption>
-              <interactive xml:id="interactive-ch01-04-ex-4-1d" width="85%" aspect="4:3" desmos="vqavop8m24">
+              <interactive xml:id="interactive-ch01-04-ex-4-1d" width="85%" aspect="4:3" desmos="vaerdn1qjn">
                 <!--<instructions>
                   <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
                 </instructions>-->
@@ -228,7 +228,8 @@
         </sbsgroup>
       </figure>
       <p>
-         You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:<url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the top left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the top right graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the bottom left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the bottom right graph</url>
+         You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. 
+         You can open in a new page from here:<url href="https://www.desmos.com/calculator/vt5wf6hrh7" target="_blank" rel="noopener noreferrer">link to the top left graph</url>, <url href="https://www.desmos.com/calculator/iz99n4chok" target="_blank" rel="noopener noreferrer">link to the top right graph</url>, <url href="https://www.desmos.com/calculator/6afpkg7emn" target="_blank" rel="noopener noreferrer">link to the bottom left graph</url>, <url href="https://www.desmos.com/calculator/vaerdn1qjn" target="_blank" rel="noopener noreferrer">link to the bottom right graph</url>
       </p>
     </statement>
 
