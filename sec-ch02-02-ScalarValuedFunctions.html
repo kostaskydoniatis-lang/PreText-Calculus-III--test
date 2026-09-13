@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Scalar-Valued Functions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Calculus III Notes">
+<meta property="og:title" content="Calculus III Notes">
+<meta property="book:title" content="Calculus III Notes">
+<meta name="twitter:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
+<meta property="og:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.11';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.e3f9706509fcf6f7.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.c5ba0ffa5f963084.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b8b41abee2fe6343.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="CalculusIIINotes2026.html"><span class="title">Calculus III Notes</span> <span class="subtitle">These notes are meant for use by students enrolled in my Calculus III course.</span></a></div>
+<p class="byline">Konstantinos (Kostas) Kydoniatis</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-ch02-01-VectorValuedFunctions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-02-IntroductionVectorandScalarValuedFunctions.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-03-DerivativesOfVectorAndScalarValuedFunctions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-01-IntroToVectors.html" class="internal"><span class="codenumber">1</span> <span class="title">1. Introduction to Vectors</span></a></div>
+<ul id="ptx-toc-group-ch-01-IntroToVectors" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-01-IntroToVectors-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-01-Vectors2DIntroduction.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vectors in 2D</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-02-VectorsIn3D.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Vectors in 3D</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-03-DotProduct.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Dot Product</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-04-CrossProduct.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Cross Product</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">2. Introduction to Vector and Scalar Valued Functions</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-02-IntroductionVectorandScalarValuedFunctions">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch02-01-VectorValuedFunctions.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vector-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-ch02-02-ScalarValuedFunctions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Scalar-Valued Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-03-DerivativesOfVectorAndScalarValuedFunctions.html" class="internal"><span class="codenumber">3</span> <span class="title">3. Derivatives of Vector and Scalar Valued Functions</span></a></div>
+<ul id="ptx-toc-group-ch-03-DerivativesOfVectorAndScalarValuedFunctions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-03-DerivativesOfVectorAndScalarValuedFunctions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-01-DerivativesVectorValuedFunctions.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Derivatives of Vector-Valued Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-ch02-02-ScalarValuedFunctions">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Scalar-Valued Functions</span>
+</h1>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-2">In the section for vector-valued functions, we looked at functions with one input variable and multiple output variables (called curves).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch02-02-helix"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-02-helix" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-helix.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-02-helix-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-02-helix-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-02-helix-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-02-helix-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The helix traced by the vector r of t with coordinates x = cosine of t, y = sine of t, z = t over 10, for t from 0 to 10, a curve in xyz-space.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.1"><a tabindex="-1" href="#fig-ch02-02-helix" title="Copy heading and permalink for Figure 2.2.1" aria-label="Copy heading and permalink for Figure 2.2.1">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-4">In this section, we will look at functions of the form <span class="process-math">\(f(x, y)=z\text{,}\)</span> having two input variables and one output variable (called surfaces).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch02-02-surface-sin"><div class="interactive-iframe-container"><iframe src="https://c3d.libretexts.org/CalcPlot3D/dynamicFigureWCP/index.html?type=z;z=sin(x+y%5E2);funname=f;visible=true;umin=-4;umax=4;vmin=-4;vmax=4;grid=100;format=normal;alpha=-1;hidemyedges=true;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=-16.066827977112176,5.97346647927092,10.304112624331555,1;focus=0,0,0,1;up=0.29319095656853217,-0.39797438587643064,0.8692844477918069,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-4;xmax=4;ymin=-4;ymax=4;zmin=-4;zmax=4;xscale=2;yscale=2;zscale=2;zcmin=-8;zcmax=8;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.35" id="interactive-ch02-02-surface-sin" style="width:540px; height:360px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-surface-sin.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-02-surface-sin-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-02-surface-sin-1-1">Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <a class="external" href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=z;z=sin(x+y%5E2);funname=f;visible=true;umin=-4;umax=4;vmin=-4;vmax=4;grid=100;format=normal;alpha=-1;hidemyedges=true;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=-16.066827977112176,5.97346647927092,10.304112624331555,1;focus=0,0,0,1;up=0.29319095656853217,-0.39797438587643064,0.8692844477918069,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-4;xmax=4;ymin=-4;ymax=4;zmin=-4;zmax=4;xscale=2;yscale=2;zscale=2;zcmin=-8;zcmax=8;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.35" target="_blank">link to the plot</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-02-surface-sin-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-02-surface-sin-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The surface z equals the sine of, x plus y squared, in xyz-space.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.2"><a tabindex="-1" href="#fig-ch02-02-surface-sin" title="Copy heading and permalink for Figure 2.2.2" aria-label="Copy heading and permalink for Figure 2.2.2">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-6">The outputs of vector-valued functions were vectors. The outputs of scalar-valued functions are scalars (numbers).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-ch02-02-ScalarValuedFunctions-7"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Scalar-Valued Functions.</span>
+</h2>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-7-2-1">A scalar-valued function of the form <span class="process-math">\(z=f(x, y)\)</span> is a function whose domain (set of inputs) is a subset of the <span class="process-math">\(x y\)</span>-plane ( <span class="process-math">\(\mathbb{R}^{2}\)</span> ) and whose range (set of outputs) is a subset of the real line ( <span class="process-math">\(\mathbb{R}\)</span> ).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-7-2-2">The graph of <span class="process-math">\(f\)</span> is called a surface and consists of all points ( <span class="process-math">\(x, y, f(x, y)\)</span> ) where <span class="process-math">\((x, y)\)</span> is in the domain of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-7-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 2.2.1: Scalar-Valued Functions"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-7" title="Copy heading and permalink for Definition 2.2.1: Scalar-Valued Functions" aria-label="Copy heading and permalink for Definition 2.2.1: Scalar-Valued Functions">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="fig-ch02-02-point-on-graph"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-02-point-on-graph" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-point-on-graph.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-02-point-on-graph-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-02-point-on-graph-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-02-point-on-graph-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-02-point-on-graph-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A point (x, y, f(x,y)) on the graph of a scalar-valued function f.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.3"><a tabindex="-1" href="#fig-ch02-02-point-on-graph" title="Copy heading and permalink for Figure 2.2.3" aria-label="Copy heading and permalink for Figure 2.2.3">🔗</a></div></figcaption>
+</figure>
+<details id="example-ch02-02-ex-6-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch02-02-ex-6-1-1-1">Consider the graph of <span class="process-math">\(f(x, y)=y^{2}-x^{2}\)</span> shown below. Determine whether the points <span class="process-math">\(\left(\frac{1}{2}, \frac{1}{4},-\frac{3}{16}\right)\)</span> and <span class="process-math">\(\left(-1, \frac{1}{3}, 2\right)\)</span> lie on the graph of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch02-02-ex-6-1"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-02-ex-6-1" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-ex-6-1.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-02-ex-6-1-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-02-ex-6-1-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-02-ex-6-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-02-ex-6-1-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The graph of f of x and y equals y squared minus x squared, as a surface in xyz-space.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.4"><a tabindex="-1" href="#fig-ch02-02-ex-6-1" title="Copy heading and permalink for Figure 2.2.4" aria-label="Copy heading and permalink for Figure 2.2.4">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch02-02-ex-6-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch02-02-ex-6-1-2-1">
+<div class="para">A point <span class="process-math">\((x_0, y_0, z_0)\)</span> lies on the graph of <span class="process-math">\(f\)</span> exactly when <span class="process-math">\(z_0 = f(x_0, y_0)\text{.}\)</span> For the first point:</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-1-2-1-4">
+\begin{equation*}
+f\left( \frac{1}{2}, \frac{1}{4} \right) = \left( \frac{1}{4} \right)^2 - \left( \frac{1}{2} \right)^2 = \frac{1}{16}-\frac{4}{16} = -\frac{3}{16}
+\end{equation*}
+</div>
+<div class="para">which matches the third coordinate, so <span class="process-math">\(\left(\frac{1}{2}, \frac{1}{4},-\frac{3}{16}\right)\)</span> lies on the graph of <span class="process-math">\(f\text{.}\)</span> For the second point:</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-1-2-1-7">
+\begin{equation*}
+f\left( -1, \frac{1}{3} \right) = \left( \frac{1}{3} \right)^2 - (-1)^2 = \frac{1}{9}-1 = -\frac{8}{9} \neq 2
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\left(-1, \frac{1}{3}, 2\right)\)</span> does not lie on the graph of <span class="process-math">\(f\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.2.2.1"><a tabindex="-1" href="#example-ch02-02-ex-6-1-2" title="Copy heading and permalink for Solution 2.2.2.1" aria-label="Copy heading and permalink for Solution 2.2.2.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.2.2"><a tabindex="-1" href="#example-ch02-02-ex-6-1" title="Copy heading and permalink for Example 2.2.2" aria-label="Copy heading and permalink for Example 2.2.2">🔗</a></div>
+</article></details>
+<article class="note remark-like" id="sec-ch02-02-ScalarValuedFunctions-10"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-10-1">Given a function <span class="process-math">\(z=f(x, y)\)</span> :<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch02-02-ScalarValuedFunctions-10-2">
+<ul class="disc" id="sec-ch02-02-ScalarValuedFunctions-10-2-1">
+<li id="sec-ch02-02-ScalarValuedFunctions-10-2-1-1">
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-10-2-1-1-1">To find its domain, denoted <span class="process-math">\(\operatorname{dom}(f)\text{,}\)</span> determine all <span class="process-math">\((x, y)\)</span> that can be plugged into <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-10-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-10-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch02-02-ScalarValuedFunctions-10-2-1-2">
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-10-2-1-2-1">To find its range, denoted <span class="process-math">\(\operatorname{rang}(f)\text{,}\)</span> determine all values of <span class="process-math">\(z\)</span> that have a pair <span class="process-math">\((x, y)\)</span> mapped to it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-10-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-10-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 2.2.3"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-10" title="Copy heading and permalink for Note 2.2.3" aria-label="Copy heading and permalink for Note 2.2.3">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="fig-ch02-02-domain-range"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
+<img src="external//images/2025_08_06_f7193d1cc61b1e2c50ebg-03.jpg" class="contained" alt="The domain and range of a scalar-valued function f(x,y), illustrating how inputs map to outputs."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="fig-ch02-02-domain-range-2-description">
+<div class="para" id="fig-ch02-02-domain-range-2-2-1">The domain and range of a scalar-valued function <span class="process-math">\(f(x,y)\text{,}\)</span> illustrating how inputs map to outputs.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#fig-ch02-02-domain-range-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>From OpenStax, Calculus Volume 3, Section 4.1<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.5"><a tabindex="-1" href="#fig-ch02-02-domain-range" title="Copy heading and permalink for Figure 2.2.5" aria-label="Copy heading and permalink for Figure 2.2.5">🔗</a></div></figcaption>
+</figure>
+<details id="example-ch02-02-ex-6-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch02-02-ex-6-2-1-1">Find the domain and range of the following functions:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="example-ch02-02-ex-6-2-1-2">
+<ol class="decimal" id="example-ch02-02-ex-6-2-1-2-1">
+<li id="example-ch02-02-ex-6-2-1-2-1-1">
+<div class="para" id="example-ch02-02-ex-6-2-1-2-1-1-1">Plane, <span class="process-math">\(f(x, y)= 4x+ y+1\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-2-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#example-ch02-02-ex-6-2-1-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="example-ch02-02-ex-6-2-1-2-1-2">
+<div class="para" id="example-ch02-02-ex-6-2-1-2-1-2-1">Paraboloid, <span class="process-math">\(f(x, y)=x^{2}+y^{2}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-2-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#example-ch02-02-ex-6-2-1-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="example-ch02-02-ex-6-2-1-2-1-3">
+<div class="para" id="example-ch02-02-ex-6-2-1-2-1-3-1">Upper Half of a Sphere with Radius 1, <span class="process-math">\(f(x, y)=\sqrt{1-x^2 -y^{2}}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-2-1-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#example-ch02-02-ex-6-2-1-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch02-02-ex-6-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch02-02-ex-6-2-2-1">Any pair <span class="process-math">\((x,y)\)</span> can be plugged into <span class="process-math">\(4x+y+1\text{,}\)</span> so <span class="process-math">\(\operatorname{dom}(f) = \mathbb{R}^2\text{,}\)</span> the entire <span class="process-math">\(xy\)</span>-plane. For the range, fixing <span class="process-math">\(y=0\)</span> the outputs <span class="process-math">\(f(x,0) = 4x+1\)</span> already take every real value as <span class="process-math">\(x\)</span> varies, so <span class="process-math">\(\operatorname{rang}(f) = \mathbb{R}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.2.4.1"><a tabindex="-1" href="#example-ch02-02-ex-6-2-2" title="Copy heading and permalink for Solution 2.2.4.1" aria-label="Copy heading and permalink for Solution 2.2.4.1">🔗</a></div>
+</div></details>
+<details id="example-ch02-02-ex-6-2-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch02-02-ex-6-2-3-1">Again any pair can be plugged in, so <span class="process-math">\(\operatorname{dom}(f) = \mathbb{R}^2\text{.}\)</span> Since <span class="process-math">\(x^2+y^2 \geq 0\text{,}\)</span> no negative output is possible. The output 0 is attained at <span class="process-math">\((0,0)\text{,}\)</span> and every <span class="process-math">\(z \gt 0\)</span> is also attained, for instance at <span class="process-math">\((\sqrt{z}, 0)\text{.}\)</span> Hence <span class="process-math">\(\operatorname{rang}(f) = [0, \infty)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.2.4.2"><a tabindex="-1" href="#example-ch02-02-ex-6-2-3" title="Copy heading and permalink for Solution 2.2.4.2" aria-label="Copy heading and permalink for Solution 2.2.4.2">🔗</a></div>
+</div></details>
+<details id="example-ch02-02-ex-6-2-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch02-02-ex-6-2-4-1">
+<div class="para">Here we need the expression under the square root to be non-negative:</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-2-4-1-1">
+\begin{equation*}
+1-x^2-y^2 \geq 0 \Leftrightarrow x^2+y^2 \leq 1
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\operatorname{dom}(f)\)</span> is the disk of radius 1 centered at the origin (including its boundary circle). The square root is non-negative, and the outputs run from <span class="process-math">\(f=0\)</span> (attained on the boundary circle <span class="process-math">\(x^2+y^2=1\)</span>) up to <span class="process-math">\(f=1\)</span> (attained at <span class="process-math">\((0,0)\)</span>), so <span class="process-math">\(\operatorname{rang}(f) = [0,1]\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.2.4.3"><a tabindex="-1" href="#example-ch02-02-ex-6-2-4" title="Copy heading and permalink for Solution 2.2.4.3" aria-label="Copy heading and permalink for Solution 2.2.4.3">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.2.4"><a tabindex="-1" href="#example-ch02-02-ex-6-2" title="Copy heading and permalink for Example 2.2.4" aria-label="Copy heading and permalink for Example 2.2.4">🔗</a></div>
+</article></details>
+<figure class="figure figure-like" id="fig-ch02-02-ex-6-2">
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;grid-template-columns:31.0344827586207% 31.0344827586207% 31.0344827586207%;column-gap:3.333333333333333%;">
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch02-02-ex-6-2a"><div class="interactive-iframe-container"><iframe src="https://c3d.libretexts.org/CalcPlot3D/dynamicFigureWCP/index.html?type=z;z=4x+y+1;funname=f;visible=true;umin=-8;umax=8;vmin=-8;vmax=8;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=7.402565134086221,-6.6627148513296905,0.9001445692085965,1;focus=0,0,0,1;up=-0.07145341144323414,0.05516236849379555,0.9959174278499592,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-8;xmax=8;ymin=-8;ymax=8;zmin=-8;zmax=8;xscale=4;yscale=4;zscale=4;zcmin=-16;zcmax=16;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.331" id="interactive-ch02-02-ex-6-2a" style="width:180px; height:120px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-ex-6-2a.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The plane f of x and y equals 4 x plus y minus 1, in xyz-space.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.6(a)"><a tabindex="-1" href="#fig-ch02-02-ex-6-2a" title="Copy heading and permalink for Figure 2.2.6(a)" aria-label="Copy heading and permalink for Figure 2.2.6(a)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch02-02-ex-6-2b"><div class="interactive-iframe-container"><iframe src="https://c3d.libretexts.org/CalcPlot3D/dynamicFigureWCP/index.html?type=z;z=x%5E2+y%5E2;funname=f;visible=true;umin=-0.5;umax=0.5;vmin=-0.5;vmax=0.5;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=4.223280852347747,-8.99185255420588,1.1447648167226068,1;focus=0,0,0,1;up=-0.09715540443664565,0.08066044015414665,0.991995322964222,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-0.5;xmax=0.5;ymin=-0.5;ymax=0.5;zmin=-0.5;zmax=0.5;xscale=0.25;yscale=0.25;zscale=0.25;zcmin=-1;zcmax=1;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=5.296" id="interactive-ch02-02-ex-6-2b" style="width:180px; height:120px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-ex-6-2b.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The paraboloid f of x and y equals x squared plus y squared, in xyz-space.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.6(b)"><a tabindex="-1" href="#fig-ch02-02-ex-6-2b" title="Copy heading and permalink for Figure 2.2.6(b)" aria-label="Copy heading and permalink for Figure 2.2.6(b)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch02-02-ex-6-2c"><div class="interactive-iframe-container"><iframe src="https://c3d.libretexts.org/CalcPlot3D/dynamicFigureWCP/index.html?type=z;z=sqrt(1-(x%5E2+y%5E2));funname=f;visible=true;umin=-2;umax=2;vmin=-2;vmax=2;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=9.883669242555984,5.70633909777092,3.7082039324993694,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=1.324" id="interactive-ch02-02-ex-6-2c" style="width:180px; height:120px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-ex-6-2c.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="codenumber">(c)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The upper half of the sphere f of x and y equals the square root of, 1 minus x squared minus y squared, in xyz-space.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.6(c)"><a tabindex="-1" href="#fig-ch02-02-ex-6-2c" title="Copy heading and permalink for Figure 2.2.6(c)" aria-label="Copy heading and permalink for Figure 2.2.6(c)">🔗</a></div></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The plane <span class="process-math">\(f(x, y)= 4x+ y-1\text{,}\)</span> the paraboloid <span class="process-math">\(f(x, y)=x^{2}+y^{2}\)</span> and the upper half of a sphere <span class="process-math">\(f(x, y)=\sqrt{1-x^2 -y^{2}}\)</span> of <a href="sec-ch02-02-ScalarValuedFunctions.html#example-ch02-02-ex-6-2" class="xref" data-knowl="./knowl/xref/example-ch02-02-ex-6-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.2.4">Example 2.2.4</a>.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.6"><a tabindex="-1" href="#fig-ch02-02-ex-6-2" title="Copy heading and permalink for Figure 2.2.6" aria-label="Copy heading and permalink for Figure 2.2.6">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-14">Drag with the mouse to rotate the surfaces. You can open the plots in a new page from here: <a class="external" href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=z;z=4x+y+1;funname=f;visible=true;umin=-8;umax=8;vmin=-8;vmax=8;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=7.402565134086221,-6.6627148513296905,0.9001445692085965,1;focus=0,0,0,1;up=-0.07145341144323414,0.05516236849379555,0.9959174278499592,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-8;xmax=8;ymin=-8;ymax=8;zmin=-8;zmax=8;xscale=4;yscale=4;zscale=4;zcmin=-16;zcmax=16;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.331" target="_blank">link to the left plot</a>, <a class="external" href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=z;z=x%5E2+y%5E2;funname=f;visible=true;umin=-0.5;umax=0.5;vmin=-0.5;vmax=0.5;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=4.223280852347747,-8.99185255420588,1.1447648167226068,1;focus=0,0,0,1;up=-0.09715540443664565,0.08066044015414665,0.991995322964222,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-0.5;xmax=0.5;ymin=-0.5;ymax=0.5;zmin=-0.5;zmax=0.5;xscale=0.25;yscale=0.25;zscale=0.25;zcmin=-1;zcmax=1;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=5.296" target="_blank">link to the middle plot</a>, <a class="external" href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=z;z=sqrt(1-(x%5E2+y%5E2));funname=f;visible=true;umin=-2;umax=2;vmin=-2;vmax=2;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=9.883669242555984,5.70633909777092,3.7082039324993694,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=1.324" target="_blank">link to the right plot</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-ch02-02-ScalarValuedFunctions-15"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Planes in <span class="process-math">\(x y z\)</span>-space.</span>
+</h2>
+<div class="para logical" id="sec-ch02-02-ScalarValuedFunctions-15-2-1">
+<div class="para">A plane in <span class="process-math">\(x y z\)</span>-space is the set of all points that satisfy the equation</div>
+<div class="displaymath process-math" id="sec-ch02-02-ScalarValuedFunctions-15-2-1-2">
+\begin{equation*}
+a x+b y+c z=d\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(a, b, c\text{,}\)</span> and <span class="process-math">\(d\)</span> are real numbers.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 2.2.5: Planes in x y z-space"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-15" title="Copy heading and permalink for Definition 2.2.5: Planes in x y z-space" aria-label="Copy heading and permalink for Definition 2.2.5: Planes in x y z-space">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch02-02-ScalarValuedFunctions-16"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-16-1">In order to find an equation for a plane, all we need is:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch02-02-ScalarValuedFunctions-16-2">
+<ul class="disc" id="sec-ch02-02-ScalarValuedFunctions-16-2-1">
+<li id="sec-ch02-02-ScalarValuedFunctions-16-2-1-1">
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-16-2-1-1-1">A point in the plane.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-16-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-16-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch02-02-ScalarValuedFunctions-16-2-1-2">
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-16-2-1-2-1">The orientation (tilt) of the plane.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-16-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-16-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-16-3">The orientation is given by a vector orthogonal to every other vector in the plane. We call this vector a normal vector to the plane.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-16-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch02-02-normal-vector"><div class="interactive-iframe-container"><iframe src="https://c3d.libretexts.org/CalcPlot3D/dynamicFigureWCP/index.html?type=z;z=x+y+.25;funname=f;visible=true;umin=-8;umax=8;vmin=-8;vmax=8;grid=10;format=constant;alpha=-1;hidemyedges=false;constcol=rgb(30,136,229);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=vector;vector=%3C4,%204,8%3E;visible=true;color=rgb(255,193,7);size=5;initialpt=(0,-.250,0);dashed=false&amp;type=vector;vector=%3C-4,-%204,%204%3E;visible=true;color=rgb(216,27,96);size=5;initialpt=(0,-.250,0);dashed=undefined&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=27.192731773906313,-38.14495714040698,10.465064903230056,1;focus=0,0,0,1;up=-0.11655892322221247,0.09515025743330567,0.9886154186171963,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-8;xmax=8;ymin=-8;ymax=8;zmin=-8;zmax=8;xscale=4;yscale=4;zscale=4;zcmin=-16;zcmax=16;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.331" id="interactive-ch02-02-normal-vector" style="width:540px; height:360px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-normal-vector.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-02-normal-vector-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-02-normal-vector-1-1">Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <a class="external" href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=z;z=x+y+.25;funname=f;visible=true;umin=-8;umax=8;vmin=-8;vmax=8;grid=10;format=constant;alpha=-1;hidemyedges=false;constcol=rgb(30,136,229);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=vector;vector=%3C4,%204,8%3E;visible=true;color=rgb(255,193,7);size=5;initialpt=(0,-.250,0);dashed=false&amp;type=vector;vector=%3C-4,-%204,%204%3E;visible=true;color=rgb(216,27,96);size=5;initialpt=(0,-.250,0);dashed=undefined&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=27.192731773906313,-38.14495714040698,10.465064903230056,1;focus=0,0,0,1;up=-0.11655892322221247,0.09515025743330567,0.9886154186171963,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-8;xmax=8;ymin=-8;ymax=8;zmin=-8;zmax=8;xscale=4;yscale=4;zscale=4;zcmin=-16;zcmax=16;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.331" target="_blank">link to the plot</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-02-normal-vector-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-02-normal-vector-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A plane in xyz-space with a normal vector n orthogonal to every vector in the plane.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.7"><a tabindex="-1" href="#fig-ch02-02-normal-vector" title="Copy heading and permalink for Figure 2.2.7" aria-label="Copy heading and permalink for Figure 2.2.7">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="sec-ch02-02-ScalarValuedFunctions-16-5">
+<div class="para">Given a point <span class="process-math">\(P_{0}\left(x_{0}, y_{0}, z_{0}\right)\)</span> on a plane <span class="process-math">\(\pi\)</span> and a vector <span class="process-math">\(\vec{n}=\langle a, b, c\rangle\)</span> normal to <span class="process-math">\(\pi\text{,}\)</span> the equation for <span class="process-math">\(\pi\)</span> is given by</div>
+<div class="displaymath process-math" id="sec-ch02-02-ScalarValuedFunctions-16-5-6">
+\begin{equation*}
+a\left(x-x_{0}\right)+b\left(y-y_{0}\right)+c\left(z-z_{0}\right)=0\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-16-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 2.2.6"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-16" title="Copy heading and permalink for Remark 2.2.6" aria-label="Copy heading and permalink for Remark 2.2.6">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch02-02-ScalarValuedFunctions-17"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-17-1">To find a vector normal to a plane <span class="process-math">\(\pi\text{,}\)</span> all you need is the cross-product of two non-parallel vectors in the plane (since they define the plane uniquely).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 2.2.7"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-17" title="Copy heading and permalink for Note 2.2.7" aria-label="Copy heading and permalink for Note 2.2.7">🔗</a></div>
+</article>
+<details id="example-ch02-02-ex-6-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch02-02-ex-6-3-1-1">Find an equation for the plane that passes through the points <span class="process-math">\(P(-1,-1,-1), Q(-1,-1,1)\text{,}\)</span> and <span class="process-math">\(R(1,1,1)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch02-02-ex-6-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch02-02-ex-6-3-2-1">
+<div class="para">To find an equation for the plane we need a point in the plane (we have three) and a normal vector, which we get as the cross product of two non-parallel vectors in the plane. Two vectors in the plane are</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-3-2-1-1">
+\begin{gather*}
+\vec{PQ} = \langle -1-(-1), -1-(-1), 1-(-1) \rangle = \langle 0,0,2 \rangle\\
+\vec{PR} = \langle 1-(-1), 1-(-1), 1-(-1) \rangle = \langle 2,2,2 \rangle
+\end{gather*}
+</div>
+<div class="para">and they are not parallel (no scalar multiple of <span class="process-math">\(\langle 0,0,2 \rangle\)</span> can have a nonzero first component). Their cross product is normal to the plane:</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-3-2-1-3">
+\begin{gather*}
+\vec{n} = \vec{PQ} \times \vec{PR} = \left| \begin{matrix} \vec{i} \amp \vec{j} \amp \vec{k} \\ 0 \amp 0 \amp 2 \\ 2 \amp 2 \amp 2 \end{matrix}\right|\\
+= \left| \begin{matrix} 0 \amp 2 \\ 2 \amp 2 \end{matrix}\right|\vec{i} - \left| \begin{matrix} 0 \amp 2 \\ 2 \amp 2 \end{matrix}\right|\vec{j} + \left| \begin{matrix} 0 \amp 0 \\ 2 \amp 2 \end{matrix}\right|\vec{k}\\
+= \left( 0(2)-2(2) \right)\vec{i} - \left( 0(2)-2(2) \right)\vec{j} + \left( 0(2)-0(2) \right)\vec{k} = \langle -4,4,0 \rangle
+\end{gather*}
+</div>
+<div class="para">Using the point <span class="process-math">\(P(-1,-1,-1)\)</span> and the normal vector <span class="process-math">\(\vec{n} = \langle -4,4,0 \rangle\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-3-2-1-6">
+\begin{equation*}
+-4\left( x-(-1) \right)+4\left( y-(-1) \right)+0\left( z-(-1) \right) = 0 \Rightarrow -4x+4y = 0 \Rightarrow y = x
+\end{equation*}
+</div>
+<div class="para">As a check, all three points <span class="process-math">\(P\text{,}\)</span> <span class="process-math">\(Q\text{,}\)</span> and <span class="process-math">\(R\)</span> satisfy the equation <span class="process-math">\(y=x\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.2.8.1"><a tabindex="-1" href="#example-ch02-02-ex-6-3-2" title="Copy heading and permalink for Solution 2.2.8.1" aria-label="Copy heading and permalink for Solution 2.2.8.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.2.8"><a tabindex="-1" href="#example-ch02-02-ex-6-3" title="Copy heading and permalink for Example 2.2.8" aria-label="Copy heading and permalink for Example 2.2.8">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="sec-ch02-02-ScalarValuedFunctions-19"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Normal Vector to a Plane.</span>
+</h2>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-19-2">Given the plane <span class="process-math">\(a x+b y+c z=d\text{,}\)</span> the vector <span class="process-math">\(\vec{n}=\langle a, b, c\rangle\)</span> is a normal vector to the plane.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-19-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 2.2.9: Normal Vector to a Plane"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-19" title="Copy heading and permalink for Remark 2.2.9: Normal Vector to a Plane" aria-label="Copy heading and permalink for Remark 2.2.9: Normal Vector to a Plane">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch02-02-ScalarValuedFunctions-20"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="sec-ch02-02-ScalarValuedFunctions-20-1">
+<ul class="disc" id="sec-ch02-02-ScalarValuedFunctions-20-1-1">
+<li id="sec-ch02-02-ScalarValuedFunctions-20-1-1-1">
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-20-1-1-1-1">Whether two planes are parallel, orthogonal, or neither, can be answered by asking the same question about their normal vectors.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-20-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-20-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch02-02-ScalarValuedFunctions-20-1-1-2">
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-20-1-1-2-1">If two planes are not parallel, they always intersect in a line. The direction of this line is given by the cross product of the normal vectors to the planes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-20-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-20-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-20-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 2.2.10"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-20" title="Copy heading and permalink for Note 2.2.10" aria-label="Copy heading and permalink for Note 2.2.10">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="fig-ch02-02-intersecting-planes"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
+<img src="external//images/2025_08_06_f7193d1cc61b1e2c50ebg-07.jpg" class="contained" alt="Two non-parallel planes intersecting in a line in xyz-space. The angle between the planes is the same as the angle that the normal vectors form."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="fig-ch02-02-intersecting-planes-2-description">
+<div class="para" id="fig-ch02-02-intersecting-planes-2-2-1">Two non-parallel planes intersecting in a line in <span class="process-math">\(xyz\)</span>-space. The angle between the planes is the same as the angle that the normal vectors form.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#fig-ch02-02-intersecting-planes-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>From OpenStax, Calculus Volume 3, Section 2.5<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.8"><a tabindex="-1" href="#fig-ch02-02-intersecting-planes" title="Copy heading and permalink for Figure 2.2.8" aria-label="Copy heading and permalink for Figure 2.2.8">🔗</a></div></figcaption>
+</figure>
+<details id="example-ch02-02-ex-6-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch02-02-ex-6-4-1-1">Determine whether the planes <span class="process-math">\(\pi_{1}\)</span> given by <span class="process-math">\(3 x+2 y+ z=30\)</span> and <span class="process-math">\(\pi_{2}\)</span> given by <span class="process-math">\(-3 x+4 y+6 z=0\)</span> are parallel, orthogonal or neither.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch02-02-ex-6-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch02-02-ex-6-4-2-1">
+<div class="para">The normal vectors are <span class="process-math">\(\vec{n}_1 = \langle 3,2,1 \rangle\)</span> and <span class="process-math">\(\vec{n}_2 = \langle -3,4,6 \rangle\text{,}\)</span> and we answer the question by asking it about them. If they were parallel there would be a scalar <span class="process-math">\(c\)</span> with <span class="process-math">\(c\vec{n}_1 = \vec{n}_2\text{;}\)</span> the first components force <span class="process-math">\(c=-1\)</span> while the second components force <span class="process-math">\(c=2\text{,}\)</span> so the normal vectors (and hence the planes) are not parallel. Checking orthogonality with the dot product:</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-4-2-1-7">
+\begin{equation*}
+\vec{n}_1 \cdot \vec{n}_2 = 3(-3)+2(4)+1(6) = -9+8+6 = 5 \neq 0
+\end{equation*}
+</div>
+<div class="para">so the normal vectors are not orthogonal either. Hence the planes are neither parallel nor orthogonal.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.2.11.1"><a tabindex="-1" href="#example-ch02-02-ex-6-4-2" title="Copy heading and permalink for Solution 2.2.11.1" aria-label="Copy heading and permalink for Solution 2.2.11.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.2.11"><a tabindex="-1" href="#example-ch02-02-ex-6-4" title="Copy heading and permalink for Example 2.2.11" aria-label="Copy heading and permalink for Example 2.2.11">🔗</a></div>
+</article></details>
+<details id="example-ch02-02-ex-6-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="example-ch02-02-ex-6-5-1-1">
+<div class="para">Find an equation of the line where the planes <span class="process-math">\(\pi_{1}\)</span> and <span class="process-math">\(\pi_{2}\)</span> intersect where</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-5-1-1-3">
+\begin{equation*}
+\pi_{1}:3x+2 y+ z=1 ; \quad \pi_{2}: x+y+z=1
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch02-02-ex-6-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch02-02-ex-6-5-2-1">
+<div class="para">The normal vectors are <span class="process-math">\(\vec{n}_1 = \langle 3,2,1 \rangle\)</span> and <span class="process-math">\(\vec{n}_2 = \langle 1,1,1 \rangle\text{,}\)</span> which are not scalar multiples of each other, so the planes are not parallel and they intersect in a line. The direction of this line is given by the cross product of the normal vectors:</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-5-2-1-3">
+\begin{gather*}
+\vec{v} = \vec{n}_1 \times \vec{n}_2 = \left| \begin{matrix} \vec{i} \amp \vec{j} \amp \vec{k} \\ 3 \amp 2 \amp 1 \\ 1 \amp 1 \amp 1 \end{matrix}\right|\\
+= \left| \begin{matrix} 2 \amp 1 \\ 1 \amp 1 \end{matrix}\right|\vec{i} - \left| \begin{matrix} 3 \amp 1 \\ 1 \amp 1 \end{matrix}\right|\vec{j} + \left| \begin{matrix} 3 \amp 2 \\ 1 \amp 1 \end{matrix}\right|\vec{k}\\
+= \left( 2(1)-1(1) \right)\vec{i} - \left( 3(1)-1(1) \right)\vec{j} + \left( 3(1)-2(1) \right)\vec{k} = \langle 1,-2,1 \rangle
+\end{gather*}
+</div>
+<div class="para">We also need a point on the line, that is, a point satisfying both plane equations. Subtracting the equation of <span class="process-math">\(\pi_2\)</span> from the equation of <span class="process-math">\(\pi_1\)</span> eliminates <span class="process-math">\(z\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-5-2-1-7">
+\begin{equation*}
+(3x+2y+z)-(x+y+z) = 1-1 \Rightarrow 2x+y = 0
+\end{equation*}
+</div>
+<div class="para">Choosing <span class="process-math">\(x=0\)</span> gives <span class="process-math">\(y=0\text{,}\)</span> and then the equation of <span class="process-math">\(\pi_2\)</span> gives <span class="process-math">\(z=1\text{,}\)</span> so the point <span class="process-math">\((0,0,1)\)</span> lies on both planes. Hence the line of intersection is</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-5-2-1-13">
+\begin{equation*}
+\vec{r}(t) = \langle 0,0,1 \rangle + t\langle 1,-2,1 \rangle = \langle t, -2t, 1+t \rangle, \quad -\infty \lt t \lt \infty
+\end{equation*}
+</div>
+<div class="para">As a check, substituting the parametric equations into both plane equations: <span class="process-math">\(3t-4t+(1+t) = 1\)</span> and <span class="process-math">\(t-2t+(1+t) = 1\)</span> for every <span class="process-math">\(t\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.2.12.1"><a tabindex="-1" href="#example-ch02-02-ex-6-5-2" title="Copy heading and permalink for Solution 2.2.12.1" aria-label="Copy heading and permalink for Solution 2.2.12.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.2.12"><a tabindex="-1" href="#example-ch02-02-ex-6-5" title="Copy heading and permalink for Example 2.2.12" aria-label="Copy heading and permalink for Example 2.2.12">🔗</a></div>
+</article></details>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-24">Consider the picture of Devil’s Tower and a topographical map for it given below:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch02-02-devils-tower"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;">
+<img src="external//images/2025_08_06_f7193d1cc61b1e2c50ebg-09-1.jpg" class="contained" alt="A photograph of Devils Tower and its topographical map, showing level curves at constant elevation."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="fig-ch02-02-devils-tower-2-description">
+<div class="para" id="fig-ch02-02-devils-tower-2-2-1">A photograph of Devils Tower and its topographical map, showing level curves at constant elevation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#fig-ch02-02-devils-tower-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>From OpenStax, Calculus Volume 3, Section 4.1<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.9"><a tabindex="-1" href="#fig-ch02-02-devils-tower" title="Copy heading and permalink for Figure 2.2.9" aria-label="Copy heading and permalink for Figure 2.2.9">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-26">To get such a topographical map, you:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch02-02-ScalarValuedFunctions-27">
+<ul class="disc" id="sec-ch02-02-ScalarValuedFunctions-27-1">
+<li id="sec-ch02-02-ScalarValuedFunctions-27-1-1">
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-27-1-1-1">Think of Devil’s Tower as a surface <span class="process-math">\(z=f(x, y)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-27-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-27-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch02-02-ScalarValuedFunctions-27-1-2">
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-27-1-2-1">Intersect that surface with planes of the form <span class="process-math">\(z=c\)</span> (planes parallel to the <span class="process-math">\(x y\)</span>-plane).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-27-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-27-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-28">When you intersect a surface <span class="process-math">\(z=f(x, y)\)</span> with a plane <span class="process-math">\(z=c\text{,}\)</span> you get a curve called a level curve, given by the equation <span class="process-math">\(c=f(x, y)\text{.}\)</span> (<a class="external" href="https://www.desmos.com/3d/vmgur5hd03" target="_blank">graph</a>)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-28" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch02-02-level-curve">
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;grid-template-columns:47.3684210526316% 47.3684210526316%;column-gap:5%;">
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch02-02-level-curve-a"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-02-level-curve-a" style="width:270px; height:203px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-level-curve-a.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The paraboloid z equals x squared over 2 plus y squared over 4, intersected with the plane z equals 2.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.10(a)"><a tabindex="-1" href="#fig-ch02-02-level-curve-a" title="Copy heading and permalink for Figure 2.2.10(a)" aria-label="Copy heading and permalink for Figure 2.2.10(a)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch02-02-level-curve-b"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-02-level-curve-b" style="width:270px; height:203px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-level-curve-b.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The level curve obtained by intersecting z equals x squared over 2 plus y squared over 4 with the plane z equals 2.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.10(b)"><a tabindex="-1" href="#fig-ch02-02-level-curve-b" title="Copy heading and permalink for Figure 2.2.10(b)" aria-label="Copy heading and permalink for Figure 2.2.10(b)">🔗</a></div></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="process-math">\(z=\frac{x^2}{2}+\frac{y^2}{4} \text{ intersected with } z=2\)</span><div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.10"><a tabindex="-1" href="#fig-ch02-02-level-curve" title="Copy heading and permalink for Figure 2.2.10" aria-label="Copy heading and permalink for Figure 2.2.10">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-30">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the left graph</a>, <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the right graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-30" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="example-ch02-02-ex-6-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch02-02-ex-6-6-1-1">Describe the level curve you get when intersecting the cone <span class="process-math">\(z=\)</span> <span class="process-math">\(\sqrt{2x^{2}+2y^{2}}\)</span> with the plane <span class="process-math">\(z=1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch02-02-ex-6-6"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-02-ex-6-6" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-ex-6-6.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-02-ex-6-6-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-02-ex-6-6-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-02-ex-6-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-02-ex-6-6-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The cone z equals the square root of, 2 x squared plus 2 y squared, intersected with the plane z equals 1.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.11"><a tabindex="-1" href="#fig-ch02-02-ex-6-6" title="Copy heading and permalink for Figure 2.2.11" aria-label="Copy heading and permalink for Figure 2.2.11">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch02-02-ex-6-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch02-02-ex-6-6-2-1">
+<div class="para">The level curve is defined by the equation <span class="process-math">\(1 = \sqrt{2x^2+2y^2}\text{.}\)</span> Squaring both sides:</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-6-2-1-2">
+\begin{equation*}
+1 = 2x^2+2y^2 \Rightarrow x^2+y^2 = \frac{1}{2}
+\end{equation*}
+</div>
+<div class="para">This is a circle centered at the origin of radius <span class="process-math">\(\sqrt{\frac{1}{2}} = \frac{\sqrt{2}}{2}\text{,}\)</span> drawn at height <span class="process-math">\(z=1\)</span> on the cone, as in the picture above.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.2.13.1"><a tabindex="-1" href="#example-ch02-02-ex-6-6-2" title="Copy heading and permalink for Solution 2.2.13.1" aria-label="Copy heading and permalink for Solution 2.2.13.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.2.13"><a tabindex="-1" href="#example-ch02-02-ex-6-6" title="Copy heading and permalink for Example 2.2.13" aria-label="Copy heading and permalink for Example 2.2.13">🔗</a></div>
+</article></details>
+<article class="definition definition-like" id="sec-ch02-02-ScalarValuedFunctions-32"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Traces of Surfaces.</span>
+</h2>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-32-2-1">When you intersect a surface <span class="process-math">\(z=f(x, y)\)</span> with planes of the form <span class="process-math">\(x=x_{0}\text{,}\)</span> <span class="process-math">\(y=y_{0}\text{,}\)</span> and <span class="process-math">\(z=z_{0}\text{,}\)</span> the corresponding level curve is called a trace of the surface. Vertical trace refers to the intersection with a plane of the form <span class="process-math">\(x=x_0\)</span> or <span class="process-math">\(y=y_0\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-32-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 2.2.14: Traces of Surfaces"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-32" title="Copy heading and permalink for Definition 2.2.14: Traces of Surfaces" aria-label="Copy heading and permalink for Definition 2.2.14: Traces of Surfaces">🔗</a></div>
+</article>
+<details id="example-ch02-02-ex-6-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch02-02-ex-6-7-1-1">Describe the vertical trace you get when intersecting the hyperbolic paraboloid <span class="process-math">\(z=y^{2}-x^{2}\)</span> with the plane <span class="process-math">\(y=1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch02-02-ex-6-7"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-02-ex-6-7" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-ex-6-7.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-02-ex-6-7-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-02-ex-6-7-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-02-ex-6-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-02-ex-6-7-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The hyperbolic paraboloid z equals y squared minus x squared, intersected with the plane y equals 1, showing the vertical trace.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.12"><a tabindex="-1" href="#fig-ch02-02-ex-6-7" title="Copy heading and permalink for Figure 2.2.12" aria-label="Copy heading and permalink for Figure 2.2.12">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch02-02-ex-6-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch02-02-ex-6-7-2-1">
+<div class="para">Substituting <span class="process-math">\(y=1\)</span> into the equation of the surface:</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-7-2-1-2">
+\begin{equation*}
+z = 1^2-x^2 = 1-x^2
+\end{equation*}
+</div>
+<div class="para">The vertical trace is a downward-opening parabola lying in the plane <span class="process-math">\(y=1\text{,}\)</span> with vertex at the point <span class="process-math">\((0,1,1)\)</span> and passing through the points <span class="process-math">\((\pm 1, 1, 0)\text{,}\)</span> as the picture above shows.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.2.15.1"><a tabindex="-1" href="#example-ch02-02-ex-6-7-2" title="Copy heading and permalink for Solution 2.2.15.1" aria-label="Copy heading and permalink for Solution 2.2.15.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.2.15"><a tabindex="-1" href="#example-ch02-02-ex-6-7" title="Copy heading and permalink for Example 2.2.15" aria-label="Copy heading and permalink for Example 2.2.15">🔗</a></div>
+</article></details>
+<details id="example-ch02-02-ex-6-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch02-02-ex-6-8-1-1">From Knowledge Check: Which of the following show level curves of the function <span class="process-math">\(z= x-y\)</span> for different values of <span class="process-math">\(z\)</span> ?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch02-02-ex-6-8">
+<div class="sbsgroup">
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;grid-template-columns:47.3684210526316% 47.3684210526316%;column-gap:5%;">
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch02-02-ex-6-8a"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-02-ex-6-8a" style="width:270px; height:203px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-ex-6-8a.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Option a displays hyperbola-like lines<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.13(a)"><a tabindex="-1" href="#fig-ch02-02-ex-6-8a" title="Copy heading and permalink for Figure 2.2.13(a)" aria-label="Copy heading and permalink for Figure 2.2.13(a)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch02-02-ex-6-8b"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-02-ex-6-8b" style="width:270px; height:203px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-ex-6-8b.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Option b displays parallel straight lines with slope not far from 1<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.13(b)"><a tabindex="-1" href="#fig-ch02-02-ex-6-8b" title="Copy heading and permalink for Figure 2.2.13(b)" aria-label="Copy heading and permalink for Figure 2.2.13(b)">🔗</a></div></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;grid-template-columns:47.3684210526316% 47.3684210526316%;column-gap:5%;">
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch02-02-ex-6-8c"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-02-ex-6-8c" style="width:270px; height:203px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-ex-6-8c.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="codenumber">(c)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Option c displays parallel straight lines with slope significantly greater than 1<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.13(c)"><a tabindex="-1" href="#fig-ch02-02-ex-6-8c" title="Copy heading and permalink for Figure 2.2.13(c)" aria-label="Copy heading and permalink for Figure 2.2.13(c)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch02-02-ex-6-8d"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-02-ex-6-8d" style="width:270px; height:203px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-ex-6-8d.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="codenumber">(d)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Option d displays parallel straight lines with slope significantly smaller than 1<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.13(d)"><a tabindex="-1" href="#fig-ch02-02-ex-6-8d" title="Copy heading and permalink for Figure 2.2.13(d)" aria-label="Copy heading and permalink for Figure 2.2.13(d)">🔗</a></div></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Four candidate families of level curves, options (a) to (d).<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.13"><a tabindex="-1" href="#fig-ch02-02-ex-6-8" title="Copy heading and permalink for Figure 2.2.13" aria-label="Copy heading and permalink for Figure 2.2.13">🔗</a></div></figcaption>
+</figure> 
+<div class="para" id="example-ch02-02-ex-6-8-1-3">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the top left graph</a>, <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the top right graph</a>, <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the bottom left graph</a>, <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the bottom right graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-8-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch02-02-ex-6-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch02-02-ex-6-8-2-1">
+<div class="para">Setting <span class="process-math">\(z=c\)</span> for a constant <span class="process-math">\(c\text{,}\)</span> the level curves are given by</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-8-2-1-3">
+\begin{equation*}
+c = x-y \Rightarrow y = x-c
+\end{equation*}
+</div>
+<div class="para">For every value of <span class="process-math">\(c\)</span> this is a straight line with slope exactly 1 (and <span class="process-math">\(y\)</span>-intercept <span class="process-math">\(-c\)</span>), so the level curves form a family of parallel lines of slope 1. Among the figures above, (a) shows hyperbola-like curves, while (c) and (d) show parallel lines that rise too fast or too slow for their slope to be equal to 1. Hence the answer is (b).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.2.16.1"><a tabindex="-1" href="#example-ch02-02-ex-6-8-2" title="Copy heading and permalink for Solution 2.2.16.1" aria-label="Copy heading and permalink for Solution 2.2.16.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.2.16"><a tabindex="-1" href="#example-ch02-02-ex-6-8" title="Copy heading and permalink for Example 2.2.16" aria-label="Copy heading and permalink for Example 2.2.16">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="sec-ch02-02-ScalarValuedFunctions-35"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-35-1">Suppose you have a function of the form <span class="process-math">\(w=F(x, y, z)\text{,}\)</span> which corresponds to an object in 4 dimensions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-35-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-35-2">We can intersect this function with a hyperplane of the form <span class="process-math">\(w=c\)</span> to get a 3D-surface called a level surface defined by the equation <span class="process-math">\(c=F(x, y, z)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-35-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 2.2.17"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-35" title="Copy heading and permalink for Remark 2.2.17" aria-label="Copy heading and permalink for Remark 2.2.17">🔗</a></div>
+</article>
+<details id="example-ch02-02-ex-6-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch02-02-ex-6-9-1-1">Consider the function <span class="process-math">\(w=x^{2}+2y^{2}+3z^{2}\text{.}\)</span> Describe the level surface you get when intersecting <span class="process-math">\(w\)</span> with the hyperplane <span class="process-math">\(w=4\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch02-02-ex-6-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch02-02-ex-6-9-2-1">
+<div class="para">The level surface is defined by the equation</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-9-2-1-1">
+\begin{equation*}
+x^2+2y^2+3z^2 = 4 \Rightarrow \frac{x^2}{4}+\frac{y^2}{2}+\frac{z^2}{4/3} = 1
+\end{equation*}
+</div>
+<div class="para">This is an ellipsoid centered at the origin, crossing the <span class="process-math">\(x\)</span>-axis (<span class="process-math">\(y=z=0\)</span>) at <span class="process-math">\(x=\pm 2\text{,}\)</span> the <span class="process-math">\(y\)</span>-axis (<span class="process-math">\(x=z=0\)</span>) at <span class="process-math">\(y=\pm\sqrt{2}\text{,}\)</span> and the <span class="process-math">\(z\)</span>-axis (<span class="process-math">\(x=y=0\)</span>) at <span class="process-math">\(z=\pm\frac{2}{\sqrt{3}}\text{,}\)</span> as shown below.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch02-02-ex-6-9"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch02-02-ex-6-9" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch02-02-ex-6-9.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch02-02-ex-6-9-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch02-02-ex-6-9-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch02-02-ex-6-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch02-02-ex-6-9-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The ellipsoid x squared plus 2 y squared plus 3 z squared equals 4.<div class="autopermalink" aria-hidden="true" data-description="Figure 2.2.14"><a tabindex="-1" href="#fig-ch02-02-ex-6-9" title="Copy heading and permalink for Figure 2.2.14" aria-label="Copy heading and permalink for Figure 2.2.14">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 2.2.18.1"><a tabindex="-1" href="#example-ch02-02-ex-6-9-2" title="Copy heading and permalink for Solution 2.2.18.1" aria-label="Copy heading and permalink for Solution 2.2.18.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.2.18"><a tabindex="-1" href="#example-ch02-02-ex-6-9" title="Copy heading and permalink for Example 2.2.18" aria-label="Copy heading and permalink for Example 2.2.18">🔗</a></div>
+</article></details>
+<article class="note remark-like" id="sec-ch02-02-ScalarValuedFunctions-37"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Implicit vs. Explicit Surfaces.</span>
+</h2>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-37-2">Consider the plane <span class="process-math">\(\pi\)</span> defined by <span class="process-math">\(x+2 y-z=4\text{.}\)</span> Since <span class="process-math">\(z\)</span> isn’t by itself on one side of the equation, we say that <span class="process-math">\(z\)</span> is given implicitly as a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-37-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-37-3">If you solve for <span class="process-math">\(z\)</span> and write <span class="process-math">\(\pi\)</span> as <span class="process-math">\(z=x+2 y-4\text{,}\)</span> then we say <span class="process-math">\(z\)</span> is given explicitly as a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-37-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch02-02-ScalarValuedFunctions-37-4">The same definition of implicit or explicit applies for functions in higher dimensions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-37-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 2.2.19: Implicit vs. Explicit Surfaces"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions-37" title="Copy heading and permalink for Note 2.2.19: Implicit vs. Explicit Surfaces" aria-label="Copy heading and permalink for Note 2.2.19: Implicit vs. Explicit Surfaces">🔗</a></div>
+</article>
+<details id="example-ch02-02-ex-6-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch02-02-ex-6-10-1-1">For each of the following equations, determine whether <span class="process-math">\(z\)</span> is given implicitly or explicitly as a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span> If <span class="process-math">\(z\)</span> is given implicitly, write it explicitly (if it isn’t possible, explain why).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="example-ch02-02-ex-6-10-1-2">
+<ol class="decimal" id="example-ch02-02-ex-6-10-1-2-1">
+<li id="example-ch02-02-ex-6-10-1-2-1-1">
+<div class="para" id="example-ch02-02-ex-6-10-1-2-1-1-1">
+<span class="process-math">\(z=\sin(x+y+3)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-10-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#example-ch02-02-ex-6-10-1-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="example-ch02-02-ex-6-10-1-2-1-2">
+<div class="para" id="example-ch02-02-ex-6-10-1-2-1-2-1">
+<span class="process-math">\(4z+e^{\sin x-\cos y}= z+\cos x\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-10-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#example-ch02-02-ex-6-10-1-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="example-ch02-02-ex-6-10-1-2-1-3">
+<div class="para" id="example-ch02-02-ex-6-10-1-2-1-3-1">
+<span class="process-math">\(z^{4}+3y^{2}=\log x\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-10-1-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#example-ch02-02-ex-6-10-1-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-10-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch02-02-ex-6-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch02-02-ex-6-10-2-1">Since <span class="process-math">\(z\)</span> is by itself on one side of the equation, <span class="process-math">\(z\)</span> is given explicitly as a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.2.20.1"><a tabindex="-1" href="#example-ch02-02-ex-6-10-2" title="Copy heading and permalink for Solution 2.2.20.1" aria-label="Copy heading and permalink for Solution 2.2.20.1">🔗</a></div>
+</div></details>
+<details id="example-ch02-02-ex-6-10-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch02-02-ex-6-10-3-1">
+<div class="para">Here <span class="process-math">\(z\)</span> appears on both sides of the equation and is not by itself, so <span class="process-math">\(z\)</span> is given implicitly. Solving for <span class="process-math">\(z\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-10-3-1-4">
+\begin{equation*}
+4z-z = \cos x - e^{\sin x-\cos y} \Rightarrow 3z = \cos x - e^{\sin x-\cos y} \Rightarrow z = \frac{\cos x - e^{\sin x-\cos y}}{3}
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(z\)</span> can be written explicitly.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-10-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.2.20.2"><a tabindex="-1" href="#example-ch02-02-ex-6-10-3" title="Copy heading and permalink for Solution 2.2.20.2" aria-label="Copy heading and permalink for Solution 2.2.20.2">🔗</a></div>
+</div></details>
+<details id="example-ch02-02-ex-6-10-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch02-02-ex-6-10-4-1">
+<div class="para">Again <span class="process-math">\(z\)</span> is given implicitly. Attempting to solve for <span class="process-math">\(z\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-ch02-02-ex-6-10-4-1-3">
+\begin{equation*}
+z^4 = \log x - 3y^2 \Rightarrow z = \pm\sqrt[4]{\log x - 3y^2}
+\end{equation*}
+</div>
+<div class="para">It is not possible to write <span class="process-math">\(z\)</span> explicitly as a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{:}\)</span> because of the <span class="process-math">\(\pm\text{,}\)</span> every input <span class="process-math">\((x,y)\)</span> with <span class="process-math">\(\log x - 3y^2 \gt 0\)</span> corresponds to two different values of <span class="process-math">\(z\text{,}\)</span> so <span class="process-math">\(z\)</span> is not uniquely determined by <span class="process-math">\((x,y)\)</span> and is therefore not a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch02-02-ex-6-10-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.2.20.3"><a tabindex="-1" href="#example-ch02-02-ex-6-10-4" title="Copy heading and permalink for Solution 2.2.20.3" aria-label="Copy heading and permalink for Solution 2.2.20.3">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.2.20"><a tabindex="-1" href="#example-ch02-02-ex-6-10" title="Copy heading and permalink for Example 2.2.20" aria-label="Copy heading and permalink for Example 2.2.20">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Section 2.2: Scalar-Valued Functions"><a tabindex="-1" href="#sec-ch02-02-ScalarValuedFunctions" title="Copy heading and permalink for Section 2.2: Scalar-Valued Functions" aria-label="Copy heading and permalink for Section 2.2: Scalar-Valued Functions">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-ch02-01-VectorValuedFunctions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-03-DerivativesOfVectorAndScalarValuedFunctions.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
