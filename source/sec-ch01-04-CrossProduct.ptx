@@ -152,7 +152,7 @@
         <sbsgroup>
           <sidebyside widths="45% 45%" margins="auto" valign="middle">
             <figure xml:id="fig-ch01-04-ex-4-1a">
-              <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3.</caption>
+              <caption>Pair of vectors u and v in the xy-plane for case a. The angle from u to v is 3 pi over 4.</caption>
               <interactive xml:id="interactive-ch01-04-ex-4-1a" width="85%" aspect="4:3" desmos="vt5wf6hrh7">
                 <!--<instructions>
                   <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
@@ -170,7 +170,7 @@
             </figure>
 
             <figure xml:id="fig-ch01-04-ex-4-1b">
-              <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3-2.</caption>
+              <caption>Pair of vectors u and v in the xy-plane for case b. The angle from u to v is 13 pi over 12.</caption>
               <interactive xml:id="interactive-ch01-04-ex-4-1b" width="85%" aspect="4:3" desmos="iz99n4chok">
                 <!--<instructions>
                   <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
@@ -190,7 +190,7 @@
 
           <sidebyside widths="45% 45%" margins="auto" valign="middle">
             <figure xml:id="fig-ch01-04-ex-4-1c">
-              <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3-3.</caption>
+              <caption>Pair of vectors u and v in the xy-plane for case c. The angle from u to v is 5 pi over 4.</caption>
               <interactive xml:id="interactive-ch01-04-ex-4-1c" width="85%" aspect="4:3" desmos="6afpkg7emn">
                 <!--<instructions>
                   <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
@@ -208,7 +208,7 @@
             </figure>
 
             <figure xml:id="fig-ch01-04-ex-4-1d">
-              <caption>This interactive is PENDING, it should correspond to 2025_08_04_6cd67e91fafb048556b2g-3-1.</caption>
+              <caption>Pair of vectors u and v in the xy-plane for case d. The angle from u to v is 5 pi over 12.</caption>
               <interactive xml:id="interactive-ch01-04-ex-4-1d" width="85%" aspect="4:3" desmos="vaerdn1qjn">
                 <!--<instructions>
                   <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>

@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch03-01-DerivativesVectorValuedFunctions.ptx : converted from
+  "7. Derivatives of Vector-Valued Functions - Solutions.tex" by the bbeaccess-pretext
+  skill (2026-09-13). Fragment for xi:include into
+  ch-03-DerivativesOfVectorAndScalarValuedFunctions.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch03-01 (first section of a new chapter 3) on your instruction.
+     (File first created as ...DerivativesVectirValuedFunctions, the spelling in your
+     message; you renamed it to ...Vector... on 2026-09-13 and the xml:id follows.)
+     CAPTION RULE (your instruction, 2026-09-13): every figure's <caption> is exactly
+     its image's <shortdescription>, which is the .tex alt text verbatim; the
+     <description> is the same text with the mathematics set in <m>. The "PENDING,
+     should correspond to ..." sentence moved into an XML comment after the caption.
+     Exception (your correction, same day): a plain figure (no <static>) whose .tex
+     image carries an attribution keeps the attribution as its caption (item 4).
+  2. The chapter file ch-03-DerivativesOfVectorAndScalarValuedFunctions.ptx is new; its
+     title "3. Derivatives of Vector and Scalar Valued Functions" and one-sentence
+     introduction are my wording (mirroring chapter 2's name, on the guess that lecture
+     files 8-11 will join it). Edit freely.
+  3. Known interactive (CalcPlot3D link in the .tex): fig-ch03-01-tangent-vectors (the
+     "graph" link in the sentence "Below is the graph of r(t)=..."); the word "graph"
+     is plain prose here, its link lives in the interactive and its <url>.
+     PENDING (placeholder Desmos graph vqavop8m24): 2025_09_10_1e5944898def0022a5afg-6.png
+     (Example 7.4, the curve of <sqrt(t), ln(t)>; a 2D picture, Desmos can do it).
+  4. Other-book image, plain captioned figure with no interactive:
+     fig-ch03-01-secant-vectors (...5afg-2.jpg, caption "From LibreTexts: Calculus,
+     Section 12.2", the .tex caption verbatim). This file is .jpg on disk; the other
+     two are .png.
+  5. "Example 7.1" + "[Continuation of 7.1]" merged into ONE <example> (parts (a) and (b)
+     as paragraphs of one statement, one <solution> per box); likewise "Example 7.5" +
+     "[Continuation of 7.5]" (parts (a), (b), (c); three <solution>s). ptx_check
+     therefore reports 8 examples in the .tex vs 6 here.
+  6. Examples 7.1, 7.2, 7.4, 7.5: the hand-typed "(a)"/"(b)"/"(c)" parts stay as
+     separate <p>s with their literal labels plus one <solution> per box (Solution
+     1/2/3), the house practice; <task>s not used unasked. The bare "(a)" / "(b)" lines
+     that precede the two solution boxes of Example 7.4 are dropped (the labels already
+     sit on the question parts).
+  7. Figure placement: Example 7.4's picture stays in the <statement> at the position it
+     has in the .tex (after part (b), before the solutions). The figure-eight picture
+     and the LibreTexts figure are section-level figures where the .tex has them.
+  8. \mathbf{r}, \mathbf{u}, \mathbf{v}, \mathbf{T}, \mathbf{c} to \vec{...}
+     (\mathbf{r}^{\prime} to \vec{r}^{\prime}, \mathbf{r}' to \vec{r}'); \mathbf{i},
+     \mathbf{k} to \vec{i}, \vec{k} (dotless \vec{\imath} is the alternative).
+     The Constant Rule display writes \mathrm{c} (upright, not bold) while the sentence
+     after it says \mathbf{c}: \mathrm{c} kept verbatim, \mathbf{c} became \vec{c}.
+     Everything else byte-for-byte.
+  9. Typeset <description>s are the conversion's own text; review. The alt text of the
+     figure-eight picture spells out the components; set as
+     \vec{r}(t)=\langle 3\cos(t), 5\cos(t/2), \sin(t)\rangle.
+ 10. Template width constants replace the .tex widths (width=0.3\textwidth, max
+     width=0.9\textwidth, width=12cm height=5cm).
+ 11. Relative references left as prose: "Following the note above" (Example 7.3),
+     "the derivative from part (a)" (Example 7.1).
+ 12. Source quirks preserved: the note title "Notation for the Chain Rule:" keeps its
+     trailing colon; "( a, b )" spacing in the Computational Definition; "$t$ 's";
+     "travelling"/"traveling" both occur (UK/US) and are kept; the quoted words
+     "secant" and "take the derivative ... with f(t)." are <q>s; the double hyphen in Example 7.6
+     is an <ndash/>.
+ 13. Commented-out .tex material kept as XML comments where it stood: %\section*{
+     Mathematica Slide.}, %\section*{Computational Definition of the Derivative}
+     (candidate split point, not split on), "%Graph of r(t)=<sqrt t, t^2/6> for
+     0<t<=2, and r'(1)" and "%Knowledge Check." after Example 7.4.
+ 14. Every \newpage/\vspace, the figure[H]/center wrappers, \captionsetup and \\
+     dropped.
+-->
+
+<section xml:id="sec-ch03-01-DerivativesVectorValuedFunctions" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Derivatives of Vector-Valued Functions</title>
+
+  <note>
+    <p>
+      Given a vector-valued function
+      <m>\vec{r}(t)=\langle f(t), g(t), h(t)\rangle</m>, we learned that for
+      a specific <m>t</m> value <m>t_{0}, \vec{r}\left(t_{0}\right)</m>
+      tells you the location of a particle travelling along the graph of
+      <m>\vec{r}(t)</m> at time <m>t_{0}</m>.
+    </p>
+
+    <p>
+      What if we want to know how fast and in what direction is the particle
+      travelling at a given time? We can answer these questions using
+      differentiation.
+    </p>
+  </note>
+
+  <definition>
+    <title>Theoretical Definition of the Derivative</title>
+
+    <statement>
+      <p>
+        Given a vector-valued function
+        <m>\vec{r}(t)=\langle f(t), g(t), h(t)\rangle</m>, defined on some
+        open interval, its derivative at <m>t=t_{0}</m> is defined as
+        <md>
+          \vec{r}^{\prime}\left(t_{0}\right)=\lim _{\Delta t \rightarrow 0} \frac{\vec{r}\left(t_{0}+\Delta t\right)-\vec{r}\left(t_{0}\right)}{\Delta t}
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <remark>
+    <p>
+      <ul>
+        <li>
+          <p>
+            Since <m>\vec{r}^{\prime}\left(t_{0}\right)</m> is defined as a
+            limit, it might not exist.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            To evaluate a limit of a vector-valued function, you evaluate the
+            limit in each component.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch03-01-ex-7-1">
+    <statement>
+      <p>
+        Given the function
+        <m>\vec{r}(t)=\left\langle t^{3}-1, t+2\right\rangle</m> find:
+      </p>
+
+      <p>(a) <m>\vec{r}^{\prime}(t)</m>.</p>
+
+      <p>(b) <m>\vec{r}^{\prime}(1)</m>.</p>
+    </statement>
+
+    <solution>
+      <p>
+        We use the definition of the derivative, evaluating the limit in each
+        component:
+        <md>
+          \vec{r}'(t) = \lim_{\Delta t \to 0} \frac{\vec{r}(t+\Delta t)-\vec{r}(t)}{\Delta t} = \lim_{\Delta t \to 0} \frac{\left\langle (t+\Delta t)^3-1, (t+\Delta t)+2 \right\rangle - \left\langle t^3-1, t+2 \right\rangle}{\Delta t}
+        </md>
+        In the first component, expanding
+        <m>(t+\Delta t)^3 = t^3+3t^2\Delta t+3t\Delta t^2+\Delta t^3</m>:
+        <md alignment="gather">
+          <mrow>\lim_{\Delta t \to 0} \frac{\left( (t+\Delta t)^3-1 \right)-\left( t^3-1 \right)}{\Delta t} = \lim_{\Delta t \to 0} \frac{3t^2\Delta t+3t\Delta t^2+\Delta t^3}{\Delta t}</mrow>
+          <mrow>= \lim_{\Delta t \to 0} \left( 3t^2+3t\Delta t+\Delta t^2 \right) = 3t^2</mrow>
+        </md>
+        In the second component:
+        <md>
+          \lim_{\Delta t \to 0} \frac{\left( (t+\Delta t)+2 \right)-\left( t+2 \right)}{\Delta t} = \lim_{\Delta t \to 0} \frac{\Delta t}{\Delta t} = 1
+        </md>
+        Hence <m>\vec{r}'(t) = \left\langle 3t^2, 1 \right\rangle</m>.
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Evaluating the derivative from part (a) at <m>t=1</m>:
+        <md>
+          \vec{r}'(1) = \left\langle 3(1)^2, 1 \right\rangle = \langle 3,1 \rangle
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      In Calculus I, <m>f^{\prime}(x)</m> represents (geometrically) a limit
+      of secant lines approaching a tangent line. Similarly,
+      <m>\vec{r}^{\prime}(t)</m> represents (geometrically) a limit of
+      <q>secant</q> vectors approaching a tangent vector.
+    </p>
+  </remark>
+
+  <figure xml:id="fig-ch03-01-secant-vectors">
+    <caption>From LibreTexts: Calculus, Section 12.2</caption>
+
+    <image source="/images/2025_09_10_1e5944898def0022a5afg-2.jpg" width="50%">
+      <shortdescription>A curve in xyz-space with two position vectors drawn from the origin to points on the curve: vector r of t, and vector r of, t plus delta t, at a point further along the curve.</shortdescription>
+      <description>
+        <p>A curve in <m>xyz</m>-space with two position vectors drawn from the origin to points on the curve: <m>\vec{r}(t)</m>, and <m>\vec{r}(t+\Delta t)</m>, at a point further along the curve.</p>
+      </description>
+    </image>
+  </figure>
+
+  <!--\section*{Mathematica Slide.}-->
+  <!--\section*{Computational Definition of the Derivative}-->
+
+  <definition>
+    <title>Computational Definition of the Derivative</title>
+
+    <statement>
+      <p>
+        Consider a vector-valued function
+        <m>\vec{r}(t)=\langle f(t), g(t), h(t)\rangle</m>. If <m>f, g</m>,
+        and <m>h</m> are all differentiable on the <m>t</m>-interval
+        ( <m>a, b</m> ), then <m>\vec{r}(t)</m> is differentiable on the
+        <m>t</m>-interval ( <m>a, b</m> ), and its derivative is given by
+        the vector-valued function
+        <md>
+          \vec{r}^{\prime}(t)=\left\langle f^{\prime}(t), g^{\prime}(t), h^{\prime}(t)\right\rangle
+        </md>.
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch03-01-ex-7-2">
+    <statement>
+      <p>
+        Let
+        <m>\vec{r}(t)=\left\langle\ln \left(\frac{2t^2}{\pi}-1\right), \frac{t^{3}}{3\pi}, \cos (t+3\pi)\right\rangle</m>.
+      </p>
+
+      <p>(a) On what interval is <m>\vec{r}(t)</m> differentiable?</p>
+
+      <p>(b) Compute <m>\vec{r}^{\prime}(\pi)</m>.</p>
+    </statement>
+
+    <solution>
+      <p>
+        By the computational definition, <m>\vec{r}(t)</m> is differentiable
+        wherever all three components are differentiable. The components
+        <m>\frac{t^3}{3\pi}</m> and <m>\cos(t+3\pi)</m> are differentiable
+        for every <m>t</m>. The component
+        <m>\ln\left( \frac{2t^2}{\pi}-1 \right)</m> is defined and
+        differentiable when the input of the logarithm is positive:
+        <md>
+          \frac{2t^2}{\pi}-1 \gt 0 \Rightarrow t^2 \gt \frac{\pi}{2} \Rightarrow t \lt -\sqrt{\frac{\pi}{2}} \ \text{ or } \ t \gt \sqrt{\frac{\pi}{2}}
+        </md>
+        Hence <m>\vec{r}(t)</m> is differentiable on the intervals
+        <m>\left( -\infty, -\sqrt{\frac{\pi}{2}} \right)</m> and
+        <m>\left( \sqrt{\frac{\pi}{2}}, \infty \right)</m>.
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Differentiating each component (using the single-variable chain rule
+        in the first and third):
+        <md>
+          \vec{r}'(t) = \left\langle \frac{\frac{4t}{\pi}}{\frac{2t^2}{\pi}-1}, \frac{t^2}{\pi}, -\sin(t+3\pi) \right\rangle = \left\langle \frac{4t}{2t^2-\pi}, \frac{t^2}{\pi}, -\sin(t+3\pi) \right\rangle
+        </md>
+        Since <m>\pi \gt \sqrt{\frac{\pi}{2}}</m>, the function is
+        differentiable at <m>t=\pi</m>, and we can evaluate:
+        <md>
+          \vec{r}'(\pi) = \left\langle \frac{4\pi}{2\pi^2-\pi}, \frac{\pi^2}{\pi}, -\sin(4\pi) \right\rangle = \left\langle \frac{4}{2\pi-1}, \pi, 0 \right\rangle
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <title>Properties of Derivatives of Vector-Valued Functions</title>
+
+    <p>
+      Let <m>\vec{u}(t)</m> and <m>\vec{v}(t)</m> be differentiable
+      vector-valued functions and let <m>f(t)</m> be a differentiable
+      scalar-valued function, all at the input <m>t</m>. Then
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p>
+            Constant Rule:
+            <md>
+              \frac{d}{d t}(\mathrm{c})=0
+            </md>
+            for any constant vector <m>\vec{c}</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Sum Rule:
+            <md>
+              \frac{d}{d t}(\vec{u}(t)+\vec{v}(t))=\vec{u}^{\prime}(t)+\vec{v}^{\prime}(t)
+            </md>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Chain Rule:
+            <md>
+              \frac{d}{d t}[\vec{u}(f(t))]=\vec{u}^{\prime}(f(t)) f^{\prime}(t)
+            </md>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Dot Product Rule:
+            <md>
+              \frac{d}{d t}(\vec{u}(t) \cdot \vec{v}(t))=\vec{u}^{\prime}(t) \cdot \vec{v}(t)+\vec{u}(t) \cdot \vec{v}^{\prime}(t)
+            </md>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Cross Product Rule:
+            <md>
+              \frac{d}{d t}(\vec{u}(t) \times \vec{v}(t))=\vec{u}^{\prime}(t) \times \vec{v}(t)+\vec{u}(t) \times \vec{v}^{\prime}(t)
+            </md>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </remark>
+
+  <note>
+    <title>Notation for the Chain Rule:</title>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            When evaluating a derivative of the form
+            <m>\frac{d}{d t}[\vec{u}(f(t))]</m>, if <m>f(t) \neq t</m>, then
+            <m>\frac{d}{d t}[\vec{u}(f(t))] \neq \vec{u}^{\prime}(f(t))</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>f(t) \neq t</m>, interpret <m>\vec{u}^{\prime}(f(t))</m>
+            as <q>take the derivative of <m>\vec{u}</m> with respect to
+            <m>t</m>, then replace all <m>t</m> 's with <m>f(t)</m>.</q>
+          </p>
+        </li>
+      </ul>
+    </p>
+  </note>
+
+  <example xml:id="example-ch03-01-ex-7-3">
+    <statement>
+      <p>
+        Given <m>\vec{u}(t)= (t^{2}+3t+1 )\vec{i}-e^{2t} \vec{k}</m>, compute
+        <m>\frac{d}{d t}\left[\vec{u}\left(t^{3}\right)\right]</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We use the Chain Rule
+        <m>\frac{d}{dt}\left[ \vec{u}(f(t)) \right] = \vec{u}'(f(t))f'(t)</m>
+        with <m>f(t) = t^3</m>. First,
+        <md>
+          \vec{u}'(t) = (2t+3)\vec{i} - 2e^{2t}\vec{k}
+        </md>
+        Following the note above, <m>\vec{u}'(t^3)</m> means we replace all
+        <m>t</m>'s in <m>\vec{u}'(t)</m> with <m>t^3</m>:
+        <md>
+          \vec{u}'(t^3) = (2t^3+3)\vec{i} - 2e^{2t^3}\vec{k}
+        </md>
+        Since <m>f'(t) = 3t^2</m>, the Chain Rule gives
+        <md>
+          \frac{d}{dt}\left[ \vec{u}(t^3) \right] = \left( (2t^3+3)\vec{i} - 2e^{2t^3}\vec{k} \right) 3t^2 = (6t^5+9t^2)\vec{i} - 6t^2e^{2t^3}\vec{k}
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <definition>
+    <statement>
+      <p>
+        Given a curve <m>\vec{r}(t)=\langle f(t), g(t), h(t)\rangle</m>, the
+        vector <m>\vec{r}^{\prime}\left(t_{0}\right)</m> is called the
+        tangent vector to the curve at <m>t=t_{0}</m>, and is usually plotted
+        with starting point at
+        <m>\left(f\left(t_{0}\right), g\left(t_{0}\right), h\left(t_{0}\right)\right)</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Below is the graph of
+    <m>\vec{r}(t)=\left\langle 3\cos (t), 5\cos\left(\frac{t}{2}\right), \sin (t)\right\rangle, 0 \leq t \leq 4\pi</m>,
+    with <m>\vec{r}^{\prime}(t)</m> plotted every <m>\frac{\pi}{2}</m> units
+    of time.
+  </p>
+
+  <figure xml:id="fig-ch03-01-tangent-vectors">
+    <caption>The position vector r of t with coordinates x = 3 cosine of t, y = 5 cosine of t over 2, z = sine of t, tracing a figure eight, with a tangent vector shown at a point on the curve.</caption>
+    <interactive xml:id="interactive-ch03-01-tangent-vectors" variant="controls" width="90%" aspect="3:2"
+      calcplot3d="type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=3%20cos(t);y=5%20cos(t/2);z=sin(t);visible=true;width=2;view=0;tmin=-10;tmax=10;tsteps=500;color=rgb(30,136,229);showtrace=false;tval=2.2799999999999994;constcol=false;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=true;acc=true;veceqs=true;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=false;tanline=false;dropcurtain=false;showtvector=true;shownvector=true;showbvector=false;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=vector;vector=%3C-3%20sin(0),%20-5/2%20sin(0/2),%20cos(0)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(0),5cos(0/2),sin(0));dashed=false&amp;type=vector;vector=%3C-3%20sin(pi/2),%20-5/2%20sin(pi/2/2),%20cos(pi/2)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(pi/2),5cos(pi/2/2),sin(pi/2));dashed=false&amp;type=vector;vector=%3C-3%20sin(pi),%20-5/2%20sin(pi/2),%20cos(pi)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(pi),5cos(pi/2),sin(pi));dashed=false&amp;type=vector;vector=%3C-3%20sin(3pi/2),%20-5/2%20sin(3pi/2/2),%20cos(3pi/2)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(3pi/2),5cos(3pi/2/2),sin(3pi/2));dashed=false&amp;type=vector;vector=%3C-3%20sin(4pi/2),%20-5/2%20sin(4pi/2/2),%20cos(4pi/2)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(4pi/2),5cos(4pi/2/2),sin(4pi/2));dashed=false&amp;type=vector;vector=%3C-3%20sin(5pi/2),%20-5/2%20sin(5pi/2/2),%20cos(5pi/2)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(5pi/2),5cos(5pi/2/2),sin(5pi/2));dashed=false&amp;type=vector;vector=%3C-3%20sin(6pi/2),%20-5/2%20sin(6pi/2/2),%20cos(6pi/2)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(6pi/2),5cos(6pi/2/2),sin(6pi/2));dashed=false&amp;type=vector;vector=%3C-3%20sin(7pi/2),%20-5/2%20sin(7pi/2/2),%20cos(7pi/2)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(7pi/2),5cos(7pi/2/2),sin(7pi/2));dashed=undefined&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=-15.835439836713848,9.898523899187973,7.159474128384735,1;focus=0,0,0,1;up=0.432779588738574,-0.16047775891828026,0.8871013000012102,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-4;xmax=4;ymin=-4;ymax=4;zmin=-4;zmax=4;xscale=2;yscale=2;zscale=2;zcmin=-8;zcmax=8;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.737">
+      <instructions>
+        <p>
+          Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=3%20cos(t);y=5%20cos(t/2);z=sin(t);visible=true;width=2;view=0;tmin=-10;tmax=10;tsteps=500;color=rgb(30,136,229);showtrace=false;tval=2.2799999999999994;constcol=false;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=true;acc=true;veceqs=true;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=false;tanline=false;dropcurtain=false;showtvector=true;shownvector=true;showbvector=false;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=vector;vector=%3C-3%20sin(0),%20-5/2%20sin(0/2),%20cos(0)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(0),5cos(0/2),sin(0));dashed=false&amp;type=vector;vector=%3C-3%20sin(pi/2),%20-5/2%20sin(pi/2/2),%20cos(pi/2)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(pi/2),5cos(pi/2/2),sin(pi/2));dashed=false&amp;type=vector;vector=%3C-3%20sin(pi),%20-5/2%20sin(pi/2),%20cos(pi)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(pi),5cos(pi/2),sin(pi));dashed=false&amp;type=vector;vector=%3C-3%20sin(3pi/2),%20-5/2%20sin(3pi/2/2),%20cos(3pi/2)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(3pi/2),5cos(3pi/2/2),sin(3pi/2));dashed=false&amp;type=vector;vector=%3C-3%20sin(4pi/2),%20-5/2%20sin(4pi/2/2),%20cos(4pi/2)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(4pi/2),5cos(4pi/2/2),sin(4pi/2));dashed=false&amp;type=vector;vector=%3C-3%20sin(5pi/2),%20-5/2%20sin(5pi/2/2),%20cos(5pi/2)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(5pi/2),5cos(5pi/2/2),sin(5pi/2));dashed=false&amp;type=vector;vector=%3C-3%20sin(6pi/2),%20-5/2%20sin(6pi/2/2),%20cos(6pi/2)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(6pi/2),5cos(6pi/2/2),sin(6pi/2));dashed=false&amp;type=vector;vector=%3C-3%20sin(7pi/2),%20-5/2%20sin(7pi/2/2),%20cos(7pi/2)%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(3cos(7pi/2),5cos(7pi/2/2),sin(7pi/2));dashed=undefined&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=-15.835439836713848,9.898523899187973,7.159474128384735,1;focus=0,0,0,1;up=0.432779588738574,-0.16047775891828026,0.8871013000012102,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-4;xmax=4;ymin=-4;ymax=4;zmin=-4;zmax=4;xscale=2;yscale=2;zscale=2;zcmin=-8;zcmax=8;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.737" target="_blank" rel="noopener noreferrer">link to the plot</url>
+        </p>
+      </instructions>
+      <static>
+        <image source="/images/2025_09_10_1e5944898def0022a5afg-5.png">
+          <shortdescription>The position vector r of t with coordinates x = 3 cosine of t, y = 5 cosine of t over 2, z = sine of t, tracing a figure eight, with a tangent vector shown at a point on the curve.</shortdescription>
+          <description>
+            <p>The position vector <m>\vec{r}(t)=\left\langle 3\cos (t), 5\cos\left(\frac{t}{2}\right), \sin (t)\right\rangle</m>, tracing a figure eight, with a tangent vector shown at a point on the curve.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <definition>
+    <statement>
+      <p>
+        We define the unit tangent vector to the graph of <m>\vec{r}(t)</m>
+        at <m>t=t_{0}</m> as
+        <md>
+          \vec{T}\left(t_{0}\right)=\frac{\vec{r}^{\prime}\left(t_{0}\right)}{\left|\vec{r}^{\prime}\left(t_{0}\right)\right|}, \quad\left|\vec{r}^{\prime}\left(t_{0}\right)\right| \neq 0
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch03-01-ex-7-4">
+    <statement>
+      <p>
+        Given <m>\vec{r}(t)=\left\langle\sqrt{t}, \ln (t)\right\rangle, t \gt 0</m>,
+        find:
+      </p>
+
+      <p>
+        (a) The tangent vector to the graph of <m>\vec{r}(t)</m> at the
+        point <m>\left(1, 0\right)</m>.
+      </p>
+
+      <p>
+        (b) The unit tangent vector to the graph of <m>\vec{r}(t)</m> for
+        arbitrary <m>t</m>.
+      </p>
+
+      <figure xml:id="fig-ch03-01-ex-7-4">
+        <caption>The curve traced by the vector r of t with coordinates x = the square root of t, y = the natural log of t.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_10_1e5944898def0022a5afg-6. -->
+        <interactive xml:id="interactive-ch03-01-ex-7-4" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_09_10_1e5944898def0022a5afg-6.png">
+              <shortdescription>The curve traced by the vector r of t with coordinates x = the square root of t, y = the natural log of t.</shortdescription>
+              <description>
+                <p>The curve traced by the vector <m>\vec{r}(t)=\left\langle\sqrt{t}, \ln (t)\right\rangle</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        First we find the <m>t</m>-value corresponding to the point
+        <m>(1,0)</m>: we need <m>\sqrt{t} = 1</m> and <m>\ln(t) = 0</m>,
+        and both equations give <m>t=1</m>. Differentiating componentwise:
+        <md>
+          \vec{r}'(t) = \left\langle \frac{1}{2\sqrt{t}}, \frac{1}{t} \right\rangle
+        </md>
+        so the tangent vector at the point <m>(1,0)</m> is
+        <md>
+          \vec{r}'(1) = \left\langle \frac{1}{2}, 1 \right\rangle
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        For <m>t \gt 0</m> the magnitude of <m>\vec{r}'(t)</m> is
+        <md>
+          |\vec{r}'(t)| = \sqrt{\left( \frac{1}{2\sqrt{t}} \right)^2+\left( \frac{1}{t} \right)^2} = \sqrt{\frac{1}{4t}+\frac{1}{t^2}} = \sqrt{\frac{t+4}{4t^2}} = \frac{\sqrt{t+4}}{2t}
+        </md>
+        Hence the unit tangent vector is
+        <md>
+          \vec{T}(t) = \frac{\vec{r}'(t)}{|\vec{r}'(t)|} = \frac{2t}{\sqrt{t+4}}\left\langle \frac{1}{2\sqrt{t}}, \frac{1}{t} \right\rangle = \left\langle \frac{\sqrt{t}}{\sqrt{t+4}}, \frac{2}{\sqrt{t+4}} \right\rangle
+        </md>
+        As a check,
+        <m>|\vec{T}(t)|^2 = \frac{t}{t+4}+\frac{4}{t+4} = 1</m>, so
+        <m>\vec{T}(t)</m> is indeed a unit vector.
+      </p>
+    </solution>
+  </example>
+
+  <!--Graph of $\mathbf{r}(t)=\left\langle\sqrt{t}, \frac{t^{2}}{6}\right\rangle$ for $0<t \leq 2$, and $\mathbf{r}^{\prime}(1)$-->
+  <!--Knowledge Check.-->
+
+  <note>
+    <title>Velocity and Acceleration Vectors</title>
+
+    <p>
+      Given a differentiable curve <m>\vec{r}(t)</m>, the vector
+      <m>\vec{r}^{\prime}(t)</m> has an important physical interpretation:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            <m>\left|\vec{r}^{\prime}\left(t_{0}\right)\right|</m> gives the
+            speed of a particle traveling on <m>\vec{r}(t)</m> at
+            <m>t=t_{0}</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\frac{\vec{r}^{\prime}\left(t_{0}\right)}{\left|\vec{r}^{\prime}\left(t_{0}\right)\right|}</m>
+            gives the direction of motion of a particle traveling on
+            <m>\vec{r}(t)</m> at <m>t=t_{0}</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </note>
+
+  <definition>
+    <title>Velocity and Acceleration Vectors</title>
+
+    <statement>
+      <p>
+        Suppose <m>\vec{r}(t)</m> is a twice differentiable function
+        representing the position of a particle at time <m>t</m>. Then
+      </p>
+
+      <p>
+        <ul>
+          <li>
+            <p>
+              <m>\vec{r}^{\prime}(t)</m> is the velocity vector of the
+              particle at time <m>t</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>\vec{r}^{\prime \prime}(t)</m> is the acceleration vector
+              of the particle at time <m>t</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch03-01-ex-7-5">
+    <statement>
+      <p>
+        Suppose that the position of a particle is given by
+        <m>\vec{r}(t)=\langle t^2, \sqrt{t}, \ln (t)\rangle</m>,
+        <m>t \gt 0</m>. Find:
+      </p>
+
+      <p>(a) The velocity vector of the particle at <m>t=1</m>.</p>
+
+      <p>(b) The speed of the particle at <m>t=1</m>.</p>
+
+      <p>(c) The direction of motion of the particle at time <m>t=1</m>.</p>
+    </statement>
+
+    <solution>
+      <p>
+        Differentiating componentwise, the velocity vector at time <m>t</m>
+        is
+        <md>
+          \vec{r}'(t) = \left\langle 2t, \frac{1}{2\sqrt{t}}, \frac{1}{t} \right\rangle
+        </md>
+        so at <m>t=1</m>
+        <md>
+          \vec{r}'(1) = \left\langle 2, \frac{1}{2}, 1 \right\rangle
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        The speed is the magnitude of the velocity vector:
+        <md>
+          |\vec{r}'(1)| = \sqrt{2^2+\left( \frac{1}{2} \right)^2+1^2} = \sqrt{\frac{16}{4}+\frac{1}{4}+\frac{4}{4}} = \sqrt{\frac{21}{4}} = \frac{\sqrt{21}}{2}
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        The direction of motion is the unit vector in the direction of the
+        velocity vector:
+        <md>
+          \frac{\vec{r}'(1)}{|\vec{r}'(1)|} = \frac{2}{\sqrt{21}}\left\langle 2, \frac{1}{2}, 1 \right\rangle = \left\langle \frac{4}{\sqrt{21}}, \frac{1}{\sqrt{21}}, \frac{2}{\sqrt{21}} \right\rangle
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch03-01-ex-7-6">
+    <statement>
+      <p>
+        Using the parametrization of the unit circle
+        <m>\vec{r}(t)=\langle\sin (t), \cos (t)\rangle</m>,
+        <m>0 \leq t \leq 2 \pi</m>, find all points on the unit circle at
+        which its tangent vector is orthogonal to <m>\vec{r}(t)</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The tangent vector is
+        <m>\vec{r}'(t) = \langle \cos(t), -\sin(t) \rangle</m>. Checking
+        orthogonality with the dot product:
+        <md>
+          \vec{r}(t) \cdot \vec{r}'(t) = \sin(t)\cos(t)+\cos(t)\left( -\sin(t) \right) = 0
+        </md>
+        The dot product equals 0 for every value of <m>t</m>, so the tangent
+        vector is orthogonal to <m>\vec{r}(t)</m> at every point of the unit
+        circle. This matches the geometric fact that a tangent line to a
+        circle is always perpendicular to the radius drawn to the point of
+        tangency <ndash/> and here <m>\vec{r}(t)</m> is exactly that radius.
+      </p>
+    </solution>
+  </example>
+
+</section>

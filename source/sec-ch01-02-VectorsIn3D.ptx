@@ -63,7 +63,7 @@
     </p>
 
     <figure xml:id="fig-ch01-02-note-2-1">
-      <caption>This interactive is PENDING, it should correspond to Note 2.1.</caption>
+      <caption>The three dimensional space with the axes x, y, and z.</caption>
       <interactive xml:id="interactive-ch01-02-note-2-1" width="85%" aspect="4:3" desmos="mf8ycttl9c">
         <instructions>
           <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/mf8ycttl9c" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
@@ -224,7 +224,7 @@
         <m>(x, 9, z)</m>.
       </p>
       <figure xml:id="fig-ch01-02-ex-2-1">
-        <caption>This interactive is PENDING, it should correspond to Example 2.1.</caption>
+        <caption>The plane parallel to the x z-plane through the point (1,9,4).</caption>
         <interactive xml:id="interactive-ch01-02-ex-2-1" width="85%" aspect="4:3" desmos="vqavop8m24">
           <instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>

@@ -14,4 +14,6 @@
 
   <!-- include sections -->
   <xi:include href="sec-ch02-01-VectorValuedFunctions.ptx" />
+  <!-- CLAUDE 2026-09-13: section 2.2 (lecture file 6). Delete this line to undo. -->
+  <xi:include href="sec-ch02-02-ScalarValuedFunctions.ptx" />
 </chapter>

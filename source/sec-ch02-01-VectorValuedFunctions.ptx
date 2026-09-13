@@ -100,7 +100,7 @@
 
     <sidebyside widths="30% 30% 30%" margins="auto" valign="middle">
       <figure xml:id="fig-ch02-01-position-vectors-a">
-        <caption><m>\vec{r}\left(t_{0}\right)=\left\langle x\left(t_{0}\right), y\left(t_{0}\right), z\left(t_{0}\right)\right\rangle</m>. This interactive is PENDING, it should correspond to 2025_08_04_3d11211490a50caa278ag-1.</caption>
+        <caption>A point on a curve in xyz-space at time t0 with position vector r(t0). </caption>
         <interactive xml:id="interactive-ch02-01-position-vectors-a" width="85%" aspect="4:3" desmos="vqavop8m24">
           <!--<instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
@@ -118,7 +118,7 @@
       </figure>
 
       <figure xml:id="fig-ch02-01-position-vectors-b">
-        <caption><m>\vec{r}\left(t_{1}\right)=\left\langle x\left(t_{1}\right), y\left(t_{1}\right), z\left(t_{1}\right)\right\rangle</m>. This interactive is PENDING, it should correspond to 2025_08_04_3d11211490a50caa278ag-1-2.</caption>
+        <caption>A point on a curve in xyz-space at time t1 with position vector r(t1).</caption>
         <interactive xml:id="interactive-ch02-01-position-vectors-b" width="85%" aspect="4:3" desmos="vqavop8m24">
           <!--<instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
@@ -136,7 +136,7 @@
       </figure>
 
       <figure xml:id="fig-ch02-01-position-vectors-c">
-        <caption><m>\vec{r}\left(t_{2}\right)=\left\langle x\left(t_{2}\right), y\left(t_{2}\right), z\left(t_{2}\right)\right\rangle</m>. This interactive is PENDING, it should correspond to 2025_08_04_3d11211490a50caa278ag-1-1.</caption>
+        <caption>A point on a curve in xyz-space at time t2 with position vector r(t2).</caption>
         <interactive xml:id="interactive-ch02-01-position-vectors-c" width="85%" aspect="4:3" desmos="vqavop8m24">
           <!--<instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
@@ -244,7 +244,7 @@
     </p>
 
     <figure xml:id="fig-ch02-01-line-segment">
-      <caption>This interactive is PENDING, it should correspond to 2025_08_04_3d11211490a50caa278ag-2-1.</caption>
+      <caption>The line segment traced by the vector r of t with coordinates x = t, y = negative t over 2, plus 1, for t from 0 to 2, in the xy-plane.</caption>
       <interactive xml:id="interactive-ch02-01-line-segment" width="85%" aspect="4:3" desmos="vqavop8m24">
         <instructions>
           <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
@@ -312,7 +312,7 @@
       </p>
 
       <figure xml:id="fig-ch02-01-ex-5-2a">
-        <caption>This interactive is PENDING, it should correspond to Example 5.2-1.</caption>
+        <caption>The unit circle oriented counter-clockwise.</caption>
         <interactive xml:id="interactive-ch02-01-ex-5-2a" width="85%" aspect="4:3" desmos="vqavop8m24">
           <instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
@@ -347,7 +347,7 @@
       </p>
 
       <figure xml:id="fig-ch02-01-ex-5-2b">
-        <caption>This interactive is PENDING, it should correspond to Example 5.2-2.</caption>
+        <caption>The parabola y equals x squared minus one, from x equals -1 to x equals 1, traversed from left to right.</caption>
         <interactive xml:id="interactive-ch02-01-ex-5-2b" width="85%" aspect="4:3" desmos="vqavop8m24">
           <instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
@@ -459,7 +459,7 @@
       </p>
 
       <figure xml:id="fig-ch02-01-ex-5-3">
-        <caption>This interactive is PENDING, it should correspond to Example 5.3.</caption>
+        <caption>The parabola y equals x squared minus 4 x plus three, from x equals 1 to x equals 5, traversed from right to left.</caption>
         <interactive xml:id="interactive-ch02-01-ex-5-3" width="85%" aspect="4:3" desmos="vqavop8m24">
           <instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>

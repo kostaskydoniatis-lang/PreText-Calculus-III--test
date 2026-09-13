@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- CLAUDE 2026-09-13: chapter 3, started from lecture-notes file 7. The chapter title  -->
+<!-- and the one-sentence introduction are Claude's wording (mirroring chapter 2's name, -->
+<!-- on the guess that the partial-derivative lectures will join it); edit freely.       -->
+<!-- To undo: delete this file and its xi:include line in main.ptx.                      -->
+
+<chapter xml:id="ch-03-DerivativesOfVectorAndScalarValuedFunctions" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>3. Derivatives of Vector and Scalar Valued Functions</title>
+
+  <introduction>
+    <p> This chapter introduces differentiation for vector-valued functions, with tangent, velocity and acceleration vectors, and for scalar-valued functions of several variables. </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-ch03-01-DerivativesVectorValuedFunctions.ptx" />
+</chapter>

@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch02-02-ScalarValuedFunctions.ptx : converted from
+  "6. Scalar-Valued Functions - Solutions.tex" by the bbeaccess-pretext skill
+  (2026-09-13). Fragment for xi:include into ch-02-IntroductionVectorandScalarValuedFunctions.ptx;
+  not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch02-02 (second section of chapter 2) on your instruction.
+     CAPTION RULE (your instruction, 2026-09-13): every figure holding one image has as
+     its <caption> exactly the image's <shortdescription>, which is the .tex alt text
+     verbatim; the <description> is the same text with the mathematics set in <m>. The
+     "PENDING, should correspond to ..." sentences therefore moved out of the captions
+     into an XML comment right after each caption. The outer figures of the three
+     side-by-side groups (ex-6-2, level-curve, ex-6-8) hold several images and keep
+     their own one-sentence captions. Exception (your correction, same day): a plain
+     figure (no <static>) whose .tex image carries an attribution keeps the attribution
+     as its caption (the three OpenStax figures, item 5).
+  2. Known interactives (CalcPlot3D links in the .tex): fig-ch02-02-surface-sin (the
+     "(graph)" link in the sentence before the sin(x+y^2) picture), the three panels of
+     fig-ch02-02-ex-6-2 (the "Plane" / "Paraboloid" / "Upper Half of a Sphere with
+     Radius 1" links inside the list items of Example 6.2, which are the same links as
+     the commented-out \caption* lines under the three subfigures), and
+     fig-ch02-02-normal-vector (the "plane" link in the remark before the picture).
+     PENDING (placeholder Desmos graph vqavop8m24): the helix ...f7193d1cc61b1e2c50ebg-01.png
+     (sec-ch02-01 already carries a CalcPlot3D scene of this same helix,
+     fig-ch02-01-ex-5-1; copy it here if you want, I did not), ...g-02-1.png (point on a
+     graph), ...g-02.png (Example 6.1), the two level-curve panels ...g-09.png and
+     ...g-09-1.png, ...g-10.png (Example 6.6), ...g-11.png (Example 6.7), the four
+     option panels ...g-12.png, ...g-12-1.png, ...g-12-3.png, ...g-12-2.png (Example 6.8),
+     ...g-13.png (Example 6.9). All but the Example 6.8 panels are 3D pictures, so the
+     real interactive will probably be CalcPlot3D.
+  3. The "(graph)" after the level-curve sentence is a Desmos 3D link
+     (https://www.desmos.com/3d/vmgur5hd03). PreTeXt's desmos= attribute embeds the 2D
+     calculator, so it is NOT used as the interactive of the two level-curve panels
+     (they stay PENDING); the link is kept in the prose as a <url> instead.
+  4. Image names: the .tex names with "(n)" are the renamed assets/images files with
+     "-n" (...g-01(1) -> ...g-01-1.png, ...g-02(1) -> ...g-02-1.png, ...g-09(1) ->
+     ...g-09-1.jpg, ...g-12(1)/(2)/(3) -> ...g-12-1/-2/-3.png). COLLISION: the Devil's
+     Tower photo ...g-09(1) is ...g-09-1.jpg and the level-curve panel ...g-09-1 is
+     ...g-09-1.png (same stem, different extension); both sources here are correct,
+     ptx_check mis-pairs them in its report. Three files are .jpg on disk (-03, -07,
+     -09-1 Devil's Tower); everything else is .png.
+  5. Other-book images, plain captioned figures with no interactive, caption written
+     "From OpenStax, ..." following your ch01-02 capitalisation (the .tex says
+     "openstax"): fig-ch02-02-domain-range (...g-03.jpg, Section 4.1),
+     fig-ch02-02-intersecting-planes (...g-07.jpg, Section 2.5),
+     fig-ch02-02-devils-tower (...g-09-1.jpg, Section 4.1).
+  6. The CalcPlot3D scene for the plane of Example 6.2 plots z=4x+y+1 while the text
+     has f(x,y)=4x+y-1; copied verbatim from the .tex, not fixed.
+  7. Hyperlinked words: "(graph)" before the sin(x+y^2) picture is dropped (its link is
+     the figure's interactive and <url>); "Plane", "Paraboloid", "Upper Half of a Sphere
+     with Radius 1" (Example 6.2 items) and "plane" (normal-vector remark) are plain
+     prose here, their links live in the corresponding interactives.
+  8. "Example 6.1" + "[Continuation of 6.1]" merged into ONE <example> (statement and
+     picture from the first box, the solution from the continuation). ptx_check
+     therefore reports 11 examples in the .tex vs 10 here.
+  9. Examples 6.2 and 6.10: the numbered parts are an <ol> in the statement plus one
+     <solution> per box (Solution 1/2/3); <task>s not used unasked.
+ 10. The three-panel figure of Example 6.2 (plane / paraboloid / half sphere) sits after
+     the example, where the .tex has it, as one outer figure with a
+     <sidebyside widths="30% 30% 30%">; the outer caption is my wording. The two-panel
+     level-curve figure is likewise one outer figure whose caption is the .tex
+     \caption* ( z = x^2/2 + y^2/4 intersected with z = 2 ). Example 6.8's four option
+     pictures (two rows of two, hand-labelled a b / c d) are one outer figure inside the
+     statement holding an <sbsgroup> with two <sidebyside> rows; PreTeXt sub-labels the
+     panels (a) to (d) itself, so the hand labels are dropped, and the solution's
+     "(a)...(d)" references still line up.
+ 11. Side-by-side interactives follow the fix you made in sec-ch01-01-VectorsIn2D.ptx:
+     each panel's <instructions> block is commented out rather than deleted, and one
+     <p> after the outer figure carries the boilerplate once, with a positional link per
+     panel. For the PENDING panels every link goes to the same placeholder page until
+     the real graph ids land.
+ 12. Figure placement: the pictures of Examples 6.1, 6.6, 6.7 and 6.8 stay in the
+     <statement> (the statement says "shown below" / the solution refers to "the
+     picture above" / "the figures above"). The ellipsoid picture of Example 6.9 sits
+     AFTER the example in the .tex but the solution ends "as shown below", so it is
+     placed at the end of the <solution>; move it after the example if you prefer.
+ 13. Source captions NOT carried (the caption rule above replaces them): "Graph of
+     r(t)=..." (helix), "Graph of f(x,y)=sin(x+y^2)", "A point (x,y,f(x,y)) on the graph
+     of f", "The ellipsoid x^2+2y^2+3z^2=4". ptx_check no longer recognises the PENDING
+     figures (it reads captions); expected.
+ 14. \mathbf{r}, \mathbf{n}, \mathbf{n}_1, \mathbf{n}_2, \mathbf{v} to \vec{...};
+     \overrightarrow{PQ}, \overrightarrow{PR} to \vec{PQ}, \vec{PR}; \mathbf{i},
+     \mathbf{j}, \mathbf{k} to \vec{i}, \vec{j}, \vec{k} (dotless \vec{\imath}/
+     \vec{\jmath} is the alternative). Everything else byte-for-byte.
+ 15. Determinants (Examples 6.3 and 6.5): \begin{matrix} with \\ row separators and
+     \amp column separators, exactly as the .tex. ptx_check flags "\\ inside <mrow>"
+     and "LaTeX environment remnant" for them; false positives (MathJax needs them).
+     ptx_check also reports five CalcPlot3D links "with no matching calcplot3d=
+     interactive" and one "plot string differs": those are the five commented-out
+     \caption*{\href{...}} lines of the .tex (it does not strip indented comments) and
+     a mis-pairing they cause; all five LIVE links are carried verbatim, verified
+     token for token.
+ 16. Typeset <description>s are the conversion's own text; review. The four Example 6.8
+     alt texts have no final period; kept verbatim (no period) in <shortdescription>,
+     <description> and <caption>.
+ 17. Template width constants replace the .tex widths (max width=0.3-0.9\textwidth,
+     subfigure 0.3\textwidth, 12cm).
+ 18. Relative references left as prose: "shown below" (6.1), "as in the picture above"
+     (6.6), "as the picture above shows" (6.7), "Among the figures above" (6.8), "as
+     shown below" (6.9), "given below" (Devil's Tower).
+ 19. Source quirks preserved: "\operatorname{rang}(f)" for the range; "( \mathbb{R}^{2} )"
+     and "( \mathbb{R} )" spacing; "$z=$ $\sqrt{2x^{2}+2y^{2}}$" as two adjacent <m>s
+     (Example 6.6); the Traces definition has no final period; "$z$ ?" spacing (6.8);
+     "Devil's Tower" vs the alt text's "Devils Tower".
+ 20. Commented-out .tex material: %$$ $$ (dropped), the commented figure of ...g-09 with
+     caption "z=4x^2+4y^2 intersected with z=2", the commented figure of ...g-07 with
+     caption "Point (6, 4.5, 8)", the commented figure of ...g-14 with caption
+     "Graph of z^2+y^2=x", and the %\caption*{From openstax, Calculus Volume 3, Section
+     2.2} under the Example 6.2 panels are kept as XML comments where they stood. The
+     commented %\caption*{\href{...}{Plane}} / {Paraboloid} / {Upper Half of a Sphere}
+     lines under the subfigures (and their copies under the level-curve panels, which
+     are copy-paste residue pointing at the Example 6.2 scenes) are not kept.
+ 21. Every \newpage/\vspace/\hspace, the figure[H]/center/subfigure wrappers,
+     \captionsetup and \\ dropped.
+-->
+
+<section xml:id="sec-ch02-02-ScalarValuedFunctions" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Scalar-Valued Functions</title>
+
+  <p>
+    In the section for vector-valued functions, we looked at functions with
+    one input variable and multiple output variables (called curves).
+  </p>
+
+  <figure xml:id="fig-ch02-02-helix">
+    <caption>The helix traced by the vector r of t with coordinates x = cosine of t, y = sine of t, z = t over 10, for t from 0 to 10, a curve in xyz-space.</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-01. -->
+    <interactive xml:id="interactive-ch02-02-helix" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-01.png">
+          <shortdescription>The helix traced by the vector r of t with coordinates x = cosine of t, y = sine of t, z = t over 10, for t from 0 to 10, a curve in xyz-space.</shortdescription>
+          <description>
+            <p>The helix traced by the vector <m>\vec{r}(t)=\left\langle\cos (t), \sin (t), \frac{t}{10}\right\rangle</m>, for <m>t</m> from 0 to 10, a curve in <m>xyz</m>-space.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <p>
+    In this section, we will look at functions of the form <m>f(x, y)=z</m>,
+    having two input variables and one output variable (called surfaces).
+  </p>
+
+  <figure xml:id="fig-ch02-02-surface-sin">
+    <caption>The surface z equals the sine of, x plus y squared, in xyz-space.</caption>
+    <interactive xml:id="interactive-ch02-02-surface-sin" variant="controls" width="90%" aspect="3:2"
+      calcplot3d="type=z;z=sin(x+y%5E2);funname=f;visible=true;umin=-4;umax=4;vmin=-4;vmax=4;grid=100;format=normal;alpha=-1;hidemyedges=true;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=-16.066827977112176,5.97346647927092,10.304112624331555,1;focus=0,0,0,1;up=0.29319095656853217,-0.39797438587643064,0.8692844477918069,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-4;xmax=4;ymin=-4;ymax=4;zmin=-4;zmax=4;xscale=2;yscale=2;zscale=2;zcmin=-8;zcmax=8;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.35">
+      <instructions>
+        <p>
+          Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=z;z=sin(x+y%5E2);funname=f;visible=true;umin=-4;umax=4;vmin=-4;vmax=4;grid=100;format=normal;alpha=-1;hidemyedges=true;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=-16.066827977112176,5.97346647927092,10.304112624331555,1;focus=0,0,0,1;up=0.29319095656853217,-0.39797438587643064,0.8692844477918069,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-4;xmax=4;ymin=-4;ymax=4;zmin=-4;zmax=4;xscale=2;yscale=2;zscale=2;zcmin=-8;zcmax=8;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.35" target="_blank" rel="noopener noreferrer">link to the plot</url>
+        </p>
+      </instructions>
+      <static>
+        <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-01-1.png">
+          <shortdescription>The surface z equals the sine of, x plus y squared, in xyz-space.</shortdescription>
+          <description>
+            <p>The surface <m>z=\sin \left(x+y^2\right)</m>, in <m>xyz</m>-space.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <p>
+    The outputs of vector-valued functions were vectors. The outputs of
+    scalar-valued functions are scalars (numbers).
+  </p>
+
+  <definition>
+    <title>Scalar-Valued Functions</title>
+
+    <statement>
+      <p>
+        A scalar-valued function of the form <m>z=f(x, y)</m> is a function
+        whose domain (set of inputs) is a subset of the <m>x y</m>-plane
+        ( <m>\mathbb{R}^{2}</m> ) and whose range (set of outputs) is a subset
+        of the real line ( <m>\mathbb{R}</m> ).
+      </p>
+
+      <p>
+        The graph of <m>f</m> is called a surface and consists of all points
+        ( <m>x, y, f(x, y)</m> ) where <m>(x, y)</m> is in the domain of
+        <m>f</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <figure xml:id="fig-ch02-02-point-on-graph">
+    <caption>A point (x, y, f(x,y)) on the graph of a scalar-valued function f.</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-02-1. -->
+    <interactive xml:id="interactive-ch02-02-point-on-graph" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-02-1.png">
+          <shortdescription>A point (x, y, f(x,y)) on the graph of a scalar-valued function f.</shortdescription>
+          <description>
+            <p>A point <m>(x, y, f(x,y))</m> on the graph of a scalar-valued function <m>f</m>.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <example xml:id="example-ch02-02-ex-6-1">
+    <statement>
+      <p>
+        Consider the graph of <m>f(x, y)=y^{2}-x^{2}</m> shown below.
+        Determine whether the points
+        <m>\left(\frac{1}{2}, \frac{1}{4},-\frac{3}{16}\right)</m> and
+        <m>\left(-1, \frac{1}{3}, 2\right)</m> lie on the graph of <m>f</m>.
+      </p>
+
+      <figure xml:id="fig-ch02-02-ex-6-1">
+        <caption>The graph of f of x and y equals y squared minus x squared, as a surface in xyz-space.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-02. -->
+        <interactive xml:id="interactive-ch02-02-ex-6-1" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-02.png">
+              <shortdescription>The graph of f of x and y equals y squared minus x squared, as a surface in xyz-space.</shortdescription>
+              <description>
+                <p>The graph of <m>f(x, y)=y^{2}-x^{2}</m>, as a surface in <m>xyz</m>-space.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        A point <m>(x_0, y_0, z_0)</m> lies on the graph of <m>f</m> exactly
+        when <m>z_0 = f(x_0, y_0)</m>. For the first point:
+        <md>
+          f\left( \frac{1}{2}, \frac{1}{4} \right) = \left( \frac{1}{4} \right)^2 - \left( \frac{1}{2} \right)^2 = \frac{1}{16}-\frac{4}{16} = -\frac{3}{16}
+        </md>
+        which matches the third coordinate, so
+        <m>\left(\frac{1}{2}, \frac{1}{4},-\frac{3}{16}\right)</m> lies on
+        the graph of <m>f</m>. For the second point:
+        <md>
+          f\left( -1, \frac{1}{3} \right) = \left( \frac{1}{3} \right)^2 - (-1)^2 = \frac{1}{9}-1 = -\frac{8}{9} \neq 2
+        </md>
+        so <m>\left(-1, \frac{1}{3}, 2\right)</m> does not lie on the graph
+        of <m>f</m>.
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      Given a function <m>z=f(x, y)</m> :
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            To find its domain, denoted <m>\operatorname{dom}(f)</m>,
+            determine all <m>(x, y)</m> that can be plugged into <m>f</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            To find its range, denoted <m>\operatorname{rang}(f)</m>,
+            determine all values of <m>z</m> that have a pair <m>(x, y)</m>
+            mapped to it.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </note>
+
+  <figure xml:id="fig-ch02-02-domain-range">
+    <caption>From OpenStax, Calculus Volume 3, Section 4.1</caption>
+
+    <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-03.jpg" width="50%">
+      <shortdescription>The domain and range of a scalar-valued function f(x,y), illustrating how inputs map to outputs.</shortdescription>
+      <description>
+        <p>The domain and range of a scalar-valued function <m>f(x,y)</m>, illustrating how inputs map to outputs.</p>
+      </description>
+    </image>
+  </figure>
+
+  <example xml:id="example-ch02-02-ex-6-2">
+    <statement>
+      <p>
+        Find the domain and range of the following functions:
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              Plane, <m>f(x, y)= 4x+ y+1</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Paraboloid, <m>f(x, y)=x^{2}+y^{2}</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Upper Half of a Sphere with Radius 1,
+              <m>f(x, y)=\sqrt{1-x^2 -y^{2}}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Any pair <m>(x,y)</m> can be plugged into <m>4x+y+1</m>, so
+        <m>\operatorname{dom}(f) = \mathbb{R}^2</m>, the entire
+        <m>xy</m>-plane. For the range, fixing <m>y=0</m> the outputs
+        <m>f(x,0) = 4x+1</m> already take every real value as <m>x</m>
+        varies, so <m>\operatorname{rang}(f) = \mathbb{R}</m>.
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Again any pair can be plugged in, so
+        <m>\operatorname{dom}(f) = \mathbb{R}^2</m>. Since
+        <m>x^2+y^2 \geq 0</m>, no negative output is possible. The output 0
+        is attained at <m>(0,0)</m>, and every <m>z \gt 0</m> is also
+        attained, for instance at <m>(\sqrt{z}, 0)</m>. Hence
+        <m>\operatorname{rang}(f) = [0, \infty)</m>.
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Here we need the expression under the square root to be
+        non-negative:
+        <md>
+          1-x^2-y^2 \geq 0 \Leftrightarrow x^2+y^2 \leq 1
+        </md>
+        so <m>\operatorname{dom}(f)</m> is the disk of radius 1 centered at
+        the origin (including its boundary circle). The square root is
+        non-negative, and the outputs run from <m>f=0</m> (attained on the
+        boundary circle <m>x^2+y^2=1</m>) up to <m>f=1</m> (attained at
+        <m>(0,0)</m>), so <m>\operatorname{rang}(f) = [0,1]</m>.
+      </p>
+    </solution>
+  </example>
+
+  <figure xml:id="fig-ch02-02-ex-6-2">
+    <caption>The plane <m>f(x, y)= 4x+ y-1</m>, the paraboloid <m>f(x, y)=x^{2}+y^{2}</m> and the upper half of a sphere <m>f(x, y)=\sqrt{1-x^2 -y^{2}}</m> of <xref ref="example-ch02-02-ex-6-2"/>.</caption>
+
+    <sidebyside widths="30% 30% 30%" margins="auto" valign="middle">
+      <figure xml:id="fig-ch02-02-ex-6-2a">
+        <caption>The plane f of x and y equals 4 x plus y minus 1, in xyz-space.</caption>
+        <interactive xml:id="interactive-ch02-02-ex-6-2a" variant="controls" width="90%" aspect="3:2"
+          calcplot3d="type=z;z=4x+y+1;funname=f;visible=true;umin=-8;umax=8;vmin=-8;vmax=8;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=7.402565134086221,-6.6627148513296905,0.9001445692085965,1;focus=0,0,0,1;up=-0.07145341144323414,0.05516236849379555,0.9959174278499592,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-8;xmax=8;ymin=-8;ymax=8;zmin=-8;zmax=8;xscale=4;yscale=4;zscale=4;zcmin=-16;zcmax=16;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.331">
+          <!--<instructions>
+            <p>
+              Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=z;z=4x+y+1;funname=f;visible=true;umin=-8;umax=8;vmin=-8;vmax=8;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=7.402565134086221,-6.6627148513296905,0.9001445692085965,1;focus=0,0,0,1;up=-0.07145341144323414,0.05516236849379555,0.9959174278499592,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-8;xmax=8;ymin=-8;ymax=8;zmin=-8;zmax=8;xscale=4;yscale=4;zscale=4;zcmin=-16;zcmax=16;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.331" target="_blank" rel="noopener noreferrer">link to the plot</url>
+            </p>
+          </instructions>-->
+
+          <static>
+            <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-04.png">
+              <shortdescription>The plane f of x and y equals 4 x plus y minus 1, in xyz-space.</shortdescription>
+              <description>
+                <p>The plane <m>f(x, y)=4x+y-1</m>, in <m>xyz</m>-space.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch02-02-ex-6-2b">
+        <caption>The paraboloid f of x and y equals x squared plus y squared, in xyz-space.</caption>
+        <interactive xml:id="interactive-ch02-02-ex-6-2b" variant="controls" width="90%" aspect="3:2"
+          calcplot3d="type=z;z=x%5E2+y%5E2;funname=f;visible=true;umin=-0.5;umax=0.5;vmin=-0.5;vmax=0.5;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=4.223280852347747,-8.99185255420588,1.1447648167226068,1;focus=0,0,0,1;up=-0.09715540443664565,0.08066044015414665,0.991995322964222,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-0.5;xmax=0.5;ymin=-0.5;ymax=0.5;zmin=-0.5;zmax=0.5;xscale=0.25;yscale=0.25;zscale=0.25;zcmin=-1;zcmax=1;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=5.296">
+          <!--<instructions>
+            <p>
+              Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=z;z=x%5E2+y%5E2;funname=f;visible=true;umin=-0.5;umax=0.5;vmin=-0.5;vmax=0.5;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=4.223280852347747,-8.99185255420588,1.1447648167226068,1;focus=0,0,0,1;up=-0.09715540443664565,0.08066044015414665,0.991995322964222,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-0.5;xmax=0.5;ymin=-0.5;ymax=0.5;zmin=-0.5;zmax=0.5;xscale=0.25;yscale=0.25;zscale=0.25;zcmin=-1;zcmax=1;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=5.296" target="_blank" rel="noopener noreferrer">link to the plot</url>
+            </p>
+          </instructions>-->
+
+          <static>
+            <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-04-1.png">
+              <shortdescription>The paraboloid f of x and y equals x squared plus y squared, in xyz-space.</shortdescription>
+              <description>
+                <p>The paraboloid <m>f(x, y)=x^{2}+y^{2}</m>, in <m>xyz</m>-space.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch02-02-ex-6-2c">
+        <caption>The upper half of the sphere f of x and y equals the square root of, 1 minus x squared minus y squared, in xyz-space.</caption>
+        <interactive xml:id="interactive-ch02-02-ex-6-2c" variant="controls" width="90%" aspect="3:2"
+          calcplot3d="type=z;z=sqrt(1-(x%5E2+y%5E2));funname=f;visible=true;umin=-2;umax=2;vmin=-2;vmax=2;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=9.883669242555984,5.70633909777092,3.7082039324993694,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=1.324">
+          <!--<instructions>
+            <p>
+              Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=z;z=sqrt(1-(x%5E2+y%5E2));funname=f;visible=true;umin=-2;umax=2;vmin=-2;vmax=2;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=9.883669242555984,5.70633909777092,3.7082039324993694,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=1.324" target="_blank" rel="noopener noreferrer">link to the plot</url>
+            </p>
+          </instructions>-->
+
+          <static>
+            <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-04-2.png">
+              <shortdescription>The upper half of the sphere f of x and y equals the square root of, 1 minus x squared minus y squared, in xyz-space.</shortdescription>
+              <description>
+                <p>The upper half of the sphere <m>f(x, y)=\sqrt{1-x^2-y^2}</m>, in <m>xyz</m>-space.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </sidebyside>
+  </figure>
+  <p>
+    Drag with the mouse to rotate the surfaces. You can open the plots in a new page from here: <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=z;z=4x+y+1;funname=f;visible=true;umin=-8;umax=8;vmin=-8;vmax=8;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=7.402565134086221,-6.6627148513296905,0.9001445692085965,1;focus=0,0,0,1;up=-0.07145341144323414,0.05516236849379555,0.9959174278499592,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-8;xmax=8;ymin=-8;ymax=8;zmin=-8;zmax=8;xscale=4;yscale=4;zscale=4;zcmin=-16;zcmax=16;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.331" target="_blank" rel="noopener noreferrer">link to the left plot</url>, <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=z;z=x%5E2+y%5E2;funname=f;visible=true;umin=-0.5;umax=0.5;vmin=-0.5;vmax=0.5;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=4.223280852347747,-8.99185255420588,1.1447648167226068,1;focus=0,0,0,1;up=-0.09715540443664565,0.08066044015414665,0.991995322964222,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-0.5;xmax=0.5;ymin=-0.5;ymax=0.5;zmin=-0.5;zmax=0.5;xscale=0.25;yscale=0.25;zscale=0.25;zcmin=-1;zcmax=1;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=5.296" target="_blank" rel="noopener noreferrer">link to the middle plot</url>, <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=z;z=sqrt(1-(x%5E2+y%5E2));funname=f;visible=true;umin=-2;umax=2;vmin=-2;vmax=2;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=9.883669242555984,5.70633909777092,3.7082039324993694,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=1.324" target="_blank" rel="noopener noreferrer">link to the right plot</url>
+  </p>
+  <!--\caption*{From openstax, Calculus Volume 3, Section 2.2}-->
+
+  <definition>
+    <title>Planes in <m>x y z</m>-space</title>
+
+    <statement>
+      <p>
+        A plane in <m>x y z</m>-space is the set of all points that satisfy
+        the equation
+        <md>
+          a x+b y+c z=d
+        </md>, where <m>a, b, c</m>, and <m>d</m> are real numbers.
+      </p>
+    </statement>
+  </definition>
+
+  <remark>
+    <p>
+      In order to find an equation for a plane, all we need is:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            A point in the plane.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The orientation (tilt) of the plane.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The orientation is given by a vector orthogonal to every other vector
+      in the plane. We call this vector a normal vector to the plane.
+    </p>
+
+    <figure xml:id="fig-ch02-02-normal-vector">
+      <caption>A plane in xyz-space with a normal vector n orthogonal to every vector in the plane.</caption>
+      <interactive xml:id="interactive-ch02-02-normal-vector" variant="controls" width="90%" aspect="3:2"
+        calcplot3d="type=z;z=x+y+.25;funname=f;visible=true;umin=-8;umax=8;vmin=-8;vmax=8;grid=10;format=constant;alpha=-1;hidemyedges=false;constcol=rgb(30,136,229);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=vector;vector=%3C4,%204,8%3E;visible=true;color=rgb(255,193,7);size=5;initialpt=(0,-.250,0);dashed=false&amp;type=vector;vector=%3C-4,-%204,%204%3E;visible=true;color=rgb(216,27,96);size=5;initialpt=(0,-.250,0);dashed=undefined&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=27.192731773906313,-38.14495714040698,10.465064903230056,1;focus=0,0,0,1;up=-0.11655892322221247,0.09515025743330567,0.9886154186171963,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-8;xmax=8;ymin=-8;ymax=8;zmin=-8;zmax=8;xscale=4;yscale=4;zscale=4;zcmin=-16;zcmax=16;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.331">
+        <instructions>
+          <p>
+            Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=z;z=x+y+.25;funname=f;visible=true;umin=-8;umax=8;vmin=-8;vmax=8;grid=10;format=constant;alpha=-1;hidemyedges=false;constcol=rgb(30,136,229);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=vector;vector=%3C4,%204,8%3E;visible=true;color=rgb(255,193,7);size=5;initialpt=(0,-.250,0);dashed=false&amp;type=vector;vector=%3C-4,-%204,%204%3E;visible=true;color=rgb(216,27,96);size=5;initialpt=(0,-.250,0);dashed=undefined&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=27.192731773906313,-38.14495714040698,10.465064903230056,1;focus=0,0,0,1;up=-0.11655892322221247,0.09515025743330567,0.9886154186171963,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-8;xmax=8;ymin=-8;ymax=8;zmin=-8;zmax=8;xscale=4;yscale=4;zscale=4;zcmin=-16;zcmax=16;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.331" target="_blank" rel="noopener noreferrer">link to the plot</url>
+          </p>
+        </instructions>
+        <static>
+          <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-05.png">
+            <shortdescription>A plane in xyz-space with a normal vector n orthogonal to every vector in the plane.</shortdescription>
+            <description>
+              <p>A plane in <m>xyz</m>-space with a normal vector <m>\vec{n}</m> orthogonal to every vector in the plane.</p>
+            </description>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+
+    <p>
+      Given a point <m>P_{0}\left(x_{0}, y_{0}, z_{0}\right)</m> on a plane
+      <m>\pi</m> and a vector <m>\vec{n}=\langle a, b, c\rangle</m> normal
+      to <m>\pi</m>, the equation for <m>\pi</m> is given by
+      <md>
+        a\left(x-x_{0}\right)+b\left(y-y_{0}\right)+c\left(z-z_{0}\right)=0
+      </md>.
+    </p>
+  </remark>
+
+  <note>
+    <p>
+      To find a vector normal to a plane <m>\pi</m>, all you need is the
+      cross-product of two non-parallel vectors in the plane (since they
+      define the plane uniquely).
+    </p>
+  </note>
+
+  <example xml:id="example-ch02-02-ex-6-3">
+    <statement>
+      <p>
+        Find an equation for the plane that passes through the points
+        <m>P(-1,-1,-1), Q(-1,-1,1)</m>, and <m>R(1,1,1)</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        To find an equation for the plane we need a point in the plane (we
+        have three) and a normal vector, which we get as the cross product of
+        two non-parallel vectors in the plane. Two vectors in the plane are
+        <md alignment="gather">
+          <mrow>\vec{PQ} = \langle -1-(-1), -1-(-1), 1-(-1) \rangle = \langle 0,0,2 \rangle</mrow>
+          <mrow>\vec{PR} = \langle 1-(-1), 1-(-1), 1-(-1) \rangle = \langle 2,2,2 \rangle</mrow>
+        </md>
+        and they are not parallel (no scalar multiple of
+        <m>\langle 0,0,2 \rangle</m> can have a nonzero first component).
+        Their cross product is normal to the plane:
+        <md alignment="gather">
+          <mrow>\vec{n} = \vec{PQ} \times \vec{PR} = \left| \begin{matrix} \vec{i} \amp \vec{j} \amp \vec{k} \\ 0 \amp 0 \amp 2 \\ 2 \amp 2 \amp 2 \end{matrix}\right|</mrow>
+          <mrow>= \left| \begin{matrix} 0 \amp 2 \\ 2 \amp 2 \end{matrix}\right|\vec{i} - \left| \begin{matrix} 0 \amp 2 \\ 2 \amp 2 \end{matrix}\right|\vec{j} + \left| \begin{matrix} 0 \amp 0 \\ 2 \amp 2 \end{matrix}\right|\vec{k}</mrow>
+          <mrow>= \left( 0(2)-2(2) \right)\vec{i} - \left( 0(2)-2(2) \right)\vec{j} + \left( 0(2)-0(2) \right)\vec{k} = \langle -4,4,0 \rangle</mrow>
+        </md>
+        Using the point <m>P(-1,-1,-1)</m> and the normal vector
+        <m>\vec{n} = \langle -4,4,0 \rangle</m>:
+        <md>
+          -4\left( x-(-1) \right)+4\left( y-(-1) \right)+0\left( z-(-1) \right) = 0 \Rightarrow -4x+4y = 0 \Rightarrow y = x
+        </md>
+        As a check, all three points <m>P</m>, <m>Q</m>, and <m>R</m>
+        satisfy the equation <m>y=x</m>.
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <title>Normal Vector to a Plane</title>
+
+    <p>
+      Given the plane <m>a x+b y+c z=d</m>, the vector
+      <m>\vec{n}=\langle a, b, c\rangle</m> is a normal vector to the plane.
+    </p>
+  </remark>
+
+  <note>
+    <p>
+      <ul>
+        <li>
+          <p>
+            Whether two planes are parallel, orthogonal, or neither, can be
+            answered by asking the same question about their normal vectors.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If two planes are not parallel, they always intersect in a line.
+            The direction of this line is given by the cross product of the
+            normal vectors to the planes.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </note>
+
+  <figure xml:id="fig-ch02-02-intersecting-planes">
+    <caption>From OpenStax, Calculus Volume 3, Section 2.5</caption>
+
+    <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-07.jpg" width="50%">
+      <shortdescription>Two non-parallel planes intersecting in a line in xyz-space. The angle between the planes is the same as the angle that the normal vectors form.</shortdescription>
+      <description>
+        <p>Two non-parallel planes intersecting in a line in <m>xyz</m>-space. The angle between the planes is the same as the angle that the normal vectors form.</p>
+      </description>
+    </image>
+  </figure>
+
+  <!--\begin{figure}[H]
+      \includegraphics[max width=0.3\textwidth, center]{2025_08_06_f7193d1cc61b1e2c50ebg-07}
+      \caption*{Point (6, 4.5, 8)}
+      \end{figure}-->
+
+  <example xml:id="example-ch02-02-ex-6-4">
+    <statement>
+      <p>
+        Determine whether the planes <m>\pi_{1}</m> given by
+        <m>3 x+2 y+ z=30</m> and <m>\pi_{2}</m> given by
+        <m>-3 x+4 y+6 z=0</m> are parallel, orthogonal or neither.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The normal vectors are <m>\vec{n}_1 = \langle 3,2,1 \rangle</m> and
+        <m>\vec{n}_2 = \langle -3,4,6 \rangle</m>, and we answer the question
+        by asking it about them. If they were parallel there would be a scalar
+        <m>c</m> with <m>c\vec{n}_1 = \vec{n}_2</m>; the first components
+        force <m>c=-1</m> while the second components force <m>c=2</m>, so
+        the normal vectors (and hence the planes) are not parallel. Checking
+        orthogonality with the dot product:
+        <md>
+          \vec{n}_1 \cdot \vec{n}_2 = 3(-3)+2(4)+1(6) = -9+8+6 = 5 \neq 0
+        </md>
+        so the normal vectors are not orthogonal either. Hence the planes are
+        neither parallel nor orthogonal.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch02-02-ex-6-5">
+    <statement>
+      <p>
+        Find an equation of the line where the planes <m>\pi_{1}</m> and
+        <m>\pi_{2}</m> intersect where
+        <md>
+          \pi_{1}:3x+2 y+ z=1 ; \quad \pi_{2}: x+y+z=1
+        </md>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The normal vectors are <m>\vec{n}_1 = \langle 3,2,1 \rangle</m> and
+        <m>\vec{n}_2 = \langle 1,1,1 \rangle</m>, which are not scalar
+        multiples of each other, so the planes are not parallel and they
+        intersect in a line. The direction of this line is given by the cross
+        product of the normal vectors:
+        <md alignment="gather">
+          <mrow>\vec{v} = \vec{n}_1 \times \vec{n}_2 = \left| \begin{matrix} \vec{i} \amp \vec{j} \amp \vec{k} \\ 3 \amp 2 \amp 1 \\ 1 \amp 1 \amp 1 \end{matrix}\right|</mrow>
+          <mrow>= \left| \begin{matrix} 2 \amp 1 \\ 1 \amp 1 \end{matrix}\right|\vec{i} - \left| \begin{matrix} 3 \amp 1 \\ 1 \amp 1 \end{matrix}\right|\vec{j} + \left| \begin{matrix} 3 \amp 2 \\ 1 \amp 1 \end{matrix}\right|\vec{k}</mrow>
+          <mrow>= \left( 2(1)-1(1) \right)\vec{i} - \left( 3(1)-1(1) \right)\vec{j} + \left( 3(1)-2(1) \right)\vec{k} = \langle 1,-2,1 \rangle</mrow>
+        </md>
+        We also need a point on the line, that is, a point satisfying both
+        plane equations. Subtracting the equation of <m>\pi_2</m> from the
+        equation of <m>\pi_1</m> eliminates <m>z</m>:
+        <md>
+          (3x+2y+z)-(x+y+z) = 1-1 \Rightarrow 2x+y = 0
+        </md>
+        Choosing <m>x=0</m> gives <m>y=0</m>, and then the equation of
+        <m>\pi_2</m> gives <m>z=1</m>, so the point <m>(0,0,1)</m> lies on
+        both planes. Hence the line of intersection is
+        <md>
+          \vec{r}(t) = \langle 0,0,1 \rangle + t\langle 1,-2,1 \rangle = \langle t, -2t, 1+t \rangle, \quad -\infty \lt t \lt \infty
+        </md>
+        As a check, substituting the parametric equations into both plane
+        equations: <m>3t-4t+(1+t) = 1</m> and <m>t-2t+(1+t) = 1</m> for
+        every <m>t</m>.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    Consider the picture of Devil's Tower and a topographical map for it
+    given below:
+  </p>
+
+  <figure xml:id="fig-ch02-02-devils-tower">
+    <caption>From OpenStax, Calculus Volume 3, Section 4.1</caption>
+
+    <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-09-1.jpg" width="70%">
+      <shortdescription>A photograph of Devils Tower and its topographical map, showing level curves at constant elevation.</shortdescription>
+      <description>
+        <p>A photograph of Devils Tower and its topographical map, showing level curves at constant elevation.</p>
+      </description>
+    </image>
+  </figure>
+
+  <p>
+    To get such a topographical map, you:
+  </p>
+
+  <p>
+    <ul>
+      <li>
+        <p>
+          Think of Devil's Tower as a surface <m>z=f(x, y)</m>.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Intersect that surface with planes of the form <m>z=c</m> (planes
+          parallel to the <m>x y</m>-plane).
+        </p>
+      </li>
+    </ul>
+  </p>
+
+  <p>
+    When you intersect a surface <m>z=f(x, y)</m> with a plane <m>z=c</m>,
+    you get a curve called a level curve, given by the equation
+    <m>c=f(x, y)</m>. (<url href="https://www.desmos.com/3d/vmgur5hd03" target="_blank" rel="noopener noreferrer">graph</url>)
+  </p>
+
+  <!--\begin{figure}[H]
+      \begin{center}
+      \includegraphics[width=0.5\textwidth]{2025_08_06_f7193d1cc61b1e2c50ebg-09}
+      \captionsetup{labelformat=empty}
+      \caption{$z=4x^2+4y^2 \text{ intersected with } z=2$}\end{center}
+      \end{figure}-->
+
+  <figure xml:id="fig-ch02-02-level-curve">
+    <caption><m>z=\frac{x^2}{2}+\frac{y^2}{4} \text{ intersected with } z=2</m></caption>
+
+    <sidebyside widths="45% 45%" margins="auto" valign="middle">
+      <figure xml:id="fig-ch02-02-level-curve-a">
+        <caption>The paraboloid z equals x squared over 2 plus y squared over 4, intersected with the plane z equals 2.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-09. -->
+        <interactive xml:id="interactive-ch02-02-level-curve-a" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+
+          <static>
+            <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-09.png">
+              <shortdescription>The paraboloid z equals x squared over 2 plus y squared over 4, intersected with the plane z equals 2.</shortdescription>
+              <description>
+                <p>The paraboloid <m>z=\frac{x^2}{2}+\frac{y^2}{4}</m>, intersected with the plane <m>z=2</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch02-02-level-curve-b">
+        <caption>The level curve obtained by intersecting z equals x squared over 2 plus y squared over 4 with the plane z equals 2.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-09-1. -->
+        <interactive xml:id="interactive-ch02-02-level-curve-b" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+
+          <static>
+            <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-09-1.png">
+              <shortdescription>The level curve obtained by intersecting z equals x squared over 2 plus y squared over 4 with the plane z equals 2.</shortdescription>
+              <description>
+                <p>The level curve obtained by intersecting <m>z=\frac{x^2}{2}+\frac{y^2}{4}</m> with the plane <m>z=2</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </sidebyside>
+  </figure>
+  <p>
+    You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+  </p>
+
+  <example xml:id="example-ch02-02-ex-6-6">
+    <statement>
+      <p>
+        Describe the level curve you get when intersecting the cone
+        <m>z=</m> <m>\sqrt{2x^{2}+2y^{2}}</m> with the plane <m>z=1</m>.
+      </p>
+
+      <figure xml:id="fig-ch02-02-ex-6-6">
+        <caption>The cone z equals the square root of, 2 x squared plus 2 y squared, intersected with the plane z equals 1.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-10. -->
+        <interactive xml:id="interactive-ch02-02-ex-6-6" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-10.png">
+              <shortdescription>The cone z equals the square root of, 2 x squared plus 2 y squared, intersected with the plane z equals 1.</shortdescription>
+              <description>
+                <p>The cone <m>z=\sqrt{2x^{2}+2y^{2}}</m>, intersected with the plane <m>z=1</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        The level curve is defined by the equation
+        <m>1 = \sqrt{2x^2+2y^2}</m>. Squaring both sides:
+        <md>
+          1 = 2x^2+2y^2 \Rightarrow x^2+y^2 = \frac{1}{2}
+        </md>
+        This is a circle centered at the origin of radius
+        <m>\sqrt{\frac{1}{2}} = \frac{\sqrt{2}}{2}</m>, drawn at height
+        <m>z=1</m> on the cone, as in the picture above.
+      </p>
+    </solution>
+  </example>
+
+  <definition>
+    <title>Traces of Surfaces</title>
+
+    <statement>
+      <p>
+        When you intersect a surface <m>z=f(x, y)</m> with planes of the
+        form <m>x=x_{0}</m>, <m>y=y_{0}</m>, and <m>z=z_{0}</m>, the
+        corresponding level curve is called a trace of the surface. Vertical
+        trace refers to the intersection with a plane of the form
+        <m>x=x_0</m> or <m>y=y_0</m>
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch02-02-ex-6-7">
+    <statement>
+      <p>
+        Describe the vertical trace you get when intersecting the hyperbolic
+        paraboloid <m>z=y^{2}-x^{2}</m> with the plane <m>y=1</m>.
+      </p>
+
+      <figure xml:id="fig-ch02-02-ex-6-7">
+        <caption>The hyperbolic paraboloid z equals y squared minus x squared, intersected with the plane y equals 1, showing the vertical trace.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-11. -->
+        <interactive xml:id="interactive-ch02-02-ex-6-7" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-11.png">
+              <shortdescription>The hyperbolic paraboloid z equals y squared minus x squared, intersected with the plane y equals 1, showing the vertical trace.</shortdescription>
+              <description>
+                <p>The hyperbolic paraboloid <m>z=y^{2}-x^{2}</m>, intersected with the plane <m>y=1</m>, showing the vertical trace.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        Substituting <m>y=1</m> into the equation of the surface:
+        <md>
+          z = 1^2-x^2 = 1-x^2
+        </md>
+        The vertical trace is a downward-opening parabola lying in the plane
+        <m>y=1</m>, with vertex at the point <m>(0,1,1)</m> and passing
+        through the points <m>(\pm 1, 1, 0)</m>, as the picture above shows.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch02-02-ex-6-8">
+    <statement>
+      <p>
+        From Knowledge Check: Which of the following show level curves of the
+        function <m>z= x-y</m> for different values of <m>z</m> ?
+      </p>
+
+      <figure xml:id="fig-ch02-02-ex-6-8">
+        <caption>Four candidate families of level curves, options (a) to (d).</caption>
+
+        <sbsgroup>
+          <sidebyside widths="45% 45%" margins="auto" valign="middle">
+            <figure xml:id="fig-ch02-02-ex-6-8a">
+              <caption>Option a displays hyperbola-like lines</caption>
+
+              <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-12. -->
+              <interactive xml:id="interactive-ch02-02-ex-6-8a" width="85%" aspect="4:3" desmos="vqavop8m24">
+                <!--<instructions>
+                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                </instructions>-->
+
+                <static>
+                  <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-12.png">
+                    <shortdescription>Option a displays hyperbola-like lines</shortdescription>
+                    <description>
+                      <p>Option a displays hyperbola-like lines</p>
+                    </description>
+                  </image>
+                </static>
+              </interactive>
+            </figure>
+
+            <figure xml:id="fig-ch02-02-ex-6-8b">
+              <caption>Option b displays parallel straight lines with slope not far from 1</caption>
+
+              <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-12-1. -->
+              <interactive xml:id="interactive-ch02-02-ex-6-8b" width="85%" aspect="4:3" desmos="vqavop8m24">
+                <!--<instructions>
+                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                </instructions>-->
+
+                <static>
+                  <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-12-1.png">
+                    <shortdescription>Option b displays parallel straight lines with slope not far from 1</shortdescription>
+                    <description>
+                      <p>Option b displays parallel straight lines with slope not far from 1</p>
+                    </description>
+                  </image>
+                </static>
+              </interactive>
+            </figure>
+          </sidebyside>
+
+          <sidebyside widths="45% 45%" margins="auto" valign="middle">
+            <figure xml:id="fig-ch02-02-ex-6-8c">
+              <caption>Option c displays parallel straight lines with slope significantly greater than 1</caption>
+
+              <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-12-3. -->
+              <interactive xml:id="interactive-ch02-02-ex-6-8c" width="85%" aspect="4:3" desmos="vqavop8m24">
+                <!--<instructions>
+                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                </instructions>-->
+
+                <static>
+                  <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-12-3.png">
+                    <shortdescription>Option c displays parallel straight lines with slope significantly greater than 1</shortdescription>
+                    <description>
+                      <p>Option c displays parallel straight lines with slope significantly greater than 1</p>
+                    </description>
+                  </image>
+                </static>
+              </interactive>
+            </figure>
+
+            <figure xml:id="fig-ch02-02-ex-6-8d">
+              <caption>Option d displays parallel straight lines with slope significantly smaller than 1</caption>
+
+              <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-12-2. -->
+              <interactive xml:id="interactive-ch02-02-ex-6-8d" width="85%" aspect="4:3" desmos="vqavop8m24">
+                <!--<instructions>
+                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                </instructions>-->
+
+                <static>
+                  <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-12-2.png">
+                    <shortdescription>Option d displays parallel straight lines with slope significantly smaller than 1</shortdescription>
+                    <description>
+                      <p>Option d displays parallel straight lines with slope significantly smaller than 1</p>
+                    </description>
+                  </image>
+                </static>
+              </interactive>
+            </figure>
+          </sidebyside>
+        </sbsgroup>
+      </figure>
+      <p>
+        You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the top left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the top right graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the bottom left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the bottom right graph</url>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Setting <m>z=c</m> for a constant <m>c</m>, the level curves are
+        given by
+        <md>
+          c = x-y \Rightarrow y = x-c
+        </md>
+        For every value of <m>c</m> this is a straight line with slope
+        exactly 1 (and <m>y</m>-intercept <m>-c</m>), so the level curves
+        form a family of parallel lines of slope 1. Among the figures above,
+        (a) shows hyperbola-like curves, while (c) and (d) show parallel
+        lines that rise too fast or too slow for their slope to be equal to
+        1. Hence the answer is (b).
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      Suppose you have a function of the form <m>w=F(x, y, z)</m>, which
+      corresponds to an object in 4 dimensions.
+    </p>
+
+    <p>
+      We can intersect this function with a hyperplane of the form
+      <m>w=c</m> to get a 3D-surface called a level surface defined by the
+      equation <m>c=F(x, y, z)</m>.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch02-02-ex-6-9">
+    <statement>
+      <p>
+        Consider the function <m>w=x^{2}+2y^{2}+3z^{2}</m>. Describe the
+        level surface you get when intersecting <m>w</m> with the hyperplane
+        <m>w=4</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The level surface is defined by the equation
+        <md>
+          x^2+2y^2+3z^2 = 4 \Rightarrow \frac{x^2}{4}+\frac{y^2}{2}+\frac{z^2}{4/3} = 1
+        </md>
+        This is an ellipsoid centered at the origin, crossing the
+        <m>x</m>-axis (<m>y=z=0</m>) at <m>x=\pm 2</m>, the <m>y</m>-axis
+        (<m>x=z=0</m>) at <m>y=\pm\sqrt{2}</m>, and the <m>z</m>-axis
+        (<m>x=y=0</m>) at <m>z=\pm\frac{2}{\sqrt{3}}</m>, as shown below.
+      </p>
+
+      <figure xml:id="fig-ch02-02-ex-6-9">
+        <caption>The ellipsoid x squared plus 2 y squared plus 3 z squared equals 4.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-13. -->
+        <interactive xml:id="interactive-ch02-02-ex-6-9" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-13.png">
+              <shortdescription>The ellipsoid x squared plus 2 y squared plus 3 z squared equals 4.</shortdescription>
+              <description>
+                <p>The ellipsoid <m>x^2+2y^2+3z^2=4</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </solution>
+  </example>
+
+  <note>
+    <title>Implicit vs. Explicit Surfaces</title>
+
+    <p>
+      Consider the plane <m>\pi</m> defined by <m>x+2 y-z=4</m>. Since
+      <m>z</m> isn't by itself on one side of the equation, we say that
+      <m>z</m> is given implicitly as a function of <m>x</m> and <m>y</m>.
+    </p>
+
+    <p>
+      If you solve for <m>z</m> and write <m>\pi</m> as <m>z=x+2 y-4</m>,
+      then we say <m>z</m> is given explicitly as a function of <m>x</m> and
+      <m>y</m>.
+    </p>
+
+    <p>
+      The same definition of implicit or explicit applies for functions in
+      higher dimensions.
+    </p>
+  </note>
+
+  <example xml:id="example-ch02-02-ex-6-10">
+    <statement>
+      <p>
+        For each of the following equations, determine whether <m>z</m> is
+        given implicitly or explicitly as a function of <m>x</m> and
+        <m>y</m>. If <m>z</m> is given implicitly, write it explicitly (if it
+        isn't possible, explain why).
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>z=\sin(x+y+3)</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>4z+e^{\sin x-\cos y}= z+\cos x</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>z^{4}+3y^{2}=\log x</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Since <m>z</m> is by itself on one side of the equation, <m>z</m> is
+        given explicitly as a function of <m>x</m> and <m>y</m>.
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Here <m>z</m> appears on both sides of the equation and is not by
+        itself, so <m>z</m> is given implicitly. Solving for <m>z</m>:
+        <md>
+          4z-z = \cos x - e^{\sin x-\cos y} \Rightarrow 3z = \cos x - e^{\sin x-\cos y} \Rightarrow z = \frac{\cos x - e^{\sin x-\cos y}}{3}
+        </md>
+        so <m>z</m> can be written explicitly.
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Again <m>z</m> is given implicitly. Attempting to solve for
+        <m>z</m>:
+        <md>
+          z^4 = \log x - 3y^2 \Rightarrow z = \pm\sqrt[4]{\log x - 3y^2}
+        </md>
+        It is not possible to write <m>z</m> explicitly as a function of
+        <m>x</m> and <m>y</m>: because of the <m>\pm</m>, every input
+        <m>(x,y)</m> with <m>\log x - 3y^2 \gt 0</m> corresponds to two
+        different values of <m>z</m>, so <m>z</m> is not uniquely determined
+        by <m>(x,y)</m> and is therefore not a function of <m>x</m> and
+        <m>y</m>.
+      </p>
+    </solution>
+  </example>
+
+  <!--\begin{figure}[H]
+      \begin{center}
+      \includegraphics[width=0.5\textwidth]{2025_08_06_f7193d1cc61b1e2c50ebg-14}
+      \captionsetup{labelformat=empty}
+      \caption{Graph of $z^2+y^2=x$}\end{center}
+      \end{figure}-->
+
+</section>

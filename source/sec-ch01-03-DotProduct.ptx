@@ -157,7 +157,7 @@
     </p>
 
     <figure xml:id="fig-ch01-03-note-3-1">
-      <caption>This interactive is PENDING, it should correspond to Note 3.1.</caption>
+      <caption>Two vectors and their interior and exterior angles.</caption>
       <interactive xml:id="interactive-ch01-03-note-3-1" width="85%" aspect="4:3" desmos="hpfn5up5tn">
         <instructions>
           <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/hpfn5up5tn" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
@@ -354,7 +354,7 @@
 
     <sidebyside widths="45% 45%" margins="auto" valign="middle">
       <figure xml:id="fig-ch01-03-projection-cases-a">
-        <caption><m>0\leq \theta \lt \frac{\pi}{2}</m>. This interactive is PENDING, it should correspond to 2025_08_04_6f11792a371c74850db7g-5.</caption>
+        <caption><m>0\leq \theta \lt \frac{\pi}{2}</m>. The orthogonal projection of u onto v when the angle theta between them is at least 0 and less than pi over 2.</caption>
         <interactive xml:id="interactive-ch01-03-projection-cases-a" width="85%" aspect="4:3" desmos="d6jcpar33o">
           <!--<instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
@@ -372,7 +372,7 @@
       </figure>
 
       <figure xml:id="fig-ch01-03-projection-cases-b">
-        <caption><m>\frac{\pi}{2} \lt \theta \leq \pi</m>. This interactive is PENDING, it should correspond to 2025_08_04_6f11792a371c74850db7g-5-1.</caption>
+        <caption><m>\frac{\pi}{2} \lt \theta \leq \pi</m>. The orthogonal projection of u onto v when the angle theta between them is greater than pi over 2 and at most pi.</caption>
         <interactive xml:id="interactive-ch01-03-projection-cases-b" width="85%" aspect="4:3" desmos="bhkhtavyvj">
           <!--<instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
@@ -557,7 +557,7 @@
       </p>
 
       <figure xml:id="fig-ch01-03-ex-3-5">
-        <caption>This interactive is PENDING, it should correspond to Example 3.5.</caption>
+        <caption>Vecotrs u, v, and w with their projections onto v shown in the xy-plane. </caption>
         <interactive xml:id="interactive-ch01-03-ex-3-5" width="85%" aspect="4:3" desmos="ojxbsovmu1">
           <instructions>
             <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/ojxbsovmu1" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
