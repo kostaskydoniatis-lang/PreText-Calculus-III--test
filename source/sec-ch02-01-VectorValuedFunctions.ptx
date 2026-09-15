@@ -3,8 +3,9 @@
 <!--
   sec-ch02-01-VectorValuedFunctions.ptx : converted from
   "5. Vector-Valued Functions - Solutions.tex" by the bbeaccess-pretext skill
-  (2026-09-06). Fragment for xi:include into ch-02-IntroductionVectorandScalarValuedFunctions.ptx;
-  not standalone.
+  (2026-09-06; updated 2026-09-15 from the revised .tex: new Example 5.2, "centred at
+  the origin" in Example 5.3, closing remark "Intersection of Curves"). Fragment for
+  xi:include into ch-02-IntroductionVectorandScalarValuedFunctions.ptx; not standalone.
 
   FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
   1. Section placed at ch02-01 (the first section of chapter 2) on your instruction.
@@ -22,10 +23,12 @@
      the picture have r(t)=<cos t, sin t, t/10>; copied verbatim from the .tex, not fixed.
   5. The hyperlinked words "graph" (Example 5.1) and "(graph)" (parametric note) are
      plain prose / dropped; each link lives in its figure's interactive and <url>.
-  6. "Example 5.3" + "[Continuation of 5.3]" merged into ONE <example> with ONE
+  6. "Example 5.4" + "[Continuation of 5.4]" merged into ONE <example> with ONE
      <solution> (Options A, B from the first box, Option C and the graph from the
-     continuation). ptx_check reports 6 examples / 7 solutions in the .tex vs 5 / 6 here.
-  7. Example 5.2: the two answer graphs stay inside their <solution>s at the position
+     continuation). ptx_check reports 7 examples / 8 solutions in the .tex vs 6 / 7 here.
+     (2026-09-15: the .tex counter/label of the continuation box were updated to
+     \setcounter{tcb@cnt@example}{3} / "[Continuation of 5.4]" after the new example.)
+  7. Example 5.3: the two answer graphs stay inside their <solution>s at the position
      they have in the .tex (after "To graph it, ..."), not lifted to the top of the
      solution. Its two numbered parts are an <ol> in the statement plus one <solution>
      per box (Solution 1 / 2); <task>s not used unasked.
@@ -54,6 +57,21 @@
      per panel (left, middle, right). Uncomment to restore the per-panel form.
      NOTE: all these panels still share the placeholder graph, so every link below
      goes to the same page until the real graph ids land.
+ 17. UPDATE 2026-09-15: the new domain example (sqrt t, sqrt(1-t)) is Example 5.2, so the
+     later examples moved up one and their xml:ids were renumbered to match the PDF
+     (example-ch02-01-ex-5-2 -> ...-5-3, 5-3 -> 5-4, 5-4 -> 5-5, 5-5 -> 5-6). Nothing in
+     source/ xrefs these ids, so nothing breaks. The figure ids are keyed by the image
+     FILE names, which did not change (Example-5.2-1.png, Example-5.2-2.png, Example-5.3.png),
+     so fig-ch02-01-ex-5-2a/b now sit in Example 5.3 and fig-ch02-01-ex-5-3 in Example 5.4;
+     rename the image files + ids together if you want them aligned.
+ 18. New Example 5.2: on your instruction (2026-09-15) the source quirks were fixed in
+     BOTH the .tex and here: "=" inserted in the statement, final period added,
+     "The second ," -> "The second,".
+ 19. New closing remark [Intersection of Curves]: title from the bracket. Fixed in both
+     files on your instruction: "vector-valued", "the intersection points at which the
+     two parametrizations arrive concurrently", "one needs to solve", "i.e.".
+ 20. Example 5.3: ", centred at the origin," added in (a) as in the .tex; the solution's
+     "centered" changed to "centred" in both files (UK spelling throughout, your call).
 -->
 
 <section xml:id="sec-ch02-01-VectorValuedFunctions" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -226,6 +244,25 @@
     </solution>
   </example>
 
+  <example xml:id="example-ch02-01-ex-5-2">
+    <statement>
+      <p>
+        Find the domain of <m>\vec{r}(t) = \langle \sqrt t , \sqrt{1-t}\rangle</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The domain of <m>\vec{r}(t)</m> is the intersection of the domains of
+        its two components. The first, <m>\sqrt t</m>, is defined for
+        <m>0\leq t</m>, hence <m>t\in [0 , +\infty )</m>. The second,
+        <m>\sqrt{1-t}</m>, is defined for <m>0\leq 1-t</m>, hence
+        <m>t\in (-\infty , 1]</m>. The intersection of the two gives us
+        <m>\operatorname{dom}(\vec{r}) =  [0,1]</m>.
+      </p>
+    </solution>
+  </example>
+
   <note>
     <p>
       If we write <m>\vec{r}(t)=\langle f(t), g(t), h(t)\rangle</m> and don't
@@ -268,7 +305,7 @@
     </p>
   </note>
 
-  <example xml:id="example-ch02-01-ex-5-2">
+  <example xml:id="example-ch02-01-ex-5-3">
     <statement>
       <p>
         For each of the following planar curves, write a vector-valued
@@ -280,8 +317,8 @@
         <ol>
           <li>
             <p>
-              A circle of radius 1 (traced once) oriented counterclockwise,
-              starting at <m>(1,0)</m>.
+              A circle of radius 1 (traced once), centred at the origin,
+              oriented counterclockwise, starting at <m>(1,0)</m>.
             </p>
           </li>
 
@@ -301,7 +338,7 @@
         <md>
           \vec{r}(t) = \langle \cos(t), \sin(t) \rangle, \quad 0 \leq t \leq 2\pi
         </md>
-        traces the circle of radius 1 centered at the origin, since
+        traces the circle of radius 1 centred at the origin, since
         <m>x(t)^2+y(t)^2 = \cos^2(t)+\sin^2(t) = 1</m>. It starts at
         <m>\vec{r}(0) = \langle 1,0 \rangle</m>, passes through <m>(0,1)</m>
         at <m>t=\frac{\pi}{2}</m>, through <m>(-1,0)</m> at <m>t=\pi</m>, and
@@ -373,7 +410,7 @@
     </p>
   </remark>
 
-  <example xml:id="example-ch02-01-ex-5-3">
+  <example xml:id="example-ch02-01-ex-5-4">
     <statement>
       <p>
         For the following planar curve, write a vector-valued function which
@@ -572,7 +609,7 @@
     </figure>
   </note>
 
-  <example xml:id="example-ch02-01-ex-5-4">
+  <example xml:id="example-ch02-01-ex-5-5">
     <statement>
       <p>
         Find both the vector equation and the parametric equations of the
@@ -629,7 +666,7 @@
     </p>
   </remark>
 
-  <example xml:id="example-ch02-01-ex-5-5">
+  <example xml:id="example-ch02-01-ex-5-6">
     <statement>
       <p>
         Determine whether the following pair of lines are parallel, intersect
@@ -691,5 +728,20 @@
       </p>
     </solution>
   </example>
+
+  <remark>
+    <title>Intersection of Curves</title>
+
+    <p>
+      Assume there are two curves, <m>C_1</m> and <m>C_2</m>, parametrized by
+      the same variable <m>t</m>, with vector-valued functions
+      <m>\vec{r}_1(t)</m> and <m>\vec{r}_2(t)</m>. The solutions of the
+      equation <m>\vec{r}_1(t) = \vec{r}_2(t)</m> are not simply the
+      intersection points. They are the intersection points at which the two
+      parametrizations arrive concurrently. For the intersection points one
+      needs to solve <m>\vec{r}_1(t) = \vec{r}_2(s)</m>, i.e. change one of
+      the parameters.
+    </p>
+  </remark>
 
 </section>
