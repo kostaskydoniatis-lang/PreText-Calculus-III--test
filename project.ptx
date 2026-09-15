@@ -10,7 +10,12 @@
   <!-- to the project's publication directory.  See REVERT.md at the project    -->
   <!-- root to undo.                                                            -->
   <targets>
-    <target name="web" format="html" publication="publication-web.ptx" />
+    <!-- CLAUDE 2026-09-15: html.js.extra loads assets/mathjax-linebreak.js  -->
+    <!-- (copied to external/ by the build), which turns on MathJax's        -->
+    <!-- automatic line breaking so wide display math wraps inside its box. -->
+    <target name="web" format="html" publication="publication-web.ptx">
+      <stringparams html.js.extra="external/mathjax-linebreak.js" />
+    </target>
     <target name="print" format="pdf" publication="publication-print.ptx" />
   </targets>
 </project>

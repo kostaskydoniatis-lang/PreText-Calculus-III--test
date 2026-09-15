@@ -130,9 +130,9 @@
     <caption>The helix traced by the vector r of t with coordinates x = cosine of t, y = sine of t, z = t over 10, for t from 0 to 10, a curve in xyz-space.</caption>
 
     <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-01. -->
-    <interactive xml:id="interactive-ch02-02-helix" width="85%" aspect="4:3" desmos="vqavop8m24">
+    <interactive xml:id="interactive-ch02-02-helix" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
       <instructions>
-        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+        <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
       </instructions>
       <static>
         <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-01.png">
@@ -152,7 +152,7 @@
 
   <figure xml:id="fig-ch02-02-surface-sin">
     <caption>The surface z equals the sine of, x plus y squared, in xyz-space.</caption>
-    <interactive xml:id="interactive-ch02-02-surface-sin" variant="controls" width="90%" aspect="3:2"
+    <interactive xml:id="interactive-ch02-02-surface-sin" variant="minimal" width="90%" aspect="3:2"
       calcplot3d="type=z;z=sin(x+y%5E2);funname=f;visible=true;umin=-4;umax=4;vmin=-4;vmax=4;grid=100;format=normal;alpha=-1;hidemyedges=true;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=-16.066827977112176,5.97346647927092,10.304112624331555,1;focus=0,0,0,1;up=0.29319095656853217,-0.39797438587643064,0.8692844477918069,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-4;xmax=4;ymin=-4;ymax=4;zmin=-4;zmax=4;xscale=2;yscale=2;zscale=2;zcmin=-8;zcmax=8;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.35">
       <instructions>
         <p>
@@ -198,9 +198,9 @@
     <caption>A point (x, y, f(x,y)) on the graph of a scalar-valued function f.</caption>
 
     <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-02-1. -->
-    <interactive xml:id="interactive-ch02-02-point-on-graph" width="85%" aspect="4:3" desmos="vqavop8m24">
+    <interactive xml:id="interactive-ch02-02-point-on-graph" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
       <instructions>
-        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+        <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
       </instructions>
       <static>
         <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-02-1.png">
@@ -226,9 +226,9 @@
         <caption>The graph of f of x and y equals y squared minus x squared, as a surface in xyz-space.</caption>
 
         <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-02. -->
-        <interactive xml:id="interactive-ch02-02-ex-6-1" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <interactive xml:id="interactive-ch02-02-ex-6-1" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
           <instructions>
-            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
           </instructions>
           <static>
             <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-02.png">
@@ -370,7 +370,7 @@
     <sidebyside widths="30% 30% 30%" margins="auto" valign="middle">
       <figure xml:id="fig-ch02-02-ex-6-2a">
         <caption>The plane f of x and y equals 4 x plus y minus 1, in xyz-space.</caption>
-        <interactive xml:id="interactive-ch02-02-ex-6-2a" variant="controls" width="90%" aspect="3:2"
+        <interactive xml:id="interactive-ch02-02-ex-6-2a" variant="minimal" width="90%" aspect="3:2"
           calcplot3d="type=z;z=4x+y+1;funname=f;visible=true;umin=-8;umax=8;vmin=-8;vmax=8;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=7.402565134086221,-6.6627148513296905,0.9001445692085965,1;focus=0,0,0,1;up=-0.07145341144323414,0.05516236849379555,0.9959174278499592,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-8;xmax=8;ymin=-8;ymax=8;zmin=-8;zmax=8;xscale=4;yscale=4;zscale=4;zcmin=-16;zcmax=16;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.331">
           <!--<instructions>
             <p>
@@ -391,7 +391,7 @@
 
       <figure xml:id="fig-ch02-02-ex-6-2b">
         <caption>The paraboloid f of x and y equals x squared plus y squared, in xyz-space.</caption>
-        <interactive xml:id="interactive-ch02-02-ex-6-2b" variant="controls" width="90%" aspect="3:2"
+        <interactive xml:id="interactive-ch02-02-ex-6-2b" variant="minimal" width="90%" aspect="3:2"
           calcplot3d="type=z;z=x%5E2+y%5E2;funname=f;visible=true;umin=-0.5;umax=0.5;vmin=-0.5;vmax=0.5;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=4.223280852347747,-8.99185255420588,1.1447648167226068,1;focus=0,0,0,1;up=-0.09715540443664565,0.08066044015414665,0.991995322964222,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-0.5;xmax=0.5;ymin=-0.5;ymax=0.5;zmin=-0.5;zmax=0.5;xscale=0.25;yscale=0.25;zscale=0.25;zcmin=-1;zcmax=1;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=5.296">
           <!--<instructions>
             <p>
@@ -412,7 +412,7 @@
 
       <figure xml:id="fig-ch02-02-ex-6-2c">
         <caption>The upper half of the sphere f of x and y equals the square root of, 1 minus x squared minus y squared, in xyz-space.</caption>
-        <interactive xml:id="interactive-ch02-02-ex-6-2c" variant="controls" width="90%" aspect="3:2"
+        <interactive xml:id="interactive-ch02-02-ex-6-2c" variant="minimal" width="90%" aspect="3:2"
           calcplot3d="type=z;z=sqrt(1-(x%5E2+y%5E2));funname=f;visible=true;umin=-2;umax=2;vmin=-2;vmax=2;grid=31;format=normal;alpha=-1;hidemyedges=false;constcol=rgb(255,0,0);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=9.883669242555984,5.70633909777092,3.7082039324993694,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-2;xmax=2;ymin=-2;ymax=2;zmin=-2;zmax=2;xscale=1;yscale=1;zscale=1;zcmin=-4;zcmax=4;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=1.324">
           <!--<instructions>
             <p>
@@ -479,7 +479,7 @@
 
     <figure xml:id="fig-ch02-02-normal-vector">
       <caption>A plane in xyz-space with a normal vector n orthogonal to every vector in the plane.</caption>
-      <interactive xml:id="interactive-ch02-02-normal-vector" variant="controls" width="90%" aspect="3:2"
+      <interactive xml:id="interactive-ch02-02-normal-vector" variant="minimal" width="90%" aspect="3:2"
         calcplot3d="type=z;z=x+y+.25;funname=f;visible=true;umin=-8;umax=8;vmin=-8;vmax=8;grid=10;format=constant;alpha=-1;hidemyedges=false;constcol=rgb(30,136,229);view=0;contourcolor=red;fixdomain=false;activetrace=false;contourplot=true;showcontourplot=false;firstvalue=-1;stepsize=0.2;numlevels=11;list=;uselist=false;xnum=46;ynum=46;show2d=false;hidesurface=false;hidelabels=true;showprojections=false;surfacecontours=true;projectioncolor=rgba(255,0,0,1);showxygrid=false;showxygridonbox=false;showconstraint=false&amp;type=vector;vector=%3C4,%204,8%3E;visible=true;color=rgb(255,193,7);size=5;initialpt=(0,-.250,0);dashed=false&amp;type=vector;vector=%3C-4,-%204,%204%3E;visible=true;color=rgb(216,27,96);size=5;initialpt=(0,-.250,0);dashed=undefined&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=27.192731773906313,-38.14495714040698,10.465064903230056,1;focus=0,0,0,1;up=-0.11655892322221247,0.09515025743330567,0.9886154186171963,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=false;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-8;xmax=8;ymin=-8;ymax=8;zmin=-8;zmax=8;xscale=4;yscale=4;zscale=4;zcmin=-16;zcmax=16;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.331">
         <instructions>
           <p>
@@ -724,9 +724,9 @@
         <caption>The paraboloid z equals x squared over 2 plus y squared over 4, intersected with the plane z equals 2.</caption>
 
         <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-09. -->
-        <interactive xml:id="interactive-ch02-02-level-curve-a" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <interactive xml:id="interactive-ch02-02-level-curve-a" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
           <!--<instructions>
-            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
           </instructions>-->
 
           <static>
@@ -744,9 +744,9 @@
         <caption>The level curve obtained by intersecting z equals x squared over 2 plus y squared over 4 with the plane z equals 2.</caption>
 
         <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-09-1. -->
-        <interactive xml:id="interactive-ch02-02-level-curve-b" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <interactive xml:id="interactive-ch02-02-level-curve-b" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
           <!--<instructions>
-            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
           </instructions>-->
 
           <static>
@@ -762,7 +762,7 @@
     </sidebyside>
   </figure>
   <p>
-    You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+    The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
   </p>
 
   <example xml:id="example-ch02-02-ex-6-6">
@@ -776,9 +776,9 @@
         <caption>The cone z equals the square root of, 2 x squared plus 2 y squared, intersected with the plane z equals 1.</caption>
 
         <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-10. -->
-        <interactive xml:id="interactive-ch02-02-ex-6-6" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <interactive xml:id="interactive-ch02-02-ex-6-6" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
           <instructions>
-            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
           </instructions>
           <static>
             <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-10.png">
@@ -831,9 +831,9 @@
         <caption>The hyperbolic paraboloid z equals y squared minus x squared, intersected with the plane y equals 1, showing the vertical trace.</caption>
 
         <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-11. -->
-        <interactive xml:id="interactive-ch02-02-ex-6-7" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <interactive xml:id="interactive-ch02-02-ex-6-7" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
           <instructions>
-            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
           </instructions>
           <static>
             <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-11.png">
@@ -876,9 +876,9 @@
               <caption>Option a displays hyperbola-like lines</caption>
 
               <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-12. -->
-              <interactive xml:id="interactive-ch02-02-ex-6-8a" width="85%" aspect="4:3" desmos="vqavop8m24">
+              <interactive xml:id="interactive-ch02-02-ex-6-8a" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
                 <!--<instructions>
-                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                  <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
                 </instructions>-->
 
                 <static>
@@ -896,9 +896,9 @@
               <caption>Option b displays parallel straight lines with slope not far from 1</caption>
 
               <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-12-1. -->
-              <interactive xml:id="interactive-ch02-02-ex-6-8b" width="85%" aspect="4:3" desmos="vqavop8m24">
+              <interactive xml:id="interactive-ch02-02-ex-6-8b" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
                 <!--<instructions>
-                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                  <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
                 </instructions>-->
 
                 <static>
@@ -918,9 +918,9 @@
               <caption>Option c displays parallel straight lines with slope significantly greater than 1</caption>
 
               <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-12-3. -->
-              <interactive xml:id="interactive-ch02-02-ex-6-8c" width="85%" aspect="4:3" desmos="vqavop8m24">
+              <interactive xml:id="interactive-ch02-02-ex-6-8c" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
                 <!--<instructions>
-                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                  <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
                 </instructions>-->
 
                 <static>
@@ -938,9 +938,9 @@
               <caption>Option d displays parallel straight lines with slope significantly smaller than 1</caption>
 
               <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-12-2. -->
-              <interactive xml:id="interactive-ch02-02-ex-6-8d" width="85%" aspect="4:3" desmos="vqavop8m24">
+              <interactive xml:id="interactive-ch02-02-ex-6-8d" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
                 <!--<instructions>
-                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                  <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
                 </instructions>-->
 
                 <static>
@@ -957,7 +957,7 @@
         </sbsgroup>
       </figure>
       <p>
-        You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the top left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the top right graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the bottom left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the bottom right graph</url>
+        The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the top left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the top right graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the bottom left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the bottom right graph</url>
       </p>
     </statement>
 
@@ -1016,9 +1016,9 @@
         <caption>The ellipsoid x squared plus 2 y squared plus 3 z squared equals 4.</caption>
 
         <!-- This interactive is PENDING, it should correspond to 2025_08_06_f7193d1cc61b1e2c50ebg-13. -->
-        <interactive xml:id="interactive-ch02-02-ex-6-9" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <interactive xml:id="interactive-ch02-02-ex-6-9" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
           <instructions>
-            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
           </instructions>
           <static>
             <image source="/images/2025_08_06_f7193d1cc61b1e2c50ebg-13.png">

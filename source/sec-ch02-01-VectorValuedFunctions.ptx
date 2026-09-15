@@ -119,63 +119,57 @@
     <sidebyside widths="30% 30% 30%" margins="auto" valign="middle">
       <figure xml:id="fig-ch02-01-position-vectors-a">
         <caption>A point on a curve in xyz-space at time t0 with position vector r(t0). </caption>
-        <interactive xml:id="interactive-ch02-01-position-vectors-a" width="85%" aspect="4:3" desmos="vqavop8m24">
-          <!--<instructions>
-            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
-          </instructions>-->
-
-          <static>
             <image source="/images/2025_08_04_3d11211490a50caa278ag-1.png">
               <shortdescription>A point on a curve in xyz-space at time t0 with position vector r(t0).</shortdescription>
               <description>
                 <p>A point on a curve in <m>xyz</m>-space at time <m>t_{0}</m> with position vector <m>\vec{r}(t_{0})</m>.</p>
               </description>
             </image>
-          </static>
-        </interactive>
       </figure>
 
       <figure xml:id="fig-ch02-01-position-vectors-b">
         <caption>A point on a curve in xyz-space at time t1 with position vector r(t1).</caption>
-        <interactive xml:id="interactive-ch02-01-position-vectors-b" width="85%" aspect="4:3" desmos="vqavop8m24">
-          <!--<instructions>
-            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
-          </instructions>-->
-
-          <static>
             <image source="/images/2025_08_04_3d11211490a50caa278ag-1-2.png">
               <shortdescription>A point on a curve in xyz-space at time t1 with position vector r(t1).</shortdescription>
               <description>
                 <p>A point on a curve in <m>xyz</m>-space at time <m>t_{1}</m> with position vector <m>\vec{r}(t_{1})</m>.</p>
               </description>
             </image>
-          </static>
-        </interactive>
       </figure>
 
       <figure xml:id="fig-ch02-01-position-vectors-c">
         <caption>A point on a curve in xyz-space at time t2 with position vector r(t2).</caption>
-        <interactive xml:id="interactive-ch02-01-position-vectors-c" width="85%" aspect="4:3" desmos="vqavop8m24">
-          <!--<instructions>
-            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
-          </instructions>-->
-
-          <static>
             <image source="/images/2025_08_04_3d11211490a50caa278ag-1-1.png">
               <shortdescription>A point on a curve in xyz-space at time t2 with position vector r(t2).</shortdescription>
               <description>
                 <p>A point on a curve in <m>xyz</m>-space at time <m>t_{2}</m> with position vector <m>\vec{r}(t_{2})</m>.</p>
               </description>
             </image>
-          </static>
-        </interactive>
       </figure>
     </sidebyside>
+
+
   </figure>
-  <p>
-     You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:<url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the middle graph</url>, <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
-  </p>
-  <!--\caption*{From openstax, Calculus Volume 3, Section 2.2}-->
+  <figure xml:id="fig-ch02-01-position-vectors-interactive">
+    <caption>A point on a curve in xyz-space at time t0 with position vector r(t0).</caption>
+      <interactive xml:id="interactive-ch02-01-position-vectors" variant="controls" width="90%" aspect="3:2"
+      calcplot3d="type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=sin(t);y=cos(t);z=0.1t;visible=true;width=2;view=0;tmin=0;tmax=10;tsteps=500;color=rgb(0,77,64);showtrace=true;tval=2;constcol=true;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=false;acc=false;accnorm=false;acctang=false;veceqs=false;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=false;tanline=false;dropcurtain=false;vecwidth=2;numvfpts=10;unitvecscale=1;showtvector=false;shownvector=false;showbvector=false;showvelocitylabel=true;showaccelerationlabel=true;showaccnormlabel=true;showacctanlabel=true;tracelabelpos=right;accelerationlabelpos=right;accnormlabelpos=right;tracecolor=d81b60;velocitycolor=000000;accelerationcolor=008000;accnormcolor=ff00ff;acctancolor=ff8c00;showunittanlabel=true;showunitnormlabel=true;showunitbinormlabel=true;unittancolor=9900ff;unitnormcolor=116dc0;unitbinormcolor=cc0000;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.236391035463319,4.755282581475766,3.0901699437494745,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-1;xmax=1;ymin=-1;ymax=1;zmin=-1;zmax=1;xscale=0.5;yscale=0.5;zscale=0.5;zcmin=-2;zcmax=2;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=2">
+        <instructions>
+          <p>You can open in a new page from here:
+     <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=sin(t);y=cos(t);z=0.1t;visible=true;width=2;view=0;tmin=0;tmax=10;tsteps=500;color=rgb(0,77,64);showtrace=true;tval=2;constcol=true;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=false;acc=false;accnorm=false;acctang=false;veceqs=false;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=false;tanline=false;dropcurtain=false;vecwidth=2;numvfpts=10;unitvecscale=1;showtvector=false;shownvector=false;showbvector=false;showvelocitylabel=true;showaccelerationlabel=true;showaccnormlabel=true;showacctanlabel=true;tracelabelpos=right;accelerationlabelpos=right;accnormlabelpos=right;tracecolor=d81b60;velocitycolor=000000;accelerationcolor=008000;accnormcolor=ff00ff;acctancolor=ff8c00;showunittanlabel=true;showunitnormlabel=true;showunitbinormlabel=true;unittancolor=9900ff;unitnormcolor=116dc0;unitbinormcolor=cc0000;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.236391035463319,4.755282581475766,3.0901699437494745,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-1;xmax=1;ymin=-1;ymax=1;zmin=-1;zmax=1;xscale=0.5;yscale=0.5;zscale=0.5;zcmin=-2;zcmax=2;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=2" target="_blank" rel="noopener noreferrer">link to the graph</url>.</p>
+        </instructions>
+        <static>
+          <image source="/images/2025_08_04_3d11211490a50caa278ag-1.png">
+            <shortdescription>A point on a curve in xyz-space at time t0 with position vector r(t0).</shortdescription>
+            <description>
+              <p>A point on the helix in <m>xyz</m>-space at time <m>t_{0}</m>, with its position vector <m>\vec{r}(t_{0})</m> drawn from the origin.</p>
+            </description>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+
+
 
   <definition>
     <title>Vector-Valued Function</title>
@@ -211,8 +205,8 @@
 
       <figure xml:id="fig-ch02-01-ex-5-1">
         <caption>The helix traced by the vector <m>\vec{r}(t)=\left\langle\cos (t), \sin (t), \frac{t}{10}\right\rangle</m>, for <m>t</m> from 0 to 10, in <m>xyz</m>-space.</caption>
-        <interactive xml:id="interactive-ch02-01-ex-5-1" variant="controls" width="90%" aspect="3:2"
-          calcplot3d="type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=sin(t);y=cos(t);z=0.1t;visible=true;width=2;view=0;tmin=0;tmax=10;tsteps=500;color=rgb(30,136,229);showtrace=false;tval=1;constcol=true;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=true;acc=true;veceqs=true;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=false;tanline=false;dropcurtain=false;showtvector=false;shownvector=false;showbvector=false;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=vector;vector=%3Csin(1.7),%20cos(1.7),%20.17%3E;visible=false;color=rgb(216,27,96);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=4.941834621277992,2.85316954888546,1.8541019662496847,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-1;xmax=1;ymin=-1;ymax=1;zmin=-1;zmax=1;xscale=0.5;yscale=0.5;zscale=0.5;zcmin=-2;zcmax=2;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=3.357333">
+        <interactive xml:id="interactive-ch02-01-ex-5-1" variant="minimal" width="90%" aspect="3:2"
+          calcplot3d="type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=sin(t);y=cos(t);z=0.1t;visible=true;width=2;view=0;tmin=0;tmax=10;tsteps=500;color=rgb(30,136,229);showtrace=false;tval=1;constcol=true;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=true;acc=true;veceqs=true;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=false;tanline=false;dropcurtain=false;showtvector=false;shownvector=false;showbvector=false;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=vector;vector=%3Csin(1.7),%20cos(1.7),%20.17%3E;visible=false;color=rgb(216,27,96);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=4.941834621277992,2.85316954888546,1.8541019662496847,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-1;xmax=1;ymin=-1;ymax=1;zmin=-1;zmax=1;xscale=0.5;yscale=0.5;zscale=0.5;zcmin=-2;zcmax=2;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=1">
           <instructions>
             <p>
               Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="https://c3d.libretexts.org/CalcPlot3D/index.html?type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=sin(t);y=cos(t);z=0.1t;visible=true;width=2;view=0;tmin=0;tmax=10;tsteps=500;color=rgb(30,136,229);showtrace=false;tval=1;constcol=true;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=true;acc=true;veceqs=true;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=false;tanline=false;dropcurtain=false;showtvector=false;shownvector=false;showbvector=false;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=vector;vector=%3Csin(1.7),%20cos(1.7),%20.17%3E;visible=false;color=rgb(216,27,96);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=4.941834621277992,2.85316954888546,1.8541019662496847,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-1;xmax=1;ymin=-1;ymax=1;zmin=-1;zmax=1;xscale=0.5;yscale=0.5;zscale=0.5;zcmin=-2;zcmax=2;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=3.357333" target="_blank" rel="noopener noreferrer">link to the plot</url>
@@ -282,9 +276,9 @@
 
     <figure xml:id="fig-ch02-01-line-segment">
       <caption>The line segment traced by the vector r of t with coordinates x = t, y = negative t over 2, plus 1, for t from 0 to 2, in the xy-plane.</caption>
-      <interactive xml:id="interactive-ch02-01-line-segment" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <interactive xml:id="interactive-ch02-01-line-segment" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
         <instructions>
-          <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
         </instructions>
         <static>
           <image source="/images/2025_08_04_3d11211490a50caa278ag-2-1.png">
@@ -350,9 +344,9 @@
 
       <figure xml:id="fig-ch02-01-ex-5-2a">
         <caption>The unit circle oriented counter-clockwise.</caption>
-        <interactive xml:id="interactive-ch02-01-ex-5-2a" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <interactive xml:id="interactive-ch02-01-ex-5-2a" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
           <instructions>
-            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
           </instructions>
           <static>
             <image source="/images/Example-5.2-1.png">
@@ -385,9 +379,9 @@
 
       <figure xml:id="fig-ch02-01-ex-5-2b">
         <caption>The parabola y equals x squared minus one, from x equals -1 to x equals 1, traversed from left to right.</caption>
-        <interactive xml:id="interactive-ch02-01-ex-5-2b" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <interactive xml:id="interactive-ch02-01-ex-5-2b" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
           <instructions>
-            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
           </instructions>
           <static>
             <image source="/images/Example-5.2-2.png">
@@ -497,9 +491,9 @@
 
       <figure xml:id="fig-ch02-01-ex-5-3">
         <caption>The parabola y equals x squared minus 4 x plus three, from x equals 1 to x equals 5, traversed from right to left.</caption>
-        <interactive xml:id="interactive-ch02-01-ex-5-3" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <interactive xml:id="interactive-ch02-01-ex-5-3" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
           <instructions>
-            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
           </instructions>
           <static>
             <image source="/images/Example-5.3.png">
@@ -590,7 +584,7 @@
 
     <figure xml:id="fig-ch02-01-line-parametric">
       <caption>A line in <m>xyz</m>-space defined by the position vector <m>\vec{r}_{0}</m> and a direction vector <m>\vec{v}</m>, illustrating the parametric form: <m>\vec{r}(t)=\vec{r}_{0}+t\vec{v}</m>.</caption>
-      <interactive xml:id="interactive-ch02-01-line-parametric" variant="controls" width="90%" aspect="3:2"
+      <interactive xml:id="interactive-ch02-01-line-parametric" variant="minimal" width="90%" aspect="3:2"
         calcplot3d="type=vector;vector=%3C20,%20-20,%200%3E;visible=true;color=rgb(255,193,7);size=2;initialpt=(-8,8,8);dashed=undefined&amp;type=vector;vector=%3C-8,%208,%208%3E;visible=true;color=rgb(216,27,96);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=vector;vector=%3C4,%20-4,%208%3E;visible=true;color=rgb(30,136,229);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=spacecurve;spacecurve=curve;curvename=r_%7B2%7D;x=-8+t;y=8-t;z=8;visible=true;width=2;view=0;tmin=-100;tmax=100;tsteps=500;color=rgb(0,0,0);showtrace=false;tval=0;constcol=true;twod=false;arrows=0;showpt=true;traceptsize=4;trace=true;vel=true;acc=true;veceqs=true;osc=false;k=false;showtorsion=false;repeat=false;bounce=false;dashed=true;tanline=false;dropcurtain=false;showtvector=false;shownvector=false;showbvector=false;showtnbeqs=false;showtnblabels=false;showoscplane=false;showrectplane=false;shownormplane=false;optimizecurve=true;maxjointangle=10&amp;type=text;text=r;visible=true;point=(2,-2,4);color=rgb(30,136,229);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=text;text=V;visible=true;point=(0,0,8);color=rgb(255,193,0);font=Times%20New%20Roman;fontsize=18pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=text;text=r_0;visible=true;point=(-4,4,4);color=rgb(216,27,96);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-left&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=79.06935394044787,45.65071278216736,29.665631459994955,1;focus=0,0,0,1;up=0,0,2,1;transparent=true;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=false;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-16;xmax=16;ymin=-16;ymax=16;zmin=-16;zmax=16;xscale=8;yscale=8;zscale=8;zcmin=-32;zcmax=32;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.191083">
         <instructions>
           <p>
