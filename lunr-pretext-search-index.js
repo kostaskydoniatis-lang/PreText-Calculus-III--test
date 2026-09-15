@@ -817,7 +817,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.1",
   "title": "Vector-Valued Functions",
-  "body": " Vector-Valued Functions   Think of a point tracing a path as it moves through -space (for example, think of tracing the path a mosquito travels as it flies through a room). We can think of the curve traced by this point in two ways:     The position of the point at a time , given by .    The position of the point at a time , given by the endpoint of the vector .        The position of a point on a curve in -space at three times , , , given by the position vectors , , .    A point on a curve in xyz-space at time t0 with position vector r(t0).     A point on a curve in xyz-space at time t1 with position vector r(t1).     A point on a curve in xyz-space at time t2 with position vector r(t2).      You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the \"Save\" button in the upper right corner of the graph. You can open in a new page from here: link to the left graph , link to the middle graph , link to the right graph     Vector-Valued Function   A vector-valued function is a function which assigns to each input (the independent variable), an output of a vector. Mathematically, a vector-valued function can be written in the form where each component of is a function of (each component is a dependent variable).     The domain of is the intersection of the domains of , and .     The graph of , is shown below. If we don't restrict , what is the domain of ?   The helix traced by the vector , for from 0 to 10, in -space.      The domain of is the intersection of the domains of its three components. Each of , , and is defined for every real number , so that is, the domain is all real numbers (and the graph becomes a helix spiraling upwards forever in both directions).     If we write and don't specify an interval, assume that can take any possible value in the domain of .    The output vector of a vector-valued function doesn't have to be three dimensional. For example, the function traces the graph of on the interval .   The line segment traced by the vector r of t with coordinates x = t, y = negative t over 2, plus 1, for t from 0 to 2, in the xy-plane.      Since vector-valued functions trace a curve as time passes by, we can talk about the orientation (or direction) in which the curve is traced.     For each of the following planar curves, write a vector-valued function which traces them with the specified orientation. Moreover, graph the given curves using arrows to indicate the orientation.     A circle of radius 1 (traced once) oriented counterclockwise, starting at .    The graph of , on the interval , traced from left to right (relative to the -axis).       The function traces the circle of radius 1 centered at the origin, since . It starts at , passes through at , through at , and through at  a counterclockwise motion and returns to at , tracing the circle exactly once. To graph it, draw the unit circle with the arrows on it pointing counterclockwise.   The unit circle oriented counter-clockwise.      Letting , the point on the graph above is , so   Since increases as increases, the parabola is traced from left to right: starting at , down to the vertex , and up to . To graph it, draw this piece of the upward parabola with the arrows on it pointing from left to right.   The parabola y equals x squared minus one, from x equals -1 to x equals 1, traversed from left to right.       Generally if you want to quickly parametrize a function on the interval from left to right, then you can use for .     For the following planar curve, write a vector-valued function which traces it with the specified orientation. Moreover, graph the given curve using arrows to indicate the orientation.  The graph of , on the interval , traced from right to left (relative to the -axis)    To trace the graph from right to left we need the -coordinate to decrease as increases and there multiple options to achieve this. Here are three:   Option A Let . Then and runs from 5 down to 1 as runs from 0 to 4. Hence   Indeed, and , so the curve starts at the right endpoint and ends at the left endpoint .   Option B Let . Then and runs from 5 down to 1 as runs from 1 to 5. Hence   Indeed, and , so the curve starts at the right endpoint and ends at the left endpoint .   Option C Let . Then and runs from 5 down to 1 as runs from to . Hence   Indeed, and , so the curve starts at the right endpoint and ends at the left endpoint .  To graph it, draw the piece of the upward parabola with vertex and -intercepts and , between and , with the arrows on it pointing from right to left.   The parabola y equals x squared minus 4 x plus three, from x equals 1 to x equals 5, traversed from right to left.       Generally if you want to quickly parametrize a function on the interval from right to left, then you can use on of the following.      for .     for .     for .       Parametric Equations for a Line  The components , and of are also called parametric equations.    Line in Parametric Form   A line in -space (or in 2D space) can be defined as a vector-valued function by the equation where is any point on the line, and (the direction vector) gives you the change in each coordinate.  The equations , and are the parametric equations that define the line.     Geometrically, the definition above says that you take the line containing (represented by ), and shift it so it passes through the endpoint of .   A line in -space defined by the position vector and a direction vector , illustrating the parametric form: .       Find both the vector equation and the parametric equations of the line through in the direction of the vector . Does the point lie on this line?    Using as the point on the line and as the direction vector, the vector equation of the line is and the parametric equations are   For the point to lie on the line, all three parametric equations must be satisfied by the same value of . From the first equation:   Checking this value in the other two equations:   Both match, so yes: the point lies on the line (it is reached at ).     Given a line , since represents the direction of the line, we can compare lines by comparing their direction vectors.     Determine whether the following pair of lines are parallel, intersect at a single point, or are skew. If they are parallel, determine whether they are the same line. If they intersect at a single point, determine the point of intersection.     The direction vectors are for the first line and for the second. If the lines were parallel there would be a scalar with ; comparing components gives , , and respectively, which is impossible. Hence the lines are not parallel (and in particular they are not the same line).  It remains to determine whether the lines intersect at a single point or are skew. An intersection point may be reached by each line at a different time, so we rename the parameter of the second line and look for values and with . Comparing components gives the system   The second equation of the system gives . Substituting into the first equation:   Since we only used the first two equations, we must check these values in the third: and , so the third equation is also satisfied. Hence the system is consistent and the lines intersect at the single point that is, at the point . (Indeed, as well.)    "
+  "body": " Vector-Valued Functions   Think of a point tracing a path as it moves through -space (for example, think of tracing the path a mosquito travels as it flies through a room). We can think of the curve traced by this point in two ways:     The position of the point at a time , given by .    The position of the point at a time , given by the endpoint of the vector .        The position of a point on a curve in -space at three times , , , given by the position vectors , , .    A point on a curve in xyz-space at time t0 with position vector r(t0).     A point on a curve in xyz-space at time t1 with position vector r(t1).     A point on a curve in xyz-space at time t2 with position vector r(t2).      You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the \"Save\" button in the upper right corner of the graph. You can open in a new page from here: link to the left graph , link to the middle graph , link to the right graph     Vector-Valued Function   A vector-valued function is a function which assigns to each input (the independent variable), an output of a vector. Mathematically, a vector-valued function can be written in the form where each component of is a function of (each component is a dependent variable).     The domain of is the intersection of the domains of , and .     The graph of , is shown below. If we don't restrict , what is the domain of ?   The helix traced by the vector , for from 0 to 10, in -space.      The domain of is the intersection of the domains of its three components. Each of , , and is defined for every real number , so that is, the domain is all real numbers (and the graph becomes a helix spiraling upwards forever in both directions).      Find the domain of .    The domain of is the intersection of the domains of its two components. The first, , is defined for , hence . The second, , is defined for , hence . The intersection of the two gives us .     If we write and don't specify an interval, assume that can take any possible value in the domain of .    The output vector of a vector-valued function doesn't have to be three dimensional. For example, the function traces the graph of on the interval .   The line segment traced by the vector r of t with coordinates x = t, y = negative t over 2, plus 1, for t from 0 to 2, in the xy-plane.      Since vector-valued functions trace a curve as time passes by, we can talk about the orientation (or direction) in which the curve is traced.     For each of the following planar curves, write a vector-valued function which traces them with the specified orientation. Moreover, graph the given curves using arrows to indicate the orientation.     A circle of radius 1 (traced once), centred at the origin, oriented counterclockwise, starting at .    The graph of , on the interval , traced from left to right (relative to the -axis).       The function traces the circle of radius 1 centred at the origin, since . It starts at , passes through at , through at , and through at  a counterclockwise motion and returns to at , tracing the circle exactly once. To graph it, draw the unit circle with the arrows on it pointing counterclockwise.   The unit circle oriented counter-clockwise.      Letting , the point on the graph above is , so   Since increases as increases, the parabola is traced from left to right: starting at , down to the vertex , and up to . To graph it, draw this piece of the upward parabola with the arrows on it pointing from left to right.   The parabola y equals x squared minus one, from x equals -1 to x equals 1, traversed from left to right.       Generally if you want to quickly parametrize a function on the interval from left to right, then you can use for .     For the following planar curve, write a vector-valued function which traces it with the specified orientation. Moreover, graph the given curve using arrows to indicate the orientation.  The graph of , on the interval , traced from right to left (relative to the -axis)    To trace the graph from right to left we need the -coordinate to decrease as increases and there multiple options to achieve this. Here are three:   Option A Let . Then and runs from 5 down to 1 as runs from 0 to 4. Hence   Indeed, and , so the curve starts at the right endpoint and ends at the left endpoint .   Option B Let . Then and runs from 5 down to 1 as runs from 1 to 5. Hence   Indeed, and , so the curve starts at the right endpoint and ends at the left endpoint .   Option C Let . Then and runs from 5 down to 1 as runs from to . Hence   Indeed, and , so the curve starts at the right endpoint and ends at the left endpoint .  To graph it, draw the piece of the upward parabola with vertex and -intercepts and , between and , with the arrows on it pointing from right to left.   The parabola y equals x squared minus 4 x plus three, from x equals 1 to x equals 5, traversed from right to left.       Generally if you want to quickly parametrize a function on the interval from right to left, then you can use on of the following.      for .     for .     for .       Parametric Equations for a Line  The components , and of are also called parametric equations.    Line in Parametric Form   A line in -space (or in 2D space) can be defined as a vector-valued function by the equation where is any point on the line, and (the direction vector) gives you the change in each coordinate.  The equations , and are the parametric equations that define the line.     Geometrically, the definition above says that you take the line containing (represented by ), and shift it so it passes through the endpoint of .   A line in -space defined by the position vector and a direction vector , illustrating the parametric form: .       Find both the vector equation and the parametric equations of the line through in the direction of the vector . Does the point lie on this line?    Using as the point on the line and as the direction vector, the vector equation of the line is and the parametric equations are   For the point to lie on the line, all three parametric equations must be satisfied by the same value of . From the first equation:   Checking this value in the other two equations:   Both match, so yes: the point lies on the line (it is reached at ).     Given a line , since represents the direction of the line, we can compare lines by comparing their direction vectors.     Determine whether the following pair of lines are parallel, intersect at a single point, or are skew. If they are parallel, determine whether they are the same line. If they intersect at a single point, determine the point of intersection.     The direction vectors are for the first line and for the second. If the lines were parallel there would be a scalar with ; comparing components gives , , and respectively, which is impossible. Hence the lines are not parallel (and in particular they are not the same line).  It remains to determine whether the lines intersect at a single point or are skew. An intersection point may be reached by each line at a different time, so we rename the parameter of the second line and look for values and with . Comparing components gives the system   The second equation of the system gives . Substituting into the first equation:   Since we only used the first two equations, we must check these values in the third: and , so the third equation is also satisfied. Hence the system is consistent and the lines intersect at the single point that is, at the point . (Indeed, as well.)     Intersection of Curves  Assume there are two curves, and , parametrized by the same variable , with vector-valued functions and . The solutions of the equation are not simply the intersection points. They are the intersection points at which the two parametrizations arrive concurrently. For the intersection points one needs to solve , i.e. change one of the parameters.   "
 },
 {
   "id": "sec-ch02-01-VectorValuedFunctions-2",
@@ -865,67 +865,67 @@ var ptx_lunr_docs = [
   "body": "  The graph of , is shown below. If we don't restrict , what is the domain of ?   The helix traced by the vector , for from 0 to 10, in -space.      The domain of is the intersection of the domains of its three components. Each of , , and is defined for every real number , so that is, the domain is all real numbers (and the graph becomes a helix spiraling upwards forever in both directions).   "
 },
 {
-  "id": "sec-ch02-01-VectorValuedFunctions-8",
+  "id": "example-ch02-01-ex-5-2",
   "level": "2",
-  "url": "sec-ch02-01-VectorValuedFunctions.html#sec-ch02-01-VectorValuedFunctions-8",
-  "type": "Note",
+  "url": "sec-ch02-01-VectorValuedFunctions.html#example-ch02-01-ex-5-2",
+  "type": "Example",
   "number": "2.1.5",
   "title": "",
-  "body": " If we write and don't specify an interval, assume that can take any possible value in the domain of .  "
+  "body": "  Find the domain of .    The domain of is the intersection of the domains of its two components. The first, , is defined for , hence . The second, , is defined for , hence . The intersection of the two gives us .   "
 },
 {
   "id": "sec-ch02-01-VectorValuedFunctions-9",
   "level": "2",
   "url": "sec-ch02-01-VectorValuedFunctions.html#sec-ch02-01-VectorValuedFunctions-9",
-  "type": "Remark",
+  "type": "Note",
   "number": "2.1.6",
   "title": "",
-  "body": " The output vector of a vector-valued function doesn't have to be three dimensional. For example, the function traces the graph of on the interval .   The line segment traced by the vector r of t with coordinates x = t, y = negative t over 2, plus 1, for t from 0 to 2, in the xy-plane.    "
+  "body": " If we write and don't specify an interval, assume that can take any possible value in the domain of .  "
 },
 {
   "id": "sec-ch02-01-VectorValuedFunctions-10",
   "level": "2",
   "url": "sec-ch02-01-VectorValuedFunctions.html#sec-ch02-01-VectorValuedFunctions-10",
-  "type": "Note",
+  "type": "Remark",
   "number": "2.1.7",
   "title": "",
-  "body": " Since vector-valued functions trace a curve as time passes by, we can talk about the orientation (or direction) in which the curve is traced.  "
+  "body": " The output vector of a vector-valued function doesn't have to be three dimensional. For example, the function traces the graph of on the interval .   The line segment traced by the vector r of t with coordinates x = t, y = negative t over 2, plus 1, for t from 0 to 2, in the xy-plane.    "
 },
 {
-  "id": "example-ch02-01-ex-5-2",
+  "id": "sec-ch02-01-VectorValuedFunctions-11",
   "level": "2",
-  "url": "sec-ch02-01-VectorValuedFunctions.html#example-ch02-01-ex-5-2",
-  "type": "Example",
+  "url": "sec-ch02-01-VectorValuedFunctions.html#sec-ch02-01-VectorValuedFunctions-11",
+  "type": "Note",
   "number": "2.1.8",
   "title": "",
-  "body": "  For each of the following planar curves, write a vector-valued function which traces them with the specified orientation. Moreover, graph the given curves using arrows to indicate the orientation.     A circle of radius 1 (traced once) oriented counterclockwise, starting at .    The graph of , on the interval , traced from left to right (relative to the -axis).       The function traces the circle of radius 1 centered at the origin, since . It starts at , passes through at , through at , and through at  a counterclockwise motion and returns to at , tracing the circle exactly once. To graph it, draw the unit circle with the arrows on it pointing counterclockwise.   The unit circle oriented counter-clockwise.      Letting , the point on the graph above is , so   Since increases as increases, the parabola is traced from left to right: starting at , down to the vertex , and up to . To graph it, draw this piece of the upward parabola with the arrows on it pointing from left to right.   The parabola y equals x squared minus one, from x equals -1 to x equals 1, traversed from left to right.     "
-},
-{
-  "id": "sec-ch02-01-VectorValuedFunctions-12",
-  "level": "2",
-  "url": "sec-ch02-01-VectorValuedFunctions.html#sec-ch02-01-VectorValuedFunctions-12",
-  "type": "Remark",
-  "number": "2.1.9",
-  "title": "",
-  "body": " Generally if you want to quickly parametrize a function on the interval from left to right, then you can use for .  "
+  "body": " Since vector-valued functions trace a curve as time passes by, we can talk about the orientation (or direction) in which the curve is traced.  "
 },
 {
   "id": "example-ch02-01-ex-5-3",
   "level": "2",
   "url": "sec-ch02-01-VectorValuedFunctions.html#example-ch02-01-ex-5-3",
   "type": "Example",
-  "number": "2.1.10",
+  "number": "2.1.9",
   "title": "",
-  "body": "  For the following planar curve, write a vector-valued function which traces it with the specified orientation. Moreover, graph the given curve using arrows to indicate the orientation.  The graph of , on the interval , traced from right to left (relative to the -axis)    To trace the graph from right to left we need the -coordinate to decrease as increases and there multiple options to achieve this. Here are three:   Option A Let . Then and runs from 5 down to 1 as runs from 0 to 4. Hence   Indeed, and , so the curve starts at the right endpoint and ends at the left endpoint .   Option B Let . Then and runs from 5 down to 1 as runs from 1 to 5. Hence   Indeed, and , so the curve starts at the right endpoint and ends at the left endpoint .   Option C Let . Then and runs from 5 down to 1 as runs from to . Hence   Indeed, and , so the curve starts at the right endpoint and ends at the left endpoint .  To graph it, draw the piece of the upward parabola with vertex and -intercepts and , between and , with the arrows on it pointing from right to left.   The parabola y equals x squared minus 4 x plus three, from x equals 1 to x equals 5, traversed from right to left.     "
+  "body": "  For each of the following planar curves, write a vector-valued function which traces them with the specified orientation. Moreover, graph the given curves using arrows to indicate the orientation.     A circle of radius 1 (traced once), centred at the origin, oriented counterclockwise, starting at .    The graph of , on the interval , traced from left to right (relative to the -axis).       The function traces the circle of radius 1 centred at the origin, since . It starts at , passes through at , through at , and through at  a counterclockwise motion and returns to at , tracing the circle exactly once. To graph it, draw the unit circle with the arrows on it pointing counterclockwise.   The unit circle oriented counter-clockwise.      Letting , the point on the graph above is , so   Since increases as increases, the parabola is traced from left to right: starting at , down to the vertex , and up to . To graph it, draw this piece of the upward parabola with the arrows on it pointing from left to right.   The parabola y equals x squared minus one, from x equals -1 to x equals 1, traversed from left to right.     "
 },
 {
-  "id": "sec-ch02-01-VectorValuedFunctions-14",
+  "id": "sec-ch02-01-VectorValuedFunctions-13",
   "level": "2",
-  "url": "sec-ch02-01-VectorValuedFunctions.html#sec-ch02-01-VectorValuedFunctions-14",
+  "url": "sec-ch02-01-VectorValuedFunctions.html#sec-ch02-01-VectorValuedFunctions-13",
   "type": "Remark",
+  "number": "2.1.10",
+  "title": "",
+  "body": " Generally if you want to quickly parametrize a function on the interval from left to right, then you can use for .  "
+},
+{
+  "id": "example-ch02-01-ex-5-4",
+  "level": "2",
+  "url": "sec-ch02-01-VectorValuedFunctions.html#example-ch02-01-ex-5-4",
+  "type": "Example",
   "number": "2.1.11",
   "title": "",
-  "body": " Generally if you want to quickly parametrize a function on the interval from right to left, then you can use on of the following.      for .     for .     for .     "
+  "body": "  For the following planar curve, write a vector-valued function which traces it with the specified orientation. Moreover, graph the given curve using arrows to indicate the orientation.  The graph of , on the interval , traced from right to left (relative to the -axis)    To trace the graph from right to left we need the -coordinate to decrease as increases and there multiple options to achieve this. Here are three:   Option A Let . Then and runs from 5 down to 1 as runs from 0 to 4. Hence   Indeed, and , so the curve starts at the right endpoint and ends at the left endpoint .   Option B Let . Then and runs from 5 down to 1 as runs from 1 to 5. Hence   Indeed, and , so the curve starts at the right endpoint and ends at the left endpoint .   Option C Let . Then and runs from 5 down to 1 as runs from to . Hence   Indeed, and , so the curve starts at the right endpoint and ends at the left endpoint .  To graph it, draw the piece of the upward parabola with vertex and -intercepts and , between and , with the arrows on it pointing from right to left.   The parabola y equals x squared minus 4 x plus three, from x equals 1 to x equals 5, traversed from right to left.     "
 },
 {
   "id": "sec-ch02-01-VectorValuedFunctions-15",
@@ -933,53 +933,71 @@ var ptx_lunr_docs = [
   "url": "sec-ch02-01-VectorValuedFunctions.html#sec-ch02-01-VectorValuedFunctions-15",
   "type": "Remark",
   "number": "2.1.12",
-  "title": "Parametric Equations for a Line.",
-  "body": " Parametric Equations for a Line  The components , and of are also called parametric equations.  "
+  "title": "",
+  "body": " Generally if you want to quickly parametrize a function on the interval from right to left, then you can use on of the following.      for .     for .     for .     "
 },
 {
   "id": "sec-ch02-01-VectorValuedFunctions-16",
   "level": "2",
   "url": "sec-ch02-01-VectorValuedFunctions.html#sec-ch02-01-VectorValuedFunctions-16",
-  "type": "Definition",
+  "type": "Remark",
   "number": "2.1.13",
-  "title": "Line in Parametric Form.",
-  "body": " Line in Parametric Form   A line in -space (or in 2D space) can be defined as a vector-valued function by the equation where is any point on the line, and (the direction vector) gives you the change in each coordinate.  The equations , and are the parametric equations that define the line.   "
+  "title": "Parametric Equations for a Line.",
+  "body": " Parametric Equations for a Line  The components , and of are also called parametric equations.  "
 },
 {
   "id": "sec-ch02-01-VectorValuedFunctions-17",
   "level": "2",
   "url": "sec-ch02-01-VectorValuedFunctions.html#sec-ch02-01-VectorValuedFunctions-17",
-  "type": "Note",
+  "type": "Definition",
   "number": "2.1.14",
-  "title": "",
-  "body": " Geometrically, the definition above says that you take the line containing (represented by ), and shift it so it passes through the endpoint of .   A line in -space defined by the position vector and a direction vector , illustrating the parametric form: .    "
+  "title": "Line in Parametric Form.",
+  "body": " Line in Parametric Form   A line in -space (or in 2D space) can be defined as a vector-valued function by the equation where is any point on the line, and (the direction vector) gives you the change in each coordinate.  The equations , and are the parametric equations that define the line.   "
 },
 {
-  "id": "example-ch02-01-ex-5-4",
+  "id": "sec-ch02-01-VectorValuedFunctions-18",
   "level": "2",
-  "url": "sec-ch02-01-VectorValuedFunctions.html#example-ch02-01-ex-5-4",
-  "type": "Example",
+  "url": "sec-ch02-01-VectorValuedFunctions.html#sec-ch02-01-VectorValuedFunctions-18",
+  "type": "Note",
   "number": "2.1.15",
   "title": "",
-  "body": "  Find both the vector equation and the parametric equations of the line through in the direction of the vector . Does the point lie on this line?    Using as the point on the line and as the direction vector, the vector equation of the line is and the parametric equations are   For the point to lie on the line, all three parametric equations must be satisfied by the same value of . From the first equation:   Checking this value in the other two equations:   Both match, so yes: the point lies on the line (it is reached at ).   "
-},
-{
-  "id": "sec-ch02-01-VectorValuedFunctions-19",
-  "level": "2",
-  "url": "sec-ch02-01-VectorValuedFunctions.html#sec-ch02-01-VectorValuedFunctions-19",
-  "type": "Remark",
-  "number": "2.1.16",
-  "title": "",
-  "body": " Given a line , since represents the direction of the line, we can compare lines by comparing their direction vectors.  "
+  "body": " Geometrically, the definition above says that you take the line containing (represented by ), and shift it so it passes through the endpoint of .   A line in -space defined by the position vector and a direction vector , illustrating the parametric form: .    "
 },
 {
   "id": "example-ch02-01-ex-5-5",
   "level": "2",
   "url": "sec-ch02-01-VectorValuedFunctions.html#example-ch02-01-ex-5-5",
   "type": "Example",
+  "number": "2.1.16",
+  "title": "",
+  "body": "  Find both the vector equation and the parametric equations of the line through in the direction of the vector . Does the point lie on this line?    Using as the point on the line and as the direction vector, the vector equation of the line is and the parametric equations are   For the point to lie on the line, all three parametric equations must be satisfied by the same value of . From the first equation:   Checking this value in the other two equations:   Both match, so yes: the point lies on the line (it is reached at ).   "
+},
+{
+  "id": "sec-ch02-01-VectorValuedFunctions-20",
+  "level": "2",
+  "url": "sec-ch02-01-VectorValuedFunctions.html#sec-ch02-01-VectorValuedFunctions-20",
+  "type": "Remark",
   "number": "2.1.17",
   "title": "",
+  "body": " Given a line , since represents the direction of the line, we can compare lines by comparing their direction vectors.  "
+},
+{
+  "id": "example-ch02-01-ex-5-6",
+  "level": "2",
+  "url": "sec-ch02-01-VectorValuedFunctions.html#example-ch02-01-ex-5-6",
+  "type": "Example",
+  "number": "2.1.18",
+  "title": "",
   "body": "  Determine whether the following pair of lines are parallel, intersect at a single point, or are skew. If they are parallel, determine whether they are the same line. If they intersect at a single point, determine the point of intersection.     The direction vectors are for the first line and for the second. If the lines were parallel there would be a scalar with ; comparing components gives , , and respectively, which is impossible. Hence the lines are not parallel (and in particular they are not the same line).  It remains to determine whether the lines intersect at a single point or are skew. An intersection point may be reached by each line at a different time, so we rename the parameter of the second line and look for values and with . Comparing components gives the system   The second equation of the system gives . Substituting into the first equation:   Since we only used the first two equations, we must check these values in the third: and , so the third equation is also satisfied. Hence the system is consistent and the lines intersect at the single point that is, at the point . (Indeed, as well.)   "
+},
+{
+  "id": "sec-ch02-01-VectorValuedFunctions-22",
+  "level": "2",
+  "url": "sec-ch02-01-VectorValuedFunctions.html#sec-ch02-01-VectorValuedFunctions-22",
+  "type": "Remark",
+  "number": "2.1.19",
+  "title": "Intersection of Curves.",
+  "body": " Intersection of Curves  Assume there are two curves, and , parametrized by the same variable , with vector-valued functions and . The solutions of the equation are not simply the intersection points. They are the intersection points at which the two parametrizations arrive concurrently. For the intersection points one needs to solve , i.e. change one of the parameters.  "
 },
 {
   "id": "sec-ch02-02-ScalarValuedFunctions",
