@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Multi-Variable Chain Rule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Calculus III Notes">
+<meta property="og:title" content="Calculus III Notes">
+<meta property="book:title" content="Calculus III Notes">
+<meta name="twitter:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
+<meta property="og:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.3.0';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.c838822d59bc26bc.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b9fedab97dee3c2a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.347e2ecdeacfed99.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="CalculusIIINotes2026.html"><span class="title">Calculus III Notes</span> <span class="subtitle">These notes are meant for use by students enrolled in my Calculus III course.</span></a></div>
+<p class="byline">Konstantinos (Kostas) Kydoniatis</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-ch03-02-PartialDerivatives.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-03-DerivativesOfVectorAndScalarValuedFunctions.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-ch03-04-DirectionalDerivatives.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-01-IntroToVectors.html" class="internal"><span class="codenumber">1</span> <span class="title">1. Introduction to Vectors</span></a></div>
+<ul id="ptx-toc-group-ch-01-IntroToVectors" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-01-IntroToVectors-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-01-Vectors2DIntroduction.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vectors in 2D</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-02-VectorsIn3D.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Vectors in 3D</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-03-DotProduct.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Dot Product</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-04-CrossProduct.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Cross Product</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">2. Introduction to Vector and Scalar Valued Functions</span></a></div>
+<ul id="ptx-toc-group-ch-02-IntroductionVectorandScalarValuedFunctions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch02-01-VectorValuedFunctions.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vector-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch02-02-ScalarValuedFunctions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Scalar-Valued Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-03-DerivativesOfVectorAndScalarValuedFunctions.html" class="internal"><span class="codenumber">3</span> <span class="title">3. Derivatives of Vector and Scalar Valued Functions</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-03-DerivativesOfVectorAndScalarValuedFunctions">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-03-DerivativesOfVectorAndScalarValuedFunctions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-01-DerivativesVectorValuedFunctions.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Derivatives of Vector-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-02-PartialDerivatives.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Partial Derivatives of Scalar-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-ch03-03-ChainRule.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Multi-Variable Chain Rule</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-04-DirectionalDerivatives.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Directional Derivatives and the Gradient</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-05-TangentPlanes.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Tangent Planes and Local Linearization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-06-CriticalPoints.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Critical Points and Analysis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-07-LagrangeMultipliers.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Constraints and Lagrange Multipliers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-04-Integration.html" class="internal"><span class="codenumber">4</span> <span class="title">4. Integration</span></a></div>
+<ul id="ptx-toc-group-ch-04-Integration" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-04-Integration-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-01-ArcLength.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Arc Length</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-02-ScalarLineIntegrals.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Scalar Line Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-03-DoubleIntegralsRectangularRegions.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Double Integrals in Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-04-DoubleIntegralsGeneralRegionsPart1.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Double Integrals in Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-05-ChangingOrderOfIntegration.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Changing Order of Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-06-PolarCoordinates.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Double Integrals in Polar Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-07-ChangeOfVariables.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Change of Variables for Double Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-08-TripleIntegralsCartesian.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Triple Integrals in Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-09-TripleIntegralsCylindricalSpherical.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Triple Integrals</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-05-VectorCalculus.html" class="internal"><span class="codenumber">5</span> <span class="title">5. Vector Fields and Line Integrals</span></a></div>
+<ul id="ptx-toc-group-ch-05-VectorCalculus" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-05-VectorCalculus-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-01-VectorFieldsAndLineIntegrals.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Vector Fields and Line Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-02-FundamentalTheoremOfLineIntegrals.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Fundamental Theorem of Line Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-03-GreensTheoremCurl.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Green’s Theorem: 2D Curl</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-04-GreensTheoremDivergence.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Green’s Theorem: 2D Divergence</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-ch03-03-ChainRule">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Multi-Variable Chain Rule</span>
+</h1>
+<article class="note remark-like" id="sec-ch03-03-ChainRule-2"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch03-03-ChainRule-2-1">In this section we will consider two different cases when taking derivatives:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-03-ChainRule-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch03-03-ChainRule-2-2">
+<ol class="decimal" id="sec-ch03-03-ChainRule-2-2-1">
+<li id="sec-ch03-03-ChainRule-2-2-1-1">
+<div class="para" id="sec-ch03-03-ChainRule-2-2-1-1-1">You have a function <span class="process-math">\(z=f(x, y)\)</span> where <span class="process-math">\(x=x(t)\)</span> and <span class="process-math">\(y=y(t)\)</span> (both <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are themselves functions of single variable <span class="process-math">\(t\)</span> ).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-03-ChainRule-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#sec-ch03-03-ChainRule-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-ch03-03-ChainRule-2-2-1-2">
+<div class="para" id="sec-ch03-03-ChainRule-2-2-1-2-1">You have a function <span class="process-math">\(z=f(x, y)\)</span> where <span class="process-math">\(x=x(s, t)\)</span> and <span class="process-math">\(y=y(s, t)\)</span> (both <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are themselves functions of multiple variables <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> ).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-03-ChainRule-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#sec-ch03-03-ChainRule-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-03-ChainRule-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 3.3.1"><a tabindex="-1" href="#sec-ch03-03-ChainRule-2" title="Copy heading and permalink for Note 3.3.1" aria-label="Copy heading and permalink for Note 3.3.1">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch03-03-ChainRule-3"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Chain Rule in Case 1.</span>
+</h2>
+<div class="para logical" id="sec-ch03-03-ChainRule-3-2">
+<div class="para">Given a function <span class="process-math">\(z=f(x, y)\)</span> where <span class="process-math">\(x=x(t)\)</span> and <span class="process-math">\(y=y(t)\text{,}\)</span> then the derivative of <span class="process-math">\(f(x, y)\)</span> with respect to <span class="process-math">\(t\)</span> is given by</div>
+<div class="displaymath process-math" id="sec-ch03-03-ChainRule-3-2-6">
+\begin{equation*}
+\frac{d f}{d t}=\frac{\partial f}{\partial x} \frac{d x}{d t}+\frac{\partial f}{\partial y} \frac{d y}{d t}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-03-ChainRule-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 3.3.2: Chain Rule in Case 1"><a tabindex="-1" href="#sec-ch03-03-ChainRule-3" title="Copy heading and permalink for Remark 3.3.2: Chain Rule in Case 1" aria-label="Copy heading and permalink for Remark 3.3.2: Chain Rule in Case 1">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch03-03-ChainRule-4"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch03-03-ChainRule-4-1">In this case we can use the usual derivative notation since <span class="process-math">\(f(x, y)\)</span> is a function of <em class="alert">just the variable</em> <span class="process-math">\(t\)</span> if we replace <span class="process-math">\(x\)</span> with <span class="process-math">\(x(t)\)</span> and <span class="process-math">\(y\)</span> with <span class="process-math">\(y(t)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-03-ChainRule-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 3.3.3"><a tabindex="-1" href="#sec-ch03-03-ChainRule-4" title="Copy heading and permalink for Note 3.3.3" aria-label="Copy heading and permalink for Note 3.3.3">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="fig-ch03-03-chain-rule-case-1"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
+<img src="external//images/2025_09_10_3643f349c031f748fd41g-1.jpg" class="contained" alt="A dependency diagram showing z as a function of x and y, each depending on t, illustrating the chain rule case 1."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="fig-ch03-03-chain-rule-case-1-2-description">
+<div class="para" id="fig-ch03-03-chain-rule-case-1-2-2-1">A dependency diagram showing <span class="process-math">\(z\)</span> as a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> each depending on <span class="process-math">\(t\text{,}\)</span> illustrating the chain rule case 1.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#fig-ch03-03-chain-rule-case-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>From OpenStax, Calculus Volume 3, Section 4.5<div class="autopermalink" aria-hidden="true" data-description="Figure 3.3.1"><a tabindex="-1" href="#fig-ch03-03-chain-rule-case-1" title="Copy heading and permalink for Figure 3.3.1" aria-label="Copy heading and permalink for Figure 3.3.1">🔗</a></div></figcaption>
+</figure>
+<details id="example-ch03-03-ex-9-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch03-03-ex-9-1-1-1">Find <span class="process-math">\(z^{\prime}(t)\text{,}\)</span> where <span class="process-math">\(z=x^{3}-y, x=(t-1)^{2}, y=t^{3}+1\text{,}\)</span> in the following ways:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch03-03-ex-9-1-1-2">(a) First make the substitutions <span class="process-math">\(x=x(t)\)</span> and <span class="process-math">\(y=y(t)\text{,}\)</span> and write <span class="process-math">\(z\)</span> as a function of <span class="process-math">\(t\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch03-03-ex-9-1-1-3">(b) Using the Chain Rule.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch03-03-ex-9-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-03-ex-9-1-2-1">
+<div class="para">Substituting <span class="process-math">\(x=(t-1)^2\)</span> and <span class="process-math">\(y=t^3+1\)</span> into <span class="process-math">\(z\)</span> writes <span class="process-math">\(z\)</span> as a function of just the variable <span class="process-math">\(t\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-1-2-1-6">
+\begin{equation*}
+z(t) = \left( (t-1)^2 \right)^3 - (t^3+1) = (t-1)^6 - t^3 - 1
+\end{equation*}
+</div>
+<div class="para">Differentiating with respect to <span class="process-math">\(t\text{,}\)</span> using the single-variable chain rule on <span class="process-math">\((t-1)^6\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-1-2-1-9">
+\begin{equation*}
+z'(t) = 6(t-1)^5 - 3t^2
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.3.4.1"><a tabindex="-1" href="#example-ch03-03-ex-9-1-2" title="Copy heading and permalink for Solution 3.3.4.1" aria-label="Copy heading and permalink for Solution 3.3.4.1">🔗</a></div>
+</div></details>
+<details id="example-ch03-03-ex-9-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-03-ex-9-1-3-1">
+<div class="para">The partial derivatives of <span class="process-math">\(z\)</span> and the derivatives of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-1-3-1-4">
+\begin{equation*}
+\frac{\partial z}{\partial x} = 3x^2, \quad \frac{\partial z}{\partial y} = -1, \quad \frac{dx}{dt} = 2(t-1), \quad \frac{dy}{dt} = 3t^2
+\end{equation*}
+</div>
+<div class="para">so by the Chain Rule</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-1-3-1-5">
+\begin{equation*}
+\frac{dz}{dt} = \frac{\partial z}{\partial x} \frac{dx}{dt} + \frac{\partial z}{\partial y} \frac{dy}{dt} = 3x^2 \cdot 2(t-1) + (-1) \cdot 3t^2
+\end{equation*}
+</div>
+<div class="para">Substituting <span class="process-math">\(x=(t-1)^2\)</span> to express everything in terms of <span class="process-math">\(t\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-1-3-1-8">
+\begin{equation*}
+z'(t) = 3\left( (t-1)^2 \right)^2 \cdot 2(t-1) - 3t^2 = 6(t-1)^5 - 3t^2
+\end{equation*}
+</div>
+<div class="para">which agrees with the answer from part (a).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.3.4.2"><a tabindex="-1" href="#example-ch03-03-ex-9-1-3" title="Copy heading and permalink for Solution 3.3.4.2" aria-label="Copy heading and permalink for Solution 3.3.4.2">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.3.4"><a tabindex="-1" href="#example-ch03-03-ex-9-1" title="Copy heading and permalink for Example 3.3.4" aria-label="Copy heading and permalink for Example 3.3.4">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="sec-ch03-03-ChainRule-7"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch03-03-ChainRule-7-1">The Chain Rule is an important tool because in many applications, you don’t know specific expressions for <span class="process-math">\(f(x, y), x(t)\)</span> or <span class="process-math">\(y(t)\text{,}\)</span> but do know the corresponding rates of change.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-03-ChainRule-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 3.3.5"><a tabindex="-1" href="#sec-ch03-03-ChainRule-7" title="Copy heading and permalink for Remark 3.3.5" aria-label="Copy heading and permalink for Remark 3.3.5">🔗</a></div>
+</article>
+<details id="example-ch03-03-ex-9-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch03-03-ex-9-2-1-1">Consider the Cobb-Douglas Production function <span class="process-math">\(P(L,K)\)</span> where <span class="process-math">\(P\)</span> represents production, <span class="process-math">\(K\)</span> represents availability of capital, and <span class="process-math">\(L\)</span> represents availability of labor. Suppose that both <span class="process-math">\(L\)</span> and <span class="process-math">\(K\)</span> are also functions of time <span class="process-math">\(t\)</span> (which makes sense as the availability of capital and labor may change depending on time). Moreover, assume that<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="example-ch03-03-ex-9-2-1-2">
+<ul class="disc" id="example-ch03-03-ex-9-2-1-2-1">
+<li id="example-ch03-03-ex-9-2-1-2-1-1">
+<div class="para" id="example-ch03-03-ex-9-2-1-2-1-1-1">
+<span class="process-math">\(L\)</span> increases by 2 units when <span class="process-math">\(t\)</span> increases 1 unit and <span class="process-math">\(P\)</span> increases by 7 units when <span class="process-math">\(L\)</span> increases 1 unit.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-2-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#example-ch03-03-ex-9-2-1-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="example-ch03-03-ex-9-2-1-2-1-2">
+<div class="para" id="example-ch03-03-ex-9-2-1-2-1-2-1">
+<span class="process-math">\(K\)</span> increases by 0.5 units when <span class="process-math">\(t\)</span> increases 1 unit and <span class="process-math">\(P\)</span> increases by 3 units when <span class="process-math">\(K\)</span> increases 1 unit.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-2-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#example-ch03-03-ex-9-2-1-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch03-03-ex-9-2-1-3">When <span class="process-math">\(t\)</span> increases by 1 unit, how many units does <span class="process-math">\(P\)</span> increase by?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-2-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch03-03-ex-9-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-03-ex-9-2-2-1">
+<div class="para">Here <span class="process-math">\(P\)</span> depends on the intermediate variables <span class="process-math">\(L\)</span> and <span class="process-math">\(K\text{,}\)</span> and both are functions of <span class="process-math">\(t\text{,}\)</span> so by the Chain Rule</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-2-2-1-5">
+\begin{equation*}
+\frac{dP}{dt} = \frac{\partial P}{\partial L} \frac{dL}{dt} + \frac{\partial P}{\partial K} \frac{dK}{dt}
+\end{equation*}
+</div>
+<div class="para">The given information is exactly these four rates of change: <span class="process-math">\(\frac{dL}{dt} = 2\)</span> and <span class="process-math">\(\frac{\partial P}{\partial L} = 7\)</span> from the first bullet point, and <span class="process-math">\(\frac{dK}{dt} = 0.5\)</span> and <span class="process-math">\(\frac{\partial P}{\partial K} = 3\)</span> from the second. Hence</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-2-2-1-10">
+\begin{equation*}
+\frac{dP}{dt} = 7(2) + 3(0.5) = 14 + 1.5 = 15.5
+\end{equation*}
+</div>
+<div class="para">so when <span class="process-math">\(t\)</span> increases by 1 unit, production <span class="process-math">\(P\)</span> increases by approximately 15.5 units. Notice that we never needed explicit formulas for <span class="process-math">\(P(L,K)\text{,}\)</span> <span class="process-math">\(L(t)\text{,}\)</span> or <span class="process-math">\(K(t)\text{;}\)</span> the rates of change were enough.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.3.6.1"><a tabindex="-1" href="#example-ch03-03-ex-9-2-2" title="Copy heading and permalink for Solution 3.3.6.1" aria-label="Copy heading and permalink for Solution 3.3.6.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.3.6"><a tabindex="-1" href="#example-ch03-03-ex-9-2" title="Copy heading and permalink for Example 3.3.6" aria-label="Copy heading and permalink for Example 3.3.6">🔗</a></div>
+</article></details>
+<article class="note remark-like" id="sec-ch03-03-ChainRule-9"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="sec-ch03-03-ChainRule-9-1">
+<div class="para">The Chain Rule formula works no matter how many “intermediate variables” you have. For example, suppose <span class="process-math">\(w=f(x, y, z)\)</span> and <span class="process-math">\(x=x(t), y=y(t)\text{,}\)</span> and <span class="process-math">\(z=z(t)\)</span> (here, <span class="process-math">\(x, y, z\)</span> are your intermediate variables). Then</div>
+<div class="displaymath process-math" id="sec-ch03-03-ChainRule-9-1-6">
+\begin{equation*}
+\frac{d f}{d t}=\frac{\partial f}{\partial x} \frac{d x}{d t}+\frac{\partial f}{\partial y} \frac{d y}{d t}+\frac{\partial f}{\partial z} \frac{d z}{d t}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-03-ChainRule-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 3.3.7"><a tabindex="-1" href="#sec-ch03-03-ChainRule-9" title="Copy heading and permalink for Note 3.3.7" aria-label="Copy heading and permalink for Note 3.3.7">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch03-03-ChainRule-10"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Chain Rule in Case 2.</span>
+</h2>
+<div class="para logical" id="sec-ch03-03-ChainRule-10-2">
+<div class="para">Given a function <span class="process-math">\(z=f(x, y)\)</span> where <span class="process-math">\(x=x(s, t)\)</span> and <span class="process-math">\(y=y(s, t)\text{,}\)</span> then the partial derivatives of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> have the following formulas:</div>
+<div class="displaymath process-math" id="sec-ch03-03-ChainRule-10-2-7">
+\begin{align*}
+\amp \frac{\partial f}{\partial s}=\frac{\partial f}{\partial x} \frac{\partial x}{\partial s}+\frac{\partial f}{\partial y} \frac{\partial y}{\partial s}\\
+\amp \frac{\partial f}{\partial t}=\frac{\partial f}{\partial x} \frac{\partial x}{\partial t}+\frac{\partial f}{\partial y} \frac{\partial y}{\partial t}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-03-ChainRule-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 3.3.8: Chain Rule in Case 2"><a tabindex="-1" href="#sec-ch03-03-ChainRule-10" title="Copy heading and permalink for Remark 3.3.8: Chain Rule in Case 2" aria-label="Copy heading and permalink for Remark 3.3.8: Chain Rule in Case 2">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch03-03-ChainRule-11"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch03-03-ChainRule-11-1">Here we must use the partial derivative notation since even if we substitute <span class="process-math">\(x=x(s, t)\)</span> and <span class="process-math">\(y=y(s, t), f\)</span> is still a function of two variables ( <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> ).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-03-ChainRule-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 3.3.9"><a tabindex="-1" href="#sec-ch03-03-ChainRule-11" title="Copy heading and permalink for Note 3.3.9" aria-label="Copy heading and permalink for Note 3.3.9">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="fig-ch03-03-chain-rule-case-2"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
+<img src="external//images/2025_09_10_3643f349c031f748fd41g-4.png" class="contained" alt="A dependency diagram showing z as a function of x and y, each depending on u and v, illustrating the chain rule case 2."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="fig-ch03-03-chain-rule-case-2-2-description">
+<div class="para" id="fig-ch03-03-chain-rule-case-2-2-2-1">A dependency diagram showing <span class="process-math">\(z\)</span> as a function of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> each depending on <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{,}\)</span> illustrating the chain rule case 2.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#fig-ch03-03-chain-rule-case-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>From OpenStax, Calculus Volume 3, Section 4.5<div class="autopermalink" aria-hidden="true" data-description="Figure 3.3.2"><a tabindex="-1" href="#fig-ch03-03-chain-rule-case-2" title="Copy heading and permalink for Figure 3.3.2" aria-label="Copy heading and permalink for Figure 3.3.2">🔗</a></div></figcaption>
+</figure>
+<details id="example-ch03-03-ex-9-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch03-03-ex-9-3-1-1">Let <span class="process-math">\(z=cos(x) \sin (y^2)\)</span> where <span class="process-math">\(x=s+t\)</span> and <span class="process-math">\(y=s-t\text{.}\)</span> Compute <span class="process-math">\(z_{t}\)</span> in the following ways:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch03-03-ex-9-3-1-2">(a) First make the substitutions <span class="process-math">\(x=x(s, t)\)</span> and <span class="process-math">\(y=y(s, t)\text{,}\)</span> and write <span class="process-math">\(z\)</span> as a function of <span class="process-math">\(s\)</span> and <span class="process-math">\(t\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch03-03-ex-9-3-1-3">(b) Using the Chain Rule.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch03-03-ex-9-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-03-ex-9-3-2-1">
+<div class="para">Substituting <span class="process-math">\(x=s+t\)</span> and <span class="process-math">\(y=s-t\)</span> into <span class="process-math">\(z\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-3-2-1-4">
+\begin{equation*}
+z(s,t) = \cos(s+t) \sin\left( (s-t)^2 \right)
+\end{equation*}
+</div>
+<div class="para">Differentiating with respect to <span class="process-math">\(t\)</span> (treating <span class="process-math">\(s\)</span> as a constant), using the product rule and the single-variable chain rule:</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-3-2-1-7">
+\begin{gather*}
+z_t = -\sin(s+t) \sin\left( (s-t)^2 \right) + \cos(s+t) \cos\left( (s-t)^2 \right) \cdot 2(s-t)(-1)\\
+= -\sin(s+t) \sin\left( (s-t)^2 \right) - 2(s-t) \cos(s+t) \cos\left( (s-t)^2 \right)
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.3.10.1"><a tabindex="-1" href="#example-ch03-03-ex-9-3-2" title="Copy heading and permalink for Solution 3.3.10.1" aria-label="Copy heading and permalink for Solution 3.3.10.1">🔗</a></div>
+</div></details>
+<details id="example-ch03-03-ex-9-3-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-03-ex-9-3-3-1">
+<div class="para">The partial derivatives of <span class="process-math">\(z\text{,}\)</span> <span class="process-math">\(x\text{,}\)</span> and <span class="process-math">\(y\)</span> are</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-3-3-1-4">
+\begin{equation*}
+\frac{\partial z}{\partial x} = -\sin(x) \sin(y^2), \quad \frac{\partial z}{\partial y} = 2y \cos(x) \cos(y^2), \quad \frac{\partial x}{\partial t} = 1, \quad \frac{\partial y}{\partial t} = -1
+\end{equation*}
+</div>
+<div class="para">so by the Chain Rule</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-3-3-1-5">
+\begin{equation*}
+z_t = \frac{\partial z}{\partial x} \frac{\partial x}{\partial t} + \frac{\partial z}{\partial y} \frac{\partial y}{\partial t} = -\sin(x) \sin(y^2)(1) + 2y \cos(x) \cos(y^2)(-1)
+\end{equation*}
+</div>
+<div class="para">Substituting <span class="process-math">\(x=s+t\)</span> and <span class="process-math">\(y=s-t\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-3-3-1-8">
+\begin{equation*}
+z_t = -\sin(s+t) \sin\left( (s-t)^2 \right) - 2(s-t) \cos(s+t) \cos\left( (s-t)^2 \right)
+\end{equation*}
+</div>
+<div class="para">which agrees with the answer from part (a).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.3.10.2"><a tabindex="-1" href="#example-ch03-03-ex-9-3-3" title="Copy heading and permalink for Solution 3.3.10.2" aria-label="Copy heading and permalink for Solution 3.3.10.2">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.3.10"><a tabindex="-1" href="#example-ch03-03-ex-9-3" title="Copy heading and permalink for Example 3.3.10" aria-label="Copy heading and permalink for Example 3.3.10">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="sec-ch03-03-ChainRule-14"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="sec-ch03-03-ChainRule-14-1">
+<div class="para">This formula works no matter how many “intermediate variables” you have. For example, suppose <span class="process-math">\(w=f(x, y, z)\)</span> and <span class="process-math">\(x=x(s, t), y=y(s, t)\text{,}\)</span> and <span class="process-math">\(z=z(s, t)\)</span> (here, <span class="process-math">\(x, y, z\)</span> are your intermediate variables). Then</div>
+<div class="displaymath process-math" id="sec-ch03-03-ChainRule-14-1-6">
+\begin{align*}
+\amp \frac{\partial w}{\partial s}=\frac{\partial w}{\partial x} \frac{\partial x}{\partial s}+\frac{\partial w}{\partial y} \frac{\partial y}{\partial s}+\frac{\partial w}{\partial z} \frac{\partial z}{\partial s}\\
+\amp \frac{\partial w}{\partial t}=\frac{\partial w}{\partial x} \frac{\partial x}{\partial t}+\frac{\partial w}{\partial y} \frac{\partial y}{\partial t}+\frac{\partial w}{\partial z} \frac{\partial z}{\partial t}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-03-ChainRule-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 3.3.11"><a tabindex="-1" href="#sec-ch03-03-ChainRule-14" title="Copy heading and permalink for Remark 3.3.11" aria-label="Copy heading and permalink for Remark 3.3.11">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch03-03-ChainRule-15"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Restricting the Domain of a Surface to a Curve.</span>
+</h2>
+<div class="para" id="sec-ch03-03-ChainRule-15-2">Given a surface <span class="process-math">\(z=f(x, y)\text{,}\)</span> we sometimes are only interested in certain parts of the surface. Specifically, we can restrict the inputs of a surface to a curve in its domain by using appropriate substitutions <span class="process-math">\(x=x(t)\)</span> and <span class="process-math">\(y=y(t)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-03-ChainRule-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 3.3.12: Restricting the Domain of a Surface to a Curve"><a tabindex="-1" href="#sec-ch03-03-ChainRule-15" title="Copy heading and permalink for Note 3.3.12: Restricting the Domain of a Surface to a Curve" aria-label="Copy heading and permalink for Note 3.3.12: Restricting the Domain of a Surface to a Curve">🔗</a></div>
+</article>
+<details id="example-ch03-03-ex-9-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch03-03-ex-9-4-1-1">Suppose we are walking on the surface of a part of a sphere <span class="process-math">\(z=\sqrt{4-(x-1)^{2}-(y-2)^{2}}\)</span> but we only want to walk above the line <span class="process-math">\(y= x+1\)</span> in its domain. We can do this by substituting <span class="process-math">\(x=t\)</span> and <span class="process-math">\(y= t+1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch03-03-ex-9-4"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch03-03-ex-9-4" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch03-03-ex-9-4.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch03-03-ex-9-4-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch03-03-ex-9-4-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch03-03-ex-9-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch03-03-ex-9-4-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The sphere along with curve on the sphere above the line parametrised by x = t, y = t plus 1<div class="autopermalink" aria-hidden="true" data-description="Figure 3.3.3"><a tabindex="-1" href="#fig-ch03-03-ex-9-4" title="Copy heading and permalink for Figure 3.3.3" aria-label="Copy heading and permalink for Figure 3.3.3">🔗</a></div></figcaption>
+</figure> 
+<div class="para" id="example-ch03-03-ex-9-4-1-3">
+<span class="process-math">\(y= x+1\)</span> in purple and <span class="process-math">\(z(t, t+1)\)</span> in yellow<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-4-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch03-03-ex-9-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-03-ex-9-4-2-1">
+<div class="para">Making the substitutions <span class="process-math">\(x=t\)</span> and <span class="process-math">\(y=t+1\)</span> restricts the inputs of the surface to the line <span class="process-math">\(y=x+1\text{,}\)</span> and the height of the surface becomes a function of the single variable <span class="process-math">\(t\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-4-2-1-5">
+\begin{equation*}
+z(t) = \sqrt{4 - (t-1)^2 - \left( (t+1)-2 \right)^2} = \sqrt{4 - (t-1)^2 - (t-1)^2} = \sqrt{4 - 2(t-1)^2}
+\end{equation*}
+</div>
+<div class="para">This is the yellow curve in the picture. Note that for <span class="process-math">\(z(t)\)</span> to be defined we need <span class="process-math">\(4 - 2(t-1)^2 \geq 0 \Rightarrow (t-1)^2 \leq 2 \Rightarrow 1-\sqrt{2} \leq t \leq 1+\sqrt{2}\text{;}\)</span> these are exactly the values of <span class="process-math">\(t\)</span> for which the line lies underneath the part of the sphere.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.3.13.1"><a tabindex="-1" href="#example-ch03-03-ex-9-4-2" title="Copy heading and permalink for Solution 3.3.13.1" aria-label="Copy heading and permalink for Solution 3.3.13.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.3.13"><a tabindex="-1" href="#example-ch03-03-ex-9-4" title="Copy heading and permalink for Example 3.3.13" aria-label="Copy heading and permalink for Example 3.3.13">🔗</a></div>
+</article></details>
+<details id="example-ch03-03-ex-9-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch03-03-ex-9-5-1-1">Consider the surface of a part of a sphere <span class="process-math">\(z=\sqrt{4-(x-1)^{2}-(y-2)^{2}}\)</span>  and the curve <span class="process-math">\(C\)</span> in the <span class="process-math">\(x y\)</span>-plane given parametrically as <span class="process-math">\(x= \cos (t)+0.5\)</span> and <span class="process-math">\(y= \sin (t)+1.5\text{,}\)</span> where <span class="process-math">\(0 \leq t \leq 2 \pi\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch03-03-ex-9-5-1-2">(a) Find <span class="process-math">\(z^{\prime}(t)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-5-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch03-03-ex-9-5"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch03-03-ex-9-5" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch03-03-ex-9-5.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch03-03-ex-9-5-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch03-03-ex-9-5-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch03-03-ex-9-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch03-03-ex-9-5-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The sphere along with curve on the sphere above the circle parametrised by x = cosine of t plus 0.5, y = sine of t plus 1.5<div class="autopermalink" aria-hidden="true" data-description="Figure 3.3.4"><a tabindex="-1" href="#fig-ch03-03-ex-9-5" title="Copy heading and permalink for Figure 3.3.4" aria-label="Copy heading and permalink for Figure 3.3.4">🔗</a></div></figcaption>
+</figure> 
+<div class="para" id="example-ch03-03-ex-9-5-1-4">
+<span class="process-math">\((x-0.5)^2+(y-1.5)^2=1\)</span> in purple and <span class="process-math">\(z( \cos (t)+0.5,  \sin (t)+1.5)\)</span> in yellow. blue<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-5-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch03-03-ex-9-5-1-5">(b) Imagine that you are walking on the surface directly above the curve <span class="process-math">\(C\)</span> (the surface restricted to inputs coming from <span class="process-math">\(C\)</span> ). Find the values of <span class="process-math">\(t\)</span> for which you are walking uphill ( <span class="process-math">\(z(t)\)</span> is increasing).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-5-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch03-03-ex-9-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-03-ex-9-5-2-1">
+<div class="para">We use the Chain Rule. Treating <span class="process-math">\(y\)</span> and <span class="process-math">\(x\)</span> as constants respectively, the partial derivatives of <span class="process-math">\(z\)</span> are</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-5-2-1-4">
+\begin{equation*}
+\frac{\partial z}{\partial x} = \frac{-(x-1)}{\sqrt{4-(x-1)^2-(y-2)^2}}, \quad \frac{\partial z}{\partial y} = \frac{-(y-2)}{\sqrt{4-(x-1)^2-(y-2)^2}}
+\end{equation*}
+</div>
+<div class="para">and the derivatives of the parametrization are <span class="process-math">\(\frac{dx}{dt} = -\sin(t)\)</span> and <span class="process-math">\(\frac{dy}{dt} = \cos(t)\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-5-2-1-7">
+\begin{equation*}
+z'(t) = \frac{\partial z}{\partial x} \frac{dx}{dt} + \frac{\partial z}{\partial y} \frac{dy}{dt} = \frac{(x-1)\sin(t) - (y-2)\cos(t)}{\sqrt{4-(x-1)^2-(y-2)^2}}
+\end{equation*}
+</div>
+<div class="para">Substituting <span class="process-math">\(x-1 = \cos(t)-0.5\)</span> and <span class="process-math">\(y-2 = \sin(t)-0.5\text{,}\)</span> the numerator becomes</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-5-2-1-10">
+\begin{gather*}
+\left( \cos(t)-0.5 \right)\sin(t) - \left( \sin(t)-0.5 \right)\cos(t)\\
+= \cos(t)\sin(t) - 0.5\sin(t) - \sin(t)\cos(t) + 0.5\cos(t) = 0.5\left( \cos(t) - \sin(t) \right)
+\end{gather*}
+</div>
+<div class="para">and the expression under the square root becomes</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-5-2-1-11">
+\begin{gather*}
+4 - \left( \cos(t)-0.5 \right)^2 - \left( \sin(t)-0.5 \right)^2 = 4 - \left( \cos^2(t) + \sin^2(t) - \cos(t) - \sin(t) + 0.5 \right)\\
+= 2.5 + \cos(t) + \sin(t)
+\end{gather*}
+</div>
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-5-2-1-12">
+\begin{equation*}
+z'(t) = \frac{0.5\left( \cos(t) - \sin(t) \right)}{\sqrt{2.5 + \cos(t) + \sin(t)}}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.3.14.1"><a tabindex="-1" href="#example-ch03-03-ex-9-5-2" title="Copy heading and permalink for Solution 3.3.14.1" aria-label="Copy heading and permalink for Solution 3.3.14.1">🔗</a></div>
+</div></details>
+<details id="example-ch03-03-ex-9-5-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-03-ex-9-5-3-1">
+<div class="para">We are walking uphill when <span class="process-math">\(z'(t) \gt 0\text{.}\)</span> Since <span class="process-math">\(\cos(t)+\sin(t) \geq -2\text{,}\)</span> the denominator satisfies <span class="process-math">\(\sqrt{2.5+\cos(t)+\sin(t)} \geq \sqrt{2.5-2} \gt 0\text{,}\)</span> so the sign of <span class="process-math">\(z'(t)\)</span> is the sign of the numerator <span class="process-math">\(0.5\left( \cos(t)-\sin(t) \right)\text{.}\)</span> Another argument that arrives in the same conclusion is that denominator is always non-negative (as a square root) and well defined (not zero). Solving <span class="process-math">\(\cos(t) = \sin(t)\)</span> on <span class="process-math">\([0, 2\pi]\)</span> gives <span class="process-math">\(\tan(t) = 1 \Rightarrow t = \frac{\pi}{4}\)</span> or <span class="process-math">\(t = \frac{5\pi}{4}\text{.}\)</span> Testing a value in each of the resulting intervals: at <span class="process-math">\(t=0 \in [0,\frac{\pi}{4}]\)</span> we get <span class="process-math">\(\cos(0)-\sin(0) = 1 \gt 0\text{;}\)</span> at <span class="process-math">\(t=\pi\in [\frac{\pi}{4},\frac{5\pi}{4}]\)</span> we get <span class="process-math">\(\cos(\pi)-\sin(\pi) = -1 \lt 0\text{;}\)</span> and at <span class="process-math">\(t=\frac{3\pi}{2}\in [\frac{5\pi}{4},2\pi]\)</span> we get <span class="process-math">\(\cos\left(\frac{3\pi}{2}\right)-\sin\left(\frac{3\pi}{2}\right) = 0-(-1) = 1 \gt 0\text{.}\)</span> Hence <span class="process-math">\(z(t)\)</span> is increasing, and we are walking uphill, for</div>
+<div class="displaymath process-math" id="example-ch03-03-ex-9-5-3-1-17">
+\begin{equation*}
+0 \leq t \lt \frac{\pi}{4} \quad \text{and} \quad \frac{5\pi}{4} \lt t \leq 2\pi
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-03-ex-9-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.3.14.2"><a tabindex="-1" href="#example-ch03-03-ex-9-5-3" title="Copy heading and permalink for Solution 3.3.14.2" aria-label="Copy heading and permalink for Solution 3.3.14.2">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.3.14"><a tabindex="-1" href="#example-ch03-03-ex-9-5" title="Copy heading and permalink for Example 3.3.14" aria-label="Copy heading and permalink for Example 3.3.14">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Section 3.3: Multi-Variable Chain Rule"><a tabindex="-1" href="#sec-ch03-03-ChainRule" title="Copy heading and permalink for Section 3.3: Multi-Variable Chain Rule" aria-label="Copy heading and permalink for Section 3.3: Multi-Variable Chain Rule">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-ch03-02-PartialDerivatives.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-ch03-04-DirectionalDerivatives.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<script src="external/mathjax-linebreak.js"></script>
+</body>
+</html>

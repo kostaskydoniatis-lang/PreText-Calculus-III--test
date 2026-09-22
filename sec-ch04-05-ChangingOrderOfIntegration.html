@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Changing Order of Integration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Calculus III Notes">
+<meta property="og:title" content="Calculus III Notes">
+<meta property="book:title" content="Calculus III Notes">
+<meta name="twitter:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
+<meta property="og:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.3.0';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.c838822d59bc26bc.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b9fedab97dee3c2a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.347e2ecdeacfed99.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="CalculusIIINotes2026.html"><span class="title">Calculus III Notes</span> <span class="subtitle">These notes are meant for use by students enrolled in my Calculus III course.</span></a></div>
+<p class="byline">Konstantinos (Kostas) Kydoniatis</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-ch04-04-DoubleIntegralsGeneralRegionsPart1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-04-Integration.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-ch04-06-PolarCoordinates.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-01-IntroToVectors.html" class="internal"><span class="codenumber">1</span> <span class="title">1. Introduction to Vectors</span></a></div>
+<ul id="ptx-toc-group-ch-01-IntroToVectors" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-01-IntroToVectors-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-01-Vectors2DIntroduction.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vectors in 2D</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-02-VectorsIn3D.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Vectors in 3D</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-03-DotProduct.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Dot Product</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-04-CrossProduct.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Cross Product</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">2. Introduction to Vector and Scalar Valued Functions</span></a></div>
+<ul id="ptx-toc-group-ch-02-IntroductionVectorandScalarValuedFunctions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch02-01-VectorValuedFunctions.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vector-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch02-02-ScalarValuedFunctions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Scalar-Valued Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-03-DerivativesOfVectorAndScalarValuedFunctions.html" class="internal"><span class="codenumber">3</span> <span class="title">3. Derivatives of Vector and Scalar Valued Functions</span></a></div>
+<ul id="ptx-toc-group-ch-03-DerivativesOfVectorAndScalarValuedFunctions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-03-DerivativesOfVectorAndScalarValuedFunctions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-01-DerivativesVectorValuedFunctions.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Derivatives of Vector-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-02-PartialDerivatives.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Partial Derivatives of Scalar-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-03-ChainRule.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Multi-Variable Chain Rule</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-04-DirectionalDerivatives.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Directional Derivatives and the Gradient</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-05-TangentPlanes.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Tangent Planes and Local Linearization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-06-CriticalPoints.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Critical Points and Analysis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-07-LagrangeMultipliers.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Constraints and Lagrange Multipliers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-04-Integration.html" class="internal"><span class="codenumber">4</span> <span class="title">4. Integration</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-04-Integration">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-04-Integration-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-01-ArcLength.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Arc Length</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-02-ScalarLineIntegrals.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Scalar Line Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-03-DoubleIntegralsRectangularRegions.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Double Integrals in Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-04-DoubleIntegralsGeneralRegionsPart1.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Double Integrals in Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-ch04-05-ChangingOrderOfIntegration.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Changing Order of Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-06-PolarCoordinates.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Double Integrals in Polar Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-07-ChangeOfVariables.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Change of Variables for Double Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-08-TripleIntegralsCartesian.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Triple Integrals in Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-09-TripleIntegralsCylindricalSpherical.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Triple Integrals</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-05-VectorCalculus.html" class="internal"><span class="codenumber">5</span> <span class="title">5. Vector Fields and Line Integrals</span></a></div>
+<ul id="ptx-toc-group-ch-05-VectorCalculus" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-05-VectorCalculus-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-01-VectorFieldsAndLineIntegrals.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Vector Fields and Line Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-02-FundamentalTheoremOfLineIntegrals.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Fundamental Theorem of Line Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-03-GreensTheoremCurl.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Green’s Theorem: 2D Curl</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-04-GreensTheoremDivergence.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Green’s Theorem: 2D Divergence</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-ch04-05-ChangingOrderOfIntegration">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Changing Order of Integration</span>
+</h1>
+<article class="note remark-like" id="sec-ch04-05-ChangingOrderOfIntegration-2"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch04-05-ChangingOrderOfIntegration-2-1">As with double integrals over rectangular regions, under some continuity assumptions, we may change the order of integration.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 4.5.1"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-2" title="Copy heading and permalink for Note 4.5.1" aria-label="Copy heading and permalink for Note 4.5.1">🔗</a></div>
+</article>
+<article class="theorem theorem-like" id="sec-ch04-05-ChangingOrderOfIntegration-3"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fubini’s Theorem (General Regions).</span>
+</h2>
+<div class="para" id="sec-ch04-05-ChangingOrderOfIntegration-3-2-1">Let <span class="process-math">\(f(x, y)\)</span> be continuous on a region <span class="process-math">\(R\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="sec-ch04-05-ChangingOrderOfIntegration-3-2-2">
+<ol class="decimal" id="sec-ch04-05-ChangingOrderOfIntegration-3-2-2-1">
+<li id="sec-ch04-05-ChangingOrderOfIntegration-3-2-2-1-1">
+<div class="para logical" id="sec-ch04-05-ChangingOrderOfIntegration-3-2-2-1-1-1">
+<div class="para">If <span class="process-math">\(R\)</span> is defined by <span class="process-math">\(a \leq x \leq b, g_{1}(x) \leq y \leq h_{1}(x)\text{,}\)</span> with <span class="process-math">\(g_{1}\)</span> and <span class="process-math">\(h_{1}\)</span> continuous on <span class="process-math">\([a, b]\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="sec-ch04-05-ChangingOrderOfIntegration-3-2-2-1-1-1-6">
+\begin{equation*}
+\iint_{R} f(x, y) d A=\int_{a}^{b} \int_{g_{1}(x)}^{h_{1}(x)} f(x, y) d y d x
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-3-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-3-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-ch04-05-ChangingOrderOfIntegration-3-2-2-1-2">
+<div class="para logical" id="sec-ch04-05-ChangingOrderOfIntegration-3-2-2-1-2-1">
+<div class="para">If <span class="process-math">\(R\)</span> is defined by <span class="process-math">\(c \leq y \leq d, g_{2}(y) \leq y \leq h_{2}(y)\text{,}\)</span> with <span class="process-math">\(g_{2}\)</span> and <span class="process-math">\(h_{2}\)</span> continuous on <span class="process-math">\([c, d]\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="sec-ch04-05-ChangingOrderOfIntegration-3-2-2-1-2-1-6">
+\begin{equation*}
+\iint_{R} f(x, y) d A=\int_{c}^{d} \int_{g_{2}(y)}^{h_{2}(y)} f(x, y) d x d y
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-3-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-3-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 4.5.2: Fubini’s Theorem (General Regions)"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-3" title="Copy heading and permalink for Theorem 4.5.2: Fubini’s Theorem (General Regions)" aria-label="Copy heading and permalink for Theorem 4.5.2: Fubini’s Theorem (General Regions)">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch04-05-ChangingOrderOfIntegration-4"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch04-05-ChangingOrderOfIntegration-4-1">Changing the order of integration over regions that are not rectangular requires more work. An easy way to do it is by drawing a sketch of the region of integration.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch04-05-ChangingOrderOfIntegration-4-2">This means that we should be able to draw the region of integration just by looking at the bounds of integration from the iterated integrals.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 4.5.3"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-4" title="Copy heading and permalink for Remark 4.5.3" aria-label="Copy heading and permalink for Remark 4.5.3">🔗</a></div>
+</article>
+<details id="example-ch04-05-ex-18-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch04-05-ex-18-1-1-1">Given the integral <span class="process-math">\(\int_{-1}^{1} \int_{ x^{2}}^{2- x^2} 2xy d y d x\)</span> :<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch04-05-ex-18-1-1-2">(a) Draw a sketch of the region of integration.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch04-05-ex-18-1-1-3">(b) Use your sketch to change the order of integration.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-1-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch04-05-ex-18-1-1-4">(c) Evaluate the double integral.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-1-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch04-05-ex-18-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch04-05-ex-18-1-2-1">The bounds <span class="process-math">\(-1\leq x \leq 1\)</span> and <span class="process-math">\(x^2\leq y \leq 2-x^2\)</span> describe the region between the upward-opening parabola <span class="process-math">\(y=x^2\)</span> and the downward-opening parabola <span class="process-math">\(y=2-x^2\text{.}\)</span> They intersect when <span class="process-math">\(x^2=2-x^2 \Rightarrow x^2=1 \Rightarrow x=\pm 1\text{,}\)</span> confirming the outer bounds. The region lies between the two parabolas for <span class="process-math">\(-1\leq x\leq 1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch04-05-ex-18-1"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch04-05-ex-18-1" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch04-05-ex-18-1.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch04-05-ex-18-1-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch04-05-ex-18-1-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch04-05-ex-18-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch04-05-ex-18-1-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The domain of integration, the area between the parabolas<div class="autopermalink" aria-hidden="true" data-description="Figure 4.5.1"><a tabindex="-1" href="#fig-ch04-05-ex-18-1" title="Copy heading and permalink for Figure 4.5.1" aria-label="Copy heading and permalink for Figure 4.5.1">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 4.5.4.1"><a tabindex="-1" href="#example-ch04-05-ex-18-1-2" title="Copy heading and permalink for Solution 4.5.4.1" aria-label="Copy heading and permalink for Solution 4.5.4.1">🔗</a></div>
+</div></details>
+<details id="example-ch04-05-ex-18-1-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch04-05-ex-18-1-3-1">
+<div class="para">To integrate in the order <span class="process-math">\(dx\,dy\text{,}\)</span> we need to express <span class="process-math">\(x\)</span> as a function of <span class="process-math">\(y\text{.}\)</span> From the two parabolas: <span class="process-math">\(y=x^2\)</span> gives <span class="process-math">\(x=\pm\sqrt{y}\text{,}\)</span> and <span class="process-math">\(y=2-x^2\)</span> gives <span class="process-math">\(x=\pm\sqrt{2-y}\text{.}\)</span> The region has <span class="process-math">\(y\)</span> ranging from the bottom of the lower parabola to the top of the upper one. The lower parabola has its vertex at <span class="process-math">\((0,0)\)</span> and the upper at <span class="process-math">\((0,2)\text{;}\)</span> they meet at <span class="process-math">\(y=1\text{.}\)</span> For <span class="process-math">\(0\leq y\leq 1\)</span> the horizontal cross-section is bounded on the left and right by <span class="process-math">\(x=-\sqrt{y}\)</span> and <span class="process-math">\(x=\sqrt{y}\text{.}\)</span> For <span class="process-math">\(1\leq y\leq 2\)</span> the cross-section is bounded by <span class="process-math">\(x=-\sqrt{2-y}\)</span> and <span class="process-math">\(x=\sqrt{2-y}\text{.}\)</span> Hence, the integral with reversed order is</div>
+<div class="displaymath process-math" id="example-ch04-05-ex-18-1-3-1-18">
+\begin{equation*}
+\int_0^1\int_{-\sqrt{y}}^{\sqrt{y}} 2xy\, dx\, dy + \int_1^2\int_{-\sqrt{2-y}}^{\sqrt{2-y}} 2xy\, dx\, dy
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.5.4.2"><a tabindex="-1" href="#example-ch04-05-ex-18-1-3" title="Copy heading and permalink for Solution 4.5.4.2" aria-label="Copy heading and permalink for Solution 4.5.4.2">🔗</a></div>
+</div></details>
+<details id="example-ch04-05-ex-18-1-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch04-05-ex-18-1-4-1">
+<div class="para">Evaluating using the original order is more straightforward here.</div>
+<div class="displaymath process-math" id="example-ch04-05-ex-18-1-4-1-1">
+\begin{gather*}
+\int_{-1}^{1} \int_{x^{2}}^{2-x^2} 2xy\, dy\, dx = \int_{-1}^{1} \left. xy^2 \right|_{x^2}^{2-x^2} dx = \int_{-1}^{1} x\left[(2-x^2)^2 - x^4\right] dx\\
+= \int_{-1}^{1} x\left[4 - 4x^2 + x^4 - x^4\right] dx = \int_{-1}^{1} x(4-4x^2)\, dx\\
+= \int_{-1}^{1} 4x - 4x^3\, dx = \left. 2x^2 - x^4 \right|_{-1}^{1} = (2-1)-(2-1) = 0
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.5.4.3"><a tabindex="-1" href="#example-ch04-05-ex-18-1-4" title="Copy heading and permalink for Solution 4.5.4.3" aria-label="Copy heading and permalink for Solution 4.5.4.3">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.5.4"><a tabindex="-1" href="#example-ch04-05-ex-18-1" title="Copy heading and permalink for Example 4.5.4" aria-label="Copy heading and permalink for Example 4.5.4">🔗</a></div>
+</article></details>
+<details id="example-ch04-05-ex-18-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch04-05-ex-18-2-1-1">Given the integral <span class="process-math">\(\int_{-1}^{0} \int_{x}^{-x^2} 2x+2y\, d y\, d x\)</span> :<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch04-05-ex-18-2-1-2">(a) Draw a sketch of the region of integration.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch04-05-ex-18-2-1-3">(b) Use your sketch to change the order of integration.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-2-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch04-05-ex-18-2-1-4">(c) Evaluate the double integral.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-2-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch04-05-ex-18-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch04-05-ex-18-2-2-1">The bounds <span class="process-math">\(-1\leq x\leq 0\)</span> and <span class="process-math">\(x\leq y\leq -x^2\)</span> describe the region above the line <span class="process-math">\(y=x\)</span> and below the downward-opening parabola <span class="process-math">\(y=-x^2\text{.}\)</span> They intersect when <span class="process-math">\(x=-x^2 \Rightarrow x^2+x=0 \Rightarrow x(x+1)=0\text{,}\)</span> giving <span class="process-math">\(x=0\)</span> and <span class="process-math">\(x=-1\text{,}\)</span> confirming the outer bounds. For <span class="process-math">\(-1\leq x\leq 0\)</span> the line lies below the parabola.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch04-05-ex-18-2"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch04-05-ex-18-2" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch04-05-ex-18-2.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch04-05-ex-18-2-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch04-05-ex-18-2-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch04-05-ex-18-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch04-05-ex-18-2-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The domain of integration, the area between the parabola and the line<div class="autopermalink" aria-hidden="true" data-description="Figure 4.5.2"><a tabindex="-1" href="#fig-ch04-05-ex-18-2" title="Copy heading and permalink for Figure 4.5.2" aria-label="Copy heading and permalink for Figure 4.5.2">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 4.5.5.1"><a tabindex="-1" href="#example-ch04-05-ex-18-2-2" title="Copy heading and permalink for Solution 4.5.5.1" aria-label="Copy heading and permalink for Solution 4.5.5.1">🔗</a></div>
+</div></details>
+<details id="example-ch04-05-ex-18-2-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch04-05-ex-18-2-3-1">
+<div class="para">To integrate in the order <span class="process-math">\(dx\,dy\text{,}\)</span> we express <span class="process-math">\(x\)</span> as a function of <span class="process-math">\(y\text{.}\)</span> From <span class="process-math">\(y=-x^2\)</span> we get <span class="process-math">\(x=-\sqrt{-y}\)</span> (taking the negative square root since <span class="process-math">\(x\leq 0\)</span>), so the parabola gives the left boundary. From <span class="process-math">\(y=x\)</span> we get <span class="process-math">\(x=y\text{,}\)</span> which gives the right boundary. The variable <span class="process-math">\(y\)</span> ranges from the bottom intersection point to the top. At <span class="process-math">\((-1,-1)\)</span> both curves meet, giving <span class="process-math">\(y=-1\)</span> as the lower bound. The parabola reaches <span class="process-math">\(y=0\)</span> at <span class="process-math">\(x=0\text{,}\)</span> and the line also passes through <span class="process-math">\((0,0)\text{,}\)</span> giving <span class="process-math">\(y=0\)</span> as the upper bound. Hence the reversed integral is</div>
+<div class="displaymath process-math" id="example-ch04-05-ex-18-2-3-1-16">
+\begin{equation*}
+\int_{-1}^{0}\int_{-\sqrt{-y}}^{y} 2x+2y\, dx\, dy
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.5.5.2"><a tabindex="-1" href="#example-ch04-05-ex-18-2-3" title="Copy heading and permalink for Solution 4.5.5.2" aria-label="Copy heading and permalink for Solution 4.5.5.2">🔗</a></div>
+</div></details>
+<details id="example-ch04-05-ex-18-2-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch04-05-ex-18-2-4-1">
+<div class="para">Evaluating using the original order is more straightforward here.</div>
+<div class="displaymath process-math" id="example-ch04-05-ex-18-2-4-1-1">
+\begin{gather*}
+\int_{-1}^{0}\int_{x}^{-x^2} 2x+2y\, dy\, dx = \int_{-1}^{0} \left. 2xy + y^2 \right|_{x}^{-x^2} dx\\
+= \int_{-1}^{0} \left[2x(-x^2)+(-x^2)^2\right] - \left[2x(x)+x^2\right] dx\\
+= \int_{-1}^{0} \left[-2x^3 + x^4\right] - \left[2x^2+x^2\right] dx\\
+= \int_{-1}^{0} x^4 - 2x^3 - 3x^2\, dx\\
+= \left. \frac{x^5}{5} - \frac{x^4}{2} - x^3 \right|_{-1}^{0} = 0 - \left(-\frac{1}{5} - \frac{1}{2} + 1\right) = \frac{1}{5}+\frac{1}{2}-1 = -\frac{3}{10}
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.5.5.3"><a tabindex="-1" href="#example-ch04-05-ex-18-2-4" title="Copy heading and permalink for Solution 4.5.5.3" aria-label="Copy heading and permalink for Solution 4.5.5.3">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.5.5"><a tabindex="-1" href="#example-ch04-05-ex-18-2" title="Copy heading and permalink for Example 4.5.5" aria-label="Copy heading and permalink for Example 4.5.5">🔗</a></div>
+</article></details>
+<article class="note remark-like" id="sec-ch04-05-ChangingOrderOfIntegration-7"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Volume Between Surfaces and Area.</span>
+</h2>
+<div class="para" id="sec-ch04-05-ChangingOrderOfIntegration-7-2">Just like in Calculus II we were able to find area bounded between functions, we can similarly find the volume bounded between surfaces.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 4.5.6: Volume Between Surfaces and Area"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-7" title="Copy heading and permalink for Note 4.5.6: Volume Between Surfaces and Area" aria-label="Copy heading and permalink for Note 4.5.6: Volume Between Surfaces and Area">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch04-05-ChangingOrderOfIntegration-8"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Volume Between Surfaces.</span>
+</h2>
+<div class="para logical" id="sec-ch04-05-ChangingOrderOfIntegration-8-2">
+<div class="para">Suppose that <span class="process-math">\(f(x, y)\)</span> and <span class="process-math">\(g(x, y)\)</span> are continuous on a region <span class="process-math">\(R\)</span> and that <span class="process-math">\(f(x, y) \geq g(x, y)\)</span> on <span class="process-math">\(R\text{.}\)</span> Then the volume bounded by <span class="process-math">\(f(x, y)\)</span> and <span class="process-math">\(g(x, y)\)</span> on <span class="process-math">\(R\)</span> is given by</div>
+<div class="displaymath process-math" id="sec-ch04-05-ChangingOrderOfIntegration-8-2-9">
+\begin{equation*}
+V=\iint_{R}(f(x, y)-g(x, y)) d A
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 4.5.7: Volume Between Surfaces"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-8" title="Copy heading and permalink for Remark 4.5.7: Volume Between Surfaces" aria-label="Copy heading and permalink for Remark 4.5.7: Volume Between Surfaces">🔗</a></div>
+</article>
+<details id="example-ch04-05-ex-18-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch04-05-ex-18-3-1-1">Set up (but do not evaluate) an iterated integral that gives the volume of the solid in the first octant ( <span class="process-math">\(x, y, z \geq 0\)</span> ) bounded by the surfaces <span class="process-math">\(z=xy+5\text{,}\)</span> <span class="process-math">\(z=2x+2y\)</span> above the circle <span class="process-math">\(x^{2}+y^2=1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch04-05-ex-18-3"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch04-05-ex-18-3" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch04-05-ex-18-3.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch04-05-ex-18-3-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch04-05-ex-18-3-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch04-05-ex-18-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch04-05-ex-18-3-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The surface z equals x times y plus 5, the plane 2 x plus 2 y, and the area above the unit circle in the first octant between the surface and the plane.<div class="autopermalink" aria-hidden="true" data-description="Figure 4.5.3"><a tabindex="-1" href="#fig-ch04-05-ex-18-3" title="Copy heading and permalink for Figure 4.5.3" aria-label="Copy heading and permalink for Figure 4.5.3">🔗</a></div></figcaption>
+</figure> 
+<div class="para" id="example-ch04-05-ex-18-3-1-3">The volume bounded by the given surfaces<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch04-05-ex-18-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch04-05-ex-18-3-2-1">First we determine which surface is on top. The region of integration <span class="process-math">\(R\)</span> is the part of the unit disk <span class="process-math">\(x^2+y^2\leq 1\)</span> in the first quadrant, i.e. <span class="process-math">\(1\geq x\geq 0\)</span> and <span class="process-math">\(1\geq y\geq 0\text{.}\)</span> This implies that <span class="process-math">\(\geq xy +5 \geq 5 \gt 4 \geq 2x+2y\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch04-05-ex-18-3-2-2">
+<div class="para">For a fixed <span class="process-math">\(x\in[0,1]\text{,}\)</span> <span class="process-math">\(y\)</span> ranges from <span class="process-math">\(0\)</span> to <span class="process-math">\(\sqrt{1-x^2}\text{.}\)</span> Hence the volume is</div>
+<div class="displaymath process-math" id="example-ch04-05-ex-18-3-2-2-5">
+\begin{equation*}
+V = \int_0^1\int_0^{\sqrt{1-x^2}} \left[(xy+5)-(2x+2y)\right] dy\, dx = \int_0^1\int_0^{\sqrt{1-x^2}} xy - 2x - 2y + 5\, dy\, dx
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.5.8.1"><a tabindex="-1" href="#example-ch04-05-ex-18-3-2" title="Copy heading and permalink for Solution 4.5.8.1" aria-label="Copy heading and permalink for Solution 4.5.8.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.5.8"><a tabindex="-1" href="#example-ch04-05-ex-18-3" title="Copy heading and permalink for Example 4.5.8" aria-label="Copy heading and permalink for Example 4.5.8">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="sec-ch04-05-ChangingOrderOfIntegration-10"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Finding Area Using Double Integrals.</span>
+</h2>
+<div class="para logical" id="sec-ch04-05-ChangingOrderOfIntegration-10-2">
+<div class="para">Suppose you have a region <span class="process-math">\(R\)</span> in the <span class="process-math">\(x y\)</span>-plane, you can find the area of <span class="process-math">\(R\)</span> by using the double integral</div>
+<div class="displaymath process-math" id="sec-ch04-05-ChangingOrderOfIntegration-10-2-4">
+\begin{equation*}
+\iint_{R} d A
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch04-05-ChangingOrderOfIntegration-10-3">That is, integrating the function <span class="process-math">\(f(x, y)=1\)</span> over <span class="process-math">\(R\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-10-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 4.5.9: Finding Area Using Double Integrals"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration-10" title="Copy heading and permalink for Remark 4.5.9: Finding Area Using Double Integrals" aria-label="Copy heading and permalink for Remark 4.5.9: Finding Area Using Double Integrals">🔗</a></div>
+</article>
+<details id="example-ch04-05-ex-18-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch04-05-ex-18-4-1-1">Explain geometrically why the area of <span class="process-math">\(R\)</span> is given by <span class="process-math">\(\iint_{R} d A\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch04-05-ex-18-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch04-05-ex-18-4-2-1">
+<div class="para">Recall that <span class="process-math">\(\iint_R f(x,y)\, dA\)</span> gives the net volume of the solid bounded by the surface <span class="process-math">\(z=f(x,y)\)</span> and the <span class="process-math">\(xy\)</span>-plane, over the region <span class="process-math">\(R\text{.}\)</span> Choosing <span class="process-math">\(f(x,y)=1\)</span> means the surface is the horizontal plane <span class="process-math">\(z=1\text{,}\)</span> which sits exactly one unit above the <span class="process-math">\(xy\)</span>-plane at every point of <span class="process-math">\(R\text{.}\)</span> The solid bounded between <span class="process-math">\(z=0\)</span> and <span class="process-math">\(z=1\)</span> over <span class="process-math">\(R\)</span> is therefore a slab of uniform height 1. Its volume equals base area times height, that is <span class="process-math">\(\text{Area}(R)\times 1 = \text{Area}(R)\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="example-ch04-05-ex-18-4-2-1-13">
+\begin{equation*}
+\iint_R 1\, dA = \text{Area}(R)\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-05-ex-18-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.5.10.1"><a tabindex="-1" href="#example-ch04-05-ex-18-4-2" title="Copy heading and permalink for Solution 4.5.10.1" aria-label="Copy heading and permalink for Solution 4.5.10.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.5.10"><a tabindex="-1" href="#example-ch04-05-ex-18-4" title="Copy heading and permalink for Example 4.5.10" aria-label="Copy heading and permalink for Example 4.5.10">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Section 4.5: Changing Order of Integration"><a tabindex="-1" href="#sec-ch04-05-ChangingOrderOfIntegration" title="Copy heading and permalink for Section 4.5: Changing Order of Integration" aria-label="Copy heading and permalink for Section 4.5: Changing Order of Integration">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-ch04-04-DoubleIntegralsGeneralRegionsPart1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-ch04-06-PolarCoordinates.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<script src="external/mathjax-linebreak.js"></script>
+</body>
+</html>

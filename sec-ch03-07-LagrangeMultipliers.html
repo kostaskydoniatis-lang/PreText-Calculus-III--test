@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Constraints and Lagrange Multipliers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Calculus III Notes">
+<meta property="og:title" content="Calculus III Notes">
+<meta property="book:title" content="Calculus III Notes">
+<meta name="twitter:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
+<meta property="og:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.3.0';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.c838822d59bc26bc.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b9fedab97dee3c2a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.347e2ecdeacfed99.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="CalculusIIINotes2026.html"><span class="title">Calculus III Notes</span> <span class="subtitle">These notes are meant for use by students enrolled in my Calculus III course.</span></a></div>
+<p class="byline">Konstantinos (Kostas) Kydoniatis</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-ch03-06-CriticalPoints.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-03-DerivativesOfVectorAndScalarValuedFunctions.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-04-Integration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-01-IntroToVectors.html" class="internal"><span class="codenumber">1</span> <span class="title">1. Introduction to Vectors</span></a></div>
+<ul id="ptx-toc-group-ch-01-IntroToVectors" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-01-IntroToVectors-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-01-Vectors2DIntroduction.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vectors in 2D</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-02-VectorsIn3D.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Vectors in 3D</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-03-DotProduct.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Dot Product</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-04-CrossProduct.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Cross Product</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">2. Introduction to Vector and Scalar Valued Functions</span></a></div>
+<ul id="ptx-toc-group-ch-02-IntroductionVectorandScalarValuedFunctions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch02-01-VectorValuedFunctions.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vector-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch02-02-ScalarValuedFunctions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Scalar-Valued Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-03-DerivativesOfVectorAndScalarValuedFunctions.html" class="internal"><span class="codenumber">3</span> <span class="title">3. Derivatives of Vector and Scalar Valued Functions</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-03-DerivativesOfVectorAndScalarValuedFunctions">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-03-DerivativesOfVectorAndScalarValuedFunctions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-01-DerivativesVectorValuedFunctions.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Derivatives of Vector-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-02-PartialDerivatives.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Partial Derivatives of Scalar-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-03-ChainRule.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Multi-Variable Chain Rule</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-04-DirectionalDerivatives.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Directional Derivatives and the Gradient</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-05-TangentPlanes.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Tangent Planes and Local Linearization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-06-CriticalPoints.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Critical Points and Analysis</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-ch03-07-LagrangeMultipliers.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Constraints and Lagrange Multipliers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-04-Integration.html" class="internal"><span class="codenumber">4</span> <span class="title">4. Integration</span></a></div>
+<ul id="ptx-toc-group-ch-04-Integration" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-04-Integration-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-01-ArcLength.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Arc Length</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-02-ScalarLineIntegrals.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Scalar Line Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-03-DoubleIntegralsRectangularRegions.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Double Integrals in Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-04-DoubleIntegralsGeneralRegionsPart1.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Double Integrals in Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-05-ChangingOrderOfIntegration.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Changing Order of Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-06-PolarCoordinates.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Double Integrals in Polar Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-07-ChangeOfVariables.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Change of Variables for Double Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-08-TripleIntegralsCartesian.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Triple Integrals in Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-09-TripleIntegralsCylindricalSpherical.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Triple Integrals</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-05-VectorCalculus.html" class="internal"><span class="codenumber">5</span> <span class="title">5. Vector Fields and Line Integrals</span></a></div>
+<ul id="ptx-toc-group-ch-05-VectorCalculus" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-05-VectorCalculus-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-01-VectorFieldsAndLineIntegrals.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Vector Fields and Line Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-02-FundamentalTheoremOfLineIntegrals.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Fundamental Theorem of Line Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-03-GreensTheoremCurl.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Green’s Theorem: 2D Curl</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-04-GreensTheoremDivergence.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Green’s Theorem: 2D Divergence</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-ch03-07-LagrangeMultipliers">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Constraints and Lagrange Multipliers</span>
+</h1>
+<article class="note remark-like" id="sec-ch03-07-LagrangeMultipliers-2"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-2-1">In the previous section, we found how to find local extremum of a function <span class="process-math">\(f(x, y)\)</span> in the interior of its domain.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-2-2">In practice, we sometimes restrict the domain of a function to a subset of its domain, and this subset sometimes will have boundaries. In this section, we will learn how to deal with these boundaries.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 3.7.1"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-2" title="Copy heading and permalink for Note 3.7.1" aria-label="Copy heading and permalink for Note 3.7.1">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch03-07-LagrangeMultipliers-3"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-3-1">Before, we were interested in finding local max/min values. Now, we will expand our search to absolute max/min values.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 3.7.2"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-3" title="Copy heading and permalink for Note 3.7.2" aria-label="Copy heading and permalink for Note 3.7.2">🔗</a></div>
+</article>
+<article class="definition definition-like" id="sec-ch03-07-LagrangeMultipliers-4"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Absolute Maximum and Minimum Values.</span>
+</h2>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-4-2-1">Given a function <span class="process-math">\(f(x, y)\text{,}\)</span> a set <span class="process-math">\(R\)</span> in its domain, and a point <span class="process-math">\((a, b)\)</span> in <span class="process-math">\(R\text{,}\)</span> then:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="sec-ch03-07-LagrangeMultipliers-4-2-2">
+<ul class="disc" id="sec-ch03-07-LagrangeMultipliers-4-2-2-1">
+<li id="sec-ch03-07-LagrangeMultipliers-4-2-2-1-1">
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-4-2-2-1-1-1">
+<span class="process-math">\(f\)</span> has an absolute maximum in <span class="process-math">\(R\)</span> at <span class="process-math">\((a, b)\)</span> if <span class="process-math">\(f(a, b) \geq f(x, y)\)</span> for all <span class="process-math">\((x, y)\)</span> in <span class="process-math">\(R\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-4-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-4-2-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch03-07-LagrangeMultipliers-4-2-2-1-2">
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-4-2-2-1-2-1">
+<span class="process-math">\(f\)</span> has an absolute minimum in <span class="process-math">\(R\)</span> at <span class="process-math">\((a, b)\)</span> if <span class="process-math">\(f(a, b) \leq f(x, y)\)</span> for all <span class="process-math">\((x, y)\)</span> in <span class="process-math">\(R\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-4-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-4-2-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 3.7.3: Absolute Maximum and Minimum Values"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-4" title="Copy heading and permalink for Definition 3.7.3: Absolute Maximum and Minimum Values" aria-label="Copy heading and permalink for Definition 3.7.3: Absolute Maximum and Minimum Values">🔗</a></div>
+</article>
+<details id="example-ch03-07-ex-13-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para logical" id="example-ch03-07-ex-13-1-1-1">
+<div class="para">Suppose we restrict the domain of the function <span class="process-math">\(f(x, y)=\frac{y-x}{4}\)</span> to the set</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-1-1-1-2">
+\begin{equation*}
+R=\left\{(x, y) \mid \frac{1}{2}\leq y \leq \frac{3}{2}, 0 \leq x \leq \frac{3}{2}\right\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Under this restriction, <span class="process-math">\(f\)</span> has an absolute maximum at the point  <span class="process-math">\(\left(0,\frac{3}{2},\frac{3}{8}\right)\)</span> )and an absolute minimum at the point <span class="process-math">\(\left(\frac{3}{2},\frac{1}{2},-\frac{1}{4}\right)\)</span> , as shown below.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.7.4"><a tabindex="-1" href="#example-ch03-07-ex-13-1" title="Copy heading and permalink for Example 3.7.4" aria-label="Copy heading and permalink for Example 3.7.4">🔗</a></div>
+</article></details>
+<figure class="figure figure-like" id="fig-ch03-07-ex-13-1"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch03-07-ex-13-1" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch03-07-ex-13-1.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch03-07-ex-13-1-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch03-07-ex-13-1-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch03-07-ex-13-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch03-07-ex-13-1-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The plane z equals, y minus x, all over 4, restricted on the domain 1 over 2 less or equal to y less or equal to 3 over 2 and 0 less or equal to x less or equal to 3 over 2.<div class="autopermalink" aria-hidden="true" data-description="Figure 3.7.1"><a tabindex="-1" href="#fig-ch03-07-ex-13-1" title="Copy heading and permalink for Figure 3.7.1" aria-label="Copy heading and permalink for Figure 3.7.1">🔗</a></div></figcaption>
+</figure>
+<article class="remark remark-like" id="sec-ch03-07-LagrangeMultipliers-7"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Method of Lagrange Multipliers.</span>
+</h2>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-7-2">Given a surface <span class="process-math">\(f(x, y)\)</span> (called the objective function), we will look at domain restrictions (called constraints) of the form <span class="process-math">\(g(x, y)=0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch03-07-LagrangeMultipliers-7-3">
+<ul class="disc" id="sec-ch03-07-LagrangeMultipliers-7-3-1">
+<li id="sec-ch03-07-LagrangeMultipliers-7-3-1-1">
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-7-3-1-1-1">Note that <span class="process-math">\(g(x, y)=0\)</span> is a curve in the <span class="process-math">\(x y\)</span>-plane (since it is <span class="process-math">\(g(x, y)\)</span> intersected with <span class="process-math">\(z=0\)</span> ).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-7-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-7-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch03-07-LagrangeMultipliers-7-3-1-2">
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-7-3-1-2-1">We will require that all of the curve <span class="process-math">\(g(x, y)=0\)</span> is in the interior of the domain of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-7-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-7-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 3.7.5: Method of Lagrange Multipliers"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-7" title="Copy heading and permalink for Remark 3.7.5: Method of Lagrange Multipliers" aria-label="Copy heading and permalink for Remark 3.7.5: Method of Lagrange Multipliers">🔗</a></div>
+</article>
+<details id="example-ch03-07-ex-13-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch03-07-ex-13-2-1-1">Below we have the function <span class="process-math">\(f(x, y)=\frac{y-x}{4}\)</span> restricted (constrained) to points from the curve <span class="process-math">\((x-2)^{2}+(y-2)^{2}=1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch03-07-ex-13-2-1-2">Write this constraint in the form <span class="process-math">\(g(x, y)=0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch03-07-ex-13-2"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch03-07-ex-13-2" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch03-07-ex-13-2.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch03-07-ex-13-2-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch03-07-ex-13-2-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch03-07-ex-13-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch03-07-ex-13-2-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The plane z equals, y minus x, all over 4, and the circle that corresponds to the restricted domain of the circle, on the xy-plane, centred at (2,2) with radius 1.<div class="autopermalink" aria-hidden="true" data-description="Figure 3.7.2"><a tabindex="-1" href="#fig-ch03-07-ex-13-2" title="Copy heading and permalink for Figure 3.7.2" aria-label="Copy heading and permalink for Figure 3.7.2">🔗</a></div></figcaption>
+</figure> 
+<div class="para" id="example-ch03-07-ex-13-2-1-4">
+<span class="process-math">\(f(x, y)=\frac{y-x}{4}\text { restricted to the circle }(x-2)^{2}+(y-2)^{2}=1\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-2-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch03-07-ex-13-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-07-ex-13-2-2-1">
+<div class="para">To write the constraint in the form <span class="process-math">\(g(x,y)=0\)</span> we move everything to one side of the equation. Subtracting <span class="process-math">\(1\)</span> from both sides of <span class="process-math">\((x-2)^{2}+(y-2)^{2}=1\)</span> gives</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-2-2-1-4">
+\begin{equation*}
+(x-2)^{2}+(y-2)^{2}-1 = 0
+\end{equation*}
+</div>
+<div class="para">so the constraint is <span class="process-math">\(g(x,y) = (x-2)^{2}+(y-2)^{2}-1\text{.}\)</span> Note that the curve <span class="process-math">\(g(x,y)=0\)</span> is the circle of radius <span class="process-math">\(1\)</span> centred at <span class="process-math">\((2,2)\)</span> in the <span class="process-math">\(xy\)</span>-plane, which lies entirely in the interior of the domain of <span class="process-math">\(f\)</span> (the whole plane).</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.7.6.1"><a tabindex="-1" href="#example-ch03-07-ex-13-2-2" title="Copy heading and permalink for Solution 3.7.6.1" aria-label="Copy heading and permalink for Solution 3.7.6.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.7.6"><a tabindex="-1" href="#example-ch03-07-ex-13-2" title="Copy heading and permalink for Example 3.7.6" aria-label="Copy heading and permalink for Example 3.7.6">🔗</a></div>
+</article></details>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-9">Now, we give a method to find the absolute <span class="process-math">\(\mathrm{max} / \mathrm{min}\)</span> values of a surface <span class="process-math">\(f(x, y)\)</span> subject to a constraint of the form <span class="process-math">\(g(x, y)=0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-ch03-07-LagrangeMultipliers-10"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Method of Lagrange Multipliers.</span>
+</h2>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-10-2-1">Suppose you want to find the absolute <span class="process-math">\(\max / \min\)</span> values of a differentiable function <span class="process-math">\(f(x, y)\)</span> subject to the domain restriction <span class="process-math">\(g(x, y)=0\text{.}\)</span> If <span class="process-math">\(g(x, y)\)</span> is a smooth curve and <span class="process-math">\(\nabla g(x, y) \neq 0\)</span> for all points on <span class="process-math">\(g(x, y)=0\text{,}\)</span> then we can find these absolute <span class="process-math">\(\mathrm{max} / \mathrm{min}\)</span> values as follows:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="sec-ch03-07-LagrangeMultipliers-10-2-2">
+<ol class="decimal" id="sec-ch03-07-LagrangeMultipliers-10-2-2-1">
+<li id="sec-ch03-07-LagrangeMultipliers-10-2-2-1-1">
+<div class="para logical" id="sec-ch03-07-LagrangeMultipliers-10-2-2-1-1-1">
+<div class="para">Find values of <span class="process-math">\(x, y\text{,}\)</span> and <span class="process-math">\(\lambda\)</span> (called a Lagrange multiplier) such that</div>
+<div class="displaymath process-math" id="sec-ch03-07-LagrangeMultipliers-10-2-2-1-1-1-3">
+\begin{equation*}
+\nabla f(x, y)=\lambda \nabla g(x, y) \quad \text { and } \quad g(x, y)=0\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-10-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-10-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-ch03-07-LagrangeMultipliers-10-2-2-1-2">
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-10-2-2-1-2-1">Evaluate <span class="process-math">\(f\)</span> at the values <span class="process-math">\((x, y)\)</span> found in step 1 and at the endpoints of <span class="process-math">\(g(x, y)=0\text{,}\)</span> if they exist (for example, if <span class="process-math">\(g(x, y)=0\)</span> is a line segment).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-10-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-10-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-ch03-07-LagrangeMultipliers-10-2-2-1-3">
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-10-2-2-1-3-1">The largest and smallest values you found in part (b) are the absolute max and min values of <span class="process-math">\(f\text{,}\)</span> respectively, restricted to <span class="process-math">\(g(x, y)=0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-10-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-10-2-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-10-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 3.7.7: Method of Lagrange Multipliers"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-10" title="Copy heading and permalink for Definition 3.7.7: Method of Lagrange Multipliers" aria-label="Copy heading and permalink for Definition 3.7.7: Method of Lagrange Multipliers">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch03-07-LagrangeMultipliers-11"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-11-1">When we say <span class="process-math">\(g(x, y)=0\)</span> is smooth, we mean that it is differentiable (has no sharp edges and doesn’t intersect itself).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 3.7.8"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-11" title="Copy heading and permalink for Note 3.7.8" aria-label="Copy heading and permalink for Note 3.7.8">🔗</a></div>
+</article>
+<details id="example-ch03-07-ex-13-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Examples of smooth and non smooth curves.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<figure class="figure figure-like" id="fig-ch03-07-ex-13-3"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch03-07-ex-13-3" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch03-07-ex-13-3.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch03-07-ex-13-3-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch03-07-ex-13-3-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch03-07-ex-13-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch03-07-ex-13-3-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>From left to right: the circle, x plus 6, squared, plus y squared equals 2, and the parabola y equals, x plus 3, squared, both smooth curves, then the graph of y equals the absolute value of x minus 3 with a sharp corner at x equals 3 and a cycloid curve, both not smooth.<div class="autopermalink" aria-hidden="true" data-description="Figure 3.7.3"><a tabindex="-1" href="#fig-ch03-07-ex-13-3" title="Copy heading and permalink for Figure 3.7.3" aria-label="Copy heading and permalink for Figure 3.7.3">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch03-07-ex-13-3-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch03-07-ex-13-3-3-1">A curve is smooth when it is differentiable everywhere: it has no sharp corners and it does not intersect itself. The circle <span class="process-math">\((x+6)^2+y^2=2\)</span> and the parabola <span class="process-math">\(y=(x+3)^2\)</span> are smooth curves, since at every point they have a well-defined tangent line. The graph of <span class="process-math">\(y=|x-3|\)</span> is not smooth because of the sharp corner, where no tangent line exists. A cycloid curve is not smooth because it has a cusp.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.7.9.1"><a tabindex="-1" href="#example-ch03-07-ex-13-3-3" title="Copy heading and permalink for Solution 3.7.9.1" aria-label="Copy heading and permalink for Solution 3.7.9.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.7.9: Examples of smooth and non smooth curves"><a tabindex="-1" href="#example-ch03-07-ex-13-3" title="Copy heading and permalink for Example 3.7.9: Examples of smooth and non smooth curves" aria-label="Copy heading and permalink for Example 3.7.9: Examples of smooth and non smooth curves">🔗</a></div>
+</article></details>
+<details id="example-ch03-07-ex-13-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch03-07-ex-13-4-1-1">Using the method of Lagrange multipliers, find the absolute max/min values of <span class="process-math">\(f(x, y)=x^{2}-y^{2}\)</span> subject to the constraint <span class="process-math">\(y=2x,-\frac{1}{2} \leq x \leq \frac{1}{2}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch03-07-ex-13-4"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch03-07-ex-13-4" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch03-07-ex-13-4.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch03-07-ex-13-4-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch03-07-ex-13-4-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch03-07-ex-13-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch03-07-ex-13-4-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The surface z equals x squared minus y squared, and the curve on it over the restricted domain y equals 2 x, for negative 1 over 2 less or equal to x less or equal to 1 over 2.<div class="autopermalink" aria-hidden="true" data-description="Figure 3.7.4"><a tabindex="-1" href="#fig-ch03-07-ex-13-4" title="Copy heading and permalink for Figure 3.7.4" aria-label="Copy heading and permalink for Figure 3.7.4">🔗</a></div></figcaption>
+</figure> 
+<div class="para" id="example-ch03-07-ex-13-4-1-3">
+<span class="process-math">\(f(x, y)=x^{2}-y^{2} \text { subject to the constraint } y=2,-1/2 \leq x \leq 1/2\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-4-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch03-07-ex-13-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-07-ex-13-4-2-1">
+<div class="para">We first write the constraint in the form <span class="process-math">\(g(x,y)=0\text{:}\)</span> from <span class="process-math">\(y=2x\)</span> we get <span class="process-math">\(g(x,y) = y - 2x = 0\text{.}\)</span> The gradients are <span class="process-math">\(\nabla f = \langle 2x, -2y \rangle\)</span> and <span class="process-math">\(\nabla g = \langle -2, 1 \rangle\text{,}\)</span> so the system <span class="process-math">\(\nabla f = \lambda \nabla g\)</span> together with the constraint reads</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-4-2-1-7">
+\begin{equation*}
+2x = -2\lambda, \quad -2y = \lambda, \quad y = 2x
+\end{equation*}
+</div>
+<div class="para">The first equation gives <span class="process-math">\(\lambda = -x\text{;}\)</span> substituting into the second gives <span class="process-math">\(-2y = -x \Rightarrow x = 2y\text{.}\)</span> Combining with the constraint <span class="process-math">\(y=2x\)</span> we get <span class="process-math">\(x = 2(2x) = 4x \Rightarrow 3x = 0 \Rightarrow x = 0\text{,}\)</span> and then <span class="process-math">\(y=0\text{.}\)</span> This gives the single candidate <span class="process-math">\((0,0)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch03-07-ex-13-4-2-2">
+<div class="para">Since the constraint is a line segment, we must also evaluate <span class="process-math">\(f\)</span> at its endpoints, <span class="process-math">\(x=-\frac{1}{2}\)</span> and <span class="process-math">\(x=\frac{1}{2}\text{,}\)</span> that is at the points <span class="process-math">\(\left( -\frac{1}{2}, -1 \right)\)</span> and <span class="process-math">\(\left( \frac{1}{2}, 1 \right)\text{.}\)</span> Evaluating <span class="process-math">\(f\)</span> at all of the candidates:</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-4-2-2-7">
+\begin{equation*}
+f(0,0) = 0, \quad f\left( \tfrac{1}{2}, 1 \right) = \tfrac{1}{4} - 1 = -\tfrac{3}{4}, \quad f\left( -\tfrac{1}{2}, -1 \right) = \tfrac{1}{4} - 1 = -\tfrac{3}{4}
+\end{equation*}
+</div>
+<div class="para">The segment contains its endpoints and is bounded, so the Extreme Value theorem applies: the absolute maximum is <span class="process-math">\(0\)</span> at <span class="process-math">\((0,0)\)</span> and the absolute minimum is <span class="process-math">\(-\frac{3}{4}\text{,}\)</span> attained at both <span class="process-math">\(\left( \frac{1}{2}, 1 \right)\)</span> and <span class="process-math">\(\left( -\frac{1}{2}, -1 \right)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.7.10.1"><a tabindex="-1" href="#example-ch03-07-ex-13-4-2" title="Copy heading and permalink for Solution 3.7.10.1" aria-label="Copy heading and permalink for Solution 3.7.10.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.7.10"><a tabindex="-1" href="#example-ch03-07-ex-13-4" title="Copy heading and permalink for Example 3.7.10" aria-label="Copy heading and permalink for Example 3.7.10">🔗</a></div>
+</article></details>
+<details id="example-ch03-07-ex-13-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch03-07-ex-13-5-1-1">Find the absolute <span class="process-math">\(\mathrm{max} / \mathrm{min}\)</span> values of the objective function <span class="process-math">\(f(x, y)= \frac{x}{5}+\frac{y}{2}\)</span> where <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> lie on the circle <span class="process-math">\(C\)</span> given by <span class="process-math">\(x^{2}+y^{2}=1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch03-07-ex-13-5"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch03-07-ex-13-5" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch03-07-ex-13-5.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch03-07-ex-13-5-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch03-07-ex-13-5-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch03-07-ex-13-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch03-07-ex-13-5-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The plane z equals x over 5 plus y over 2, and the circle constraint, along with the curve of the plane corresponding to the constraint.<div class="autopermalink" aria-hidden="true" data-description="Figure 3.7.5"><a tabindex="-1" href="#fig-ch03-07-ex-13-5" title="Copy heading and permalink for Figure 3.7.5" aria-label="Copy heading and permalink for Figure 3.7.5">🔗</a></div></figcaption>
+</figure> 
+<div class="para" id="example-ch03-07-ex-13-5-1-3">
+<span class="process-math">\(f(x, y)=\frac{x}{5}+\frac{y}{2}\text { subject to the constraint } x^{2}+y^{2}=1\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-5-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch03-07-ex-13-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-07-ex-13-5-2-1">
+<div class="para">We write the constraint as <span class="process-math">\(g(x,y) = x^{2}+y^{2}-1 = 0\text{.}\)</span> The gradients are <span class="process-math">\(\nabla f = \left\langle \frac{1}{5}, \frac{1}{2} \right\rangle\)</span> and <span class="process-math">\(\nabla g = \langle 2x, 2y \rangle\text{,}\)</span> so the system <span class="process-math">\(\nabla f = \lambda \nabla g\)</span> together with the constraint reads</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-5-2-1-5">
+\begin{equation*}
+\frac{1}{5} = 2\lambda x, \quad \frac{1}{2} = 2\lambda y, \quad x^{2}+y^{2} = 1
+\end{equation*}
+</div>
+<div class="para">The left sides of the first two equations are nonzero, so none of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> or <span class="process-math">\(\lambda\)</span> can be zero. We may therefore solve each of the first two equations for <span class="process-math">\(\lambda\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-5-2-1-10">
+\begin{equation*}
+\lambda = \frac{1}{10x}, \qquad \lambda = \frac{1}{4y}
+\end{equation*}
+</div>
+<div class="para">Setting these two expressions equal to each other eliminates <span class="process-math">\(\lambda\)</span> and gives a relation between <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-5-2-1-14">
+\begin{equation*}
+\frac{1}{10x} = \frac{1}{4y} \Rightarrow 4y = 10x \Rightarrow y = \frac{5}{2}x
+\end{equation*}
+</div>
+<div class="para">Substituting <span class="process-math">\(y = \frac{5}{2}x\)</span> into the constraint <span class="process-math">\(x^{2}+y^{2}=1\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-5-2-1-17">
+\begin{equation*}
+x^{2} + \frac{25}{4}x^{2} = 1 \Rightarrow \frac{29}{4}x^{2} = 1 \Rightarrow x^{2} = \frac{4}{29} \Rightarrow x = \pm\frac{2}{\sqrt{29}}
+\end{equation*}
+</div>
+<div class="para">and the corresponding <span class="process-math">\(y = \frac{5}{2}x = \pm\frac{5}{\sqrt{29}}\text{.}\)</span> This produces the two candidates <span class="process-math">\(\left( \frac{2}{\sqrt{29}}, \frac{5}{\sqrt{29}} \right)\)</span> and <span class="process-math">\(\left( -\frac{2}{\sqrt{29}}, -\frac{5}{\sqrt{29}} \right)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.7.11.1"><a tabindex="-1" href="#example-ch03-07-ex-13-5-2" title="Copy heading and permalink for Solution 3.7.11.1" aria-label="Copy heading and permalink for Solution 3.7.11.1">🔗</a></div>
+</div></details>
+<details id="example-ch03-07-ex-13-5-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-07-ex-13-5-3-1">
+<div class="para">It remains to evaluate <span class="process-math">\(f\)</span> at the two candidates found in <a href="sec-ch03-07-LagrangeMultipliers.html#example-ch03-07-ex-13-5" class="xref" data-knowl="./knowl/xref/example-ch03-07-ex-13-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.7.11">Example 3.7.11</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/example-ch03-07-ex-13-5.html" id="example-ch03-07-ex-13-5-3-1-3">
+\begin{gather*}
+f\left( \frac{2}{\sqrt{29}}, \frac{5}{\sqrt{29}} \right) = \frac{1}{5}\cdot\frac{2}{\sqrt{29}} + \frac{1}{2}\cdot\frac{5}{\sqrt{29}} = \frac{4}{10\sqrt{29}} + \frac{25}{10\sqrt{29}} = \frac{29}{10\sqrt{29}} = \frac{\sqrt{29}}{10}\\
+f\left( -\frac{2}{\sqrt{29}}, -\frac{5}{\sqrt{29}} \right) = -\frac{\sqrt{29}}{10}
+\end{gather*}
+</div>
+<div class="para">The circle has no endpoints and is bounded, so the Extreme Value theorem applies: the absolute maximum is <span class="process-math">\(\frac{\sqrt{29}}{10}\)</span> at <span class="process-math">\(\left( \frac{2}{\sqrt{29}}, \frac{5}{\sqrt{29}} \right)\)</span> and the absolute minimum is <span class="process-math">\(-\frac{\sqrt{29}}{10}\)</span> at <span class="process-math">\(\left( -\frac{2}{\sqrt{29}}, -\frac{5}{\sqrt{29}} \right)\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.7.11.2"><a tabindex="-1" href="#example-ch03-07-ex-13-5-3" title="Copy heading and permalink for Solution 3.7.11.2" aria-label="Copy heading and permalink for Solution 3.7.11.2">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.7.11"><a tabindex="-1" href="#example-ch03-07-ex-13-5" title="Copy heading and permalink for Example 3.7.11" aria-label="Copy heading and permalink for Example 3.7.11">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="sec-ch03-07-LagrangeMultipliers-15"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-15-1">In <a href="sec-ch03-07-LagrangeMultipliers.html#example-ch03-07-ex-13-4" class="xref" data-knowl="./knowl/xref/example-ch03-07-ex-13-4.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.7.10">Example 3.7.10</a> and <a href="sec-ch03-07-LagrangeMultipliers.html#example-ch03-07-ex-13-5" class="xref" data-knowl="./knowl/xref/example-ch03-07-ex-13-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.7.11">Example 3.7.11</a>, we could see from the pictures that the values we found are the only absolute <span class="process-math">\(\mathrm{max} / \mathrm{min}\)</span> values.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 3.7.12"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-15" title="Copy heading and permalink for Remark 3.7.12" aria-label="Copy heading and permalink for Remark 3.7.12">🔗</a></div>
+</article>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-16">In practice, how can we know if we found the correct (and only) absolute <span class="process-math">\(\mathrm{max} / \mathrm{min}\)</span> values? We can use a theorem called the Extreme Value theorem.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="sec-ch03-07-LagrangeMultipliers-17"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Extreme Value Theorem.</span>
+</h2>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-17-2-1">Let <span class="process-math">\(f(x, y)\)</span> be differentiable and <span class="process-math">\(g(x, y)=0\)</span> be a differentiable curve inside the domain of <span class="process-math">\(f\text{.}\)</span> If the curve <span class="process-math">\(g(x, y)=0\)</span> :<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="sec-ch03-07-LagrangeMultipliers-17-2-2">
+<ul class="disc" id="sec-ch03-07-LagrangeMultipliers-17-2-2-1">
+<li id="sec-ch03-07-LagrangeMultipliers-17-2-2-1-1">
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-17-2-2-1-1-1">Contains its endpoints (if they exist)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-17-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-17-2-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch03-07-LagrangeMultipliers-17-2-2-1-2">
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-17-2-2-1-2-1">and is bounded (you can put it inside a circle of finite radius)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-17-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-17-2-2-1-2-2">then the differentiable function <span class="process-math">\(f(x, y)\)</span> will have absolute <span class="process-math">\(\mathrm{max} / \mathrm{min}\)</span> values on <span class="process-math">\(g(x, y)=0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-17-2-2-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-17-2-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-17-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 3.7.13: The Extreme Value Theorem"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-17" title="Copy heading and permalink for Theorem 3.7.13: The Extreme Value Theorem" aria-label="Copy heading and permalink for Theorem 3.7.13: The Extreme Value Theorem">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch03-07-LagrangeMultipliers-18"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-18-1">If the conditions for the Extreme Value theorem hold, then the method of Lagrange multipliers will find the absolute max/min values of <span class="process-math">\(f\)</span> restricted to <span class="process-math">\(g(x, y)=0\text{.}\)</span> If any of the two conditions above doesn’t hold, then the method of Lagrange multipliers will only find local extremum.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 3.7.14"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-18" title="Copy heading and permalink for Remark 3.7.14" aria-label="Copy heading and permalink for Remark 3.7.14">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch03-07-LagrangeMultipliers-19"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Combining Boundaries and Interiors.</span>
+</h2>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-19-2">Suppose that the (differentiable) function <span class="process-math">\(f(x, y)\)</span> is constraint by the (differentiable) curve <span class="process-math">\(g(x, y)=0\)</span> enclosing a region <span class="process-math">\(S\)</span> in the <span class="process-math">\(x y\)</span>-plane (we call such curves simple and closed).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-19-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-19-3">Then we can combine the method of Lagrange multipliers with critical point analysis to find the absolute <span class="process-math">\(\max / \min\)</span> values of <span class="process-math">\(f\)</span> on <span class="process-math">\(g(x, y)=0\)</span> and <span class="process-math">\(S\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-19-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch03-07-simple-closed-curve"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch03-07-simple-closed-curve" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch03-07-simple-closed-curve.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch03-07-simple-closed-curve-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch03-07-simple-closed-curve-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch03-07-simple-closed-curve-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch03-07-simple-closed-curve-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The simple and closed curve x squared plus y squared equals 1, enclosing a region S.<div class="autopermalink" aria-hidden="true" data-description="Figure 3.7.6"><a tabindex="-1" href="#fig-ch03-07-simple-closed-curve" title="Copy heading and permalink for Figure 3.7.6" aria-label="Copy heading and permalink for Figure 3.7.6">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-19-5">The simple and closed curve <span class="process-math">\(x^{2}+y^{2}=1\)</span> (dark green) enclosing a region <span class="process-math">\(S\)</span> (light green)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-19-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 3.7.15: Combining Boundaries and Interiors"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-19" title="Copy heading and permalink for Note 3.7.15: Combining Boundaries and Interiors" aria-label="Copy heading and permalink for Note 3.7.15: Combining Boundaries and Interiors">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch03-07-LagrangeMultipliers-20"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-20-1">The method is as follows:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-20-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch03-07-LagrangeMultipliers-20-2">
+<ul class="disc" id="sec-ch03-07-LagrangeMultipliers-20-2-1">
+<li id="sec-ch03-07-LagrangeMultipliers-20-2-1-1">
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-20-2-1-1-1">Find candidates for absolute <span class="process-math">\(\max / \min\)</span> values on <span class="process-math">\(g(x, y)=0\)</span> (the boundary) using the method of Lagrange multipliers.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-20-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-20-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch03-07-LagrangeMultipliers-20-2-1-2">
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-20-2-1-2-1">Find candidates for absolute <span class="process-math">\(\max / \min\)</span> values on the region <span class="process-math">\(S\)</span> (the region enclosed by <span class="process-math">\(g(x, y)=0\text{,}\)</span> excluding the boundary).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-20-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-20-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch03-07-LagrangeMultipliers-20-2-1-3">
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-20-2-1-3-1">Evaluate <span class="process-math">\(f\)</span> at all of these points. The largest is the absolute max and the smallest the absolute min.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-20-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-20-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-20-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-20-3">
+<em class="alert">Important:</em> The Extreme Value theorem applies to regions described in the previous note (regions enclosed by a simple and closed curve <span class="process-math">\(g(x, y)=0\)</span> including its interior).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-20-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 3.7.16"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-20" title="Copy heading and permalink for Remark 3.7.16" aria-label="Copy heading and permalink for Remark 3.7.16">🔗</a></div>
+</article>
+<details id="example-ch03-07-ex-13-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch03-07-ex-13-6-1-1">Find the absolute max and min values (if they exist) of <span class="process-math">\(f(x, y)= 4 x^{2}+y^{2}+1\)</span> restricted to <span class="process-math">\(R=\left\{(x, y) \mid x^{2}+4 y^{2} \leq 1\right\}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch03-07-ex-13-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch03-07-ex-13-6-2-1">The region <span class="process-math">\(R\)</span> consists of the ellipse <span class="process-math">\(x^{2}+4y^{2}=1\)</span> (the boundary) together with its interior, so it is a region enclosed by a simple and closed curve including its interior; the Extreme Value theorem guarantees that the absolute max/min values exist. We combine critical point analysis in the interior with the method of Lagrange multipliers on the boundary.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch03-07-ex-13-6-2-2">
+<div class="para">
+<em class="alert">Interior.</em> A critical point of <span class="process-math">\(f\)</span> in the interior is a point where the gradient vanishes. Since <span class="process-math">\(\nabla f = \langle 8x,\, 2y \rangle\text{,}\)</span> we set each component to zero:</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-6-2-2-4">
+\begin{equation*}
+8x = 0 \quad\text{and}\quad 2y = 0 \Rightarrow x = 0,\ y = 0
+\end{equation*}
+</div>
+<div class="para">The only critical point is <span class="process-math">\((0,0)\text{,}\)</span> and it satisfies <span class="process-math">\(0^{2}+4\cdot 0^{2} = 0 \lt 1\text{,}\)</span> so it lies strictly inside <span class="process-math">\(R\)</span> and is a valid candidate. To classify it we apply the Second Derivative Test. The second-order partials are</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-6-2-2-8">
+\begin{equation*}
+f_{xx} = 8, \quad f_{yy} = 2, \quad f_{xy} = 0
+\end{equation*}
+</div>
+<div class="para">so the discriminant is <span class="process-math">\(D = f_{xx}f_{yy} - \left( f_{xy} \right)^{2} = (8)(2) - 0^{2} = 16 \gt 0\text{.}\)</span> Since <span class="process-math">\(D \gt 0\)</span> and <span class="process-math">\(f_{xx} = 8 \gt 0\text{,}\)</span> the critical point <span class="process-math">\((0,0)\)</span> is a local minimum, with value <span class="process-math">\(f(0,0) = 1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-6-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.7.17.1"><a tabindex="-1" href="#example-ch03-07-ex-13-6-2" title="Copy heading and permalink for Solution 3.7.17.1" aria-label="Copy heading and permalink for Solution 3.7.17.1">🔗</a></div>
+</div></details>
+<details id="example-ch03-07-ex-13-6-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-07-ex-13-6-3-1">
+<div class="para">
+<em class="alert">Boundary.</em> We write the constraint as <span class="process-math">\(g(x,y) = x^{2}+4y^{2}-1 = 0\text{,}\)</span> with <span class="process-math">\(\nabla g = \langle 2x, 8y \rangle\text{.}\)</span> The system <span class="process-math">\(\nabla f = \lambda \nabla g\)</span> together with the constraint reads</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-6-3-1-5">
+\begin{equation*}
+8x = 2\lambda x, \quad 2y = 8\lambda y, \quad x^{2}+4y^{2} = 1
+\end{equation*}
+</div>
+<div class="para">We solve each of the first two equations for <span class="process-math">\(\lambda\text{.}\)</span> Moving everything to one side and factoring,</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-6-3-1-7">
+\begin{equation*}
+2x(4-\lambda) = 0 \Rightarrow x = 0 \ \text{ or }\ \lambda = 4, \qquad 2y(1-4\lambda) = 0 \Rightarrow y = 0 \ \text{ or }\ \lambda = \tfrac{1}{4}
+\end{equation*}
+</div>
+<div class="para">A single value of <span class="process-math">\(\lambda\)</span> must satisfy both equations at once, but <span class="process-math">\(\lambda = 4\)</span> and <span class="process-math">\(\lambda = \frac{1}{4}\)</span> cannot both hold. Eliminating <span class="process-math">\(\lambda\)</span> this way rules out <span class="process-math">\(x \neq 0\)</span> and <span class="process-math">\(y \neq 0\)</span> occurring together, so at least one of <span class="process-math">\(x, y\)</span> is zero (and both cannot be zero, since <span class="process-math">\((0,0)\)</span> does not satisfy the constraint). This leaves two cases:</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="example-ch03-07-ex-13-6-3-2">If <span class="process-math">\(x = 0\text{,}\)</span> the constraint gives <span class="process-math">\(4y^{2} = 1 \Rightarrow y = \pm\frac{1}{2}\text{,}\)</span> producing the candidates <span class="process-math">\(\left( 0, \frac{1}{2} \right)\)</span> and <span class="process-math">\(\left( 0, -\frac{1}{2} \right)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-6-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="example-ch03-07-ex-13-6-3-3">If <span class="process-math">\(y = 0\text{,}\)</span> the constraint gives <span class="process-math">\(x^{2} = 1 \Rightarrow x = \pm 1\text{,}\)</span> producing the candidates <span class="process-math">\((1,0)\)</span> and <span class="process-math">\((-1,0)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-6-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.7.17.2"><a tabindex="-1" href="#example-ch03-07-ex-13-6-3" title="Copy heading and permalink for Solution 3.7.17.2" aria-label="Copy heading and permalink for Solution 3.7.17.2">🔗</a></div>
+</div></details>
+<details id="example-ch03-07-ex-13-6-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-07-ex-13-6-4-1">
+<div class="para">We now evaluate <span class="process-math">\(f\)</span> at the interior candidate and at all of the boundary candidates:</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-6-4-1-2">
+\begin{equation*}
+f(0,0) = 0 + 0 + 1 = 1, \quad f\left( 0, \pm\tfrac{1}{2} \right) = \tfrac{1}{4} + 1 = \tfrac{5}{4}, \quad f(\pm 1, 0) = 4 + 1 = 5
+\end{equation*}
+</div>
+<div class="para">Comparing the values <span class="process-math">\(1\text{,}\)</span> <span class="process-math">\(\frac{5}{4}\text{,}\)</span> and <span class="process-math">\(5\text{:}\)</span> the absolute maximum of <span class="process-math">\(f\)</span> on <span class="process-math">\(R\)</span> is <span class="process-math">\(5\text{,}\)</span> attained at <span class="process-math">\((1,0)\)</span> and <span class="process-math">\((-1,0)\)</span> on the boundary, and the absolute minimum is <span class="process-math">\(1\text{,}\)</span> attained at the interior critical point <span class="process-math">\((0,0)\text{.}\)</span> Note that the smallest value on the boundary, <span class="process-math">\(\frac{5}{4}\)</span> at <span class="process-math">\(\left( 0, \pm\frac{1}{2} \right)\text{,}\)</span> is not the absolute minimum of <span class="process-math">\(f\)</span> on <span class="process-math">\(R\)</span> — the minimum occurs in the interior, which is why the critical point analysis step cannot be skipped.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-6-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch03-07-ex-13-6"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch03-07-ex-13-6" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch03-07-ex-13-6.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch03-07-ex-13-6-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch03-07-ex-13-6-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch03-07-ex-13-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch03-07-ex-13-6-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The restricted surface of the paraboloid f of x and y equals 4 x squared plus y squared plus one, on the ellipse x squared plus 4 y squared is smaller or equal to 1.<div class="autopermalink" aria-hidden="true" data-description="Figure 3.7.7"><a tabindex="-1" href="#fig-ch03-07-ex-13-6" title="Copy heading and permalink for Figure 3.7.7" aria-label="Copy heading and permalink for Figure 3.7.7">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 3.7.17.3"><a tabindex="-1" href="#example-ch03-07-ex-13-6-4" title="Copy heading and permalink for Solution 3.7.17.3" aria-label="Copy heading and permalink for Solution 3.7.17.3">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.7.17"><a tabindex="-1" href="#example-ch03-07-ex-13-6" title="Copy heading and permalink for Example 3.7.17" aria-label="Copy heading and permalink for Example 3.7.17">🔗</a></div>
+</article></details>
+<div class="para" id="sec-ch03-07-LagrangeMultipliers-22">The method of Lagrange multipliers extends easily to higher dimensions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="remark remark-like" id="sec-ch03-07-LagrangeMultipliers-23"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lagrange Multipliers in Higher Dimensions.</span>
+</h2>
+<div class="para logical" id="sec-ch03-07-LagrangeMultipliers-23-2">
+<div class="para">Suppose you want to maximize or minimize the function <span class="process-math">\(f(x, y, z)\)</span> subject to the constraint <span class="process-math">\(g(x, y, z)=0\text{.}\)</span> Then solve the system</div>
+<div class="displaymath process-math" id="sec-ch03-07-LagrangeMultipliers-23-2-3">
+\begin{align*}
+\nabla f(x, y, z) \amp =\lambda \nabla g(x, y, z)\\
+g(x, y, z) \amp =0
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-23-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 3.7.18: Lagrange Multipliers in Higher Dimensions"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers-23" title="Copy heading and permalink for Remark 3.7.18: Lagrange Multipliers in Higher Dimensions" aria-label="Copy heading and permalink for Remark 3.7.18: Lagrange Multipliers in Higher Dimensions">🔗</a></div>
+</article>
+<details id="example-ch03-07-ex-13-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Example 4.44 of the book.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch03-07-ex-13-7-2-1">Find the absolute max and min values (if they exist) of <span class="process-math">\(f(x, y, z)= x^2+y^2+z^2\)</span> subject to the constraint <span class="process-math">\(x+y+z=1\text{.}\)</span>(Since the restriction <span class="process-math">\(x+y+z=1\)</span> is not a bounded set, assume that the point found with the use of the Lagrange Multipliers method must be either an absolute maximum or minimum for this example.)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch03-07-ex-13-7-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-07-ex-13-7-3-1">
+<div class="para">We write the constraint as <span class="process-math">\(g(x,y,z) = x+y+z-1 = 0\text{.}\)</span> The gradients are <span class="process-math">\(\nabla f = \langle 2x, 2y, 2z \rangle\)</span> and <span class="process-math">\(\nabla g = \langle 1, 1, 1 \rangle\text{,}\)</span> so the system <span class="process-math">\(\nabla f = \lambda \nabla g\)</span> together with the constraint reads</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/example-ch03-07-ex-13-7.html" id="example-ch03-07-ex-13-7-3-1-5">
+\begin{equation*}
+2x = \lambda, \quad 2y = \lambda, \quad 2z = \lambda, \quad x+y+z = 1
+\end{equation*}
+</div>
+<div class="para">The first three equations give <span class="process-math">\(x = y = z = \frac{\lambda}{2}\text{.}\)</span> Substituting into the constraint:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/example-ch03-07-ex-13-7.html" id="example-ch03-07-ex-13-7-3-1-7">
+\begin{equation*}
+x + x + x = 1 \Rightarrow 3x = 1 \Rightarrow x = y = z = \frac{1}{3}
+\end{equation*}
+</div>
+<div class="para">so the only candidate is <span class="process-math">\(\left( \frac{1}{3}, \frac{1}{3}, \frac{1}{3} \right)\text{,}\)</span> with</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/example-ch03-07-ex-13-7.html" id="example-ch03-07-ex-13-7-3-1-9">
+\begin{equation*}
+f\left( \tfrac{1}{3}, \tfrac{1}{3}, \tfrac{1}{3} \right) = \tfrac{1}{9} + \tfrac{1}{9} + \tfrac{1}{9} = \tfrac{1}{3}
+\end{equation*}
+</div>
+<div class="para">Since the plane <span class="process-math">\(x+y+z=1\)</span> is not a bounded set, the Extreme Value theorem does not apply, and as stated in the problem we assume that the candidate found in <a href="sec-ch03-07-LagrangeMultipliers.html#example-ch03-07-ex-13-7" class="xref" data-knowl="./knowl/xref/example-ch03-07-ex-13-7.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.7.19: Example 4.44 of the book">Example 3.7.19</a> must be either an absolute maximum or an absolute minimum. To decide which, we compare with another point on the constraint, say <span class="process-math">\((1,0,0)\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/example-ch03-07-ex-13-7.html" id="example-ch03-07-ex-13-7-3-1-13">
+\begin{equation*}
+f(1,0,0) = 1 \gt \frac{1}{3} = f\left( \tfrac{1}{3}, \tfrac{1}{3}, \tfrac{1}{3} \right)
+\end{equation*}
+</div>
+<div class="para">so <span class="process-math">\(\left( \frac{1}{3}, \frac{1}{3}, \frac{1}{3} \right)\)</span> is the absolute minimum, with value <span class="process-math">\(\frac{1}{3}\text{.}\)</span> There is no absolute maximum: the points <span class="process-math">\((t, -t, 1)\)</span> lie on the plane for every value of <span class="process-math">\(t\text{,}\)</span> and <span class="process-math">\(f(t,-t,1) = 2t^2 + 1\)</span> becomes arbitrarily large as <span class="process-math">\(t\)</span> grows.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-7-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.7.19.1"><a tabindex="-1" href="#example-ch03-07-ex-13-7-3" title="Copy heading and permalink for Solution 3.7.19.1" aria-label="Copy heading and permalink for Solution 3.7.19.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.7.19: Example 4.44 of the book"><a tabindex="-1" href="#example-ch03-07-ex-13-7" title="Copy heading and permalink for Example 3.7.19: Example 4.44 of the book" aria-label="Copy heading and permalink for Example 3.7.19: Example 4.44 of the book">🔗</a></div>
+</article></details>
+<details id="example-ch03-07-ex-13-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.7.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Checkpoint 4.38 of the book.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch03-07-ex-13-8-2-1">A company has determined that its production level is given by the Cobb-Douglas function <span class="process-math">\(f(x,y)=2.5x^{0.45}y^{0.55}\)</span> where <span class="process-math">\(x\)</span> represents the total number of labour hours in  1  year and y represents the total capital input for the company. Suppose  1   unit of labour costs  $40 and  1 unit of capital costs  $50.   Use the method of Lagrange multipliers to find the maximum value of <span class="process-math">\(f(x,y)=2.5x^{0.45}y^{0.55}\)</span> subject to a budgetary constraint of  $500,000  per year.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch03-07-ex-13-8-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch03-07-ex-13-8-3-1">The total cost of <span class="process-math">\(x\)</span> units of labour and <span class="process-math">\(y\)</span> units of capital is <span class="process-math">\(40x+50y\)</span> dollars, so the budgetary constraint is <span class="process-math">\(40x+50y=500,000\text{.}\)</span> One can reasonably assume that <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> cannot be negative due to representing non-negative physical values. That in terms imply that <span class="process-math">\(x\leq 12500\)</span> and <span class="process-math">\(y\leq 10000\text{.}\)</span> Now with these restrictions the line segment of <span class="process-math">\(40x+50y=500,000\)</span> is bounded.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-8-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch03-07-ex-13-8-3-2">
+<div class="para">We write <span class="process-math">\(40x+50y=500,000\)</span> as <span class="process-math">\(g(x,y) = 40x+50y-500,000 = 0\text{.}\)</span> The partial derivatives of the objective function, which exist only for the positive values of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> are</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-8-3-2-5">
+\begin{gather*}
+f_x = 2.5(0.45)x^{-0.55}y^{0.55} = 1.125\, x^{-0.55}y^{0.55}\\
+f_y = 2.5(0.55)x^{0.45}y^{-0.45} = 1.375\, x^{0.45}y^{-0.45}
+\end{gather*}
+</div>
+<div class="para">so the system <span class="process-math">\(\nabla f = \lambda \nabla g\)</span> together with the constraint reads</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-8-3-2-7">
+\begin{equation*}
+1.125\, x^{-0.55}y^{0.55} = 40\lambda, \quad 1.375\, x^{0.45}y^{-0.45} = 50\lambda, \quad 40x+50y = 500,000\text{.}
+\end{equation*}
+</div>
+<div class="para">Now solving for <span class="process-math">\(\lambda\)</span> produces the following</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-8-3-2-9">
+\begin{gather*}
+\frac{1.125\, x^{-0.55}y^{0.55}}{40} = \lambda \text{ and }\frac{1.375\, x^{0.45}y^{-0.45}}{50} = \lambda \Rightarrow\\
+\frac{1.125}{1.375}y = \frac{40}{50} x\Rightarrow y = \frac{1.375}{1.125} \cdot \frac{40}{50} x \Rightarrow y = \frac{11}{9} \cdot \frac{40}{50} x \Rightarrow y = \frac{44}{45}x
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-8-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.7.20.1"><a tabindex="-1" href="#example-ch03-07-ex-13-8-3" title="Copy heading and permalink for Solution 3.7.20.1" aria-label="Copy heading and permalink for Solution 3.7.20.1">🔗</a></div>
+</div></details>
+<details id="example-ch03-07-ex-13-8-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch03-07-ex-13-8-4-1">
+<div class="para">Substituting <span class="process-math">\(y = \frac{44}{45}x\)</span> into the budgetary constraint:</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-8-4-1-2">
+\begin{gather*}
+40x + 50\cdot\frac{44}{45}x = 500,000 \Rightarrow 40x + \frac{440}{9}x = 500,000 \Rightarrow \frac{360}{9}x + \frac{440}{9}x = 500,000\\
+\Rightarrow \frac{800}{9}x = 500,000 \Rightarrow x = \frac{9 \cdot 500,000}{800} = 5625
+\end{gather*}
+</div>
+<div class="para">and then</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-8-4-1-3">
+\begin{equation*}
+y = \frac{44}{45}\cdot 5625 = 44 \cdot 125 = 5500
+\end{equation*}
+</div>
+<div class="para">The value of the production level at that point is <span class="process-math">\(f(5625, 5500) = 2.5\,(5625)^{0.45}(5500)^{0.55} \approx 13890\text{.}\)</span> At the end points <span class="process-math">\((0,10000)\)</span> and <span class="process-math">\((12500,0)\)</span> the function takes the value <span class="process-math">\(0\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-8-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch03-07-ex-13-8-4-2">
+<div class="para">So the production level is maximized when the company uses <span class="process-math">\(5625\)</span> labour hours and <span class="process-math">\(5500\)</span> units of capital, and the maximum value of <span class="process-math">\(f\)</span> subject to the budgetary constraint is</div>
+<div class="displaymath process-math" id="example-ch03-07-ex-13-8-4-2-4">
+\begin{equation*}
+f(5625, 5500) = 2.5\,(5625)^{0.45}(5500)^{0.55} \approx 13890
+\end{equation*}
+</div>
+<div class="para">that is, a maximum production level of approximately <span class="process-math">\(13890\)</span> units.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch03-07-ex-13-8-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 3.7.20.2"><a tabindex="-1" href="#example-ch03-07-ex-13-8-4" title="Copy heading and permalink for Solution 3.7.20.2" aria-label="Copy heading and permalink for Solution 3.7.20.2">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 3.7.20: Checkpoint 4.38 of the book"><a tabindex="-1" href="#example-ch03-07-ex-13-8" title="Copy heading and permalink for Example 3.7.20: Checkpoint 4.38 of the book" aria-label="Copy heading and permalink for Example 3.7.20: Checkpoint 4.38 of the book">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Section 3.7: Constraints and Lagrange Multipliers"><a tabindex="-1" href="#sec-ch03-07-LagrangeMultipliers" title="Copy heading and permalink for Section 3.7: Constraints and Lagrange Multipliers" aria-label="Copy heading and permalink for Section 3.7: Constraints and Lagrange Multipliers">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-ch03-06-CriticalPoints.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-04-Integration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<script src="external/mathjax-linebreak.js"></script>
+</body>
+</html>

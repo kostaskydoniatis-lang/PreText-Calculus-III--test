@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Triple Integrals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Calculus III Notes">
+<meta property="og:title" content="Calculus III Notes">
+<meta property="book:title" content="Calculus III Notes">
+<meta name="twitter:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
+<meta property="og:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.3.0';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.c838822d59bc26bc.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b9fedab97dee3c2a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.347e2ecdeacfed99.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="CalculusIIINotes2026.html"><span class="title">Calculus III Notes</span> <span class="subtitle">These notes are meant for use by students enrolled in my Calculus III course.</span></a></div>
+<p class="byline">Konstantinos (Kostas) Kydoniatis</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="sec-ch04-08-TripleIntegralsCartesian.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-04-Integration.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-05-VectorCalculus.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-01-IntroToVectors.html" class="internal"><span class="codenumber">1</span> <span class="title">1. Introduction to Vectors</span></a></div>
+<ul id="ptx-toc-group-ch-01-IntroToVectors" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-01-IntroToVectors-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-01-Vectors2DIntroduction.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vectors in 2D</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-02-VectorsIn3D.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Vectors in 3D</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-03-DotProduct.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Dot Product</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-04-CrossProduct.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Cross Product</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">2. Introduction to Vector and Scalar Valued Functions</span></a></div>
+<ul id="ptx-toc-group-ch-02-IntroductionVectorandScalarValuedFunctions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch02-01-VectorValuedFunctions.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vector-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch02-02-ScalarValuedFunctions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Scalar-Valued Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-03-DerivativesOfVectorAndScalarValuedFunctions.html" class="internal"><span class="codenumber">3</span> <span class="title">3. Derivatives of Vector and Scalar Valued Functions</span></a></div>
+<ul id="ptx-toc-group-ch-03-DerivativesOfVectorAndScalarValuedFunctions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-03-DerivativesOfVectorAndScalarValuedFunctions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-01-DerivativesVectorValuedFunctions.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Derivatives of Vector-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-02-PartialDerivatives.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Partial Derivatives of Scalar-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-03-ChainRule.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Multi-Variable Chain Rule</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-04-DirectionalDerivatives.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Directional Derivatives and the Gradient</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-05-TangentPlanes.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Tangent Planes and Local Linearization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-06-CriticalPoints.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Critical Points and Analysis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-07-LagrangeMultipliers.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Constraints and Lagrange Multipliers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-04-Integration.html" class="internal"><span class="codenumber">4</span> <span class="title">4. Integration</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-04-Integration">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-04-Integration-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-01-ArcLength.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Arc Length</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-02-ScalarLineIntegrals.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Scalar Line Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-03-DoubleIntegralsRectangularRegions.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Double Integrals in Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-04-DoubleIntegralsGeneralRegionsPart1.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Double Integrals in Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-05-ChangingOrderOfIntegration.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Changing Order of Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-06-PolarCoordinates.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Double Integrals in Polar Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-07-ChangeOfVariables.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Change of Variables for Double Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-08-TripleIntegralsCartesian.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Triple Integrals in Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-ch04-09-TripleIntegralsCylindricalSpherical.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Triple Integrals</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-05-VectorCalculus.html" class="internal"><span class="codenumber">5</span> <span class="title">5. Vector Fields and Line Integrals</span></a></div>
+<ul id="ptx-toc-group-ch-05-VectorCalculus" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-05-VectorCalculus-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-01-VectorFieldsAndLineIntegrals.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Vector Fields and Line Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-02-FundamentalTheoremOfLineIntegrals.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Fundamental Theorem of Line Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-03-GreensTheoremCurl.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Green’s Theorem: 2D Curl</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-04-GreensTheoremDivergence.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Green’s Theorem: 2D Divergence</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-ch04-09-TripleIntegralsCylindricalSpherical">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Triple Integrals</span>
+</h1>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-3">We will now discuss the last two change of coordinates we will see in this class: cylindrical and spherical coordinates.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="note remark-like" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-4"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-4-1">Any point in <span class="process-math">\(x y z\)</span>-space can be expressed in the form ( <span class="process-math">\(r, \theta, z\)</span> ) for <span class="process-math">\(r \geq 0\text{,}\)</span> <span class="process-math">\(0 \leq \theta \leq 2 \pi\text{,}\)</span> and <span class="process-math">\(-\infty \lt z \lt \infty\)</span> as shown below:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 4.9.1"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-4" title="Copy heading and permalink for Note 4.9.1" aria-label="Copy heading and permalink for Note 4.9.1">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="fig-ch04-09-cylindrical-point"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch04-09-cylindrical-point" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch04-09-cylindrical-point.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch04-09-cylindrical-point-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch04-09-cylindrical-point-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch04-09-cylindrical-point-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch04-09-cylindrical-point-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A point in cylindrical coordinates, rho, theta, z.<div class="autopermalink" aria-hidden="true" data-description="Figure 4.9.1"><a tabindex="-1" href="#fig-ch04-09-cylindrical-point" title="Copy heading and permalink for Figure 4.9.1" aria-label="Copy heading and permalink for Figure 4.9.1">🔗</a></div></figcaption>
+</figure>
+<article class="note remark-like" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-6"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-6-1">Cylindrical coordinates can simplify triple integrals in which the 3D region of integration is easily described in these coordinates. Below are a few examples of such regions:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 4.9.2"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-6" title="Copy heading and permalink for Note 4.9.2" aria-label="Copy heading and permalink for Note 4.9.2">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="fig-ch04-09-cylindrical-regions"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch04-09-cylindrical-regions" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch04-09-cylindrical-regions.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch04-09-cylindrical-regions-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch04-09-cylindrical-regions-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch04-09-cylindrical-regions-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch04-09-cylindrical-regions-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>From left to right: A cylindrical cell, a cone, a plane.<div class="autopermalink" aria-hidden="true" data-description="Figure 4.9.2"><a tabindex="-1" href="#fig-ch04-09-cylindrical-regions" title="Copy heading and permalink for Figure 4.9.2" aria-label="Copy heading and permalink for Figure 4.9.2">🔗</a></div></figcaption>
+</figure>
+<article class="remark remark-like" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Formulas to Change from Cartesian to Cylindrical Coordinates.</span>
+</h2>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-2">Given a point ( <span class="process-math">\(x, y, z\)</span> ) in 3-dimensional space, you can write it in cylindrical coordinates by using the formulas:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-3">
+<ul class="disc" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-3-1">
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-3-1-1">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-3-1-1-1">
+<span class="process-math">\(\displaystyle r^{2}=x^{2}+y^{2}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-3-1-2">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-3-1-2-1">
+<span class="process-math">\(\displaystyle \tan (\theta)=\frac{y}{x}, x \neq 0\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-3-1-3">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-3-1-3-1">
+<span class="process-math">\(\displaystyle z=z\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-3-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-4">Given a point ( <span class="process-math">\(r, \theta, z\)</span> ) in 3-dimensional space, you can write it in Cartesian coordinates by using the formulas:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-5">
+<ul class="disc" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-5-1">
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-5-1-1">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-5-1-1-1">
+<span class="process-math">\(\displaystyle x=r \cos (\theta)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-5-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-5-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-5-1-2">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-5-1-2-1">
+<span class="process-math">\(\displaystyle y=r \sin (\theta)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-5-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-5-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-5-1-3">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-8-5-1-3-1">
+<span class="process-math">\(z=z\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-5-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-5-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 4.9.3: Formulas to Change from Cartesian to Cylindrical Coordinates"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-8" title="Copy heading and permalink for Remark 4.9.3: Formulas to Change from Cartesian to Cylindrical Coordinates" aria-label="Copy heading and permalink for Remark 4.9.3: Formulas to Change from Cartesian to Cylindrical Coordinates">🔗</a></div>
+</article>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-9">In practice, using cylindrical coordinates translates to evaluating the double integral of a triple integral using polar coordinates.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="remark remark-like" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-10"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Writing a Triple Integral in Cylindrical Coordinates.</span>
+</h2>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-10-2">To set up an iterated integral in cylindrical coordinates:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3">
+<ol class="decimal" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1">
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-1">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-1-1">Use the order <span class="process-math">\(d z d r d \theta\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-2">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-2-1">Find the bounds with respect to <span class="process-math">\(z\)</span> as we did in cartesian coordinates.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-3">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-3-1">Project the 3 -dimensional region of integration <span class="process-math">\(D\)</span> into the <span class="process-math">\(x y\)</span> plane to get a 2 -dimensional region <span class="process-math">\(R\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-4">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-4-1">Set up the bounds of integration for <span class="process-math">\(r\)</span> and <span class="process-math">\(\theta\)</span> as if you were finding the area of <span class="process-math">\(R\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-5">
+<div class="para logical" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-5-1">
+<div class="para">The iterated integral should have the form</div>
+<div class="displaymath process-math" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-5-1-1">
+\begin{equation*}
+\int_{\alpha}^{\beta} \int_{g(\theta)}^{h(\theta)} \int_{G(r, \theta)}^{H(r, \theta)} f(r \cos (\theta), r \sin (\theta), z) r d z d r d \theta
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3-1-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-10-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 4.9.4: Writing a Triple Integral in Cylindrical Coordinates"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-10" title="Copy heading and permalink for Remark 4.9.4: Writing a Triple Integral in Cylindrical Coordinates" aria-label="Copy heading and permalink for Remark 4.9.4: Writing a Triple Integral in Cylindrical Coordinates">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-11"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Spherical Coordinates.</span>
+</h2>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-11-2">Any point in <span class="process-math">\(x y z\)</span>-space can be expressed in the form ( <span class="process-math">\(\rho, \varphi, \theta\)</span> ) for <span class="process-math">\(\rho \geq 0\text{,}\)</span> <span class="process-math">\(0 \leq \varphi \leq \pi\text{,}\)</span> and <span class="process-math">\(0 \leq \theta \leq 2 \pi\)</span> as shown below:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 4.9.5: Spherical Coordinates"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-11" title="Copy heading and permalink for Note 4.9.5: Spherical Coordinates" aria-label="Copy heading and permalink for Note 4.9.5: Spherical Coordinates">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="fig-ch04-09-spherical-point"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch04-09-spherical-point" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch04-09-spherical-point.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch04-09-spherical-point-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch04-09-spherical-point-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch04-09-spherical-point-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch04-09-spherical-point-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A point in spherical coordinates<div class="autopermalink" aria-hidden="true" data-description="Figure 4.9.3"><a tabindex="-1" href="#fig-ch04-09-spherical-point" title="Copy heading and permalink for Figure 4.9.3" aria-label="Copy heading and permalink for Figure 4.9.3">🔗</a></div></figcaption>
+</figure>
+<article class="remark remark-like" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-13"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-13-1">The angle <span class="process-math">\(\theta\)</span> is the same as in cylindrical coordinates (rotates 0 to <span class="process-math">\(2 \pi\)</span> in the <span class="process-math">\(x y\)</span>-plane). The variable <span class="process-math">\(\rho\)</span> represents the radius of a sphere.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-13-2">However, the angle <span class="process-math">\(\varphi\)</span> starts at the positive <span class="process-math">\(z\)</span>-axis and rotates <span class="process-math">\(\pi\)</span> radians ending at the negative <span class="process-math">\(z\)</span>-axis.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 4.9.6"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-13" title="Copy heading and permalink for Remark 4.9.6" aria-label="Copy heading and permalink for Remark 4.9.6">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-14"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-14-1">Spherical coordinates can simplify triple integrals in which the 3D region of integration is easily described in these coordinates. Below are a few examples of such regions:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 4.9.7"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-14" title="Copy heading and permalink for Note 4.9.7" aria-label="Copy heading and permalink for Note 4.9.7">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="fig-ch04-09-spherical-regions"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch04-09-spherical-regions" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch04-09-spherical-regions.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch04-09-spherical-regions-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch04-09-spherical-regions-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch04-09-spherical-regions-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch04-09-spherical-regions-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>From left to right: A sphere, a cone, a plane.<div class="autopermalink" aria-hidden="true" data-description="Figure 4.9.4"><a tabindex="-1" href="#fig-ch04-09-spherical-regions" title="Copy heading and permalink for Figure 4.9.4" aria-label="Copy heading and permalink for Figure 4.9.4">🔗</a></div></figcaption>
+</figure>
+<article class="remark remark-like" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Formulas to Change from Cartesian to Spherical Coordinates.</span>
+</h2>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-2">Given a point ( <span class="process-math">\(x, y, z\)</span> ) in 3-dimensional space, you can write it in spherical coordinates by using the formulas:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-3">
+<ul class="disc" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-3-1">
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-3-1-1">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-3-1-1-1">
+<span class="process-math">\(\displaystyle \rho^{2}=x^{2}+y^{2}+z^{2}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-16-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-16-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-3-1-2">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-3-1-2-1">Use trigonometry to find <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\theta\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-16-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-16-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-16-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-4">Given a point ( <span class="process-math">\(\rho, \varphi, \theta\)</span> ) in 3-dimensional space, you can write it in Cartesian coordinates by using the formulas:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-16-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-5">
+<ul class="disc" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-5-1">
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-5-1-1">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-5-1-1-1">
+<span class="process-math">\(\displaystyle x=\rho \sin (\varphi) \cos (\theta)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-16-5-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-16-5-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-5-1-2">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-5-1-2-1">
+<span class="process-math">\(\displaystyle y=\rho \sin (\varphi) \sin (\theta)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-16-5-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-16-5-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-5-1-3">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-16-5-1-3-1">
+<span class="process-math">\(z=\rho \cos (\varphi)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-16-5-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-16-5-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-16-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 4.9.8: Formulas to Change from Cartesian to Spherical Coordinates"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-16" title="Copy heading and permalink for Remark 4.9.8: Formulas to Change from Cartesian to Spherical Coordinates" aria-label="Copy heading and permalink for Remark 4.9.8: Formulas to Change from Cartesian to Spherical Coordinates">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-17"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-17-1">Note that in spherical coordinates you need to replace <span class="process-math">\(z\)</span> as well.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-17-2">You could geometrically (as we have done before) find the Jacobian of this change of variables. Instead, we will use the following formula.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-17-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 4.9.9"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-17" title="Copy heading and permalink for Note 4.9.9" aria-label="Copy heading and permalink for Note 4.9.9">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Writing a Triple Integral in Spherical Coordinates.</span>
+</h2>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-2">To set up an iterated integral in cylindrical coordinates:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3">
+<ol class="decimal" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1">
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-1">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-1-1">Use the order <span class="process-math">\(d\rho d \varphi d \theta\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-2">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-2-1">Start from the origin <span class="process-math">\((0,0,0)\)</span> and radiate outwards<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-3">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-3-1">The first function you encounter, preventing out from expanding outwards is the lower bound for <span class="process-math">\(\rho\text{,}\)</span> the second is the upper bound.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-4">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-4-1">Start at the positive <span class="process-math">\(z\)</span>-axis and open outwards like a hand-held fan<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-5">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-5-1">The first function you encounter, preventing out from fanning outwards is the lower bound for <span class="process-math">\(\varphi\text{,}\)</span> the second is the upper bound.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 5"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-6">
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-6-1">For <span class="process-math">\(\theta\text{,}\)</span> similar with the polar coordinates, the bounds stem from the largest counter-clockwise rotation a point can do within the region of integration.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 6"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+<li id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-7">
+<div class="para logical" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-7-1">
+<div class="para">The iterated integral should have the form</div>
+<div class="displaymath process-math" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-7-1-1">
+\begin{equation*}
+\int_{\alpha}^{\beta} \int_{a}^{b} \int_{\rho=g(\varphi, \theta)}^{\rho=h(\varphi, \theta)} f(\rho, \varphi, \theta) \rho^{2} \sin (\varphi) d \rho d \varphi d \theta
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3-1-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 4.9.10: Writing a Triple Integral in Spherical Coordinates"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-18" title="Copy heading and permalink for Remark 4.9.10: Writing a Triple Integral in Spherical Coordinates" aria-label="Copy heading and permalink for Remark 4.9.10: Writing a Triple Integral in Spherical Coordinates">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-19"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Evaluating a Triple Integral for Volume.</span>
+</h2>
+<div class="para" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-19-2">As previously the integral that represents the volume of a region is calculated by the above integrals, by setting <span class="process-math">\(f(\rho, \varphi, \theta) = 1 = f(r , \theta ,  z)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-19-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 4.9.11: Evaluating a Triple Integral for Volume"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-19" title="Copy heading and permalink for Note 4.9.11: Evaluating a Triple Integral for Volume" aria-label="Copy heading and permalink for Note 4.9.11: Evaluating a Triple Integral for Volume">🔗</a></div>
+</article>
+<details id="example-ch04-09-ex-22-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch04-09-ex-22-1-1-1">Set up (but do not evaluate) a triple integral, in spherical coordinates, of <span class="process-math">\(f(x,y,z)= x^2+y^2+z^2\)</span>  over the volume of the “ice cream cone” <span class="process-math">\(D\)</span> bounded from above by the  sphere <span class="process-math">\(\rho = 4 \cos\phi\text{,}\)</span> <span class="process-math">\(\phi\leq \frac{\pi}{2}\)</span> and from below by the cone <span class="process-math">\(\varphi=\frac{\pi}{6}\)</span> (above the <span class="process-math">\(xy\)</span>-plane).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch04-09-ex-22-1"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch04-09-ex-22-1" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch04-09-ex-22-1.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch04-09-ex-22-1-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch04-09-ex-22-1-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch04-09-ex-22-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch04-09-ex-22-1-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The "ice cream cone" solid D, bounded by the sphere rho equals 4 cosine of phi, with phi less or equal to pi over 2, and the cone phi equals pi over 6.<div class="autopermalink" aria-hidden="true" data-description="Figure 4.9.5"><a tabindex="-1" href="#fig-ch04-09-ex-22-1" title="Copy heading and permalink for Figure 4.9.5" aria-label="Copy heading and permalink for Figure 4.9.5">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch04-09-ex-22-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch04-09-ex-22-1-2-1">Using <span class="process-math">\(\rho^{2}=x^{2}+y^{2}+z^{2}\)</span> the function <span class="process-math">\(f(x,y,z) =  x^2+y^2+z^2\)</span> transforms to <span class="process-math">\(f(\rho, \varphi , \theta )= \rho^2 \text{.}\)</span> The upper bound for <span class="process-math">\(\rho\)</span> is given as <span class="process-math">\(\rho = 4\cos\varphi \gt 0\)</span> while the lower bound is implied to be 0 since cones of the form <span class="process-math">\(\varphi = c \)</span> pass through the origin (0,0,0), and when radiating away from the origin those cones do not obstruct.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="example-ch04-09-ex-22-1-2-2">Since the sphere and the cone encompass a portion of the positive <span class="process-math">\(z\)</span>-axis the lower bound for <span class="process-math">\(\varphi\)</span> is  0, while the upper bound is provided as <span class="process-math">\(\varphi = \frac{\pi}{6}\text{.}\)</span> Lastly there are no restrictions for <span class="process-math">\(\theta\)</span> hence the bounds for integration are 0 and <span class="process-math">\(2\pi\)</span> receptively.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch04-09-ex-22-1-2-3">
+<div class="displaymath process-math" id="example-ch04-09-ex-22-1-2-3-1">
+\begin{gather*}
+\int_0^{2\pi}\int_0^{\frac{\pi}{6}}\int_0^{4\cos\varphi} f(\rho, \varphi , \theta) \rho^2  \sin \varphi\  d\rho d\varphi d\theta = \int_0^{2\pi}\int_0^{\frac{\pi}{6}}\int_0^{4\cos\varphi} \rho^2 \rho^2   \sin \varphi\  d\rho d\varphi d\theta =\\
+\int_0^{2\pi}\int_0^{\frac{\pi}{6}}\int_0^{4\cos\varphi}  \rho^4  \sin \varphi\  d\rho d\varphi d\theta
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-1-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.9.12.1"><a tabindex="-1" href="#example-ch04-09-ex-22-1-2" title="Copy heading and permalink for Solution 4.9.12.1" aria-label="Copy heading and permalink for Solution 4.9.12.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.9.12"><a tabindex="-1" href="#example-ch04-09-ex-22-1" title="Copy heading and permalink for Example 4.9.12" aria-label="Copy heading and permalink for Example 4.9.12">🔗</a></div>
+</article></details>
+<details id="example-ch04-09-ex-22-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch04-09-ex-22-2-1-1">A solid region <span class="process-math">\(D\)</span> lies inside the paraboloid <span class="process-math">\(4-x^{2}-y^{2}-z=0\text{,}\)</span> and above the plane <span class="process-math">\(z=3\text{,}\)</span> as shown below. Express the triple integral <span class="process-math">\(\iiint_{D} 2z(x^2+y^2) d V\)</span> in cylindrical coordinates, then evaluate it.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch04-09-ex-22-2"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch04-09-ex-22-2" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch04-09-ex-22-2.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch04-09-ex-22-2-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch04-09-ex-22-2-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch04-09-ex-22-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch04-09-ex-22-2-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The paraboloid 4 minus x squared minus y squared minus z equals 0, and the plane z equals 3.<div class="autopermalink" aria-hidden="true" data-description="Figure 4.9.6"><a tabindex="-1" href="#fig-ch04-09-ex-22-2" title="Copy heading and permalink for Figure 4.9.6" aria-label="Copy heading and permalink for Figure 4.9.6">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch04-09-ex-22-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch04-09-ex-22-2-2-1">Using <span class="process-math">\(r^{2}=x^{2}+y^{2}\)</span> the function <span class="process-math">\(f(x,y,z) =  2z(x^2+y^2)\)</span> transforms to <span class="process-math">\(f(r, \theta , z )=2 zr^2 \text{.}\)</span> The paraboloid <span class="process-math">\(z=4-x^2-y^2 = 4-(x^2+y^2)= 4-r^2\)</span> and the plane <span class="process-math">\(z=3\)</span> intersect when <span class="process-math">\(4-r^2 = 3 \Rightarrow r^2 = 1 \Rightarrow r=1\text{.}\)</span> Since for <span class="process-math">\(r=0\)</span> the <span class="process-math">\(z\)</span> coordinate of the paraboloid is <span class="process-math">\(z=4-0=4 \gt 3\text{,}\)</span> the upper bound for z is given by the paraboloid and the lower by the plane.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="example-ch04-09-ex-22-2-2-2">The finite region for <span class="process-math">\(r\)</span> of the above intersection is given by <span class="process-math">\(0\leq r \leq 1\text{.}\)</span> Lastly there are no restrictions for <span class="process-math">\(\theta\)</span> hence the bounds for integration are 0 and <span class="process-math">\(2\pi\)</span> receptively.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch04-09-ex-22-2-2-3">
+<div class="displaymath process-math" id="example-ch04-09-ex-22-2-2-3-1">
+\begin{gather*}
+\int_0^{2\pi}\int_0^{1}\int_3^{4-r^2} (2zr^2)r\  dz dr d\theta = \int_0^{2\pi}\int_0^{1}\int_3^{4-r^2} 2zr^3 \ dz dr d\theta = \int_0^{2\pi}\int_0^{1} \left . r^3z^2 \right |_3^{4-r^2} dr d\theta =\\
+\int_0^{2\pi}\int_0^{1} r^3(4-r^2)^2- 9r^2\ dr d\theta =  \int_0^{2\pi}\int_0^{1} 16r^3-8r^5+r^7 - 9r ^3 \ dr d\theta  =\\
+\int_0^{2\pi}\left . 4r^4-\frac{4}{3}r^6+\frac{1}{8} r^8 - \frac{9}{4} r ^4 \right |_0^1 d\theta = \int_0^{2\pi} 4-\frac{4}{3}+\frac{1}{8}  - \frac{9}{4} d\theta  = \int_0^{2pi} \frac{13}{24} d\theta = \left . \frac{13}{24}\theta \right |_0^{2\pi} =\frac{13}{12}\pi\text{.}
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-2-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.9.13.1"><a tabindex="-1" href="#example-ch04-09-ex-22-2-2" title="Copy heading and permalink for Solution 4.9.13.1" aria-label="Copy heading and permalink for Solution 4.9.13.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.9.13"><a tabindex="-1" href="#example-ch04-09-ex-22-2" title="Copy heading and permalink for Example 4.9.13" aria-label="Copy heading and permalink for Example 4.9.13">🔗</a></div>
+</article></details>
+<article class="definition definition-like" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-22"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Jacobian in Three Dimensions and Integrals.</span>
+</h2>
+<div class="para logical" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-22-2-1">
+<div class="para">Let <span class="process-math">\(T: x=g(u, v, w), y=h(u, v, w)\text{,}\)</span> and <span class="process-math">\(z=q(u, v, w)\)</span> be a transformation that maps a closed and bounded region <span class="process-math">\(S\)</span> in <span class="process-math">\(u v w\)</span>-space to a region <span class="process-math">\(D\)</span> in <span class="process-math">\(x y z\)</span>-space. Assume <span class="process-math">\(T\)</span> is one-to-one on the interior of <span class="process-math">\(S\)</span> and that <span class="process-math">\(g, h\text{,}\)</span> and <span class="process-math">\(q\)</span> have continuous first partial derivatives there. If <span class="process-math">\(f\)</span> is continuous on <span class="process-math">\(D\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-22-2-1-13">
+\begin{equation*}
+\iiint_{D} f(x, y, z) d V=\iiint_{S} f(g(u, v, w), h(u, v, w), q(u, v, w))|J(u, v, w)| d V
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" id="sec-ch04-09-TripleIntegralsCylindricalSpherical-22-2-1-14">
+\begin{align*}
+J(u, v, w) \amp =\frac{\partial(x, y, z)}{\partial(u, v, w)}=\left|\begin{array}{lll} x_{u} \amp x_{v} \amp x_{w} \\ y_{u} \amp y_{v} \amp y_{w} \\ z_{u} \amp z_{v} \amp z_{w} \end{array}\right|\\
+\amp =x_{u}\left(y_{v} z_{w}-y_{w} z_{v}\right)-x_{v}\left(y_{u} z_{w}-y_{w} z_{u}\right)+x_{w}\left(y_{u} z_{v}-y_{v} z_{u}\right)\\
+\amp =z_{u}\left(x_{v} y_{w}-x_{w} y_{v}\right)-z_{v}\left(x_{u} y_{w}-x_{w} y_{u}\right)+z_{w}\left(x_{u} y_{v}-x_{v} y_{u}\right)
+\end{align*}
+</div>
+<div class="para">is the Jacobian of the transformation <span class="process-math">\(T\)</span> which measures how volume around a point ( <span class="process-math">\(x, y, z\)</span> ) change as we move to <span class="process-math">\(u v w\)</span>-space.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-22-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 4.9.14: Jacobian in Three Dimensions and Integrals"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical-22" title="Copy heading and permalink for Definition 4.9.14: Jacobian in Three Dimensions and Integrals" aria-label="Copy heading and permalink for Definition 4.9.14: Jacobian in Three Dimensions and Integrals">🔗</a></div>
+</article>
+<details id="example-ch04-09-ex-22-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch04-09-ex-22-3-1-1">Let <span class="process-math">\(u=\rho, v=\varphi\text{,}\)</span> and <span class="process-math">\(w=\theta\text{.}\)</span> Then,<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch04-09-ex-22-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch04-09-ex-22-3-2-1">
+<div class="displaymath process-math" id="example-ch04-09-ex-22-3-2-1-1">
+\begin{gather*}
+J(\rho, \varphi, \theta)  =\left|\begin{array}{ccc} \sin (\varphi) \cos (\theta) \amp \rho \cos (\varphi) \cos (\theta) \amp -\rho \sin (\varphi) \sin (\theta)  \\ \sin (\varphi) \sin (\theta) \amp \rho\cos (\varphi) \sin (\theta) \amp \rho \sin (\varphi) \cos (\theta)  \\ \cos (\varphi) \amp -\rho \sin (\varphi) \amp 0 \end{array}\right| =\\
+\sin\varphi\cos\theta \left | \begin{matrix} \rho\cos\varphi\sin\theta \amp \rho\sin\varphi\cos\theta  \\ -\rho\sin\varphi \amp 0 \end{matrix} \right | - \rho\cos\varphi\cos\theta  \left | \begin{matrix} \sin\varphi\sin\theta \amp \rho\sin\varphi\cos\theta\\ \cos\varphi \amp 0 \end{matrix} \right |\\
++(-\rho\sin\varphi\sin\theta) \left | \begin{matrix} \sin\varphi\sin\theta \amp \rho\cos\varphi\sin\theta  \\ \cos\varphi \amp -\rho\sin\varphi \end{matrix} \right | =\\
+\rho^2\sin^3\varphi\cos^2\theta +\rho^2\cos^2\varphi\sin^2\theta\sin\varphi +(-\rho\sin\varphi\sin\theta)\left ( -\rho\sin^2\varphi\sin\theta -\rho\cos^2\varphi\sin\theta \right)  =\\
+\rho^2\sin^3\varphi\cos^2\theta +\rho^2\cos^2\varphi\sin^2\theta\sin\varphi +\rho^2\sin^3\varphi\sin^2\theta+ \rho^2\cos^2\varphi\sin\varphi\cos^2\theta  =\\
+\rho^2\sin^3\varphi (\cos^2\theta +\sin^2\theta)+\rho^2\sin\varphi\cos^2\\
+varphi (\sin^2 \theta + \cos^2\theta)=\\
+\rho^2\sin\varphi (\sin^2\varphi +\cos^2\varphi)= \rho^2\sin\varphi
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.9.15.1"><a tabindex="-1" href="#example-ch04-09-ex-22-3-2" title="Copy heading and permalink for Solution 4.9.15.1" aria-label="Copy heading and permalink for Solution 4.9.15.1">🔗</a></div>
+</div></details>
+<details id="example-ch04-09-ex-22-3-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch04-09-ex-22-3-3-1">
+<div class="para">Since <span class="process-math">\(0 \leq \varphi \leq \pi, \sin (\varphi) \geq 0\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math" id="example-ch04-09-ex-22-3-3-1-2">
+\begin{equation*}
+\mid J\left(\rho, \varphi, \theta\left)|=\left|\rho^{2} \sin (\varphi)\right|=\rho^{2} \sin (\varphi) \right.\right.\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.9.15.2"><a tabindex="-1" href="#example-ch04-09-ex-22-3-3" title="Copy heading and permalink for Solution 4.9.15.2" aria-label="Copy heading and permalink for Solution 4.9.15.2">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.9.15"><a tabindex="-1" href="#example-ch04-09-ex-22-3" title="Copy heading and permalink for Example 4.9.15" aria-label="Copy heading and permalink for Example 4.9.15">🔗</a></div>
+</article></details>
+<details id="example-ch04-09-ex-22-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch04-09-ex-22-4-1-1">Set up (but do not evaluate) a triple integral that gives the volume of the “ice cream cone” <span class="process-math">\(D\)</span> below the  sphere <span class="process-math">\(x^2+y^2+z^2=4\text{,}\)</span> and above the cone <span class="process-math">\(z=\sqrt 3 \sqrt{x^2+y^2}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch04-09-ex-22-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch04-09-ex-22-4-2-1">Using <span class="process-math">\(\rho^{2}=x^{2}+y^{2}+z^{2}\)</span> the sphere <span class="process-math">\(x^2+y^2+z^2=4\)</span> transforms to <span class="process-math">\(\rho^2 =4 \Rightarrow \rho  =2\)</span> (Restricting the values of <span class="process-math">\(r\)</span> to be non-negative). Using <span class="process-math">\(z=\rho \cos\varphi\text{,}\)</span> <span class="process-math">\(x=\rho\sin\varphi\cos\theta\)</span> and <span class="process-math">\(y=\rho\sin\varphi\sin\theta\)</span> the cone transforms to <span class="process-math">\(\rho \cos\varphi = \sqrt 3 \sqrt{ \rho^2\sin^2\varphi\cos^2\theta + \rho^2\sin^2\varphi\sin^2\theta  } =  \sqrt 3\sqrt{ \rho^2\sin^2\varphi(\cos^2\theta + \sin^2\theta ) } = \sqrt 3\sqrt{ \rho^2\sin^2\varphi } =\sqrt 3\rho\sin\varphi \)</span> since <span class="process-math">\(\sin\varphi \geq 0 \)</span> for <span class="process-math">\(0\leq \varphi \leq \pi\text{.}\)</span> This implies that for <span class="process-math">\(\rho\not = 0\text{,}\)</span> <span class="process-math">\(\tan \varphi = \frac{\sqrt 3}{3}\Rightarrow \varphi= \frac{\pi}{6}\)</span> (The value <span class="process-math">\(\varphi = \frac{7\pi}{6}\)</span> is disregarded since we need <span class="process-math">\(0\leq \varphi \leq \pi\)</span>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="example-ch04-09-ex-22-4-2-2">The upper bound for <span class="process-math">\(\rho\)</span> is given as <span class="process-math">\(\rho = 4\)</span> while the lower bound is implied to be 0 since cones of the form <span class="process-math">\(\varphi = c \)</span> pass through the origin (0,0,0), and when radiating away from the origin those cones do not obstruct.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="example-ch04-09-ex-22-4-2-3">Since the sphere and the cone encompass a portion of the positive <span class="process-math">\(z\)</span>-axis (between <span class="process-math">\(z=0\)</span> and <span class="process-math">\(z=2\)</span>) the lower bound for <span class="process-math">\(\varphi\)</span> is  0, while the upper bound is provided as <span class="process-math">\(\varphi = \frac{\pi}{6}\text{.}\)</span> Lastly there are no restrictions for <span class="process-math">\(\theta\)</span> hence the bounds for integration are 0 and <span class="process-math">\(2\pi\)</span> receptively.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch04-09-ex-22-4-2-4">
+<div class="displaymath process-math" id="example-ch04-09-ex-22-4-2-4-1">
+\begin{equation*}
+\int_0^{2\pi}\int_0^{\frac{\pi}{6}}\int_0^{2} \rho^2  \sin \varphi\  d\rho d\varphi d\theta
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-4-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.9.16.1"><a tabindex="-1" href="#example-ch04-09-ex-22-4-2" title="Copy heading and permalink for Solution 4.9.16.1" aria-label="Copy heading and permalink for Solution 4.9.16.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.9.16"><a tabindex="-1" href="#example-ch04-09-ex-22-4" title="Copy heading and permalink for Example 4.9.16" aria-label="Copy heading and permalink for Example 4.9.16">🔗</a></div>
+</article></details>
+<details id="example-ch04-09-ex-22-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch04-09-ex-22-5-1-1">Set up (but do not evaluate) a triple integral in spherical coordinates that gives the volume inside the ball <span class="process-math">\(\rho \leq 1\)</span> and above the plane <span class="process-math">\(z=1/2\)</span> (pictured below).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch04-09-ex-22-5"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch04-09-ex-22-5" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch04-09-ex-22-5.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch04-09-ex-22-5-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch04-09-ex-22-5-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch04-09-ex-22-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch04-09-ex-22-5-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The ball of radius 1 centred at the origin, and two planes z equals 0 and z equals one half.<div class="autopermalink" aria-hidden="true" data-description="Figure 4.9.7"><a tabindex="-1" href="#fig-ch04-09-ex-22-5" title="Copy heading and permalink for Figure 4.9.7" aria-label="Copy heading and permalink for Figure 4.9.7">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch04-09-ex-22-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch04-09-ex-22-5-2-1">
+<div class="para">Using <span class="process-math">\(\rho^{2}=x^{2}+y^{2}+z^{2}\)</span> the sphere <span class="process-math">\(x^2+y^2+z^2\leq 1\)</span> transforms to <span class="process-math">\(\rho\leq 1 \)</span> (Restricting the values of <span class="process-math">\(r\)</span> to be non-negative). Using <span class="process-math">\(z=\rho \cos\varphi\text{,}\)</span> the plane transforms to <span class="process-math">\(\rho \cos\varphi = \frac{1}{2}\text{.}\)</span> To find the intersection of the two surfaces:</div>
+<div class="displaymath process-math" id="example-ch04-09-ex-22-5-2-1-7">
+\begin{equation*}
+\left . \begin{matrix} \rho \cos \varphi \amp = \amp \frac{1}{2} \\ \rho \amp = \amp 1 \end{matrix} \right \} \Rightarrow \cos\varphi = \frac{1}{2} \Rightarrow \varphi = \frac{\pi}{3}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="example-ch04-09-ex-22-5-2-2">Since the sphere and the cone encompass a portion of the positive <span class="process-math">\(z\)</span>-axis (between <span class="process-math">\(z=1/2\)</span> and <span class="process-math">\(z=1\)</span>)the lower bound for <span class="process-math">\(\varphi\)</span> is  0, while the upper bound is provided as <span class="process-math">\(\varphi = \frac{\pi}{3}\text{.}\)</span> As far as <span class="process-math">\(\rho\)</span> is concerned the upper bound is 1, the lower bound is implied by the equation <span class="process-math">\(\rho\cos\varphi = \frac{1}{2}\)</span> to be <span class="process-math">\(\rho = \frac{1}{2}\sec \varphi\text{.}\)</span> Lastly there are no restrictions for <span class="process-math">\(\theta\)</span> hence the bounds for integration are 0 and <span class="process-math">\(2\pi\)</span> receptively.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-5-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch04-09-ex-22-5-2-3">
+<div class="displaymath process-math" id="example-ch04-09-ex-22-5-2-3-1">
+\begin{equation*}
+\int_0^{2\pi}\int_0^{\frac{\pi}{3}}\int_{\frac{1}{2}\sec\varphi}^{1} \rho^2   \sin \varphi\ d\rho d\varphi d\theta
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-5-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.9.17.1"><a tabindex="-1" href="#example-ch04-09-ex-22-5-2" title="Copy heading and permalink for Solution 4.9.17.1" aria-label="Copy heading and permalink for Solution 4.9.17.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.9.17"><a tabindex="-1" href="#example-ch04-09-ex-22-5" title="Copy heading and permalink for Example 4.9.17" aria-label="Copy heading and permalink for Example 4.9.17">🔗</a></div>
+</article></details>
+<details id="example-ch04-09-ex-22-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch04-09-ex-22-6-1-1">Find the volume of the sphere <span class="process-math">\(x^{2}+y^{2}+z^{2}=a^{2}, a \gt 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch04-09-ex-22-6"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch04-09-ex-22-6" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch04-09-ex-22-6.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch04-09-ex-22-6-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch04-09-ex-22-6-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch04-09-ex-22-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch04-09-ex-22-6-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A sphere of radius a, where a is greater than 0, centred at the origin.<div class="autopermalink" aria-hidden="true" data-description="Figure 4.9.8"><a tabindex="-1" href="#fig-ch04-09-ex-22-6" title="Copy heading and permalink for Figure 4.9.8" aria-label="Copy heading and permalink for Figure 4.9.8">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch04-09-ex-22-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch04-09-ex-22-6-2-1">Using <span class="process-math">\(\rho^{2}=x^{2}+y^{2}+z^{2}\)</span> the sphere <span class="process-math">\(x^2+y^2+z^2=a^2\)</span> transforms to <span class="process-math">\(\rho^2 =a^2 \Rightarrow \rho  =a\)</span> (Restricting the values of <span class="process-math">\(r\)</span> to be non-negative). There are no restriction on <span class="process-math">\(\varphi\)</span> and <span class="process-math">\(\theta\text{,}\)</span> hence their respective range is implied to be <span class="process-math">\(0\leq \varphi \pi\)</span> and <span class="process-math">\(0\leq \theta\leq 2\pi\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch04-09-ex-22-6-2-2">
+<div class="displaymath process-math" id="example-ch04-09-ex-22-6-2-2-1">
+\begin{gather*}
+\int_0^{2\pi}\int_0^{\pi}\int_{0}^{a} \rho^2 \sin \varphi \  d\rho d\varphi d\theta =  \int_0^{2\pi}\int_0^{\pi}\left. \frac{\rho^3}{3} \sin \varphi \right |_{0}^{a} d\varphi d\theta= \int_0^{2\pi}\int_0^{\pi} \frac{a^3}{3} \sin \varphi\ d\varphi d\theta =\\
+\int_0^{2\pi}\left . -\frac{a^3}{3} \cos \varphi \right |_0^{\pi}  d\theta =  \int_0^{2\pi}  -\frac{a^3}{3} \cos \pi +\frac{a^3}{3} \cos 0\  d\theta =  \int_0^{2\pi}  \frac{2a^3}{3}  d\theta = \left .   \frac{2a^3}{3} \theta \right |_0^{2\pi} = \frac{4\pi a^3}{3}
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-6-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.9.18.1"><a tabindex="-1" href="#example-ch04-09-ex-22-6-2" title="Copy heading and permalink for Solution 4.9.18.1" aria-label="Copy heading and permalink for Solution 4.9.18.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.9.18"><a tabindex="-1" href="#example-ch04-09-ex-22-6" title="Copy heading and permalink for Example 4.9.18" aria-label="Copy heading and permalink for Example 4.9.18">🔗</a></div>
+</article></details>
+<details id="example-ch04-09-ex-22-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch04-09-ex-22-7-1-1">Set up (but do not evaluate) a triple integral in spherical coordinates that gives the volume inside the ball <span class="process-math">\(\rho \leq 2\)</span> and but outside the cylinder <span class="process-math">\(x^2+y^2=1\)</span> (from OpenStax).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch04-09-ex-22-7"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch04-09-ex-22-7" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch04-09-ex-22-7.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch04-09-ex-22-7-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch04-09-ex-22-7-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch04-09-ex-22-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch04-09-ex-22-7-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The ball rho less or equal to 2 and the cylinder x squared plus y squared equals 1.<div class="autopermalink" aria-hidden="true" data-description="Figure 4.9.9"><a tabindex="-1" href="#fig-ch04-09-ex-22-7" title="Copy heading and permalink for Figure 4.9.9" aria-label="Copy heading and permalink for Figure 4.9.9">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch04-09-ex-22-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch04-09-ex-22-7-2-1">
+<div class="para">Using <span class="process-math">\(x=\rho\sin\varphi\cos\theta\)</span> and <span class="process-math">\(y=\rho\sin\varphi\sin\theta\text{,}\)</span> the cylinder <span class="process-math">\(x^2+y^2=1\)</span> transforms to <span class="process-math">\(\rho^2 \sin^2\varphi\cos^2\theta + \rho^2 \sin^2\varphi\sin^2\theta = 1 \Rightarrow \rho^2 \sin^2\varphi (\cos^2\theta +\sin^2\theta )=1 \Rightarrow \rho^2 \sin^2\varphi = 1 \Rightarrow\)</span> <span class="process-math">\(\rho \sin\varphi = 1\text{,}\)</span> since we restrict <span class="process-math">\(\rho\)</span> to have non-negative values and <span class="process-math">\(\varphi\)</span> to be between <span class="process-math">\(0\)</span> and <span class="process-math">\(\pi\text{.}\)</span> To find the intersection of the two surfaces:</div>
+<div class="displaymath process-math" id="example-ch04-09-ex-22-7-2-1-10">
+\begin{equation*}
+\left . \begin{matrix} \rho \sin\varphi \amp = \amp 1 \\ \rho \amp = \amp 2 \end{matrix} \right \} \Rightarrow \sin\varphi = \frac{1}{2} \Rightarrow \varphi = \frac{\pi}{6} \text{ or } \frac{5\pi}{6}\text{.}
+\end{equation*}
+</div>
+<div class="para">To  investigate whether or not one needs to take into account the values of <span class="process-math">\(\varphi\)</span> from <span class="process-math">\(0\)</span> to <span class="process-math">\(\frac{\pi}{6}\text{,}\)</span> and from <span class="process-math">\(\frac{5\pi}{6}\)</span> to <span class="process-math">\(\pi\text{,}\)</span> notice that the <span class="process-math">\(z\)</span>-axis (<span class="process-math">\(\varphi = 0\)</span> or <span class="process-math">\(\varphi = \pi\)</span>) lie inside NOT outside the cylinder since any point of the form <span class="process-math">\(P(0,0,a)\)</span> has <span class="process-math">\(x_P^2+y_P^2 = 0+0 = 0 \lt 1\)</span> . Hence, the bounds for <span class="process-math">\(\varphi\)</span> are <span class="process-math">\(\frac{\pi}{6}\)</span> and <span class="process-math">\(\frac{5\pi}{6}\text{.}\)</span> As far as <span class="process-math">\(\rho\)</span> is concerned the upper bound is 2, the lower bound is implied by the equation <span class="process-math">\(\rho\sin\varphi = 1\)</span> to be <span class="process-math">\(\csc \varphi\text{.}\)</span> Lastly there are no restrictions for <span class="process-math">\(\theta\)</span> hence the bounds for integration are 0 and <span class="process-math">\(2\pi\)</span> receptively.</div>
+<div class="displaymath process-math" id="example-ch04-09-ex-22-7-2-1-29">
+\begin{equation*}
+\int_0^{2\pi}\int_{\frac{\pi}{6}}^{\frac{5\pi}{6}}\int_{\csc\varphi}^{2} \rho^2   \sin \varphi\ d\rho d\varphi d\theta
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.9.19.1"><a tabindex="-1" href="#example-ch04-09-ex-22-7-2" title="Copy heading and permalink for Solution 4.9.19.1" aria-label="Copy heading and permalink for Solution 4.9.19.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.9.19"><a tabindex="-1" href="#example-ch04-09-ex-22-7" title="Copy heading and permalink for Example 4.9.19" aria-label="Copy heading and permalink for Example 4.9.19">🔗</a></div>
+</article></details>
+<details id="example-ch04-09-ex-22-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch04-09-ex-22-8-1-1">Set up (but do not evaluate) a triple integral using cylindrical coordinates that gives the 4D net volume bounded by a function <span class="process-math">\(f(r, \theta, z)\)</span> and <span class="process-math">\(x y z\)</span>-space, on a region <span class="process-math">\(D\)</span> bounded below by the plane <span class="process-math">\(z=0\text{,}\)</span> laterally by the circular cylinder <span class="process-math">\((x-1)^{2}+y^{2}=1\text{,}\)</span> and above by the paraboloid <span class="process-math">\(z=4-x^{2}-y^{2}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch04-09-ex-22-8"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch04-09-ex-22-8" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch04-09-ex-22-8.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch04-09-ex-22-8-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch04-09-ex-22-8-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch04-09-ex-22-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch04-09-ex-22-8-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.9.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The volume bounded below by the plane z equals 0, laterally by the circular cylinder, x minus 1, squared, plus y squared equals 1, and above by the paraboloid z equals 4 minus x squared minus y squared.<div class="autopermalink" aria-hidden="true" data-description="Figure 4.9.10"><a tabindex="-1" href="#fig-ch04-09-ex-22-8" title="Copy heading and permalink for Figure 4.9.10" aria-label="Copy heading and permalink for Figure 4.9.10">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch04-09-ex-22-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch04-09-ex-22-8-2-1">
+<div class="para">Using <span class="process-math">\(r^{2}=x^{2}+y^{2}\)</span> the paraboloid <span class="process-math">\(z= 4-(x^2+y^2)\)</span> transforms to <span class="process-math">\(z=4-r^2 \text{.}\)</span> For the cylinder <span class="process-math">\((x-1)^{2}+y^{2}=1\text{,}\)</span> notice that it lies above the first and forth quadrants. hence <span class="process-math">\(\theta\)</span> much be on a sub-interval of <span class="process-math">\((-\frac{\pi}{2},\frac{\pi}{2})\text{.}\)</span> Utilizing <span class="process-math">\(x=r\cos\theta\)</span> and <span class="process-math">\(y=r\sin\theta\text{,}\)</span> one has</div>
+<div class="displaymath process-math" id="example-ch04-09-ex-22-8-2-1-9">
+\begin{gather*}
+(x-1)^2+y^2= 1 \Rightarrow (r\cos\theta - )^2+r^2\sin^2\theta = 1 \Rightarrow r^2\cos^2\theta -2r\cos\theta +1 +r^2\sin^2\theta = 1 \Rightarrow\\
+r^2(\cos^2\theta +\sin^2\theta )-2r\cos\theta = 0 \Rightarrow r^2-2r\cos\theta = 0 \Rightarrow r(r-2\cos\theta) = 0\Rightarrow r= 0 \text{ or } r= 2\cos\theta
+\end{gather*}
+</div>
+<div class="para">For the range of <span class="process-math">\(\theta\)</span> mentioned above, <span class="process-math">\(r=2\cos\theta \geq 0\)</span> and hence one has the lower and upper bound for <span class="process-math">\(r\)</span> as <span class="process-math">\(0\)</span> and <span class="process-math">\(2\cos\theta\)</span> respectively. Lastly, to verify that the <span class="process-math">\(\theta\)</span> ranges over <span class="process-math">\((-\frac{\pi}{2},\frac{\pi}{2})\)</span> and not a subinterval, observe that the second coordinate of the points of this circle <span class="process-math">\(y_c\)</span> satisfies <span class="process-math">\(y_c = r \sin\theta = 2\cos\theta\sin\theta\text{.}\)</span> In this expression for <span class="process-math">\(\theta = -\frac{\pi}{2}\)</span> the coordinate is 0, in between <span class="process-math">\(-\frac{\pi}{2}\)</span> and <span class="process-math">\(0\)</span> is negative, between <span class="process-math">\(0\)</span> and <span class="process-math">\(\frac{\pi}{2}\)</span> is positive and at <span class="process-math">\(\theta = \frac{\pi}{2}\)</span> the coordinate is 0 again. Hence we traverse the circle exactly once over this interval of <span class="process-math">\(\theta\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch04-09-ex-22-8-2-2">
+<div class="para">(A more rigorous argument will involve to suppose that there are 2 value of <span class="process-math">\(\theta\)</span> in this interval, say <span class="process-math">\(\theta_1\)</span> and <span class="process-math">\(\theta_2\text{,}\)</span> for which the <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are fixed and arrive to a contradiction, but this previous argument is adequate for the purpose of the course in the case that we cannot draw a graph).</div>
+<div class="displaymath process-math" id="example-ch04-09-ex-22-8-2-2-6">
+\begin{equation*}
+\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\int_0^{2\cos\theta}\int_0^{4-r^2} r\  dz dr d\theta
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch04-09-ex-22-8-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 4.9.20.1"><a tabindex="-1" href="#example-ch04-09-ex-22-8-2" title="Copy heading and permalink for Solution 4.9.20.1" aria-label="Copy heading and permalink for Solution 4.9.20.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 4.9.20"><a tabindex="-1" href="#example-ch04-09-ex-22-8" title="Copy heading and permalink for Example 4.9.20" aria-label="Copy heading and permalink for Example 4.9.20">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Section 4.9: Triple Integrals"><a tabindex="-1" href="#sec-ch04-09-TripleIntegralsCylindricalSpherical" title="Copy heading and permalink for Section 4.9: Triple Integrals" aria-label="Copy heading and permalink for Section 4.9: Triple Integrals">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-ch04-08-TripleIntegralsCartesian.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-05-VectorCalculus.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<script src="external/mathjax-linebreak.js"></script>
+</body>
+</html>

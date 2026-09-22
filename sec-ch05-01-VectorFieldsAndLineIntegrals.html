@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Vector Fields and Line Integrals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Calculus III Notes">
+<meta property="og:title" content="Calculus III Notes">
+<meta property="book:title" content="Calculus III Notes">
+<meta name="twitter:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
+<meta property="og:description" content="These notes are meant for use by students enrolled in my Calculus III course.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.3.0';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.c838822d59bc26bc.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b9fedab97dee3c2a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.347e2ecdeacfed99.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="CalculusIIINotes2026.html"><span class="title">Calculus III Notes</span> <span class="subtitle">These notes are meant for use by students enrolled in my Calculus III course.</span></a></div>
+<p class="byline">Konstantinos (Kostas) Kydoniatis</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="ch-05-VectorCalculus-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-05-VectorCalculus.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-ch05-02-FundamentalTheoremOfLineIntegrals.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-01-IntroToVectors.html" class="internal"><span class="codenumber">1</span> <span class="title">1. Introduction to Vectors</span></a></div>
+<ul id="ptx-toc-group-ch-01-IntroToVectors" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-01-IntroToVectors-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-01-Vectors2DIntroduction.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Vectors in 2D</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-02-VectorsIn3D.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Vectors in 3D</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-03-DotProduct.html" class="internal"><span class="codenumber">1.3</span> <span class="title">The Dot Product</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch01-04-CrossProduct.html" class="internal"><span class="codenumber">1.4</span> <span class="title">The Cross Product</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions.html" class="internal"><span class="codenumber">2</span> <span class="title">2. Introduction to Vector and Scalar Valued Functions</span></a></div>
+<ul id="ptx-toc-group-ch-02-IntroductionVectorandScalarValuedFunctions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-02-IntroductionVectorandScalarValuedFunctions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch02-01-VectorValuedFunctions.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vector-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch02-02-ScalarValuedFunctions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Scalar-Valued Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-03-DerivativesOfVectorAndScalarValuedFunctions.html" class="internal"><span class="codenumber">3</span> <span class="title">3. Derivatives of Vector and Scalar Valued Functions</span></a></div>
+<ul id="ptx-toc-group-ch-03-DerivativesOfVectorAndScalarValuedFunctions" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-03-DerivativesOfVectorAndScalarValuedFunctions-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-01-DerivativesVectorValuedFunctions.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Derivatives of Vector-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-02-PartialDerivatives.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Partial Derivatives of Scalar-Valued Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-03-ChainRule.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Multi-Variable Chain Rule</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-04-DirectionalDerivatives.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Directional Derivatives and the Gradient</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-05-TangentPlanes.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Tangent Planes and Local Linearization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-06-CriticalPoints.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Critical Points and Analysis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch03-07-LagrangeMultipliers.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Constraints and Lagrange Multipliers</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-04-Integration.html" class="internal"><span class="codenumber">4</span> <span class="title">4. Integration</span></a></div>
+<ul id="ptx-toc-group-ch-04-Integration" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-04-Integration-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-01-ArcLength.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Arc Length</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-02-ScalarLineIntegrals.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Scalar Line Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-03-DoubleIntegralsRectangularRegions.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Double Integrals in Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-04-DoubleIntegralsGeneralRegionsPart1.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Double Integrals in Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-05-ChangingOrderOfIntegration.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Changing Order of Integration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-06-PolarCoordinates.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Double Integrals in Polar Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-07-ChangeOfVariables.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Change of Variables for Double Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-08-TripleIntegralsCartesian.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Triple Integrals in Cartesian Coordinates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch04-09-TripleIntegralsCylindricalSpherical.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Triple Integrals</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-05-VectorCalculus.html" class="internal"><span class="codenumber">5</span> <span class="title">5. Vector Fields and Line Integrals</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ch-05-VectorCalculus">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ch-05-VectorCalculus-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-ch05-01-VectorFieldsAndLineIntegrals.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Vector Fields and Line Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-02-FundamentalTheoremOfLineIntegrals.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Fundamental Theorem of Line Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-03-GreensTheoremCurl.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Green’s Theorem: 2D Curl</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-ch05-04-GreensTheoremDivergence.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Green’s Theorem: 2D Divergence</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-ch05-01-VectorFieldsAndLineIntegrals">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vector Fields and Line Integrals</span>
+</h1>
+<article class="note remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-2"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-2-1">So far, we have studied two types of functions:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-2-2">
+<ol class="decimal" id="sec-ch05-01-VectorFieldsAndLineIntegrals-2-2-1">
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-2-2-1-1">
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-2-2-1-1-1">
+<div class="para">Vector-valued functions (one input variable, multiple output variables) of the form</div>
+<div class="displaymath process-math" id="sec-ch05-01-VectorFieldsAndLineIntegrals-2-2-1-1-1-1">
+\begin{equation*}
+\vec{r}(t)=\langle f(t), g(t), h(t)\rangle\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-2-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-2-2-1-2">
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-2-2-1-2-1">
+<div class="para">Scalar-valued functions (multiple input variables, one output variable) of the form</div>
+<div class="displaymath process-math" id="sec-ch05-01-VectorFieldsAndLineIntegrals-2-2-1-2-1-1">
+\begin{equation*}
+f(x, y)=z\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-2-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-2-3">Now, we will look at functions of multiple input variables and multiple output variables.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 5.1.1"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-2" title="Copy heading and permalink for Note 5.1.1" aria-label="Copy heading and permalink for Note 5.1.1">🔗</a></div>
+</article>
+<article class="definition definition-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-3"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vector Fields in <span class="process-math">\(\mathbb{R}^{2}\)</span>.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-3-2-1">A function of the form <span class="process-math">\(\vec{F}(x, y)=\langle f(x, y), g(x, y)\rangle\)</span> is a vector field in the <span class="process-math">\(x y\)</span>-plane.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-3-2-2">The vector field <span class="process-math">\(\vec{F}\)</span> assigns to each point ( <span class="process-math">\(x, y\)</span> ) in the <span class="process-math">\(x y\)</span>-plane, a vector <span class="process-math">\(\vec{F}(x, y)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 5.1.2: Vector Fields in \mathbb{R}^{2}"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-3" title="Copy heading and permalink for Definition 5.1.2: Vector Fields in \mathbb{R}^{2}" aria-label="Copy heading and permalink for Definition 5.1.2: Vector Fields in \mathbb{R}^{2}">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-4"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-4-1">With vector fields, we don’t put the vectors back into standard position (since the starting location <span class="process-math">\((x, y)\)</span> of each vector gives us important information).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 5.1.3"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-4" title="Copy heading and permalink for Remark 5.1.3" aria-label="Copy heading and permalink for Remark 5.1.3">🔗</a></div>
+</article>
+<figure class="figure figure-like" id="fig-ch05-01-vector-fields">
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;grid-template-columns:47.3684210526316% 47.3684210526316%;column-gap:5%;">
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch05-01-vector-fields-a"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch05-01-vector-fields-a" style="width:270px; height:203px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch05-01-vector-fields-a.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The vector field F with first coordinate 1 minus y, second coordinate 0.<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.1(a)"><a tabindex="-1" href="#fig-ch05-01-vector-fields-a" title="Copy heading and permalink for Figure 5.1.1(a)" aria-label="Copy heading and permalink for Figure 5.1.1(a)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch05-01-vector-fields-b"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch05-01-vector-fields-b" style="width:270px; height:203px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch05-01-vector-fields-b.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The vector field F with first coordinate minus y, second coordinate minus x.<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.1(b)"><a tabindex="-1" href="#fig-ch05-01-vector-fields-b" title="Copy heading and permalink for Figure 5.1.1(b)" aria-label="Copy heading and permalink for Figure 5.1.1(b)">🔗</a></div></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="process-math">\(\vec F = \langle 1-y,0 \rangle\)</span> (left) and <span class="process-math">\(\vec F = \langle -y,-x \rangle\)</span> (right)<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.1"><a tabindex="-1" href="#fig-ch05-01-vector-fields" title="Copy heading and permalink for Figure 5.1.1" aria-label="Copy heading and permalink for Figure 5.1.1">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-6">The graphs above show only the plots; you can drag and zoom them. To see the expressions behind them, or to save a copy and create your own version of the graphs, open them in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the left graph</a>, <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the right graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="example-ch05-01-ex-23-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch05-01-ex-23-1-1-1">Plot the vector field <span class="process-math">\(\vec{F}=\langle -x, -y\rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch05-01-ex-23-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<figure class="figure figure-like" id="fig-ch05-01-ex-23-1"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch05-01-ex-23-1" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch05-01-ex-23-1.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch05-01-ex-23-1-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch05-01-ex-23-1-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch05-01-ex-23-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch05-01-ex-23-1-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The vector field F with first coordinate minus x, second coordinate minus y.<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.2"><a tabindex="-1" href="#fig-ch05-01-ex-23-1" title="Copy heading and permalink for Figure 5.1.2" aria-label="Copy heading and permalink for Figure 5.1.2">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Solution 5.1.4.1"><a tabindex="-1" href="#example-ch05-01-ex-23-1-2" title="Copy heading and permalink for Solution 5.1.4.1" aria-label="Copy heading and permalink for Solution 5.1.4.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.1.4"><a tabindex="-1" href="#example-ch05-01-ex-23-1" title="Copy heading and permalink for Example 5.1.4" aria-label="Copy heading and permalink for Example 5.1.4">🔗</a></div>
+</article></details>
+<details id="example-ch05-01-ex-23-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch05-01-ex-23-2-1-1">Identify the correct sketch of the vector field <span class="process-math">\(\vec{F}=\langle 2 x,y\rangle\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch05-01-ex-23-2">
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:1.5%;margin-right:1.5%;grid-template-columns:22.680412371134% 22.680412371134% 22.680412371134% 22.680412371134%;column-gap:3%;">
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch05-01-ex-23-2a"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch05-01-ex-23-2a" style="width:132px; height:99px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch05-01-ex-23-2a.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="codenumber">(a)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A vector field with vectors pointing towards the y-axis and away from x-axis, decreasing in magnitude as we move closer to the origin<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.3(a)"><a tabindex="-1" href="#fig-ch05-01-ex-23-2a" title="Copy heading and permalink for Figure 5.1.3(a)" aria-label="Copy heading and permalink for Figure 5.1.3(a)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch05-01-ex-23-2b"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch05-01-ex-23-2b" style="width:132px; height:99px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch05-01-ex-23-2b.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="codenumber">(b)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A vector field with vectors pointing away from the y-axis and away from x-axis, decreasing in magnitude as we move closer to the origin<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.3(b)"><a tabindex="-1" href="#fig-ch05-01-ex-23-2b" title="Copy heading and permalink for Figure 5.1.3(b)" aria-label="Copy heading and permalink for Figure 5.1.3(b)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch05-01-ex-23-2c"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch05-01-ex-23-2c" style="width:132px; height:99px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch05-01-ex-23-2c.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="codenumber">(c)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A vector field with vectors pointing towards seemingly random directions, their magnitude appears unaffected by their location.<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.3(c)"><a tabindex="-1" href="#fig-ch05-01-ex-23-2c" title="Copy heading and permalink for Figure 5.1.3(c)" aria-label="Copy heading and permalink for Figure 5.1.3(c)">🔗</a></div></figcaption>
+</figure>
+</div>
+<div class="sbspanel sbspanel--middle middle" style="">
+<figure class="figure figure-like" id="fig-ch05-01-ex-23-2d"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch05-01-ex-23-2d" style="width:132px; height:99px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch05-01-ex-23-2d.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="codenumber">(d)</span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The vector field with vectors whose direction creates a clockwise swirl, decreasing in magnitude as we move closer to the origin<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.3(d)"><a tabindex="-1" href="#fig-ch05-01-ex-23-2d" title="Copy heading and permalink for Figure 5.1.3(d)" aria-label="Copy heading and permalink for Figure 5.1.3(d)">🔗</a></div></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>The four candidate sketches, A to D from left to right.<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.3"><a tabindex="-1" href="#fig-ch05-01-ex-23-2" title="Copy heading and permalink for Figure 5.1.3" aria-label="Copy heading and permalink for Figure 5.1.3">🔗</a></div></figcaption>
+</figure> 
+<div class="para" id="example-ch05-01-ex-23-2-1-3">The graphs above show only the plots; you can drag and zoom them. To see the expressions behind them, or to save a copy and create your own version of the graphs, open them in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to graph A</a>, <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to graph B</a>, <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to graph C</a>, <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to graph D</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-2-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch05-01-ex-23-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch05-01-ex-23-2-2-1">The correct answer is B.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.1.5.1"><a tabindex="-1" href="#example-ch05-01-ex-23-2-2" title="Copy heading and permalink for Solution 5.1.5.1" aria-label="Copy heading and permalink for Solution 5.1.5.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.1.5"><a tabindex="-1" href="#example-ch05-01-ex-23-2" title="Copy heading and permalink for Example 5.1.5" aria-label="Copy heading and permalink for Example 5.1.5">🔗</a></div>
+</article></details>
+<article class="definition definition-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-9"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vector Fields in <span class="process-math">\(\mathbb{R}^{3}\)</span>.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-9-2-1">A function of the form <span class="process-math">\(\mathrm{F}(x, y, z)=\langle f(x, y, z), g(x, y, z), h(x, y, z)\rangle\)</span> is a vector field in <span class="process-math">\(x y z\)</span>-space.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-9-2-2">The vector field <span class="process-math">\(\vec{F}\)</span> assigns to each point ( <span class="process-math">\(x, y, z\)</span> ) in <span class="process-math">\(x y z\)</span>-space, a vector <span class="process-math">\(\vec{F}(x, y, z)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-9-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 5.1.6: Vector Fields in \mathbb{R}^{3}"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-9" title="Copy heading and permalink for Definition 5.1.6: Vector Fields in \mathbb{R}^{3}" aria-label="Copy heading and permalink for Definition 5.1.6: Vector Fields in \mathbb{R}^{3}">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-10"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-10-1">Suppose that an electron is moving in a magnetic field. If it is moving in the direction of the field, then it accelerates (energy is being transferred to the electron). How can we measure that energy transfer?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-10-2">We will start by deriving a way to integrate a vector field <span class="process-math">\(\vec{F}=\langle f(x, y), g(x, y)\rangle\)</span> over a 2D curve <span class="process-math">\(\vec{r}(t)=\langle x(t), y(t)\rangle\)</span> in its domain. We will call such an integral a vector field line integral.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 5.1.7"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-10" title="Copy heading and permalink for Note 5.1.7" aria-label="Copy heading and permalink for Note 5.1.7">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-11"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Derivation of a Vector Field Line Integral.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-11-2">Suppose you start with an oriented curve <span class="process-math">\(C\)</span> parametrized as <span class="process-math">\(\vec{r}(t)= \langle x(t), y(t)\rangle, a \leq t \leq b\text{,}\)</span> and with a vector field <span class="process-math">\(\vec{F}=\langle f(x, y), g(x, y)\rangle\text{.}\)</span> We follow a similar process as with scalar line integrals.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-11-3">We start by partitioning <span class="process-math">\(C\)</span> into <span class="process-math">\(n\)</span> pieces of arc length <span class="process-math">\(\Delta s_{k}\text{.}\)</span> Second, we pick a point ( <span class="process-math">\(x_{k}, y_{k}\)</span> ) in the <span class="process-math">\(k\)</span>-th segment of <span class="process-math">\(C\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-11-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-11-4">Now, when computing scalar line integrals, if we were integrating a surface <span class="process-math">\(h(x, y)\text{,}\)</span> we would multiply <span class="process-math">\(\Delta s_{k}\)</span> by <span class="process-math">\(h\left(x_{k}, y_{k}\right)\text{.}\)</span> When integrating a vector field, we can’t do this since <span class="process-math">\(\vec{F}\left(x_{k}, y_{k}\right)\)</span> is a vector, not a number. Hence, we instead use the quantity <span class="process-math">\(\vec{F}_{k} \cdot \vec{T}_{k}\text{,}\)</span> where <span class="process-math">\(\vec{F}_{k}=\vec{F}\left(x_{k}, y_{k}\right)\)</span> and <span class="process-math">\(\vec{T}_{k}\)</span> is the unit tangent vector to <span class="process-math">\(C \left(\frac{\vec{r}^{\prime}(t)}{\left|\vec{r}^{\prime}(t)\right|}\right)\)</span> at the point <span class="process-math">\(\left(x_{k}, y_{k}\right)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-11-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch05-01-projection"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
+<img src="external//images/2025_11_10_e1bad327dc4b7562db72g-02.png" class="contained" alt="The projection of a vector of the vector field onto the tangent vector of a curve."><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="fig-ch05-01-projection-2-description">
+<div class="para" id="fig-ch05-01-projection-2-2-1">The projection of a vector of the vector field onto the tangent vector of a curve.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#fig-ch05-01-projection-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>From OpenStax<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.4"><a tabindex="-1" href="#fig-ch05-01-projection" title="Copy heading and permalink for Figure 5.1.4" aria-label="Copy heading and permalink for Figure 5.1.4">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-11-6">
+<div class="para">Finally, we add these quantities up and take the limit as the number of segments <span class="process-math">\(n\)</span> approaches infinity to get</div>
+<div class="displaymath process-math" id="sec-ch05-01-VectorFieldsAndLineIntegrals-11-6-2">
+\begin{equation*}
+\lim _{n \rightarrow \infty} \sum_{k=1}^{n} \vec{F}_{k} \cdot \vec{T}_{k} \Delta s_{k}=\int_{C} \vec{F} \cdot \vec{T} d s
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-11-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-11-7">
+<em class="alert">Important: We can interpret <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{T} d s\)</span> as adding up the scalar component of <span class="process-math">\(\vec{F}\)</span> (the vector field) in the direction of <span class="process-math">\(\vec{T}\)</span> (the curve) at each point along <span class="process-math">\(C\text{.}\)</span></em><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-11-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 5.1.8: Derivation of a Vector Field Line Integral"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-11" title="Copy heading and permalink for Remark 5.1.8: Derivation of a Vector Field Line Integral" aria-label="Copy heading and permalink for Remark 5.1.8: Derivation of a Vector Field Line Integral">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-12"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Evaluating a Vector Field Line Integral.</span>
+</h2>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-12-2">
+<div class="para">We can find a nice computational formula for <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{T} d s\)</span> by noting that</div>
+<div class="displaymath process-math" id="sec-ch05-01-VectorFieldsAndLineIntegrals-12-2-2">
+\begin{equation*}
+\vec{T}=\frac{\vec{r}^{\prime}(t)}{\left|\vec{r}^{\prime}(t)\right|}, \quad ds = \left|\vec{r}' (t) \right|dt
+\end{equation*}
+</div>
+<div class="para">and hence</div>
+<div class="displaymath process-math" id="sec-ch05-01-VectorFieldsAndLineIntegrals-12-2-3">
+\begin{equation*}
+\vec{F} \cdot \vec{T} d s=\left(\vec{F} \cdot \frac{\vec{r}^{\prime}(t)}{\left|\vec{r}^{\prime}(t)\right|}\right) \left|\vec{r}' (t) \right|dt=\vec{F} \cdot \vec r'(t) d t
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 5.1.9: Evaluating a Vector Field Line Integral"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-12" title="Copy heading and permalink for Note 5.1.9: Evaluating a Vector Field Line Integral" aria-label="Copy heading and permalink for Note 5.1.9: Evaluating a Vector Field Line Integral">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-13"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Evaluating Vector Field Line Integral.</span>
+</h2>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-13-2">
+<div class="para">Let <span class="process-math">\(C\)</span> be a smooth curve parametrized by <span class="process-math">\(\vec{r}(t)\text{,}\)</span> <span class="process-math">\(a \leq t \leq b\)</span> and <span class="process-math">\(\vec{F}\)</span> be a (continuous) vector field over a region containing <span class="process-math">\(C\text{.}\)</span> Then the vector field line integral of <span class="process-math">\(\vec{F}\)</span> over <span class="process-math">\(C\)</span> is evaluated as</div>
+<div class="displaymath process-math" id="sec-ch05-01-VectorFieldsAndLineIntegrals-13-2-8">
+\begin{equation*}
+\int_{C} \vec{F} \cdot \vec{T} d s=\int_{C} \vec{F} \cdot d \vec{r}=\int_{a}^{b} \vec{F}(\vec{r}(t)) \cdot \vec{r}^{\prime}(t) d t
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 5.1.10: Evaluating Vector Field Line Integral"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-13" title="Copy heading and permalink for Remark 5.1.10: Evaluating Vector Field Line Integral" aria-label="Copy heading and permalink for Remark 5.1.10: Evaluating Vector Field Line Integral">🔗</a></div>
+</article>
+<details id="example-ch05-01-ex-23-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch05-01-ex-23-3-1-1">Evaluate <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{T} d s\)</span> where <span class="process-math">\(\vec{F}=\langle y, -x\rangle\)</span> on the following oriented curves in the plane:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch05-01-ex-23-3-1-2">(a) The quarter-circle <span class="process-math">\(C_{1}\)</span> from <span class="process-math">\(P(1,0)\)</span> to <span class="process-math">\(Q(0,1)\)</span> (in black).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch05-01-ex-23-3-1-3">(b) The quarter-circle - <span class="process-math">\(C_{1}\)</span> from <span class="process-math">\(Q(0,1)\)</span> to <span class="process-math">\(P(1,0)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-3-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="example-ch05-01-ex-23-3-1-4">(c) The path <span class="process-math">\(C_{2}\)</span> from <span class="process-math">\(Q(0,1)\)</span> to <span class="process-math">\(P(1,0)\)</span> via two line segments through <span class="process-math">\(O(0,0)\)</span> (in red).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-3-1-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch05-01-ex-23-3"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch05-01-ex-23-3" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch05-01-ex-23-3.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch05-01-ex-23-3-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch05-01-ex-23-3-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch05-01-ex-23-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch05-01-ex-23-3-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>On the background the part of the unit circle belonging on the first quadrant, the line segments starting from the origin to and ending to the 1 of the x and y axis respectively. On the foreground a vector field whose vectors create a clockwise swirl and their magnitude increases away from the origin.<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.5"><a tabindex="-1" href="#fig-ch05-01-ex-23-3" title="Copy heading and permalink for Figure 5.1.5" aria-label="Copy heading and permalink for Figure 5.1.5">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch05-01-ex-23-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch05-01-ex-23-3-2-1">
+<div class="displaymath process-math" id="example-ch05-01-ex-23-3-2-1-1">
+\begin{gather*}
+C_1 : \vec r (t) = \langle \cos t , \sin t \rangle , \  0\leq t \leq \frac{\pi}{2}, \quad \vec r ' (t) = \langle -\sin t , \cos t \rangle\\
+\vec F ( \vec r (t)) = \langle \sin t, - \cos t \rangle , \quad \vec F ( \vec r (t)) \cdot \vec r'(t) = -\sin^2 t + (-\cos^2 t) = -1\\
+\int_{C_1} \vec F \cdot \vec T \ ds = \int_{C_1} \vec F\ d\vec r =\int_a^b \vec F ( \vec r (t)) \vec r' (t)\ dt = \int_0^{\frac{\pi}{2}} -1 \ dt  =-\frac{\pi}{2}
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.1.11.1"><a tabindex="-1" href="#example-ch05-01-ex-23-3-2" title="Copy heading and permalink for Solution 5.1.11.1" aria-label="Copy heading and permalink for Solution 5.1.11.1">🔗</a></div>
+</div></details>
+<details id="example-ch05-01-ex-23-3-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch05-01-ex-23-3-3-1">
+<div class="para">b)</div>
+<div class="displaymath process-math" id="example-ch05-01-ex-23-3-3-1-1">
+\begin{gather*}
+-C_1 : \vec r (t) = \langle \sin t , \cos t \rangle , \  0\leq t \leq \frac{\pi}{2}, \quad \vec r ' (t) = \langle -\cos t , -\sin t \rangle\\
+\vec F ( \vec r (t)) = \langle \cos t, - \sin t \rangle , \quad \vec F ( \vec r (t)) \cdot \vec r'(t) = \cos^2 t + \sin^2 t = 1\\
+\int_{C_1} \vec F \cdot \vec T \ ds = \int_{C_1} \vec F\ d\vec r =\int_a^b \vec F ( \vec r (t)) \vec r' (t)\ dt = \int_0^{\frac{\pi}{2}} 1 \ dt  =\frac{\pi}{2}
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-ch05-01-ex-23-3-3-2">
+<div class="para">c)</div>
+<div class="displaymath process-math" id="example-ch05-01-ex-23-3-3-2-1">
+\begin{gather*}
+\text{Line in space: }\vec l (t) = \vec v + t \vec u ,\\
+\text{ where }\vec v\text{ represents the starting point and }\vec u\text{ is a vector in the direction of the line.}\\
+C_2 : \vec r (t) = \begin{cases} \langle 0,1 \rangle + t \langle 0 , -1 \rangle = \langle 0,1-t \rangle\amp\quad 0\leq t \leq 1\\ \langle 0,0 \rangle + (t-1) \langle 1 , 0 \rangle = \langle t-1, 0 \rangle\amp\quad 1\leq t \leq 2\\ \end{cases}\\
+\vec r' (t) =   \begin{cases} \langle 0,-1 \rangle\amp\quad 0\lt  t \lt 1\\ \langle 1, 0 \rangle\amp\quad 1\lt t \lt 2\\ \end{cases}\\
+\vec F ( \vec r (t))  =   \begin{cases} \langle 1-t , 0\rangle\amp\quad 0\leq  t \leq 1\\ \langle 0, -t+1 \rangle\amp\quad 1\leq t \leq 2\\ \end{cases}\\
+\vec F ( \vec r (t)) \cdot \vec r'(t) =  \begin{cases} (1-t)\cdot 0 + 0\cdot (-1) = 0\amp\quad 0\lt  t \lt 1\\ 0\cdot 1 + (-t+1)\cdot 0 = 0\amp\quad 1\lt t \lt 2\\ \end{cases}\\
+\int_{C_2} \vec F \cdot \vec T \ ds = \int_{C_2} \vec F\ d\vec r =\int_a^b \vec F ( \vec r (t)) \vec r' (t)\ dt +  \int_b^c \vec F ( \vec r (t)) \vec r' (t)\ dt= \int_0^{1} 0 \ dt + \int_{1}^2 0 \ dt  = 0
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.1.11.2"><a tabindex="-1" href="#example-ch05-01-ex-23-3-3" title="Copy heading and permalink for Solution 5.1.11.2" aria-label="Copy heading and permalink for Solution 5.1.11.2">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.1.11"><a tabindex="-1" href="#example-ch05-01-ex-23-3" title="Copy heading and permalink for Example 5.1.11" aria-label="Copy heading and permalink for Example 5.1.11">🔗</a></div>
+</article></details>
+<details id="example-ch05-01-ex-23-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch05-01-ex-23-4-1-1">Consider the vector field <span class="process-math">\(\vec{F}=\langle -y,x\rangle\)</span> and the curves <span class="process-math">\(C_{1}: \vec{r}_{1}(t)= \langle\cos (t), \sin (t)\rangle, 0 \leq t \leq \pi \text{,}\)</span> and <span class="process-math">\(C_{2}: \vec{r}_{2}(t)=\langle 1-2t, 0\rangle, 0 \leq t \leq 1\text{.}\)</span> Note that both curves start at <span class="process-math">\((1,0)\)</span> and end at <span class="process-math">\((-1,0)\text{.}\)</span> Verify that <span class="process-math">\(\int_{C_{1}} \vec{F} \cdot \vec{T} d s \neq \int_{C_{2}} \vec{F} \cdot \vec{T} d s\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch05-01-ex-23-4"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch05-01-ex-23-4" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch05-01-ex-23-4.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch05-01-ex-23-4-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch05-01-ex-23-4-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch05-01-ex-23-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch05-01-ex-23-4-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>On the background the part of the unit circle belonging on the first and second quadrant, and the line segment starting from (1,0) and ending at (-1,0). On the foreground a vector field whose vectors create a counter-clockwise swirl.<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.6"><a tabindex="-1" href="#fig-ch05-01-ex-23-4" title="Copy heading and permalink for Figure 5.1.6" aria-label="Copy heading and permalink for Figure 5.1.6">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch05-01-ex-23-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch05-01-ex-23-4-2-1">
+<div class="displaymath process-math" id="example-ch05-01-ex-23-4-2-1-1">
+\begin{gather*}
+C_1 : \vec r (t) = \langle \cos t , \sin t \rangle , \  0\leq t \leq \pi , \quad \vec r ' (t) = \langle -\sin t , \cos t \rangle\\
+\vec F ( \vec r (t)) = \langle -\sin t,  \cos t \rangle , \quad \vec F ( \vec r (t)) \cdot \vec r'(t) = \sin^2 t + \cos^2 t = 1\\
+\int_{C_1} \vec F \cdot \vec T \ ds = \int_{C_1} \vec F\ d\vec r =\int_a^b \vec F ( \vec r (t)) \vec r' (t)\ dt = \int_0^{\pi} 1 \ dt  =\pi
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.1.12.1"><a tabindex="-1" href="#example-ch05-01-ex-23-4-2" title="Copy heading and permalink for Solution 5.1.12.1" aria-label="Copy heading and permalink for Solution 5.1.12.1">🔗</a></div>
+</div></details>
+<details id="example-ch05-01-ex-23-4-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch05-01-ex-23-4-3-1">
+<div class="displaymath process-math" id="example-ch05-01-ex-23-4-3-1-1">
+\begin{gather*}
+C_2 : \vec l (t) = \langle 1-2t,0 \cos t \rangle , \  0\leq t  1, \quad \vec r ' (t) = \langle  -2 ,0 \rangle\\
+\vec F ( \vec r (t)) = \langle 0,1-2 t \rangle , \quad \vec F ( \vec r (t)) \cdot \vec r'(t) = -2\cdot 0 + 0\cdot (1-2t) = 0\\
+\int_{C_2} \vec F \cdot \vec T \ ds = \int_{C_2} \vec F\ d\vec r =\int_a^b \vec F ( \vec r (t)) \vec r' (t)\ dt = \int_0^{1}  0\ dt  =0
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.1.12.2"><a tabindex="-1" href="#example-ch05-01-ex-23-4-3" title="Copy heading and permalink for Solution 5.1.12.2" aria-label="Copy heading and permalink for Solution 5.1.12.2">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.1.12"><a tabindex="-1" href="#example-ch05-01-ex-23-4" title="Copy heading and permalink for Example 5.1.12" aria-label="Copy heading and permalink for Example 5.1.12">🔗</a></div>
+</article></details>
+<article class="note remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-16"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-16-1">Two things to note from <a href="sec-ch05-01-VectorFieldsAndLineIntegrals.html#example-ch05-01-ex-23-3" class="xref" data-knowl="./knowl/xref/example-ch05-01-ex-23-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.1.11">Example 5.1.11</a> and <a href="sec-ch05-01-VectorFieldsAndLineIntegrals.html#example-ch05-01-ex-23-4" class="xref" data-knowl="./knowl/xref/example-ch05-01-ex-23-4.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.1.12">Example 5.1.12</a> that are true in general:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-16-2">
+<ol class="decimal" id="sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1">
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-1">
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-1-1">
+<div class="para">Given a curve <span class="process-math">\(C\)</span> in the domain of a vector field <span class="process-math">\(\vec{F}\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-1-1-3">
+\begin{equation*}
+\int_{-C} \vec{F} \cdot \vec{T} d s=-\int_{C} \vec{F} \cdot \vec{T} d s
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-2">
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-2-1">
+<div class="para">Given a vector field <span class="process-math">\(\vec{F}\text{,}\)</span> two points <span class="process-math">\(P \neq Q\)</span> in its domain, and two different curves <span class="process-math">\(C_{1}\)</span> and <span class="process-math">\(C_{2}\)</span> connecting <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{,}\)</span> in most cases,</div>
+<div class="displaymath process-math" id="sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-2-1-7">
+\begin{equation*}
+\int_{C_{1}} \vec{F} \cdot \vec{T} d s \neq \int_{C_{2}} \vec{F} \cdot \vec{T} d s
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-2-2">
+<ul class="disc" id="sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-2-2-1">
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-2-2-1-1">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-2-2-1-1-1">In general, different curves connecting two points give different values for line integrals.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-2-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-16-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 5.1.13"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-16" title="Copy heading and permalink for Note 5.1.13" aria-label="Copy heading and permalink for Note 5.1.13">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-17"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Direction Interpretation.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-17-2">Given a vector field <span class="process-math">\(\vec{F}\text{,}\)</span> a curve <span class="process-math">\(C\)</span> parametrized as <span class="process-math">\(\vec{r}(t)\text{,}\)</span> and a point ( <span class="process-math">\(x_{k}, y_{k}\)</span> ) on the curve, since <span class="process-math">\(\vec{F}_{k} \cdot \vec{T}_{k}\)</span> can be positive or negative (depending on the angle between the vectors), the line integral can be positive or negative.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-17-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-17-3">Hence, we can sometimes determine whether <span class="process-math">\(\int_{C} \vec{F} \cdot d \vec{r}\)</span> is positive or negative by looking at the angles between the vectors:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-17-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-17-4">
+<ul class="disc" id="sec-ch05-01-VectorFieldsAndLineIntegrals-17-4-1">
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-17-4-1-1">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-17-4-1-1-1">If for most of the curve, the angle <span class="process-math">\(\theta\)</span> between <span class="process-math">\(\vec{F}\)</span> and <span class="process-math">\(\vec{T}\)</span> satisfies <span class="process-math">\(0 \leq \theta \lt \frac{\pi}{2}\text{,}\)</span> then we expect <span class="process-math">\(\int_{C} \vec{F} \cdot d \vec{r} \gt 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-17-4-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-17-4-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-17-4-1-2">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-17-4-1-2-1">If for most of the curve, the angle <span class="process-math">\(\theta\)</span> between <span class="process-math">\(\vec{F}\)</span> and <span class="process-math">\(\vec{T}\)</span> satisfies <span class="process-math">\(\frac{\pi}{2} \lt \theta \leq \pi\text{,}\)</span> then we expect <span class="process-math">\(\int_{C} \vec{F} \cdot d \vec{r} \lt 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-17-4-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-17-4-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-17-4-1-3">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-17-4-1-3-1">It is also possible for <span class="process-math">\(\int_{C} \vec{F} \cdot d \vec{r}=0\)</span> (for example, if <span class="process-math">\(\vec{F} \cdot \vec{T}=0\)</span> for all points on <span class="process-math">\(C)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-17-4-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-17-4-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-17-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 5.1.14: Direction Interpretation"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-17" title="Copy heading and permalink for Remark 5.1.14: Direction Interpretation" aria-label="Copy heading and permalink for Remark 5.1.14: Direction Interpretation">🔗</a></div>
+</article>
+<details id="example-ch05-01-ex-23-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch05-01-ex-23-5-1-1">Consider the vector field and curves plotted below. Use these plots to determine the sign of <span class="process-math">\(\int_{C} \vec{F} \cdot d \vec{r}\)</span> along each curve.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch05-01-ex-23-5"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch05-01-ex-23-5" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch05-01-ex-23-5.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch05-01-ex-23-5-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch05-01-ex-23-5-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch05-01-ex-23-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch05-01-ex-23-5-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>On the background a circle centred at the origin and traversed clockwise and in a different colour a line segment on the positive part of x -axis, traversed from left to right. On the foreground a vector field whose vectors create a clockwise swirl and their magnitude increases away from the origin.<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.7"><a tabindex="-1" href="#fig-ch05-01-ex-23-5" title="Copy heading and permalink for Figure 5.1.7" aria-label="Copy heading and permalink for Figure 5.1.7">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch05-01-ex-23-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="example-ch05-01-ex-23-5-2-1">Let <span class="process-math">\(C_1\)</span> be the circle as traversed above and <span class="process-math">\(C_2\)</span> be the line segment as traversed above. Notice that at any given point the tangent vector of <span class="process-math">\(C_1\)</span> will match the vectors of the field. Hence one can infer that <span class="process-math">\(\int_{C_1} \vec{F} \cdot d \vec{r} =\int_{C_1}\vec F \cdot \vec T\  ds \gt 0 \text{.}\)</span> For <span class="process-math">\(C_2\)</span> notice that its tangent vector is perpendicular to the vectors of the field. Since the integral <span class="process-math">\(\int_{C} \vec{F} \cdot \vec T\ d s\)</span>  represents the integral of a dot product between the vector field and the tangent vector of the parametrization of the curve, given that those are perpendicular, one can infer that <span class="process-math">\(\int_{C_2} \vec{F} \cdot d \vec{r}=\int_{C_2}=\vec F \cdot \vec T \  ds  = 0 \text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.1.15.1"><a tabindex="-1" href="#example-ch05-01-ex-23-5-2" title="Copy heading and permalink for Solution 5.1.15.1" aria-label="Copy heading and permalink for Solution 5.1.15.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.1.15"><a tabindex="-1" href="#example-ch05-01-ex-23-5" title="Copy heading and permalink for Example 5.1.15" aria-label="Copy heading and permalink for Example 5.1.15">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-19"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-19-1">When a force (given by the vector field vectors) acts on an object/particle moving along a curve (a particle/curve system), we say the vector field is doing work on the system.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-19-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 5.1.16"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-19" title="Copy heading and permalink for Remark 5.1.16" aria-label="Copy heading and permalink for Remark 5.1.16">🔗</a></div>
+</article>
+<article class="definition definition-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-20"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vector Field Line Integrals as Work.</span>
+</h2>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-20-2-1">
+<div class="para">Let <span class="process-math">\(\vec{F}\)</span> be a continuous force field and let <span class="process-math">\(C\)</span> be a smooth oriented curve in its domain. The work done by <span class="process-math">\(\vec{F}\)</span> on the system given by a particle moving along <span class="process-math">\(C\)</span> is</div>
+<div class="displaymath process-math" id="sec-ch05-01-VectorFieldsAndLineIntegrals-20-2-1-5">
+\begin{equation*}
+W=\int_{C} \vec{F} \cdot \vec{T} d s
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-20-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 5.1.17: Vector Field Line Integrals as Work"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-20" title="Copy heading and permalink for Definition 5.1.17: Vector Field Line Integrals as Work" aria-label="Copy heading and permalink for Definition 5.1.17: Vector Field Line Integrals as Work">🔗</a></div>
+</article>
+<details id="example-ch05-01-ex-23-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch05-01-ex-23-6-1-1">Find the work done by the force field <span class="process-math">\(\vec{F}=\left\langle x,z,-y\right\rangle\)</span> acting on the curve/particle system given by <span class="process-math">\(\vec{r}(t)=\left\langle t^2, t^{3}, t\right\rangle, 0 \leq t \leq 1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch05-01-ex-23-6"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch05-01-ex-23-6" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch05-01-ex-23-6.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch05-01-ex-23-6-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch05-01-ex-23-6-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch05-01-ex-23-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch05-01-ex-23-6-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>On the foreground 3-dimensional vector field with vectors swirling about the x-axis, on the background the curve traced by the vector r of t with coordinates x = t squared, y = t cubed, z = t, for t from 0 to 1.<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.8"><a tabindex="-1" href="#fig-ch05-01-ex-23-6" title="Copy heading and permalink for Figure 5.1.8" aria-label="Copy heading and permalink for Figure 5.1.8">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch05-01-ex-23-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch05-01-ex-23-6-2-1">
+<div class="displaymath process-math" id="example-ch05-01-ex-23-6-2-1-1">
+\begin{gather*}
+\vec r(t)=\left\langle t^2, t^{3}, t\right\rangle \Rightarrow x(t) = t^2, \ y(t) = t^3, \ z(t) = t,\ 0\leq t \leq 1 \Rightarrow \vec F (\vec r(t)) = \langle t^2 , t , -t^3 \rangle\\
+\vec r' (t) = \langle 2t , 3t^2 , 1 \rangle, \Rightarrow  \vec F (\vec r(t))\cdot \vec r' (t) = t^2\cdot 2t + t\cdot 3t^2 +-t^3 \cdot 1 = 4t^3\\
+\mathbf W = \int_C \vec F \cdot \vec T \ ds = \int_0^1  \vec F (\vec r(t))\cdot \vec r' (t) \ dt =\int_0^1 4t^3\ dt = \left . t^4 \right |_0^1 =1
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.1.18.1"><a tabindex="-1" href="#example-ch05-01-ex-23-6-2" title="Copy heading and permalink for Solution 5.1.18.1" aria-label="Copy heading and permalink for Solution 5.1.18.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.1.18"><a tabindex="-1" href="#example-ch05-01-ex-23-6" title="Copy heading and permalink for Example 5.1.18" aria-label="Copy heading and permalink for Example 5.1.18">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-22"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Work Interpretation.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-22-2">Under the work interpretation, it is important to understand what positive, negative, and zero work mean:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-22-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-22-3">
+<ul class="disc" id="sec-ch05-01-VectorFieldsAndLineIntegrals-22-3-1">
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-22-3-1-1">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-22-3-1-1-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot d \vec{r} \gt 0\text{,}\)</span> energy is being gained by the curve/particle system (in the form of kinetic and potential energy).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-22-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-22-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-22-3-1-2">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-22-3-1-2-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot d \vec{r} \lt 0\text{,}\)</span> energy is being lost by the curve/particle system (in the form of heat, friction, etc.).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-22-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-22-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-22-3-1-3">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-22-3-1-3-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot d \vec{r}=0\text{,}\)</span> this does not mean the vector field forces didn’t affect the system, more generally, the amount of energy gained was the same as the energy lost.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-22-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-22-3-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-22-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 5.1.19: Work Interpretation"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-22" title="Copy heading and permalink for Remark 5.1.19: Work Interpretation" aria-label="Copy heading and permalink for Remark 5.1.19: Work Interpretation">🔗</a></div>
+</article>
+<article class="note remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-23"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-23-1">Recall: A curve <span class="process-math">\(C\)</span> is:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-23-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-23-2">
+<ul class="disc" id="sec-ch05-01-VectorFieldsAndLineIntegrals-23-2-1">
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-23-2-1-1">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-23-2-1-1-1">Smooth: If it has no sharp edges/corners.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-23-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-23-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-23-2-1-2">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-23-2-1-2-1">Closed: If it is a loop (has no discernible starting/ending point).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-23-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-23-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-23-2-1-3">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-23-2-1-3-1">Simple: If it doesn’t cross itself.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-23-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-23-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-23-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-23-3">We call a curve <span class="process-math">\(C\)</span> that is simple, closed, and smooth, a SCS curve.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-23-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 5.1.20"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-23" title="Copy heading and permalink for Note 5.1.20" aria-label="Copy heading and permalink for Note 5.1.20">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-24"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-24-1">
+<div class="para">Suppose you have a 2-dimensional vector field <span class="process-math">\(\vec{F}\)</span> and a SCS curve <span class="process-math">\(C\)</span> in its domain. We define the circulation of <span class="process-math">\(\vec{F}\)</span> along <span class="process-math">\(C\)</span> as a measure of how much the vector field (vectors) points in the direction of <span class="process-math">\(C\)</span> (the unit tangent vectors of <span class="process-math">\(C)\text{.}\)</span> That is, we define the circulation of <span class="process-math">\(\vec{F}\)</span> along <span class="process-math">\(C\)</span> precisely as</div>
+<div class="displaymath process-math" id="sec-ch05-01-VectorFieldsAndLineIntegrals-24-1-9">
+\begin{equation*}
+\int_{C} \vec{F} \cdot \vec{T} d s
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-24-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch05-01-circulation-boat"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch05-01-circulation-boat" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch05-01-circulation-boat.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch05-01-circulation-boat-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch05-01-circulation-boat-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch05-01-circulation-boat-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch05-01-circulation-boat-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A boat traversing on a closed simple curve, placed over a clockwise rotating current.<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.9"><a tabindex="-1" href="#fig-ch05-01-circulation-boat" title="Copy heading and permalink for Figure 5.1.9" aria-label="Copy heading and permalink for Figure 5.1.9">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Remark 5.1.21"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-24" title="Copy heading and permalink for Remark 5.1.21" aria-label="Copy heading and permalink for Remark 5.1.21">🔗</a></div>
+</article>
+<article class="definition definition-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-25"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vector Field Line Integrals as Circulation.</span>
+</h2>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-25-2-1">
+<div class="para">Let <span class="process-math">\(\vec{F}\)</span> be a 2-dimensional continuous force field and let <span class="process-math">\(C\)</span> be a SCS curve in its domain. The circulation of <span class="process-math">\(\vec{F}\)</span> along <span class="process-math">\(C\)</span> is computed as</div>
+<div class="displaymath process-math" id="sec-ch05-01-VectorFieldsAndLineIntegrals-25-2-1-5">
+\begin{equation*}
+\int_{C} \vec{F} \cdot \vec{T} d s
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-25-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 5.1.22: Vector Field Line Integrals as Circulation"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-25" title="Copy heading and permalink for Definition 5.1.22: Vector Field Line Integrals as Circulation" aria-label="Copy heading and permalink for Definition 5.1.22: Vector Field Line Integrals as Circulation">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-26"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.23</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Circulation Interpretation.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-26-2">If the path <span class="process-math">\(C\)</span> is not closed that we call this <em class="alert">Flow</em>. When we are talking about circulation along a boundary, the sign of the integral tells us the following:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-26-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-26-3">
+<ul class="disc" id="sec-ch05-01-VectorFieldsAndLineIntegrals-26-3-1">
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-26-3-1-1">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-26-3-1-1-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{T} d s \gt 0\text{,}\)</span> most of the vector field is in the direction of <span class="process-math">\(C\text{.}\)</span> Hence, most particles (whose motion is represented by <span class="process-math">\(\vec{F}\)</span> ) are moving along <span class="process-math">\(C\)</span> in the same orientation (as <span class="process-math">\(C\)</span> ).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-26-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-26-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-26-3-1-2">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-26-3-1-2-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{T} d s \lt 0\text{,}\)</span> most of the vector field is in the direction opposite of <span class="process-math">\(C\text{.}\)</span> Hence, most particles are moving along <span class="process-math">\(C\)</span> in the opposite orientation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-26-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-26-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-26-3-1-3">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-26-3-1-3-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{T} d s=0\text{,}\)</span> there is no discernible motion along <span class="process-math">\(C\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-26-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-26-3-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-26-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 5.1.23: Circulation Interpretation"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-26" title="Copy heading and permalink for Remark 5.1.23: Circulation Interpretation" aria-label="Copy heading and permalink for Remark 5.1.23: Circulation Interpretation">🔗</a></div>
+</article>
+<details id="example-ch05-01-ex-23-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch05-01-ex-23-7-1-1">Given the vector field <span class="process-math">\(\vec{F}=\langle x-y, -y\rangle\)</span> and the curve <span class="process-math">\(C\)</span> parametrized by <span class="process-math">\(\vec{r}(t)=\langle\sin (t), \cos (t)\rangle\text{,}\)</span> <span class="process-math">\(0 \leq t \leq 2 \pi\text{,}\)</span> determine whether most of the vector field is in the direction of <span class="process-math">\(C\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch05-01-ex-23-7"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch05-01-ex-23-7" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch05-01-ex-23-7.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch05-01-ex-23-7-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch05-01-ex-23-7-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch05-01-ex-23-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch05-01-ex-23-7-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>on the background the unit circle centred at the origin, on the foreground a vector field whose vectors point away from the line y equals x and towards the x-axis, with increasing magnitude away from the origin.<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.10"><a tabindex="-1" href="#fig-ch05-01-ex-23-7" title="Copy heading and permalink for Figure 5.1.10" aria-label="Copy heading and permalink for Figure 5.1.10">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch05-01-ex-23-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch05-01-ex-23-7-2-1">
+<div class="displaymath process-math" id="example-ch05-01-ex-23-7-2-1-1">
+\begin{gather*}
+\vec r(t)=\langle\sin (t), \cos (t)\rangle \Rightarrow  \vec F (\vec r(t)) = \langle \sin (t) - \cos (t), - \cos (t) \rangle, \quad \vec r' (t) = \langle \cos (t) , -\sin  (t)\rangle\\
+\vec F (\vec r(t))\cdot \vec r' (t) = \sin (t)\cos (t) -\cos^2 (t) + \cos(t)\sin (t) = -\cos^2 (t) + 2\sin (t) \cos (t)\\
+\int_C \vec F \cdot \vec T \ ds = \int_0^{2\pi}  \vec F (\vec r(t))\cdot \vec r' (t) \ dt =\int_0^{2\pi} - \cos^2 (t) +2\sin (t)\cos (t)\ dt  =\\
+-\int_0^{2\pi}  \cos^2 (t) \ dt  +2\int_0^{2\pi}  +\sin (t)\cos (t)\ dt \underset{\substack{t= 0 \Rightarrow u = 0\\ t =2\pi \Rightarrow u =0}}{\overset{\substack{u=\sin t \\ du = \cos t dt}}{=}}  -\int_0^{2\pi}  \cos^2 (t)\ dt +2\int_0^0 u\ du =\\
+-\int_0^{2\pi}  \cos^2 (t) dt +0 \lt 0.\\
+\text{Hence most of the vector field is in the opposite direction of}C
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.1.24.1"><a tabindex="-1" href="#example-ch05-01-ex-23-7-2" title="Copy heading and permalink for Solution 5.1.24.1" aria-label="Copy heading and permalink for Solution 5.1.24.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.1.24"><a tabindex="-1" href="#example-ch05-01-ex-23-7" title="Copy heading and permalink for Example 5.1.24" aria-label="Copy heading and permalink for Example 5.1.24">🔗</a></div>
+</article></details>
+<article class="note remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-28"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.25</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-28-1">Although we will mostly work with SCS curves when talking about circulation, we can generalize this idea to curves that are piece-wise smooth (a union of smooth curves connected at their endpoints).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-28-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-28-2">We call a simple, closed, piece-wise smooth curve <span class="process-math">\(C\)</span> a SCPS curve.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-28-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 5.1.25"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-28" title="Copy heading and permalink for Note 5.1.25" aria-label="Copy heading and permalink for Note 5.1.25">🔗</a></div>
+</article>
+<details id="example-ch05-01-ex-23-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch05-01-ex-23-8-1-1">Set up (but do not evaluate) a line integral (as a sum of integrals) that gives the circulation of the vector field <span class="process-math">\(\vec{F}=\langle 1,x\rangle\)</span> along the SCPS curve <span class="process-math">\(C\text{,}\)</span> traversed counter-clockwise, shown below (First quadrant of the unit circle, and line segments on the respective axes).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<figure class="figure figure-like" id="fig-ch05-01-ex-23-8"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch05-01-ex-23-8" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch05-01-ex-23-8.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch05-01-ex-23-8-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch05-01-ex-23-8-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch05-01-ex-23-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch05-01-ex-23-8-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>On the background the part of the unit circle belonging on the first quadrant, the line segments starting from the origin to and ending to the 1 of the x and y axis respectively. On the foreground a vector field whose vectors are fixed on each vertical line. In each of those lines they point from left to right while at the same time their up-down direction is proportional to the x coordinate of the point they originate.<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.11"><a tabindex="-1" href="#fig-ch05-01-ex-23-8" title="Copy heading and permalink for Figure 5.1.11" aria-label="Copy heading and permalink for Figure 5.1.11">🔗</a></div></figcaption>
+</figure><div class="solutions">
+<details id="example-ch05-01-ex-23-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch05-01-ex-23-8-2-1">
+<div class="displaymath process-math" id="example-ch05-01-ex-23-8-2-1-1">
+\begin{gather*}
+C: \vec r (t) = \begin{cases} \text{Line segment of the y axis}\amp\quad 0\leq t \leq 1\\ \text{Line segment of the x axis}\amp\quad 1\leq t \leq 2\\ \text{Unit circle, first quadrant }  \amp\quad 2\leq t \leq 2+\frac{\pi}{2}\\ \end{cases} =\\
+\begin{cases} \langle 0,1 \rangle + t \langle 0 , -1 \rangle = \langle 0,1-t \rangle\amp\quad 0\leq t \leq 1\\ \langle 0,0 \rangle + (t-1) \langle 1 , 0 \rangle = \langle 1-t, 0 \rangle\amp\quad 1\leq t \leq 2\\ \langle \cos (t-2), \sin (t-2) \rangle  \amp\quad 2\leq t \leq 2+\frac{\pi}{2}\\ \end{cases}\\
+\vec r' (t) =   \begin{cases} \langle 0,-1 \rangle\amp\quad 0\lt  t \lt 1\\ \langle 1, 0 \rangle\amp\quad 1\lt t \lt 2\\ \langle -\sin (t-2), \cos (t-2) \rangle  \amp\quad 2 \lt t \lt 2+\frac{\pi}{2}\\ \end{cases}\\
+\vec F ( \vec r (t))  =   \begin{cases} \langle 1 , 0\rangle\amp\quad 0\leq  t \leq 1\\ \langle 1, t-1 \rangle\amp\quad 1\leq t \leq 2\\ \langle 1, \cos (t-2) \rangle  \amp\quad 2\leq t \leq 2+\frac{\pi}{2}\\ \end{cases}\\
+\vec F ( \vec r (t)) \cdot \vec r'(t) =  \begin{cases} 1\cdot 0 + 0\cdot (-1) = 0\amp\quad 0\lt  t \lt 1\\ 1\cdot 1 + (t-1)\cdot 0 = 1\amp\quad 1\lt t \lt 2\\ -\sin (t-2) +\cos^2 (t-2)  \amp\quad 2 \lt t \lt 2+\frac{\pi}{2}\\ \end{cases}\\
+\int_{C} \vec F \cdot \vec T \ ds = \int_0^1 0 \ dt + \int_1^2 1 \ dt + \int_2^{2+\frac{\pi}{2}}  -\sin (t-2) +\cos^2 (t-2) \ dt
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.1.26.1"><a tabindex="-1" href="#example-ch05-01-ex-23-8-2" title="Copy heading and permalink for Solution 5.1.26.1" aria-label="Copy heading and permalink for Solution 5.1.26.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.1.26"><a tabindex="-1" href="#example-ch05-01-ex-23-8" title="Copy heading and permalink for Example 5.1.26" aria-label="Copy heading and permalink for Example 5.1.26">🔗</a></div>
+</article></details>
+<article class="note remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-30"><h2 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.27</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-30-1">In defining the circulation of a vector field <span class="process-math">\(\vec{F}\)</span> along a closed curve <span class="process-math">\(C\text{,}\)</span> we were interested in the scalar component of the vector field in the direction of <span class="process-math">\(C\)</span> (measured using <span class="process-math">\(\vec{T}\)</span> ), which is why we used <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{T} d s\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-30-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Note 5.1.27"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-30" title="Copy heading and permalink for Note 5.1.27" aria-label="Copy heading and permalink for Note 5.1.27">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-31"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Flux of a Vector Field.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-31-2">For flux, instead of wanting to measure how much of the vector field is in the direction of <span class="process-math">\(C\text{,}\)</span> we instead want to measure how much of the vector field is normal/perpendicular/orthogonal to <span class="process-math">\(C\text{.}\)</span> Hence, instead of using the scalar component of <span class="process-math">\(\vec{F}\)</span> in the direction of a unit tangent vector <span class="process-math">\(\vec{T}\text{,}\)</span> we will use the scalar component of <span class="process-math">\(\vec{F}\)</span> in the direction of <span class="process-math">\(\vec{N}\)</span> (a unit vector normal to <span class="process-math">\(C\)</span> ). Hence, we will define the flux of <span class="process-math">\(\vec{F}\)</span> on across <span class="process-math">\(C\)</span> as <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{N} d s\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-31-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig-ch05-01-flux-normal"><div class="interactive-iframe-container"><iframe src="https://www.desmos.com/calculator/vqavop8m24" id="interactive-ch05-01-flux-normal" style="width:510px; height:383px; display: block; "></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="interactive-ch05-01-flux-normal.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<div class="instructions interactive__instructions">
+<details id="interactive-ch05-01-flux-normal-1" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Instructions<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<div class="solution-like knowl__content">
+<div class="para" id="interactive-ch05-01-flux-normal-1-1">You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here: <a class="external" href="https://www.desmos.com/calculator/vqavop8m24" target="_blank">link to the graph</a><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#interactive-ch05-01-flux-normal-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Instructions"><a tabindex="-1" href="#interactive-ch05-01-flux-normal-1" title="Copy heading and permalink for Instructions" aria-label="Copy heading and permalink for Instructions">🔗</a></div>
+</div></details>
+</div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>On the background a vector field, on the foreground a simple closed smooth curve, traversed counter-clockwise, and vectors placed on it, on a direction perpendicular to its tangent vector.<div class="autopermalink" aria-hidden="true" data-description="Figure 5.1.12"><a tabindex="-1" href="#fig-ch05-01-flux-normal" title="Copy heading and permalink for Figure 5.1.12" aria-label="Copy heading and permalink for Figure 5.1.12">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Remark 5.1.28: Flux of a Vector Field"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-31" title="Copy heading and permalink for Remark 5.1.28: Flux of a Vector Field" aria-label="Copy heading and permalink for Remark 5.1.28: Flux of a Vector Field">🔗</a></div>
+</article>
+<article class="definition definition-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-32"><h2 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.29</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vector Field Line Integrals as Flux.</span>
+</h2>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-32-2-1">
+<div class="para">Let <span class="process-math">\(\vec{F}=\langle f(x, y), g(x, y)\rangle\)</span> be a 2 -dimensional continuous vector field and let <span class="process-math">\(C\)</span> be a SCPS oriented curve in its domain parametrized by <span class="process-math">\(\vec{r}(t)= \langle x(t), y(t)\rangle, a \leq t \leq b\)</span> and oriented counter clockwise. Let <span class="process-math">\(\vec n(t) = \langle y'(t), -x'(t)  \rangle\text{,}\)</span> a normal vector that points to the right of the direction that the curve is parametrized with, and <span class="process-math">\(\vec N\)</span> the unit normal vector in its direction. The flux of <span class="process-math">\(\vec{F}\)</span> across <span class="process-math">\(C\)</span> is computed as</div>
+<div class="displaymath process-math" id="sec-ch05-01-VectorFieldsAndLineIntegrals-32-2-1-8">
+\begin{equation*}
+\int_{C} \vec{F} \cdot \vec{N} d s= \int_{a}^b \vec{F}(\vec r (t)) \cdot \vec n(t) d t=\int_{a}^{b}\left(f(x(t), y(t)) y^{\prime}(t)-g(x(t), y(t)) x^{\prime}(t)\right) d t
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-32-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 5.1.29: Vector Field Line Integrals as Flux"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-32" title="Copy heading and permalink for Definition 5.1.29: Vector Field Line Integrals as Flux" aria-label="Copy heading and permalink for Definition 5.1.29: Vector Field Line Integrals as Flux">🔗</a></div>
+</article>
+<article class="remark remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-33"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.30</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-33-1">When we are talking about flux across a boundary, the sign of the integral tells us the following:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-33-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-33-2">
+<ul class="disc" id="sec-ch05-01-VectorFieldsAndLineIntegrals-33-2-1">
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-33-2-1-1">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-33-2-1-1-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{N} d s \gt 0\text{,}\)</span> most of the vector field points away from <span class="process-math">\(C\text{.}\)</span> Hence, most particles (whose motion is represented by <span class="process-math">\(\vec{F}\)</span> ) are moving from inside <span class="process-math">\(R\)</span> towards the outside.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-33-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-33-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-33-2-1-2">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-33-2-1-2-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{N} d s \lt 0\text{,}\)</span> most of the vector field points towards (the inside of) <span class="process-math">\(C\text{.}\)</span> Hence, most particles are moving from outside <span class="process-math">\(R\)</span> towards the inside.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-33-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-33-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-33-2-1-3">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-33-2-1-3-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{N} d s=0\text{,}\)</span> the same amount of particles (could be none) are entering and exiting the region <span class="process-math">\(R\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-33-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-33-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-33-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 5.1.30"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-33" title="Copy heading and permalink for Remark 5.1.30" aria-label="Copy heading and permalink for Remark 5.1.30">🔗</a></div>
+</article>
+<details id="example-ch05-01-ex-23-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.31</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch05-01-ex-23-9-1-1">Determine whether most particles, whose motion is represented by <span class="process-math">\(\vec{F}=\langle  x+y, x\rangle\text{,}\)</span> are entering or exiting across the ellipse <span class="process-math">\(\vec{r}(t)=\langle 2 \cos (t),  \sin (t)\rangle\text{,}\)</span> <span class="process-math">\(0 \leq t \leq 2 \pi\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch05-01-ex-23-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch05-01-ex-23-9-2-1">
+<div class="displaymath process-math" id="example-ch05-01-ex-23-9-2-1-1">
+\begin{gather*}
+\vec r(t)=\langle 2 \cos (t),  \sin (t)\rangle \Rightarrow  \vec F (\vec r(t)) = \langle 2\cos (t) +\sin (t),\cos (t) \rangle\\
+\vec r' (t) = \langle  -2\sin  (t),\cos (t)\rangle \overset{\vec n (r) = \langle y' (t), - x'(t)\rangle}{\Rightarrow} \vec n (t) = \langle \cos (t) , 2 \sin (t) \rangle\\
+\vec F (\vec r(t))\cdot \vec n (t) = (2\cos (t) +\sin (t))\cos (t) +2\cos (t) 2\sin (t) = 2\cos^2 (t) + 5\cos(t)\sin (t)\\
+\int_C \vec F \cdot \vec N \ ds = \int_0^{2\pi}  \vec F (\vec r(t))\cdot \vec n (t) \ dt =\int_0^{2\pi} 2 \cos^2 (t) +5\sin (t)\cos (t)\ dt  =\\
+2\int_0^{2\pi}  \cos^2 (t) \ dt  +5\int_0^{2\pi}  +\sin (t)\cos (t)\ dt \underset{\substack{t= 0 \Rightarrow u = 0\\ t =2\pi \Rightarrow u =0}}{\overset{\substack{u=\sin t \\ du = \cos t dt}}{=}}  2\int_0^{2\pi}  \cos^2 (t)\ dt +5\cancelto{0}{\int_0^0 u\ du} =\\
+2\left ( \cancelto{0}{\left .\frac{1}{2}\cos (t)\sin (t) \right |_0^{2\pi}} +  \frac{1}{2}\int_0^{2\pi}\cos^0 (t)\ dt\right ) = 2\cdot\frac{1}{2} \int_0^{2\pi}\ dt = 2\pi \gt 0 .\\
+\text{ Hence most of the particles are exiting the ellipse, since it is parametrized counter-clockwise.}
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.1.31.1"><a tabindex="-1" href="#example-ch05-01-ex-23-9-2" title="Copy heading and permalink for Solution 5.1.31.1" aria-label="Copy heading and permalink for Solution 5.1.31.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.1.31"><a tabindex="-1" href="#example-ch05-01-ex-23-9" title="Copy heading and permalink for Example 5.1.31" aria-label="Copy heading and permalink for Example 5.1.31">🔗</a></div>
+</article></details>
+<details id="example-ch05-01-ex-23-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.32</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="example-ch05-01-ex-23-10-1-1">Determine whether most particles, whose motion is represented by <span class="process-math">\(\vec{F}=\langle  y, x\rangle\text{,}\)</span> are entering or exiting across the ellipse <span class="process-math">\(\vec{r}(t)=\langle  \cos (t),  \sin (t)\rangle\text{,}\)</span> <span class="process-math">\(0 \leq t \leq 2 \pi\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="example-ch05-01-ex-23-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="example-ch05-01-ex-23-10-2-1">
+<div class="displaymath process-math" id="example-ch05-01-ex-23-10-2-1-1">
+\begin{gather*}
+\vec r(t)=\langle  \cos (t),  \sin (t)\rangle \Rightarrow  \vec F (\vec r(t)) = \langle \sin (t),\cos (t) \rangle\\
+\vec r' (t) = \langle  -\sin  (t),\cos (t)\rangle \overset{\vec n (r) = \langle y' (t), - x'(t)\rangle}{\Rightarrow} \vec n (t) = \langle \cos (t) ,  \sin (t) \rangle\\
+\vec F (\vec r(t))\cdot \vec n (t) = \sin (t)\cos (t) +\cos (t) \sin (t) = 2\cos(t)\sin (t)\\
+\int_C \vec F \cdot \vec N \ ds = \int_0^{2\pi}  \vec F (\vec r(t))\cdot \vec n (t) \ dt =\int_0^{2\pi} 2 \sin (t)\cos (t)\ dt   \underset{\substack{t= 0 \Rightarrow u = 0\\ t =2\pi \Rightarrow u =0}}{\overset{\substack{u=\sin t \\ du = \cos t dt}}{=}}\\
+2\cancelto{0}{\int_0^0 u\ du} =0\\
+\text{ Hence the same amount of particles are exiting and entering the circle.}
+\end{gather*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#example-ch05-01-ex-23-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.1.32.1"><a tabindex="-1" href="#example-ch05-01-ex-23-10-2" title="Copy heading and permalink for Solution 5.1.32.1" aria-label="Copy heading and permalink for Solution 5.1.32.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.1.32"><a tabindex="-1" href="#example-ch05-01-ex-23-10" title="Copy heading and permalink for Example 5.1.32" aria-label="Copy heading and permalink for Example 5.1.32">🔗</a></div>
+</article></details>
+<article class="remark remark-like" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36"><h2 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1.33</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Summary of Interpretations.</span>
+</h2>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-2">For the line integral <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{T} d s\)</span> :<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3">
+<ul class="disc" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1">
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-1">Directional interpretation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-2">
+<ol class="decimal" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-2-1">
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-2-1-1">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-2-1-1-1">If for most of the curve, the angle <span class="process-math">\(\theta\)</span> between <span class="process-math">\(\vec{F}\)</span> and <span class="process-math">\(\vec{T}\)</span> satisfies <span class="process-math">\(0 \leq \theta \lt \frac{\pi}{2}\text{,}\)</span> then we expect <span class="process-math">\(\int_{C} \vec{F} \cdot d \vec{r} \gt 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-2-1-2">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-2-1-2-1">If for most of the curve, the angle <span class="process-math">\(\theta\)</span> between <span class="process-math">\(\vec{F}\)</span> and <span class="process-math">\(\vec{T}\)</span> satisfies <span class="process-math">\(\frac{\pi}{2} \lt \theta \leq \pi\text{,}\)</span> then we expect <span class="process-math">\(\int_{C} \vec{F} \cdot d \vec{r} \lt 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-2-1-3">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-2-1-3-1">It is also possible for <span class="process-math">\(\int_{C} \vec{F} \cdot d \vec{r}=0\)</span> (for example, if <span class="process-math">\(\vec{F} \cdot \vec{T}=0\)</span> for all points on <span class="process-math">\(C\)</span> ).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-1">Work interpretation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-2">
+<ol class="decimal" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-2-1">
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-2-1-1">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-2-1-1-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot d \vec{r} \gt 0\text{,}\)</span> energy is being gained by the curve/particle system (in the form of kinetic and potential energy).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-2-1-2">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-2-1-2-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot d \vec{r} \lt 0\text{,}\)</span> energy is being lost by the curve/particle system (in the form of heat, friction, etc.).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-2-1-3">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-2-1-3-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot d \vec{r}=0\text{,}\)</span> this does not mean the vector field forces didn’t affect the system, more generally, the amount of energy gained was the same as the energy lost.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-1">Circulation Interpretation (if <span class="process-math">\(C\)</span> is simple, closed, piece-wise smooth):<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-2">
+<ol class="decimal" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-2-1">
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-2-1-1">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-2-1-1-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{T} d s \gt 0\text{,}\)</span> most of the vector field is in the direction of <span class="process-math">\(C\text{.}\)</span> Hence, most particles (whose motion is represented by <span class="process-math">\(\vec{F}\)</span> ) are moving along <span class="process-math">\(C\)</span> in the same orientation (as <span class="process-math">\(C\)</span> ).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-2-1-2">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-2-1-2-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{T} d s \lt 0\text{,}\)</span> most of the vector field is in the direction opposite of <span class="process-math">\(C\text{.}\)</span> Hence, most particles are moving along <span class="process-math">\(C\)</span> in the opposite orientation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-2-1-3">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-2-1-3-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{T} d s=0\text{,}\)</span> there is no discernible motion along <span class="process-math">\(C\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-4">For the integral <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{n} d s\text{,}\)</span> when <span class="process-math">\(C\)</span> is a simple, closed, piece-wise smooth curve enclosing a region <span class="process-math">\(R\)</span> , oriented counter-clockwise:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-5">
+<ul class="disc" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1">
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-1">Flux interpretation :<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-2">
+<ol class="decimal" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-2-1">
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-2-1-1">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-2-1-1-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{N} d s \gt 0\text{,}\)</span> most of the vector field points away from <span class="process-math">\(C\text{.}\)</span> Hence, most particles (whose motion is represented by <span class="process-math">\(\vec{F}\)</span> ) are moving from inside <span class="process-math">\(R\)</span> towards the outside.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-2-1-2">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-2-1-2-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{N} d s \lt 0\text{,}\)</span> most of the vector field points towards (the inside of) <span class="process-math">\(C\text{.}\)</span> Hence, most particles are moving from outside <span class="process-math">\(R\)</span> towards the inside.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-2-1-3">
+<div class="para" id="sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-2-1-3-1">If <span class="process-math">\(\int_{C} \vec{F} \cdot \vec{N} d s=0\text{,}\)</span> the same amount of particles (could be none) are entering and exiting the region <span class="process-math">\(R\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-5-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 5.1.33: Summary of Interpretations"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals-36" title="Copy heading and permalink for Remark 5.1.33: Summary of Interpretations" aria-label="Copy heading and permalink for Remark 5.1.33: Summary of Interpretations">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Section 5.1: Vector Fields and Line Integrals"><a tabindex="-1" href="#sec-ch05-01-VectorFieldsAndLineIntegrals" title="Copy heading and permalink for Section 5.1: Vector Fields and Line Integrals" aria-label="Copy heading and permalink for Section 5.1: Vector Fields and Line Integrals">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-05-VectorCalculus-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-ch05-02-FundamentalTheoremOfLineIntegrals.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<script src="external/mathjax-linebreak.js"></script>
+</body>
+</html>
