@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch04-09-TripleIntegralsCylindricalSpherical.ptx : converted from
+  "22. Triple Integrals (Cylindrical and Spherical) - Solutions.tex" by the
+  bbeaccess-pretext skill (2026-09-17). Fragment for xi:include into
+  ch-04-Integration.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch04-09 (lecture file 22, chapter 4) on your instruction.
+     TITLE: the .tex \chapter is "Triple Integrals" followed by a centred bold line
+     " in Cylindrical and Spherical Coordinates"; here <title>Triple Integrals</title>
+     and <subtitle>in Cylindrical and Spherical Coordinates</subtitle> (leading space
+     trimmed).
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): all ten pictures - ...1fb6fg-01.png
+     (cylindrical point), ...1fb6fg-01-1.png (three cylindrical regions),
+     ...1fb6fg-07-3.png (spherical point), Screenshot-2025-11-04-154946-1.png (three
+     spherical regions), ...1fb6fg-11.png (22.1), ...1fb6fg-05.png (22.2),
+     ...1fb6fg-14.png (22.5), ...1fb6fg-10.png (22.6), ...1fb6fg-12.png (22.7),
+     ...1fb6fg-03.png (22.8). All 3D, probably CalcPlot3D in the end.
+  3. Image names: ...-01(1) -> -01-1.png, ...-07(3) -> -07-3.png, and the .tex's
+     "Screenshot 2025-11-04 154946-1.png" (the only \includegraphics that carries its
+     extension) is Screenshot-2025-11-04-154946-1.png in assets/images. All .png.
+  4. Source caption NOT carried (the caption rule replaces it): the first figure's
+     \caption*{A point in cylindrical coordinates}. The other figures have no caption
+     in the .tex.
+  5. Example 22.7's statement ends "(from OpenStax)": read as the SOURCE OF THE
+     QUESTION, not of the picture, so its picture keeps the interactive template
+     (PENDING) rather than the plain other-book figure. Say if the picture is
+     OpenStax's too.
+  6. Merged: "Example 22.3" (the Jacobian computation) + "[Continuation of 22.3]"
+     (the absolute value) into ONE <example> with two <solution>s; the continuation's
+     repeated "Let u=rho, ..." line dropped. ptx_check therefore reports 9 examples in
+     the .tex vs 8 here. \setcounter line dropped. The three commented-out
+     continuation examples of the .tex (after 22.2, after 22.5, at the very end) are
+     kept as XML comments where they stood, as are the commented-out lines around the
+     spherical-regions picture ("%Sphere radius a center...", "%Cone", the two
+     %\includegraphics placeholders ...-07 and ...-07(1), "%Shapes easily described in
+     spherical coordinates").
+  7. Example 22.3's statement is only "Let u=rho, v=varphi, and w=theta. Then," (the
+     .tex has no question); kept as is, with the Jacobian computation in the solution.
+  8. LISTS: the two "Writing a Triple Integral" remarks end their enumerate with "The
+     iterated integral should have the form" followed by a display; the display is
+     inside that last item's paragraph. The spherical remark's first line says "in
+     cylindrical coordinates" (copy-paste in the .tex); preserved.
+  9. MATHEMATICS kept verbatim, including: the 3x3 determinant of the Jacobian
+     definition (\begin{array}{lll}) inside an <md> in align mode (\amp kept); Example
+     22.3's array{ccc} and 2x2 matrices (\amp separators, \\ row separators - ptx_check
+     flags them, false positives); the empty "\\ \\" rows dropped; the row break
+     "\\ +(-\rho\sin\varphi\sin\theta)" mid-expression kept as a row starting with
+     "+"; the TYPO "\cos^2\\varphi" in 22.3 (a double backslash before varphi, which
+     LaTeX reads as a row break followed by the letters "varphi") is reproduced as a
+     row break followed by "varphi (\sin^2 \theta + \cos^2\theta)=" - fix it in the
+     .tex if you want; the continuation's odd "\mid J\left(\rho, \varphi,
+     \theta\left)|= ... \right.\right." copied as written (MathJax may complain);
+     "\int_0^{2pi}" (22.2, missing backslash); "(r\cos\theta - )^2" (22.8, missing
+     1); "$\rho = 4 \cos\phi$, $\phi\leq ...$" with \phi where the rest says \varphi
+     (22.1); "\rho = 4" as the upper bound in 22.4 where the sphere has radius 2;
+     "$0\leq \varphi \pi$" (22.6, missing \leq); "\rho^2 \rho^2" (22.1).
+ 10. Source prose quirks preserved: "receptively" (five times, for respectively);
+     "preventing out from expanding"; "hence $\theta$ much be"; "quadrants. hence";
+     "(between $z=1/2$ and $z=1$)the lower" (no space); "Restricting the values of $r$"
+     in spherical examples; "Similarly past examples"; the quoted "ice cream cone" is
+     a <q>; "( $r, \theta, z$ )" spacing; "NOT" in capitals; "$= 0 <1$ ."; "and but
+     outside the cylinder"; "$-\infty<z<\infty$".
+ 11. Alt-text quirks kept verbatim: "A point in spherical coordinates" (no period);
+     "A point in cylindrical coordinates, rho, theta, z." (rho where r is meant); the
+     22.7 alt ends "equals 1. " with a trailing space, trimmed here.
+ 12. No \mathbf in this file. \text{ or } kept inside math.
+ 13. Typeset <description>s are the conversion's own text; review.
+ 14. Template width constants replace the .tex widths (0.4/0.9/0.27\textwidth, max
+     width=0.9/0.3/0.5/0.4\textwidth).
+ 15. Every \newpage/\vspace, the figure[H]/center wrappers, \captionsetup and \\
+     dropped.
+-->
+
+<section xml:id="sec-ch04-09-TripleIntegralsCylindricalSpherical" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Triple Integrals</title>
+  <subtitle>in Cylindrical and Spherical Coordinates</subtitle>
+
+  <p>
+    We will now discuss the last two change of coordinates we will see in
+    this class: cylindrical and spherical coordinates.
+  </p>
+
+  <note>
+    <p>
+      Any point in <m>x y z</m>-space can be expressed in the form
+      ( <m>r, \theta, z</m> ) for <m>r \geq 0</m>,
+      <m>0 \leq \theta \leq 2 \pi</m>, and <m>-\infty \lt z \lt \infty</m>
+      as shown below:
+    </p>
+  </note>
+
+  <figure xml:id="fig-ch04-09-cylindrical-point">
+    <caption>A point in cylindrical coordinates, rho, theta, z.</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_11_04_0bc814412e6d5de1fb6fg-01. -->
+    <interactive xml:id="interactive-ch04-09-cylindrical-point" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_11_04_0bc814412e6d5de1fb6fg-01.png">
+          <shortdescription>A point in cylindrical coordinates, rho, theta, z.</shortdescription>
+          <description>
+            <p>A point in cylindrical coordinates, <m>\rho</m>, <m>\theta</m>, <m>z</m>.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <note>
+    <p>
+      Cylindrical coordinates can simplify triple integrals in which the 3D
+      region of integration is easily described in these coordinates. Below
+      are a few examples of such regions:
+    </p>
+  </note>
+
+  <figure xml:id="fig-ch04-09-cylindrical-regions">
+    <caption>From left to right: A cylindrical cell, a cone, a plane.</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_11_04_0bc814412e6d5de1fb6fg-01(1). -->
+    <interactive xml:id="interactive-ch04-09-cylindrical-regions" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_11_04_0bc814412e6d5de1fb6fg-01-1.png">
+          <shortdescription>From left to right: A cylindrical cell, a cone, a plane.</shortdescription>
+          <description>
+            <p>From left to right: A cylindrical cell, a cone, a plane.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <remark>
+    <title>Formulas to Change from Cartesian to Cylindrical Coordinates</title>
+
+    <p>
+      Given a point ( <m>x, y, z</m> ) in 3-dimensional space, you can
+      write it in cylindrical coordinates by using the formulas:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p><m>r^{2}=x^{2}+y^{2}</m></p>
+        </li>
+
+        <li>
+          <p><m>\tan (\theta)=\frac{y}{x}, x \neq 0</m></p>
+        </li>
+
+        <li>
+          <p><m>z=z</m></p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Given a point ( <m>r, \theta, z</m> ) in 3-dimensional space, you can
+      write it in Cartesian coordinates by using the formulas:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p><m>x=r \cos (\theta)</m></p>
+        </li>
+
+        <li>
+          <p><m>y=r \sin (\theta)</m></p>
+        </li>
+
+        <li>
+          <p><m>z=z</m>.</p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+  <p>
+    In practice, using cylindrical coordinates translates to evaluating the
+    double integral of a triple integral using polar coordinates.
+  </p>
+
+  <remark>
+    <title>Writing a Triple Integral in Cylindrical Coordinates</title>
+
+    <p>To set up an iterated integral in cylindrical coordinates:</p>
+
+    <p>
+      <ol>
+        <li>
+          <p>Use the order <m>d z d r d \theta</m>.</p>
+        </li>
+
+        <li>
+          <p>
+            Find the bounds with respect to <m>z</m> as we did in cartesian
+            coordinates.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Project the 3 -dimensional region of integration <m>D</m> into
+            the <m>x y</m> plane to get a 2 -dimensional region <m>R</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Set up the bounds of integration for <m>r</m> and <m>\theta</m>
+            as if you were finding the area of <m>R</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The iterated integral should have the form
+            <md>
+              \int_{\alpha}^{\beta} \int_{g(\theta)}^{h(\theta)} \int_{G(r, \theta)}^{H(r, \theta)} f(r \cos (\theta), r \sin (\theta), z) r d z d r d \theta
+            </md>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </remark>
+
+  <note>
+    <title>Spherical Coordinates</title>
+
+    <p>
+      Any point in <m>x y z</m>-space can be expressed in the form
+      ( <m>\rho, \varphi, \theta</m> ) for <m>\rho \geq 0</m>,
+      <m>0 \leq \varphi \leq \pi</m>, and <m>0 \leq \theta \leq 2 \pi</m> as
+      shown below:
+    </p>
+  </note>
+
+  <figure xml:id="fig-ch04-09-spherical-point">
+    <caption>A point in spherical coordinates</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_11_04_0bc814412e6d5de1fb6fg-07(3). -->
+    <interactive xml:id="interactive-ch04-09-spherical-point" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_11_04_0bc814412e6d5de1fb6fg-07-3.png">
+          <shortdescription>A point in spherical coordinates</shortdescription>
+          <description>
+            <p>A point in spherical coordinates</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <remark>
+    <p>
+      The angle <m>\theta</m> is the same as in cylindrical coordinates
+      (rotates 0 to <m>2 \pi</m> in the <m>x y</m>-plane). The variable
+      <m>\rho</m> represents the radius of a sphere.
+    </p>
+
+    <p>
+      However, the angle <m>\varphi</m> starts at the positive
+      <m>z</m>-axis and rotates <m>\pi</m> radians ending at the negative
+      <m>z</m>-axis.
+    </p>
+  </remark>
+
+  <note>
+    <p>
+      Spherical coordinates can simplify triple integrals in which the 3D
+      region of integration is easily described in these coordinates. Below
+      are a few examples of such regions:
+    </p>
+  </note>
+
+  <!--Sphere radius a center ( $0,0, \mathrm{a}$ )\\
+  $\{(\rho, \phi, \theta) \mid \rho=2 a \cos (\phi), 0 \leq \phi \leq \pi / 2\}, a>0$\\-->
+
+  <figure xml:id="fig-ch04-09-spherical-regions">
+    <caption>From left to right: A sphere, a cone, a plane.</caption>
+
+    <!-- This interactive is PENDING, it should correspond to Screenshot 2025-11-04 154946-1.png. -->
+    <interactive xml:id="interactive-ch04-09-spherical-regions" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/Screenshot-2025-11-04-154946-1.png">
+          <shortdescription>From left to right: A sphere, a cone, a plane.</shortdescription>
+          <description>
+            <p>From left to right: A sphere, a cone, a plane.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <!--Cone\\
+  $\left\{(\rho, \phi, \theta) \mid \phi=\phi_{0}\right\} \phi_{0} \neq 0, \pi / 2, \pi$\\
+  \includegraphics[max width=0.3\textwidth, center]{2025_11_04_0bc814412e6d5de1fb6fg-07}\\
+  \includegraphics[max width=0.3\textwidth, right]{2025_11_04_0bc814412e6d5de1fb6fg-07(1)}
+
+  Shapes easily described in spherical coordinates-->
+
+  <remark>
+    <title>Formulas to Change from Cartesian to Spherical Coordinates</title>
+
+    <p>
+      Given a point ( <m>x, y, z</m> ) in 3-dimensional space, you can
+      write it in spherical coordinates by using the formulas:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p><m>\rho^{2}=x^{2}+y^{2}+z^{2}</m></p>
+        </li>
+
+        <li>
+          <p>Use trigonometry to find <m>\varphi</m> and <m>\theta</m>.</p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Given a point ( <m>\rho, \varphi, \theta</m> ) in 3-dimensional space,
+      you can write it in Cartesian coordinates by using the formulas:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p><m>x=\rho \sin (\varphi) \cos (\theta)</m></p>
+        </li>
+
+        <li>
+          <p><m>y=\rho \sin (\varphi) \sin (\theta)</m></p>
+        </li>
+
+        <li>
+          <p><m>z=\rho \cos (\varphi)</m>.</p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+  <note>
+    <p>
+      Note that in spherical coordinates you need to replace <m>z</m> as
+      well.
+    </p>
+
+    <p>
+      You could geometrically (as we have done before) find the Jacobian of
+      this change of variables. Instead, we will use the following formula.
+    </p>
+  </note>
+
+  <remark>
+    <title>Writing a Triple Integral in Spherical Coordinates</title>
+
+    <p>To set up an iterated integral in cylindrical coordinates:</p>
+
+    <p>
+      <ol>
+        <li>
+          <p>Use the order <m>d\rho d \varphi d \theta</m>.</p>
+        </li>
+
+        <li>
+          <p>Start from the origin <m>(0,0,0)</m> and radiate outwards</p>
+        </li>
+
+        <li>
+          <p>
+            The first function you encounter, preventing out from expanding
+            outwards is the lower bound for <m>\rho</m>, the second is the
+            upper bound.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Start at the positive <m>z</m>-axis and open outwards like a
+            hand-held fan
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The first function you encounter, preventing out from fanning
+            outwards is the lower bound for <m>\varphi</m>, the second is
+            the upper bound.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            For <m>\theta</m>, similar with the polar coordinates, the
+            bounds stem from the largest counter-clockwise rotation a point
+            can do within the region of integration.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The iterated integral should have the form
+            <md>
+              \int_{\alpha}^{\beta} \int_{a}^{b} \int_{\rho=g(\varphi, \theta)}^{\rho=h(\varphi, \theta)} f(\rho, \varphi, \theta) \rho^{2} \sin (\varphi) d \rho d \varphi d \theta
+            </md>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </remark>
+
+  <note>
+    <title>Evaluating a Triple Integral for Volume</title>
+
+    <p>
+      As previously the integral that represents the volume of a region is
+      calculated by the above integrals, by setting
+      <m>f(\rho, \varphi, \theta) = 1 = f(r , \theta ,  z)</m>.
+    </p>
+  </note>
+
+  <example xml:id="example-ch04-09-ex-22-1">
+    <statement>
+      <p>
+        Set up (but do not evaluate) a triple integral, in spherical
+        coordinates, of <m>f(x,y,z)= x^2+y^2+z^2</m>  over the volume of
+        the <q>ice cream cone</q> <m>D</m> bounded from above by the  sphere
+        <m>\rho = 4 \cos\phi</m>, <m>\phi\leq \frac{\pi}{2}</m> and from
+        below by the cone <m>\varphi=\frac{\pi}{6}</m> (above the
+        <m>xy</m>-plane).
+      </p>
+
+      <figure xml:id="fig-ch04-09-ex-22-1">
+        <caption>The "ice cream cone" solid D, bounded by the sphere rho equals 4 cosine of phi, with phi less or equal to pi over 2, and the cone phi equals pi over 6.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_04_0bc814412e6d5de1fb6fg-11. -->
+        <interactive xml:id="interactive-ch04-09-ex-22-1" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_11_04_0bc814412e6d5de1fb6fg-11.png">
+              <shortdescription>The "ice cream cone" solid D, bounded by the sphere rho equals 4 cosine of phi, with phi less or equal to pi over 2, and the cone phi equals pi over 6.</shortdescription>
+              <description>
+                <p>The <q>ice cream cone</q> solid <m>D</m>, bounded by the sphere <m>\rho=4\cos\varphi</m>, with <m>\varphi \leq \frac{\pi}{2}</m>, and the cone <m>\varphi=\frac{\pi}{6}</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        Using <m>\rho^{2}=x^{2}+y^{2}+z^{2}</m> the function
+        <m>f(x,y,z) =  x^2+y^2+z^2</m> transforms to
+        <m>f(\rho, \varphi , \theta )= \rho^2 </m>. The upper bound for
+        <m>\rho</m> is given as <m>\rho = 4\cos\varphi \gt 0</m> while the
+        lower bound is implied to be 0 since cones of the form
+        <m>\varphi = c </m> pass through the origin (0,0,0), and when
+        radiating away from the origin those cones do not obstruct.
+      </p>
+
+      <p>
+        Since the sphere and the cone encompass a portion of the positive
+        <m>z</m>-axis the lower bound for <m>\varphi</m> is  0, while the
+        upper bound is provided as <m>\varphi = \frac{\pi}{6}</m>. Lastly
+        there are no restrictions for <m>\theta</m> hence the bounds for
+        integration are 0 and <m>2\pi</m> receptively.
+      </p>
+
+      <p>
+        <md alignment="gather">
+          <mrow>\int_0^{2\pi}\int_0^{\frac{\pi}{6}}\int_0^{4\cos\varphi} f(\rho, \varphi , \theta) \rho^2  \sin \varphi\  d\rho d\varphi d\theta = \int_0^{2\pi}\int_0^{\frac{\pi}{6}}\int_0^{4\cos\varphi} \rho^2 \rho^2   \sin \varphi\  d\rho d\varphi d\theta =</mrow>
+          <mrow>\int_0^{2\pi}\int_0^{\frac{\pi}{6}}\int_0^{4\cos\varphi}  \rho^4  \sin \varphi\  d\rho d\varphi d\theta</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch04-09-ex-22-2">
+    <statement>
+      <p>
+        A solid region <m>D</m> lies inside the paraboloid
+        <m>4-x^{2}-y^{2}-z=0</m>, and above the plane <m>z=3</m>, as shown
+        below. Express the triple integral <m>\iiint_{D} 2z(x^2+y^2) d V</m>
+        in cylindrical coordinates, then evaluate it.
+      </p>
+
+      <figure xml:id="fig-ch04-09-ex-22-2">
+        <caption>The paraboloid 4 minus x squared minus y squared minus z equals 0, and the plane z equals 3.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_04_0bc814412e6d5de1fb6fg-05. -->
+        <interactive xml:id="interactive-ch04-09-ex-22-2" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_11_04_0bc814412e6d5de1fb6fg-05.png">
+              <shortdescription>The paraboloid 4 minus x squared minus y squared minus z equals 0, and the plane z equals 3.</shortdescription>
+              <description>
+                <p>The paraboloid <m>4-x^2-y^2-z=0</m>, and the plane <m>z=3</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        Using <m>r^{2}=x^{2}+y^{2}</m> the function
+        <m>f(x,y,z) =  2z(x^2+y^2)</m> transforms to
+        <m>f(r, \theta , z )=2 zr^2 </m>. The paraboloid
+        <m>z=4-x^2-y^2 = 4-(x^2+y^2)= 4-r^2</m> and the plane <m>z=3</m>
+        intersect when
+        <m>4-r^2 = 3 \Rightarrow r^2 = 1 \Rightarrow r=1</m>. Since for
+        <m>r=0</m> the <m>z</m> coordinate of the paraboloid is
+        <m>z=4-0=4 \gt 3</m>, the upper bound for z is given by the
+        paraboloid and the lower by the plane.
+      </p>
+
+      <p>
+        The finite region for <m>r</m> of the above intersection is given
+        by <m>0\leq r \leq 1</m>. Lastly there are no restrictions for
+        <m>\theta</m> hence the bounds for integration are 0 and
+        <m>2\pi</m> receptively.
+      </p>
+
+      <p>
+        <md alignment="gather">
+          <mrow>\int_0^{2\pi}\int_0^{1}\int_3^{4-r^2} (2zr^2)r\  dz dr d\theta = \int_0^{2\pi}\int_0^{1}\int_3^{4-r^2} 2zr^3 \ dz dr d\theta = \int_0^{2\pi}\int_0^{1} \left . r^3z^2 \right |_3^{4-r^2} dr d\theta =</mrow>
+          <mrow>\int_0^{2\pi}\int_0^{1} r^3(4-r^2)^2- 9r^2\ dr d\theta =  \int_0^{2\pi}\int_0^{1} 16r^3-8r^5+r^7 - 9r ^3 \ dr d\theta  =</mrow>
+          <mrow>\int_0^{2\pi}\left . 4r^4-\frac{4}{3}r^6+\frac{1}{8} r^8 - \frac{9}{4} r ^4 \right |_0^1 d\theta = \int_0^{2\pi} 4-\frac{4}{3}+\frac{1}{8}  - \frac{9}{4} d\theta  = \int_0^{2pi} \frac{13}{24} d\theta = \left . \frac{13}{24}\theta \right |_0^{2\pi} =\frac{13}{12}\pi</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+  <!--\setcounter{tcb@cnt@example}{1}
+  \begin{example}[Continuation of 22.2]
+  A solid region $D$ lies inside the paraboloid $4-x^{2}-y^{2}-z=0$, and above the plane $z=3$, as shown below. Express the triple integral $\iiint_{D} 2z(x^2+y^2) d V$ in cylindrical coordinates, then evaluate it.\\
+   \vspace{0.5cm}\end{example}-->
+
+  <definition>
+    <title>Jacobian in Three Dimensions and Integrals</title>
+
+    <statement>
+      <p>
+        Let <m>T: x=g(u, v, w), y=h(u, v, w)</m>, and <m>z=q(u, v, w)</m> be
+        a transformation that maps a closed and bounded region <m>S</m> in
+        <m>u v w</m>-space to a region <m>D</m> in <m>x y z</m>-space.
+        Assume <m>T</m> is one-to-one on the interior of <m>S</m> and that
+        <m>g, h</m>, and <m>q</m> have continuous first partial derivatives
+        there. If <m>f</m> is continuous on <m>D</m>, then
+        <md>
+          \iiint_{D} f(x, y, z) d V=\iiint_{S} f(g(u, v, w), h(u, v, w), q(u, v, w))|J(u, v, w)| d V
+        </md>
+        where
+        <md>
+          <mrow>J(u, v, w) \amp =\frac{\partial(x, y, z)}{\partial(u, v, w)}=\left|\begin{array}{lll} x_{u} \amp x_{v} \amp x_{w} \\ y_{u} \amp y_{v} \amp y_{w} \\ z_{u} \amp z_{v} \amp z_{w} \end{array}\right|</mrow>
+          <mrow>\amp =x_{u}\left(y_{v} z_{w}-y_{w} z_{v}\right)-x_{v}\left(y_{u} z_{w}-y_{w} z_{u}\right)+x_{w}\left(y_{u} z_{v}-y_{v} z_{u}\right)</mrow>
+          <mrow>\amp =z_{u}\left(x_{v} y_{w}-x_{w} y_{v}\right)-z_{v}\left(x_{u} y_{w}-x_{w} y_{u}\right)+z_{w}\left(x_{u} y_{v}-x_{v} y_{u}\right)</mrow>
+        </md>
+        is the Jacobian of the transformation <m>T</m> which measures how
+        volume around a point ( <m>x, y, z</m> ) change as we move to
+        <m>u v w</m>-space.
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch04-09-ex-22-3">
+    <statement>
+      <p>Let <m>u=\rho, v=\varphi</m>, and <m>w=\theta</m>. Then,</p>
+    </statement>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>J(\rho, \varphi, \theta)  =\left|\begin{array}{ccc} \sin (\varphi) \cos (\theta) \amp \rho \cos (\varphi) \cos (\theta) \amp -\rho \sin (\varphi) \sin (\theta)  \\ \sin (\varphi) \sin (\theta) \amp \rho\cos (\varphi) \sin (\theta) \amp \rho \sin (\varphi) \cos (\theta)  \\ \cos (\varphi) \amp -\rho \sin (\varphi) \amp 0 \end{array}\right| =</mrow>
+          <mrow>\sin\varphi\cos\theta \left | \begin{matrix} \rho\cos\varphi\sin\theta \amp \rho\sin\varphi\cos\theta  \\ -\rho\sin\varphi \amp 0 \end{matrix} \right | - \rho\cos\varphi\cos\theta  \left | \begin{matrix} \sin\varphi\sin\theta \amp \rho\sin\varphi\cos\theta\\ \cos\varphi \amp 0 \end{matrix} \right |</mrow>
+          <mrow>+(-\rho\sin\varphi\sin\theta) \left | \begin{matrix} \sin\varphi\sin\theta \amp \rho\cos\varphi\sin\theta  \\ \cos\varphi \amp -\rho\sin\varphi \end{matrix} \right | =</mrow>
+          <mrow>\rho^2\sin^3\varphi\cos^2\theta +\rho^2\cos^2\varphi\sin^2\theta\sin\varphi +(-\rho\sin\varphi\sin\theta)\left ( -\rho\sin^2\varphi\sin\theta -\rho\cos^2\varphi\sin\theta \right)  =</mrow>
+          <mrow>\rho^2\sin^3\varphi\cos^2\theta +\rho^2\cos^2\varphi\sin^2\theta\sin\varphi +\rho^2\sin^3\varphi\sin^2\theta+ \rho^2\cos^2\varphi\sin\varphi\cos^2\theta  =</mrow>
+          <mrow>\rho^2\sin^3\varphi (\cos^2\theta +\sin^2\theta)+\rho^2\sin\varphi\cos^2</mrow>
+          <mrow>varphi (\sin^2 \theta + \cos^2\theta)=</mrow>
+          <mrow>\rho^2\sin\varphi (\sin^2\varphi +\cos^2\varphi)= \rho^2\sin\varphi</mrow>
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Since <m>0 \leq \varphi \leq \pi, \sin (\varphi) \geq 0</m>. It
+        follows that
+        <md>
+          \mid J\left(\rho, \varphi, \theta\left)|=\left|\rho^{2} \sin (\varphi)\right|=\rho^{2} \sin (\varphi) \right.\right.
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch04-09-ex-22-4">
+    <statement>
+      <p>
+        Set up (but do not evaluate) a triple integral that gives the
+        volume of the <q>ice cream cone</q> <m>D</m> below the  sphere
+        <m>x^2+y^2+z^2=4</m>, and above the cone
+        <m>z=\sqrt 3 \sqrt{x^2+y^2}</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Using <m>\rho^{2}=x^{2}+y^{2}+z^{2}</m> the sphere
+        <m>x^2+y^2+z^2=4</m> transforms to
+        <m>\rho^2 =4 \Rightarrow \rho  =2</m> (Restricting the values of
+        <m>r</m> to be non-negative). Using <m>z=\rho \cos\varphi</m>,
+        <m>x=\rho\sin\varphi\cos\theta</m> and
+        <m>y=\rho\sin\varphi\sin\theta</m> the cone transforms to
+        <m>\rho \cos\varphi = \sqrt 3 \sqrt{ \rho^2\sin^2\varphi\cos^2\theta + \rho^2\sin^2\varphi\sin^2\theta  } =  \sqrt 3\sqrt{ \rho^2\sin^2\varphi(\cos^2\theta + \sin^2\theta ) } = \sqrt 3\sqrt{ \rho^2\sin^2\varphi } =\sqrt 3\rho\sin\varphi </m>
+        since <m>\sin\varphi \geq 0 </m> for <m>0\leq \varphi \leq \pi</m>.
+        This implies that for <m>\rho\not = 0</m>,
+        <m>\tan \varphi = \frac{\sqrt 3}{3}\Rightarrow \varphi= \frac{\pi}{6}</m>
+        (The value <m>\varphi = \frac{7\pi}{6}</m> is disregarded since we
+        need <m>0\leq \varphi \leq \pi</m>).
+      </p>
+
+      <p>
+        The upper bound for <m>\rho</m> is given as <m>\rho = 4</m> while
+        the lower bound is implied to be 0 since cones of the form
+        <m>\varphi = c </m> pass through the origin (0,0,0), and when
+        radiating away from the origin those cones do not obstruct.
+      </p>
+
+      <p>
+        Since the sphere and the cone encompass a portion of the positive
+        <m>z</m>-axis (between <m>z=0</m> and <m>z=2</m>) the lower bound
+        for <m>\varphi</m> is  0, while the upper bound is provided as
+        <m>\varphi = \frac{\pi}{6}</m>. Lastly there are no restrictions for
+        <m>\theta</m> hence the bounds for integration are 0 and
+        <m>2\pi</m> receptively.
+      </p>
+
+      <p>
+        <md>
+          \int_0^{2\pi}\int_0^{\frac{\pi}{6}}\int_0^{2} \rho^2  \sin \varphi\  d\rho d\varphi d\theta
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch04-09-ex-22-5">
+    <statement>
+      <p>
+        Set up (but do not evaluate) a triple integral in spherical
+        coordinates that gives the volume inside the ball <m>\rho \leq 1</m>
+        and above the plane <m>z=1/2</m> (pictured below).
+      </p>
+
+      <figure xml:id="fig-ch04-09-ex-22-5">
+        <caption>The ball of radius 1 centred at the origin, and two planes z equals 0 and z equals one half.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_04_0bc814412e6d5de1fb6fg-14. -->
+        <interactive xml:id="interactive-ch04-09-ex-22-5" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_11_04_0bc814412e6d5de1fb6fg-14.png">
+              <shortdescription>The ball of radius 1 centred at the origin, and two planes z equals 0 and z equals one half.</shortdescription>
+              <description>
+                <p>The ball of radius 1 centred at the origin, and two planes <m>z=0</m> and <m>z=\frac{1}{2}</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        Using <m>\rho^{2}=x^{2}+y^{2}+z^{2}</m> the sphere
+        <m>x^2+y^2+z^2\leq 1</m> transforms to <m>\rho\leq 1 </m>
+        (Restricting the values of <m>r</m> to be non-negative). Using
+        <m>z=\rho \cos\varphi</m>, the plane transforms to
+        <m>\rho \cos\varphi = \frac{1}{2}</m>. To find the intersection of
+        the two surfaces:
+        <md>
+          \left . \begin{matrix} \rho \cos \varphi \amp = \amp \frac{1}{2} \\ \rho \amp = \amp 1 \end{matrix} \right \} \Rightarrow \cos\varphi = \frac{1}{2} \Rightarrow \varphi = \frac{\pi}{3}
+        </md>.
+      </p>
+
+      <p>
+        Since the sphere and the cone encompass a portion of the positive
+        <m>z</m>-axis (between <m>z=1/2</m> and <m>z=1</m>)the lower bound
+        for <m>\varphi</m> is  0, while the upper bound is provided as
+        <m>\varphi = \frac{\pi}{3}</m>. As far as <m>\rho</m> is concerned
+        the upper bound is 1, the lower bound is implied by the equation
+        <m>\rho\cos\varphi = \frac{1}{2}</m> to be
+        <m>\rho = \frac{1}{2}\sec \varphi</m>. Lastly there are no
+        restrictions for <m>\theta</m> hence the bounds for integration are
+        0 and <m>2\pi</m> receptively.
+      </p>
+
+      <p>
+        <md>
+          \int_0^{2\pi}\int_0^{\frac{\pi}{3}}\int_{\frac{1}{2}\sec\varphi}^{1} \rho^2   \sin \varphi\ d\rho d\varphi d\theta
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <!--\setcounter{tcb@cnt@example}{4}
+  \begin{example}[Continuation of 22.1]
+  A solid region $D$ lies inside the paraboloid $4-x^{2}-y^{2}-z=0$, and above the plane $z=3$, as shown below. Express the triple integral $\iiint_{D} zd V$ in cylindrical coordinates, then evaluate it.\\
+   \vspace{0.5cm}\end{example}-->
+
+  <example xml:id="example-ch04-09-ex-22-6">
+    <statement>
+      <p>
+        Find the volume of the sphere <m>x^{2}+y^{2}+z^{2}=a^{2}, a \gt 0</m>.
+      </p>
+
+      <figure xml:id="fig-ch04-09-ex-22-6">
+        <caption>A sphere of radius a, where a is greater than 0, centred at the origin.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_04_0bc814412e6d5de1fb6fg-10. -->
+        <interactive xml:id="interactive-ch04-09-ex-22-6" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_11_04_0bc814412e6d5de1fb6fg-10.png">
+              <shortdescription>A sphere of radius a, where a is greater than 0, centred at the origin.</shortdescription>
+              <description>
+                <p>A sphere of radius <m>a</m>, where <m>a \gt 0</m>, centred at the origin.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        Using <m>\rho^{2}=x^{2}+y^{2}+z^{2}</m> the sphere
+        <m>x^2+y^2+z^2=a^2</m> transforms to
+        <m>\rho^2 =a^2 \Rightarrow \rho  =a</m> (Restricting the values of
+        <m>r</m> to be non-negative). There are no restriction on
+        <m>\varphi</m> and <m>\theta</m>, hence their respective range is
+        implied to be <m>0\leq \varphi \pi</m> and
+        <m>0\leq \theta\leq 2\pi</m>.
+      </p>
+
+      <p>
+        <md alignment="gather">
+          <mrow>\int_0^{2\pi}\int_0^{\pi}\int_{0}^{a} \rho^2 \sin \varphi \  d\rho d\varphi d\theta =  \int_0^{2\pi}\int_0^{\pi}\left. \frac{\rho^3}{3} \sin \varphi \right |_{0}^{a} d\varphi d\theta= \int_0^{2\pi}\int_0^{\pi} \frac{a^3}{3} \sin \varphi\ d\varphi d\theta =</mrow>
+          <mrow>\int_0^{2\pi}\left . -\frac{a^3}{3} \cos \varphi \right |_0^{\pi}  d\theta =  \int_0^{2\pi}  -\frac{a^3}{3} \cos \pi +\frac{a^3}{3} \cos 0\  d\theta =  \int_0^{2\pi}  \frac{2a^3}{3}  d\theta = \left .   \frac{2a^3}{3} \theta \right |_0^{2\pi} = \frac{4\pi a^3}{3}</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch04-09-ex-22-7">
+    <statement>
+      <p>
+        Set up (but do not evaluate) a triple integral in spherical
+        coordinates that gives the volume inside the ball <m>\rho \leq 2</m>
+        and but outside the cylinder <m>x^2+y^2=1</m> (from OpenStax).
+      </p>
+
+      <figure xml:id="fig-ch04-09-ex-22-7">
+        <caption>The ball rho less or equal to 2 and the cylinder x squared plus y squared equals 1.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_04_0bc814412e6d5de1fb6fg-12. -->
+        <interactive xml:id="interactive-ch04-09-ex-22-7" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_11_04_0bc814412e6d5de1fb6fg-12.png">
+              <shortdescription>The ball rho less or equal to 2 and the cylinder x squared plus y squared equals 1.</shortdescription>
+              <description>
+                <p>The ball <m>\rho \leq 2</m> and the cylinder <m>x^2+y^2=1</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        Using <m>x=\rho\sin\varphi\cos\theta</m> and
+        <m>y=\rho\sin\varphi\sin\theta</m>, the cylinder <m>x^2+y^2=1</m>
+        transforms to
+        <m>\rho^2 \sin^2\varphi\cos^2\theta + \rho^2 \sin^2\varphi\sin^2\theta = 1 \Rightarrow \rho^2 \sin^2\varphi (\cos^2\theta +\sin^2\theta )=1 \Rightarrow \rho^2 \sin^2\varphi = 1 \Rightarrow</m>
+        <m>\rho \sin\varphi = 1</m>, since we restrict <m>\rho</m> to have
+        non-negative values and <m>\varphi</m> to be between <m>0</m> and
+        <m>\pi</m>. To find the intersection of the two surfaces:
+        <md>
+          \left . \begin{matrix} \rho \sin\varphi \amp = \amp 1 \\ \rho \amp = \amp 2 \end{matrix} \right \} \Rightarrow \sin\varphi = \frac{1}{2} \Rightarrow \varphi = \frac{\pi}{6} \text{ or } \frac{5\pi}{6}
+        </md>.
+        To  investigate whether or not one needs to take into account the
+        values of <m>\varphi</m> from <m>0</m> to <m>\frac{\pi}{6}</m>, and
+        from <m>\frac{5\pi}{6}</m> to <m>\pi</m>, notice that the
+        <m>z</m>-axis (<m>\varphi = 0</m> or <m>\varphi = \pi</m>) lie
+        inside NOT outside the cylinder since any point of the form
+        <m>P(0,0,a)</m> has <m>x_P^2+y_P^2 = 0+0 = 0 \lt 1</m> . Hence, the
+        bounds for <m>\varphi</m> are <m>\frac{\pi}{6}</m> and
+        <m>\frac{5\pi}{6}</m>. As far as <m>\rho</m> is concerned the upper
+        bound is 2, the lower bound is implied by the equation
+        <m>\rho\sin\varphi = 1</m> to be <m>\csc \varphi</m>. Lastly there
+        are no restrictions for <m>\theta</m> hence the bounds for
+        integration are 0 and <m>2\pi</m> receptively.
+        <md>
+          \int_0^{2\pi}\int_{\frac{\pi}{6}}^{\frac{5\pi}{6}}\int_{\csc\varphi}^{2} \rho^2   \sin \varphi\ d\rho d\varphi d\theta
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch04-09-ex-22-8">
+    <statement>
+      <p>
+        Set up (but do not evaluate) a triple integral using cylindrical
+        coordinates that gives the 4D net volume bounded by a function
+        <m>f(r, \theta, z)</m> and <m>x y z</m>-space, on a region <m>D</m>
+        bounded below by the plane <m>z=0</m>, laterally by the circular
+        cylinder <m>(x-1)^{2}+y^{2}=1</m>, and above by the paraboloid
+        <m>z=4-x^{2}-y^{2}</m>.
+      </p>
+
+      <figure xml:id="fig-ch04-09-ex-22-8">
+        <caption>The volume bounded below by the plane z equals 0, laterally by the circular cylinder, x minus 1, squared, plus y squared equals 1, and above by the paraboloid z equals 4 minus x squared minus y squared.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_04_0bc814412e6d5de1fb6fg-03. -->
+        <interactive xml:id="interactive-ch04-09-ex-22-8" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_11_04_0bc814412e6d5de1fb6fg-03.png">
+              <shortdescription>The volume bounded below by the plane z equals 0, laterally by the circular cylinder, x minus 1, squared, plus y squared equals 1, and above by the paraboloid z equals 4 minus x squared minus y squared.</shortdescription>
+              <description>
+                <p>The volume bounded below by the plane <m>z=0</m>, laterally by the circular cylinder <m>(x-1)^2+y^2=1</m>, and above by the paraboloid <m>z=4-x^2-y^2</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        Using <m>r^{2}=x^{2}+y^{2}</m> the paraboloid
+        <m>z= 4-(x^2+y^2)</m> transforms to <m>z=4-r^2 </m>. For the
+        cylinder <m>(x-1)^{2}+y^{2}=1</m>, notice that it lies above the
+        first and forth quadrants. hence <m>\theta</m> much be on a
+        sub-interval of <m>(-\frac{\pi}{2},\frac{\pi}{2})</m>. Utilizing
+        <m>x=r\cos\theta</m> and <m>y=r\sin\theta</m>, one has
+        <md alignment="gather">
+          <mrow>(x-1)^2+y^2= 1 \Rightarrow (r\cos\theta - )^2+r^2\sin^2\theta = 1 \Rightarrow r^2\cos^2\theta -2r\cos\theta +1 +r^2\sin^2\theta = 1 \Rightarrow</mrow>
+          <mrow>r^2(\cos^2\theta +\sin^2\theta )-2r\cos\theta = 0 \Rightarrow r^2-2r\cos\theta = 0 \Rightarrow r(r-2\cos\theta) = 0\Rightarrow r= 0 \text{ or } r= 2\cos\theta</mrow>
+        </md>
+        For the range of <m>\theta</m> mentioned above,
+        <m>r=2\cos\theta \geq 0</m> and hence one has the lower and upper
+        bound for <m>r</m> as <m>0</m> and <m>2\cos\theta</m> respectively.
+        Lastly, to verify that the <m>\theta</m> ranges over
+        <m>(-\frac{\pi}{2},\frac{\pi}{2})</m> and not a subinterval, observe
+        that the second coordinate of the points of this circle <m>y_c</m>
+        satisfies <m>y_c = r \sin\theta = 2\cos\theta\sin\theta</m>. In this
+        expression for <m>\theta = -\frac{\pi}{2}</m> the coordinate is 0,
+        in between <m>-\frac{\pi}{2}</m> and <m>0</m> is negative, between
+        <m>0</m> and <m>\frac{\pi}{2}</m> is positive and at
+        <m>\theta = \frac{\pi}{2}</m> the coordinate is 0 again. Hence we
+        traverse the circle exactly once over this interval of
+        <m>\theta</m>.
+      </p>
+
+      <p>
+        (A more rigorous argument will involve to suppose that there are 2
+        value of <m>\theta</m> in this interval, say <m>\theta_1</m> and
+        <m>\theta_2</m>, for which the <m>x</m> and <m>y</m> are fixed and
+        arrive to a contradiction, but this previous argument is adequate
+        for the purpose of the course in the case that we cannot draw a
+        graph).
+        <md>
+          \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\int_0^{2\cos\theta}\int_0^{4-r^2} r\  dz dr d\theta
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <!--\setcounter{tcb@cnt@example}{7}
+  \begin{example}[Continuation of 22.1]
+   Set up (but do not evaluate) a triple integral using cylindrical coordinates that gives the 4D net volume bounded by a function $f(r, \theta, z)$ and $x y z$-space, on a region $D$ bounded below by the plane $z=0$, laterally by the circular cylinder $(x-1)^{2}+y^{2}=1$, and above by the paraboloid $z=4-x^{2}-y^{2}$.\vspace{0.5cm}\end{example}-->
+
+</section>

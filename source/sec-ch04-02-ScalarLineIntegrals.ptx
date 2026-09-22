@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch04-02-ScalarLineIntegrals.ptx : converted from
+  "15. Scalar Line Integrals - Solutions.tex" by the bbeaccess-pretext skill
+  (2026-09-17). Fragment for xi:include into ch-04-Integration.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch04-02 (lecture file 15, chapter 4) on your instruction.
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): ...1266g-1.png (Example 15.1, 3D),
+     Area-under-a-curve-_-Desmos_000366/367/368.png (the three rectangle pictures,
+     Desmos screenshots), ...1266g-5.png (Example 15.2, 3D), ...1266g-7.png (Example
+     15.3, 3D).
+  3. Image names: "Area under a curve _ Desmos_000366" etc. in the .tex are
+     Area-under-a-curve-_-Desmos_000366.png etc. in assets/images (spaces became
+     hyphens). ...1266g-3 is a .jpg on disk; the rest are .png.
+  4. Other-book image, plain captioned figure with no interactive:
+     fig-ch04-02-partitioned-curve (...1266g-3.jpg), caption "Openstax Calculus 3,
+     Section 6.2" = the .tex \caption verbatim (sec-ch02-02/sec-ch03-03 wrote "From
+     OpenStax, Calculus Volume 3, ..." for a differently worded .tex caption; unify if
+     you like). The sentence after it, "The curve r(t) (in blue) partitioned into n
+     pieces ... (from OpenStax Vol 3)", is live prose and stays a <p>.
+  5. The CalcPlot3D links in the .tex are inside commented-out \caption* lines under
+     the subfigures (Example 6.2 residue). Not live, not used; ptx_check reports them
+     as unmatched. Expected.
+  6. The three rectangle pictures (three 0.3\textwidth subfigures, the third after a
+     stray commented line, one \caption) are one outer figure, caption = the .tex
+     \caption verbatim ("The more rectangles we use, the better the approximation"),
+     holding one <sidebyside widths="30% 30% 30%"> as in sec-ch02-02's Example 6.2;
+     per-panel <instructions> commented out, one <p> after the figure with a
+     left / middle / right link each. If the PDF wraps the third picture to a second
+     row, switch to an <sbsgroup> with two rows as in sec-ch04-01.
+  7. The three tagged equations of the "Arc Length as a Function" remark
+     (\tag{1}, \tag{2}, \tag{3}, the third with \label{eq1}) are <men>s (PreTeXt
+     numbers them itself, so the hand tags (1)-(3) are dropped) and the prose
+     "Equation \ref{eq1}" is "Equation <xref ref="men-ch04-02-arc-length-differential"/>".
+     Equation (2) writes |r'(t)| without \mathbf at the very end; kept as plain r.
+  8. Example 15.1 has no solution box (statement + picture only). The legends typed
+     under the pictures of Examples 15.2 and 15.3 ("Net area bounded by f(x,y) and
+     the xy-plane, restricted to r(t)") are kept as a <p> after each figure inside
+     the statement.
+  9. The gather* blocks of Examples 15.2 and 15.3 end their rows with commas/periods
+     and Example 15.2's has two empty rows and a row ending in "dt ="; clause
+     punctuation moved to right after </md>, empty rows dropped, other rows kept one
+     <mrow> each. The "Evaluating Line Integrals" \begin{aligned} is an <md> (align
+     mode) with \amp kept.
+ 10. Cross-references: "In Example 15.2 we see" -> <xref>; "as in example 15.3",
+     "as in Example 15.3", "found in Example 15.3" -> <xref>s (word dropped).
+     Relative references left as prose: "Below you can see" (15.1), "From our work
+     in the first remark", "as we saw in the picture above".
+ 11. \mathbf{r}, \mathbf{r}^{\prime}, \mathbf{r}' to \vec{...}. Everything else
+     byte-for-byte.
+ 12. Typeset <description>s are the conversion's own text; review.
+ 13. Template width constants replace the .tex widths (max width=\textwidth,
+     subfigure 0.3\textwidth, max width=0.5/0.3\textwidth).
+ 14. Source quirks preserved: "$p(x), \int_{a}^{b} p(x) d x$" with the comma inside
+     the math; "$a<t \leq b$"; "the $k$-th piece of the $\mathbf{r}(t)$"; the
+     repeated \captionsetup line after \chapter (dropped); "doesn't cross/intersect
+     itself".
+ 15. Every \newpage/\vspace/\hspace, the figure[H]/center/subfigure wrappers,
+     \captionsetup and \\ dropped.
+-->
+
+<section xml:id="sec-ch04-02-ScalarLineIntegrals" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Scalar Line Integrals</title>
+
+  <note>
+    <p>
+      As we saw in Calculus I, given an integrable function
+      <m>p(x), \int_{a}^{b} p(x) d x</m> calculates the net area bounded by
+      <m>p(x)</m> and the <m>x</m>-axis on <m>[a, b]</m>.
+    </p>
+
+    <p>
+      In this section, we will find a way to find the net area bounded by a
+      surface <m>f(x, y)</m> and the <m>x y</m>-plane, restricted to a curve
+      <m>\vec{r}(t)</m> in its domain.
+    </p>
+  </note>
+
+  <example xml:id="example-ch04-02-ex-15-1">
+    <statement>
+      <p>
+        Below you can see the net area (in light green) bounded by the
+        surface <m>f(x, y)=y^2\cos x</m> (in purple), restricted to the
+        curve <m>y=\sqrt{1-x^{2}}-2</m> (in blue).
+      </p>
+
+      <figure xml:id="fig-ch04-02-ex-15-1">
+        <caption>A curve C in xyz-space with a scalar function f(x,y,z) evaluated along it, illustrating the scalar line integral.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_09_748feeae06a4ec211266g-1. -->
+        <interactive xml:id="interactive-ch04-02-ex-15-1" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_09_748feeae06a4ec211266g-1.png">
+              <shortdescription>A curve C in xyz-space with a scalar function f(x,y,z) evaluated along it, illustrating the scalar line integral.</shortdescription>
+              <description>
+                <p>A curve <m>C</m> in <m>xyz</m>-space with a scalar function <m>f(x,y,z)</m> evaluated along it, illustrating the scalar line integral.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+  </example>
+
+  <note>
+    <p>
+      You can interpret this as finding the net area of a wall with height
+      given by <m>f(x, y)</m>.
+    </p>
+  </note>
+
+  <remark>
+    <title>Arc Length as a Function</title>
+
+    <p>
+      Suppose you have an integrable curve
+      <m>\vec{r}(t)=\langle f(t), g(t)\rangle</m> on <m>[a, b]</m> (that is
+      traversed only once). For any <m>a \lt t \leq b</m>, we can calculate
+      the arc length of the curve on <m>[a, t]</m> using the formula
+      <men xml:id="men-ch04-02-arc-length-function">
+        s(t)=\int_{a}^{t}\left|\vec{r}^{\prime}(\tau)\right| d \tau
+      </men>
+    </p>
+
+    <p>
+      Moreover, by the Fundamental Theorem of Calculus, we have that
+      <men xml:id="men-ch04-02-arc-length-derivative">
+        s^{\prime}(t)=\frac{d s}{d t}=\frac{d}{d t}\left(\int_{a}^{t}\left|\vec{r}^{\prime}(\tau)\right| d \tau\right)=\left|r^{\prime}(t)\right|
+      </men>.
+    </p>
+
+    <p>
+      Equivalently,
+      <men xml:id="men-ch04-02-arc-length-differential">
+        d s=\left|\vec{r}^{\prime}(t)\right| d t
+      </men>.
+    </p>
+  </remark>
+
+  <p>
+    Equation <xref ref="men-ch04-02-arc-length-differential"/> is what we
+    call the arc length differential.
+  </p>
+
+  <p>
+    Now, we are ready to find the net area bounded by <m>f(x, y)</m> and
+    the <m>x y</m>-plane restricted to the curve <m>\vec{r}(t)</m>.
+  </p>
+
+  <p>
+    We will do the same thing we did in Calculus I: we will find the net
+    area by adding net areas of rectangles and taking a limit at the end.
+  </p>
+
+  <figure xml:id="fig-ch04-02-rectangles">
+    <caption>The more rectangles we use, the better the approximation</caption>
+
+    <sidebyside widths="30% 30% 30%" margins="auto" valign="middle">
+      <figure xml:id="fig-ch04-02-rectangles-a">
+        <caption>The net area bounded by f on R, approximated using 8 rectangles.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to Area under a curve _ Desmos_000366. -->
+        <interactive xml:id="interactive-ch04-02-rectangles-a" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/Area-under-a-curve-_-Desmos_000366.png">
+              <shortdescription>The net area bounded by f on R, approximated using 8 rectangles.</shortdescription>
+              <description>
+                <p>The net area bounded by <m>f</m> on <m>R</m>, approximated using 8 rectangles.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch04-02-rectangles-b">
+        <caption>The net area bounded by f on R, approximated using 16 rectangles.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to Area under a curve _ Desmos_000367. -->
+        <interactive xml:id="interactive-ch04-02-rectangles-b" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/Area-under-a-curve-_-Desmos_000367.png">
+              <shortdescription>The net area bounded by f on R, approximated using 16 rectangles.</shortdescription>
+              <description>
+                <p>The net area bounded by <m>f</m> on <m>R</m>, approximated using 16 rectangles.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch04-02-rectangles-c">
+        <caption>The net area bounded by f on R, approximated using 32 rectangles.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to Area under a curve _ Desmos_000368. -->
+        <interactive xml:id="interactive-ch04-02-rectangles-c" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/Area-under-a-curve-_-Desmos_000368.png">
+              <shortdescription>The net area bounded by f on R, approximated using 32 rectangles.</shortdescription>
+              <description>
+                <p>The net area bounded by <m>f</m> on <m>R</m>, approximated using 32 rectangles.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </sidebyside>
+  </figure>
+  <p>
+    The graphs above show only the plots; you can drag and zoom them. To see the expressions behind them, or to save a copy and create your own version of the graphs, open them in a new page from here:
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>,
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the middle graph</url>,
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+  </p>
+
+  <p>
+    The first thing we do is partition the curve <m>\vec{r}(t)</m> into
+    <m>n</m> pieces. Each piece will correspond to the base of a rectangle.
+  </p>
+
+  <figure xml:id="fig-ch04-02-partitioned-curve">
+    <caption>Openstax Calculus 3, Section 6.2</caption>
+
+    <image source="/images/2025_10_09_748feeae06a4ec211266g-3.jpg" width="50%">
+      <shortdescription>A curve segment partitioned into smaller pieces.</shortdescription>
+      <description>
+        <p>A curve segment partitioned into smaller pieces.</p>
+      </description>
+    </image>
+  </figure>
+
+  <p>
+    The curve <m>\vec{r}(t)</m> (in blue) partitioned into <m>n</m> pieces
+    of length <m>\Delta s_{i}</m> (from OpenStax Vol 3)
+  </p>
+
+  <p>
+    Each rectangle has base length <m>\Delta s_{k}</m> and height
+    <m>f\left(x\left(t_{k}\right), y\left(t_{k}\right)\right)</m>, where
+    <m>\left(x\left(t_{k}\right), y\left(t_{k}\right)\right)</m> is a point
+    on the <m>k</m>-th piece of the <m>\vec{r}(t)</m>.
+  </p>
+
+  <p>
+    Hence, an approximation for the net area is given by
+    <md>
+      \sum_{k=1}^{n} f\left(x\left(t_{k}\right), y\left(t_{k}\right)\right) \Delta s_{k}
+    </md>.
+  </p>
+
+  <p>
+    Finally, as we saw in the picture above (and know from Calculus I), if
+    we let <m>n</m> approach infinity (the number of rectangles), the
+    approximation will improve. Hence, if
+    <md>
+      \lim _{n \rightarrow \infty} \sum_{k=1}^{n} f\left(x\left(t_{k}\right), y\left(t_{k}\right)\right) \Delta s_{k}
+    </md>
+    exists, this is how we define the net area and we call this infinite
+    sum a line integral.
+  </p>
+
+  <definition>
+    <title>Scalar Line Integral</title>
+
+    <statement>
+      <p>
+        Suppose you have a surface <m>f(x, y)</m> defined on a smooth curve
+        <m>C</m> given by
+        <m>\vec{r}(t)=\langle x(t), y(t)\rangle, a \leq t \leq b</m>. The
+        line integral of <m>f</m> over <m>C</m> is
+        <md>
+          \lim _{n \rightarrow \infty} \sum_{k=1}^{n} f\left(x\left(t_{k}\right), y\left(t_{k}\right)\right) \Delta s_{k}=\int_{C} f(x(t), y(t)) d s
+        </md>
+        provided that the limit exists. If the limit exists, we say that
+        <m>f</m> is integrable on <m>C</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      As in previous examples, <m>\vec{r}(t)</m> being smooth means that it
+      is differentiable (has no sharp edges and doesn't cross/intersect
+      itself).
+    </p>
+
+    <p>
+      From our work in the first remark, we know that
+      <m>d s=\left|\vec{r}^{\prime}(t)\right| d t</m>, hence, we have that
+      <md>
+        \int_{C} f(x(t), y(t)) d s=\int_{a}^{b} f(x(t), y(t))\left|\vec{r}^{\prime}(t)\right| d t
+      </md>
+    </p>
+  </note>
+
+  <remark>
+    <title>Evaluating Line Integrals</title>
+
+    <p>
+      Let <m>f(x, y)</m> be continuous on a region containing a smooth curve
+      <m>C</m> given by
+      <m>\vec{r}(t)=\langle x(t), y(t)\rangle, a \leq t \leq b</m>. Then
+      <md>
+        <mrow>\int_{C} f d s \amp =\int_{a}^{b} f(x(t), y(t))\left|\vec{r}^{\prime}(t)\right| d t</mrow>
+        <mrow>\amp =\int_{a}^{b} f(x(t), y(t)) \sqrt{x^{\prime}(t)^{2}+y^{\prime}(t)^{2}} d t</mrow>
+      </md>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch04-02-ex-15-2">
+    <statement>
+      <p>
+        Evaluate the line integral <m>\int_{C} x y d s</m>, where <m>C</m>
+        is the quarter circle
+        <m>\vec{r}(t)=\langle \cos (t), \sin (t)\rangle, 0 \leq t \leq \frac{\pi}{2}</m>.
+      </p>
+
+      <figure xml:id="fig-ch04-02-ex-15-2">
+        <caption>The net area bounded by the surface z equals x times y, over the domain defined by the curve C.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_09_748feeae06a4ec211266g-5. -->
+        <interactive xml:id="interactive-ch04-02-ex-15-2" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_09_748feeae06a4ec211266g-5.png">
+              <shortdescription>The net area bounded by the surface z equals x times y, over the domain defined by the curve C.</shortdescription>
+              <description>
+                <p>The net area bounded by the surface <m>z=xy</m>, over the domain defined by the curve <m>C</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        Net area bounded by <m>f(x, y)</m> and the <m>x y</m>-plane,
+        restricted to <m>\vec{r}(t)</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        For <m>\vec{r}(t) = \langle \cos t, \sin t\rangle</m> we have
+        <m>x(t)=\cos t</m> and <m>y(t)=\sin t</m>, so
+        <m>\vec{r}'(t) = \langle -\sin t, \cos t\rangle</m> and
+        <md>
+          |\vec{r}'(t)| = \sqrt{(-\sin t)^2 + (\cos t)^2} = \sqrt{\sin^2 t + \cos^2 t} = 1
+        </md>,
+        so <m>ds = |\vec{r}'(t)|\, dt = dt</m>. Substituting <m>x(t)</m>,
+        <m>y(t)</m>, and <m>ds</m> into the line integral gives
+        <md alignment="gather">
+          <mrow>\int_{C} xy\, ds = \int_0^{\pi/2} \cos t \sin t\, dt =</mrow>
+          <mrow>u=\sin t,\quad du = \cos t\, dt, \quad t=0 \Rightarrow u=0, \quad t=\frac{\pi}{2} \Rightarrow u=1</mrow>
+          <mrow>\int_0^1 u\, du = \left. \frac{u^2}{2}\right|_0^1 = \frac{1}{2}</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      To parametrize a line segment starting at the point <m>P</m> and
+      ending at the point <m>Q</m>, you can use the parametrization
+      <md>
+        P(1-t)+Q t, \quad 0 \leq t \leq 1
+      </md>.
+    </p>
+  </note>
+
+  <example xml:id="example-ch04-02-ex-15-3">
+    <statement>
+      <p>
+        Evaluate the line integral
+        <m>\int_{C}\left(x^{2}-y^{2}\right) d s</m>, where <m>C</m> is the
+        line segment from <m>(2,0)</m> to <m>(0,1)</m>.
+      </p>
+
+      <figure xml:id="fig-ch04-02-ex-15-3">
+        <caption>The net area bounded by the surface z equals x squared minus y squared, over the domain defined by the curve C.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_09_748feeae06a4ec211266g-7. -->
+        <interactive xml:id="interactive-ch04-02-ex-15-3" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_09_748feeae06a4ec211266g-7.png">
+              <shortdescription>The net area bounded by the surface z equals x squared minus y squared, over the domain defined by the curve C.</shortdescription>
+              <description>
+                <p>The net area bounded by the surface <m>z=x^2-y^2</m>, over the domain defined by the curve <m>C</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        Net area bounded by <m>f(x, y)</m> and the <m>x y</m>-plane,
+        restricted to <m>\vec{r}(t)</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The line segment from <m>P=(2,0)</m> to <m>Q=(0,1)</m> can be
+        parametrized as
+        <md>
+          \vec{r}(t) = \langle 2,0\rangle + t\langle -2,1\rangle = \langle 2-2t,\, t\rangle, \ 0\leq t \leq 1, \ \vec{r}'(t) = \langle -2,1\rangle
+        </md>,
+        so <m>x(t)=2-2t</m> and <m>y(t)=t</m>. Then
+        <md>
+          |\vec{r}'(t)| = \sqrt{(-2)^2+1^2} = \sqrt{5}
+        </md>,
+        so <m>ds = \sqrt{5}\, dt</m>. Since
+        <md>
+          x(t)^2 - y(t)^2 = (2-2t)^2 - t^2 = 4-8t+4t^2-t^2 = 4-8t+3t^2
+        </md>,
+        the line integral becomes
+        <md>
+          \int_{C}(x^2-y^2)\, ds = \sqrt{5}\int_0^1 (4-8t+3t^2)\, dt = \sqrt{5}\left. \left(4t-4t^2+t^3\right)\right|_0^1 = \sqrt{5}(4-4+1) = \sqrt{5}
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      In <xref ref="example-ch04-02-ex-15-2"/> we see that part of the area
+      is below the <m>x y</m>-plane. This area is still being added, but as
+      a negative number.
+    </p>
+
+    <p>
+      Hence, if <m>\int_{C} f d s \gt 0</m>, it doesn't mean that all of the
+      area is above the <m>x y</m>-plane when restricted to <m>C</m>, it
+      just means that most of the area is above the <m>x y</m>-plane.
+    </p>
+  </note>
+
+  <p>
+    When computing line integrals, it doesn't matter how you parametrize
+    the curve <m>C</m>.
+  </p>
+
+  <remark>
+    <title>Independence of Parametrization</title>
+
+    <p>
+      Let <m>f(x, y)</m> be continuous on a region containing a smooth curve
+      <m>C</m>. Then the value of <m>\int_{C} f d s</m> is the same, no
+      matter what parametrization you use for <m>C</m>.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch04-02-ex-15-4">
+    <statement>
+      <p>
+        Verify that <m>\int_{C}\left(x^{2}-y^{2}\right) d s</m>, where
+        <m>C</m> is the line segment from <m>(2,0)</m> to <m>(0,1)</m>, has
+        the same value as in <xref ref="example-ch04-02-ex-15-3"/> if you
+        parametrize <m>C</m> as
+        <m>\vec{r}(t)=\langle -4t^2+2, 2t^2\rangle,0 \leq t \leq \frac{\sqrt 2}{2}</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        For <m>\vec{r}(t) = \langle -4t^2+2, 2t^2\rangle</m> we have
+        <m>x(t)=2-4t^2</m> and <m>y(t)=2t^2</m>; at <m>t=0</m> this gives
+        <m>(2,0)</m> and at <m>t=\frac{\sqrt2}{2}</m> it gives <m>(0,1)</m>,
+        so <m>\vec{r}(t)</m> traces the same line segment <m>C</m> as in
+        <xref ref="example-ch04-02-ex-15-3"/>. Differentiating,
+        <m>\vec{r}'(t) = \langle -8t, 4t\rangle</m>, so
+        <md>
+          |\vec{r}'(t)| = \sqrt{(-8t)^2+(4t)^2} = \sqrt{80t^2} = 4\sqrt{5}\,|t| = 4\sqrt{5}\,t
+        </md>,
+        since <m>t\geq 0</m> on <m>\left[0,\frac{\sqrt2}{2}\right]</m>. Hence
+        <m>ds = 4\sqrt{5}\,t\, dt</m>. Since
+        <md>
+          x(t)^2-y(t)^2 = (2-4t^2)^2 - (2t^2)^2 = 4-16t^2+16t^4-4t^4 = 4-16t^2+12t^4
+        </md>,
+        the line integral becomes
+        <md>
+          \int_{C}(x^2-y^2)\, ds = \int_0^{\sqrt2/2} (4-16t^2+12t^4)(4\sqrt{5}\,t)\, dt = 4\sqrt{5}\int_0^{\sqrt2/2} \left(4t-16t^3+12t^5\right) dt
+        </md>.
+        Evaluating the antiderivative:
+        <md>
+          4\sqrt{5}\left. \left(2t^2-4t^4+2t^6\right)\right|_0^{\sqrt2/2} = 4\sqrt{5}\left(2\cdot\frac{1}{2} - 4\cdot\frac{1}{4} + 2\cdot\frac{1}{8}\right) = 4\sqrt{5}\left(1-1+\frac{1}{4}\right) = 4\sqrt{5}\cdot\frac{1}{4} = \sqrt{5}
+        </md>,
+        which matches the value found in
+        <xref ref="example-ch04-02-ex-15-3"/>, exactly as guaranteed by the
+        Independence of Parametrization.
+      </p>
+    </solution>
+  </example>
+
+</section>

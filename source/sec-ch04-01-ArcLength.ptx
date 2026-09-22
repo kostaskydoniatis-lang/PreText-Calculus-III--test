@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch04-01-ArcLength.ptx : converted from "14. Arc Length - Solutions.tex" by the
+  bbeaccess-pretext skill (2026-09-17). Fragment for xi:include into
+  ch-04-Integration.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch04-01 (lecture file 14, first section of a new chapter 4) on
+     your instruction. The chapter file ch-04-Integration.ptx is new; its title and
+     one-sentence introduction are my wording, edit freely.
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): all ten pictures - ...2492g-2.png
+     (displacement vector diagram), ...2492g-2-1.png (Example 14.2 and again in
+     Example 14.5, the .tex uses the same file twice), desmos-graph_1/2/3.png
+     (rectangles), desmos-graph_4/5/6.png (line segments), frame_00.png (Example 14.4,
+     the helix; 3D, probably CalcPlot3D). The desmos-graph_* pictures are Desmos
+     screenshots, so their real graphs should be easy to link.
+  3. Image names: ...2492g-2(1) is ...2492g-2-1.png in assets/images. All ten are .png.
+  4. The CalcPlot3D links in the .tex are inside commented-out \caption* lines under
+     the subfigures (Example 6.2 residue). Not live, not used; ptx_check reports them
+     as unmatched. Expected.
+  5. The two three-picture figures (two subfigures side by side plus a third centred
+     below, one \caption each) are one outer figure each, caption = the .tex \caption
+     verbatim ("Area of sqrt x approximated with n=8,16,64 rectangles"; "Length of
+     r(t)=<t, cos t> approximated with n=8,16,64 line segments"), holding an
+     <sbsgroup> with a two-panel <sidebyside widths="45% 45%"> and a one-panel
+     <sidebyside widths="45%"> below it. Per-panel <instructions> commented out; one
+     <p> after each outer figure carries the boilerplate with a top-left / top-right /
+     bottom link each. The commented-out \caption lines inside those figures
+     (file-12 residue, "The two local max and two local min ...") are not kept.
+  6. Example 14.2 has no solution box (statement + picture only). "Example 14.5" +
+     "[Continuation of 14.5]" merged into ONE <example>: statement = the 14.5 question,
+     then the continuation's "Compare this to the length..." paragraph and its
+     picture, then one <solution> per box. ptx_check therefore reports 7 examples in
+     the .tex vs 6 here. \setcounter{tcb@cnt@example}{4} dropped.
+  7. Figure placement: the displacement-vector diagram is a section-level figure
+     between the Displacement Vector definition and the remark "in the above image",
+     where the .tex has it; the Example 14.2, 14.4 and 14.5 pictures are inside their
+     statements where the .tex has them.
+  8. The last solution's gather* contains two empty rows (bare \\ lines) and a row that
+     ends with "dt =" before the u-substitution row; the empty rows are dropped (layout)
+     and the other rows are kept one <mrow> each, verbatim.
+  9. \mathbf{r}, \mathbf{r}^{\prime}, \mathbf{r}' and "\mathbf r\left(t\right)" (no
+     braces, Examples 14.2 and 14.5) to \vec{...} / \vec r\left(t\right). Example 14.4
+     writes the helix as "$r(t)=..." without \mathbf; kept as plain r. Everything else
+     byte-for-byte.
+ 10. Typeset <description>s are the conversion's own text; review.
+ 11. Template width constants replace the .tex widths (max width=\textwidth,
+     subfigure 0.45\textwidth, 0.45\textwidth, max width=0.4/0.7\textwidth).
+ 12. Relative references left as prose: "in the above image" (remark), "Below is the
+     graph" (14.2, 14.5), "Compare this to" (14.2, 14.5), "as we will talk about later".
+ 13. Source quirks preserved: "$\operatorname{arc}$ length" (arc inside math); "( $f(a),
+     g(a), h(a)$ )" spacing; "$\mathbf{r}(t)$ )" spacing; "$t=2 \pi$ ?"; "along
+     $\mathbf{r}(t)$ colored" vs "distance travelled" (US/UK both kept);
+     "...\arccos (1/e)\right)$along" with no space (Example 14.5 continuation); the
+     bracket "[ Length of a Curve (Arc length)]" has its leading space trimmed;
+     "arclength" and "arc length" both occur; NOT in capitals (remark) kept.
+ 14. Every \newpage/\vspace/\hspace, the figure[H]/center/subfigure wrappers,
+     \captionsetup, \\ and \setcounter dropped.
+-->
+
+<section xml:id="sec-ch04-01-ArcLength" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Arc Length</title>
+
+  <note>
+    <p>
+      Given a curve
+      <m>\vec{r}(t)=\langle f(t), g(t), h(t)\rangle, a \leq t \leq b</m>, we
+      will derive a formula for calculating the length of <m>\vec{r}(t)</m>.
+      First, we will talk about integrability.
+    </p>
+  </note>
+
+  <definition>
+    <title>Integrability of Curves</title>
+
+    <statement>
+      <p>
+        Given a curve
+        <m>\vec{r}(t)=\langle f(t), g(t), h(t)\rangle, a \leq t \leq b</m>,
+        then
+        <md>
+          \int_{a}^{b} \vec{r}(t) d t=\left\langle\int_{a}^{b} f(t) d t, \int_{a}^{b} g(t) d t, \int_{a}^{b} h(t) d t\right\rangle
+        </md>
+      </p>
+
+      <p>
+        Hence, <m>\vec{r}(t)</m> is integrable on <m>[a, b]</m> if and only
+        if each of its components is integrable (continuous) on
+        <m>[a, b]</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch04-01-ex-14-1">
+    <statement>
+      <p>
+        Compute
+        <m>\int_{0}^{1}\left\langle 3 t^{2}-2t, e^t+\cos(2\pi t)\right\rangle \, dt</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        By the definition of integrability of curves, we integrate
+        component-wise. For the first component:
+        <md>
+          \int_0^1 3t^2 - 2t\, dt = \left. t^3 - t^2 \right|_0^1 = (1 - 1) - (0 - 0) = 0
+        </md>
+        For the second component:
+        <md>
+          \int_0^1 e^t + \cos(2\pi t)\, dt = \left. e^t + \frac{\sin(2\pi t)}{2\pi} \right|_0^1 = \left( e + \frac{\sin(2\pi)}{2\pi} \right) - \left( e^0 + \frac{\sin(0)}{2\pi} \right) = e - 1
+        </md>
+        Hence
+        <md>
+          \int_{0}^{1}\left\langle 3 t^{2}-2t, e^t+\cos(2\pi t)\right\rangle \, dt = \langle 0, e-1 \rangle
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      Given
+      <m>\vec{r}(t)=\langle f(t), g(t), h(t)\rangle, \int_{a}^{b} \vec{r}(t) d t</m>
+      is NOT computing the net area bounded by the curve and the
+      <m>x y</m>-plane (there is a way to do this which we will talk about
+      later).
+    </p>
+
+    <p>
+      What <m>\int_{a}^{b} \vec{r}(t) d t</m> computes is a displacement
+      vector.
+    </p>
+  </remark>
+
+  <definition>
+    <title>Displacement Vector</title>
+
+    <statement>
+      <p>
+        Given an integrable curve <m>\vec{r}^{\prime}(t), a \leq t \leq b</m>,
+        then
+        <md>
+          \int_{a}^{b} \vec{r}^{\prime}(t) d t=\vec{r}(b)-\vec{r}(a)
+        </md>
+        gives a displacement vector with starting point at the endpoint of
+        <m>\vec{r}(a)</m> and ending point at the endpoint of
+        <m>\vec{r}(b)</m>.
+      </p>
+
+      <p>
+        Moreover, <m>\left|\int_{a}^{b} \vec{r}^{\prime}(t) d t\right|</m>
+        gives the displacement from the endpoint of <m>\vec{r}(a)</m> to
+        the endpoint of <m>\vec{r}(b)</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <figure xml:id="fig-ch04-01-displacement-vector">
+    <caption>Two vectors, r of a and r of b, sharing a common starting point A, with endpoints C and B respectively, and the displacement vector r of b minus r of a, drawn connecting point C to point B.</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_10_09_e25295bb40ebd09a2492g-2. -->
+    <interactive xml:id="interactive-ch04-01-displacement-vector" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_10_09_e25295bb40ebd09a2492g-2.png">
+          <shortdescription>Two vectors, r of a and r of b, sharing a common starting point A, with endpoints C and B respectively, and the displacement vector r of b minus r of a, drawn connecting point C to point B.</shortdescription>
+          <description>
+            <p>Two vectors, <m>\vec{r}(a)</m> and <m>\vec{r}(b)</m>, sharing a common starting point <m>A</m>, with endpoints <m>C</m> and <m>B</m> respectively, and the displacement vector <m>\vec{r}(b)-\vec{r}(a)</m>, drawn connecting point <m>C</m> to point <m>B</m>.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <remark>
+    <p>
+      When we say the displacement from the endpoint of <m>\vec{r}(a)</m>
+      to the endpoint of <m>\vec{r}(b)</m>, in the above image, the
+      distance between points B and C (NOT the distance along
+      <m>\vec{r}(t)</m> ).
+    </p>
+  </remark>
+
+  <example xml:id="example-ch04-01-ex-14-2">
+    <statement>
+      <p>
+        Below is the graph of
+        <m>\vec r\left(t\right)=\langle t ,\ln\left(\cos\left(t-\frac{\pi}{2}\right)\right)+1 \rangle, 0 \lt t \lt \pi</m>.
+        You can see the displacement vector from the endpoint of
+        <m>\vec{r}\left(\frac{\pi}{2}\right)</m> to the endpoint of
+        <m>\vec{r}\left(\frac{\pi}{2}+\arccos (1/e)\right)</m>.
+      </p>
+
+      <p>
+        Compare this to travelling from the endpoint
+        <m>\vec{r}\left(\frac{\pi}{2}\right)</m> to the endpoint of
+        <m>\vec{r}\left(\frac{\pi}{2}+\arccos (1/e)\right)</m> along
+        <m>\vec{r}(t)</m> colored in light blue.
+      </p>
+
+      <figure xml:id="fig-ch04-01-ex-14-2">
+        <caption>The curve given by x equals t and y equals the natural log of the cosine of, t minus pi over 2, plus 1, for t strictly between 0 and pi, with the arc length and the straight-line displacement both shown between the same two points on the curve.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_09_e25295bb40ebd09a2492g-2(1). -->
+        <interactive xml:id="interactive-ch04-01-ex-14-2" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_09_e25295bb40ebd09a2492g-2-1.png">
+              <shortdescription>The curve given by x equals t and y equals the natural log of the cosine of, t minus pi over 2, plus 1, for t strictly between 0 and pi, with the arc length and the straight-line displacement both shown between the same two points on the curve.</shortdescription>
+              <description>
+                <p>The curve given by <m>x=t</m> and <m>y=\ln\left(\cos\left(t-\frac{\pi}{2}\right)\right)+1</m>, for <m>0 \lt t \lt \pi</m>, with the arc length and the straight-line displacement both shown between the same two points on the curve.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+  </example>
+
+  <example xml:id="example-ch04-01-ex-14-3">
+    <statement>
+      <p>
+        Suppose that a curve <m>\vec{r}(t)</m> satisfies
+        <m>\vec{r}^{\prime}(t)=\langle 2 t, 1\rangle</m>. Find the
+        displacement of a particle moving along <m>\vec{r}(t)</m> from
+        <m>t=1</m> to <m>t=3</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        By the definition of the displacement vector, we integrate
+        <m>\vec{r}'(t)</m> component-wise:
+        <md>
+          \int_1^3 \vec{r}'(t)\, dt = \int_1^3 \langle 2t, 1 \rangle\, dt = \left\langle \left. t^2 \right|_1^3, \left. t \right|_1^3 \right\rangle = \langle 9-1, 3-1 \rangle = \langle 8, 2 \rangle
+        </md>
+        The displacement of the particle is the magnitude of this
+        displacement vector:
+        <md>
+          \left| \int_1^3 \vec{r}'(t)\, dt \right| = |\langle 8, 2 \rangle| = \sqrt{8^2 + 2^2} = \sqrt{68} = 2\sqrt{17}
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      Recall that integrals show up when we are summing up infinitely many
+      things that are becoming infinitely small.
+    </p>
+  </note>
+
+  <p>
+    For example, given an integrable function
+    <m>p(x), \int_{a}^{b} p(x) d x</m> calculates the net area bounded by
+    <m>p(x)</m> and the <m>x</m>-axis on <m>[a, b]</m> by adding areas of
+    rectangles that are becoming infinitely small.
+  </p>
+
+  <figure xml:id="fig-ch04-01-area-rectangles">
+    <caption>Area of <m>\sqrt x</m> approximated with <m>n=8,16,64</m> rectangles</caption>
+
+    <sbsgroup>
+      <sidebyside widths="45% 45%" margins="auto" valign="middle">
+        <figure xml:id="fig-ch04-01-area-rectangles-a">
+          <caption>The area under the curve y equals the square root of x, approximated using 8 rectangles.</caption>
+
+          <!-- This interactive is PENDING, it should correspond to desmos-graph_1. -->
+          <interactive xml:id="interactive-ch04-01-area-rectangles-a" width="85%" aspect="4:3" desmos="vqavop8m24">
+            <!--<instructions>
+              <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+              <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            </instructions>-->
+            <static>
+              <image source="/images/desmos-graph_1.png">
+                <shortdescription>The area under the curve y equals the square root of x, approximated using 8 rectangles.</shortdescription>
+                <description>
+                  <p>The area under the curve <m>y=\sqrt{x}</m>, approximated using 8 rectangles.</p>
+                </description>
+              </image>
+            </static>
+          </interactive>
+        </figure>
+
+        <figure xml:id="fig-ch04-01-area-rectangles-b">
+          <caption>The area under the curve y equals the square root of x, approximated using 16 rectangles.</caption>
+
+          <!-- This interactive is PENDING, it should correspond to desmos-graph_2. -->
+          <interactive xml:id="interactive-ch04-01-area-rectangles-b" width="85%" aspect="4:3" desmos="vqavop8m24">
+            <!--<instructions>
+              <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+              <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            </instructions>-->
+            <static>
+              <image source="/images/desmos-graph_2.png">
+                <shortdescription>The area under the curve y equals the square root of x, approximated using 16 rectangles.</shortdescription>
+                <description>
+                  <p>The area under the curve <m>y=\sqrt{x}</m>, approximated using 16 rectangles.</p>
+                </description>
+              </image>
+            </static>
+          </interactive>
+        </figure>
+      </sidebyside>
+
+      <sidebyside widths="45%" margins="auto" valign="middle">
+        <figure xml:id="fig-ch04-01-area-rectangles-c">
+          <caption>The area under the curve y equals the square root of x, approximated using 64 rectangles.</caption>
+
+          <!-- This interactive is PENDING, it should correspond to desmos-graph_3. -->
+          <interactive xml:id="interactive-ch04-01-area-rectangles-c" width="85%" aspect="4:3" desmos="vqavop8m24">
+            <!--<instructions>
+              <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+              <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            </instructions>-->
+            <static>
+              <image source="/images/desmos-graph_3.png">
+                <shortdescription>The area under the curve y equals the square root of x, approximated using 64 rectangles.</shortdescription>
+                <description>
+                  <p>The area under the curve <m>y=\sqrt{x}</m>, approximated using 64 rectangles.</p>
+                </description>
+              </image>
+            </static>
+          </interactive>
+        </figure>
+      </sidebyside>
+    </sbsgroup>
+  </figure>
+  <p>
+    The graphs above show only the plots; you can drag and zoom them. To see the expressions behind them, or to save a copy and create your own version of the graphs, open them in a new page from here:
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the top left graph</url>,
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the top right graph</url>,
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the bottom graph</url>
+  </p>
+
+  <p>
+    To find the length of a curve <m>\vec{r}(t)</m> (its
+    <m>\operatorname{arc}</m> length) on the interval <m>[a, b]</m>, we use
+    a similar idea:
+  </p>
+
+  <p>
+    Partition the curve into line segments, and add the length of each line
+    segment to approximate the length of <m>\vec{r}(t)</m>.
+  </p>
+
+  <figure xml:id="fig-ch04-01-length-segments">
+    <caption>Length of <m> \vec{r}(t)=\langle t,\cos t  \rangle</m> approximated with <m>n=8,16,64</m> line segments</caption>
+
+    <sbsgroup>
+      <sidebyside widths="45% 45%" margins="auto" valign="middle">
+        <figure xml:id="fig-ch04-01-length-segments-a">
+          <caption>The arc length of the curve y equals cosine of t, approximated using 8 line segments.</caption>
+
+          <!-- This interactive is PENDING, it should correspond to desmos-graph_4. -->
+          <interactive xml:id="interactive-ch04-01-length-segments-a" width="85%" aspect="4:3" desmos="vqavop8m24">
+            <!--<instructions>
+              <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+              <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            </instructions>-->
+            <static>
+              <image source="/images/desmos-graph_4.png">
+                <shortdescription>The arc length of the curve y equals cosine of t, approximated using 8 line segments.</shortdescription>
+                <description>
+                  <p>The arc length of the curve <m>y=\cos t</m>, approximated using 8 line segments.</p>
+                </description>
+              </image>
+            </static>
+          </interactive>
+        </figure>
+
+        <figure xml:id="fig-ch04-01-length-segments-b">
+          <caption>The arc length of the curve y equals cosine of t, approximated using 16 line segments.</caption>
+
+          <!-- This interactive is PENDING, it should correspond to desmos-graph_5. -->
+          <interactive xml:id="interactive-ch04-01-length-segments-b" width="85%" aspect="4:3" desmos="vqavop8m24">
+            <!--<instructions>
+              <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+              <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            </instructions>-->
+            <static>
+              <image source="/images/desmos-graph_5.png">
+                <shortdescription>The arc length of the curve y equals cosine of t, approximated using 16 line segments.</shortdescription>
+                <description>
+                  <p>The arc length of the curve <m>y=\cos t</m>, approximated using 16 line segments.</p>
+                </description>
+              </image>
+            </static>
+          </interactive>
+        </figure>
+      </sidebyside>
+
+      <sidebyside widths="45%" margins="auto" valign="middle">
+        <figure xml:id="fig-ch04-01-length-segments-c">
+          <caption>The arc length of the curve y equals cosine of t, approximated using 64 line segments.</caption>
+
+          <!-- This interactive is PENDING, it should correspond to desmos-graph_6. -->
+          <interactive xml:id="interactive-ch04-01-length-segments-c" width="85%" aspect="4:3" desmos="vqavop8m24">
+            <!--<instructions>
+              <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+              <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+            </instructions>-->
+            <static>
+              <image source="/images/desmos-graph_6.png">
+                <shortdescription>The arc length of the curve y equals cosine of t, approximated using 64 line segments.</shortdescription>
+                <description>
+                  <p>The arc length of the curve <m>y=\cos t</m>, approximated using 64 line segments.</p>
+                </description>
+              </image>
+            </static>
+          </interactive>
+        </figure>
+      </sidebyside>
+    </sbsgroup>
+  </figure>
+  <p>
+    The graphs above show only the plots; you can drag and zoom them. To see the expressions behind them, or to save a copy and create your own version of the graphs, open them in a new page from here:
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the top left graph</url>,
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the top right graph</url>,
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the bottom graph</url>
+  </p>
+
+  <p>
+    As with area, as the number of line segments approaches infinity (their
+    lengths become infinitely small), we will get a better approximation of
+    the arc length.
+  </p>
+
+  <definition>
+    <title>Length of a Curve (Arc length)</title>
+
+    <statement>
+      <p>
+        Consider a curve
+        <m>\vec{r}(t)=\langle f(t), g(t), h(t)\rangle, a \leq t \leq b</m>,
+        where <m>f^{\prime}, g^{\prime}</m>, and <m>h^{\prime}</m> are
+        continuous on <m>[a, b]</m> and the curve is traversed only once on
+        <m>[a, b]</m>. Then the arclength of the curve between
+        ( <m>f(a), g(a), h(a)</m> ) and ( <m>f(b), g(b), h(b)</m> ) is
+        <md>
+          L=\int_{a}^{b} \sqrt{f^{\prime}(t)^{2}+g^{\prime}(t)^{2}+h^{\prime}(t)^{2}} d t=\int_{a}^{b}\left|\vec{r}^{\prime}(t)\right| d t
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch04-01-ex-14-4">
+    <statement>
+      <p>
+        A glider is soaring upward along the helix
+        <m>r(t)=\langle 0.98\cos (t), 0.98\sin (t) ,  \sqrt{1-0.98^2}t\rangle</m>.
+        How long is the glider's path from <m>t=0</m> to <m>t=2 \pi</m> ?
+      </p>
+
+      <figure xml:id="fig-ch04-01-ex-14-4">
+        <caption>The helix given by x equals 0.98 cosine of t, y equals 0.98 sine of t, z equals t times the square root of, 1 minus 0.98 squared, in xyz-space, with an arrow from the origin to a point on the curve.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to frame_00. -->
+        <interactive xml:id="interactive-ch04-01-ex-14-4" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/frame_00.png">
+              <shortdescription>The helix given by x equals 0.98 cosine of t, y equals 0.98 sine of t, z equals t times the square root of, 1 minus 0.98 squared, in xyz-space, with an arrow from the origin to a point on the curve.</shortdescription>
+              <description>
+                <p>The helix given by <m>x=0.98\cos(t)</m>, <m>y=0.98\sin(t)</m>, <m>z=t\sqrt{1-0.98^2}</m>, in <m>xyz</m>-space, with an arrow from the origin to a point on the curve.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        The length of the glider's path is the arc length of
+        <m>\vec{r}(t)</m> from <m>t=0</m> to <m>t=2\pi</m>. First we
+        compute the derivative and its magnitude:
+        <md alignment="gather">
+          <mrow>\vec{r}'(t) = \left\langle -0.98\sin (t),\ 0.98\cos (t),\ \sqrt{1-0.98^2} \right\rangle</mrow>
+          <mrow>|\vec{r}'(t)| = \sqrt{0.98^2\sin^2 (t) + 0.98^2\cos^2 (t) + \left( \sqrt{1-0.98^2} \right)^2}</mrow>
+          <mrow>= \sqrt{0.98^2\left( \sin^2 (t) + \cos^2 (t) \right) + 1 - 0.98^2} = \sqrt{0.98^2 + 1 - 0.98^2} = \sqrt{1} = 1</mrow>
+        </md>
+        Hence
+        <md>
+          L = \int_0^{2\pi} |\vec{r}'(t)|\, dt = \int_0^{2\pi} 1\, dt = \left. t \right|_0^{2\pi} = 2\pi
+        </md>
+        The glider moves with constant speed <m>1</m>, so the length of its
+        path equals the elapsed time <m>2\pi</m>.
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <title>Displacement vs Arclength</title>
+
+    <p>
+      It is important not to confuse displacement with arclength. Here we
+      summarize both:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            <m>\left|\int_{a}^{b} \vec{r}^{\prime}(t) d t\right|</m> is
+            computing the displacement (straight line distance) from the
+            endpoint of <m>\vec{r}(a)</m> to the endpoint of
+            <m>\vec{r}(b)</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>\int_{a}^{b}\left|\vec{r}^{\prime}(t)\right| d t</m> is
+            computing the arc length (distance travelled along
+            <m>\vec{r}(t)</m> ) from the endpoint of <m>\vec{r}(a)</m> to
+            the endpoint of <m>\vec{r}(b)</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch04-01-ex-14-5">
+    <statement>
+      <p>
+        Below is the graph of
+        <m>\vec r\left(t\right)=\langle t ,\ln\left(\cos\left(t-\frac{\pi}{2}\right)\right)+1 \rangle, 0 \lt t \lt \pi</m>.
+        Calculate the displacement vector from the endpoint of
+        <m>\vec{r}\left(\frac{\pi}{2}\right)</m> to the endpoint of
+        <m>\vec{r}\left(\frac{\pi}{2}+\arccos (1/e)\right)</m>.
+      </p>
+
+      <p>
+        Compare this to the length of the curve from the endpoint
+        <m>\vec{r}\left(\frac{\pi}{2}\right)</m> to the endpoint of
+        <m>\vec{r}\left(\frac{\pi}{2}+\arccos (1/e)\right)</m>along
+        <m>\vec{r}(t)</m> colored in light blue.
+      </p>
+
+      <figure xml:id="fig-ch04-01-ex-14-5">
+        <caption>The curve given by x equals t and y equals the natural log of the cosine of, t minus pi over 2, plus 1, for t strictly between 0 and pi, with the arc length and the straight-line displacement both shown between the same two points on the curve.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_09_e25295bb40ebd09a2492g-2(1). -->
+        <interactive xml:id="interactive-ch04-01-ex-14-5" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_09_e25295bb40ebd09a2492g-2-1.png">
+              <shortdescription>The curve given by x equals t and y equals the natural log of the cosine of, t minus pi over 2, plus 1, for t strictly between 0 and pi, with the arc length and the straight-line displacement both shown between the same two points on the curve.</shortdescription>
+              <description>
+                <p>The curve given by <m>x=t</m> and <m>y=\ln\left(\cos\left(t-\frac{\pi}{2}\right)\right)+1</m>, for <m>0 \lt t \lt \pi</m>, with the arc length and the straight-line displacement both shown between the same two points on the curve.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        First we find the two endpoints. At <m>t=\frac{\pi}{2}</m>:
+        <md>
+          \vec{r}\left( \tfrac{\pi}{2} \right) = \left\langle \tfrac{\pi}{2},\ \ln\left( \cos (0) \right) + 1 \right\rangle = \left\langle \tfrac{\pi}{2},\ \ln (1) + 1 \right\rangle = \left\langle \tfrac{\pi}{2},\ 1 \right\rangle
+        </md>
+        At <m>t=\frac{\pi}{2}+\arccos (1/e)</m>, using
+        <m>\cos\left( \arccos (1/e) \right) = \frac{1}{e}</m>:
+        <md>
+          \vec{r}\left( \tfrac{\pi}{2}+\arccos (1/e) \right) = \left\langle \tfrac{\pi}{2}+\arccos (1/e),\ \ln\left( \tfrac{1}{e} \right) + 1 \right\rangle = \left\langle \tfrac{\pi}{2}+\arccos (1/e),\ 0 \right\rangle
+        </md>
+        The displacement vector from the first endpoint to the second is
+        their difference:
+        <md>
+          \left\langle \tfrac{\pi}{2}+\arccos (1/e) - \tfrac{\pi}{2},\ 0 - 1 \right\rangle = \left\langle \arccos (1/e),\ -1 \right\rangle
+        </md>
+        so the displacement (straight line distance) is
+        <m>\sqrt{\arccos^2 (1/e) + 1} \approx 1.56</m>.
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        For the length of the curve we differentiate, using the chain rule
+        on the second component:
+        <md alignment="gather">
+          <mrow>\vec{r}'(t) = \left\langle 1,\ -\tan\left( t - \tfrac{\pi}{2} \right) \right\rangle</mrow>
+          <mrow>|\vec{r}'(t)| = \sqrt{1 + \tan^2\left( t - \tfrac{\pi}{2} \right)} = \sqrt{\sec^2\left( t - \tfrac{\pi}{2} \right)} = \sec\left( t - \tfrac{\pi}{2} \right)</mrow>
+        </md>
+        where we dropped the absolute value since <m>t-\frac{\pi}{2}</m>
+        lies in <m>\left[ 0, \arccos (1/e) \right]</m>, which is inside
+        <m>\left[ 0, \frac{\pi}{2} \right)</m> where the secant is positive.
+        Hence
+        <md alignment="gather">
+          <mrow>L = \int_{\frac{\pi}{2}}^{\frac{\pi}{2}+\arccos (1/e)} \sec\left( t - \tfrac{\pi}{2} \right) dt =</mrow>
+          <mrow>u = t - \tfrac{\pi}{2}, \quad du = dt, \quad t = \tfrac{\pi}{2} \Rightarrow u = 0, \quad t = \tfrac{\pi}{2}+\arccos (1/e) \Rightarrow u = \arccos (1/e)</mrow>
+          <mrow>\int_0^{\arccos (1/e)} \sec (u)\, du = \left. \ln\left| \sec (u) + \tan (u) \right| \right|_0^{\arccos (1/e)} = \ln\left( e + \sqrt{e^2-1} \right) - \ln (1) =</mrow>
+          <mrow>\ln\left( e + \sqrt{e^2-1} \right)</mrow>
+        </md>
+        using <m>\sec\left( \arccos (1/e) \right) = e</m> and
+        <m>\tan\left( \arccos (1/e) \right) = \sqrt{e^2-1}</m>. Numerically
+        the arc length is <m>\ln\left( e + \sqrt{e^2-1} \right) \approx 1.66</m>,
+        which is larger than the displacement <m>\approx 1.56</m>, as
+        expected: the straight line is the shortest path between the two
+        endpoints.
+      </p>
+    </solution>
+  </example>
+
+</section>

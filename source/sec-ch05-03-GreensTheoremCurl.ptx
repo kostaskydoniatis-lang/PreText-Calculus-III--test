@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch05-03-GreensTheoremCurl.ptx : converted from
+  "25. Green s Theorem_ Curl - Solutions.tex" (whose \chapter title is "Green's
+  Theorem: 2D Curl") by the bbeaccess-pretext skill (2026-09-17). Fragment for
+  xi:include into ch-05-VectorCalculus.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch05-03 (lecture file 25, chapter 5) on your instruction.
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): ...08b3cg-1.png (vortices inside a
+     boundary) and Example-25.3.png (the rectangle of Example 25.3). Both 2D.
+  3. Image names: "Example 25.3" in the .tex is Example-25.3.png in assets/images
+     (renamed today from the old-numbering Example-26.3.png on your instruction).
+  4. Source caption NOT carried (the caption rule replaces it): the first figure's
+     \caption{Particle rotation inside determines rotation around boundary}.
+  5. Example 25.1: parts (a)/(b)/(c) as paragraphs of one statement, one <solution>
+     per box. Example 25.3's picture is inside its statement.
+  6. The remark title "[The sign of curl $\mathbf{F}(a, b)$]" keeps its <m>; the word
+     "curl" is plain text in the prose (the .tex writes "curl $\mathbf{F}$" in prose
+     and "\operatorname{curl}" / "\operatorname{Curl}" in displays - both kept as
+     written).
+  7. VECTORS: \mathbf{F}, \mathbf F, \mathbf{T}, \mathbf{r}, d\mathbf{r} to \vec{...}.
+  8. Mathematics kept verbatim, including \cancelto (25.4), "\cos^0 (t)" (25.4, typo
+     for cos^2 as in file 23), \overset{\text{Polar}}{=} and
+     \overset{\text{Reduction Formula}}{=}; empty rows dropped; trailing
+     periods/commas moved after </md>. The "$ \oint ... $" of the Green's Theorem and
+     Area note is an inline <m> as in the .tex.
+  9. Source quirks preserved: "$\mathbf{F}(a, b)>0,(a, b)$ has" (comma inside the
+     math); "Notice that both region that of integration as well as the function";
+     "Find a formula for the area of the ellipse $...$" with no final period; "(hence
+     $\mathbf{F}$ is irrotational in $R$ )" spacing; "the book" (no link); the
+     quoted "at a point" is a <q>.
+ 10. Typeset <description>s are the conversion's own text; review.
+ 11. Template width constants replace the .tex widths (0.4\textwidth, 0.5\linewidth).
+ 12. Every \newpage/\vspace, the figure[H]/center wrappers, \captionsetup and \\
+     dropped.
+-->
+
+<section xml:id="sec-ch05-03-GreensTheoremCurl" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Green's Theorem: 2D Curl</title>
+
+  <note>
+    <p>
+      Suppose you have a SCPS curve <m>C</m> representing a boundary inside
+      some liquid whose particles' motion is given by a vector field
+      <m>\vec{F}</m>. Intuitively, it makes sense that how the liquid
+      particles behave near the boundary <m>C</m> is influenced by what the
+      particles are doing elsewhere in the region <m>R</m> bounded by
+      <m>C</m>. For example, if everywhere you look inside the region
+      <m>R</m>, particles are rotating counter-clockwise, it makes sense
+      that this is what is happening around the boundary, as shown below:
+    </p>
+  </note>
+
+  <figure xml:id="fig-ch05-03-vortices">
+    <caption>A simple closed smooth curve, traversed counter-clockwise, enclosing multiple small counter-clockwise vortices.</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_11_25_1353f9c42b95b0608b3cg-1. -->
+    <interactive xml:id="interactive-ch05-03-vortices" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_11_25_1353f9c42b95b0608b3cg-1.png">
+          <shortdescription>A simple closed smooth curve, traversed counter-clockwise, enclosing multiple small counter-clockwise vortices.</shortdescription>
+          <description>
+            <p>A simple closed smooth curve, traversed counter-clockwise, enclosing multiple small counter-clockwise vortices.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <p>
+    We quantify the rotational motion of particles at a point using curl.
+  </p>
+
+  <definition>
+    <title>2D Curl</title>
+
+    <statement>
+      <p>
+        Let <m>\vec{F}=\langle f(x, y), g(x, y)\rangle</m> be a
+        differentiable vector field representing the motion of particles.
+        We measure the rotational motion at a point <m>(a, b)</m> by using
+        <md>
+          \operatorname{curl} \vec{F}(a, b)=\frac{\partial g}{\partial x}(a, b)-\frac{\partial f}{\partial y}(a, b)
+        </md>.
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      When we say <q>at a point</q>, we really mean inside an infinitely
+      small circle centered at <m>(a, b)</m>.
+    </p>
+  </note>
+
+  <remark>
+    <title>The sign of curl <m>\vec{F}(a, b)</m></title>
+
+    <p>
+      The sign of curl <m>\vec{F}(a, b)</m> tells us the orientation of the
+      rotation:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            If curl <m>\vec{F}(a, b) \gt 0,(a, b)</m> has counter-clockwise
+            rotational motion around it.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If curl <m>\vec{F}(a, b) \lt 0,(a, b)</m> has clockwise
+            rotational motion around it.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If curl <m>\vec{F}(a, b)=0</m>, there is no discernible
+            rotational motion around <m>(a, b)</m> and we say <m>(a, b)</m>
+            is irrotational.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch05-03-ex-25-1">
+    <statement>
+      <p>
+        Given the vector field
+        <m>\vec{F}(x, y)=\left\langle x^2y, 9 x \right\rangle</m> :
+      </p>
+
+      <p>(a) Compute curl <m>\vec{F}</m>.</p>
+
+      <p>
+        (b) Find a point with counter-clockwise motion around it and one
+        with clockwise motion.
+      </p>
+
+      <p>(c) Find all points that are irrotational.</p>
+    </statement>
+
+    <solution>
+      <p>
+        <md>
+          \operatorname{Curl}\vec F = g_x - f_y = 9-x^2
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Counter-clockwise motion implies positive curl, while clockwise
+        motion implies negative curl.
+        <md alignment="gather">
+          <mrow>\operatorname{Curl}\vec F \gt 0 \Rightarrow 9 - x^2 \gt 0 \Rightarrow 9 \gt x^2 \Rightarrow -3 \lt x \lt  3</mrow>
+          <mrow>\text{An easy point satisfying this restriction is }(0,0), \ \operatorname{Curl}\vec F(0,0) = 9 \gt 0</mrow>
+          <mrow>\operatorname{Curl}\vec F \lt 0 \Rightarrow 9 - x^2 \lt 0 \Rightarrow x^2 \gt 9 \Rightarrow x \lt -3 \ \text{or} \ x \gt 3</mrow>
+          <mrow>\text{An easy point satisfying this restriction is }(4,0), \ \operatorname{Curl}\vec F(4,0) = 9-16 = -7 \lt 0</mrow>
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Irrotational implies zero curl.
+        <md>
+          \operatorname{Curl} \vec F = 0 \Rightarrow 9- x^2 = 0 \Rightarrow x= \pm 3
+        </md>
+        All points of the form <m>(\pm 3 , y)</m>.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    This relationship between rotation inside a region and its boundary is
+    quantified mathematically by Green's Theorem.
+  </p>
+
+  <theorem>
+    <title>Green's Theorem: Curl</title>
+
+    <statement>
+      <p>
+        Let <m>C</m> be a SCPS curve, oriented counter-clockwise, that
+        encloses a connected and simply connected region <m>R</m> in the
+        plane. Assume that <m>\vec{F}=\langle f, g\rangle</m>, where
+        <m>f</m> and <m>g</m> have continuous first partial derivatives in
+        <m>R</m>. Then
+        <md>
+          \oint_{C} \vec{F} \cdot \vec{T} d s=\iint_{R}\left(\frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}\right) d A  =\iint_R \operatorname{Curl} \vec F \ dA
+        </md>.
+      </p>
+    </statement>
+  </theorem>
+
+  <remark>
+    <p>
+      Given <m>\vec{F}=\langle f(x, y), g(x, y)\rangle</m> and
+      <m>\vec{r}(t)=\langle x(t), y(t)\rangle</m>, the following are
+      equivalent:
+      <md>
+        \int_{C} \vec{F} \cdot \vec{T} d s=\int_{C} \vec{F} \cdot d \vec{r}=\int_{C} f d x+g d y
+      </md>
+    </p>
+  </remark>
+
+  <note>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Since we are dealing with curl, we assume that <m>C</m> is
+            simple and closed (so that it encloses a region <m>R</m> ).
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Important: This theorem says that in order to compute the curl
+            along a SCPS boundary, you add up the curl at each point inside
+            the enclosed region <m>R</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The proof of this result is simple and is given in the book.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </note>
+
+  <example xml:id="example-ch05-03-ex-25-2">
+    <statement>
+      <p>
+        Using Green's theorem, compute the work represented by
+        <md>
+          \oint_{C} -\frac{y^3}{3} dx + \frac{x^3}{3} d y
+        </md>,
+        where <m>C</m> is the unit circle (oriented counter-clockwise).
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        From previous material <m>W = \int_{C} \vec{F} \cdot \vec{T} d s</m>.
+        According to the above
+        <md>
+          \int_{C} \vec{F} \cdot \vec{T} d s=\oint_{C} f d x+g d y, \  \text{for }\vec F = \langle f, g \rangle
+        </md>
+        This implies that in this case the vector field is
+        <m>\vec F = \langle -\frac{y^3}{3}, \frac{x^3}{3} \rangle</m> whose
+        <m>\operatorname{Curl} \vec F = g_x - f_y = x^2+y^2</m>.
+        Additionally, from the theorem
+        <md>
+          \int_{C} \vec{F} \cdot \vec{T} d s= \iint_R \operatorname{Curl} \vec F \ dA
+        </md>.
+        Notice that both region that of integration as well as the
+        function behave better in polar coordinates. In this coordinate
+        system the region is expressed as <m>0\leq r \leq 1</m> and
+        <m>0\leq \theta \leq 2 \pi</m>, while
+        <m>\operatorname{Curl} \vec F (r,\theta ) = r^2</m>. Hence
+        <md alignment="gather">
+          <mrow>\iint_R \operatorname{Curl} \vec F \ dA = \iint_R x^2+y^2 \ dA \overset{\text{Polar}}{=} \int_0^{2\pi}\int_0^1 r^2 r\ dr d\theta = \int_0^{2\pi} \int_0^1 r^3 \ dr d\theta = \int_0^{2\pi} \left. \frac{r^4}{4} \right |_0^1 d\theta =</mrow>
+          <mrow>\int_0^{2\pi } \frac{1}{4} \ d\theta = \left. \frac{\theta}{4} \right |_0^{2\pi} = \frac{\pi}{2}</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>Green's theorem can greatly simplify computations.</p>
+  </remark>
+
+  <example xml:id="example-ch05-03-ex-25-3">
+    <statement>
+      <p>
+        Compute the circulation of a fluid whose velocity field is given by
+        <m>\vec{F}= \left\langle x y, x-1\right\rangle</m>, along the
+        boundary given by the rectangle (oriented counter-clockwise) with
+        vertices at <m>(2,-2),(3,-2),(3,2)</m>, and <m>(2,2)</m>.
+      </p>
+
+      <figure xml:id="fig-ch05-03-ex-25-3">
+        <caption>A rectangle in the plane with vertices (2,-2), (3,-2), (3,2) and (2,2), shaded as the region of integration.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to Example 25.3. -->
+        <interactive xml:id="interactive-ch05-03-ex-25-3" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/Example-25.3.png">
+              <shortdescription>A rectangle in the plane with vertices (2,-2), (3,-2), (3,2) and (2,2), shaded as the region of integration.</shortdescription>
+              <description>
+                <p>A rectangle in the plane with vertices <m>(2,-2)</m>, <m>(3,-2)</m>, <m>(3,2)</m> and <m>(2,2)</m>, shaded as the region of integration.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        Circulation <m>= \int_C \vec F \cdot \vec T \ ds</m>. Using the
+        previous theorem, the integral can be expressed as
+        <m>\iint_R \operatorname{Curl}\vec F \ d A</m>. For the vector
+        field one has <m>f(x,y) = xy</m> and <m>g(x,y) = x-1</m>. The
+        <m>\operatorname{Curl}\vec F</m> of this vector field equals
+        <m>g_x-f_y= 1- x</m>. Now
+        <md>
+          \iint_R \operatorname{Curl}\vec F \ d A = \int_{-2}^2\int_2^3 1 -x \ dx dy = \int_{-2}^2 \left .  x - \frac{x^2}{2} \right |_2^3 dy =  \int_{-2}^2 -\frac{3}{2} \ dy = \left . -\frac{3}{2} y \right |_{-2}^2 =  - 6
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <title>Green's Theorem and Area</title>
+
+    <p>
+      Suppose that we want to compute the curl of the vector field
+      <m>\vec{F}=\langle 0, x\rangle</m> along some SCPS boundary. We have
+      that
+      <m>\oint_{C} \vec{F} \cdot \vec{T} d s  =\oint_{C} x d y =\iint_{R}\left(\frac{\partial g}{\partial x}-\frac{\partial f}{\partial y}\right) d A =\iint_{R} d A</m>
+    </p>
+  </note>
+
+  <remark>
+    <title>Line Integrals for Area</title>
+
+    <p>
+      To find the area of a region enclosed by a SCPS curve <m>C</m>,
+      compute the line integral over <m>C</m> of
+      <m>\vec{F}=\langle 0, x\rangle</m> or <m>\vec{F}=\langle-y, 0\rangle</m>.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch05-03-ex-25-4">
+    <statement>
+      <p>
+        Find a formula for the area of the ellipse
+        <m>\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        By utilizing the vector field <m>\vec F = \langle 0 , x \rangle</m>
+        one can calculate the line integral of this vector field over a
+        parametrization of the ellipse. One such parametrization is
+        <m>\vec r(t) = \langle a\cos (t), b\sin (t) \rangle</m> for
+        <m>0\leq t \leq 2\pi</m>. Now
+        <md alignment="gather">
+          <mrow>\vec F (\vec r (t)) = \langle 0 , a\cos (t) \rangle, \ \vec r'(t) = \langle -a \sin (t),  b\cos (t) \rangle</mrow>
+          <mrow>\vec F (\vec r(t)) \cdot  \vec r' (t) = ab\cos^2 (t)</mrow>
+          <mrow>\oint_C \vec{F} \cdot \vec{T}\ d s = \int_0^{2\pi}  \vec F (\vec r(t)) \cdot  \vec r' (t) \ dt =  \int_0^{2\pi}  ab\cos^2 (t) \ dt \overset{\text{Reduction Formula}}{=}</mrow>
+          <mrow>ab \left ( \cancelto{0}{\left.  \frac{1}{2}\cos (t) \sin (t) \right |_0^{2\pi}} +\frac{1}{2}\int_0^{2\pi} \cos^0 (t) \ dt \right ) = ab\left ( \frac{1}{2} \int_0^{2\pi} dt \right ) = \left . ab\frac{1}{2} t\right |_0^{2\pi} = ab\pi</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      If a vector field <m>\vec{F}=\langle f, g\rangle</m> is conservative
+      on an open, connected, simply connected region <m>R</m>, then
+      <m>\operatorname{curl} \vec{F}=g_{x}-f_{y}=0</m> for every point in
+      <m>R</m> (hence <m>\vec{F}</m> is irrotational in <m>R</m> ).
+      Conversely, if <m>\vec{F}</m> is irrotational in <m>R</m>, its curl
+      along the boundary of <m>R</m> is zero (by Green's theorem). Hence,
+      we have the following equivalence.
+    </p>
+  </note>
+
+  <remark>
+    <title>Conservative and Irrotational Fields</title>
+
+    <p>
+      Let <m>R</m> be an open, connected, simply connected region. Then
+      <m>\vec{F}</m> is conservative on <m>R</m> if and only if it is
+      irrotational in <m>R</m>.
+    </p>
+  </remark>
+
+</section>

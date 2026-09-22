@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch05-04-GreensTheoremDivergence.ptx : converted from
+  "26. Green s Theorem_ Divergence - Solutions.tex" (whose \chapter title is "Green's
+  Theorem: 2D Divergence ", trailing space trimmed) by the bbeaccess-pretext skill
+  (2026-09-17). Fragment for xi:include into ch-05-VectorCalculus.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch05-04 (lecture file 26, chapter 5) on your instruction.
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): ...647eg-1.png (outward vectors inside a
+     boundary) and Example-26.3.png (the region of Example 26.3). Both 2D.
+  3. Image names: "Example 26.3" in the .tex is Example-26.3.png in assets/images
+     (renamed today from the old-numbering Example-27.3.png on your instruction).
+  4. Source caption NOT carried (the caption rule replaces it): the first figure's
+     \caption{Particle outwards motion inside determines outwards motion across the
+     boundary}.
+  5. Example 26.1: parts (a)/(b)/(c) as paragraphs of one statement, one <solution>
+     per box. Example 26.3's picture is inside its statement. Example 26.4 has no
+     solution box (it is a worked statement); <statement> only.
+  6. The Summary remark's tabular (two columns, header row, all cells ruled) is a
+     PreTeXt <tabular> with a header row and minor rules; the \tagpdfsetup line is
+     dropped. Cell text kept verbatim ("curl F", "Div F", "Have phi with ...").
+  7. VECTORS: \mathbf{F}, \mathbf F, \mathbf{N}, \mathbf{T}, \mathbf{r} to \vec{...}.
+     The first note writes "a vector field F" with F as plain text (no math) and
+     Example 26.1 (a) says "Compute Div F" in plain text; both kept as text.
+  8. Mathematics kept verbatim: \operatorname{Div} everywhere (the title of the sign
+     remark keeps its <m>); the two align* blocks of the Stream Functions note are
+     one-line <md>s (no \\ in them); \overset{\text{Polar}}{=}; empty rows dropped;
+     trailing periods/commas moved after </md>.
+  9. Source quirks preserved: "particles motion" (no apostrophe); "Since we are
+     dealing with curl" in the note of the DIVERGENCE theorem (copied from file 25);
+     "compute the integral that represent the flux"; "Notice that both region that of
+     integration"; "sourcefree" and "source-free" both occur; "$R, \mathbf{F}$ is
+     conservative" with the comma inside the math; "( $a, b$ )" spacing; the quoted
+     "at a point" is a <q>; "counterclockwise" vs "counter-clockwise".
+ 10. Typeset <description>s are the conversion's own text; review.
+ 11. Template width constants replace the .tex widths (0.35\textwidth, 0.5\linewidth).
+ 12. Every \newpage/\vspace, the figure[H]/center wrappers, \captionsetup and \\
+     dropped.
+-->
+
+<section xml:id="sec-ch05-04-GreensTheoremDivergence" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Green's Theorem: 2D Divergence</title>
+
+  <note>
+    <p>
+      Suppose you have a SCPS curve <m>C</m> representing a boundary
+      enclosing a region <m>R</m> inside some liquid whose particles motion
+      is given by a vector field F. As before, it makes sense that the
+      behaviour of the liquid particles in <m>R</m> determines the behaviour
+      of the particles near the boundary. For example, if for all (most)
+      points in <m>R</m>, particles near them are moving outwards (away
+      from the point), it makes sense that the same is happening near the
+      boundary (particles are moving outwards across the boundary <m>C</m>
+      ), as shown below:
+    </p>
+  </note>
+
+  <figure xml:id="fig-ch05-04-outward-motion">
+    <caption>A simple closed smooth curve, traversed counter-clockwise, with vectors placed on it, pointing outwards perpendicular to its tangent vector. The curve is enclosing multiple points from which vectors points away from in all cardinal directions.</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_11_25_8a4355876d2d2a66647eg-1. -->
+    <interactive xml:id="interactive-ch05-04-outward-motion" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_11_25_8a4355876d2d2a66647eg-1.png">
+          <shortdescription>A simple closed smooth curve, traversed counter-clockwise, with vectors placed on it, pointing outwards perpendicular to its tangent vector. The curve is enclosing multiple points from which vectors points away from in all cardinal directions.</shortdescription>
+          <description>
+            <p>A simple closed smooth curve, traversed counter-clockwise, with vectors placed on it, pointing outwards perpendicular to its tangent vector. The curve is enclosing multiple points from which vectors points away from in all cardinal directions.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <p>
+    We quantify the expansion (outwards/repelling motion) of particles at
+    a point using divergence.
+  </p>
+
+  <definition>
+    <title>2D Divergence</title>
+
+    <statement>
+      <p>
+        Let <m>\vec{F}=\langle f(x, y), g(x, y)\rangle</m> be a
+        differentiable vector field representing the motion of particles.
+        We measure the outwards/repelling motion at a point ( <m>a, b</m> )
+        by using
+        <md>
+          \operatorname{Div} \vec{F}(a, b)=\frac{\partial f}{\partial x}(a, b)+\frac{\partial g}{\partial y}(a, b)
+        </md>.
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      When we say <q>at a point</q>, we really mean inside an infinitely
+      small circle centered at <m>(a, b)</m>.
+    </p>
+  </note>
+
+  <remark>
+    <title>The sign of <m>\operatorname{Div} \vec{F}(a, b)</m></title>
+
+    <p>
+      The sign of <m>\operatorname{Div} \vec{F}(a, b)</m> tells us whether
+      particles are expanding or contracting at a point:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            If <m>\operatorname{Div} \vec{F}(a, b) \gt 0,(a, b)</m> is acting
+            as a repellent (particles are moving away from <m>(a, b)</m>).
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>\operatorname{Div} \vec{F}(a, b) \lt 0,(a, b)</m> is acting
+            as an attractor (particles are moving towards <m>(a, b)</m> ).
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>\operatorname{Div} \vec{F}(a, b)=0</m>, there is no
+            discernible repellent/attractor motion around <m>(a, b)</m> and
+            we say <m>(a, b)</m> is not a source.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch05-04-ex-26-1">
+    <statement>
+      <p>
+        Given the vector field
+        <m>\vec{F}(x, y)=\left\langle x^2+y^2+x, y^{2}+x^2+y\right\rangle</m> :
+      </p>
+
+      <p>(a) Compute Div F.</p>
+
+      <p>
+        (b) Find a point that acts as an attractor and a point that acts as
+        a repellent.
+      </p>
+
+      <p>(c) Find a point that is not a source.</p>
+    </statement>
+
+    <solution>
+      <p>
+        <md>
+          \operatorname{Div}\vec F = f_x + g_y = 2x+1 +2y +1 = 2x+2y+2
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Attractor implies <m>\operatorname{Div} \vec F \lt 0 </m> and
+        repellent <m>\operatorname{Div} \vec F \gt 0</m>
+        <md alignment="gather">
+          <mrow>\operatorname{Div}\vec F \lt 0 \Rightarrow 2x+2y+2 \lt 0 \Rightarrow y \lt -1-x</mrow>
+          <mrow>\text{An easy point for this purpose, satisfying the above restriction is }(0,-2), \ \operatorname{Div}\vec F(0,-2) = -2</mrow>
+          <mrow>\operatorname{Div}\vec F \gt 0 \Rightarrow 2x+2y+2 \gt 0 \Rightarrow y \gt -1-x</mrow>
+          <mrow>\text{An easy point for this purpose, satisfying the above restriction is }(0,0), \ \operatorname{Div}\vec F(0,0) = 2</mrow>
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Not a source implies zero Div.
+        <md alignment="gather">
+          <mrow>\operatorname{Div} \vec F = 0 \Rightarrow 2x+2y+2 = 0 \Rightarrow y = -1-x</mrow>
+          <mrow>\text{An easy point for this purpose, satisfying the above restriction is }(0,-1), \ \operatorname{Div}\vec F(0,-1) = 0</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    This relationship between expansion inside a region and its boundary
+    is quantified mathematically by Green's Theorem.
+  </p>
+
+  <theorem>
+    <title>Green's Theorem: Divergence</title>
+
+    <statement>
+      <p>
+        Let <m>C</m> be a SCPS curve, oriented counterclockwise, that
+        encloses a connected and simply connected region <m>R</m> in the
+        plane. Assume that <m>\vec{F}=\langle f, g\rangle</m>, where
+        <m>f</m> and <m>g</m> have continuous first partial derivatives in
+        <m>R</m>. Then
+        <md>
+          \oint_{C} \vec{F} \cdot \vec{N} d s=\iint_{R}\left(\frac{\partial f}{\partial x}+\frac{\partial g}{\partial y}\right) d A
+        </md>
+      </p>
+    </statement>
+  </theorem>
+
+  <remark>
+    <p>
+      Given <m>\vec{F}=\langle f(x, y), g(x, y)\rangle</m> and
+      <m>\vec{r}(t)=\langle x(t), y(t)\rangle</m>, the following are
+      equivalent:
+      <md>
+        \int_{C} \vec{F} \cdot \vec{N} d s=\int_{C} f d y-g d x
+      </md>
+    </p>
+  </remark>
+
+  <note>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Since we are dealing with curl, we assume that <m>C</m> is
+            simple and closed (so that it encloses a region <m>R</m> ).
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Important: This theorem says that in order to compute the
+            divergence across a SCPS boundary, you add up the divergence at
+            each point inside the enclosed region <m>R</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The proof of this result is simple and is given in the book.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </note>
+
+  <example xml:id="example-ch05-04-ex-26-2">
+    <statement>
+      <p>
+        Using Green's theorem, compute the integral that represent the flux
+        <md>
+          \oint_{C}2x-y d y-x^4 d x
+        </md>,
+        where <m>C</m> is the unit circle (oriented counter-clockwise).
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        From previous material
+        <m>\text{Flux} = \int_{C} \vec{F} \cdot \vec{N} d s</m>. According
+        to the above
+        <md>
+          \int_{C} \vec{F} \cdot \vec{N} d s=\oint_{C} f d y -g d x, \  \text{for }\vec F = \langle f, g \rangle
+        </md>
+        This implies that in this case the vector field is
+        <m>\vec F = \langle 2x-y, x^4 \rangle</m> whose
+        <m>\operatorname{Div} \vec F = f_x + g_y = 2 + 0 = 2</m>.
+        Additionally, from the theorem
+        <md>
+          \int_{C} \vec{F} \cdot \vec{N} d s= \iint_R \operatorname{Div} \vec F \ dA
+        </md>.
+        Notice that both region that of integration as well as the
+        function behave well in polar coordinates. In this coordinate
+        system the region is expressed as <m>0\leq r \leq 1</m> and
+        <m>0\leq \theta \leq 2 \pi</m>, while
+        <m>\operatorname{Div} \vec F (r,\theta ) = 2</m>. Hence
+        <md alignment="gather">
+          <mrow>\iint_R \operatorname{Div} \vec F \ dA = \iint_R 2\ dA \overset{\text{Polar}}{=} \int_0^{2\pi}\int_0^1 2 r\ dr d\theta = \int_0^{2\pi} \left. r^2 \right |_0^1 d\theta =</mrow>
+          <mrow>\int_0^{2\pi } 1 \ d\theta = \left. \theta\right |_0^{2\pi} = 2\pi</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch05-04-ex-26-3">
+    <statement>
+      <p>
+        Compute the flux of a fluid whose velocity field is given by
+        <m>\vec{F}= \left\langle xy, x^2\right\rangle</m>, across the
+        boundary of the region in the first quadrant bounded by the circles
+        <m>r=1, r=2</m>, the line <m>y=x</m>, and the <m>x</m>-axis
+        (oriented counter-clockwise).
+      </p>
+
+      <figure xml:id="fig-ch05-04-ex-26-3">
+        <caption>A region in the first quadrant bounded below by the x-axis and above by the line y equals x, lying between the circular arcs of radius 1 and radius 2.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to Example 26.3. -->
+        <interactive xml:id="interactive-ch05-04-ex-26-3" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/Example-26.3.png">
+              <shortdescription>A region in the first quadrant bounded below by the x-axis and above by the line y equals x, lying between the circular arcs of radius 1 and radius 2.</shortdescription>
+              <description>
+                <p>A region in the first quadrant bounded below by the <m>x</m>-axis and above by the line <m>y=x</m>, lying between the circular arcs of radius 1 and radius 2.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        Flux <m>= \int_C \vec F \cdot \vec N \ ds</m>. Using the previous
+        theorem, the integral can be expressed as
+        <m>\iint_R \operatorname{Div}\vec F \ d A</m>. For the vector field
+        one has <m>f(x,y) = xy</m> and <m>g(x,y) =x^2</m>. The
+        <m>\operatorname{Div}\vec F</m> of this vector field equals
+        <m>f_x+g_y= y+0 =y</m>. Now in order to use Polar Coordinates one
+        must rewrite the <m>\operatorname{Div}\vec F</m> and the equation
+        <m>y=x</m>. Utilizing the equations <m>x=r\cos \theta</m> and
+        <m>y= r\sin\theta</m>, one sees that
+        <m>\operatorname{Div}\vec F (r, \theta )= r\sin\theta</m> and that
+        <m>y=x</m> corresponds to <m>\theta = \frac{\pi}{4}</m> or
+        <m>\frac{5\pi}{4}</m>, but the latter is not in the first quadrant.
+        <md alignment="gather">
+          <mrow>\iint_R \operatorname{Div}\vec F \ d A = \int_0^{\frac{\pi}{4}}\int_1^2 \operatorname{Div}\vec F (r, \theta ) r\ dr d\theta= \int_0^{\frac{\pi}{4}}\int_1^2 r \sin \theta \ r\ dr d\theta  =\int_0^{\frac{\pi}{4}}\int_1^2 r^2 \sin \theta \ dr d\theta =</mrow>
+          <mrow>\int_0^{\frac{\pi}{4}} \left . \frac{r^3}{3} \sin \theta \right |_1^2   d\theta  = \int_0^{\frac{\pi}{4}} \frac{7}{3}\sin\theta \ d\theta = \left  . -\frac{7}{3}\cos\theta \right |_0^{\frac{\pi}{4}} = \frac{7}{3}\left ( - \frac{\sqrt 2}{2} +1 \right)</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <title>Stream Functions</title>
+
+    <p>
+      As we saw in the previous section, given a vector field
+      <m>\vec{F}=\langle f, g\rangle</m> defined over an open, connected,
+      simply connected region <m>R, \vec{F}</m> is conservative if and only
+      if it is irrotational. That is, <m>\vec{F}</m> being irrotational
+      implies that <m>\vec{F}=\nabla \varphi</m>, for some potential
+      function <m>\varphi</m>. Is there a similar function for source-free
+      vector fields? Suppose that, on some open region <m>R</m>, we have a
+      differentiable vector field <m>\vec{F}= \langle f, g\rangle</m> and
+      that there exists a twice continuously-differentiable scalar-valued
+      function <m>\psi</m> (called a stream function) such that
+      <md>
+        \frac{\partial \psi}{\partial y}=f, \quad \frac{\partial \psi}{\partial x}=-g
+      </md>.
+      Then
+      <md>
+        \operatorname{Div} \vec{F}  =f_{x}+g_{y} =\psi_{y x}-\psi_{x y} =0 \quad(\text { since the mixed partials are equal })
+      </md>.
+      Hence, if <m>\vec{F}</m> has a stream function <m>\psi</m>, then its
+      divergence at each point is zero. (Just as if a vector field has a
+      potential function, its curl at each point is zero).
+    </p>
+  </note>
+
+  <remark>
+    <title>Source Free and Stream Functions</title>
+
+    <p>
+      Let <m>R</m> be an open, connected, simply connected region. Then
+      <m>\vec{F}</m> is sourcefree on <m>R</m> if and only if it has a
+      stream function on <m>R</m>.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch05-04-ex-26-4">
+    <statement>
+      <p>
+        Consider the function <m>\psi=x^3 y+y^2</m>. Since
+        <m>\psi_{y}=x^3+2y</m> and <m>\psi_{x}=3x^2y</m>, we have that the
+        vector field <m>\vec{F}=\left\langle x^3+2y, -3x^2y\right\rangle</m>
+        is source-free in <m>\mathbb{R}^{2}</m>. Hence,
+        <md>
+          \oint_{C} \vec{F} \cdot \vec{N} d s=0
+        </md>
+        for all SCPS curves <m>C</m>.
+      </p>
+
+      <p>
+        Moreover, if the curve <m>C</m> is not closed (has starting point
+        <m>A</m> and ending point <m>B</m> ), we have that
+        <md>
+          \int_{C} \vec{F} \cdot \vec{N} d s=\psi(B)-\psi(A)
+        </md>
+      </p>
+    </statement>
+  </example>
+
+  <remark>
+    <title>Summary</title>
+
+    <p>
+      On an open, connected, simply connected region <m>R</m> :
+    </p>
+
+    <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+      <row header="yes" bottom="medium">
+        <cell>Irrotational Field <m>\vec{F}=\langle f, g\rangle</m></cell>
+        <cell>Source-Free Field <m>\vec{F}=\langle f, g\rangle</m></cell>
+      </row>
+      <row>
+        <cell>curl <m>\vec{F}=g_{x}-f_{y}=0</m></cell>
+        <cell>Div <m>\vec{F}=f_{x}+g_{y}=0</m></cell>
+      </row>
+      <row>
+        <cell>Have <m>\varphi</m> with <m>\nabla \varphi=\vec{F}</m></cell>
+        <cell>Have <m>\psi</m> with <m>\psi_{y}=f, \psi_{x}=-g</m></cell>
+      </row>
+      <row>
+        <cell><m>\oint_{C} \vec{F} \cdot \vec{T} d s=0</m> on all SCPS curves <m>C</m></cell>
+        <cell><m>\oint_{C} \vec{F} \cdot \vec{N} d s=0</m> on all SCPS curves <m>C</m></cell>
+      </row>
+      <row>
+        <cell><m>\int_{C} \vec{F} \cdot \vec{T} d s=\varphi(B)-\varphi(A)</m></cell>
+        <cell><m>\int_{C} \vec{F} \cdot \vec{N} d s=\psi(B)-\psi(A)</m></cell>
+      </row>
+    </tabular>
+  </remark>
+
+</section>

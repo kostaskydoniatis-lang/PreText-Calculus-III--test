@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch03-07-LagrangeMultipliers.ptx : converted from
+  "13. Lagrange Multipliers - Solutions.tex" (whose \chapter title is "Constraints and
+  Lagrange Multipliers") by the bbeaccess-pretext skill (2026-09-17). Fragment for
+  xi:include into ch-03-DerivativesOfVectorAndScalarValuedFunctions.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch03-07 (lecture file 13, chapter 3) on your instruction. The
+     <title> is the \chapter title "Constraints and Lagrange Multipliers"; the file
+     name follows the .tex file name.
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): all seven pictures - ...161fg-01.png
+     (Example 13.1), ...161fg-02.png (13.2), Example-13.3.png (smooth curves, 2D,
+     Desmos can do it), ...161fg-05.png (13.4), ...161fg-07.png (13.5), ...161fg-09.png
+     (simple closed curve, 2D), Example-13.6.png (13.6). The surfaces are 3D.
+  3. Image names: "Example 13.3" / "Example 13.6" in the .tex are Example-13.3.png /
+     Example-13.6.png in assets/images (renamed today from the old-numbering files
+     Example-14.3.png / Example-14.6.png on your instruction). All seven are .png.
+  4. Source captions / legends: Example 13.1's figure \caption ("f(x,y)=(y-x)/4
+     restricted to the set R=...") is NOT carried (the caption rule replaces it).
+     The legends typed under the pictures of Examples 13.2, 13.4, 13.5 and the
+     Combining note (math lines such as "f(x,y)=(y-x)/4 restricted to the circle
+     (x-2)^2+(y-2)^2=1") are kept as a <p> right after their figure. The 13.4 legend
+     says "y=2,-1/2 <= x <= 1/2" (the .tex typo for y=2x); preserved.
+  5. Example 13.3 "[Examples of smooth and non smooth curves]" has NO statement text:
+     the box holds only a solution (prose + picture). The bracket became the <title>,
+     the picture went into the <statement> (a statement cannot be empty) and the prose
+     stayed in the <solution>. Say if you prefer the picture in the solution and a
+     one-line statement of your own.
+  6. Merged continuations (one <example> each, one <solution> per box, the repeated
+     header line of each continuation dropped): 13.5 + "[Continuation of 13.5]" (two
+     solutions); 13.6 + two "[Continuation of 13.6]" boxes (three solutions: interior,
+     boundary, evaluation; the Example-13.6 picture sits at the end of the third
+     solution where the .tex has it); 13.8 + "[Continuation of 13.8]" (two solutions).
+     ptx_check therefore reports 12 examples in the .tex vs 8 here. The
+     \setcounter{tcb@cnt@example} lines are dropped. The commented-out
+     "[Continuation of 13.4]" example (the -1 <= x <= 1 variant) is kept as an XML
+     comment where it stood.
+  7. Example 13.1 has no solution box (statement only, "as shown below"); its picture
+     sits AFTER \end{example} in the .tex and is a section-level figure. The pictures of
+     13.2, 13.4, 13.5 are inside their statements where the .tex has them; the
+     Combining note keeps its picture inside the <note>.
+  8. The Method of Lagrange Multipliers definition interrupts its enumerate with a
+     display (item 1 ... $$...$$ ... \setcounter{enumi}{1} items 2, 3). Here it is ONE
+     <ol> with the display inside item 1's paragraph. Item 3 says "found in part (b)"
+     (meaning step 2); preserved.
+  9. The Extreme Value Theorem is a <theorem> with <statement>; its itemize has the
+     conclusion "then the differentiable function ... will have absolute max/min
+     values" typed inside the second item after a \\, kept as a second <p> of that
+     item. "{\large\color{magenta}\textbf{Important:}}" is an <alert>Important:</alert>
+     (size and colour dropped).
+ 10. Cross-references: "In Examples 13.4 and 13.5" -> two <xref>s (word "Examples"
+     dropped); "the two candidates found in Example 13.5" -> <xref>; "the candidate
+     found in Example 13.7" inside Example 13.7's own solution -> <xref> to itself.
+     Relative references left as prose: "as shown below" (13.1), "Below we have"
+     (13.2), "described in the previous note", "step 1", "part (b)".
+ 11. The bracket arguments of Examples 13.7 and 13.8 cite the book with a hyperlink
+     ("Example 4.44 of the book", "Checkpoint 4.38 of the book"); mapped to <title>
+     with the link as a <url> inside the title. Dollar amounts (\$40, \$50, \$500,000)
+     are <dollar/>40 etc.
+ 12. The Lagrange Multipliers in Higher Dimensions system (\begin{aligned} with &
+     before =) is an <md> (align mode) with \amp kept.
+ 13. Typeset <description>s are the conversion's own text; review.
+ 14. Template width constants replace the .tex widths (.6\textwidth, max width=0.5/
+     0.7\textwidth).
+ 15. No \mathbf in this file. \textbf{Interior.} / \textbf{Boundary.} are <alert>s;
+     the triple hyphen of the 13.6 evaluation is an <mdash/>.
+ 16. Source quirks preserved: "at the point  $(...)$ )and an absolute minimum at the
+     point  $(...)$ ," (double spaces, stray ")"); "$\mathrm{max} / \mathrm{min}$" and
+     "$\max / \min$" both occur; "local extremum"; "non smooth"; "is constraint by";
+     "That in terms imply"; "in  1  year", "Suppose  1   unit", "\$50.   Use" multiple
+     spaces; "y represents" with y outside math; "(Since the restriction ..." with no
+     space after "constraint $x+y+z=1$."; "The largest and smallest values you found in
+     part (b)"; "$g(x, y)=0$ :" spacing; the .tex chapter title vs file name (item 1).
+ 17. Every \newpage/\vspace, the figure[H]/center wrappers, \captionsetup, \\ and
+     \setcounter dropped.
+-->
+
+<section xml:id="sec-ch03-07-LagrangeMultipliers" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Constraints and Lagrange Multipliers</title>
+
+  <note>
+    <p>
+      In the previous section, we found how to find local extremum of a
+      function <m>f(x, y)</m> in the interior of its domain.
+    </p>
+
+    <p>
+      In practice, we sometimes restrict the domain of a function to a
+      subset of its domain, and this subset sometimes will have boundaries.
+      In this section, we will learn how to deal with these boundaries.
+    </p>
+  </note>
+
+  <note>
+    <p>
+      Before, we were interested in finding local max/min values. Now, we
+      will expand our search to absolute max/min values.
+    </p>
+  </note>
+
+  <definition>
+    <title>Absolute Maximum and Minimum Values</title>
+
+    <statement>
+      <p>
+        Given a function <m>f(x, y)</m>, a set <m>R</m> in its domain, and a
+        point <m>(a, b)</m> in <m>R</m>, then:
+      </p>
+
+      <p>
+        <ul>
+          <li>
+            <p>
+              <m>f</m> has an absolute maximum in <m>R</m> at <m>(a, b)</m>
+              if <m>f(a, b) \geq f(x, y)</m> for all <m>(x, y)</m> in
+              <m>R</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>f</m> has an absolute minimum in <m>R</m> at <m>(a, b)</m>
+              if <m>f(a, b) \leq f(x, y)</m> for all <m>(x, y)</m> in
+              <m>R</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch03-07-ex-13-1">
+    <statement>
+      <p>
+        Suppose we restrict the domain of the function
+        <m>f(x, y)=\frac{y-x}{4}</m> to the set
+        <md>
+          R=\left\{(x, y) \mid \frac{1}{2}\leq y \leq \frac{3}{2}, 0 \leq x \leq \frac{3}{2}\right\}
+        </md>.
+        Under this restriction, <m>f</m> has an absolute maximum at the
+        point  <m>\left(0,\frac{3}{2},\frac{3}{8}\right)</m> )and an
+        absolute minimum at the point
+        <m>\left(\frac{3}{2},\frac{1}{2},-\frac{1}{4}\right)</m> , as shown
+        below.
+      </p>
+    </statement>
+  </example>
+
+  <figure xml:id="fig-ch03-07-ex-13-1">
+    <caption>The plane z equals, y minus x, all over 4, restricted on the domain 1 over 2 less or equal to y less or equal to 3 over 2 and 0 less or equal to x less or equal to 3 over 2.</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_09_20_59857d370a03ae89161fg-01. -->
+    <interactive xml:id="interactive-ch03-07-ex-13-1" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_09_20_59857d370a03ae89161fg-01.png">
+          <shortdescription>The plane z equals, y minus x, all over 4, restricted on the domain 1 over 2 less or equal to y less or equal to 3 over 2 and 0 less or equal to x less or equal to 3 over 2.</shortdescription>
+          <description>
+            <p>The plane <m>z=\frac{y-x}{4}</m>, restricted on the domain <m>\frac{1}{2} \leq y \leq \frac{3}{2}</m> and <m>0 \leq x \leq \frac{3}{2}</m>.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <remark>
+    <title>Method of Lagrange Multipliers</title>
+
+    <p>
+      Given a surface <m>f(x, y)</m> (called the objective function), we
+      will look at domain restrictions (called constraints) of the form
+      <m>g(x, y)=0</m>.
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            Note that <m>g(x, y)=0</m> is a curve in the <m>x y</m>-plane
+            (since it is <m>g(x, y)</m> intersected with <m>z=0</m> ).
+          </p>
+        </li>
+
+        <li>
+          <p>
+            We will require that all of the curve <m>g(x, y)=0</m> is in
+            the interior of the domain of <m>f</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch03-07-ex-13-2">
+    <statement>
+      <p>
+        Below we have the function <m>f(x, y)=\frac{y-x}{4}</m> restricted
+        (constrained) to points from the curve
+        <m>(x-2)^{2}+(y-2)^{2}=1</m>.
+      </p>
+
+      <p>Write this constraint in the form <m>g(x, y)=0</m>.</p>
+
+      <figure xml:id="fig-ch03-07-ex-13-2">
+        <caption>The plane z equals, y minus x, all over 4, and the circle that corresponds to the restricted domain of the circle, on the xy-plane, centred at (2,2) with radius 1.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_59857d370a03ae89161fg-02. -->
+        <interactive xml:id="interactive-ch03-07-ex-13-2" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_09_20_59857d370a03ae89161fg-02.png">
+              <shortdescription>The plane z equals, y minus x, all over 4, and the circle that corresponds to the restricted domain of the circle, on the xy-plane, centred at (2,2) with radius 1.</shortdescription>
+              <description>
+                <p>The plane <m>z=\frac{y-x}{4}</m>, and the circle that corresponds to the restricted domain of the circle, on the <m>xy</m>-plane, centred at <m>(2,2)</m> with radius 1.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        <m>f(x, y)=\frac{y-x}{4}\text { restricted to the circle }(x-2)^{2}+(y-2)^{2}=1</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        To write the constraint in the form <m>g(x,y)=0</m> we move
+        everything to one side of the equation. Subtracting <m>1</m> from
+        both sides of <m>(x-2)^{2}+(y-2)^{2}=1</m> gives
+        <md>
+          (x-2)^{2}+(y-2)^{2}-1 = 0
+        </md>
+        so the constraint is <m>g(x,y) = (x-2)^{2}+(y-2)^{2}-1</m>. Note that
+        the curve <m>g(x,y)=0</m> is the circle of radius <m>1</m> centred
+        at <m>(2,2)</m> in the <m>xy</m>-plane, which lies entirely in the
+        interior of the domain of <m>f</m> (the whole plane).
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    Now, we give a method to find the absolute
+    <m>\mathrm{max} / \mathrm{min}</m> values of a surface <m>f(x, y)</m>
+    subject to a constraint of the form <m>g(x, y)=0</m>.
+  </p>
+
+  <definition>
+    <title>Method of Lagrange Multipliers</title>
+
+    <statement>
+      <p>
+        Suppose you want to find the absolute <m>\max / \min</m> values of
+        a differentiable function <m>f(x, y)</m> subject to the domain
+        restriction <m>g(x, y)=0</m>. If <m>g(x, y)</m> is a smooth curve
+        and <m>\nabla g(x, y) \neq 0</m> for all points on <m>g(x, y)=0</m>,
+        then we can find these absolute <m>\mathrm{max} / \mathrm{min}</m>
+        values as follows:
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              Find values of <m>x, y</m>, and <m>\lambda</m> (called a
+              Lagrange multiplier) such that
+              <md>
+                \nabla f(x, y)=\lambda \nabla g(x, y) \quad \text { and } \quad g(x, y)=0
+              </md>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Evaluate <m>f</m> at the values <m>(x, y)</m> found in step 1
+              and at the endpoints of <m>g(x, y)=0</m>, if they exist (for
+              example, if <m>g(x, y)=0</m> is a line segment).
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The largest and smallest values you found in part (b) are the
+              absolute max and min values of <m>f</m>, respectively,
+              restricted to <m>g(x, y)=0</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      When we say <m>g(x, y)=0</m> is smooth, we mean that it is
+      differentiable (has no sharp edges and doesn't intersect itself).
+    </p>
+  </note>
+
+  <example xml:id="example-ch03-07-ex-13-3">
+    <title>Examples of smooth and non smooth curves</title>
+
+    <statement>
+      <figure xml:id="fig-ch03-07-ex-13-3">
+        <caption>From left to right: the circle, x plus 6, squared, plus y squared equals 2, and the parabola y equals, x plus 3, squared, both smooth curves, then the graph of y equals the absolute value of x minus 3 with a sharp corner at x equals 3 and a cycloid curve, both not smooth.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to Example 13.3. -->
+        <interactive xml:id="interactive-ch03-07-ex-13-3" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/Example-13.3.png">
+              <shortdescription>From left to right: the circle, x plus 6, squared, plus y squared equals 2, and the parabola y equals, x plus 3, squared, both smooth curves, then the graph of y equals the absolute value of x minus 3 with a sharp corner at x equals 3 and a cycloid curve, both not smooth.</shortdescription>
+              <description>
+                <p>From left to right: the circle <m>(x+6)^2+y^2=2</m>, and the parabola <m>y=(x+3)^2</m>, both smooth curves, then the graph of <m>y=|x-3|</m> with a sharp corner at <m>x=3</m> and a cycloid curve, both not smooth.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        A curve is smooth when it is differentiable everywhere: it has no
+        sharp corners and it does not intersect itself. The circle
+        <m>(x+6)^2+y^2=2</m> and the parabola <m>y=(x+3)^2</m> are smooth
+        curves, since at every point they have a well-defined tangent line.
+        The graph of <m>y=|x-3|</m> is not smooth because of the sharp
+        corner, where no tangent line exists. A cycloid curve is not smooth
+        because it has a cusp.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch03-07-ex-13-4">
+    <statement>
+      <p>
+        Using the method of Lagrange multipliers, find the absolute max/min
+        values of <m>f(x, y)=x^{2}-y^{2}</m> subject to the constraint
+        <m>y=2x,-\frac{1}{2} \leq x \leq \frac{1}{2}</m>.
+      </p>
+
+      <figure xml:id="fig-ch03-07-ex-13-4">
+        <caption>The surface z equals x squared minus y squared, and the curve on it over the restricted domain y equals 2 x, for negative 1 over 2 less or equal to x less or equal to 1 over 2.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_59857d370a03ae89161fg-05. -->
+        <interactive xml:id="interactive-ch03-07-ex-13-4" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_09_20_59857d370a03ae89161fg-05.png">
+              <shortdescription>The surface z equals x squared minus y squared, and the curve on it over the restricted domain y equals 2 x, for negative 1 over 2 less or equal to x less or equal to 1 over 2.</shortdescription>
+              <description>
+                <p>The surface <m>z=x^2-y^2</m>, and the curve on it over the restricted domain <m>y=2x</m>, for <m>-\frac{1}{2} \leq x \leq \frac{1}{2}</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        <m>f(x, y)=x^{2}-y^{2} \text { subject to the constraint } y=2,-1/2 \leq x \leq 1/2</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We first write the constraint in the form <m>g(x,y)=0</m>: from
+        <m>y=2x</m> we get <m>g(x,y) = y - 2x = 0</m>. The gradients are
+        <m>\nabla f = \langle 2x, -2y \rangle</m> and
+        <m>\nabla g = \langle -2, 1 \rangle</m>, so the system
+        <m>\nabla f = \lambda \nabla g</m> together with the constraint
+        reads
+        <md>
+          2x = -2\lambda, \quad -2y = \lambda, \quad y = 2x
+        </md>
+        The first equation gives <m>\lambda = -x</m>; substituting into the
+        second gives <m>-2y = -x \Rightarrow x = 2y</m>. Combining with the
+        constraint <m>y=2x</m> we get
+        <m>x = 2(2x) = 4x \Rightarrow 3x = 0 \Rightarrow x = 0</m>, and then
+        <m>y=0</m>. This gives the single candidate <m>(0,0)</m>.
+      </p>
+
+      <p>
+        Since the constraint is a line segment, we must also evaluate
+        <m>f</m> at its endpoints, <m>x=-\frac{1}{2}</m> and
+        <m>x=\frac{1}{2}</m>, that is at the points
+        <m>\left( -\frac{1}{2}, -1 \right)</m> and
+        <m>\left( \frac{1}{2}, 1 \right)</m>. Evaluating <m>f</m> at all of
+        the candidates:
+        <md>
+          f(0,0) = 0, \quad f\left( \tfrac{1}{2}, 1 \right) = \tfrac{1}{4} - 1 = -\tfrac{3}{4}, \quad f\left( -\tfrac{1}{2}, -1 \right) = \tfrac{1}{4} - 1 = -\tfrac{3}{4}
+        </md>
+        The segment contains its endpoints and is bounded, so the Extreme
+        Value theorem applies: the absolute maximum is <m>0</m> at
+        <m>(0,0)</m> and the absolute minimum is <m>-\frac{3}{4}</m>,
+        attained at both <m>\left( \frac{1}{2}, 1 \right)</m> and
+        <m>\left( -\frac{1}{2}, -1 \right)</m>.
+      </p>
+    </solution>
+  </example>
+
+  <!--\setcounter{tcb@cnt@example}{3}
+  \begin{example}[Continuation of 13.4]
+  $f(x, y)=x^{2}-y^{2}$ subject to the constraint $y=2x,-1 \leq x \leq 1$.\vspace{0.5cm}\\
+  \begin{solution}
+  The Lagrange multiplier step is exactly what was done in Example 13.4. As shown there, the only candidate produced by the system $\nabla f = \lambda \nabla g$ is $(0,0)$; widening the interval to $-1 \leq x \leq 1$ only changes the endpoints of the segment, which are now $(-1,-2)$ and $(1,2)$. Evaluating $f$ at all of the candidates:
+  \begin{gather*}
+  f(0,0) = 0, \quad f(1,2) = 1 - 4 = -3, \quad f(-1,-2) = 1 - 4 = -3
+  \end{gather*}
+  The segment contains its endpoints and is bounded, so the Extreme Value theorem applies: the absolute maximum is $0$ at $(0,0)$ and the absolute minimum is $-3$, attained at both $(1,2)$ and $(-1,-2)$.\end{solution}
+  \vspace{0.5cm}\end{example}-->
+
+  <example xml:id="example-ch03-07-ex-13-5">
+    <statement>
+      <p>
+        Find the absolute <m>\mathrm{max} / \mathrm{min}</m> values of the
+        objective function <m>f(x, y)= \frac{x}{5}+\frac{y}{2}</m> where
+        <m>x</m> and <m>y</m> lie on the circle <m>C</m> given by
+        <m>x^{2}+y^{2}=1</m>.
+      </p>
+
+      <figure xml:id="fig-ch03-07-ex-13-5">
+        <caption>The plane z equals x over 5 plus y over 2, and the circle constraint, along with the curve of the plane corresponding to the constraint.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_59857d370a03ae89161fg-07. -->
+        <interactive xml:id="interactive-ch03-07-ex-13-5" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_09_20_59857d370a03ae89161fg-07.png">
+              <shortdescription>The plane z equals x over 5 plus y over 2, and the circle constraint, along with the curve of the plane corresponding to the constraint.</shortdescription>
+              <description>
+                <p>The plane <m>z=\frac{x}{5}+\frac{y}{2}</m>, and the circle constraint, along with the curve of the plane corresponding to the constraint.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        <m>f(x, y)=\frac{x}{5}+\frac{y}{2}\text { subject to the constraint } x^{2}+y^{2}=1</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We write the constraint as <m>g(x,y) = x^{2}+y^{2}-1 = 0</m>. The
+        gradients are
+        <m>\nabla f = \left\langle \frac{1}{5}, \frac{1}{2} \right\rangle</m>
+        and <m>\nabla g = \langle 2x, 2y \rangle</m>, so the system
+        <m>\nabla f = \lambda \nabla g</m> together with the constraint
+        reads
+        <md>
+          \frac{1}{5} = 2\lambda x, \quad \frac{1}{2} = 2\lambda y, \quad x^{2}+y^{2} = 1
+        </md>
+        The left sides of the first two equations are nonzero, so none of
+        <m>x</m>, <m>y</m>, or <m>\lambda</m> can be zero. We may therefore
+        solve each of the first two equations for <m>\lambda</m>:
+        <md>
+          \lambda = \frac{1}{10x}, \qquad \lambda = \frac{1}{4y}
+        </md>
+        Setting these two expressions equal to each other eliminates
+        <m>\lambda</m> and gives a relation between <m>x</m> and <m>y</m>:
+        <md>
+          \frac{1}{10x} = \frac{1}{4y} \Rightarrow 4y = 10x \Rightarrow y = \frac{5}{2}x
+        </md>
+        Substituting <m>y = \frac{5}{2}x</m> into the constraint
+        <m>x^{2}+y^{2}=1</m>:
+        <md>
+          x^{2} + \frac{25}{4}x^{2} = 1 \Rightarrow \frac{29}{4}x^{2} = 1 \Rightarrow x^{2} = \frac{4}{29} \Rightarrow x = \pm\frac{2}{\sqrt{29}}
+        </md>
+        and the corresponding
+        <m>y = \frac{5}{2}x = \pm\frac{5}{\sqrt{29}}</m>. This produces the
+        two candidates
+        <m>\left( \frac{2}{\sqrt{29}}, \frac{5}{\sqrt{29}} \right)</m> and
+        <m>\left( -\frac{2}{\sqrt{29}}, -\frac{5}{\sqrt{29}} \right)</m>.
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        It remains to evaluate <m>f</m> at the two candidates found in
+        <xref ref="example-ch03-07-ex-13-5"/>:
+        <md alignment="gather">
+          <mrow>f\left( \frac{2}{\sqrt{29}}, \frac{5}{\sqrt{29}} \right) = \frac{1}{5}\cdot\frac{2}{\sqrt{29}} + \frac{1}{2}\cdot\frac{5}{\sqrt{29}} = \frac{4}{10\sqrt{29}} + \frac{25}{10\sqrt{29}} = \frac{29}{10\sqrt{29}} = \frac{\sqrt{29}}{10}</mrow>
+          <mrow>f\left( -\frac{2}{\sqrt{29}}, -\frac{5}{\sqrt{29}} \right) = -\frac{\sqrt{29}}{10}</mrow>
+        </md>
+        The circle has no endpoints and is bounded, so the Extreme Value
+        theorem applies: the absolute maximum is <m>\frac{\sqrt{29}}{10}</m>
+        at <m>\left( \frac{2}{\sqrt{29}}, \frac{5}{\sqrt{29}} \right)</m> and
+        the absolute minimum is <m>-\frac{\sqrt{29}}{10}</m> at
+        <m>\left( -\frac{2}{\sqrt{29}}, -\frac{5}{\sqrt{29}} \right)</m>.
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      In <xref ref="example-ch03-07-ex-13-4"/> and
+      <xref ref="example-ch03-07-ex-13-5"/>, we could see from the pictures
+      that the values we found are the only absolute
+      <m>\mathrm{max} / \mathrm{min}</m> values.
+    </p>
+  </remark>
+
+  <p>
+    In practice, how can we know if we found the correct (and only)
+    absolute <m>\mathrm{max} / \mathrm{min}</m> values? We can use a
+    theorem called the Extreme Value theorem.
+  </p>
+
+  <theorem>
+    <title>The Extreme Value Theorem</title>
+
+    <statement>
+      <p>
+        Let <m>f(x, y)</m> be differentiable and <m>g(x, y)=0</m> be a
+        differentiable curve inside the domain of <m>f</m>. If the curve
+        <m>g(x, y)=0</m> :
+      </p>
+
+      <p>
+        <ul>
+          <li>
+            <p>Contains its endpoints (if they exist)</p>
+          </li>
+
+          <li>
+            <p>
+              and is bounded (you can put it inside a circle of finite
+              radius)
+            </p>
+
+            <p>
+              then the differentiable function <m>f(x, y)</m> will have
+              absolute <m>\mathrm{max} / \mathrm{min}</m> values on
+              <m>g(x, y)=0</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </theorem>
+
+  <remark>
+    <p>
+      If the conditions for the Extreme Value theorem hold, then the method
+      of Lagrange multipliers will find the absolute max/min values of
+      <m>f</m> restricted to <m>g(x, y)=0</m>. If any of the two conditions
+      above doesn't hold, then the method of Lagrange multipliers will only
+      find local extremum.
+    </p>
+  </remark>
+
+  <note>
+    <title>Combining Boundaries and Interiors</title>
+
+    <p>
+      Suppose that the (differentiable) function <m>f(x, y)</m> is
+      constraint by the (differentiable) curve <m>g(x, y)=0</m> enclosing a
+      region <m>S</m> in the <m>x y</m>-plane (we call such curves simple
+      and closed).
+    </p>
+
+    <p>
+      Then we can combine the method of Lagrange multipliers with critical
+      point analysis to find the absolute <m>\max / \min</m> values of
+      <m>f</m> on <m>g(x, y)=0</m> and <m>S</m>.
+    </p>
+
+    <figure xml:id="fig-ch03-07-simple-closed-curve">
+      <caption>The simple and closed curve x squared plus y squared equals 1, enclosing a region S.</caption>
+
+      <!-- This interactive is PENDING, it should correspond to 2025_09_20_59857d370a03ae89161fg-09. -->
+      <interactive xml:id="interactive-ch03-07-simple-closed-curve" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <instructions>
+          <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+          <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+        </instructions>
+        <static>
+          <image source="/images/2025_09_20_59857d370a03ae89161fg-09.png">
+            <shortdescription>The simple and closed curve x squared plus y squared equals 1, enclosing a region S.</shortdescription>
+            <description>
+              <p>The simple and closed curve <m>x^2+y^2=1</m>, enclosing a region <m>S</m>.</p>
+            </description>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+
+    <p>
+      The simple and closed curve <m>x^{2}+y^{2}=1</m> (dark green)
+      enclosing a region <m>S</m> (light green)
+    </p>
+  </note>
+
+  <remark>
+    <p>The method is as follows:</p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            Find candidates for absolute <m>\max / \min</m> values on
+            <m>g(x, y)=0</m> (the boundary) using the method of Lagrange
+            multipliers.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Find candidates for absolute <m>\max / \min</m> values on the
+            region <m>S</m> (the region enclosed by <m>g(x, y)=0</m>,
+            excluding the boundary).
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Evaluate <m>f</m> at all of these points. The largest is the
+            absolute max and the smallest the absolute min.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <alert>Important:</alert> The Extreme Value theorem applies to
+      regions described in the previous note (regions enclosed by a simple
+      and closed curve <m>g(x, y)=0</m> including its interior).
+    </p>
+  </remark>
+
+  <example xml:id="example-ch03-07-ex-13-6">
+    <statement>
+      <p>
+        Find the absolute max and min values (if they exist) of
+        <m>f(x, y)= 4 x^{2}+y^{2}+1</m> restricted to
+        <m>R=\left\{(x, y) \mid x^{2}+4 y^{2} \leq 1\right\}</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The region <m>R</m> consists of the ellipse <m>x^{2}+4y^{2}=1</m>
+        (the boundary) together with its interior, so it is a region
+        enclosed by a simple and closed curve including its interior; the
+        Extreme Value theorem guarantees that the absolute max/min values
+        exist. We combine critical point analysis in the interior with the
+        method of Lagrange multipliers on the boundary.
+      </p>
+
+      <p>
+        <alert>Interior.</alert> A critical point of <m>f</m> in the
+        interior is a point where the gradient vanishes. Since
+        <m>\nabla f = \langle 8x,\, 2y \rangle</m>, we set each component to
+        zero:
+        <md>
+          8x = 0 \quad\text{and}\quad 2y = 0 \Rightarrow x = 0,\ y = 0
+        </md>
+        The only critical point is <m>(0,0)</m>, and it satisfies
+        <m>0^{2}+4\cdot 0^{2} = 0 \lt 1</m>, so it lies strictly inside
+        <m>R</m> and is a valid candidate. To classify it we apply the
+        Second Derivative Test. The second-order partials are
+        <md>
+          f_{xx} = 8, \quad f_{yy} = 2, \quad f_{xy} = 0
+        </md>
+        so the discriminant is
+        <m>D = f_{xx}f_{yy} - \left( f_{xy} \right)^{2} = (8)(2) - 0^{2} = 16 \gt 0</m>.
+        Since <m>D \gt 0</m> and <m>f_{xx} = 8 \gt 0</m>, the critical point
+        <m>(0,0)</m> is a local minimum, with value <m>f(0,0) = 1</m>.
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        <alert>Boundary.</alert> We write the constraint as
+        <m>g(x,y) = x^{2}+4y^{2}-1 = 0</m>, with
+        <m>\nabla g = \langle 2x, 8y \rangle</m>. The system
+        <m>\nabla f = \lambda \nabla g</m> together with the constraint
+        reads
+        <md>
+          8x = 2\lambda x, \quad 2y = 8\lambda y, \quad x^{2}+4y^{2} = 1
+        </md>
+        We solve each of the first two equations for <m>\lambda</m>. Moving
+        everything to one side and factoring,
+        <md>
+          2x(4-\lambda) = 0 \Rightarrow x = 0 \ \text{ or }\ \lambda = 4, \qquad 2y(1-4\lambda) = 0 \Rightarrow y = 0 \ \text{ or }\ \lambda = \tfrac{1}{4}
+        </md>
+        A single value of <m>\lambda</m> must satisfy both equations at
+        once, but <m>\lambda = 4</m> and <m>\lambda = \frac{1}{4}</m> cannot
+        both hold. Eliminating <m>\lambda</m> this way rules out
+        <m>x \neq 0</m> and <m>y \neq 0</m> occurring together, so at least
+        one of <m>x, y</m> is zero (and both cannot be zero, since
+        <m>(0,0)</m> does not satisfy the constraint). This leaves two
+        cases:
+      </p>
+
+      <p>
+        If <m>x = 0</m>, the constraint gives
+        <m>4y^{2} = 1 \Rightarrow y = \pm\frac{1}{2}</m>, producing the
+        candidates <m>\left( 0, \frac{1}{2} \right)</m> and
+        <m>\left( 0, -\frac{1}{2} \right)</m>.
+      </p>
+
+      <p>
+        If <m>y = 0</m>, the constraint gives
+        <m>x^{2} = 1 \Rightarrow x = \pm 1</m>, producing the candidates
+        <m>(1,0)</m> and <m>(-1,0)</m>.
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        We now evaluate <m>f</m> at the interior candidate and at all of the
+        boundary candidates:
+        <md>
+          f(0,0) = 0 + 0 + 1 = 1, \quad f\left( 0, \pm\tfrac{1}{2} \right) = \tfrac{1}{4} + 1 = \tfrac{5}{4}, \quad f(\pm 1, 0) = 4 + 1 = 5
+        </md>
+        Comparing the values <m>1</m>, <m>\frac{5}{4}</m>, and <m>5</m>: the
+        absolute maximum of <m>f</m> on <m>R</m> is <m>5</m>, attained at
+        <m>(1,0)</m> and <m>(-1,0)</m> on the boundary, and the absolute
+        minimum is <m>1</m>, attained at the interior critical point
+        <m>(0,0)</m>. Note that the smallest value on the boundary,
+        <m>\frac{5}{4}</m> at <m>\left( 0, \pm\frac{1}{2} \right)</m>, is
+        not the absolute minimum of <m>f</m> on <m>R</m> <mdash/> the
+        minimum occurs in the interior, which is why the critical point
+        analysis step cannot be skipped.
+      </p>
+
+      <figure xml:id="fig-ch03-07-ex-13-6">
+        <caption>The restricted surface of the paraboloid f of x and y equals 4 x squared plus y squared plus one, on the ellipse x squared plus 4 y squared is smaller or equal to 1.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to Example 13.6. -->
+        <interactive xml:id="interactive-ch03-07-ex-13-6" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/Example-13.6.png">
+              <shortdescription>The restricted surface of the paraboloid f of x and y equals 4 x squared plus y squared plus one, on the ellipse x squared plus 4 y squared is smaller or equal to 1.</shortdescription>
+              <description>
+                <p>The restricted surface of the paraboloid <m>f(x, y)=4x^2+y^2+1</m>, on the ellipse <m>x^2+4y^2 \leq 1</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </solution>
+  </example>
+
+  <p>
+    The method of Lagrange multipliers extends easily to higher dimensions.
+  </p>
+
+  <remark>
+    <title>Lagrange Multipliers in Higher Dimensions</title>
+
+    <p>
+      Suppose you want to maximize or minimize the function
+      <m>f(x, y, z)</m> subject to the constraint <m>g(x, y, z)=0</m>. Then
+      solve the system
+      <md>
+        <mrow>\nabla f(x, y, z) \amp =\lambda \nabla g(x, y, z)</mrow>
+        <mrow>g(x, y, z) \amp =0</mrow>
+      </md>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch03-07-ex-13-7">
+    <title>Example 4.44 of the
+    <url href="https://openstax.org/books/calculus-volume-3" target="_blank" rel="noopener noreferrer">book</url></title>
+
+    <statement>
+      <p>
+        Find the absolute max and min values (if they exist) of
+        <m>f(x, y, z)= x^2+y^2+z^2</m> subject to the constraint
+        <m>x+y+z=1</m>.(Since the restriction <m>x+y+z=1</m> is not a
+        bounded set, assume that the point found with the use of the
+        Lagrange Multipliers method must be either an absolute maximum or
+        minimum for this example.)
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We write the constraint as <m>g(x,y,z) = x+y+z-1 = 0</m>. The
+        gradients are <m>\nabla f = \langle 2x, 2y, 2z \rangle</m> and
+        <m>\nabla g = \langle 1, 1, 1 \rangle</m>, so the system
+        <m>\nabla f = \lambda \nabla g</m> together with the constraint
+        reads
+        <md>
+          2x = \lambda, \quad 2y = \lambda, \quad 2z = \lambda, \quad x+y+z = 1
+        </md>
+        The first three equations give <m>x = y = z = \frac{\lambda}{2}</m>.
+        Substituting into the constraint:
+        <md>
+          x + x + x = 1 \Rightarrow 3x = 1 \Rightarrow x = y = z = \frac{1}{3}
+        </md>
+        so the only candidate is
+        <m>\left( \frac{1}{3}, \frac{1}{3}, \frac{1}{3} \right)</m>, with
+        <md>
+          f\left( \tfrac{1}{3}, \tfrac{1}{3}, \tfrac{1}{3} \right) = \tfrac{1}{9} + \tfrac{1}{9} + \tfrac{1}{9} = \tfrac{1}{3}
+        </md>
+        Since the plane <m>x+y+z=1</m> is not a bounded set, the Extreme
+        Value theorem does not apply, and as stated in the problem we assume
+        that the candidate found in <xref ref="example-ch03-07-ex-13-7"/>
+        must be either an absolute maximum or an absolute minimum. To decide
+        which, we compare with another point on the constraint, say
+        <m>(1,0,0)</m>:
+        <md>
+          f(1,0,0) = 1 \gt \frac{1}{3} = f\left( \tfrac{1}{3}, \tfrac{1}{3}, \tfrac{1}{3} \right)
+        </md>
+        so <m>\left( \frac{1}{3}, \frac{1}{3}, \frac{1}{3} \right)</m> is the
+        absolute minimum, with value <m>\frac{1}{3}</m>. There is no
+        absolute maximum: the points <m>(t, -t, 1)</m> lie on the plane for
+        every value of <m>t</m>, and <m>f(t,-t,1) = 2t^2 + 1</m> becomes
+        arbitrarily large as <m>t</m> grows.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch03-07-ex-13-8">
+    <title>Checkpoint 4.38 of the
+    <url href="https://openstax.org/books/calculus-volume-3" target="_blank" rel="noopener noreferrer">book</url></title>
+
+    <statement>
+      <p>
+        A company has determined that its production level is given by the
+        Cobb-Douglas function <m>f(x,y)=2.5x^{0.45}y^{0.55}</m> where
+        <m>x</m> represents the total number of labour hours in  1  year
+        and y represents the total capital input for the company.
+        Suppose  1   unit of labour costs  <dollar/>40 and  1 unit of
+        capital costs  <dollar/>50.   Use the method of Lagrange
+        multipliers to find the maximum value of
+        <m>f(x,y)=2.5x^{0.45}y^{0.55}</m> subject to a budgetary constraint
+        of  <dollar/>500,000  per year.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The total cost of <m>x</m> units of labour and <m>y</m> units of
+        capital is <m>40x+50y</m> dollars, so the budgetary constraint is
+        <m>40x+50y=500,000</m>. One can reasonably assume that <m>x</m> and
+        <m>y</m> cannot be negative due to representing non-negative
+        physical values. That in terms imply that <m>x\leq 12500</m> and
+        <m>y\leq 10000</m>. Now with these restrictions the line segment of
+        <m>40x+50y=500,000</m> is bounded.
+      </p>
+
+      <p>
+        We write <m>40x+50y=500,000</m> as
+        <m>g(x,y) = 40x+50y-500,000 = 0</m>. The partial derivatives of the
+        objective function, which exist only for the positive values of
+        <m>x</m> and <m>y</m>, are
+        <md alignment="gather">
+          <mrow>f_x = 2.5(0.45)x^{-0.55}y^{0.55} = 1.125\, x^{-0.55}y^{0.55}</mrow>
+          <mrow>f_y = 2.5(0.55)x^{0.45}y^{-0.45} = 1.375\, x^{0.45}y^{-0.45}</mrow>
+        </md>
+        so the system <m>\nabla f = \lambda \nabla g</m> together with the
+        constraint reads
+        <md>
+          1.125\, x^{-0.55}y^{0.55} = 40\lambda, \quad 1.375\, x^{0.45}y^{-0.45} = 50\lambda, \quad 40x+50y = 500,000
+        </md>.
+        Now solving for <m>\lambda</m> produces the following
+        <md alignment="gather">
+          <mrow>\frac{1.125\, x^{-0.55}y^{0.55}}{40} = \lambda \text{ and }\frac{1.375\, x^{0.45}y^{-0.45}}{50} = \lambda \Rightarrow</mrow>
+          <mrow>\frac{1.125}{1.375}y = \frac{40}{50} x\Rightarrow y = \frac{1.375}{1.125} \cdot \frac{40}{50} x \Rightarrow y = \frac{11}{9} \cdot \frac{40}{50} x \Rightarrow y = \frac{44}{45}x</mrow>
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Substituting <m>y = \frac{44}{45}x</m> into the budgetary
+        constraint:
+        <md alignment="gather">
+          <mrow>40x + 50\cdot\frac{44}{45}x = 500,000 \Rightarrow 40x + \frac{440}{9}x = 500,000 \Rightarrow \frac{360}{9}x + \frac{440}{9}x = 500,000</mrow>
+          <mrow>\Rightarrow \frac{800}{9}x = 500,000 \Rightarrow x = \frac{9 \cdot 500,000}{800} = 5625</mrow>
+        </md>
+        and then
+        <md>
+          y = \frac{44}{45}\cdot 5625 = 44 \cdot 125 = 5500
+        </md>
+        The value of the production level at that point is
+        <m>f(5625, 5500) = 2.5\,(5625)^{0.45}(5500)^{0.55} \approx 13890</m>.
+        At the end points <m>(0,10000)</m> and <m>(12500,0)</m> the function
+        takes the value <m>0</m>.
+      </p>
+
+      <p>
+        So the production level is maximized when the company uses
+        <m>5625</m> labour hours and <m>5500</m> units of capital, and the
+        maximum value of <m>f</m> subject to the budgetary constraint is
+        <md>
+          f(5625, 5500) = 2.5\,(5625)^{0.45}(5500)^{0.55} \approx 13890
+        </md>
+        that is, a maximum production level of approximately <m>13890</m>
+        units.
+      </p>
+    </solution>
+  </example>
+
+</section>

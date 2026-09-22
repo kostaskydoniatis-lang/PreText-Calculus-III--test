@@ -14,4 +14,11 @@
 
   <!-- include sections -->
   <xi:include href="sec-ch03-01-DerivativesVectorValuedFunctions.ptx" />
+  <!-- CLAUDE 2026-09-17: sections 3.2-3.7 (lecture files 8-13). Delete these lines to undo. -->
+  <xi:include href="sec-ch03-02-PartialDerivatives.ptx" />
+  <xi:include href="sec-ch03-03-ChainRule.ptx" />
+  <xi:include href="sec-ch03-04-DirectionalDerivatives.ptx" />
+  <xi:include href="sec-ch03-05-TangentPlanes.ptx" />
+  <xi:include href="sec-ch03-06-CriticalPoints.ptx" />
+  <xi:include href="sec-ch03-07-LagrangeMultipliers.ptx" />
 </chapter>

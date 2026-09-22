@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch05-02-FundamentalTheoremOfLineIntegrals.ptx : converted from
+  "24. Fundamental Theorem of Line Integrals - Solutions.tex" by the bbeaccess-pretext
+  skill (2026-09-17). Fragment for xi:include into ch-05-VectorCalculus.ptx; not
+  standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch05-02 (lecture file 24, chapter 5) on your instruction.
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): ...4ca4g-06.png (the straight path, used
+     twice: left panel before Example 24.5 and again inside Example 24.6),
+     ...4ca4g-06-1.png (the parabolic path). Both 2D, Desmos can do them.
+  3. Image names: ...-02(1) -> ...-02-1.png, ...-06(1) -> ...-06-1.png. All .png.
+  4. Other-book image, plain captioned figure with no interactive:
+     fig-ch05-02-connected-regions (...4ca4g-02-1.png), caption "From openstax vol 3" =
+     the .tex \caption* verbatim. Its alt text ends with a trailing space (trimmed).
+  5. The two-path figure before Example 24.5 (two subfigures with live \caption*s
+     "y=x, 0<=x<=1" and "y=x^2, 0<=x<=1") is one outer figure with a <sidebyside
+     widths="45% 45%">, panel captions = alt texts (caption rule); the OUTER CAPTION IS
+     ASSEMBLED FROM THE .tex CAPTIONS: "y=x, 0<=x<=1 (left) and y=x^2, 0<=x<=1 (right)".
+     It stays at section level before the example ("the two paths shown above").
+     Per-panel <instructions> commented out, one <p> after the figure with a
+     left/right link each. Example 24.6 shows the straight path again with the
+     display "y=x, 0<=x<=1" typed under it: figure in the statement, the display kept
+     as a <p><md> after it.
+  6. Examples 24.2 (a)/(b), 24.5 (a)/(b)/(c): parts as paragraphs of one statement, one
+     <solution> per box. Example 24.2's statement has the sentence "All the components
+     ... Hence we can apply the aforementioned test." between the question and part
+     (a), as in the .tex. The commented-out "[Continuation of 24.5]" stub is kept as an
+     XML comment.
+  7. Cross-references: none numbered. Relative references left as prose: "As we
+     discussed", "shown above", "shown below", "part (b)", "the aforementioned test".
+  8. VECTORS: \mathbf{F}, \mathbf F, \mathbf{T}, \mathbf{r} to \vec{...}. Example 24.6
+     names the potential "\phi" in the statement and "\varphi" in the solution; both
+     kept. The .tex's "\textbf{ From now on, we will assume ...}" sentence is an
+     <alert>.
+  9. Mathematics kept verbatim, including the brace-grouped system of 24.1
+     (\begin{matrix}, ptx_check false positive), \cancelto (24.7), \ldots/\cdots, the
+     \text{...} rows; empty "\\" rows dropped; trailing periods/commas moved after
+     </md>. The "$$y= x, 0 \leq x \leq 1$$" under the 24.6 picture is an <md>.
+ 10. Source quirks preserved: "( $P$ could be equal to $Q$ )"; "\mathbf F \text{ is
+     conservative since they are equal}" as a math row; "text{  they are not equal}"
+     double space; "Hence $\varphi (x,y) = ...$" with no final period (24.3, 24.4);
+     "$\nabla \varphi = \mathbf F$ ." (space before the period, 24.7); "(with a given
+     orientation)"; "piecewise" and "piece-wise" both occur.
+ 11. Typeset <description>s are the conversion's own text; review. The two path alt
+     texts have no final period; kept.
+ 12. Template width constants replace the .tex widths (0.6\textwidth, subfigure
+     0.29\textwidth, max width=0.25\textwidth).
+ 13. Every \newpage/\vspace/\hspace, the figure[H]/center/subfigure wrappers,
+     \captionsetup and \\ dropped.
+-->
+
+<section xml:id="sec-ch05-02-FundamentalTheoremOfLineIntegrals" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Fundamental Theorem of Line Integrals</title>
+
+  <note>
+    <title>Conservative Vector Fields</title>
+
+    <p>
+      As we discussed, given a vector field <m>\vec{F}</m>, two points
+      <m>P</m> and <m>Q</m> in its domain ( <m>P</m> could be equal to
+      <m>Q</m> ), and two different curves <m>C_{1}</m> and <m>C_{2}</m>
+      connecting <m>P</m> to <m>Q</m>, in most cases,
+      <md>
+        \int_{C_{1}} \vec{F} \cdot \vec{T} d s \neq \int_{C_{2}} \vec{F} \cdot \vec{T} d s
+      </md>
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            In general, different curves connecting two points give
+            different values for line integrals.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      However, there is a way we can guarantee that for any path <m>C</m>
+      with starting point <m>P</m> and ending point <m>Q</m>, then
+      <m>\int_{C} \vec{F} \cdot \vec{T} d s</m> always has the same value
+      independent of which path you take. We do this by working with
+      conservative vector fields.
+    </p>
+  </note>
+
+  <definition>
+    <title>Conservative Vector Fields</title>
+
+    <statement>
+      <p>
+        A vector field
+        <m>\vec{F}=\langle f(x, y, z), g(x, y, z), h(x, y, z)\rangle</m> is
+        said to be conservative if there exists a scalar valued function
+        <m>\varphi(x, y, z)</m>, with continuous partial derivatives, such
+        that
+        <md>
+          \vec{F}=\nabla \varphi=\left\langle\varphi_{x}, \varphi_{y}, \varphi_{z}\right\rangle
+        </md>
+      </p>
+
+      <p>
+        Equivalently, if
+        <md>
+          <mrow>\varphi_{x} \amp =f(x, y, z)</mrow>
+          <mrow>\varphi_{y} \amp =g(x, y, z)</mrow>
+          <mrow>\varphi_{z} \amp =h(x, y, z)</mrow>
+        </md>.
+      </p>
+
+      <p>
+        We call such a function <m>\varphi</m> a potential function for
+        <m>\vec{F}</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch05-02-ex-24-1">
+    <statement>
+      <p>
+        Verify that <m>\varphi(x, y)=x^3+2y+y^2</m> is a potential function
+        for <m>\vec{F}=\langle 3x^2, 2y+2\rangle</m> (so that <m>\vec{F}</m>
+        is conservative).
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <md>
+          \left. \begin{matrix} \varphi_x = 3 x^2\\ \varphi_y  = 2+2y \end{matrix} \right\} \Rightarrow \nabla \varphi (x,y) =  \langle 3x^2 , 2+2y \rangle = \vec F
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      In general, finding a function <m>\varphi</m> such that
+      <m>\nabla \varphi=\vec{F}</m> is hard, hence, we developed an easier
+      test to determine whether a vector field is conservative.
+    </p>
+
+    <p>
+      <alert>From now on, we will assume the regions we discuss are open
+      (don't contain their boundary).</alert>
+    </p>
+  </note>
+
+  <remark>
+    <title>Test for Conservative Vector Fields</title>
+
+    <p>
+      Let <m>\vec{F}=\langle f, g, h\rangle</m> be a vector field defined on
+      a connected and simply connected region <m>D</m>, and suppose that
+      <m>f, g</m>, and <m>h</m> have continuous partial derivatives on
+      <m>D</m>. Then <m>\vec{F}</m> is conservative on <m>D</m> if and only
+      if
+      <md>
+        \frac{\partial f}{\partial y}=\frac{\partial g}{\partial x}, \frac{\partial f}{\partial z}=\frac{\partial h}{\partial x}, \quad \text { and } \quad \frac{\partial g}{\partial z}=\frac{\partial h}{\partial y}
+      </md>.
+    </p>
+
+    <p>
+      If <m>\vec{F}=\langle f, g\rangle</m>, then you only have to check the
+      condition
+      <md>
+        \frac{\partial f}{\partial y}=\frac{\partial g}{\partial x}
+      </md>.
+    </p>
+  </remark>
+
+  <p>
+    This is an example of how a connected and simply connected region
+    looks/does not look like:
+  </p>
+
+  <figure xml:id="fig-ch05-02-connected-regions">
+    <caption>From openstax vol 3</caption>
+
+    <image source="/images/2025_11_14_290fb7938ef82f914ca4g-02-1.png" width="50%">
+      <shortdescription>On the first row there are three simply connected regions: the region enclosed by a trapezoid, the region enclosed by a simple closed smooth curve and the region enclosed by a hexagon. On the second row there are three connected but not simply connected regions: the region enclosed by a trapezoid but excluding the region of a disk inside, the region enclosed by a simple closed smooth curve but excluding the region of a disk inside, and the region enclosed by a hexagon but excluding the region of a disk as well as another circular region from its interior. On the third row there is a region that is not connected, consisting of the regions enclosed by two non-intersecting simple closed smooth curves.</shortdescription>
+      <description>
+        <p>On the first row there are three simply connected regions: the region enclosed by a trapezoid, the region enclosed by a simple closed smooth curve and the region enclosed by a hexagon. On the second row there are three connected but not simply connected regions: the region enclosed by a trapezoid but excluding the region of a disk inside, the region enclosed by a simple closed smooth curve but excluding the region of a disk inside, and the region enclosed by a hexagon but excluding the region of a disk as well as another circular region from its interior. On the third row there is a region that is not connected, consisting of the regions enclosed by two non-intersecting simple closed smooth curves.</p>
+      </description>
+    </image>
+  </figure>
+
+  <example xml:id="example-ch05-02-ex-24-2">
+    <statement>
+      <p>
+        Determine whether the following vector fields are conservative over
+        their domain:
+      </p>
+
+      <p>
+        All the components of the vector fields below are polynomials
+        defined on the entire <m>xy</m>-plane. Hence we can apply the
+        aforementioned test.
+      </p>
+
+      <p>
+        (a) <m>\vec{F}=\left\langle 3x^2+2xy+y^2, x^2+2xy+1 \right\rangle</m>
+      </p>
+
+      <p>(b) <m>\vec{F}=\langle yz+y, xz+x,xy+x+y\rangle</m>.</p>
+    </statement>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>f(x,y)= 3x^2+2xy+y^2 , \ g(x,y) = x^2+2xy+1</mrow>
+          <mrow>f_y  = \frac{\partial}{\partial y}(3x^2+2xy+y^2) = 2x +2y, \ g_x =\frac{\partial}{\partial x}(x^2+2xy+1)=2x+2y</mrow>
+          <mrow>\vec F \text{ is conservative since they are equal}</mrow>
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>f(x,y,z)=  yz+y , \ g(x,y,z) = xz+x, \ h(x,y,z) =  xy+x+y</mrow>
+          <mrow>f_y  = \frac{\partial}{\partial y}(yz+y) =z +1, \ g_x = \frac{\partial}{\partial x}(xz+x)=z+1</mrow>
+          <mrow>\ f_z =\frac{\partial}{\partial z}(yz+y) = y, \ \ h_x = \frac{\partial}{\partial x}(xy+x+y) = y+1 \text{ they are not equal}</mrow>
+          <mrow>g_z = \frac{\partial}{\partial z}(xz+x) = x, \ \ h_y = \frac{\partial}{\partial y}(xy+x+y) = x+1 \text{  they are not equal}</mrow>
+          <mrow>\vec F \text{ is not conservative.}</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      Once we know a vector field is conservative, now we can put in the
+      effort to find a potential function for it.
+    </p>
+  </note>
+
+  <example xml:id="example-ch05-02-ex-24-3">
+    <statement>
+      <p>
+        Find a potential function for the conservative vector field
+        <m>\vec{F}=\left\langle 3x^2+2xy+y^2, x^2+2xy+1 \right\rangle</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        A potential function <m>\varphi</m> would satisfy
+        <m>\nabla \varphi = \vec F</m> and that would imply that
+        <m>\varphi_x = 3x^2+2xy+y^2</m> and <m>\varphi_y = x^2+2xy+1</m>.
+        Now:
+        <md alignment="gather">
+          <mrow>\int \varphi_x \ dx = \int 3x^2+2xy+y^2 \ dx = x^3 +x^2y + y^2x +f(y)</mrow>
+          <mrow>\int \varphi_y \ dy = \int x^2 +2xy+1 dy = x^2y+xy^2+y +g(x)</mrow>
+        </md>
+        Notice that the terms of the above polynomials that depend on both
+        <m>x</m> and <m>y</m> are equal, as one would expect since their
+        corresponding partials would appear in both <m>\varphi_x</m> and
+        <m>\varphi_y</m>. This allows for <m>f(y)=y</m> (the non-common
+        part of the polynomials that depends only on <m>y</m>) and
+        <m>g(x) = x^3</m> (the non-common part of the polynomials that
+        depends only on <m>x</m>). Hence
+        <m>\varphi (x,y) = x^2y+xy^2+x^3+y</m>
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch05-02-ex-24-4">
+    <statement>
+      <p>
+        Find a potential function for the conservative vector field
+        <m>\vec{F}= \left\langle 2 x y-9 x^{2}, 2 y+x^{2}+1\right\rangle</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        A potential function <m>\varphi</m> would satisfy
+        <m>\nabla \varphi = \vec F</m> and that would imply that
+        <m>\varphi_x = 2 x y-9 x^{2}</m> and <m>\varphi_y = 2y+x^{2}+1</m>.
+        Now:
+        <md alignment="gather">
+          <mrow>\int \varphi_x \ dx = \int 2 x y-9 x^2 \ dx = x^2y -3x^3 +f(y)</mrow>
+          <mrow>\int \varphi_y \ dy = \int 2y+x^{2}+1 dy = y^2+x^2y+y  +g(x)</mrow>
+        </md>
+        Notice that the terms of the above polynomials that depend on both
+        <m>x</m> and <m>y</m> are equal, as one would expect since their
+        corresponding partials would appear in both <m>\varphi_x</m> and
+        <m>\varphi_y</m>. This allows for <m>f(y)=y^2+y</m> (the non-common
+        part of the polynomials that depends only on <m>y</m>) and
+        <m>g(x) = -3x^3</m> (the non-common part of the polynomials that
+        depends only on <m>x</m>). Hence
+        <m>\varphi (x,y) = x^2y-3x^3+y^2+y</m>
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <title>Conservative Vector Fields and Path Independence</title>
+
+    <p>
+      A vector field <m>\vec{F}</m>, defined over an open connected region,
+      is path independent if and only if it is conservative.
+    </p>
+  </remark>
+
+  <figure xml:id="fig-ch05-02-two-paths">
+    <caption><m>y= x, 0 \leq x \leq 1</m> (left) and <m>y=x^2, 0 \leq x \leq 1</m> (right)</caption>
+
+    <sidebyside widths="45% 45%" margins="auto" valign="middle">
+      <figure xml:id="fig-ch05-02-two-paths-a">
+        <caption>On the background a vector field, on the foreground the straight line connecting the points (0,0) and (1,1)</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_14_290fb7938ef82f914ca4g-06. -->
+        <interactive xml:id="interactive-ch05-02-two-paths-a" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_11_14_290fb7938ef82f914ca4g-06.png">
+              <shortdescription>On the background a vector field, on the foreground the straight line connecting the points (0,0) and (1,1)</shortdescription>
+              <description>
+                <p>On the background a vector field, on the foreground the straight line connecting the points <m>(0,0)</m> and <m>(1,1)</m></p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch05-02-two-paths-b">
+        <caption>On the background a vector field, on the foreground a parabolic line connecting the points (0,0) and (1,1)</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_14_290fb7938ef82f914ca4g-06(1). -->
+        <interactive xml:id="interactive-ch05-02-two-paths-b" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_11_14_290fb7938ef82f914ca4g-06-1.png">
+              <shortdescription>On the background a vector field, on the foreground a parabolic line connecting the points (0,0) and (1,1)</shortdescription>
+              <description>
+                <p>On the background a vector field, on the foreground a parabolic line connecting the points <m>(0,0)</m> and <m>(1,1)</m></p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </sidebyside>
+  </figure>
+  <p>
+    The graphs above show only the plots; you can drag and zoom them. To see the expressions behind them, or to save a copy and create your own version of the graphs, open them in a new page from here:
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>,
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+  </p>
+
+  <example xml:id="example-ch05-02-ex-24-5">
+    <statement>
+      <p>
+        Consider the vector field
+        <m>\vec{F}=\left\langle xy^{2}, y x^2+1\right\rangle</m> and the two
+        paths shown above connecting the points <m>(0,0)</m> and
+        <m>(1,1)</m>.
+      </p>
+
+      <p>(a) Determine whether <m>\vec{F}</m> is conservative.</p>
+
+      <p>(b) Evaluate the vector line integral over the first path.</p>
+
+      <p>
+        (c) Use your answer for part (b) and path independence to evaluate
+        the line integral over the second path
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        All the components of the vector field are polynomials defined on
+        the entire <m>xy</m>-plane. Hence one can apply the aforementioned
+        test.
+        <md>
+          f_y =\frac{\partial}{\partial y}(xy^2) = 2xy, \ g_x=\frac{\partial}{\partial x} (yx^2+1) = 2xy, \text{ and since those are equal, }\vec F\text{ is conservative}
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>\vec r(t)=\langle 0,0 \rangle + t \langle 1,1 \rangle = \langle t,t \rangle, \ 0\leq t \leq 1, \ \vec r'(t) = \langle 1,1 \rangle</mrow>
+          <mrow>\vec F (\vec r (t)) = \langle t^3 ,  t^3+1 \rangle, \  \vec F (\vec r (t))\cdot \vec r ' (t) = t^3+t^3+1 = 2t^3+1</mrow>
+          <mrow>\int_0^1 \vec F (\vec r (t))\cdot \vec r ' (t) \ dt = \int_0^1 2t^3+1 \ dt =\left . \frac{t^4}{2}+t \right |_0^1 = \frac{1}{2}+1  = \frac{3}{2}</mrow>
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        From the fact that <m>\vec F</m> is conservative we have path
+        independence and hence the answer is the same as part (b)
+        <m>\frac{3}{2}</m>.
+      </p>
+    </solution>
+  </example>
+
+  <!--\setcounter{tcb@cnt@example}{4}
+  \begin{example}[Continuation of 24.5]
+  \vspace{0.5cm}\end{example}-->
+
+  <theorem>
+    <title>Fundamental Theorem of Line Integrals</title>
+
+    <statement>
+      <p>
+        Suppose that <m>\vec{F}</m> is conservative over an open, connected,
+        simply connected region <m>D</m> and that the function
+        <m>\varphi</m> satisfies <m>\nabla \varphi=\vec{F}</m>. Then
+        <md>
+          \int_{C} \vec{F} \cdot \vec{T} d s=\varphi(B)-\varphi(A)
+        </md>,
+        where <m>C</m> is any (piece-wise) smooth path from the point
+        <m>A</m> to the point <m>B</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <example xml:id="example-ch05-02-ex-24-6">
+    <statement>
+      <p>
+        Verify that the function <m>\phi (x,y)=\frac{x^2y^2}{2}+y</m>
+        satisfies <m>\nabla \phi=\vec{F}</m>, where
+        <m>\vec{F}=\left\langle xy^{2}, y x^2+1\right\rangle</m>. Use the
+        fundamental theorem of line integrals to evaluate the vector line
+        integral over the path shown below.
+      </p>
+
+      <figure xml:id="fig-ch05-02-ex-24-6">
+        <caption>On the background a vector field, on the foreground the straight line connecting the points (0,0) and (1,1)</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_14_290fb7938ef82f914ca4g-06. -->
+        <interactive xml:id="interactive-ch05-02-ex-24-6" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_11_14_290fb7938ef82f914ca4g-06.png">
+              <shortdescription>On the background a vector field, on the foreground the straight line connecting the points (0,0) and (1,1)</shortdescription>
+              <description>
+                <p>On the background a vector field, on the foreground the straight line connecting the points <m>(0,0)</m> and <m>(1,1)</m></p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        <md>
+          y= x, 0 \leq x \leq 1
+        </md>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>\varphi_x = xy^2, \ \varphi_y = x^2y+1 \Rightarrow \nabla \varphi = \vec F</mrow>
+          <mrow>\int_C \vec F \cdot \vec T \ ds = \varphi (1,1)-\varphi (0,0) = \frac{1}{2}+1 -\frac{0}{2}-0 = \frac{3}{2}</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      The Fundamental Theorem of Line Integrals tells us what happens when
+      we integrate a conservative vector field over a simple and closed
+      curve.
+    </p>
+  </note>
+
+  <remark>
+    <title>Loop Property</title>
+
+    <p>
+      Let <m>R</m> be an open and connected region. Then <m>\vec{F}</m> is
+      conservative on <m>R</m> if and only if
+      <m>\oint_{C} \vec{F} \cdot \vec{T} d s=0</m> for all simple, closed,
+      and piecewise smooth curves in <m>R</m>.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch05-02-ex-24-7">
+    <statement>
+      <p>
+        Explain why the loop property holds if you start with a
+        conservative vector field <m>\vec{F}</m> and a SCPS curve <m>C</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Assume that a SCPS curve <m>C</m> has <m>n</m> smooth pieces,
+        <m>C_1</m> from point <m>P_1</m> to point <m>P_2</m>, <m>C_2</m>
+        from <m>P_2</m> to <m>P_3</m>, <m>\ldots</m>, and <m>C_n</m> from
+        <m>P_{n}</m> all the way back to <m>P_1</m> and assume that
+        <m>\nabla \varphi = \vec F</m> . Then
+        <md alignment="gather">
+          <mrow>\int_C \vec F \cdot \vec T \ ds = \int_{C_1} \vec F \cdot \vec T \ ds + \int_{C_2} \vec F \cdot \vec T \ ds +\cdots + \int_{C_n} \vec F \cdot \vec T \ ds =</mrow>
+          <mrow>\left ( \varphi (P_2) - \varphi (P_1)\right ) +\left ( \varphi (P_3) - \varphi (P_2)\right ) + \cdots + \left ( \varphi (P_1) - \varphi (P_n)\right ) =</mrow>
+          <mrow>\text{by reordering one can see that}</mrow>
+          <mrow>- \varphi (P_1) + \cancelto{0}{\varphi (P_2)  - \varphi (P_2)} +   \cancelto{0}{\varphi (P_3)  - \varphi (P_3)} + \cdots +   \cancelto{0}{\varphi (P_n )  - \varphi (P_n)} +  \varphi (P_1) =</mrow>
+          <mrow>- \varphi (P_1)+\varphi (P_1) = 0</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      We use the integral symbol <m>\oint</m> to emphasize we are
+      integrating over a simple and closed curve.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch05-02-ex-24-8">
+    <statement>
+      <p>
+        Evaluate <m>\oint_{C} \vec{F} \cdot \vec{T} d s</m> where
+        <m>\vec{F}=\langle y, x\rangle</m> and <m>C</m> is the unit circle
+        (with a given orientation).
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The unit circle is a SCPS curve. Notice that <m>\vec F</m> is
+        conservative since <m>\varphi (x,y) = xy</m> is a potential function
+        for it. One can also notice that all the components of the vector
+        field are polynomials defined on the entire <m>xy</m>-plane. Hence
+        one can apply the test
+        <m>f_y = \frac{\partial}{\partial y}y = \frac{\partial}{\partial x}x = g_x</m>
+        which yields the same conclusion. By the fundamental theorem of
+        line integrals and the loop property
+        <md>
+          \oint_C \vec F\cdot \vec T ds = 0
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      The test given for conservative vector fields only works over
+      connected and simply connected regions.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch05-02-ex-24-9">
+    <statement>
+      <p>
+        You can verify that
+        <m>\vec{F}=\left\langle\frac{-y}{x^{2}+y^{2}}, \frac{x}{x^{2}+y^{2}}\right\rangle</m>
+        satisfies
+        <m>\frac{\partial f}{\partial y}=\frac{\partial g}{\partial x}</m>,
+        however, the vector line integral of <m>\vec{F}</m> over
+        <m>\vec{r}(t)=\langle\cos (t), \sin (t)\rangle, 0 \leq t \leq 2 \pi</m>,
+        is <m>2 \pi</m> instead of zero. Why is this the case?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Indeed
+        <md alignment="gather">
+          <mrow>f_y =\frac{\partial}{\partial y}\frac{-y}{x^2+y^2} = \frac{-(x^2+y^2) - (-y)(2y)}{(x^2+y^2)^2} = \frac{-(x^2+y^2)+2y^2}{(x^2+y^2)^2} = \frac{y^2-x^2}{(x^2+y^2)^2}</mrow>
+          <mrow>g_x = \frac{\partial}{\partial x} \frac{x}{x^2+y^2} = \frac{(x^2+y^2) - x(2x)}{(x^2+y^2)^2} = \frac{(x^2+y^2)-2x^2}{(x^2+y^2)^2} = \frac{y^2-x^2}{(x^2+y^2)^2}</mrow>
+          <mrow>\vec r'(t) = \langle -\sin(t) , \cos (t) \rangle, \ \vec F (\vec r (t)) = \langle -\sin(t) , \cos (t) \rangle , \    \vec F (\vec r (t))\cdot \vec r' (t) = \sin^2 (t) + \cos^2 (t) =1</mrow>
+          <mrow>\int_0^{2\pi} \vec F (\vec r (t))\cdot \vec r' (t)\ dt  = \int_0^{2\pi} 1 \ dt =2\pi</mrow>
+        </md>
+        The issue here is that the test <m>f_y=g_x</m> was applied
+        improperly. The domain of those functions is not simply connected.
+        They are not defined at <m>O(0,0)</m>, thus the domain has a hole
+        and it is not simply connected. Moreover, this hole is enclosed by
+        the curve of the vector line integral.
+      </p>
+
+      <p>
+        Another way to arrive at that conclusion is to try to find a
+        function for which <m>\nabla \varphi =\vec F</m>. At first glance
+        that function should be
+        <m>\varphi (x,y)= - \arctan \left ( \frac{x}{y} \right)</m>. But
+        this function, and by extension its partials, is not defined on the
+        <m>x</m>-axis (<m>y=0</m>). Hence <m>\nabla \varphi</m> is not equal
+        to <m>\vec F</m>, since the latter is defined at all points of the
+        <m>x</m>-axis apart from the origin <m>O(0,0)</m>.
+      </p>
+    </solution>
+  </example>
+
+</section>

@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch04-07-ChangeOfVariables.ptx : converted from
+  "20. Change of Variables in Double Integrals - Solutions.tex" (whose \chapter title
+  is "Change of Variables for Double Integrals") by the bbeaccess-pretext skill
+  (2026-09-17). Fragment for xi:include into ch-04-Integration.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch04-07 (lecture file 20, chapter 4) on your instruction.
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): ...67a6g-1-1.png (unit circle),
+     ...67a6g-1.png (region G), ...67a6g-2-1.png and ...67a6g-2.png (the u-substitution
+     areas), ChangeOfVariables.png (Example 20.2 (b)). All 2D, Desmos can do them.
+  3. Image names: "(1)" is "-1" in assets/images (...-1(1) -> -1-1, ...-2(1) -> -2-1);
+     ...67a6g-3 is a .jpg on disk; the rest .png.
+  4. Other-book image, plain captioned figure with no interactive:
+     fig-ch04-07-transformation (...67a6g-3.jpg), caption = the .tex \caption verbatim
+     "g and h map G into R (from openstax)".
+  5. Legends typed under pictures ("The region R in the xy-plane", "The region G in
+     the r theta-plane", "The new domain of integration on the uv-plane.") are kept as
+     a <p> right after their figure.
+  6. The opening sentence "Lets revisit Example 2 from the previous topic:" is left as
+     prose (no <xref>): the example it describes (f=x^2+y^2 over the unit circle) is
+     not Example 19.2 of sec-ch04-06 (f=x-y^2 over the disk of radius 2), so the
+     reference is left for you to fix. "Lets" (no apostrophe) preserved.
+  7. "Example 20.2" (intro, display, part (a)) + the two "[Continuation of 20.2]"
+     boxes (part (b) with its picture; parts (c) and (d)) merged into ONE <example>:
+     statement = intro, display, sentence, parts (a)-(d) as paragraphs; four
+     <solution>s in order, the (b) picture at the end of solution 2 where the .tex has
+     it. ptx_check therefore reports 4 examples in the .tex vs 2 here. \setcounter
+     lines dropped.
+  8. Mathematics: the \vspace{2cm}/\vspace{1cm}/\vspace{3mm} row spacers inside the
+     gather* blocks of Examples 20.1 and 20.2 (d) are dropped and each "\\" is a row
+     break; the \vspace{2mm} inside the matrix rows are dropped too (\\ kept as the
+     matrix row separator). The "\text{ }\\" empty rows of 20.2 (d) are dropped. The
+     \hspace{3mm} between the arrows in 20.2 (a)/(b) are kept inside the math (valid
+     MathJax). The determinant of the Jacobian definition keeps its \begin{array}{ll}
+     and the matrices keep \begin{matrix} verbatim with \amp column separators;
+     ptx_check flags "\\ inside <mrow>" / "environment remnant" for them - false
+     positives, as in sec-ch02-02.
+  9. Example 20.1's solution is a single gather* with no prose; it is one <p> holding
+     the <md>. In 20.2 (d) the sentence "For the first integral we will use the
+     w-substitution" and its math line sit in a center block between the two
+     gather*s; they are two <p>s.
+ 10. The .tex writes "the$\frac{1}{x}$" (no space) in the second note; a space is
+     needed in XML text before the <m>, so it reads "the <m>\frac{1}{x}</m>" here (the
+     only prose change).
+ 11. Typeset <description>s are the conversion's own text; review. The unit-circle
+     alt text has no final period; kept.
+ 12. Template width constants replace the .tex widths (max width=0.3/0.6/0.7/0.35
+     \textwidth, \textwidth, 0.7\textwidth).
+ 13. No \mathbf in this file. The quoted "extra" is a <q>.
+ 14. Source quirks preserved: "restricted to the circle of radius 1 ." (space before
+     the period); "( $u, v$ )" spacing; "We call such pair of maps"; "y= x+1" gives
+     "\frac{u+v}{2}+1=  \Rightarrow" (dangling "=") in 20.2 (b), copied verbatim;
+     "u = v +y +y" step; "the new bounds of integration and from (c)"; the
+     u-substitution note writes "dx" and "du" both with and without spacing.
+ 15. Every \newpage/\vspace, the figure[H]/center wrappers, \captionsetup and \\
+     dropped.
+-->
+
+<section xml:id="sec-ch04-07-ChangeOfVariables" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Change of Variables for Double Integrals</title>
+
+  <p>
+    Lets revisit Example 2 from the previous topic:
+  </p>
+
+  <p>
+    Our goal was to write, in polar coordinates, an iterated integral that
+    gives the net volume bounded <m>f(x, y)=x^{2}+y^{2}</m> and the
+    <m>x y</m>-plane, restricted to the circle of radius 1 .
+  </p>
+
+  <figure xml:id="fig-ch04-07-region-r">
+    <caption>A unit circle centred at the origin</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_10_28_8868e6caf4ea05f767a6g-1(1). -->
+    <interactive xml:id="interactive-ch04-07-region-r" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_10_28_8868e6caf4ea05f767a6g-1-1.png">
+          <shortdescription>A unit circle centred at the origin</shortdescription>
+          <description>
+            <p>A unit circle centred at the origin</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <p>
+    The region <m>R</m> in the <m>x y</m>-plane
+  </p>
+
+  <p>
+    When we changed to polar coordinates, we moved from the region <m>R</m>
+    in the <m>x y</m>-plane to integrating over the region
+    <m>G=\{(r, \theta) \mid 0 \leq r \leq 1,0 \leq \theta \leq 2 \pi\}</m>
+    in the <m>r \theta</m>-plane.
+  </p>
+
+  <figure xml:id="fig-ch04-07-region-g">
+    <caption>The region of the unit circle represented in the r-theta axis instead of the xy-axis. It is now a rectangle not a circle.</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_10_28_8868e6caf4ea05f767a6g-1. -->
+    <interactive xml:id="interactive-ch04-07-region-g" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_10_28_8868e6caf4ea05f767a6g-1.png">
+          <shortdescription>The region of the unit circle represented in the r-theta axis instead of the xy-axis. It is now a rectangle not a circle.</shortdescription>
+          <description>
+            <p>The region of the unit circle represented in the <m>r\theta</m>-axis instead of the <m>xy</m>-axis. It is now a rectangle not a circle.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <p>
+    The region <m>G</m> in the <m>r \theta</m>-plane
+  </p>
+
+  <p>
+    Hence, by using the substitutions <m>x=r \cos (\theta)</m> and
+    <m>y=r \sin (\theta)</m>, we moved from computing a double integral
+    over <m>R</m> to computing a double integral over <m>G</m>. That is,
+    <md>
+      \iint_{R} f(x, y) d y d x=\iint_{G} f(r \cos (\theta), r \sin (\theta)) r d r d \theta
+    </md>
+  </p>
+
+  <p>
+    The <q>extra</q> <m>r</m> you see showing up in the integral in polar
+    coordinates is accounting for how the area around each point
+    <m>(x, y)</m> in <m>R</m> is changing as we move from the
+    <m>x y</m>-plane to the region <m>G</m> in the <m>r \theta</m>-plane, so
+    that the integrals are equal.
+  </p>
+
+  <note>
+    <p>
+      The idea of having an extra factor that accounts for changes in
+      length/area/volume when changing regions of integration is something
+      you have done before.
+    </p>
+
+    <p>
+      Consider the integral
+      <md>
+        \int_{1}^{e} \frac{\ln x}{x} d x
+      </md>
+    </p>
+
+    <p>
+      The area we are calculating in this integral is pictured below:
+    </p>
+
+    <figure xml:id="fig-ch04-07-u-substitution-x">
+      <caption>The area represented by the integral from 1 to e, of the function ln(x) divided by x, integrated with respect to x, on the traditional xy-axis.</caption>
+
+      <!-- This interactive is PENDING, it should correspond to 2025_10_28_8868e6caf4ea05f767a6g-2(1). -->
+      <interactive xml:id="interactive-ch04-07-u-substitution-x" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <instructions>
+          <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+          <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+        </instructions>
+        <static>
+          <image source="/images/2025_10_28_8868e6caf4ea05f767a6g-2-1.png">
+            <shortdescription>The area represented by the integral from 1 to e, of the function ln(x) divided by x, integrated with respect to x, on the traditional xy-axis.</shortdescription>
+            <description>
+              <p>The area represented by the integral from 1 to <m>e</m>, of the function <m>\frac{\ln(x)}{x}</m>, integrated with respect to <m>x</m>, on the traditional <m>xy</m>-axis.</p>
+            </description>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+
+    <p>
+      To evaluate this integral, we would apply the <m>u</m>-substitution
+      <m>u=\ln x</m>, <m>d u= \frac{1}{x} d x</m> to get the new integral
+      <md>
+        \int_{0}^{1} u d u
+      </md>
+    </p>
+  </note>
+
+  <note>
+    <p>
+      The area we are calculating with this integral is pictured below:
+    </p>
+
+    <figure xml:id="fig-ch04-07-u-substitution-u">
+      <caption>The area represented by the integral from 1 to e, of the function ln(x) divided by x, integrated with respect to x, after the u-substitution, on the new uy-axis system.</caption>
+
+      <!-- This interactive is PENDING, it should correspond to 2025_10_28_8868e6caf4ea05f767a6g-2. -->
+      <interactive xml:id="interactive-ch04-07-u-substitution-u" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <instructions>
+          <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+          <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+        </instructions>
+        <static>
+          <image source="/images/2025_10_28_8868e6caf4ea05f767a6g-2.png">
+            <shortdescription>The area represented by the integral from 1 to e, of the function ln(x) divided by x, integrated with respect to x, after the u-substitution, on the new uy-axis system.</shortdescription>
+            <description>
+              <p>The area represented by the integral from 1 to <m>e</m>, of the function <m>\frac{\ln(x)}{x}</m>, integrated with respect to <m>x</m>, after the <m>u</m>-substitution, on the new <m>uy</m>-axis system.</p>
+            </description>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+
+    <p>
+      In the equation <m>d u=\frac{1}{x} d x</m>, the <m>\frac{1}{x}</m> is
+      playing the same role that <m>r</m> is playing in
+      <m>d y d x=r d r d \theta</m>. Specifically, <m>d u=\frac{1}{x} d x</m>
+      is telling us that the interval in terms of <m>u</m> is squeezed
+      compared to <m>dx</m>, to accommodate the factor <m>\frac{1}{x}</m>
+      (as we see in the pictures).
+    </p>
+  </note>
+
+  <note>
+    <p>
+      Notice that if we removed the <m>\frac{1}{x}</m> in
+      <m>d u=\frac{1}{x} d x</m>, the integral in terms of <m>u</m> would be
+      <md>
+        \int_{0}^{1} ue^{-u}  d u = 1-2e^{-1} \not = \frac{1}{2} =  \int_{0}^{1} u d u
+      </md>
+      which would give us a different answer.
+    </p>
+  </note>
+
+  <p>
+    The same happens with <m>d y d x=r d r d \theta</m>. The extra <m>r</m>
+    tells us that the area around a point in the <m>x y</m>-plane is
+    <m>r</m> times the area around a point in the <m>r \theta</m>-plane. If
+    we removed the <m>r</m> from the <m>r d r d \theta</m>, the integrals
+    <md>
+      \iint_{R} f(x, y) d y d x \text { and } \iint_{G} f(r \cos (\theta), r \sin (\theta)) r d r d \theta
+    </md>
+    would not be equal.
+  </p>
+
+  <note>
+    <p>
+      When doing a change of variables when working with double integrals,
+      we have many options (we can use more than polar coordinates)!
+    </p>
+  </note>
+
+  <p>
+    Our goal is to find functions <m>g(u, v)</m> and <m>h(u, v)</m> such
+    that we can write <m>x= g(u, v), y=h(u, v)</m>; in such a way that
+    every point ( <m>u, v</m> ) in <m>G</m> is mapped to a unique point
+    ( <m>x, y</m> ) in <m>R</m> and every point in <m>R</m> has a point in
+    <m>G</m> mapped to it. We call such pair of maps <m>g(u, v)</m> and
+    <m>h(u, v)</m> a one-to-one and onto map <m>T</m> from <m>G</m> to
+    <m>R</m>.
+  </p>
+
+  <figure xml:id="fig-ch04-07-transformation">
+    <caption><m>g</m> and <m>h</m> map <m>G</m> into <m>R</m> (from openstax)</caption>
+
+    <image source="/images/2025_10_28_8868e6caf4ea05f767a6g-3.jpg" width="50%">
+      <shortdescription>A region G in the uv-axis system is mapped via the functions x equals g of u and v, and y equals h of u and v, onto the region R in the xy-axis system.</shortdescription>
+      <description>
+        <p>A region <m>G</m> in the <m>uv</m>-axis system is mapped via the functions <m>x=g(u, v)</m>, and <m>y=h(u, v)</m>, onto the region <m>R</m> in the <m>xy</m>-axis system.</p>
+      </description>
+    </image>
+  </figure>
+
+  <p>
+    Once you have found the functions <m>g(u, v)</m> and <m>h(u, v)</m>,
+    the next question is what should the area scaling be so that the
+    double integral over <m>G</m> equals the double integral over <m>R</m>.
+  </p>
+
+  <remark>
+    <p>
+      The way we account for the area scaling is by using the Jacobian of
+      the change of variables transformation.
+    </p>
+  </remark>
+
+  <definition>
+    <title>The Jacobian of a Transformation</title>
+
+    <statement>
+      <p>
+        Given a transformation <m>T: x=g(u, v), y=h(u, v)</m>, where
+        <m>g</m> and <m>h</m> are differentiable on a region of the
+        <m>u v</m>-plane, the Jacobian determinant (Jacobian) of <m>T</m> is
+        given by
+        <md>
+          J(u, v)=\frac{\partial(x, y)}{\partial(u, v)}=\left|\begin{array}{ll} x_{u} \amp x_{v} \\ y_{u} \amp y_{v} \end{array}\right|=x_{u} y_{v}-x_{v} y_{u}
+        </md>.
+      </p>
+    </statement>
+  </definition>
+
+  <remark>
+    <title>Jacobians and Integrals</title>
+
+    <p>
+      Let <m>T: x=g(u, v), y=h(u, v)</m> be a transformation that maps a
+      closed and bounded region <m>G</m> in the <m>u v</m>-plane to a
+      region <m>R</m> in the <m>x y</m>-plane. Assume <m>T</m> is one-to-one
+      on the interior of <m>G</m> and <m>g</m> and <m>h</m> have continuous
+      first partial derivatives there. If <m>f</m> is continuous on
+      <m>R</m>, then
+      <md>
+        \iint_{R} f(x, y) d A=\iint_{G} f(g(u, v), h(u, v))|J(u, v)| d u d v
+      </md>.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch04-07-ex-20-1">
+    <statement>
+      <p>
+        Find the Jacobian of the change of variables
+        <m>x=r \cos (\theta), y= r \sin (\theta)</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>\frac{\partial x}{\partial r} =\cos\theta , \quad  \frac{\partial y}{\partial r} = \sin\theta , \quad \frac{\partial x}{\partial \theta } = -r\sin\theta , \quad  \frac{\partial y}{\partial \theta } = r\cos\theta</mrow>
+          <mrow>J(r,\theta ) = \left| \begin{matrix} \frac{\partial x}{\partial r} \amp  \frac{\partial y}{\partial r} \\ \frac{\partial x}{\partial \theta } \amp  \frac{\partial y}{\partial \theta } \end{matrix} \right| \text{ or } J(r,\theta ) = \left| \begin{matrix} \frac{\partial x}{\partial r} \amp \frac{\partial x}{\partial \theta } \\ \frac{\partial y}{\partial r} \amp  \frac{\partial y}{\partial \theta } \end{matrix} \right| = \left| \begin{matrix} \cos\theta \amp -r\sin\theta \\ \sin\theta \amp r\cos\theta \end{matrix} \right|   = \cos\theta \cdot r \cos\theta - (-r\sin\theta)\sin\theta</mrow>
+          <mrow>=r\cos^2\theta +r \sin^2\theta = r(\cos^2\theta + \sin^2\theta) =r</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      In practice (when given an integral to evaluate), you choose
+      substitutions using information from the integrand (or the bounds of
+      integration).
+    </p>
+  </note>
+
+  <example xml:id="example-ch04-07-ex-20-2">
+    <statement>
+      <p>
+        Consider the iterated integral
+        <md>
+          \int_{0}^{1/2} \int_{x-1}^{x+1} 56(x+y)^3(x-y)^2 d y d x
+        </md>
+      </p>
+
+      <p>
+        From observing the integrand, using the substitutions <m>u=x+y</m>
+        and <m>v= x-y</m> might simplify the integral.
+      </p>
+
+      <p>
+        (a) Given <m>u=x+y</m> and <m>v=x-y</m>, find functions <m>g</m> and
+        <m>h</m> such that <m>x=g(u, v)</m>, <m>y=h(u, v)</m>.
+      </p>
+
+      <p>
+        (b) Given <m>u=x+y</m> and <m>v=x-y</m>, draw the new region of
+        integration in the <m>u v</m>-plane.
+      </p>
+
+      <p>(c) Compute the Jacobian of this change of variables.</p>
+
+      <p>(d) Set up the new integral in terms of <m>u</m> and <m>v</m>.</p>
+    </statement>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>\begin{matrix} u \amp = \amp x +y \\ v \amp = \amp x -y \end{matrix} \hspace{3mm}\Rightarrow \hspace{3mm} \begin{matrix} u \amp = \amp v +y +y \\ x \amp = \amp v+y \end{matrix} \hspace{3mm}  \Rightarrow \hspace{3mm} \begin{matrix} 2y \amp = \amp u-v \\ x \amp = \amp v+y \end{matrix}  \hspace{3mm} \Rightarrow \hspace{3mm} \begin{matrix} y \amp = \amp \frac{u-v}{2} \\ x \amp = \amp v+\frac{u-v}{2} \end{matrix} \hspace{3mm}  \Rightarrow \hspace{3mm}</mrow>
+          <mrow>\begin{matrix} y \amp = \amp \frac{u-v}{2} \\ x \amp = \amp \frac{u+v}{2} \end{matrix}</mrow>
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>x= 0 \hspace{3mm} \Rightarrow \hspace{3mm} \frac{u+v}{2}= 0  \hspace{3mm} \Rightarrow \hspace{3mm} u +v = 0 \hspace{3mm}\Rightarrow\hspace{3mm} u = -v</mrow>
+          <mrow>x= \frac{1}{2} \hspace{3mm} \Rightarrow \hspace{3mm} \frac{u+v}{2}= \frac{1}{2}  \hspace{3mm} \Rightarrow \hspace{3mm} u +v = 1 \hspace{3mm}\Rightarrow\hspace{3mm} u = 1-v</mrow>
+          <mrow>y= x-1 \hspace{3mm} \Rightarrow \hspace{3mm} \frac{u-v}{2}= \frac{u+v}{2}-1=  \hspace{3mm} \Rightarrow \hspace{3mm} u-v = u+v -2 \hspace{3mm}\Rightarrow\hspace{3mm} -2v =- 2  \hspace{3mm}\Rightarrow\hspace{3mm} v = 1</mrow>
+          <mrow>y= x+1 \hspace{3mm} \Rightarrow \hspace{3mm} \frac{u-v}{2}= \frac{u+v}{2}+1=  \hspace{3mm} \Rightarrow \hspace{3mm} u-v = u+v +2 \hspace{3mm}\Rightarrow\hspace{3mm} -2v = 2  \hspace{3mm}\Rightarrow\hspace{3mm} v =- 1</mrow>
+        </md>
+      </p>
+
+      <figure xml:id="fig-ch04-07-ex-20-2">
+        <caption>The graph of the new domain of integration on the uv-plane.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to ChangeOfVariables. -->
+        <interactive xml:id="interactive-ch04-07-ex-20-2" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/ChangeOfVariables.png">
+              <shortdescription>The graph of the new domain of integration on the uv-plane.</shortdescription>
+              <description>
+                <p>The graph of the new domain of integration on the <m>uv</m>-plane.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        The new domain of integration on the uv-plane.
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        <md>
+          J(u,v ) = \left| \begin{matrix} \frac{\partial x}{\partial u} \amp  \frac{\partial y}{\partial u} \\ \frac{\partial x}{\partial v } \amp  \frac{\partial y}{\partial v } \end{matrix} \right| = \left| \begin{matrix} \frac{1}{2} \amp  \frac{1}{2} \\ \frac{1}{2 } \amp  -\frac{1}{2 } \end{matrix} \right| = \frac{1}{2} \left(-\frac{1}{2}\right) - \frac{1}{2} \cdot \frac{1}{2} = -\frac{1}{4}- \frac{1}{4} = - \frac{1}{2}
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        From the substitution choice we have the
+        <m>56(x+y)^3(x-y)^2 = 56 u^3v^2</m>, from (b) we have the new bounds
+        of integration and from (c) we have the Jacobian. Hence
+        <md alignment="gather">
+          <mrow>\int_{0}^{1/2} \int_{x-1}^{x+1} 56(x+y)^3(x-y)^2 d y d x = \int_{-1}^{1} \int_{-v}^{1-v} 56u^3v^2 \left | J \right | d u d v = \int_{-1}^{1} \int_{-v}^{1-v} 56u^3v^2 \left | - \frac{1}{2} \right | du d v</mrow>
+          <mrow>= \int_{-1}^{1} \int_{-v}^{1-v} 28u^3v^2 du dv = \int_{-1}^1 \left . 7 u^4v^2 \right |^{1-v}_{-v} dv = \int_{-1}^1 7(1-v)^4v^2 - 7 (-v)^4v^2 dv</mrow>
+          <mrow>= \int_{-1}^1 7(1-v^4)v^2 dv - \int_{-1}^1  7 v^6dv =  \int_{-1}^1 7(1-v^4)v^2 dv  -\left . v^7 \right |^1_{-1} =  \int_{-1}^1 7(1-v^4)v^2 dv -2</mrow>
+        </md>
+      </p>
+
+      <p>
+        For the first integral we will use the w-substitution
+      </p>
+
+      <p>
+        <m>w =1-v, \quad dw =- dv,\quad v=-1 \Rightarrow w = 2, \quad v= 1 \Rightarrow w = 0 </m>
+      </p>
+
+      <p>
+        <md alignment="gather">
+          <mrow>\int_2^0 7 w^4(1-w)^2 (-dw) -2 = 7\int_0^2 w^4-2w^5+w^6 dw -2 = 7 \left . \left(\frac{w^5}{5}-\frac{w^6}{3}+\frac{w^7}{7}\right) \right |_0^2  -2</mrow>
+          <mrow>= 7  \left(\frac{2^5}{5}-\frac{2^6}{3}+\frac{2^7}{7}\right) -2 = \frac{322}{15}</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+</section>

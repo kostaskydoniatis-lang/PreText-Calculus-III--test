@@ -18,6 +18,9 @@
     <xi:include href="./ch-02-IntroductionVectorandScalarValuedFunctions.ptx" />
     <!-- CLAUDE 2026-09-13: chapter 3 (lecture file 7). Delete this line to undo. -->
     <xi:include href="./ch-03-DerivativesOfVectorAndScalarValuedFunctions.ptx" />
+    <!-- CLAUDE 2026-09-17: chapters 4 (lecture files 14-22) and 5 (files 23-26). Delete these lines to undo. -->
+    <xi:include href="./ch-04-Integration.ptx" />
+    <xi:include href="./ch-05-VectorCalculus.ptx" />
 
 
     <!-- Include backmatter -->

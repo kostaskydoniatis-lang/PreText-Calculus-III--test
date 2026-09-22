@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch03-05-TangentPlanes.ptx : converted from
+  "11. Tangent Planes and Local Linearization - Solutions.tex" by the
+  bbeaccess-pretext skill (2026-09-17). Fragment for xi:include into
+  ch-03-DerivativesOfVectorAndScalarValuedFunctions.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch03-05 (lecture file 11, chapter 3) on your instruction.
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): all five pictures - ...7e38g-1.png (the
+     sphere), ...7e38g-2.png (paraboloid with tangent plane), ...7e38g-3.png and
+     ...7e38g-3-1.png (the gradient/tangent-vectors pair), ...7e38g-5.png (Example
+     11.3). All 3D, probably CalcPlot3D scenes in the end.
+  3. The CalcPlot3D links in the .tex are inside commented-out \caption* lines under
+     the two subfigures ("Plane" / "Paraboloid": Example 6.2 residue). Not live, not
+     used; ptx_check reports them as unmatched. Expected.
+  4. The two-panel figure is one outer figure whose caption is the .tex \caption
+     ("nabla F(a,b,c) in red and tangent vectors in dark blue for two different
+     curves") with a <sidebyside widths="45% 45%">; per-panel <instructions>
+     commented out, one <p> after the figure with a left/right link each.
+  5. Source captions / legends: the sphere's \caption{x^2+y^2+z^2=9} is NOT carried
+     (the caption rule replaces it; listed here). The two legends typed under
+     pictures inside center blocks ("f(x,y)=1-0.5y^2-0.5x^2 in green/blue and the
+     tangent plane in grey"; "x+y^2+z^3=1 in green and the tangent plane in light
+     blue") are kept as a <p> right after their figure.
+  6. Figure placement: the paraboloid picture sits AFTER Example 11.2 in the .tex
+     (section level, before the note "The equation for the tangent plane depends...")
+     and stays there. The Example 11.3 picture is inside the statement, after the
+     question, where the .tex has it.
+  7. Example 11.2's solution ends with a commented-out simplification ("Since
+     sqrt2/2*sqrt2/2=1/2, this simplifies to z = 3/2 - sqrt2/2 (x+y)"); kept as an XML
+     comment at the same spot. Note the .tex statement of 11.3 has no final
+     punctuation; kept.
+  8. \mathbf{r}, \mathbf{r}^{\prime} to \vec{r}, \vec{r}^{\prime}. \textbf{EVERY} is an
+     <alert>. Everything else byte-for-byte.
+  9. Cross-reference: "As we saw in Example 11.3" -> <xref ref="example-ch03-05-ex-11-3"/>
+     (word "Example" dropped). Relative references left as prose: "By the remark
+     above" (11.1), "This observation gives rise", "the follow formulas".
+ 10. Typeset <description>s are the conversion's own text; review. The right-panel alt
+     text has a double space after "at a point."; kept verbatim.
+ 11. Template width constants replace the .tex widths (0.4\textwidth, max width=0.5,
+     subfigure 0.4\textwidth).
+ 12. Titles: the bracket arguments "[ Tangent Plane to a Surface (Explicit)]",
+     "[ Tangent Plane to a Surface (Implicit)]" and "[ Gradient and Tangent Plane]"
+     have their leading space trimmed; the remark title "3D gradient nabla F(x,y,z) vs
+     2D gradient nabla f(x,y)" keeps its two <m>s.
+ 13. Source quirks preserved: "( $a, b, f(a, b)$ )", "( $a, b, c$ )", "( $a, b$ )",
+     "$( a, b )$" spacing; "at the input  $(a, b)$ ." (double space, space before the
+     period); "2 -dimensional"; "the surface $1-0.5y^2-0.5x^2$" (no z=); "we saw the
+     follow formulas"; "The original function is too convoluted to work with, this
+     approach can be more computationally efficient" (comma splice); the quoted
+     "complicated", "close" and "simpler" are <q>s; the first note's "\\" is a
+     paragraph break.
+ 14. Every \newpage/\vspace/\hspace, the figure[H]/center/subfigure wrappers,
+     \captionsetup and \\ dropped.
+-->
+
+<section xml:id="sec-ch03-05-TangentPlanes" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Tangent Planes and Local Linearization</title>
+
+  <note>
+    <p>
+      Recall that given a function <m>w=F(x, y, z)</m>, we can intersect
+      the function with the hyperplane <m>w=c</m> to get a 3-dimensional
+      level surface <m>c=F(x, y, z)</m>.
+    </p>
+
+    <p>
+      For example, the sphere <m>x^{2}+y^{2}+z^{2}=9</m> is a level surface
+      of <m>w=x^{2}+y^{2}+z^{2}</m> when setting <m>w=9</m>.
+    </p>
+  </note>
+
+  <figure xml:id="fig-ch03-05-sphere">
+    <caption>The sphere of radius 3 centred at the origin.</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_09_20_89e41e7bb5c056e57e38g-1. -->
+    <interactive xml:id="interactive-ch03-05-sphere" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_09_20_89e41e7bb5c056e57e38g-1.png">
+          <shortdescription>The sphere of radius 3 centred at the origin.</shortdescription>
+          <description>
+            <p>The sphere of radius 3 centred at the origin.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <note>
+    <p>
+      If a surface is given explicitly as <m>z=f(x, y)</m>, it can still be
+      thought of as a level surface of a function <m>w=F(x, y, z)</m>.
+    </p>
+  </note>
+
+  <remark>
+    <title>Explicit and Level Surfaces</title>
+
+    <p>
+      The surface <m>z=f(x, y)</m> is a level surface of
+      <m>w=z-f(x, y)</m>, by setting <m>w=0</m>.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch03-05-ex-11-1">
+    <statement>
+      <p>
+        Given <m>f(x, y)=\frac{\sin x}{e^{xy}}</m>, find a function
+        <m>w=F(x, y, z)</m> such that <m>f(x, y)</m> is one of its level
+        surfaces.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        By the remark above, the surface <m>z=f(x, y)</m> is a level
+        surface of <m>w=z-f(x, y)</m>, obtained by setting <m>w=0</m>.
+        Hence we may take
+        <md>
+          F(x, y, z) = z-\frac{\sin x}{e^{xy}}
+        </md>
+        and the graph of <m>f(x, y)</m> is exactly the level surface
+        <m>F(x, y, z)=0</m>.
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      We learned that a function <m>z=f(x, y)</m> is differentiable at
+      <m>P(a, b, f(a, b))</m> if it looks like a plane when we zoom into
+      the point <m>P</m>.
+    </p>
+  </note>
+
+  <p>
+    We will now give the equation that defines this plane and discuss where
+    it comes from.
+  </p>
+
+  <definition>
+    <title>Tangent Plane to a Surface (Explicit)</title>
+
+    <statement>
+      <p>
+        Given a differentiable surface <m>z=f(x, y)</m>, the tangent plane
+        to the surface at the point ( <m>a, b, f(a, b)</m> ) is given by
+        the equation
+        <md>
+          z=f(a, b)+f_{x}(a, b)(x-a)+f_{y}(a, b)(y-b)
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch03-05-ex-11-2">
+    <statement>
+      <p>
+        Find an equation for the tangent plane to the surface
+        <m>1-0.5y^2-0.5x^2</m> at the point
+        <m>\left(\sqrt2/2, \sqrt2/2, 0.5\right)</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Here <m>f(x, y)=1-0.5y^2-0.5x^2</m> and
+        <m>(a, b)=\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)</m>.
+        The partial derivatives are <m>f_x = -x</m> and <m>f_y = -y</m>, so
+        <md>
+          f_x\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right) = -\frac{\sqrt{2}}{2}, \quad f_y\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right) = -\frac{\sqrt{2}}{2}
+        </md>
+        and
+        <m>f\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right) = 1-0.5\cdot\frac{1}{2}-0.5\cdot\frac{1}{2} = \frac{1}{2}</m>,
+        which agrees with the given point. Substituting into the formula
+        for the tangent plane:
+        <md>
+          z=f(a, b)+f_{x}(a, b)(x-a)+f_{y}(a, b)(y-b) = \frac{1}{2}-\frac{\sqrt{2}}{2}\left(x-\frac{\sqrt{2}}{2}\right)-\frac{\sqrt{2}}{2}\left(y-\frac{\sqrt{2}}{2}\right)
+        </md>.
+      </p>
+      <!--Since $\frac{\sqrt{2}}{2}\cdot\frac{\sqrt{2}}{2}=\frac{1}{2}$, this simplifies to
+      \begin{gather*}
+      z = \frac{1}{2}-\frac{\sqrt{2}}{2}x+\frac{1}{2}-\frac{\sqrt{2}}{2}y+\frac{1}{2} = \frac{3}{2}-\frac{\sqrt{2}}{2}(x+y)
+      \end{gather*}-->
+    </solution>
+  </example>
+
+  <figure xml:id="fig-ch03-05-paraboloid-tangent-plane">
+    <caption>The paraboloid z equals 1 minus x squared over 2 minus y squared over 2, with its tangent plane at the point (a, b, f(a,b)).</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_09_20_89e41e7bb5c056e57e38g-2. -->
+    <interactive xml:id="interactive-ch03-05-paraboloid-tangent-plane" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_09_20_89e41e7bb5c056e57e38g-2.png">
+          <shortdescription>The paraboloid z equals 1 minus x squared over 2 minus y squared over 2, with its tangent plane at the point (a, b, f(a,b)).</shortdescription>
+          <description>
+            <p>The paraboloid <m>z=1-\frac{x^2}{2}-\frac{y^2}{2}</m>, with its tangent plane at the point <m>(a, b, f(a,b))</m>.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <p>
+    <m>f(x, y)= 1-0.5y^2-0.5x^2</m> in green/blue and the tangent plane in
+    grey
+  </p>
+
+  <note>
+    <p>
+      The equation for the tangent plane depends on the point
+      <m>(a, b, f(a, b))</m>.
+    </p>
+  </note>
+
+  <note>
+    <p>
+      Remember that every surface <m>z=f(x, y)</m> is a level surface of
+      some function <m>w=F(x, y, z)</m>. Hence, to see where the equation
+      for the tangent plane comes from, we work with (implicit) level
+      surfaces of the form <m>d=F(x, y, z)</m>, where <m>d</m> is a scalar
+      (not a variable).
+    </p>
+  </note>
+
+  <remark>
+    <p>
+      If <m>\vec{r}(t)</m> is a 3D-curve on the surface <m>d=F(x, y, z)</m>
+      passing through the point ( <m>a, b, c</m> ) on the surface at time
+      <m>t=t_{0}</m>, then
+      <md>
+        \nabla F(a, b, c) \cdot \vec{r}^{\prime}\left(t_{0}\right)=0
+      </md>.
+    </p>
+
+    <p>
+      This is true for <alert>EVERY</alert> differentiable curve on the
+      surface passing through ( <m>a, b, c</m> ).
+    </p>
+  </remark>
+
+  <figure xml:id="fig-ch03-05-gradient-tangent-vectors">
+    <caption><m>\nabla F(a, b, c)</m> in red and tangent vectors in dark blue for two different curves</caption>
+
+    <sidebyside widths="45% 45%" margins="auto" valign="middle">
+      <figure xml:id="fig-ch03-05-gradient-tangent-vectors-a">
+        <caption>The surface z equals f of x and y, with the tangent plane and normal vector at a point. The normal vector to the plane is also perpendicular to a circle-like curve lying on the sphere.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_89e41e7bb5c056e57e38g-3. -->
+        <interactive xml:id="interactive-ch03-05-gradient-tangent-vectors-a" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_09_20_89e41e7bb5c056e57e38g-3.png">
+              <shortdescription>The surface z equals f of x and y, with the tangent plane and normal vector at a point. The normal vector to the plane is also perpendicular to a circle-like curve lying on the sphere.</shortdescription>
+              <description>
+                <p>The surface <m>z=f(x, y)</m>, with the tangent plane and normal vector at a point. The normal vector to the plane is also perpendicular to a circle-like curve lying on the sphere.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch03-05-gradient-tangent-vectors-b">
+        <caption>An alternative view of the surface z equals f of x and y, with the tangent plane and normal vector at a point.  The normal vector to the plane is also perpendicular to a line-like curve lying on the sphere.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_89e41e7bb5c056e57e38g-3(1). -->
+        <interactive xml:id="interactive-ch03-05-gradient-tangent-vectors-b" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_09_20_89e41e7bb5c056e57e38g-3-1.png">
+              <shortdescription>An alternative view of the surface z equals f of x and y, with the tangent plane and normal vector at a point.  The normal vector to the plane is also perpendicular to a line-like curve lying on the sphere.</shortdescription>
+              <description>
+                <p>An alternative view of the surface <m>z=f(x, y)</m>, with the tangent plane and normal vector at a point.  The normal vector to the plane is also perpendicular to a line-like curve lying on the sphere.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </sidebyside>
+  </figure>
+  <p>
+    The graphs above show only the plots; you can drag and zoom them. To see the expressions behind them, or to save a copy and create your own version of the graphs, open them in a new page from here:
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>,
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+  </p>
+
+  <remark>
+    <title>Gradient and Tangent Plane</title>
+
+    <p>
+      Given a differentiable (level) surface <m>d=F(x, y, z)</m>, the
+      tangent plane to the surface at the point ( <m>a, b, c</m> ) is the
+      plane whose normal vector, given by <m>\nabla F(a, b, c)</m>, is
+      orthogonal to the tangent vectors of every (differentiable) curve on
+      the surface passing through ( <m>a, b, c</m> ).
+    </p>
+  </remark>
+
+  <p>
+    This observation gives rise to the following formula:
+  </p>
+
+  <definition>
+    <title>Tangent Plane to a Surface (Implicit)</title>
+
+    <statement>
+      <p>
+        Given a differentiable surface <m>d=F(x, y, z)</m> and a point
+        <m>(a, b, c)</m> on the surface, the tangent plane to the surface at
+        the point <m>(a, b, c)</m> has normal vector <m>\nabla F(a, b, c)</m>
+        and is given by the equation
+        <md>
+          F_{x}(a, b, c)(x-a)+F_{y}(a, b, c)(y-b)+F_{z}(a, b, c)(z-c)=0
+        </md>.
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch03-05-ex-11-3">
+    <statement>
+      <p>
+        Find an equation for the tangent plane to the surface
+        <m>x+ y^2 + z^3 = 1</m> at the point <m>\left( 0,0,1\right)</m>
+      </p>
+
+      <figure xml:id="fig-ch03-05-ex-11-3">
+        <caption>The surface x plus y squared plus z cubed equals 1, and its tangent plane at the point (0,0,1).</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_89e41e7bb5c056e57e38g-5. -->
+        <interactive xml:id="interactive-ch03-05-ex-11-3" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_09_20_89e41e7bb5c056e57e38g-5.png">
+              <shortdescription>The surface x plus y squared plus z cubed equals 1, and its tangent plane at the point (0,0,1).</shortdescription>
+              <description>
+                <p>The surface <m>x+y^2+z^3=1</m>, and its tangent plane at the point <m>(0,0,1)</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        <m>x+ y^2 + z^3 = 1</m> in green and the tangent plane in light blue
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The surface is the level surface <m>F(x, y, z)=0</m> of the
+        function <m>F(x, y, z)=x+y^{2}+z^{3}-1</m>, and the point
+        <m>(0,0,1)</m> is indeed on the surface since <m>0+0^2+1^3=1</m>.
+        The partial derivatives are <m>F_x = 1</m>, <m>F_y = 2y</m>, and
+        <m>F_z = 3z^2</m>, so the normal vector to the tangent plane is
+        <md>
+          \nabla F(0,0,1) = \left\langle 1, 2(0), 3(1)^2\right\rangle = \langle 1, 0, 3\rangle
+        </md>
+        Substituting into the formula for the (implicit) tangent plane:
+        <md>
+          1(x-0)+0(y-0)+3(z-1)=0 \Rightarrow x+3(z-1)=0
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <title>Approximations</title>
+
+    <p>
+      As we saw in <xref ref="example-ch03-05-ex-11-3"/>, the equation
+      <m>x+ y^2 + z^3 = 1</m> is more <q>complicated</q> than the equation
+      for the tangent plane <m>x+3(z-1)</m> at <m>\left( 0,0,1\right)</m>.
+    </p>
+
+    <p>
+      This is important because we can use the tangent plane
+      <m>x+3(z-1)</m> to approximate <m>x+ y^2 + z^3 = 1</m> for points
+      <q>close</q> to <m>(0,0,1)</m>.
+    </p>
+  </note>
+
+  <remark>
+    <title>Tangent Planes and Approximations</title>
+
+    <p>
+      Given a differentiable surface <m>d=F(x, y, z)</m>, its tangent plane
+      at the point ( <m>a, b, c</m> ) can be used to approximate the
+      surface for points close to ( <m>a, b, c</m> ).
+    </p>
+  </remark>
+
+  <example xml:id="example-ch03-05-ex-11-4">
+    <statement>
+      <p>
+        Given the surface <m>f(x, y)=xye^{xy} </m>, use tangent planes to
+        approximate <m>f(0.1,0.1)</m> and <m>f(0.1, 1.1)</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The idea is to choose, for each input, a nearby input <m>(a, b)</m>
+        at which <m>f</m> and its partial derivatives are easy to evaluate,
+        and then approximate <m>f</m> by its tangent plane at <m>(a, b)</m>.
+        By the product and chain rules, the partial derivatives of
+        <m>f(x, y)=xye^{xy}</m> are
+        <md>
+          f_x = ye^{xy}+xye^{xy}\cdot y = ye^{xy}(1+xy), \quad f_y = xe^{xy}+xye^{xy}\cdot x = xe^{xy}(1+xy)
+        </md>
+        For <m>f(0.1,0.1)</m> the closest convenient input is
+        <m>(a, b)=(0,0)</m>. There <m>f(0,0)=0</m>, <m>f_x(0,0)=0</m>, and
+        <m>f_y(0,0)=0</m>, so the tangent plane is
+        <md>
+          z = 0+0(x-0)+0(y-0) = 0
+        </md>
+        and hence <m>f(0.1,0.1)\approx 0</m>.
+      </p>
+
+      <p>
+        For <m>f(0.1,1.1)</m> the closest convenient input is
+        <m>(a, b)=(0,1)</m>. There <m>f(0,1)=0\cdot 1\cdot e^{0}=0</m>,
+        <m>f_x(0,1)=1\cdot e^{0}(1+0)=1</m>, and
+        <m>f_y(0,1)=0\cdot e^{0}(1+0)=0</m>, so the tangent plane is
+        <md>
+          z = 0+1(x-0)+0(y-1) = x
+        </md>
+        and hence <m>f(0.1,1.1)\approx 0.1</m>.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch03-05-ex-11-5">
+    <statement>
+      <p>
+        Find all points on the surface <m>z=x^{2}-2 x y-y^{2}- x+ y</m>
+        where the tangent plane is horizontal (parallel to the plane
+        <m>z=0</m> ).
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Writing the surface as <m>z=f(x, y)</m> with
+        <m>f(x, y)=x^{2}-2 x y-y^{2}- x+ y</m>, the tangent plane at the
+        point <m>(a, b, f(a, b))</m> is
+        <md>
+          z=f(a, b)+f_{x}(a, b)(x-a)+f_{y}(a, b)(y-b)
+        </md>
+        which is horizontal exactly when <m>f_x(a, b)=0</m> and
+        <m>f_y(a, b)=0</m>, since then the equation reduces to the constant
+        plane <m>z=f(a, b)</m>. The partial derivatives are
+        <md>
+          f_x = 2x-2y-1, \quad f_y = -2x-2y+1
+        </md>
+        Setting both equal to zero (<m>2x-2y-1=0</m> and
+        <m>-2x-2y+1=0</m>) and adding the two equations gives
+        <md>
+          (2x-2y-1)+(-2x-2y+1) = 0 \Rightarrow -4y = 0 \Rightarrow y=0
+        </md>
+        Substituting <m>y=0</m> into <m>f_x=0</m> gives
+        <m>2x-1=0 \Rightarrow x=\frac{1}{2}</m>, and this also satisfies
+        <m>f_y = -2\cdot\frac{1}{2}-0+1 = 0</m>. Finally
+        <md>
+          f\left(\frac{1}{2}, 0\right) = \frac{1}{4}-0-0-\frac{1}{2}+0 = -\frac{1}{4}
+        </md>
+        So the only point where the tangent plane is horizontal is
+        <m>\left(\frac{1}{2}, 0, -\frac{1}{4}\right)</m>, where the tangent
+        plane is <m>z=-\frac{1}{4}</m>.
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <title>3D gradient <m>\nabla F(x, y, z)</m> vs 2D gradient <m>\nabla f(x, y)</m></title>
+
+    <p>
+      Do not confuse the 3D gradient <m>\nabla F(x, y, z)</m> with the 2D
+      gradient <m>\nabla f(x, y)</m> we saw when studying directional
+      derivatives. Here we summarize their different applications:
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p>
+            Given an (explicit) 3-dimensional surface <m>z=f(x, y)</m>, its
+            2 -dimensional gradient
+            <m>\nabla f(a, b)=\left\langle f_{x}(a, b), f_{y}(a, b)\right\rangle</m>
+            tells you the direction (in the <m>x y</m> plane) of steepest
+            ascent at the input <m>( a, b )</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Given an (implicit) 3-dimensional surface <m>d=F(x, y, z)</m>,
+            its 3-dimensional gradient
+            <m>\nabla F(a, b, c)=\left\langle F_{x}(a, b, c), F_{y}(a, b, c), F_{z}(a, b, c)\right\rangle</m>
+            gives you a normal vector to the tangent plane to the surface at
+            the point <m>(a, b, c)</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </remark>
+
+  <note>
+    <p>
+      Given a differentiable function <m>f(x, y)</m>, we saw that we can
+      approximate this function for inputs close to <m>(a, b)</m> by using
+      the tangent plane to <m>f</m> at the point ( <m>a, b, f(a, b)</m> ).
+      That is,
+      <md>
+        f(x, y) \approx f(a, b)+f_{x}(a, b)(x-a)+f_{y}(a, b)(y-b)
+      </md>.
+    </p>
+  </note>
+
+  <p>
+    Since the expression on the right only involves constants and linear
+    powers of <m>x</m> and <m>y</m>, this approximation is referred to as
+    the linearization of <m>f(x, y)</m> at the input  <m>(a, b)</m> .
+  </p>
+
+  <definition>
+    <title>Linearization of a Function at a Point</title>
+
+    <statement>
+      <p>
+        Given a differentiable function <m>f(x, y)</m>, its linearization
+        (or linear approximation) at the input ( <m>a, b</m> ) is given by
+        <md>
+          L(x, y)=f(a, b)+f_{x}(a, b)(x-a)+f_{y}(a, b)(y-b)
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      Since the linearization of <m>f</m> at an input ( <m>a, b</m> ) is
+      just the equation of the tangent plane to <m>f</m> at that input, the
+      main application is the same: Approximate <m>f</m> with a
+      <q>simpler</q> function.
+    </p>
+  </note>
+
+  <example xml:id="example-ch03-05-ex-11-6">
+    <statement>
+      <p>
+        Find the linearization of <m>f(x, y)=x^{3}-2x y+ y^2- y</m> at the
+        input <m>(1,2)</m>. Use this to approximate <m>f(0.9,2.1)</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We first compute the value of <m>f</m> and of its partial
+        derivatives at the input <m>(1,2)</m>:
+        <md alignment="gather">
+          <mrow>f(1,2) = 1^3 - 2(1)(2) + 2^2 - 2 = 1 - 4 + 4 - 2 = -1</mrow>
+          <mrow>f_x(x,y) = 3x^2 - 2y \Rightarrow f_x(1,2) = 3(1)^2 - 2(2) = 3 - 4 = -1</mrow>
+          <mrow>f_y(x,y) = -2x + 2y - 1 \Rightarrow f_y(1,2) = -2(1) + 2(2) - 1 = -2 + 4 - 1 = 1</mrow>
+        </md>
+        Substituting these into the formula for the linearization at
+        <m>(1,2)</m>:
+        <md>
+          L(x, y) = f(1,2) + f_x(1,2)(x-1) + f_y(1,2)(y-2) = -1 - (x-1) + (y-2)
+        </md>
+        Since the input <m>(0.9, 2.1)</m> is close to <m>(1,2)</m>, we can
+        approximate <m>f(0.9,2.1)</m> by the linearization:
+        <md>
+          f(0.9, 2.1) \approx L(0.9, 2.1) = -1-(0.9-1) + (2.1-2) = -1+0.1+0.1 = -0.8
+        </md>
+        For comparison, the exact value is
+        <m>f(0.9,2.1) = (0.9)^3 - 2(0.9)(2.1) + (2.1)^2 - 2.1 = -0.741</m>,
+        so the approximation is fairly close.
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      When talking about partial derivatives, we saw the follow formulas:
+      <md>
+        f(a+\Delta x, b)-f(a, b) \approx f_{x}(a, b) \Delta x
+      </md>
+      and
+      <md>
+        f(a, b+\Delta y)-f(a, b) \approx f_{y}(a, b) \Delta y
+      </md>.
+    </p>
+
+    <p>
+      If we want to approximate a change in a function <m>f(x, y)</m> in
+      both coordinates, we have a similar formula.
+    </p>
+  </remark>
+
+  <definition>
+    <title>Approximating Change</title>
+
+    <statement>
+      <p>
+        Given a differentiable function <m>f(x, y)</m>, we can approximate
+        small changes in <m>x</m> and <m>y</m> using
+        <md>
+          f(a+\Delta x, b+\Delta y)-f(a, b) \approx f_{x}(a, b) \Delta x+f_{y}(a, b) \Delta y
+        </md>.
+      </p>
+
+      <p>
+        Sometimes, this equation is written using the total differential of
+        <m>f</m>, as
+        <md>
+          d f=f_{x}(a, b) d x+f_{y}(a, b) d y
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch03-05-ex-11-7">
+    <statement>
+      <p>
+        The volume of a right circular cone with radius <m>r</m> and height
+        <m>h</m> is <m>V=\pi r^{2} h / 3</m>. Approximate the change in the
+        volume of the cone when the radius changes from <m>r=6</m> to
+        <m>r=6.1</m> and the height changes from <m>h=4</m> to <m>h=3.9</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Here <m>V(r,h) = \frac{\pi r^2 h}{3}</m>, the radius changes from
+        <m>r=6</m> by <m>\Delta r = 0.1</m> and the height changes from
+        <m>h=4</m> by <m>\Delta h = -0.1</m>. We compute the partial
+        derivatives of <m>V</m> at the input <m>(6,4)</m>:
+        <md alignment="gather">
+          <mrow>V_r(r,h) = \frac{2\pi r h}{3} \Rightarrow V_r(6,4) = \frac{2\pi (6)(4)}{3} = 16\pi</mrow>
+          <mrow>V_h(r,h) = \frac{\pi r^2}{3} \Rightarrow V_h(6,4) = \frac{\pi (6)^2}{3} = 12\pi</mrow>
+        </md>
+        By the approximating-change formula:
+        <md alignment="gather">
+          <mrow>V(6.1, 3.9) - V(6,4) \approx V_r(6,4) \Delta r + V_h(6,4) \Delta h = 16\pi (0.1) + 12\pi (-0.1)</mrow>
+          <mrow>= 1.6\pi - 1.2\pi = 0.4\pi \approx 1.26</mrow>
+        </md>
+        So the volume increases by approximately <m>0.4\pi \approx 1.26</m>
+        cubic units. Even though the height decreases, the change coming
+        from the radius is larger, so the net change in the volume is
+        positive.
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>This formula is useful when:</p>
+
+    <p>
+      <ol>
+        <li>
+          <p>
+            You do not have the explicit function, but you do know its
+            rates of change.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The original function is too convoluted to work with, this
+            approach can be more computationally efficient.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </note>
+
+  <p>
+    The formula for the linearization of a function generalizes easily to
+    functions of more than two inputs.
+  </p>
+
+  <remark>
+    <title>Linearization in Higher Dimensions</title>
+
+    <p>
+      Given a differentiable function <m>w=f(x, y, z)</m>, its
+      linearization at the input ( <m>a, b, c</m> ) is given by
+      <md>
+        L(x, y, z)=f(a, b, c)+f_{x}(a, b, c)(x-a)+f_{y}(a, b, c)(y-b)+f_{z}(a, b, c)(z-c)
+      </md>.
+    </p>
+  </remark>
+
+</section>

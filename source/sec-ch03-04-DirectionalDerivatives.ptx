@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch03-04-DirectionalDerivatives.ptx : converted from
+  "10. Directional Derivatives and the Gradient - Solutions.tex" by the
+  bbeaccess-pretext skill (2026-09-17). Fragment for xi:include into
+  ch-03-DerivativesOfVectorAndScalarValuedFunctions.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch03-04 (lecture file 10, chapter 3) on your instruction.
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): all five pictures - ...b436g-01.png and
+     ...b436g-01-1.png (first pair after Example 10.1), ...b436g-02-1.png and
+     ...b436g-01-1.png again (second pair; the .tex reuses the same cross-section
+     picture as the right panel of both pairs), ...b436g-07.png (Example 10.5, the
+     sphere). All 3D, probably CalcPlot3D scenes in the end.
+  3. The CalcPlot3D links in the .tex are all inside commented-out \caption* lines
+     under the subfigures ("Plane" / "Paraboloid": copy-paste residue of the Example
+     6.2 scenes). Not live, not used. ptx_check reports them as unmatched; expected.
+  4. The two pairs of pictures are outer figures with a <sidebyside widths="45% 45%">
+     each. Their .tex \caption lines are commented out (residue "The curve f(0,y) and
+     the tangent line at (0,0,f(0,0))" from file 8), so the OUTER CAPTIONS ARE MY
+     WORDING: "The surface f(x,y)=sin(y+x)cos(y-x) intersected with a plane
+     perpendicular to the xy-plane in the direction of u." and "The tangent line to
+     the cross-section of f in the direction of u." Per-panel <instructions> are
+     commented out and one <p> after each outer figure carries the boilerplate with a
+     left/right link each (the sec-ch01-01 fix).
+  5. Example 10.1 has no solution box; its statement ends "as shown below:" and the
+     pictures sit AFTER \end{example} in the .tex, so they are section-level figures
+     here (between the example and the sentence "Then, in the curve you get...").
+  6. Example 10.5's picture has a legend typed under it in the same center block
+     ("Graph of z=sqrt(9-x^2-y^2) and (2,1,2)"); the caption rule keeps the alt text
+     as the caption, so the legend is kept as a <p> right after the figure, inside the
+     statement where the picture stands.
+  7. "Example 10.5" (part (a), picture, solution) + "[Continuation of 10.5]" (parts
+     (b)-(d), solution) merged into ONE <example> in source order with two
+     <solution>s. The second solution's (b)/(c)/(d) parts are separate <p>s with their
+     literal labels, as in the .tex. ptx_check therefore reports 8 examples in the
+     .tex vs 7 here. The \setcounter{tcb@cnt@example}{4} is dropped. Example 10.4's
+     single solution box likewise has (a)/(b)/(c) paragraphs; Example 10.6 (a)/(b).
+     The first solution of Example 10.5 repeats the "(a)" label inside the box; kept.
+  8. \mathbf{u}, \mathbf{u}_1, \mathbf{u}_2 to \vec{u}, \vec{u}_1, \vec{u}_2, including
+     inside D_{\mathbf{u}} (now D_{\vec{u}}). Everything else byte-for-byte.
+  9. The remark before Example 10.4 (\begin{aligned} with & before =) is an <md>
+     (align mode) with \amp kept; its trailing comma moved after </md>.
+ 10. Typeset <description>s are the conversion's own text; review. The Example 10.5 alt
+     text has no final period and says "centred" (UK); kept verbatim.
+ 11. Template width constants replace the .tex widths (subfigure 0.3\textwidth,
+     0.3\textwidth).
+ 12. Relative references left as prose: "as shown below" (twice), "Use the work from
+     the above remark" (10.4), "In the definition above" (remark), "the direction found
+     in part (a)" (10.5).
+ 13. Source quirks preserved: "at the point  $(...)$ ," double space and space before
+     the comma (10.1); "( $a, b$ )" and "(or the point $(a, b, f(a, b)$ )" with the
+     unbalanced parenthesis (both definitions); "$D_{\mathbf{u}} f(a, b)$ ?" and
+     "an input $(a, b)$ :" spacing; "The unit vector in that the direction" (twice,
+     10.4); "a unit vector(s)"; "end up on on the surface" (10.5 (d)); "the
+     (4-dimensional) function" (10.7); "Give your answer as a unit vector." only for
+     part (a).
+ 14. Commented-out .tex material: the \caption lines under both pairs (file-8 residue)
+     and the \caption*{\href...} lines are not kept.
+ 15. Every \newpage/\vspace/\hspace, the figure[H]/center/subfigure wrappers,
+     \captionsetup, \\ and \setcounter dropped.
+-->
+
+<section xml:id="sec-ch03-04-DirectionalDerivatives" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Directional Derivatives and the Gradient</title>
+
+  <note>
+    <p>
+      As we saw earlier, given a scalar-valued function <m>z=f(x, y)</m>,
+      we can compute its rate of change in the direction of the positive
+      <m>x</m>-axis (using <m>f_{x}</m> ) and in the direction of the
+      positive <m>y</m>-axis (using <m>f_{y}</m> ).
+    </p>
+  </note>
+
+  <p>
+    The next question to answer is, how do we find the rate of change of
+    <m>f(x, y)</m> in any direction?
+  </p>
+
+  <remark>
+    <p>
+      When we say direction, we mean a direction in the <m>x y</m>-plane.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch03-04-ex-10-1">
+    <statement>
+      <p>
+        Suppose we are standing on the surface
+        <m>f(x, y)=\sin\left(y+x\right)\cos\left(y-x\right)</m>, at the
+        point  <m>\left(\frac{\pi}{2},\frac{\pi}{4},\frac{1}{2}\right)</m> ,
+        and want to find the rate of change of <m>f</m> in the direction of
+        the vector
+        <m>\vec{u}=\left\langle\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right\rangle</m>
+        (North-East).
+      </p>
+
+      <p>
+        Geometrically, we do the same thing we did with partial derivatives:
+        Intersect <m>f</m> using a plane perpendicular to the
+        <m>x y</m>-plane in the direction of <m>\vec{u}</m>, as shown below:
+      </p>
+    </statement>
+  </example>
+
+  <figure xml:id="fig-ch03-04-ex-10-1-intersection">
+    <caption>The surface <m>f(x, y)=\sin\left(y+x\right)\cos\left(y-x\right)</m> intersected with a plane perpendicular to the <m>x y</m>-plane in the direction of <m>\vec{u}</m>.</caption>
+
+    <sidebyside widths="45% 45%" margins="auto" valign="middle">
+      <figure xml:id="fig-ch03-04-ex-10-1-intersection-a">
+        <caption>The surface z equals f of x and y, intersected with a plane perpendicular to the xy-plane, containing a vector of the xy-plane.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_467e98fff8bf8066b436g-01. -->
+        <interactive xml:id="interactive-ch03-04-ex-10-1-intersection-a" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_09_20_467e98fff8bf8066b436g-01.png">
+              <shortdescription>The surface z equals f of x and y, intersected with a plane perpendicular to the xy-plane, containing a vector of the xy-plane.</shortdescription>
+              <description>
+                <p>The surface <m>z=f(x, y)</m>, intersected with a plane perpendicular to the <m>xy</m>-plane, containing a vector of the <m>xy</m>-plane.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch03-04-ex-10-1-intersection-b">
+        <caption>A cross-section of the surface z equals f of x and y, in the direction of the unit vector u.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_467e98fff8bf8066b436g-01(1). -->
+        <interactive xml:id="interactive-ch03-04-ex-10-1-intersection-b" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_09_20_467e98fff8bf8066b436g-01-1.png">
+              <shortdescription>A cross-section of the surface z equals f of x and y, in the direction of the unit vector u.</shortdescription>
+              <description>
+                <p>A cross-section of the surface <m>z=f(x, y)</m>, in the direction of the unit vector <m>\vec{u}</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </sidebyside>
+  </figure>
+  <p>
+    The graphs above show only the plots; you can drag and zoom them. To see the expressions behind them, or to save a copy and create your own version of the graphs, open them in a new page from here:
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>,
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+  </p>
+
+  <p>
+    Then, in the curve you get when doing this intersection, you find the
+    slope of the tangent line to <m>f</m> at the point <m>(0,0,1)</m>, as
+    shown below:
+  </p>
+
+  <figure xml:id="fig-ch03-04-ex-10-1-tangent">
+    <caption>The tangent line to the cross-section of <m>f</m> in the direction of <m>\vec{u}</m>.</caption>
+
+    <sidebyside widths="45% 45%" margins="auto" valign="middle">
+      <figure xml:id="fig-ch03-04-ex-10-1-tangent-a">
+        <caption>The surface z equals f of x and y, with the directional derivative in the direction of unit vector u shown as the slope of a cross-section.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_467e98fff8bf8066b436g-02(1). -->
+        <interactive xml:id="interactive-ch03-04-ex-10-1-tangent-a" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_09_20_467e98fff8bf8066b436g-02-1.png">
+              <shortdescription>The surface z equals f of x and y, with the directional derivative in the direction of unit vector u shown as the slope of a cross-section.</shortdescription>
+              <description>
+                <p>The surface <m>z=f(x, y)</m>, with the directional derivative in the direction of unit vector <m>\vec{u}</m> shown as the slope of a cross-section.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch03-04-ex-10-1-tangent-b">
+        <caption>A cross-section of the surface z equals f of x and y, in the direction of the unit vector u.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_467e98fff8bf8066b436g-01(1). -->
+        <interactive xml:id="interactive-ch03-04-ex-10-1-tangent-b" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_09_20_467e98fff8bf8066b436g-01-1.png">
+              <shortdescription>A cross-section of the surface z equals f of x and y, in the direction of the unit vector u.</shortdescription>
+              <description>
+                <p>A cross-section of the surface <m>z=f(x, y)</m>, in the direction of the unit vector <m>\vec{u}</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </sidebyside>
+  </figure>
+  <p>
+    The graphs above show only the plots; you can drag and zoom them. To see the expressions behind them, or to save a copy and create your own version of the graphs, open them in a new page from here:
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>,
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+  </p>
+
+  <note>
+    <p>
+      Since we can now find rates of change in any direction, we have to
+      modify our definition of a partial derivative to allow for change in
+      both the <m>x</m> and <m>y</m> variables. We call this new derivative
+      a directional derivative.
+    </p>
+  </note>
+
+  <definition>
+    <title>Directional Derivative (Geometric)</title>
+
+    <statement>
+      <p>
+        Given a function <m>z=f(x, y)</m>, an input ( <m>a, b</m> ), and a
+        direction given by a nonzero unit vector
+        <m>\vec{u}=\left\langle u_{1}, u_{2}\right\rangle</m>, the rate of
+        change of <m>f(x, y)</m> at the input <m>(a, b)</m> (or the point
+        <m>(a, b, f(a, b)</m> ) in the direction of <m>\vec{u}</m> is given
+        by
+        <md>
+          D_{\vec{u}} f(a, b)=\lim _{s \rightarrow 0} \frac{f\left(a+s u_{1}, b+s u_{2}\right)-f(a, b)}{s}
+        </md>.
+      </p>
+
+      <p>
+        We call this quantity the directional derivative of <m>f</m> at the
+        input ( <m>a, b</m> ) in the direction of <m>\vec{u}</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <remark>
+    <p>
+      When working with directional derivatives, make sure the direction
+      vector is a unit vector.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch03-04-ex-10-2">
+    <statement>
+      <p>
+        Find the rate of change of <m>f=x^2+y</m>, at the point
+        <m>(1,1,2)</m>, in the direction of
+        <m>\vec{u}=\left\langle\frac{1}{2}, \frac{\sqrt{3}}{2}\right\rangle</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Here <m>(a,b)=(1,1)</m> and
+        <m>\vec{u}=\left\langle\frac{1}{2}, \frac{\sqrt{3}}{2}\right\rangle</m>,
+        which is a unit vector since
+        <m>\sqrt{\left(\frac{1}{2}\right)^2+\left(\frac{\sqrt{3}}{2}\right)^2}=\sqrt{\frac{1}{4}+\frac{3}{4}}=1</m>.
+        Using the geometric definition of the directional derivative:
+        <md>
+          D_{\vec{u}} f(1,1)=\lim _{s \rightarrow 0} \frac{f\left(1+\frac{1}{2}s,\ 1+\frac{\sqrt{3}}{2}s\right)-f(1,1)}{s}
+        </md>
+        Since <m>f(x,y)=x^2+y</m> we have <m>f(1,1)=1^2+1=2</m> and
+        <md alignment="gather">
+          <mrow>f\left(1+\frac{1}{2}s,\ 1+\frac{\sqrt{3}}{2}s\right)=\left(1+\frac{1}{2}s\right)^2+1+\frac{\sqrt{3}}{2}s = 1+s+\frac{s^2}{4}+1+\frac{\sqrt{3}}{2}s</mrow>
+          <mrow>= 2+\left(1+\frac{\sqrt{3}}{2}\right)s+\frac{s^2}{4}</mrow>
+        </md>
+        Hence
+        <md>
+          D_{\vec{u}} f(1,1)=\lim _{s \rightarrow 0} \frac{2+\left(1+\frac{\sqrt{3}}{2}\right)s+\frac{s^2}{4}-2}{s} = \lim _{s \rightarrow 0} \left(1+\frac{\sqrt{3}}{2}+\frac{s}{4}\right) = 1+\frac{\sqrt{3}}{2}
+        </md>
+        So the rate of change of <m>f</m> at the point <m>(1,1,2)</m> in the
+        direction of <m>\vec{u}</m> is
+        <m>1+\frac{\sqrt{3}}{2}=\frac{2+\sqrt{3}}{2}</m>.
+      </p>
+    </solution>
+  </example>
+
+  <definition>
+    <title>Directional Derivative (Computational)</title>
+
+    <statement>
+      <p>
+        Given a differentiable function <m>z=f(x, y)</m>, an input
+        <m>(a, b)</m>, and a direction given by a nonzero unit vector
+        <m>\vec{u}=\left\langle u_{1}, u_{2}\right\rangle</m>, the rate of
+        change of <m>f(x, y)</m> at the input <m>(a, b)</m> (or the point
+        <m>(a, b, f(a, b)</m> ) in the direction of <m>\vec{u}</m> is given
+        by
+        <md>
+          D_{\vec{u}} f(a, b)=\nabla f(a, b) \cdot \vec{u}
+        </md>
+        where <m>\nabla f=\left\langle f_{x}, f_{y}\right\rangle</m> is
+        called the gradient of <m>f</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch03-04-ex-10-3">
+    <statement>
+      <p>
+        Find the directional derivative of <m>f(x, y)=4 x-2 x y+y^{3}</m> at
+        the input ( <m>-1,-5</m> ) in the direction of the vector
+        <m>\langle 1,1\rangle</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The direction vector <m>\langle 1,1\rangle</m> is not a unit vector,
+        since its length is <m>\sqrt{1^2+1^2}=\sqrt{2}</m>. Dividing by its
+        length gives the unit vector
+        <md>
+          \vec{u}=\frac{1}{\sqrt{2}}\langle 1,1\rangle = \left\langle \frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right\rangle
+        </md>
+        The partial derivatives of <m>f(x, y)=4 x-2 x y+y^{3}</m> are
+        <m>f_x = 4-2y</m> and <m>f_y = -2x+3y^2</m>, so
+        <md>
+          \nabla f(-1,-5) = \left\langle 4-2(-5),\ -2(-1)+3(-5)^2\right\rangle = \langle 14, 77\rangle
+        </md>
+        Hence
+        <md>
+          D_{\vec{u}} f(-1,-5)=\nabla f(-1,-5) \cdot \vec{u} = \langle 14, 77\rangle \cdot \left\langle \frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right\rangle = 14\cdot\frac{\sqrt{2}}{2}+77\cdot\frac{\sqrt{2}}{2} = \frac{91\sqrt{2}}{2}
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <title>Motivation</title>
+
+    <p>
+      Suppose we are standing on the point <m>(a, b, f(a, b))</m> on a
+      differentiable function <m>f</m>. What direction vector <m>\vec{u}</m>
+      will maximize <m>D_{\vec{u}} f(a, b)</m> ?
+    </p>
+  </note>
+
+  <remark>
+    <p>
+      Given <m>z=f(x, y)</m>, an input <m>(a, b)</m>, and a (nonzero) unit
+      vector <m>\vec{u}</m>; if <m>\nabla f(a, b) \neq 0</m>, we may write
+      <md>
+        <mrow>\nabla f(a, b) \cdot \vec{u} \amp =|\nabla f(a, b)||\vec{u}| \cos (\theta)</mrow>
+        <mrow>\amp =|\nabla f(a, b)| \cos (\theta)</mrow>
+      </md>,
+      where <m>0 \leq \theta \leq \pi</m> is the angle between
+      <m>\nabla f(a, b)</m> and <m>\vec{u}</m>.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch03-04-ex-10-4">
+    <statement>
+      <p>
+        Use the work from the above remark to determine what angle
+        <m>\theta</m> between <m>\nabla f(a, b)</m> and <m>\vec{u}</m>
+        will:
+      </p>
+
+      <p>(a) Maximize <m>D_{\vec{u}} f(a, b)</m>.</p>
+
+      <p>(b) Minimize <m>D_{\vec{u}} f(a, b)</m>.</p>
+
+      <p>(c) Make <m>D_{\vec{u}} f(a, b)=0</m>.</p>
+    </statement>
+
+    <solution>
+      <p>
+        From the remark,
+        <m>D_{\vec{u}} f(a, b)=|\nabla f(a, b)| \cos (\theta)</m>, where
+        <m>|\nabla f(a, b)|</m> is a fixed positive number that does not
+        depend on <m>\vec{u}</m>. So the value of the directional derivative
+        is controlled entirely by <m>\cos(\theta)</m>, with
+        <m>0 \leq \theta \leq \pi</m>.
+      </p>
+
+      <p>
+        (a) <m>D_{\vec{u}} f(a, b)</m> is maximized when <m>\cos(\theta)</m>
+        is as large as possible, that is
+        <m>\cos(\theta)=1 \Rightarrow \theta = 0</m>. The maximum value is
+        <m>|\nabla f(a, b)|</m>, attained when <m>\vec{u}</m> points in the
+        same direction as <m>\nabla f(a, b)</m>. The unit vector in that the
+        direction is <m>\vec{u} = \frac{\nabla f(a, b)}{|\nabla f(a, b)|}</m>.
+      </p>
+
+      <p>
+        (b) <m>D_{\vec{u}} f(a, b)</m> is minimized when <m>\cos(\theta)</m>
+        is as small as possible, that is
+        <m>\cos(\theta)=-1 \Rightarrow \theta = \pi</m>. The minimum value is
+        <m>-|\nabla f(a, b)|</m>, attained when <m>\vec{u}</m> points in the
+        direction opposite of <m>\nabla f(a, b)</m>. The unit vector in that
+        the direction is
+        <m>\vec{u} = -\frac{\nabla f(a, b)}{|\nabla f(a, b)|}</m>
+      </p>
+
+      <p>
+        (c) <m>D_{\vec{u}} f(a, b)=0</m> when
+        <m>\cos(\theta)=0 \Rightarrow \theta = \frac{\pi}{2}</m>, that is
+        when <m>\vec{u}</m> is orthogonal to <m>\nabla f(a, b)</m>. To find
+        a unit vector(s) perpendicular to <m>\nabla f(a, b)</m> one needs to
+        solve the system of equations <m>f_x(a,b)u_x+f_y(a,b)u_y = 0</m> and
+        <m>u_x^2+u_y^2=1</m>. This will result in two vectors
+        <m>\vec{u}_2 = \langle u_x,u_y \rangle</m> and
+        <m>\vec{u}_1 = \langle -u_x,-u_y \rangle</m>.
+      </p>
+    </solution>
+  </example>
+
+  <definition>
+    <title>Steepest Ascent and Descent</title>
+
+    <statement>
+      <p>
+        Given a differentiable function <m>z=f(x, y)</m> and an input
+        <m>(a, b)</m> :
+      </p>
+
+      <p>
+        <ul>
+          <li>
+            <p>
+              To maximize <m>D_{\vec{u}} f(a, b)</m> (move in the direction
+              of steepest ascent), <m>\vec{u}</m> must be a unit vector in
+              the direction of <m>\nabla f(a, b)</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              To minimize <m>D_{\vec{u}} f(a, b)</m> (move in the direction
+              of steepest descent), <m>\vec{u}</m> must be a unit vector in
+              the direction opposite of <m>\nabla f(a, b)</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              To make <m>D_{\vec{u}} f(a, b)=0</m> (move in a direction of
+              no ascent nor descent), <m>\vec{u}</m> must be a unit vector
+              in a direction orthogonal to <m>\nabla f(a, b)</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+
+  <remark>
+    <p>
+      In the definition above, when we say move, we refer to taking an
+      infinitesimally small step in a given direction.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch03-04-ex-10-5">
+    <statement>
+      <p>
+        Suppose we are standing on a mountain given by the surface
+        <m>z=\sqrt{9-x^{2}-y^{2}}</m>. We are currently standing on the
+        point <m>(2,1, z(2,1))=\left(2,1, 2\right)</m>.
+      </p>
+
+      <p>
+        (a) In what direction should we move in order to move in the
+        direction of steepest ascent? Give your answer as a unit vector.
+      </p>
+
+      <figure xml:id="fig-ch03-04-ex-10-5">
+        <caption>The first octant part of the sphere centred at the origin with radius 3 and the point (2,1,2)</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_467e98fff8bf8066b436g-07. -->
+        <interactive xml:id="interactive-ch03-04-ex-10-5" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_09_20_467e98fff8bf8066b436g-07.png">
+              <shortdescription>The first octant part of the sphere centred at the origin with radius 3 and the point (2,1,2)</shortdescription>
+              <description>
+                <p>The first octant part of the sphere centred at the origin with radius 3 and the point <m>(2,1,2)</m></p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        Graph of <m>z=\sqrt{9-x^{2}-y^{2}}</m> and <m>\left(2,1, 2\right)</m>
+      </p>
+
+      <p>
+        (b) In what direction should we move in order to minimize the rate
+        of change of <m>f</m> ?
+      </p>
+
+      <p>
+        (c) In what direction(s) should we move in order to move in a
+        direction of no ascent nor descent?
+      </p>
+
+      <p>
+        (d) If we take a unit step in the direction found in part (a), what
+        point would we end up on on the surface <m>z</m> ?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The partial derivatives of <m>z=\sqrt{9-x^{2}-y^{2}}</m> are
+        <md>
+          z_x = \frac{-x}{\sqrt{9-x^{2}-y^{2}}}, \quad z_y = \frac{-y}{\sqrt{9-x^{2}-y^{2}}}
+        </md>
+        At the input <m>(2,1)</m> we have
+        <m>\sqrt{9-2^2-1^2}=\sqrt{4}=2</m>, hence
+        <md>
+          \nabla z(2,1) = \left\langle -\frac{2}{2}, -\frac{1}{2}\right\rangle = \left\langle -1, -\frac{1}{2}\right\rangle
+        </md>
+        (a) To move in the direction of steepest ascent we must move in the
+        direction of <m>\nabla z(2,1)</m>. Since
+        <m>|\nabla z(2,1)| = \sqrt{1+\frac{1}{4}}=\frac{\sqrt{5}}{2}</m>, the
+        unit vector is
+        <md>
+          \vec{u}=\frac{2}{\sqrt{5}}\left\langle -1, -\frac{1}{2}\right\rangle = \left\langle -\frac{2}{\sqrt{5}}, -\frac{1}{\sqrt{5}}\right\rangle = \left\langle -\frac{2\sqrt{5}}{5}, -\frac{\sqrt{5}}{5}\right\rangle
+        </md>
+        (Standing at <m>(2,1,2)</m>, this direction points from the input
+        <m>(2,1)</m> towards the origin of the <m>xy</m>-plane, above which
+        the top of the mountain sits.)
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        (b) To minimize the rate of change we must move in the direction
+        opposite of <m>\nabla z(2,1)</m>, that is
+        <m>\left\langle \frac{2\sqrt{5}}{5}, \frac{\sqrt{5}}{5}\right\rangle</m>.
+      </p>
+
+      <p>
+        (c) We must move orthogonally to <m>\nabla z(2,1)</m>: a unit vector
+        <m>\left\langle u_1,u_2\right\rangle</m> satisfies
+        <m>\left\langle u_1,u_2\right\rangle \cdot \left\langle -1, -\frac{1}{2}\right\rangle = 0 \Rightarrow u_2 = -2u_1</m>,
+        and then <m>u_1^2+4u_1^2=1 \Rightarrow u_1 = \pm\frac{1}{\sqrt{5}}</m>.
+        This gives the two directions
+        <m>\left\langle \frac{\sqrt{5}}{5}, -\frac{2\sqrt{5}}{5}\right\rangle</m>
+        and
+        <m>\left\langle -\frac{\sqrt{5}}{5}, \frac{2\sqrt{5}}{5}\right\rangle</m>.
+      </p>
+
+      <p>
+        (d) Taking a unit step from the input <m>(2,1)</m> in the direction
+        found in part (a) lands on the input
+        <md>
+          \left(2-\frac{2}{\sqrt{5}},\ 1-\frac{1}{\sqrt{5}}\right) = \left(2-\frac{2\sqrt{5}}{5},\ 1-\frac{\sqrt{5}}{5}\right)
+        </md>
+        For the corresponding point on the surface we need the value of
+        <m>z</m> at this input. Since
+        <md>
+          \left(2-\frac{2}{\sqrt{5}}\right)^2+\left(1-\frac{1}{\sqrt{5}}\right)^2 = 4-\frac{8}{\sqrt{5}}+\frac{4}{5}+1-\frac{2}{\sqrt{5}}+\frac{1}{5} = 6-\frac{10}{\sqrt{5}} = 6-2\sqrt{5}
+        </md>
+        we get
+        <m>z = \sqrt{9-\left(6-2\sqrt{5}\right)} = \sqrt{3+2\sqrt{5}}</m>,
+        so we end up on the point
+        <md>
+          \left(2-\frac{2\sqrt{5}}{5},\ 1-\frac{\sqrt{5}}{5},\ \sqrt{3+2\sqrt{5}}\right) \approx (1.11,\ 0.55,\ 2.73)
+        </md>
+        which is indeed higher than our starting height <m>z=2</m>, as
+        expected when moving in the direction of steepest ascent.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch03-04-ex-10-6">
+    <statement>
+      <p>Given the surface <m>g(x, y)=\cos (y-5x)</m> :</p>
+
+      <p>
+        (a) Compute the directional derivative of <m>g</m> at the input
+        <m>(\frac{\pi}{2},2\pi)</m> in the direction of the vector
+        <m>\vec{u}=\left\langle\frac{5}{13}, \frac{12}{13}\right\rangle</m>.
+      </p>
+
+      <p>
+        (b) Does the vector <m>\vec{u}</m> give a direction of ascent or
+        descent?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        (a) The vector
+        <m>\vec{u}=\left\langle\frac{5}{13}, \frac{12}{13}\right\rangle</m>
+        is a unit vector, since
+        <m>\sqrt{\frac{25}{169}+\frac{144}{169}}=\sqrt{\frac{169}{169}}=1</m>.
+        By the chain rule, the partial derivatives of
+        <m>g(x, y)=\cos (y-5x)</m> are
+        <md>
+          g_x = -\sin(y-5x)\cdot(-5) = 5\sin(y-5x), \quad g_y = -\sin(y-5x)
+        </md>
+        At the input <m>\left(\frac{\pi}{2},2\pi\right)</m> we have
+        <m>y-5x = 2\pi-\frac{5\pi}{2} = -\frac{\pi}{2}</m> and
+        <m>\sin\left(-\frac{\pi}{2}\right)=-1</m>. Hence
+        <md>
+          \nabla g\left(\frac{\pi}{2},2\pi\right) = \left\langle 5(-1), -(-1)\right\rangle = \langle -5, 1\rangle
+        </md>
+        and
+        <md>
+          D_{\vec{u}} g\left(\frac{\pi}{2},2\pi\right) = \langle -5, 1\rangle \cdot \left\langle\frac{5}{13}, \frac{12}{13}\right\rangle = -\frac{25}{13}+\frac{12}{13} = -\frac{13}{13} = -1
+        </md>
+        (b) Since
+        <m>D_{\vec{u}} g\left(\frac{\pi}{2},2\pi\right) = -1 \lt 0</m>, the
+        function decreases as we move in the direction of <m>\vec{u}</m>,
+        so <m>\vec{u}</m> gives a direction of descent.
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <title>Directional Derivatives in Higher Dimensions</title>
+
+    <p>
+      Everything we have said about directional derivatives in 3-dimensions
+      extends to higher dimensions. Moreover, the gradient vector is defined
+      similarly.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch03-04-ex-10-7">
+    <statement>
+      <p>
+        Consider the (4-dimensional) function
+        <m>f(x, y, z)=x^{3}- y^{3}-z^3</m>. In what direction is the rate of
+        change of this surface at the input <m>(1,1,0)</m> maximized?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Just as in 3 dimensions, the rate of change is maximized when we
+        move in the direction of the gradient vector. Since
+        <m>f(x, y, z)=x^{3}- y^{3}-z^3</m>,
+        <md>
+          \nabla f = \left\langle 3x^2, -3y^2, -3z^2\right\rangle \quad \text{and} \quad \nabla f(1,1,0) = \langle 3, -3, 0\rangle
+        </md>
+        Hence the rate of change at the input <m>(1,1,0)</m> is maximized
+        in the direction of <m>\langle 3, -3, 0\rangle</m>. As a unit
+        vector, since
+        <m>|\langle 3, -3, 0\rangle| = \sqrt{9+9}=3\sqrt{2}</m>,
+        <md>
+          \vec{u}=\frac{1}{3\sqrt{2}}\langle 3, -3, 0\rangle = \left\langle \frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}, 0\right\rangle
+        </md>
+      </p>
+    </solution>
+  </example>
+
+</section>

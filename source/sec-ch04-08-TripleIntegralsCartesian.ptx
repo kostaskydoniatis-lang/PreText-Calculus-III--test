@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch04-08-TripleIntegralsCartesian.ptx : converted from
+  "21. Triple Integrals (Cartesian Coordinates) - Solutions.tex" by the
+  bbeaccess-pretext skill (2026-09-17). Fragment for xi:include into
+  ch-04-Integration.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch04-08 (lecture file 21, chapter 4) on your instruction.
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): ...53fbg-03.jpg (solid D between two
+     surfaces), ...53fbg-04.png (Example 21.1, the box), ...53fbg-06.png (21.2),
+     ...53fbg-08.png (21.3), ...53fbg-11.png (21.4). All 3D, probably CalcPlot3D.
+  3. Other-book image, plain captioned figure with no interactive:
+     fig-ch04-08-rectangular-prism (...53fbg-01.jpg), caption = the .tex \caption
+     verbatim "The region D and a typical rectangular prism (from openstax)". Files
+     -01 and -03 are .jpg on disk; the rest .png.
+  4. LISTS: the .tex interleaves numbered steps and bullet points by restarting
+     enumerate with \setcounter{enumi} (three times in this file: the partition
+     process, the bounds remark, the Changing Order note). Each such block is ONE
+     <ol> here, with the bullets that follow a step nested as a <ul> inside that
+     step's <li>, the OpenStax figure inside step 1 of the first list, and the
+     displays that close the second and third lists inside the last item's
+     paragraph. Nothing is reworded; say if you prefer flat siblings.
+  5. "Example 21.3" + "[Continuation of 21.3]" merged into ONE <example> (the
+     continuation's repeated header dropped; two <solution>s). ptx_check therefore
+     reports 5 examples in the .tex vs 4 here. \setcounter line dropped.
+  6. Legends kept as a <p> after the figure inside the statement: "The box in
+     xyz-space" (21.1), "The region of integration D" (21.4).
+  7. The u-substitution rows inside the gather* blocks (21.1) and the row that ends
+     "= \\" are kept one <mrow> each; the empty "\\ \\" row of 21.3's system is
+     dropped. The brace-grouped systems of 21.3 keep \left. \begin{matrix} ...
+     \right\} verbatim (\amp separators); ptx_check flags them - false positive.
+     Trailing periods moved after </md>.
+  8. Alt text vs statement: the picture of Example 21.2 is described as "the plane x
+     plus 2 y plus 3 z equals 4" while the statement says x+2y+z=4; both copied
+     verbatim.
+  9. Source typos preserved: "a the limit of a sum"; "it suits them"; "Chose a value";
+     "Since we now that"; "segment we are interested at is is in"; "1 dz dy dz"
+     (21.2) and "1 dz d y dz" (21.3), "\sqrt(1-x^ 2)" with round brackets (21.3, 21.4),
+     "-\sqrt(1-z^ 2)\leq z \leq \sqrt{1-z^2}" (21.4, z where y is meant), "2y^2+2^2"
+     (21.4), "Similarly past examples we acquire  the bounds" (double space);
+     "$z=\sqrt{5-X^2-Y^2}$" with capitals; "( $x_{k}, y_{k}, z_{k}$ )" spacing; "4
+     -dimensional", "3 -dimensional" spacing; "surface(2-dimensional object"; the
+     quoted "base" and "height" are <q>s; "\int_0^3 \int_0^{2x} e^w dw -9 dx" (21.1).
+ 10. No \mathbf in this file. \text{Mass}, \text{Volume } kept inside math.
+ 11. Typeset <description>s are the conversion's own text; review.
+ 12. Template width constants replace the .tex widths (0.24\textwidth, max
+     width=0.41/0.4\textwidth, 0.27/0.4/0.3\textwidth).
+ 13. Every \newpage/\vspace, the figure[H]/center wrappers, \captionsetup and \\
+     dropped.
+-->
+
+<section xml:id="sec-ch04-08-TripleIntegralsCartesian" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Triple Integrals in Cartesian Coordinates</title>
+
+  <note>
+    <p>
+      We can use double integrals to calculate the net volume bounded by a
+      surface(2-dimensional object, embedded in 3-dimensional space)
+      <m>f(x, y)</m> and the <m>x y</m>-plane on a region <m>R</m> in the
+      <m>x y</m>-plane.
+    </p>
+
+    <p>
+      Now, given a function <m>f(x, y, z)</m> (3-dimensional object,
+      embedded in 4-dimensional space) and a region <m>D</m> in its domain
+      (xyz-space), we will derive a way to calculate the 4-dimensional net
+      hyper-volume bounded by <m>f(x, y, z)</m> and <m>x y z</m>-space on
+      <m>D</m>.
+    </p>
+  </note>
+
+  <p>
+    In summary, we will partition the 4 -dimensional net volume into
+    4 -dimensional net volumes of 4D rectangular prisms. The process is as
+    follows:
+  </p>
+
+  <p>
+    <ol>
+      <li>
+        <p>
+          Partition the region of integration <m>D</m> in
+          <m>x y z</m>-space into rectangular prisms.
+        </p>
+
+        <figure xml:id="fig-ch04-08-rectangular-prism">
+          <caption>The region <m>D</m> and a typical rectangular prism (from openstax)</caption>
+
+          <image source="/images/2025_10_28_7d65a1e4b779d77153fbg-01.jpg" width="50%">
+            <shortdescription>The region D and a typical rectangular prism.</shortdescription>
+            <description>
+              <p>The region <m>D</m> and a typical rectangular prism.</p>
+            </description>
+          </image>
+        </figure>
+      </li>
+
+      <li>
+        <p>
+          Denote the volume of the <m>k</m>-th rectangular prism as
+          <m>\Delta V_{k}=\Delta z_{k} \Delta y_{k} \Delta x_{k}</m>.
+        </p>
+
+        <p>
+          <ul>
+            <li>
+              <p>
+                <m>\Delta V_{k}</m> is the volume of the <q>base</q> of the
+                <m>k</m>-th 4 -dimensional prism.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Pick a point ( <m>x_{k}, y_{k}, z_{k}</m> ) in the <m>k</m>-th
+          rectangular prism and evaluate
+          <m>f\left(x_{k}, y_{k}, z_{k}\right)</m>.
+        </p>
+
+        <p>
+          <ul>
+            <li>
+              <p>
+                <m>f\left(x_{k}, y_{k}, z_{k}\right)</m> is the
+                <q>height</q> of the <m>k</m>-th 4 -dimensional prism.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <p>
+    Now, we can approximate the 4 -dimensional net volume bounded by
+    <m>f(x, y, z)</m> and <m>x y z</m>-space, restricted to <m>D</m>, by
+    adding up the 4 -dimensional net volumes of the prisms. That is,
+    <md>
+      V \approx \sum_{k=1}^{n} f\left(x_{k}, y_{k}, z_{k}\right) \Delta V_{k}
+    </md>
+    and
+    <md>
+      V=\lim _{n \rightarrow \infty} \sum_{k=1}^{n} f\left(x_{k}, y_{k}, z_{k}\right) \Delta V_{k}=\iiint_{D} f(x, y, z) d V
+    </md>
+  </p>
+
+  <p>
+    We call this net volume the triple integral of <m>f(x, y, z)</m> over
+    <m>D</m>.
+  </p>
+
+  <note>
+    <p>
+      We will evaluate triple integrals by reducing the problem to a double
+      integral, with an extra step.
+    </p>
+  </note>
+
+  <remark>
+    <title>Evaluating Triple Integrals</title>
+
+    <p>
+      To integrate a continuous function <m>f(x, y, z)</m> over a
+      3 -dimensional region <m>D</m>, rewrite the integral as follows:
+      <md>
+        \iiint_{D} f(x, y, z) d V=\iint_{R}\left(\int_{G(x, y)}^{H(x, y)} f(x, y, z) d z\right) d A
+      </md>
+    </p>
+
+    <p>
+      Here, <m>R</m> is the projection of the 3 -dimensional region
+      <m>D</m> into the <m>x y</m> plane.
+    </p>
+  </remark>
+
+  <remark>
+    <p>
+      To find the bounds of integration for
+      <m>\iiint_{D} f(x, y, z) d V</m> :
+    </p>
+
+    <figure xml:id="fig-ch04-08-solid-d">
+      <caption>The solid D between the surfaces z equals H of x and y, and z equals G of x and y, above the region R.</caption>
+
+      <!-- This interactive is PENDING, it should correspond to 2025_10_28_7d65a1e4b779d77153fbg-03. -->
+      <interactive xml:id="interactive-ch04-08-solid-d" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <instructions>
+          <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+          <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+        </instructions>
+        <static>
+          <image source="/images/2025_10_28_7d65a1e4b779d77153fbg-03.jpg">
+            <shortdescription>The solid D between the surfaces z equals H of x and y, and z equals G of x and y, above the region R.</shortdescription>
+            <description>
+              <p>The solid <m>D</m> between the surfaces <m>z=H(x, y)</m>, and <m>z=G(x, y)</m>, above the region <m>R</m>.</p>
+            </description>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+
+    <p>
+      <ol>
+        <li>
+          <p>
+            Draw vertical lines parallel to the <m>z</m>-axis (from the
+            negative <m>z</m> to the positive <m>z</m> direction).
+          </p>
+
+          <p>
+            <ul>
+              <li>
+                <p>
+                  Wherever these lines enter the region <m>D</m>, this is
+                  the lower bound of integration <m>G(x, y)</m> with respect
+                  to <m>z</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Wherever these lines exit the region <m>D</m>, this is
+                  the upper bound of integration <m>H(x, y)</m> with respect
+                  to <m>z</m>.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Project (cast a shadow) of the 3 -dimensional region <m>D</m>
+            into the <m>x y</m>-plane.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Set up bounds for the other two integrals as you would do any
+            other double integral.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            In the end, your triple integral should have the form (depending
+            on order of integration):
+            <md>
+              \iiint_{D} f(x, y, z) d V=\int_{a}^{b} \int_{g(x)}^{h(x)} \int_{G(x, y)}^{H(x, y)} f(x, y, z) d z d y d x
+            </md>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </remark>
+
+  <note>
+    <title>Volume as a Triple Integral</title>
+
+    <p>
+      In order to compute the volume of a 3-dimensional solid <m>D</m>, we
+      can use the triple integral
+      <md>
+        \iiint_{D} 1 d V
+      </md>
+    </p>
+  </note>
+
+  <example xml:id="example-ch04-08-ex-21-1">
+    <statement>
+      <p>
+        Find the mass of a solid box bounded by the planes <m>x=0</m> and
+        <m>x=3</m>, <m>y=0</m> and <m>y=1, z=0</m> and <m>z=2</m>. The
+        density (mass per unit volume) of the box is given by
+        <m>\rho(x, y, z)=x^2ze^{xyz}</m>.
+      </p>
+
+      <figure xml:id="fig-ch04-08-ex-21-1">
+        <caption>The solid box bounded by the planes x equals 0 and x equals 3, y equals 0 and y equals 1, z equals 0 and z equals 2.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_28_7d65a1e4b779d77153fbg-04. -->
+        <interactive xml:id="interactive-ch04-08-ex-21-1" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_28_7d65a1e4b779d77153fbg-04.png">
+              <shortdescription>The solid box bounded by the planes x equals 0 and x equals 3, y equals 0 and y equals 1, z equals 0 and z equals 2.</shortdescription>
+              <description>
+                <p>The solid box bounded by the planes <m>x=0</m> and <m>x=3</m>, <m>y=0</m> and <m>y=1</m>, <m>z=0</m> and <m>z=2</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        The box in <m>x y z</m>-space
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The Mass can be calculated  by sectioning the volume into small,
+        manageable shapes, usually cubes and multiplying the volume of each
+        cube with its density. Since the density is a non constant
+        function, instead of a discrete sum we use the integral, which
+        after all, is a the limit of a sum with infinite terms. Notice that
+        since the bounds of integration for all variables are constants,
+        one can freely choose the order of integration it suits them. Since
+        it appears that integrating with respect to <m>y</m> first is more
+        manageable the integral is set up this way.
+      </p>
+
+      <p>
+        <md alignment="gather">
+          <mrow>\text{Mass} = \iiint_D \rho (x,y,z)dV = \int_0^3\int_0^2\int_0^1 x^2ze^{xyz} dy dz dx =</mrow>
+          <mrow>u=xyz,\quad du = xz dy, \quad y= 0 \Rightarrow u = 0, \quad y =1 \Rightarrow u =xz</mrow>
+          <mrow>\int_0^3\int_0^2\int_0^{xz} xe^u du dz dx = \int_0^3\int_0^2\left . xe^u\right |_0^{xz}  dy dz = \int_0^3\int_0^2 xe^{xz}-x dzdx =</mrow>
+          <mrow>\int_0^3\int_0^2 xe^{xz} dzdx -\int_0^3\int_0^2 xdzdx = \int_0^3\int_0^2 xe^{xz} dzdx  -\int_0^3 2x dz = \int_0^3\int_0^2 xe^{xz} dzdx   - 9  =</mrow>
+          <mrow>w=xz,\quad dw = x dz, \quad z= 0 \Rightarrow w = 0, \quad z =2 \Rightarrow w =2x</mrow>
+          <mrow>\int_0^3 \int_0^{2x} e^w dw -9 dx = \int_0^3 \left . e^w \right |_0^{2x} dz -9 =\int_0^3 e^{2x}- 1 dx -9 = \left . \frac{1}{2} e^{2x} -x \right |_0^3 - 9 =</mrow>
+          <mrow>\frac{1}{2}e^6 - \frac{1}{2}  -3+0 -9 = \frac{1}{2}e^6-\frac{25}{2}</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch04-08-ex-21-2">
+    <statement>
+      <p>
+        Use a triple integral to find the volume of the solid in the first
+        octant ( <m>x, y, z \geq 0</m> ) bounded by the plane
+        <m> x+2 y+ z=4</m> and the coordinate planes.
+      </p>
+
+      <figure xml:id="fig-ch04-08-ex-21-2">
+        <caption>The solid in the first octant bounded by the plane x plus 2 y plus 3 z equals 4.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_28_7d65a1e4b779d77153fbg-06. -->
+        <interactive xml:id="interactive-ch04-08-ex-21-2" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_28_7d65a1e4b779d77153fbg-06.png">
+              <shortdescription>The solid in the first octant bounded by the plane x plus 2 y plus 3 z equals 4.</shortdescription>
+              <description>
+                <p>The solid in the first octant bounded by the plane <m>x+2y+3z=4</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        The coordinate plane equations are <m>z=0</m>, <m>x=0</m>, and
+        <m>y=0</m>. The plane <m> x+2 y+ z=4</m> or <m>z = 4- 2y-x</m> and
+        <m>z=0</m> intersect at the line <m>4-x-2y= 0</m> of the
+        <m>xy</m>-plane. For the intercepts of this line we have:
+        <m>x= 0 \Rightarrow 4 -2y= 0\Rightarrow (0,2)</m> and
+        <m>y=0 \Rightarrow 4-x = 0  \Rightarrow (4,0)</m>. From those points
+        we see that the line segment we are interested at is in the first
+        quadrant (the finite portion of this line). To see whether the
+        plane <m>z = 4- 2y-x</m> is above or below the <m>z=0</m>, we need a
+        point in the triangle defined by the <m>x</m>-axis, the
+        <m>y</m>-axis, and the previous line segment. Chose a value of
+        <m>x</m> within the bounds of the triangle, say <m>x=2</m>. Now to
+        be within the triangle, this point has to have <m>y</m> coordinate
+        less than the corresponding one of the line <m>4-2y-x = 0</m>
+        <m>x=2</m> and <m>0 = 4- 2y-x</m> gives the point <m>(2,0.5)</m>.
+        For these <m>x</m> and <m>y</m> coordinates the <m>z</m> coordinate
+        of the plane  <m>z = 4- 2y-x</m> is
+        <m>z=4 -2 \cdot 0.5 - 2 = 4-3 =1 \gt 0</m> and hence our plane is
+        above the plane <m>z=0</m>.
+      </p>
+
+      <p>
+        Hence the bounds of integration with respect to <m>z</m> are
+        <m>0 </m> as the lower one and <m>4-2y-x </m> as the upper one.
+        Since we now that our line segment is is in the first quadrant we
+        can solve <m>4-x-2y =0</m> for <m>y</m> and acquire the lower bound
+        <m>0</m> and the upper bound <m>2-\frac{x}{2}</m> for <m>y</m>.
+        Lastly for <m>x</m> we have <m>0</m> and <m>4</m> from the
+        intercept of the line and the <m>x</m>-axis, calculated above.
+        <md alignment="gather">
+          <mrow>\text{Volume }= \int_0^4 \int_0^{2-\frac{x}{2}}\int_0^{4-x-2y} 1 dz dy dz = \int_0^4 \int_0^{2-\frac{x}{2}} 4 -x -2y dy dx = \int_0^4 \left . 4y -xy -y^2 \right |_0^{2-\frac{x}{2}}</mrow>
+          <mrow>\int_0^4  4(2-\frac{x}{2}) -x(2-\frac{x}{2}) -(2-\frac{x}{2})^2  dx = \int_0^4 4 -2x +\frac{x^2}{4} dx = \left . 4x-x^2+\frac{x^3}{12}\right |_0^4 = \frac{16}{3}</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch04-08-ex-21-3">
+    <statement>
+      <p>
+        Set up (but do not evaluate) a triple integral to find the volume
+        of the solid between the sphere <m>x^{2}+y^{2}+z^{2}=5</m> and the
+        cone <m>z^{2}-4x^{2}-4y^{2}=0</m>, for <m>z \geq 0</m>.
+      </p>
+
+      <figure xml:id="fig-ch04-08-ex-21-3">
+        <caption>The solid between the sphere x squared plus y squared plus z squared equals 5 and the cone z squared minus 4 x squared minus 4 y squared equals 0, for z greater or equal to 0.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_28_7d65a1e4b779d77153fbg-08. -->
+        <interactive xml:id="interactive-ch04-08-ex-21-3" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_28_7d65a1e4b779d77153fbg-08.png">
+              <shortdescription>The solid between the sphere x squared plus y squared plus z squared equals 5 and the cone z squared minus 4 x squared minus 4 y squared equals 0, for z greater or equal to 0.</shortdescription>
+              <description>
+                <p>The solid between the sphere <m>x^2+y^2+z^2=5</m> and the cone <m>z^2-4x^2-4y^2=0</m>, for <m>z \geq 0</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        Since we have <m>z\geq 0</m> the shape is above the <m>xy</m>-plane.
+        The intersection of the two surfaces is given by
+        <md alignment="gather">
+          <mrow>\left. \begin{matrix} x^{2}+y^{2}+z^{2}\amp = \amp 5 \\ z^{2}-4x^{2}-4y^{2}\amp = \amp 0 \end{matrix} \right \} \Rightarrow \left. \begin{matrix} z^{2}\amp = \amp 5 - y^2 -x^2\\ z^{2}\amp = \amp 4x^{2}+4y^{2} \end{matrix} \right \} \Rightarrow 5 - y^2 -x^2 =  4x^{2}+4y^{2} \Rightarrow</mrow>
+          <mrow>5x^2+5y^2 = 5 \Rightarrow x^2+y^2=1</mrow>
+        </md>.
+      </p>
+
+      <p>
+        Hence the region of the <m>xy</m>-plane that the integral will be
+        over is the unit disk centred at the origin. Similarly past examples
+        we acquire  the bounds <m>-1\leq x \leq 1</m> and
+        <m>-\sqrt(1-x^ 2)\leq y \leq \sqrt{1-x^2}</m>. The last thing to be
+        determined is if the cone is above the sphere or the other way
+        around.
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Using the coordinates <m>x=0</m> and <m>y=0</m> on the sphere
+        <m>0^2+0^2+z^2 = 5\overset{z\geq 0}{\Rightarrow} z= \sqrt 5</m>
+        while for the cone <m>z^2-0^2-0^2 = 0 \Rightarrow z= 0</m>, hence
+        the sphere is above the cone. This part of the sphere can be
+        expressed as <m>z=\sqrt{5-X^2-Y^2}</m> and this part of the cone as
+        <m>z=2\sqrt{x^2+y^2}</m>.
+        <md>
+          \text{Volume } =\int_{-1}^1\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}\int_{2\sqrt{x^2+y^2}}^{\sqrt{5-x^2-y^2}} 1 dz d y dz
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <title>Changing Order of Integration</title>
+
+    <p>
+      When integrating over a 3D region <m>D</m>, you may change the order
+      of integration of the iterated integrals (including the
+      first/innermost integral). The three things to remember are:
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p>
+            To find the bounds of integration for the inner integral, draw
+            lines parallel to the axis of the variable of integration.
+          </p>
+
+          <p>
+            <ul>
+              <li>
+                <p>
+                  For example, if integrating in the order
+                  <m>d x d z d y</m>, you would draw lines parallel to the
+                  <m>x</m>-axis.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Once you are done with the inner integral, you project <m>D</m>
+            into the plane containing the other two variables.
+          </p>
+
+          <p>
+            <ul>
+              <li>
+                <p>
+                  For example, if using the order <m>d x d z d y</m>, you
+                  would project <m>D</m> into the <m>y z</m>-plane.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The bounds of integration for each integral (working inside to
+            outside) are functions of the next variables of integration.
+          </p>
+
+          <p>
+            <ul>
+              <li>
+                <p>
+                  For example, when using the order <m>d x d y d z</m>, you
+                  would get
+                  <md>
+                    \iiint_{D} f(x, y, z) d V=\int_{m}^{n} \int_{g(z)}^{h(z)} \int_{G(y, z)}^{H(y, z)} f(x, y, z) d x d y d z
+                  </md>
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </note>
+
+  <example xml:id="example-ch04-08-ex-21-4">
+    <statement>
+      <p>
+        Set up (but do not evaluate) a triple integral to find the volume
+        of the solid bounded by <m>x=2-y^{2}</m> and <m>x= y^{2}+2 z^{2}</m>.
+      </p>
+
+      <figure xml:id="fig-ch04-08-ex-21-4">
+        <caption>The solid bounded by x equals 2 minus y squared and x equals y squared plus 2 z squared.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_28_7d65a1e4b779d77153fbg-11. -->
+        <interactive xml:id="interactive-ch04-08-ex-21-4" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_28_7d65a1e4b779d77153fbg-11.png">
+              <shortdescription>The solid bounded by x equals 2 minus y squared and x equals y squared plus 2 z squared.</shortdescription>
+              <description>
+                <p>The solid bounded by <m>x=2-y^2</m> and <m>x=y^2+2z^2</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        The region of integration <m>D</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Since <m>x</m> was provided as a function of <m>y</m> and <m>z</m>,
+        the triple integral will be set up with the innermost integration
+        being with respect to <m>x</m>. For the intersect of the above
+        surface one has <m>2-y^2= 2y^2+2^2 \Rightarrow y^2+z^2 = 1</m>.
+        Hence the region of the <m>yz</m>-plane that the integral will be
+        over is the unit disk centred at the origin. Similarly past examples
+        we acquire  the bounds <m>-1\leq z \leq 1</m> and
+        <m>-\sqrt(1-z^ 2)\leq z \leq \sqrt{1-z^2}</m>.
+      </p>
+
+      <p>
+        Using the coordinates <m>y=0</m> and <m>z= 0</m> one sees that
+        <m>x=2-y^2</m> is above <m>x=y^2+2z^2</m>.
+        <md>
+          \text{Volume } =\int_{-1}^1\int_{-\sqrt{1-z^2}}^{\sqrt{1-z^2}}\int_{y^2+2z^2}^{2-y^2} 1 dx d y dz
+        </md>
+      </p>
+    </solution>
+  </example>
+
+</section>

@@ -1,0 +1,1369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch05-01-VectorFieldsAndLineIntegrals.ptx : converted from
+  "23. Vector Fields and Line Integrals - Solutions.tex" by the bbeaccess-pretext
+  skill (2026-09-17). Fragment for xi:include into ch-05-VectorCalculus.ptx; not
+  standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch05-01 (lecture file 23, first section of a new chapter 5) on
+     your instruction. The chapter file ch-05-VectorCalculus.ptx is new; its title and
+     one-sentence introduction are my wording, edit freely.
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): ...89e2g-1-1.png and ...89e2g-1.png (the
+     two vector-field panels), ExampleVectorField.png (23.1), a/b/c/d.png (the four
+     option panels of 23.2), ...db72g-04.png (23.3), Example-23.4.png (23.4),
+     ...db72g-09.png (23.5), ...db72g-11.png (23.6, 3D), ...db72g-13.png (boat),
+     ...db72g-15.png (23.7), ...db72g-16.png (23.8), ...db72g-17.png (flux normal).
+     All but 23.6 are 2D vector-field pictures Desmos can do.
+  3. Image names: ...-1(1) -> ...-1-1.png; "Example 23.4" -> Example-23.4.png (renamed
+     today from the old-numbering Example24.4.png on your instruction). All .png.
+  4. Other-book image, plain captioned figure with no interactive:
+     fig-ch05-01-projection (...db72g-02.png), caption "From OpenStax" = the centred
+     line under it in the .tex, inside the derivation remark where the .tex has it.
+  5. SIDE-BY-SIDE FIGURES (two): (i) the two vector-field pictures after the first
+     remark, each with a live \caption* ("F = <1-y,0>", "F = <-y,-x>"): one outer
+     figure with <sidebyside widths="45% 45%">, panel captions = alt texts (caption
+     rule); the OUTER CAPTION IS ASSEMBLED FROM THE .tex CAPTIONS: "F = <1-y,0> (left)
+     and F = <-y,-x> (right)". (ii) the four option pictures a/b/c/d of Example 23.2,
+     each captioned with a radio button and a letter ("(o) A", "(*) B", ...): one outer
+     figure with <sidebyside widths="22% 22% 22% 22%"> inside the STATEMENT (the
+     question is "Identify the correct sketch" and the .tex has the pictures right after
+     the example); OUTER CAPTION IS MY WORDING: "The four candidate sketches, A to D
+     from left to right." PreTeXt sub-labels the panels (a)-(d) itself, so the letters
+     A-D and the radio buttons are dropped; the solution still says "The correct answer
+     is B." (= panel (b)). Per-panel <instructions> are commented out; one <p> after
+     each outer figure carries the boilerplate with positional links.
+  6. Example 23.1 ("Plot the vector field"): the picture is the answer and sits in the
+     solution box; kept inside <solution>. The commented-out %\includegraphics{...-2(1)}
+     after it is kept as an XML comment.
+  7. "Example 23.3" (parts (a)-(c), picture, solution box for a)) + "[Continuation of
+     23.3]" (the same parts restated, one solution box holding b) and c)) merged into
+     ONE <example>: statement once, two <solution>s (the second keeps its "b)" / "c)"
+     labels as paragraphs, as the box has them). The bare "a)" / "b)" labels typed
+     OUTSIDE the solution boxes of 23.3 and 23.4 are dropped (PreTeXt numbers the
+     solutions). ptx_check therefore reports 11 examples in the .tex vs 10 here.
+     \setcounter line dropped.
+  8. LISTS: the first note and the "Two things to note" note interrupt their
+     enumerate with displays / restart it with \setcounter{enumi}; each is ONE <ol>
+     with the display inside its item's paragraph and the trailing bullet of the
+     second note nested as a <ul> inside item 2. The Summary remark's properly nested
+     itemize/enumerate are <ul>/<ol>; its \small is dropped.
+  9. VECTORS: \mathbf{F}, \mathbf F, \mathbf{F}_{k}, \mathbf{T}, \mathbf{T}_{k},
+     \mathbf{N}, \mathbf N, \mathbf n, \mathbf{r}, \mathbf{r}_{1}, \mathbf{r}_{2},
+     \mathbf r', d\mathbf{r} to \vec{...}. The .tex's "\vec\mathbf F" (an arrow over a
+     bold F, seven times in the solutions of 23.3, 23.4, 23.8) is written \vec F here
+     (a single arrow) rather than the literal \vec\vec F. KEPT AS \mathbf/\mathrm:
+     "\mathrm{F}(x, y, z)" in the R^3 definition (upright, as written) and "\mathbf W"
+     (the scalar work, Example 23.6) - say if you want \vec there too.
+ 10. Mathematics kept verbatim otherwise, including: \begin{cases} blocks inside
+     gather rows (\amp separators, \\ row separators - ptx_check false positives);
+     \underset/\overset/\substack u-substitution arrows; \cancelto (needs MathJax's
+     cancel extension - PreTeXt loads it by default; check the build); "\cos^0 (t)"
+     (23.9, a typo for cos^2); "+-t^3" (23.6); "\langle 1-2t,0 \cos t \rangle" and
+     "0\leq t  1" (23.4 (b), stray cos t and missing <=); "\int_{C_2}=\mathbf F" (23.5,
+     stray =); the "\text{Hence most ...}C" row with C outside the \text (23.7); "$C)$"
+     (Direction remark, a paren inside math). Empty "\\ \\" rows dropped; the row that
+     ends "\Rightarrow\\2\cancelto..." (23.10) split at the \\.
+ 11. The "Important:" sentence of the derivation remark is entirely \textbf in the
+     .tex: an <alert> holding the sentence with its <m>s. \textbf{Flow} is an <alert>.
+ 12. Cross-references: "from Examples 23.3 and 23.4" -> two <xref>s (word dropped).
+     Relative references left as prose: "plotted below", "shown below", "as traversed
+     above", "as mentioned above" style phrases.
+ 13. Typeset <description>s are the conversion's own text; review. Alt-text quirks
+     kept: four option alt texts without a final period (a, b, d) or with one (c); the
+     23.6 alt ends "to 1. " (trailing space trimmed); the 23.7 alt starts lower-case
+     "on the background".
+ 14. Template width constants replace the .tex widths (subfigure 0.45/0.2\textwidth,
+     0.3\linewidth, max width=0.36/0.4/0.5/0.15/0.22/0.3\textwidth).
+ 15. Source quirks preserved: "( $x, y$ )" spacing; "The quarter-circle - $C_{1}$"
+     (hyphen for minus); "the same orientation (as $C$ )"; "If the path $C$ is not
+     closed that we call this Flow"; "the flux of $\mathbf{F}$ on across $C$";
+     "Flux interpretation :"; "SCS"/"SCPS"; the 23.7 statement's "\\" mid-sentence is
+     dropped (one paragraph).
+ 16. Every \newpage/\vspace/\hspace, the figure[H]/center/subfigure wrappers,
+     \captionsetup and \\ dropped.
+-->
+
+<section xml:id="sec-ch05-01-VectorFieldsAndLineIntegrals" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Vector Fields and Line Integrals</title>
+
+  <note>
+    <p>So far, we have studied two types of functions:</p>
+
+    <p>
+      <ol>
+        <li>
+          <p>
+            Vector-valued functions (one input variable, multiple output
+            variables) of the form
+            <md>
+              \vec{r}(t)=\langle f(t), g(t), h(t)\rangle
+            </md>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Scalar-valued functions (multiple input variables, one output
+            variable) of the form
+            <md>
+              f(x, y)=z
+            </md>.
+          </p>
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      Now, we will look at functions of multiple input variables and
+      multiple output variables.
+    </p>
+  </note>
+
+  <definition>
+    <title>Vector Fields in <m>\mathbb{R}^{2}</m></title>
+
+    <statement>
+      <p>
+        A function of the form
+        <m>\vec{F}(x, y)=\langle f(x, y), g(x, y)\rangle</m> is a vector
+        field in the <m>x y</m>-plane.
+      </p>
+
+      <p>
+        The vector field <m>\vec{F}</m> assigns to each point
+        ( <m>x, y</m> ) in the <m>x y</m>-plane, a vector <m>\vec{F}(x, y)</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <remark>
+    <p>
+      With vector fields, we don't put the vectors back into standard
+      position (since the starting location <m>(x, y)</m> of each vector
+      gives us important information).
+    </p>
+  </remark>
+
+  <figure xml:id="fig-ch05-01-vector-fields">
+    <caption><m>\vec F = \langle 1-y,0 \rangle</m> (left) and <m>\vec F = \langle -y,-x \rangle</m> (right)</caption>
+
+    <sidebyside widths="45% 45%" margins="auto" valign="middle">
+      <figure xml:id="fig-ch05-01-vector-fields-a">
+        <caption>The vector field F with first coordinate 1 minus y, second coordinate 0.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_10_500bc1b3cad4064289e2g-1(1). -->
+        <interactive xml:id="interactive-ch05-01-vector-fields-a" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_11_10_500bc1b3cad4064289e2g-1-1.png">
+              <shortdescription>The vector field F with first coordinate 1 minus y, second coordinate 0.</shortdescription>
+              <description>
+                <p>The vector field <m>\vec{F}=\langle 1-y, 0\rangle</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch05-01-vector-fields-b">
+        <caption>The vector field F with first coordinate minus y, second coordinate minus x.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_10_500bc1b3cad4064289e2g-1. -->
+        <interactive xml:id="interactive-ch05-01-vector-fields-b" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_11_10_500bc1b3cad4064289e2g-1.png">
+              <shortdescription>The vector field F with first coordinate minus y, second coordinate minus x.</shortdescription>
+              <description>
+                <p>The vector field <m>\vec{F}=\langle -y, -x\rangle</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </sidebyside>
+  </figure>
+  <p>
+    The graphs above show only the plots; you can drag and zoom them. To see the expressions behind them, or to save a copy and create your own version of the graphs, open them in a new page from here:
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>,
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+  </p>
+
+  <example xml:id="example-ch05-01-ex-23-1">
+    <statement>
+      <p>Plot the vector field <m>\vec{F}=\langle -x, -y\rangle</m>.</p>
+    </statement>
+
+    <solution>
+      <figure xml:id="fig-ch05-01-ex-23-1">
+        <caption>The vector field F with first coordinate minus x, second coordinate minus y.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to ExampleVectorField. -->
+        <interactive xml:id="interactive-ch05-01-ex-23-1" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/ExampleVectorField.png">
+              <shortdescription>The vector field F with first coordinate minus x, second coordinate minus y.</shortdescription>
+              <description>
+                <p>The vector field <m>\vec{F}=\langle -x, -y\rangle</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </solution>
+  </example>
+  <!--\includegraphics[max width=\textwidth, center]{2025_11_10_500bc1b3cad4064289e2g-2(1)}-->
+
+  <example xml:id="example-ch05-01-ex-23-2">
+    <statement>
+      <p>
+        Identify the correct sketch of the vector field
+        <m>\vec{F}=\langle 2 x,y\rangle</m>.
+      </p>
+
+      <figure xml:id="fig-ch05-01-ex-23-2">
+        <caption>The four candidate sketches, A to D from left to right.</caption>
+
+        <sidebyside widths="22% 22% 22% 22%" margins="auto" valign="middle">
+          <figure xml:id="fig-ch05-01-ex-23-2a">
+            <caption>A vector field with vectors pointing towards the y-axis and away from x-axis, decreasing in magnitude as we move closer to the origin</caption>
+
+            <!-- This interactive is PENDING, it should correspond to a. -->
+            <interactive xml:id="interactive-ch05-01-ex-23-2a" width="85%" aspect="4:3" desmos="vqavop8m24">
+              <!--<instructions>
+                <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+                <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+              </instructions>-->
+              <static>
+                <image source="/images/a.png">
+                  <shortdescription>A vector field with vectors pointing towards the y-axis and away from x-axis, decreasing in magnitude as we move closer to the origin</shortdescription>
+                  <description>
+                    <p>A vector field with vectors pointing towards the <m>y</m>-axis and away from <m>x</m>-axis, decreasing in magnitude as we move closer to the origin</p>
+                  </description>
+                </image>
+              </static>
+            </interactive>
+          </figure>
+
+          <figure xml:id="fig-ch05-01-ex-23-2b">
+            <caption>A vector field with vectors pointing away from the y-axis and away from x-axis, decreasing in magnitude as we move closer to the origin</caption>
+
+            <!-- This interactive is PENDING, it should correspond to b. -->
+            <interactive xml:id="interactive-ch05-01-ex-23-2b" width="85%" aspect="4:3" desmos="vqavop8m24">
+              <!--<instructions>
+                <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+                <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+              </instructions>-->
+              <static>
+                <image source="/images/b.png">
+                  <shortdescription>A vector field with vectors pointing away from the y-axis and away from x-axis, decreasing in magnitude as we move closer to the origin</shortdescription>
+                  <description>
+                    <p>A vector field with vectors pointing away from the <m>y</m>-axis and away from <m>x</m>-axis, decreasing in magnitude as we move closer to the origin</p>
+                  </description>
+                </image>
+              </static>
+            </interactive>
+          </figure>
+
+          <figure xml:id="fig-ch05-01-ex-23-2c">
+            <caption>A vector field with vectors pointing towards seemingly random directions, their magnitude appears unaffected by their location.</caption>
+
+            <!-- This interactive is PENDING, it should correspond to c. -->
+            <interactive xml:id="interactive-ch05-01-ex-23-2c" width="85%" aspect="4:3" desmos="vqavop8m24">
+              <!--<instructions>
+                <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+                <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+              </instructions>-->
+              <static>
+                <image source="/images/c.png">
+                  <shortdescription>A vector field with vectors pointing towards seemingly random directions, their magnitude appears unaffected by their location.</shortdescription>
+                  <description>
+                    <p>A vector field with vectors pointing towards seemingly random directions, their magnitude appears unaffected by their location.</p>
+                  </description>
+                </image>
+              </static>
+            </interactive>
+          </figure>
+
+          <figure xml:id="fig-ch05-01-ex-23-2d">
+            <caption>The vector field with vectors whose direction creates a clockwise swirl, decreasing in magnitude as we move closer to the origin</caption>
+
+            <!-- This interactive is PENDING, it should correspond to d. -->
+            <interactive xml:id="interactive-ch05-01-ex-23-2d" width="85%" aspect="4:3" desmos="vqavop8m24">
+              <!--<instructions>
+                <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+                <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+              </instructions>-->
+              <static>
+                <image source="/images/d.png">
+                  <shortdescription>The vector field with vectors whose direction creates a clockwise swirl, decreasing in magnitude as we move closer to the origin</shortdescription>
+                  <description>
+                    <p>The vector field with vectors whose direction creates a clockwise swirl, decreasing in magnitude as we move closer to the origin</p>
+                  </description>
+                </image>
+              </static>
+            </interactive>
+          </figure>
+        </sidebyside>
+      </figure>
+      <p>
+        The graphs above show only the plots; you can drag and zoom them. To see the expressions behind them, or to save a copy and create your own version of the graphs, open them in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to graph A</url>,
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to graph B</url>,
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to graph C</url>,
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to graph D</url>
+      </p>
+    </statement>
+
+    <solution>
+      <p>The correct answer is B.</p>
+    </solution>
+  </example>
+
+  <definition>
+    <title>Vector Fields in <m>\mathbb{R}^{3}</m></title>
+
+    <statement>
+      <p>
+        A function of the form
+        <m>\mathrm{F}(x, y, z)=\langle f(x, y, z), g(x, y, z), h(x, y, z)\rangle</m>
+        is a vector field in <m>x y z</m>-space.
+      </p>
+
+      <p>
+        The vector field <m>\vec{F}</m> assigns to each point
+        ( <m>x, y, z</m> ) in <m>x y z</m>-space, a vector
+        <m>\vec{F}(x, y, z)</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      Suppose that an electron is moving in a magnetic field. If it is
+      moving in the direction of the field, then it accelerates (energy is
+      being transferred to the electron). How can we measure that energy
+      transfer?
+    </p>
+
+    <p>
+      We will start by deriving a way to integrate a vector field
+      <m>\vec{F}=\langle f(x, y), g(x, y)\rangle</m> over a 2D curve
+      <m>\vec{r}(t)=\langle x(t), y(t)\rangle</m> in its domain. We will
+      call such an integral a vector field line integral.
+    </p>
+  </note>
+
+  <remark>
+    <title>Derivation of a Vector Field Line Integral</title>
+
+    <p>
+      Suppose you start with an oriented curve <m>C</m> parametrized as
+      <m>\vec{r}(t)= \langle x(t), y(t)\rangle, a \leq t \leq b</m>, and
+      with a vector field <m>\vec{F}=\langle f(x, y), g(x, y)\rangle</m>. We
+      follow a similar process as with scalar line integrals.
+    </p>
+
+    <p>
+      We start by partitioning <m>C</m> into <m>n</m> pieces of arc length
+      <m>\Delta s_{k}</m>. Second, we pick a point ( <m>x_{k}, y_{k}</m> )
+      in the <m>k</m>-th segment of <m>C</m>.
+    </p>
+
+    <p>
+      Now, when computing scalar line integrals, if we were integrating a
+      surface <m>h(x, y)</m>, we would multiply <m>\Delta s_{k}</m> by
+      <m>h\left(x_{k}, y_{k}\right)</m>. When integrating a vector field,
+      we can't do this since <m>\vec{F}\left(x_{k}, y_{k}\right)</m> is a
+      vector, not a number. Hence, we instead use the quantity
+      <m>\vec{F}_{k} \cdot \vec{T}_{k}</m>, where
+      <m>\vec{F}_{k}=\vec{F}\left(x_{k}, y_{k}\right)</m> and
+      <m>\vec{T}_{k}</m> is the unit tangent vector to
+      <m>C \left(\frac{\vec{r}^{\prime}(t)}{\left|\vec{r}^{\prime}(t)\right|}\right)</m>
+      at the point <m>\left(x_{k}, y_{k}\right)</m>.
+    </p>
+
+    <figure xml:id="fig-ch05-01-projection">
+      <caption>From OpenStax</caption>
+
+      <image source="/images/2025_11_10_e1bad327dc4b7562db72g-02.png" width="50%">
+        <shortdescription>The projection of a vector of the vector field onto the tangent vector of a curve.</shortdescription>
+        <description>
+          <p>The projection of a vector of the vector field onto the tangent vector of a curve.</p>
+        </description>
+      </image>
+    </figure>
+
+    <p>
+      Finally, we add these quantities up and take the limit as the number
+      of segments <m>n</m> approaches infinity to get
+      <md>
+        \lim _{n \rightarrow \infty} \sum_{k=1}^{n} \vec{F}_{k} \cdot \vec{T}_{k} \Delta s_{k}=\int_{C} \vec{F} \cdot \vec{T} d s
+      </md>
+    </p>
+
+    <p>
+      <alert>Important: We can interpret
+      <m>\int_{C} \vec{F} \cdot \vec{T} d s</m> as adding up the scalar
+      component of <m>\vec{F}</m> (the vector field) in the direction of
+      <m>\vec{T}</m> (the curve) at each point along <m>C</m>.</alert>
+    </p>
+  </remark>
+
+  <note>
+    <title>Evaluating a Vector Field Line Integral</title>
+
+    <p>
+      We can find a nice computational formula for
+      <m>\int_{C} \vec{F} \cdot \vec{T} d s</m> by noting that
+      <md>
+        \vec{T}=\frac{\vec{r}^{\prime}(t)}{\left|\vec{r}^{\prime}(t)\right|}, \quad ds = \left|\vec{r}' (t) \right|dt
+      </md>
+      and hence
+      <md>
+        \vec{F} \cdot \vec{T} d s=\left(\vec{F} \cdot \frac{\vec{r}^{\prime}(t)}{\left|\vec{r}^{\prime}(t)\right|}\right) \left|\vec{r}' (t) \right|dt=\vec{F} \cdot \vec r'(t) d t
+      </md>
+    </p>
+  </note>
+
+  <remark>
+    <title>Evaluating Vector Field Line Integral</title>
+
+    <p>
+      Let <m>C</m> be a smooth curve parametrized by <m>\vec{r}(t)</m>,
+      <m>a \leq t \leq b</m> and <m>\vec{F}</m> be a (continuous) vector
+      field over a region containing <m>C</m>. Then the vector field line
+      integral of <m>\vec{F}</m> over <m>C</m> is evaluated as
+      <md>
+        \int_{C} \vec{F} \cdot \vec{T} d s=\int_{C} \vec{F} \cdot d \vec{r}=\int_{a}^{b} \vec{F}(\vec{r}(t)) \cdot \vec{r}^{\prime}(t) d t
+      </md>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch05-01-ex-23-3">
+    <statement>
+      <p>
+        Evaluate <m>\int_{C} \vec{F} \cdot \vec{T} d s</m> where
+        <m>\vec{F}=\langle y, -x\rangle</m> on the following oriented
+        curves in the plane:
+      </p>
+
+      <p>
+        (a) The quarter-circle <m>C_{1}</m> from <m>P(1,0)</m> to
+        <m>Q(0,1)</m> (in black).
+      </p>
+
+      <p>
+        (b) The quarter-circle - <m>C_{1}</m> from <m>Q(0,1)</m> to
+        <m>P(1,0)</m>.
+      </p>
+
+      <p>
+        (c) The path <m>C_{2}</m> from <m>Q(0,1)</m> to <m>P(1,0)</m> via
+        two line segments through <m>O(0,0)</m> (in red).
+      </p>
+
+      <figure xml:id="fig-ch05-01-ex-23-3">
+        <caption>On the background the part of the unit circle belonging on the first quadrant, the line segments starting from the origin to and ending to the 1 of the x and y axis respectively. On the foreground a vector field whose vectors create a clockwise swirl and their magnitude increases away from the origin.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_10_e1bad327dc4b7562db72g-04. -->
+        <interactive xml:id="interactive-ch05-01-ex-23-3" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_11_10_e1bad327dc4b7562db72g-04.png">
+              <shortdescription>On the background the part of the unit circle belonging on the first quadrant, the line segments starting from the origin to and ending to the 1 of the x and y axis respectively. On the foreground a vector field whose vectors create a clockwise swirl and their magnitude increases away from the origin.</shortdescription>
+              <description>
+                <p>On the background the part of the unit circle belonging on the first quadrant, the line segments starting from the origin to and ending to the 1 of the <m>x</m> and <m>y</m> axis respectively. On the foreground a vector field whose vectors create a clockwise swirl and their magnitude increases away from the origin.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>C_1 : \vec r (t) = \langle \cos t , \sin t \rangle , \  0\leq t \leq \frac{\pi}{2}, \quad \vec r ' (t) = \langle -\sin t , \cos t \rangle</mrow>
+          <mrow>\vec F ( \vec r (t)) = \langle \sin t, - \cos t \rangle , \quad \vec F ( \vec r (t)) \cdot \vec r'(t) = -\sin^2 t + (-\cos^2 t) = -1</mrow>
+          <mrow>\int_{C_1} \vec F \cdot \vec T \ ds = \int_{C_1} \vec F\ d\vec r =\int_a^b \vec F ( \vec r (t)) \vec r' (t)\ dt = \int_0^{\frac{\pi}{2}} -1 \ dt  =-\frac{\pi}{2}</mrow>
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        b)
+        <md alignment="gather">
+          <mrow>-C_1 : \vec r (t) = \langle \sin t , \cos t \rangle , \  0\leq t \leq \frac{\pi}{2}, \quad \vec r ' (t) = \langle -\cos t , -\sin t \rangle</mrow>
+          <mrow>\vec F ( \vec r (t)) = \langle \cos t, - \sin t \rangle , \quad \vec F ( \vec r (t)) \cdot \vec r'(t) = \cos^2 t + \sin^2 t = 1</mrow>
+          <mrow>\int_{C_1} \vec F \cdot \vec T \ ds = \int_{C_1} \vec F\ d\vec r =\int_a^b \vec F ( \vec r (t)) \vec r' (t)\ dt = \int_0^{\frac{\pi}{2}} 1 \ dt  =\frac{\pi}{2}</mrow>
+        </md>
+      </p>
+
+      <p>
+        c)
+        <md alignment="gather">
+          <mrow>\text{Line in space: }\vec l (t) = \vec v + t \vec u ,</mrow>
+          <mrow>\text{ where }\vec v\text{ represents the starting point and }\vec u\text{ is a vector in the direction of the line.}</mrow>
+          <mrow>C_2 : \vec r (t) = \begin{cases} \langle 0,1 \rangle + t \langle 0 , -1 \rangle = \langle 0,1-t \rangle\amp\quad 0\leq t \leq 1\\ \langle 0,0 \rangle + (t-1) \langle 1 , 0 \rangle = \langle t-1, 0 \rangle\amp\quad 1\leq t \leq 2\\ \end{cases}</mrow>
+          <mrow>\vec r' (t) =   \begin{cases} \langle 0,-1 \rangle\amp\quad 0\lt  t \lt 1\\ \langle 1, 0 \rangle\amp\quad 1\lt t \lt 2\\ \end{cases}</mrow>
+          <mrow>\vec F ( \vec r (t))  =   \begin{cases} \langle 1-t , 0\rangle\amp\quad 0\leq  t \leq 1\\ \langle 0, -t+1 \rangle\amp\quad 1\leq t \leq 2\\ \end{cases}</mrow>
+          <mrow>\vec F ( \vec r (t)) \cdot \vec r'(t) =  \begin{cases} (1-t)\cdot 0 + 0\cdot (-1) = 0\amp\quad 0\lt  t \lt 1\\ 0\cdot 1 + (-t+1)\cdot 0 = 0\amp\quad 1\lt t \lt 2\\ \end{cases}</mrow>
+          <mrow>\int_{C_2} \vec F \cdot \vec T \ ds = \int_{C_2} \vec F\ d\vec r =\int_a^b \vec F ( \vec r (t)) \vec r' (t)\ dt +  \int_b^c \vec F ( \vec r (t)) \vec r' (t)\ dt= \int_0^{1} 0 \ dt + \int_{1}^2 0 \ dt  = 0</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch05-01-ex-23-4">
+    <statement>
+      <p>
+        Consider the vector field <m>\vec{F}=\langle -y,x\rangle</m> and the
+        curves
+        <m>C_{1}: \vec{r}_{1}(t)= \langle\cos (t), \sin (t)\rangle, 0 \leq t \leq \pi </m>,
+        and <m>C_{2}: \vec{r}_{2}(t)=\langle 1-2t, 0\rangle, 0 \leq t \leq 1</m>.
+        Note that both curves start at <m>(1,0)</m> and end at
+        <m>(-1,0)</m>. Verify that
+        <m>\int_{C_{1}} \vec{F} \cdot \vec{T} d s \neq \int_{C_{2}} \vec{F} \cdot \vec{T} d s</m>.
+      </p>
+
+      <figure xml:id="fig-ch05-01-ex-23-4">
+        <caption>On the background the part of the unit circle belonging on the first and second quadrant, and the line segment starting from (1,0) and ending at (-1,0). On the foreground a vector field whose vectors create a counter-clockwise swirl.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to Example 23.4. -->
+        <interactive xml:id="interactive-ch05-01-ex-23-4" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/Example-23.4.png">
+              <shortdescription>On the background the part of the unit circle belonging on the first and second quadrant, and the line segment starting from (1,0) and ending at (-1,0). On the foreground a vector field whose vectors create a counter-clockwise swirl.</shortdescription>
+              <description>
+                <p>On the background the part of the unit circle belonging on the first and second quadrant, and the line segment starting from <m>(1,0)</m> and ending at <m>(-1,0)</m>. On the foreground a vector field whose vectors create a counter-clockwise swirl.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>C_1 : \vec r (t) = \langle \cos t , \sin t \rangle , \  0\leq t \leq \pi , \quad \vec r ' (t) = \langle -\sin t , \cos t \rangle</mrow>
+          <mrow>\vec F ( \vec r (t)) = \langle -\sin t,  \cos t \rangle , \quad \vec F ( \vec r (t)) \cdot \vec r'(t) = \sin^2 t + \cos^2 t = 1</mrow>
+          <mrow>\int_{C_1} \vec F \cdot \vec T \ ds = \int_{C_1} \vec F\ d\vec r =\int_a^b \vec F ( \vec r (t)) \vec r' (t)\ dt = \int_0^{\pi} 1 \ dt  =\pi</mrow>
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>C_2 : \vec l (t) = \langle 1-2t,0 \cos t \rangle , \  0\leq t  1, \quad \vec r ' (t) = \langle  -2 ,0 \rangle</mrow>
+          <mrow>\vec F ( \vec r (t)) = \langle 0,1-2 t \rangle , \quad \vec F ( \vec r (t)) \cdot \vec r'(t) = -2\cdot 0 + 0\cdot (1-2t) = 0</mrow>
+          <mrow>\int_{C_2} \vec F \cdot \vec T \ ds = \int_{C_2} \vec F\ d\vec r =\int_a^b \vec F ( \vec r (t)) \vec r' (t)\ dt = \int_0^{1}  0\ dt  =0</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      Two things to note from <xref ref="example-ch05-01-ex-23-3"/> and
+      <xref ref="example-ch05-01-ex-23-4"/> that are true in general:
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p>
+            Given a curve <m>C</m> in the domain of a vector field
+            <m>\vec{F}</m>,
+            <md>
+              \int_{-C} \vec{F} \cdot \vec{T} d s=-\int_{C} \vec{F} \cdot \vec{T} d s
+            </md>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Given a vector field <m>\vec{F}</m>, two points <m>P \neq Q</m>
+            in its domain, and two different curves <m>C_{1}</m> and
+            <m>C_{2}</m> connecting <m>P</m> and <m>Q</m>, in most cases,
+            <md>
+              \int_{C_{1}} \vec{F} \cdot \vec{T} d s \neq \int_{C_{2}} \vec{F} \cdot \vec{T} d s
+            </md>
+          </p>
+
+          <p>
+            <ul>
+              <li>
+                <p>
+                  In general, different curves connecting two points give
+                  different values for line integrals.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </note>
+
+  <remark>
+    <title>Direction Interpretation</title>
+
+    <p>
+      Given a vector field <m>\vec{F}</m>, a curve <m>C</m> parametrized as
+      <m>\vec{r}(t)</m>, and a point ( <m>x_{k}, y_{k}</m> ) on the curve,
+      since <m>\vec{F}_{k} \cdot \vec{T}_{k}</m> can be positive or negative
+      (depending on the angle between the vectors), the line integral can
+      be positive or negative.
+    </p>
+
+    <p>
+      Hence, we can sometimes determine whether
+      <m>\int_{C} \vec{F} \cdot d \vec{r}</m> is positive or negative by
+      looking at the angles between the vectors:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            If for most of the curve, the angle <m>\theta</m> between
+            <m>\vec{F}</m> and <m>\vec{T}</m> satisfies
+            <m>0 \leq \theta \lt \frac{\pi}{2}</m>, then we expect
+            <m>\int_{C} \vec{F} \cdot d \vec{r} \gt 0</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If for most of the curve, the angle <m>\theta</m> between
+            <m>\vec{F}</m> and <m>\vec{T}</m> satisfies
+            <m>\frac{\pi}{2} \lt \theta \leq \pi</m>, then we expect
+            <m>\int_{C} \vec{F} \cdot d \vec{r} \lt 0</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            It is also possible for <m>\int_{C} \vec{F} \cdot d \vec{r}=0</m>
+            (for example, if <m>\vec{F} \cdot \vec{T}=0</m> for all points on
+            <m>C)</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch05-01-ex-23-5">
+    <statement>
+      <p>
+        Consider the vector field and curves plotted below. Use these plots
+        to determine the sign of <m>\int_{C} \vec{F} \cdot d \vec{r}</m>
+        along each curve.
+      </p>
+
+      <figure xml:id="fig-ch05-01-ex-23-5">
+        <caption>On the background a circle centred at the origin and traversed clockwise and in a different colour a line segment on the positive part of x -axis, traversed from left to right. On the foreground a vector field whose vectors create a clockwise swirl and their magnitude increases away from the origin.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_10_e1bad327dc4b7562db72g-09. -->
+        <interactive xml:id="interactive-ch05-01-ex-23-5" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_11_10_e1bad327dc4b7562db72g-09.png">
+              <shortdescription>On the background a circle centred at the origin and traversed clockwise and in a different colour a line segment on the positive part of x -axis, traversed from left to right. On the foreground a vector field whose vectors create a clockwise swirl and their magnitude increases away from the origin.</shortdescription>
+              <description>
+                <p>On the background a circle centred at the origin and traversed clockwise and in a different colour a line segment on the positive part of <m>x</m>-axis, traversed from left to right. On the foreground a vector field whose vectors create a clockwise swirl and their magnitude increases away from the origin.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        Let <m>C_1</m> be the circle as traversed above and <m>C_2</m> be
+        the line segment as traversed above. Notice that at any given point
+        the tangent vector of <m>C_1</m> will match the vectors of the
+        field. Hence one can infer that
+        <m>\int_{C_1} \vec{F} \cdot d \vec{r} =\int_{C_1}\vec F \cdot \vec T\  ds \gt 0 </m>.
+        For <m>C_2</m> notice that its tangent vector is perpendicular to
+        the vectors of the field. Since the integral
+        <m>\int_{C} \vec{F} \cdot \vec T\ d s</m>  represents the integral
+        of a dot product between the vector field and the tangent vector of
+        the parametrization of the curve, given that those are
+        perpendicular, one can infer that
+        <m>\int_{C_2} \vec{F} \cdot d \vec{r}=\int_{C_2}=\vec F \cdot \vec T \  ds  = 0 </m>.
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      When a force (given by the vector field vectors) acts on an
+      object/particle moving along a curve (a particle/curve system), we
+      say the vector field is doing work on the system.
+    </p>
+  </remark>
+
+  <definition>
+    <title>Vector Field Line Integrals as Work</title>
+
+    <statement>
+      <p>
+        Let <m>\vec{F}</m> be a continuous force field and let <m>C</m> be a
+        smooth oriented curve in its domain. The work done by <m>\vec{F}</m>
+        on the system given by a particle moving along <m>C</m> is
+        <md>
+          W=\int_{C} \vec{F} \cdot \vec{T} d s
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch05-01-ex-23-6">
+    <statement>
+      <p>
+        Find the work done by the force field
+        <m>\vec{F}=\left\langle x,z,-y\right\rangle</m> acting on the
+        curve/particle system given by
+        <m>\vec{r}(t)=\left\langle t^2, t^{3}, t\right\rangle, 0 \leq t \leq 1</m>.
+      </p>
+
+      <figure xml:id="fig-ch05-01-ex-23-6">
+        <caption>On the foreground 3-dimensional vector field with vectors swirling about the x-axis, on the background the curve traced by the vector r of t with coordinates x = t squared, y = t cubed, z = t, for t from 0 to 1.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_10_e1bad327dc4b7562db72g-11. -->
+        <interactive xml:id="interactive-ch05-01-ex-23-6" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_11_10_e1bad327dc4b7562db72g-11.png">
+              <shortdescription>On the foreground 3-dimensional vector field with vectors swirling about the x-axis, on the background the curve traced by the vector r of t with coordinates x = t squared, y = t cubed, z = t, for t from 0 to 1.</shortdescription>
+              <description>
+                <p>On the foreground 3-dimensional vector field with vectors swirling about the <m>x</m>-axis, on the background the curve traced by the vector <m>\vec{r}(t)=\left\langle t^2, t^{3}, t\right\rangle</m>, for <m>t</m> from 0 to 1.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>\vec r(t)=\left\langle t^2, t^{3}, t\right\rangle \Rightarrow x(t) = t^2, \ y(t) = t^3, \ z(t) = t,\ 0\leq t \leq 1 \Rightarrow \vec F (\vec r(t)) = \langle t^2 , t , -t^3 \rangle</mrow>
+          <mrow>\vec r' (t) = \langle 2t , 3t^2 , 1 \rangle, \Rightarrow  \vec F (\vec r(t))\cdot \vec r' (t) = t^2\cdot 2t + t\cdot 3t^2 +-t^3 \cdot 1 = 4t^3</mrow>
+          <mrow>\mathbf W = \int_C \vec F \cdot \vec T \ ds = \int_0^1  \vec F (\vec r(t))\cdot \vec r' (t) \ dt =\int_0^1 4t^3\ dt = \left . t^4 \right |_0^1 =1</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <title>Work Interpretation</title>
+
+    <p>
+      Under the work interpretation, it is important to understand what
+      positive, negative, and zero work mean:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            If <m>\int_{C} \vec{F} \cdot d \vec{r} \gt 0</m>, energy is being
+            gained by the curve/particle system (in the form of kinetic and
+            potential energy).
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>\int_{C} \vec{F} \cdot d \vec{r} \lt 0</m>, energy is being
+            lost by the curve/particle system (in the form of heat,
+            friction, etc.).
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>\int_{C} \vec{F} \cdot d \vec{r}=0</m>, this does not mean
+            the vector field forces didn't affect the system, more
+            generally, the amount of energy gained was the same as the
+            energy lost.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+  <note>
+    <p>Recall: A curve <m>C</m> is:</p>
+
+    <p>
+      <ul>
+        <li>
+          <p>Smooth: If it has no sharp edges/corners.</p>
+        </li>
+
+        <li>
+          <p>
+            Closed: If it is a loop (has no discernible starting/ending
+            point).
+          </p>
+        </li>
+
+        <li>
+          <p>Simple: If it doesn't cross itself.</p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      We call a curve <m>C</m> that is simple, closed, and smooth, a SCS
+      curve.
+    </p>
+  </note>
+
+  <remark>
+    <p>
+      Suppose you have a 2-dimensional vector field <m>\vec{F}</m> and a
+      SCS curve <m>C</m> in its domain. We define the circulation of
+      <m>\vec{F}</m> along <m>C</m> as a measure of how much the vector
+      field (vectors) points in the direction of <m>C</m> (the unit tangent
+      vectors of <m>C)</m>. That is, we define the circulation of
+      <m>\vec{F}</m> along <m>C</m> precisely as
+      <md>
+        \int_{C} \vec{F} \cdot \vec{T} d s
+      </md>
+    </p>
+
+    <figure xml:id="fig-ch05-01-circulation-boat">
+      <caption>A boat traversing on a closed simple curve, placed over a clockwise rotating current.</caption>
+
+      <!-- This interactive is PENDING, it should correspond to 2025_11_10_e1bad327dc4b7562db72g-13. -->
+      <interactive xml:id="interactive-ch05-01-circulation-boat" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <instructions>
+          <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+          <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+        </instructions>
+        <static>
+          <image source="/images/2025_11_10_e1bad327dc4b7562db72g-13.png">
+            <shortdescription>A boat traversing on a closed simple curve, placed over a clockwise rotating current.</shortdescription>
+            <description>
+              <p>A boat traversing on a closed simple curve, placed over a clockwise rotating current.</p>
+            </description>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+  </remark>
+
+  <definition>
+    <title>Vector Field Line Integrals as Circulation</title>
+
+    <statement>
+      <p>
+        Let <m>\vec{F}</m> be a 2-dimensional continuous force field and let
+        <m>C</m> be a SCS curve in its domain. The circulation of
+        <m>\vec{F}</m> along <m>C</m> is computed as
+        <md>
+          \int_{C} \vec{F} \cdot \vec{T} d s
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <remark>
+    <title>Circulation Interpretation</title>
+
+    <p>
+      If the path <m>C</m> is not closed that we call this
+      <alert>Flow</alert>. When we are talking about circulation along a
+      boundary, the sign of the integral tells us the following:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            If <m>\int_{C} \vec{F} \cdot \vec{T} d s \gt 0</m>, most of the
+            vector field is in the direction of <m>C</m>. Hence, most
+            particles (whose motion is represented by <m>\vec{F}</m> ) are
+            moving along <m>C</m> in the same orientation (as <m>C</m> ).
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>\int_{C} \vec{F} \cdot \vec{T} d s \lt 0</m>, most of the
+            vector field is in the direction opposite of <m>C</m>. Hence,
+            most particles are moving along <m>C</m> in the opposite
+            orientation.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>\int_{C} \vec{F} \cdot \vec{T} d s=0</m>, there is no
+            discernible motion along <m>C</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch05-01-ex-23-7">
+    <statement>
+      <p>
+        Given the vector field <m>\vec{F}=\langle x-y, -y\rangle</m> and the
+        curve <m>C</m> parametrized by
+        <m>\vec{r}(t)=\langle\sin (t), \cos (t)\rangle</m>,
+        <m>0 \leq t \leq 2 \pi</m>, determine whether most of the vector
+        field is in the direction of <m>C</m>.
+      </p>
+
+      <figure xml:id="fig-ch05-01-ex-23-7">
+        <caption>on the background the unit circle centred at the origin, on the foreground a vector field whose vectors point away from the line y equals x and towards the x-axis, with increasing magnitude away from the origin.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_10_e1bad327dc4b7562db72g-15. -->
+        <interactive xml:id="interactive-ch05-01-ex-23-7" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_11_10_e1bad327dc4b7562db72g-15.png">
+              <shortdescription>on the background the unit circle centred at the origin, on the foreground a vector field whose vectors point away from the line y equals x and towards the x-axis, with increasing magnitude away from the origin.</shortdescription>
+              <description>
+                <p>on the background the unit circle centred at the origin, on the foreground a vector field whose vectors point away from the line <m>y=x</m> and towards the <m>x</m>-axis, with increasing magnitude away from the origin.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>\vec r(t)=\langle\sin (t), \cos (t)\rangle \Rightarrow  \vec F (\vec r(t)) = \langle \sin (t) - \cos (t), - \cos (t) \rangle, \quad \vec r' (t) = \langle \cos (t) , -\sin  (t)\rangle</mrow>
+          <mrow>\vec F (\vec r(t))\cdot \vec r' (t) = \sin (t)\cos (t) -\cos^2 (t) + \cos(t)\sin (t) = -\cos^2 (t) + 2\sin (t) \cos (t)</mrow>
+          <mrow>\int_C \vec F \cdot \vec T \ ds = \int_0^{2\pi}  \vec F (\vec r(t))\cdot \vec r' (t) \ dt =\int_0^{2\pi} - \cos^2 (t) +2\sin (t)\cos (t)\ dt  =</mrow>
+          <mrow>-\int_0^{2\pi}  \cos^2 (t) \ dt  +2\int_0^{2\pi}  +\sin (t)\cos (t)\ dt \underset{\substack{t= 0 \Rightarrow u = 0\\ t =2\pi \Rightarrow u =0}}{\overset{\substack{u=\sin t \\ du = \cos t dt}}{=}}  -\int_0^{2\pi}  \cos^2 (t)\ dt +2\int_0^0 u\ du =</mrow>
+          <mrow>-\int_0^{2\pi}  \cos^2 (t) dt +0 \lt 0.</mrow>
+          <mrow>\text{Hence most of the vector field is in the opposite direction of}C</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      Although we will mostly work with SCS curves when talking about
+      circulation, we can generalize this idea to curves that are
+      piece-wise smooth (a union of smooth curves connected at their
+      endpoints).
+    </p>
+
+    <p>
+      We call a simple, closed, piece-wise smooth curve <m>C</m> a SCPS
+      curve.
+    </p>
+  </note>
+
+  <example xml:id="example-ch05-01-ex-23-8">
+    <statement>
+      <p>
+        Set up (but do not evaluate) a line integral (as a sum of
+        integrals) that gives the circulation of the vector field
+        <m>\vec{F}=\langle 1,x\rangle</m> along the SCPS curve <m>C</m>,
+        traversed counter-clockwise, shown below (First quadrant of the
+        unit circle, and line segments on the respective axes).
+      </p>
+
+      <figure xml:id="fig-ch05-01-ex-23-8">
+        <caption>On the background the part of the unit circle belonging on the first quadrant, the line segments starting from the origin to and ending to the 1 of the x and y axis respectively. On the foreground a vector field whose vectors are fixed on each vertical line. In each of those lines they point from left to right while at the same time their up-down direction is proportional to the x coordinate of the point they originate.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_11_10_e1bad327dc4b7562db72g-16. -->
+        <interactive xml:id="interactive-ch05-01-ex-23-8" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_11_10_e1bad327dc4b7562db72g-16.png">
+              <shortdescription>On the background the part of the unit circle belonging on the first quadrant, the line segments starting from the origin to and ending to the 1 of the x and y axis respectively. On the foreground a vector field whose vectors are fixed on each vertical line. In each of those lines they point from left to right while at the same time their up-down direction is proportional to the x coordinate of the point they originate.</shortdescription>
+              <description>
+                <p>On the background the part of the unit circle belonging on the first quadrant, the line segments starting from the origin to and ending to the 1 of the <m>x</m> and <m>y</m> axis respectively. On the foreground a vector field whose vectors are fixed on each vertical line. In each of those lines they point from left to right while at the same time their up-down direction is proportional to the <m>x</m> coordinate of the point they originate.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>C: \vec r (t) = \begin{cases} \text{Line segment of the y axis}\amp\quad 0\leq t \leq 1\\ \text{Line segment of the x axis}\amp\quad 1\leq t \leq 2\\ \text{Unit circle, first quadrant }  \amp\quad 2\leq t \leq 2+\frac{\pi}{2}\\ \end{cases} =</mrow>
+          <mrow>\begin{cases} \langle 0,1 \rangle + t \langle 0 , -1 \rangle = \langle 0,1-t \rangle\amp\quad 0\leq t \leq 1\\ \langle 0,0 \rangle + (t-1) \langle 1 , 0 \rangle = \langle 1-t, 0 \rangle\amp\quad 1\leq t \leq 2\\ \langle \cos (t-2), \sin (t-2) \rangle  \amp\quad 2\leq t \leq 2+\frac{\pi}{2}\\ \end{cases}</mrow>
+          <mrow>\vec r' (t) =   \begin{cases} \langle 0,-1 \rangle\amp\quad 0\lt  t \lt 1\\ \langle 1, 0 \rangle\amp\quad 1\lt t \lt 2\\ \langle -\sin (t-2), \cos (t-2) \rangle  \amp\quad 2 \lt t \lt 2+\frac{\pi}{2}\\ \end{cases}</mrow>
+          <mrow>\vec F ( \vec r (t))  =   \begin{cases} \langle 1 , 0\rangle\amp\quad 0\leq  t \leq 1\\ \langle 1, t-1 \rangle\amp\quad 1\leq t \leq 2\\ \langle 1, \cos (t-2) \rangle  \amp\quad 2\leq t \leq 2+\frac{\pi}{2}\\ \end{cases}</mrow>
+          <mrow>\vec F ( \vec r (t)) \cdot \vec r'(t) =  \begin{cases} 1\cdot 0 + 0\cdot (-1) = 0\amp\quad 0\lt  t \lt 1\\ 1\cdot 1 + (t-1)\cdot 0 = 1\amp\quad 1\lt t \lt 2\\ -\sin (t-2) +\cos^2 (t-2)  \amp\quad 2 \lt t \lt 2+\frac{\pi}{2}\\ \end{cases}</mrow>
+          <mrow>\int_{C} \vec F \cdot \vec T \ ds = \int_0^1 0 \ dt + \int_1^2 1 \ dt + \int_2^{2+\frac{\pi}{2}}  -\sin (t-2) +\cos^2 (t-2) \ dt</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      In defining the circulation of a vector field <m>\vec{F}</m> along a
+      closed curve <m>C</m>, we were interested in the scalar component of
+      the vector field in the direction of <m>C</m> (measured using
+      <m>\vec{T}</m> ), which is why we used
+      <m>\int_{C} \vec{F} \cdot \vec{T} d s</m>.
+    </p>
+  </note>
+
+  <remark>
+    <title>Flux of a Vector Field</title>
+
+    <p>
+      For flux, instead of wanting to measure how much of the vector field
+      is in the direction of <m>C</m>, we instead want to measure how much
+      of the vector field is normal/perpendicular/orthogonal to <m>C</m>.
+      Hence, instead of using the scalar component of <m>\vec{F}</m> in the
+      direction of a unit tangent vector <m>\vec{T}</m>, we will use the
+      scalar component of <m>\vec{F}</m> in the direction of <m>\vec{N}</m>
+      (a unit vector normal to <m>C</m> ). Hence, we will define the flux
+      of <m>\vec{F}</m> on across <m>C</m> as
+      <m>\int_{C} \vec{F} \cdot \vec{N} d s</m>
+    </p>
+
+    <figure xml:id="fig-ch05-01-flux-normal">
+      <caption>On the background a vector field, on the foreground a simple closed smooth curve, traversed counter-clockwise, and vectors placed on it, on a direction perpendicular to its tangent vector.</caption>
+
+      <!-- This interactive is PENDING, it should correspond to 2025_11_10_e1bad327dc4b7562db72g-17. -->
+      <interactive xml:id="interactive-ch05-01-flux-normal" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <instructions>
+          <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+          <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+        </instructions>
+        <static>
+          <image source="/images/2025_11_10_e1bad327dc4b7562db72g-17.png">
+            <shortdescription>On the background a vector field, on the foreground a simple closed smooth curve, traversed counter-clockwise, and vectors placed on it, on a direction perpendicular to its tangent vector.</shortdescription>
+            <description>
+              <p>On the background a vector field, on the foreground a simple closed smooth curve, traversed counter-clockwise, and vectors placed on it, on a direction perpendicular to its tangent vector.</p>
+            </description>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+  </remark>
+
+  <definition>
+    <title>Vector Field Line Integrals as Flux</title>
+
+    <statement>
+      <p>
+        Let <m>\vec{F}=\langle f(x, y), g(x, y)\rangle</m> be a
+        2 -dimensional continuous vector field and let <m>C</m> be a SCPS
+        oriented curve in its domain parametrized by
+        <m>\vec{r}(t)= \langle x(t), y(t)\rangle, a \leq t \leq b</m> and
+        oriented counter clockwise. Let
+        <m>\vec n(t) = \langle y'(t), -x'(t)  \rangle</m>, a normal vector
+        that points to the right of the direction that the curve is
+        parametrized with, and <m>\vec N</m> the unit normal vector in its
+        direction. The flux of <m>\vec{F}</m> across <m>C</m> is computed
+        as
+        <md>
+          \int_{C} \vec{F} \cdot \vec{N} d s= \int_{a}^b \vec{F}(\vec r (t)) \cdot \vec n(t) d t=\int_{a}^{b}\left(f(x(t), y(t)) y^{\prime}(t)-g(x(t), y(t)) x^{\prime}(t)\right) d t
+        </md>
+      </p>
+    </statement>
+  </definition>
+
+  <remark>
+    <p>
+      When we are talking about flux across a boundary, the sign of the
+      integral tells us the following:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            If <m>\int_{C} \vec{F} \cdot \vec{N} d s \gt 0</m>, most of the
+            vector field points away from <m>C</m>. Hence, most particles
+            (whose motion is represented by <m>\vec{F}</m> ) are moving from
+            inside <m>R</m> towards the outside.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>\int_{C} \vec{F} \cdot \vec{N} d s \lt 0</m>, most of the
+            vector field points towards (the inside of) <m>C</m>. Hence,
+            most particles are moving from outside <m>R</m> towards the
+            inside.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>\int_{C} \vec{F} \cdot \vec{N} d s=0</m>, the same amount
+            of particles (could be none) are entering and exiting the
+            region <m>R</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch05-01-ex-23-9">
+    <statement>
+      <p>
+        Determine whether most particles, whose motion is represented by
+        <m>\vec{F}=\langle  x+y, x\rangle</m>, are entering or exiting
+        across the ellipse
+        <m>\vec{r}(t)=\langle 2 \cos (t),  \sin (t)\rangle</m>,
+        <m>0 \leq t \leq 2 \pi</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>\vec r(t)=\langle 2 \cos (t),  \sin (t)\rangle \Rightarrow  \vec F (\vec r(t)) = \langle 2\cos (t) +\sin (t),\cos (t) \rangle</mrow>
+          <mrow>\vec r' (t) = \langle  -2\sin  (t),\cos (t)\rangle \overset{\vec n (r) = \langle y' (t), - x'(t)\rangle}{\Rightarrow} \vec n (t) = \langle \cos (t) , 2 \sin (t) \rangle</mrow>
+          <mrow>\vec F (\vec r(t))\cdot \vec n (t) = (2\cos (t) +\sin (t))\cos (t) +2\cos (t) 2\sin (t) = 2\cos^2 (t) + 5\cos(t)\sin (t)</mrow>
+          <mrow>\int_C \vec F \cdot \vec N \ ds = \int_0^{2\pi}  \vec F (\vec r(t))\cdot \vec n (t) \ dt =\int_0^{2\pi} 2 \cos^2 (t) +5\sin (t)\cos (t)\ dt  =</mrow>
+          <mrow>2\int_0^{2\pi}  \cos^2 (t) \ dt  +5\int_0^{2\pi}  +\sin (t)\cos (t)\ dt \underset{\substack{t= 0 \Rightarrow u = 0\\ t =2\pi \Rightarrow u =0}}{\overset{\substack{u=\sin t \\ du = \cos t dt}}{=}}  2\int_0^{2\pi}  \cos^2 (t)\ dt +5\cancelto{0}{\int_0^0 u\ du} =</mrow>
+          <mrow>2\left ( \cancelto{0}{\left .\frac{1}{2}\cos (t)\sin (t) \right |_0^{2\pi}} +  \frac{1}{2}\int_0^{2\pi}\cos^0 (t)\ dt\right ) = 2\cdot\frac{1}{2} \int_0^{2\pi}\ dt = 2\pi \gt 0 .</mrow>
+          <mrow>\text{ Hence most of the particles are exiting the ellipse, since it is parametrized counter-clockwise.}</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch05-01-ex-23-10">
+    <statement>
+      <p>
+        Determine whether most particles, whose motion is represented by
+        <m>\vec{F}=\langle  y, x\rangle</m>, are entering or exiting across
+        the ellipse <m>\vec{r}(t)=\langle  \cos (t),  \sin (t)\rangle</m>,
+        <m>0 \leq t \leq 2 \pi</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <md alignment="gather">
+          <mrow>\vec r(t)=\langle  \cos (t),  \sin (t)\rangle \Rightarrow  \vec F (\vec r(t)) = \langle \sin (t),\cos (t) \rangle</mrow>
+          <mrow>\vec r' (t) = \langle  -\sin  (t),\cos (t)\rangle \overset{\vec n (r) = \langle y' (t), - x'(t)\rangle}{\Rightarrow} \vec n (t) = \langle \cos (t) ,  \sin (t) \rangle</mrow>
+          <mrow>\vec F (\vec r(t))\cdot \vec n (t) = \sin (t)\cos (t) +\cos (t) \sin (t) = 2\cos(t)\sin (t)</mrow>
+          <mrow>\int_C \vec F \cdot \vec N \ ds = \int_0^{2\pi}  \vec F (\vec r(t))\cdot \vec n (t) \ dt =\int_0^{2\pi} 2 \sin (t)\cos (t)\ dt   \underset{\substack{t= 0 \Rightarrow u = 0\\ t =2\pi \Rightarrow u =0}}{\overset{\substack{u=\sin t \\ du = \cos t dt}}{=}}</mrow>
+          <mrow>2\cancelto{0}{\int_0^0 u\ du} =0</mrow>
+          <mrow>\text{ Hence the same amount of particles are exiting and entering the circle.}</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <title>Summary of Interpretations</title>
+
+    <p>
+      For the line integral <m>\int_{C} \vec{F} \cdot \vec{T} d s</m> :
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>Directional interpretation.</p>
+
+          <p>
+            <ol>
+              <li>
+                <p>
+                  If for most of the curve, the angle <m>\theta</m> between
+                  <m>\vec{F}</m> and <m>\vec{T}</m> satisfies
+                  <m>0 \leq \theta \lt \frac{\pi}{2}</m>, then we expect
+                  <m>\int_{C} \vec{F} \cdot d \vec{r} \gt 0</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  If for most of the curve, the angle <m>\theta</m> between
+                  <m>\vec{F}</m> and <m>\vec{T}</m> satisfies
+                  <m>\frac{\pi}{2} \lt \theta \leq \pi</m>, then we expect
+                  <m>\int_{C} \vec{F} \cdot d \vec{r} \lt 0</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  It is also possible for
+                  <m>\int_{C} \vec{F} \cdot d \vec{r}=0</m> (for example, if
+                  <m>\vec{F} \cdot \vec{T}=0</m> for all points on <m>C</m>
+                  ).
+                </p>
+              </li>
+            </ol>
+          </p>
+        </li>
+
+        <li>
+          <p>Work interpretation.</p>
+
+          <p>
+            <ol>
+              <li>
+                <p>
+                  If <m>\int_{C} \vec{F} \cdot d \vec{r} \gt 0</m>, energy
+                  is being gained by the curve/particle system (in the form
+                  of kinetic and potential energy).
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  If <m>\int_{C} \vec{F} \cdot d \vec{r} \lt 0</m>, energy
+                  is being lost by the curve/particle system (in the form of
+                  heat, friction, etc.).
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  If <m>\int_{C} \vec{F} \cdot d \vec{r}=0</m>, this does
+                  not mean the vector field forces didn't affect the system,
+                  more generally, the amount of energy gained was the same
+                  as the energy lost.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Circulation Interpretation (if <m>C</m> is simple, closed,
+            piece-wise smooth):
+          </p>
+
+          <p>
+            <ol>
+              <li>
+                <p>
+                  If <m>\int_{C} \vec{F} \cdot \vec{T} d s \gt 0</m>, most
+                  of the vector field is in the direction of <m>C</m>.
+                  Hence, most particles (whose motion is represented by
+                  <m>\vec{F}</m> ) are moving along <m>C</m> in the same
+                  orientation (as <m>C</m> ).
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  If <m>\int_{C} \vec{F} \cdot \vec{T} d s \lt 0</m>, most
+                  of the vector field is in the direction opposite of
+                  <m>C</m>. Hence, most particles are moving along <m>C</m>
+                  in the opposite orientation.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  If <m>\int_{C} \vec{F} \cdot \vec{T} d s=0</m>, there is
+                  no discernible motion along <m>C</m>.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      For the integral <m>\int_{C} \vec{F} \cdot \vec{n} d s</m>, when
+      <m>C</m> is a simple, closed, piece-wise smooth curve enclosing a
+      region <m>R</m> , oriented counter-clockwise:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>Flux interpretation :</p>
+
+          <p>
+            <ol>
+              <li>
+                <p>
+                  If <m>\int_{C} \vec{F} \cdot \vec{N} d s \gt 0</m>, most
+                  of the vector field points away from <m>C</m>. Hence, most
+                  particles (whose motion is represented by <m>\vec{F}</m> )
+                  are moving from inside <m>R</m> towards the outside.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  If <m>\int_{C} \vec{F} \cdot \vec{N} d s \lt 0</m>, most
+                  of the vector field points towards (the inside of)
+                  <m>C</m>. Hence, most particles are moving from outside
+                  <m>R</m> towards the inside.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  If <m>\int_{C} \vec{F} \cdot \vec{N} d s=0</m>, the same
+                  amount of particles (could be none) are entering and
+                  exiting the region <m>R</m>.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </li>
+      </ul>
+    </p>
+  </remark>
+
+</section>

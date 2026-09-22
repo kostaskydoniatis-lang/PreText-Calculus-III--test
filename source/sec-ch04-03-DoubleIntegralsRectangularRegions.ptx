@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch04-03-DoubleIntegralsRectangularRegions.ptx : converted from
+  "16. Double Integrals (Rectangular Regions) - Solutions.tex" by the bbeaccess-pretext
+  skill (2026-09-17). Fragment for xi:include into ch-04-Integration.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch04-03 (lecture file 16, chapter 4) on your instruction.
+     TITLE: the .tex \chapter is "Double Integrals in Cartesian Coordinates" followed
+     by a centred bold line "Rectangular Regions"; here <title> = the \chapter title
+     and <subtitle>Rectangular Regions</subtitle>. File 17 carries the same \chapter
+     title (with a "General Regions" subtitle), so two sections will share one title
+     in the table of contents unless you rename them (file 18's \chapter title is
+     "Changing Order of Integration").
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): ...a591g-1-1.png (prisms, 3D),
+     ...a591g-1.jpg (partitioned rectangle, 2D, Desmos can do it), ...a591g-5.png
+     (Example 16.1, 3D), ...a591g-8.png (Example 16.3, 3D).
+  3. Image names: ...a591g-1(1) is ...a591g-1-1.png in assets/images. ...a591g-1,
+     ...a591g-3 and ...a591g-6 are .jpg on disk; the rest are .png.
+  4. Other-book images, plain captioned figures with no interactive, caption "From
+     OpenStax, Calculus Volume 3, section 5.1" (the .tex says "From openstax, ...
+     section 5.1"; capitalisation of the name follows sec-ch01-02, "section" kept
+     lower-case as written): fig-ch04-03-cross-sections-y (...a591g-3.jpg, inside
+     item 1 of the remark's list) and fig-ch04-03-cross-sections-x (...a591g-6.jpg,
+     inside the note before Fubini). Both stay where the .tex has them (inside the
+     <li> / the <note>).
+  5. Source captions / legends: the prisms figure's \caption ("Net volume bounded by f
+     on R, using n=4,16,100 rectangular prisms") is NOT carried (the caption rule
+     replaces it). The legends under the Example 16.1 and 16.3 pictures
+     ("f(x,y)=6-3x^2-2y"; "The surface f(x,y)=x^3 sin(e^y) in blue and the net
+     volume in orange") are kept as a <p> after each figure inside the statement.
+  6. Fubini's Theorem is a <theorem> with <statement>. The two \begin{aligned} blocks
+     (net volume, twice) are <md>s (align mode) with \amp kept.
+  7. Cross-references: "as in Example 16.1" and "found in Example 16.1" -> <xref>s.
+     Relative references left as prose: "As the image above suggests", "as pictured
+     below", "From the picture", "We summarize this result below".
+  8. \mathbf{r} to \vec{r} (one occurrence). Everything else byte-for-byte.
+  9. Typeset <description>s are the conversion's own text; review.
+ 10. Template width constants replace the .tex widths (0.75\textwidth, max
+     width=0.3/0.27/0.4\textwidth, 0.5\textwidth).
+ 11. Source quirks preserved: "( $x_{k}, y_{k}$ )" spacing; "$\Delta A_{k}
+     \rightarrow$ 0 )" with the 0 outside the math; "(restricted to $R$ )"; the first
+     net-volume formula uses \Delta A (no subscript) while the definition uses
+     \Delta A_{k}; Example 16.2's statement has no final period; "either set up".
+ 12. Every \newpage/\vspace, the figure[H]/center wrappers, \captionsetup and \\
+     dropped.
+-->
+
+<section xml:id="sec-ch04-03-DoubleIntegralsRectangularRegions" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Double Integrals in Cartesian Coordinates</title>
+  <subtitle>Rectangular Regions</subtitle>
+
+  <note>
+    <p>
+      In the previous section, we learned how to integrate a surface
+      <m>f(x, y)</m> over a curve <m>\vec{r}(t)=\langle x(t), y(t)\rangle</m>
+      in its domain (to compute net area). In this section, we will learn
+      how to integrate <m>f(x, y)</m> over a rectangular region <m>R</m> in
+      its domain.
+    </p>
+  </note>
+
+  <remark>
+    <p>
+      Geometrically, integrating a function <m>f(x, y)</m> over a
+      rectangular region <m>R</m> in its domain computes the net volume
+      bounded by <m>f</m> and the <m>x y</m>-plane, restricted to <m>R</m>.
+    </p>
+
+    <p>
+      We can find the net volume bounded by <m>f</m> and the
+      <m>x y</m>-plane, restricted to a rectangle <m>R</m>, by partitioning
+      the net volume into rectangular prisms.
+    </p>
+  </remark>
+
+  <figure xml:id="fig-ch04-03-prisms">
+    <caption>The net volume bounded by f on R, approximated using 4, then 16, then 100 rectangular prisms.</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_10_18_34c12496fbb38c89a591g-1(1). -->
+    <interactive xml:id="interactive-ch04-03-prisms" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_10_18_34c12496fbb38c89a591g-1-1.png">
+          <shortdescription>The net volume bounded by f on R, approximated using 4, then 16, then 100 rectangular prisms.</shortdescription>
+          <description>
+            <p>The net volume bounded by <m>f</m> on <m>R</m>, approximated using 4, then 16, then 100 rectangular prisms.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <note>
+    <p>
+      As the image above suggests, to approximate the net volume bounded by
+      <m>f</m> and the <m>x y</m>-plane on <m>R</m> (restricted to <m>R</m>
+      ), we simply add up the net volumes of each individual rectangular
+      prism.
+    </p>
+  </note>
+
+  <p>
+    Geometrically, we are partitioning the rectangle <m>R</m> in the
+    <m>x y</m>-plane into smaller rectangles as pictured below:
+  </p>
+
+  <figure xml:id="fig-ch04-03-partitioned-rectangle">
+    <caption>The rectangular region R in the xy-plane partitioned into smaller rectangles, and a sample point.</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_10_18_34c12496fbb38c89a591g-1. -->
+    <interactive xml:id="interactive-ch04-03-partitioned-rectangle" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_10_18_34c12496fbb38c89a591g-1.jpg">
+          <shortdescription>The rectangular region R in the xy-plane partitioned into smaller rectangles, and a sample point.</shortdescription>
+          <description>
+            <p>The rectangular region <m>R</m> in the <m>xy</m>-plane partitioned into smaller rectangles, and a sample point.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <p>
+    From the picture, we can see that the area of the <m>k</m>-th rectangle
+    is <m>\Delta A_{k}= \Delta x_{k} \Delta y_{k}</m>. Since the height is
+    given by the function evaluated at ( <m>x_{k}, y_{k}</m> ), the net
+    volume of the <m>k</m>-th rectangular prism is
+    <m>f\left(x_{k}, y_{k}\right) \Delta A_{k}</m>. It follows that an
+    approximation for the net volume of the whole region is
+    <md>
+      V \approx \sum_{k=1}^{n} f\left(x_{k}, y_{k}\right) \Delta A_{k}
+    </md>
+  </p>
+
+  <p>
+    If we take the number <m>n</m> of rectangles to approach infinity (and
+    hence <m>\Delta A_{k} \rightarrow</m> 0 ), we get that the net volume
+    is
+    <md>
+      V=\lim _{n \rightarrow \infty} \sum_{k=1}^{n} f\left(x_{k}, y_{k}\right) \Delta A
+    </md>
+  </p>
+
+  <p>
+    We call this formula for the net volume a double integral.
+  </p>
+
+  <definition>
+    <title>Double Integral</title>
+
+    <statement>
+      <p>
+        A function <m>f(x, y)</m> defined on a rectangular region <m>R</m>
+        is said to be integrable on <m>R</m> if
+        <md>
+          \lim _{n \rightarrow \infty} \sum_{k=1}^{n} f\left(x_{k}, y_{k}\right) \Delta A_{k}
+        </md>
+        exists. Moreover, if this limit exists, we call it the double
+        integral of <m>f</m> over <m>R</m>, and write it as
+        <md>
+          \lim _{n \rightarrow \infty} \sum_{k=1}^{n} f\left(x_{k}, y_{k}\right) \Delta A_{k}=\iint_{R} f(x, y) d A
+        </md>
+      </p>
+
+      <p>
+        <m>\iint_{R} f(x, y) d A</m> gives the net volume bounded by
+        <m>f(x, y)</m> and the <m>x y</m>-plane, on <m>R</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <remark>
+    <p>
+      Suppose we want to find the net volume bounded by <m>f</m> and the
+      <m>x y</m> plane, on the region
+      <m>R=\{(x, y) \mid a \leq x \leq b, c \leq y \leq d\}</m> (we always
+      assume <m>a \neq b</m>, <m>c \neq d</m> ).
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p>
+            Partition the net volume into vertical cross-sections parallel
+            to the <m>y</m>-axis.
+          </p>
+
+          <figure xml:id="fig-ch04-03-cross-sections-y">
+            <caption>From OpenStax, Calculus Volume 3, section 5.1</caption>
+
+            <image source="/images/2025_10_18_34c12496fbb38c89a591g-3.jpg" width="50%">
+              <shortdescription>A slice of the net volume bounded by f on R partitioned into vertical cross-sections parallel to the y-axis.</shortdescription>
+              <description>
+                <p>A slice of the net volume bounded by <m>f</m> on <m>R</m> partitioned into vertical cross-sections parallel to the <m>y</m>-axis.</p>
+              </description>
+            </image>
+          </figure>
+
+          <p>
+            Note that to get each cross section, we simply intersect the
+            surface <m>f</m> with a plane <m>x=c_{0}</m> (treat <m>x</m> as
+            a constant), <m>a \leq c_{0} \leq b</m>. Hence, we denote the
+            net area of each cross section as <m>A(x)</m> (we get a
+            different net area/cross section for each <m>x</m> ).
+          </p>
+        </li>
+
+        <li>
+          <p>
+            To find <m>A(x)</m> (the net area of each cross section), we
+            simply integrate <m>f</m> with respect to <m>y</m> (treat
+            <m>x</m> as a constant) from <m>c</m> to <m>d</m>. That is,
+            <md>
+              A(x)=\int_{c}^{d} f(x, y) d y
+            </md>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Finally, we want to add up <m>A(x)</m>, for <m>a \leq x \leq b</m>.
+            We do this by integrating <m>A(x)</m> with respect to <m>x</m>.
+            Hence, the net volume is given by
+            <md>
+              <mrow>V \amp =\int_{a}^{b} A(x) d x</mrow>
+              <mrow>\amp =\int_{a}^{b}\left(\int_{c}^{d} f(x, y) d y\right) d x</mrow>
+              <mrow>\amp =\int_{a}^{b} \int_{c}^{d} f(x, y) d y d x</mrow>
+            </md>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </remark>
+
+  <p>
+    We summarize this result below.
+  </p>
+
+  <definition>
+    <title>Evaluating Double Integrals using Iterated Integrals</title>
+
+    <statement>
+      <p>
+        To integrate a function <m>f(x, y)</m> over the rectangular region
+        <m>R=\{(x, y) \mid a \leq x \leq b, c \leq y \leq d\}</m>, we use the
+        formula
+        <md>
+          \iint_{R} f(x, y) d A=\int_{a}^{b} \int_{c}^{d} f(x, y) d y d x
+        </md>
+      </p>
+
+      <p>
+        We call stacked integrals like these iterated integrals.
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      Remember to evaluate iterated integrals inside out, that is,
+      <md>
+        \int_{a}^{b} \int_{c}^{d} f(x, y) d y d x=\int_{a}^{b}\left(\int_{c}^{d} f(x, y) d y\right) d x
+      </md>
+    </p>
+  </note>
+
+  <example xml:id="example-ch04-03-ex-16-1">
+    <statement>
+      <p>
+        Evaluate <m>\iint_{R}(6-3 x^2-2y) d A</m> where
+        <m>R=\{(x, y) \mid 0 \leq x \leq 1,0 \leq y \leq 2\}</m>.
+      </p>
+
+      <figure xml:id="fig-ch04-03-ex-16-1">
+        <caption>The surface f of x and y equals 6 minus 3 x squared minus 2 y, above the rectangular region R consisting of all points x, y with x between 0 and 1 and y between 0 and 2.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_18_34c12496fbb38c89a591g-5. -->
+        <interactive xml:id="interactive-ch04-03-ex-16-1" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_18_34c12496fbb38c89a591g-5.png">
+              <shortdescription>The surface f of x and y equals 6 minus 3 x squared minus 2 y, above the rectangular region R consisting of all points x, y with x between 0 and 1 and y between 0 and 2.</shortdescription>
+              <description>
+                <p>The surface <m>f(x, y)=6-3x^2-2y</m>, above the rectangular region <m>R</m> consisting of all points <m>(x, y)</m> with <m>x</m> between 0 and 1 and <m>y</m> between 0 and 2.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        <m>f(x, y)=6-3 x^2-2y</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The region <m>R</m> is the rectangle <m>0\leq x\leq 1</m>,
+        <m>0\leq y\leq 2</m>, so we evaluate the double integral as an
+        iterated integral in the order <m>dy\,dx</m>:
+        <md>
+          \iint_{R}(6-3x^2-2y)\, dA = \int_0^1 \int_0^2 (6-3x^2-2y)\, dy\, dx
+        </md>.
+        Evaluating the inner integral with <m>x</m> treated as a constant:
+        <md>
+          \int_0^2 (6-3x^2-2y)\, dy = \left. (6-3x^2)y - y^2 \right|_0^2 = (6-3x^2)(2) - 4 = 8 - 6x^2
+        </md>.
+        Then integrating with respect to <m>x</m>:
+        <md>
+          \int_0^1 (8-6x^2)\, dx = \left. 8x - 2x^3 \right|_0^1 = 8 - 2 = 6
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      In our method for evaluating double integrals using iterated
+      integrals, we could have partitioned the net volume into cross
+      sections parallel to the <m>x</m>-axis (treating <m>y</m> as a
+      constant):
+    </p>
+
+    <figure xml:id="fig-ch04-03-cross-sections-x">
+      <caption>From OpenStax, Calculus Volume 3, section 5.1</caption>
+
+      <image source="/images/2025_10_18_34c12496fbb38c89a591g-6.jpg" width="50%">
+        <shortdescription>A slice of the net volume bounded by f on R partitioned into vertical cross-sections parallel to the x-axis.</shortdescription>
+        <description>
+          <p>A slice of the net volume bounded by <m>f</m> on <m>R</m> partitioned into vertical cross-sections parallel to the <m>x</m>-axis.</p>
+        </description>
+      </image>
+    </figure>
+  </note>
+
+  <p>
+    With this set up, the net area of the cross sections <m>A(y)</m>, is
+    given by
+    <md>
+      \int_{a}^{b} f(x, y) d x
+    </md>
+    and the net volume is given by
+    <md>
+      <mrow>V \amp =\int_{c}^{d} A(y) d y</mrow>
+      <mrow>\amp =\int_{c}^{d}\left(\int_{a}^{b} f(x, y) d x\right) d y</mrow>
+    </md>
+  </p>
+
+  <p>
+    When integrating over rectangular regions, either set up will give you
+    the same result!
+  </p>
+
+  <theorem>
+    <title>Fubini's Theorem (Rectangular Regions)</title>
+
+    <statement>
+      <p>
+        Let <m>f(x, y)</m> be continuous on the rectangular region
+        <m>R=\{(x, y) \mid a \leq x \leq b, c \leq y \leq d\}</m>. The double
+        integral of <m>f</m> over <m>R</m> can be evaluated by either of two
+        iterated integrals:
+        <md>
+          \iint_{R} f(x, y) d A=\int_{a}^{b} \int_{c}^{d} f(x, y) d y d x=\int_{c}^{d} \int_{a}^{b} f(x, y) d x d y
+        </md>
+      </p>
+    </statement>
+  </theorem>
+
+  <example xml:id="example-ch04-03-ex-16-2">
+    <statement>
+      <p>
+        Evaluate <m>\iint_{R}(6-3 x^2-2y) d A</m> where
+        <m>R=\{(x, y) \mid 0 \leq x \leq 1,0 \leq y \leq 2\}</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        This is the same integral as in
+        <xref ref="example-ch04-03-ex-16-1"/>; by Fubini's theorem we may
+        integrate in the opposite order <m>dx\,dy</m> and obtain the same
+        value:
+        <md>
+          \iint_{R}(6-3x^2-2y)\, dA = \int_0^2 \int_0^1 (6-3x^2-2y)\, dx\, dy
+        </md>.
+        Evaluating the inner integral with <m>y</m> treated as a constant:
+        <md>
+          \int_0^1 (6-3x^2-2y)\, dx = \left. 6x - x^3 - 2yx \right|_0^1 = 6 - 1 - 2y = 5 - 2y
+        </md>.
+        Then integrating with respect to <m>y</m>:
+        <md>
+          \int_0^2 (5-2y)\, dy = \left. 5y - y^2 \right|_0^2 = 10 - 4 = 6
+        </md>,
+        which matches the value found in
+        <xref ref="example-ch04-03-ex-16-1"/>, exactly as Fubini's theorem
+        guarantees.
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      Changing the order of integration in an iterated integral can
+      significantly reduce the difficulty of the problem.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch04-03-ex-16-3">
+    <statement>
+      <p>
+        Evaluate <m>\int_{-1}^{1} \int_{0}^{1} x^3 \sin(e^y) d y d x</m>
+      </p>
+
+      <figure xml:id="fig-ch04-03-ex-16-3">
+        <caption>The surface f of x and y equals x cubed times the sine of e to the power y, and the net volume bounded by f and the xy-plane.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_18_34c12496fbb38c89a591g-8. -->
+        <interactive xml:id="interactive-ch04-03-ex-16-3" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_18_34c12496fbb38c89a591g-8.png">
+              <shortdescription>The surface f of x and y equals x cubed times the sine of e to the power y, and the net volume bounded by f and the xy-plane.</shortdescription>
+              <description>
+                <p>The surface <m>f(x, y)=x^3\sin(e^y)</m>, and the net volume bounded by <m>f</m> and the <m>xy</m>-plane.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        The surface <m>f(x, y)=x^3 \sin(e^y)</m> in blue and the net volume
+        in orange
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Integrating in the given order would require
+        <m>\int_0^1 \sin(e^y)\, dy</m>, which has no elementary
+        antiderivative. Since the region is the rectangle
+        <m>-1\leq x\leq 1</m>, <m>0\leq y\leq 1</m>, Fubini's theorem lets
+        us reverse the order of integration:
+        <md>
+          \int_{-1}^{1} \int_{0}^{1} x^3 \sin(e^y)\, dy\, dx = \int_{0}^{1} \int_{-1}^{1} x^3 \sin(e^y)\, dx\, dy
+        </md>.
+        Now <m>\sin(e^y)</m> is constant with respect to <m>x</m>, so the
+        inner integral is
+        <md>
+          \int_{-1}^{1} x^3 \sin(e^y)\, dx = \sin(e^y) \left. \frac{x^4}{4} \right|_{-1}^{1} = \sin(e^y)\left(\frac{1}{4} - \frac{1}{4}\right) = 0
+        </md>.
+        The inner integral vanishes for every <m>y</m> because <m>x^3</m>
+        is odd and the interval <m>[-1,1]</m> is symmetric about the
+        origin. Hence
+        <md>
+          \int_{0}^{1} 0\, dy = 0
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+</section>

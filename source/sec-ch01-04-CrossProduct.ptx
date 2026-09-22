@@ -153,9 +153,10 @@
           <sidebyside widths="45% 45%" margins="auto" valign="middle">
             <figure xml:id="fig-ch01-04-ex-4-1a">
               <caption>Pair of vectors u and v in the xy-plane for case a. The angle from u to v is 3 pi over 4.</caption>
-              <interactive xml:id="interactive-ch01-04-ex-4-1a" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vt5wf6hrh7?embed">
+              <interactive xml:id="interactive-ch01-04-ex-4-1a" width="85%" aspect="4:3" desmos="vt5wf6hrh7">
                 <!--<instructions>
-                  <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+                  <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
                 </instructions>-->
 
                 <static>
@@ -171,9 +172,10 @@
 
             <figure xml:id="fig-ch01-04-ex-4-1b">
               <caption>Pair of vectors u and v in the xy-plane for case b. The angle from u to v is 13 pi over 12.</caption>
-              <interactive xml:id="interactive-ch01-04-ex-4-1b" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/iz99n4chok?embed">
+              <interactive xml:id="interactive-ch01-04-ex-4-1b" width="85%" aspect="4:3" desmos="iz99n4chok">
                 <!--<instructions>
-                  <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+                  <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
                 </instructions>-->
 
                 <static>
@@ -191,9 +193,10 @@
           <sidebyside widths="45% 45%" margins="auto" valign="middle">
             <figure xml:id="fig-ch01-04-ex-4-1c">
               <caption>Pair of vectors u and v in the xy-plane for case c. The angle from u to v is 5 pi over 4.</caption>
-              <interactive xml:id="interactive-ch01-04-ex-4-1c" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/6afpkg7emn?embed">
+              <interactive xml:id="interactive-ch01-04-ex-4-1c" width="85%" aspect="4:3" desmos="6afpkg7emn">
                 <!--<instructions>
-                  <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+                  <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
                 </instructions>-->
 
                 <static>
@@ -209,9 +212,10 @@
 
             <figure xml:id="fig-ch01-04-ex-4-1d">
               <caption>Pair of vectors u and v in the xy-plane for case d. The angle from u to v is 5 pi over 12.</caption>
-              <interactive xml:id="interactive-ch01-04-ex-4-1d" width="85%" aspect="4:3" iframe="https://www.desmos.com/calculator/vaerdn1qjn?embed">
+              <interactive xml:id="interactive-ch01-04-ex-4-1d" width="85%" aspect="4:3" desmos="vaerdn1qjn">
                 <!--<instructions>
-                  <p>The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+                  <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+                  <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
                 </instructions>-->
 
                 <static>
@@ -228,8 +232,12 @@
         </sbsgroup>
       </figure>
       <p>
-         The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph,
-         open it in a new page from here: <url href="https://www.desmos.com/calculator/vt5wf6hrh7" target="_blank" rel="noopener noreferrer">link to the top left graph</url>, <url href="https://www.desmos.com/calculator/iz99n4chok" target="_blank" rel="noopener noreferrer">link to the top right graph</url>, <url href="https://www.desmos.com/calculator/6afpkg7emn" target="_blank" rel="noopener noreferrer">link to the bottom left graph</url>, <url href="https://www.desmos.com/calculator/vaerdn1qjn" target="_blank" rel="noopener noreferrer">link to the bottom right graph</url>
+         You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. 
+         You can open in a new page from here:
+         <url href="https://www.desmos.com/calculator/vt5wf6hrh7" target="_blank" rel="noopener noreferrer">link to the top left graph</url>,
+         <url href="https://www.desmos.com/calculator/iz99n4chok" target="_blank" rel="noopener noreferrer">link to the top right graph</url>,
+         <url href="https://www.desmos.com/calculator/6afpkg7emn" target="_blank" rel="noopener noreferrer">link to the bottom left graph</url>,
+         <url href="https://www.desmos.com/calculator/vaerdn1qjn" target="_blank" rel="noopener noreferrer">link to the bottom right graph</url>
       </p>
     </statement>
 
@@ -324,10 +332,11 @@
       <figure xml:id="fig-ch01-04-ex-4-2">
         <caption>Vector <m>\vec{u}=\langle 0,2,0\rangle</m>, and vector <m>\vec{v}=\langle 0,0,4\rangle</m>, in <m>xyz</m>-space.</caption>
         <interactive xml:id="interactive-ch01-04-ex-4-2" variant="minimal" width="90%" aspect="3:2"
-          calcplot3d="type=vector;vector=%3C0,%202,%200%3E;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,%200,%204%3E;visible=true;color=rgb(30,136,229);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=text;text=v~%3C0%2C0%2C4%3E;visible=true;point=(0,0.2,4);color=rgb(30,136,229);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Lower-right&amp;type=text;text=u~%3C0%2C2%2C0%3E;visible=true;point=(0,2.5,0);color=rgb(255,193,7);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.236391035463319,4.755282581475766,3.0901699437494745,1;focus=0,0,0,1;up=0,0,2,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-4;xmax=4;ymin=-4;ymax=4;zmin=-4;zmax=4;xscale=2;yscale=2;zscale=2;zcmin=-8;zcmax=8;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.51">
+        calcplot3d="type=vector;vector=%3C0,%202,%200%3E;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,%200,%204%3E;visible=true;color=rgb(30,136,229);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=text;text=v~%3C0%2C0%2C4%3E;visible=true;point=(0,0.2,4);color=rgb(30,136,229);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Lower-right&amp;type=text;text=u~%3C0%2C2%2C0%3E;visible=true;point=(0,2.5,0);color=rgb(255,193,7);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.236391035463319,4.755282581475766,3.0901699437494745,1;focus=0,0,0,1;up=0,0,2,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-4;xmax=4;ymin=-4;ymax=4;zmin=-4;zmax=4;xscale=2;yscale=2;zscale=2;zcmin=-8;zcmax=8;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.51">
           <instructions>
             <p>
-              Drag with the mouse to rotate the surface. You can open the plot in a new page from here: <url href="http://c3d.libretexts.org/CalcPlot3D/index.html?type=vector;vector=%3C0,%202,%200%3E;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,%200,%204%3E;visible=true;color=rgb(30,136,229);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=text;text=v~%3C0%2C0%2C4%3E;visible=true;point=(0,0.2,4);color=rgb(30,136,229);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Lower-right&amp;type=text;text=u~%3C0%2C2%2C0%3E;visible=true;point=(0,2.5,0);color=rgb(255,193,7);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.236391035463319,4.755282581475766,3.0901699437494745,1;focus=0,0,0,1;up=0,0,2,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-4;xmax=4;ymin=-4;ymax=4;zmin=-4;zmax=4;xscale=2;yscale=2;zscale=2;zcmin=-8;zcmax=8;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.51" target="_blank" rel="noopener noreferrer">link to the plot</url>
+              Drag with the mouse to rotate the surface. You can open the plot in a new page from here:
+              <url href="http://c3d.libretexts.org/CalcPlot3D/index.html?type=vector;vector=%3C0,%202,%200%3E;visible=true;color=rgb(255,193,7);size=2;initialpt=(0,0,0);dashed=false&amp;type=vector;vector=%3C0,%200,%204%3E;visible=true;color=rgb(30,136,229);size=2;initialpt=(0,0,0);dashed=undefined&amp;type=text;text=v~%3C0%2C0%2C4%3E;visible=true;point=(0,0.2,4);color=rgb(30,136,229);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Lower-right&amp;type=text;text=u~%3C0%2C2%2C0%3E;visible=true;point=(0,2.5,0);color=rgb(255,193,7);font=Times%20New%20Roman;fontsize=14pt;bold=true;italic=false;fontmath=true;align=Upper-right&amp;type=window;showfunnot=false;hsrmode=0;nomidpts=true;anaglyph=-1;center=8.236391035463319,4.755282581475766,3.0901699437494745,1;focus=0,0,0,1;up=0,0,2,1;transparent=false;alpha=140;twoviews=false;unlinkviews=false;axisextension=0.7;shownormals=false;shownormalsatpts=false;xaxislabel=x;yaxislabel=y;zaxislabel=z;edgeson=true;faceson=true;showbox=true;showaxes=true;showticks=true;perspective=true;centerxpercent=0.5;centerypercent=0.5;rotationsteps=30;autospin=true;xygrid=false;yzgrid=false;xzgrid=false;gridsonbox=true;gridplanes=false;gridcolor=rgb(128,128,128);lastaddedsurfaceactive=true;disabletrace=false;activefun=-1;xmin=-4;xmax=4;ymin=-4;ymax=4;zmin=-4;zmax=4;xscale=2;yscale=2;zscale=2;zcmin=-8;zcmax=8;xscalefactor=1;yscalefactor=1;zscalefactor=1;tracemode=0;keep2d=false;zoom=0.51" target="_blank" rel="noopener noreferrer">link to the plot</url>
             </p>
           </instructions>
           <static>

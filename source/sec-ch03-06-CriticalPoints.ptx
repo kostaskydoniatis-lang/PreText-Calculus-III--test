@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch03-06-CriticalPoints.ptx : converted from
+  "12. Critical Points and Analysis - Solutions.tex" by the bbeaccess-pretext skill
+  (2026-09-17). Fragment for xi:include into
+  ch-03-DerivativesOfVectorAndScalarValuedFunctions.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch03-06 (lecture file 12, chapter 3) on your instruction.
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): all seven pictures - ...2aeg-1-1-1.png and
+     ...2aeg-1.png (first pair, local min/max), ...2aeg-2-2-1.png (open circle, inside
+     the note), ...2aeg-2-1.png and ...2aeg-2.png (Example 12.1 pair), ...2aeg-4-1.png
+     (interior/boundary points), ...2aeg-8.png (Example 12.4). The surfaces are 3D
+     (probably CalcPlot3D in the end); the open circle and the region picture are 2D
+     diagrams that Desmos can do.
+  3. Image names: the .tex "(n)" parts are "-n" in assets/images (...-1(1)-1 ->
+     ...-1-1-1.png, ...-2(2)-1 -> ...-2-2-1.png, ...-2(1) -> ...-2-1.png). All .png.
+  4. The CalcPlot3D links in the .tex are inside commented-out \caption* lines under
+     the subfigures (Example 6.2 residue). Not live, not used; ptx_check reports them
+     as unmatched. Expected.
+  5. Both two-panel figures are outer figures whose captions are the .tex \caption
+     lines verbatim ("A function with a local minimum on the left, with a local
+     maximum on the right."; "The two local max and two local min of
+     (x-y) sin((x^2+y^2)/6)") with a <sidebyside widths="45% 45%">; per-panel
+     <instructions> commented out, one <p> after each figure with a left/right link.
+     NOTE the first pair's alt texts read "A local maximum ... bottom of a locally
+     bowl-shaped surface" (left) and "A local minimum ... top of a locally hill-shaped
+     surface" (right), the opposite of the caption; kept verbatim, not fixed.
+  6. Example 12.1 has no solution box; its statement says "The pictures below show"
+     and the pair sits AFTER \end{example} in the .tex, so it is a section-level figure
+     right after the example. Example 12.4's picture is inside its statement, with
+     the legend "Graph of 2x^2-3y^2" kept as a <p> after the figure (the caption rule
+     keeps the alt text as the caption). The open-circle picture stays inside its
+     <note>; the region picture is a section-level figure after the Interior and
+     Boundary Points definition, where the .tex has it.
+  7. Example 12.2: parts (a)/(b) as paragraphs with one <solution> per box (house
+     practice; <task>s not used unasked).
+  8. The commented-out fourth item of the remark after the Critical Points definition
+     ("%  \item Critical points must be interior points of the domain of $f$.") is
+     kept as an XML comment inside the list.
+  9. Typeset <description>s are the conversion's own text; review.
+ 10. Template width constants replace the .tex widths (subfigure 0.45\textwidth, max
+     width=0.5/0.4\textwidth, 0.45\textwidth).
+ 11. No \mathbf in this file.
+ 12. Relative references left as prose: "The pictures below show" (12.1), "Using the
+     picture below" (12.4), "in the picture" (12.4 solution), "condition 1" /
+     "Condition 2)" (remark).
+ 13. Source quirks preserved: "$ (a, b ) $is a critical point" (space inside the math,
+     none before "is") and "due to condition 1 ," in the remark; "Condition 2)";
+     "( $a, b$ )" spacing throughout; "$f(x, y), f$ has a saddle point" with f inside
+     the math; "Given a function $f(x, y)$ :"; "local maximums/minimums"; Example 12.4's
+     question ends with "saddle point." and its solution never says "saddle".
+ 14. Every \newpage/\vspace/\hspace, the figure[H]/center/subfigure wrappers,
+     \captionsetup and \\ dropped.
+-->
+
+<section xml:id="sec-ch03-06-CriticalPoints" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Critical Points and Analysis</title>
+
+  <note>
+    <p>Recall from Calculus I:</p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            A function <m>f(x)</m> has a local maximum at <m>x=a</m> if
+            <m>f(a) \geq f(x)</m> for all <m>x</m> in some interval
+            <m>(a-h, a+h), h \gt 0</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            A function <m>f(x)</m> has a local minimum at <m>x=b</m> if
+            <m>f(b) \leq f(x)</m> for all <m>x</m> in some interval
+            <m>(b-h, b+h), h \gt 0</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+  </note>
+
+  <figure xml:id="fig-ch03-06-local-min-max">
+    <caption>A function with a local minimum on the left, with a local maximum on the right.</caption>
+
+    <sidebyside widths="45% 45%" margins="auto" valign="middle">
+      <figure xml:id="fig-ch03-06-local-min-max-a">
+        <caption>A local maximum of a function f(x,y) shown as the bottom of a locally bowl-shaped surface.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_48d64282dad3782ea2aeg-1(1)-1. -->
+        <interactive xml:id="interactive-ch03-06-local-min-max-a" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_09_20_48d64282dad3782ea2aeg-1-1-1.png">
+              <shortdescription>A local maximum of a function f(x,y) shown as the bottom of a locally bowl-shaped surface.</shortdescription>
+              <description>
+                <p>A local maximum of a function <m>f(x,y)</m> shown as the bottom of a locally bowl-shaped surface.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch03-06-local-min-max-b">
+        <caption>A local minimum of a function f(x,y) shown as the top of a locally hill-shaped surface.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_48d64282dad3782ea2aeg-1. -->
+        <interactive xml:id="interactive-ch03-06-local-min-max-b" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_09_20_48d64282dad3782ea2aeg-1.png">
+              <shortdescription>A local minimum of a function f(x,y) shown as the top of a locally hill-shaped surface.</shortdescription>
+              <description>
+                <p>A local minimum of a function <m>f(x,y)</m> shown as the top of a locally hill-shaped surface.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </sidebyside>
+  </figure>
+  <p>
+    The graphs above show only the plots; you can drag and zoom them. To see the expressions behind them, or to save a copy and create your own version of the graphs, open them in a new page from here:
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>,
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+  </p>
+
+  <p>
+    We have similar definitions for scalar-valued functions.
+  </p>
+
+  <definition>
+    <title>Local Minimums and Maximums</title>
+
+    <statement>
+      <p>Given a function <m>f(x, y)</m> :</p>
+
+      <p>
+        <ul>
+          <li>
+            <p>
+              <m>f(x, y)</m> has a local maximum at <m>(a, b)</m> if
+              <m>f(a, b) \geq f(x, y)</m> for all points <m>(x, y)</m>
+              inside some open circle of radius <m>r \gt 0</m> centered at
+              <m>(a, b)</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>f(x, y)</m> has a local minimum at <m>(a, b)</m> if
+              <m>f(a, b) \leq f(x, y)</m> for all points <m>(x, y)</m>
+              inside some open circle of radius <m>r \gt 0</m> centered at
+              <m>(a, b)</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      This definition says that we must compare <m>f(a, b)</m> to all
+      points inside some open circle in the domain of <m>f</m>. Moreover,
+      we only need to find one such circle that works.
+    </p>
+
+    <figure xml:id="fig-ch03-06-open-circle">
+      <caption>An open circle around a point.</caption>
+
+      <!-- This interactive is PENDING, it should correspond to 2025_09_20_48d64282dad3782ea2aeg-2(2)-1. -->
+      <interactive xml:id="interactive-ch03-06-open-circle" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <instructions>
+          <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+          <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+        </instructions>
+        <static>
+          <image source="/images/2025_09_20_48d64282dad3782ea2aeg-2-2-1.png">
+            <shortdescription>An open circle around a point.</shortdescription>
+            <description>
+              <p>An open circle around a point.</p>
+            </description>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+  </note>
+
+  <example xml:id="example-ch03-06-ex-12-1">
+    <statement>
+      <p>
+        The pictures below show the two local maximums and the two local
+        minimums of the surface
+        <m>\left(x-y\right)\sin\left(\frac{\left(x^{2}+y^{2}\right)}{6}\right)</m>.
+      </p>
+    </statement>
+  </example>
+
+  <figure xml:id="fig-ch03-06-ex-12-1">
+    <caption>The two local max and two local min of <m>\left(x-y\right)\sin\left(\frac{\left(x^{2}+y^{2}\right)}{6}\right)</m></caption>
+
+    <sidebyside widths="45% 45%" margins="auto" valign="middle">
+      <figure xml:id="fig-ch03-06-ex-12-1a">
+        <caption>The surface z equals f of x and y, near a local maximum point.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_48d64282dad3782ea2aeg-2(1). -->
+        <interactive xml:id="interactive-ch03-06-ex-12-1a" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_09_20_48d64282dad3782ea2aeg-2-1.png">
+              <shortdescription>The surface z equals f of x and y, near a local maximum point.</shortdescription>
+              <description>
+                <p>The surface <m>z=f(x, y)</m>, near a local maximum point.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch03-06-ex-12-1b">
+        <caption>The surface z equals f of x and y, near a local minimum point.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_48d64282dad3782ea2aeg-2. -->
+        <interactive xml:id="interactive-ch03-06-ex-12-1b" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_09_20_48d64282dad3782ea2aeg-2.png">
+              <shortdescription>The surface z equals f of x and y, near a local minimum point.</shortdescription>
+              <description>
+                <p>The surface <m>z=f(x, y)</m>, near a local minimum point.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </sidebyside>
+  </figure>
+  <p>
+    The graphs above show only the plots; you can drag and zoom them. To see the expressions behind them, or to save a copy and create your own version of the graphs, open them in a new page from here:
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>,
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+  </p>
+
+  <note>
+    <p>
+      In Calculus I, when working with functions of one variable
+      <m>y=f(x)</m>, we used critical points to find local
+      maximums/minimums (places where the derivative is zero or doesn't
+      exist). We will do the same thing with functions of two or more
+      variables.
+    </p>
+  </note>
+
+  <definition>
+    <title>Critical Points</title>
+
+    <statement>
+      <p>
+        Given a function <m>f(x, y)</m>, we say that the interior point
+        <m>(a, b)</m> of the domain of <m>f</m> is a critical point of
+        <m>f</m> if one of the following is true:
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p><m>f_{x}(a, b)=0</m> and <m>f_{y}(a, b)=0</m>.</p>
+          </li>
+
+          <li>
+            <p>
+              At least one of <m>f_{x}(a, b)</m> or <m>f_{y}(a, b)</m> does
+              not exist.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </definition>
+
+  <remark>
+    <p>
+      <ul>
+        <li>
+          <p>
+            If <m> (a, b ) </m>is a critical point of <m>f</m> due to
+            condition 1 , this implies the tangent plane to <m>f</m> at
+            <m>(a, b, f(a, b))</m> is horizontal.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Condition 2) is for the points that the function is not
+            differentiable at.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If a function <m>f(x, y)</m> has a critical point at
+            <m>(a, b)</m>, this does not guarantee that <m>f</m> has a local
+            maximum/minimum at <m>(a, b)</m>. However, if <m>f</m> does have
+            a local maximum/minimum at some point, it must occur at a
+            critical point.
+          </p>
+        </li>
+        <!--\item Critical points must be interior points of the domain of $f$.-->
+      </ul>
+    </p>
+  </remark>
+
+  <definition>
+    <title>Interior and Boundary Points</title>
+
+    <statement>
+      <p>
+        Given a set <m>S</m> in the <m>x y</m>-plane, we say that the point
+        ( <m>a, b</m> ) is an interior point of <m>S</m> if there exists an
+        open circle of radius <m>r \gt 0</m> centered at ( <m>a, b</m> ) that
+        is entirely inside <m>S</m>.
+      </p>
+
+      <p>
+        Given a set <m>S</m> in the <m>x y</m>-plane, we say that the point
+        <m>(a, b)</m> is a boundary point of <m>S</m> if every open circle
+        of radius <m>r \gt 0</m> centered at ( <m>a, b</m> ) lies partly
+        inside and partly outside of <m>S</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <figure xml:id="fig-ch03-06-interior-boundary">
+    <caption>A region with boundary and interior points.</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_09_20_48d64282dad3782ea2aeg-4-1. -->
+    <interactive xml:id="interactive-ch03-06-interior-boundary" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_09_20_48d64282dad3782ea2aeg-4-1.png">
+          <shortdescription>A region with boundary and interior points.</shortdescription>
+          <description>
+            <p>A region with boundary and interior points.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <note>
+    <p>
+      If the domain of a function <m>f(x, y)</m> is <m>\mathbb{R}^{2}</m>,
+      then all points in its domain are interior points.
+    </p>
+  </note>
+
+  <example xml:id="example-ch03-06-ex-12-2">
+    <statement>
+      <p>Find all critical points of the following functions:</p>
+
+      <p>(a) <m>f(x, y)=x^{3}+3 x^{2}y+ 3xy^2+y^3</m>.</p>
+
+      <p>(b) <m>f(x, y)=e^{y}-y e^{x}</m>.</p>
+    </statement>
+
+    <solution>
+      <p>
+        Both partial derivatives exist at every point of
+        <m>\mathbb{R}^2</m>, so the critical points come from solving
+        <m>f_x=0</m> and <m>f_y=0</m> simultaneously. Computing the partial
+        derivatives:
+        <md alignment="gather">
+          <mrow>f_x(x,y) = 3x^2 + 6xy + 3y^2 = 3(x+y)^2</mrow>
+          <mrow>f_y(x,y) = 3x^2 + 6xy + 3y^2 = 3(x+y)^2</mrow>
+        </md>
+        The two partial derivatives are identical, and
+        <m>3(x+y)^2 = 0 \Rightarrow x+y = 0 \Rightarrow y=-x</m>. Hence
+        every point on the line <m>y=-x</m> is a critical point of <m>f</m>;
+        that is, the critical points are all the points of the form
+        <m>(a,-a)</m> with <m>a</m> any real number. (Notice that
+        <m>f(x,y)=(x+y)^3</m>, which explains why an entire line of critical
+        points appears.)
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Both partial derivatives exist at every point of
+        <m>\mathbb{R}^2</m>:
+        <md alignment="gather">
+          <mrow>f_x(x,y) = -y e^{x}</mrow>
+          <mrow>f_y(x,y) = e^{y} - e^{x}</mrow>
+        </md>
+        Since <m>e^{x} \gt 0</m> for every <m>x</m>, the equation
+        <m>f_x = 0</m> forces <m>y=0</m>. Substituting <m>y=0</m> into
+        <m>f_y=0</m> gives
+        <m>e^{0}-e^{x} = 0 \Rightarrow e^{x} = 1 \Rightarrow x = 0</m>.
+        Hence the only critical point of <m>f</m> is <m>(0,0)</m>.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch03-06-ex-12-3">
+    <statement>
+      <p>
+        Consider the function <m>f(x, y)=x^2+y^2</m>. This function has a
+        critical point at <m>(0,0)</m>. Does <m>(0,0)</m> correspond to a
+        local max, a local min, or neither?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We have <m>f(0,0)=0</m>, and since squares are never negative,
+        <m>f(x,y) = x^2+y^2 \geq 0 = f(0,0)</m> for every point <m>(x,y)</m>
+        in the plane. In particular <m>f(0,0)\leq f(x,y)</m> for all points
+        inside any open circle of radius <m>r \gt 0</m> centered at
+        <m>(0,0)</m>, and by the definition of local minimums, <m>f</m> has
+        a local minimum at <m>(0,0)</m>. In fact, since the inequality holds
+        for every point of the plane and not just near the origin,
+        <m>(0,0)</m> is a global minimum: the graph of <m>f</m> is a
+        paraboloid opening upwards with its vertex at the origin.
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <title>Three Classifications for Critical Points</title>
+
+    <p>
+      Given a function <m>f(x, y)</m> and a critical point ( <m>a, b</m> )
+      of <m>f</m>, only one of three things can occur:
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p><m>f</m> has a local max at <m>(a, b)</m>.</p>
+        </li>
+
+        <li>
+          <p><m>f</m> has a local min at <m>(a, b)</m>.</p>
+        </li>
+
+        <li>
+          <p><m>f</m> has a saddle point at <m>(a, b)</m>.</p>
+        </li>
+      </ol>
+    </p>
+  </remark>
+
+  <definition>
+    <title>Saddle Points</title>
+
+    <statement>
+      <p>
+        Given a function <m>f(x, y), f</m> has a saddle point at
+        ( <m>a, b</m> ) if for all open circles of radius <m>r \gt 0</m>
+        centered at ( <m>a, b</m> ), we can always find points
+        <m>\left(x_{0}, y_{0}\right)</m> and <m>\left(x_{1}, y_{1}\right)</m>
+        in the circle such that <m>f(a, b) \lt f\left(x_{0}, y_{0}\right)</m>
+        and <m>f(a, b) \gt f\left(x_{1}, y_{1}\right)</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch03-06-ex-12-4">
+    <statement>
+      <p>
+        Using the picture below, explain why the critical point
+        <m>(0,0)</m> of <m>f(x, y)=2x^2-3y^2</m> is a saddle point.
+      </p>
+
+      <figure xml:id="fig-ch03-06-ex-12-4">
+        <caption>The surface z equals f of x and y, over a closed bounded region, showing the location of saddle point. The surface increases if one moves along the direction of the x-axis and decreases if one moves along the direction of the y-axis.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_20_48d64282dad3782ea2aeg-8. -->
+        <interactive xml:id="interactive-ch03-06-ex-12-4" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_09_20_48d64282dad3782ea2aeg-8.png">
+              <shortdescription>The surface z equals f of x and y, over a closed bounded region, showing the location of saddle point. The surface increases if one moves along the direction of the x-axis and decreases if one moves along the direction of the y-axis.</shortdescription>
+              <description>
+                <p>The surface <m>z=f(x, y)</m>, over a closed bounded region, showing the location of saddle point. The surface increases if one moves along the direction of the <m>x</m>-axis and decreases if one moves along the direction of the <m>y</m>-axis.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        Graph of <m>2x^2-3y^2</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We have <m>f(0,0)=0</m>. Consider any open circle of radius
+        <m>r \gt 0</m> centered at <m>(0,0)</m>. Moving away from the origin
+        along the <m>x</m>-axis (<m>y=0</m>), this is the direction in the
+        picture along which the surface increases. Moving away from the
+        origin along the <m>y</m>-axis (<m>x=0</m>), this is the direction
+        in the picture along which the surface decreases. Since every open
+        circle centered at <m>(0,0)</m> contains points where <m>f</m> is
+        larger than <m>f(0,0)</m> and points where <m>f</m> is smaller than
+        <m>f(0,0)</m>, the critical point <m>(0,0)</m> is neither a maximum
+        nor a minimum.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    Given a critical point <m>(a, b)</m>, there is an algebraic way to
+    determine whether it corresponds to a local min, local max, or a saddle
+    point. Unfortunately, this method is not perfect.
+  </p>
+
+  <definition>
+    <title>Second Derivative Test</title>
+
+    <statement>
+      <p>
+        Suppose you have a function <m>f(x, y)</m> and a critical point
+        <m>(a, b)</m> of <m>f</m>. Let
+        <md>
+          D(x, y)=f_{x x} f_{y y}-f_{x y}^{2}
+        </md>
+      </p>
+
+      <p>Then:</p>
+
+      <p>
+        <ul>
+          <li>
+            <p>
+              <m>f</m> has a local maximum at <m>(a, b)</m> if
+              <m>f_{x x}(a, b) \lt 0</m> and <m>D(a, b) \gt 0</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>f</m> has a local minimum at <m>(a, b)</m> if
+              <m>f_{x x}(a, b) \gt 0</m> and <m>D(a, b) \gt 0</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>f</m> has a saddle point at <m>(a, b)</m> if
+              <m>D(a, b) \lt 0</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The test is inconclusive at <m>(a, b)</m> if <m>D(a, b)=0</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+
+      <p>
+        We call the function <m>D(x, y)</m> the discriminant of <m>f</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch03-06-ex-12-5">
+    <statement>
+      <p>
+        Find and classify the critical points of
+        <m>f(x, y)=x^3+3x^2y+3xy^2+y^3+3y^2+6y-3x</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Both partial derivatives exist at every point of
+        <m>\mathbb{R}^2</m>, so we solve <m>f_x=0</m> and <m>f_y=0</m>
+        simultaneously. Computing the partial derivatives:
+        <md alignment="gather">
+          <mrow>f_x(x,y) = 3x^2 + 6xy + 3y^2 - 3 = 3(x+y)^2 - 3</mrow>
+          <mrow>f_y(x,y) = 3x^2 + 6xy + 3y^2 + 6y + 6 = 3(x+y)^2 + 6y + 6</mrow>
+        </md>
+        Setting <m>f_x = 0</m> gives
+        <m>3(x+y)^2 = 3 \Rightarrow (x+y)^2 = 1 \Rightarrow x+y = 1</m> or
+        <m>x+y=-1</m>. In either case <m>(x+y)^2 = 1</m>, so setting
+        <m>f_y=0</m> gives
+        <md>
+          3(1) + 6y + 6 = 0 \Rightarrow 6y = -9 \Rightarrow y = -\frac{3}{2}
+        </md>
+        If <m>x+y=1</m> then
+        <m>x = 1-\left(-\frac{3}{2}\right) = \frac{5}{2}</m>, and if
+        <m>x+y=-1</m> then
+        <m>x = -1-\left(-\frac{3}{2}\right) = \frac{1}{2}</m>. Hence the
+        critical points are <m>\left(\frac{5}{2},-\frac{3}{2}\right)</m> and
+        <m>\left(\frac{1}{2},-\frac{3}{2}\right)</m>.
+      </p>
+
+      <p>
+        To classify them we use the Second Derivative Test. The second
+        partial derivatives are
+        <md>
+          f_{xx} = 6x+6y = 6(x+y), \quad f_{yy} = 6x+6y+6 = 6(x+y)+6, \quad f_{xy} = 6x+6y = 6(x+y)
+        </md>
+        so the discriminant is
+        <md alignment="gather">
+          <mrow>D(x,y) = f_{xx}f_{yy} - f_{xy}^2 = 6(x+y)\left[ 6(x+y)+6 \right] - \left[ 6(x+y) \right]^2</mrow>
+          <mrow>= 36(x+y)^2 + 36(x+y) - 36(x+y)^2 = 36(x+y)</mrow>
+        </md>
+        At <m>\left(\frac{5}{2},-\frac{3}{2}\right)</m> we have <m>x+y=1</m>,
+        so <m>D = 36 \gt 0</m> and <m>f_{xx} = 6 \gt 0</m>; hence <m>f</m>
+        has a local minimum at <m>\left(\frac{5}{2},-\frac{3}{2}\right)</m>.
+        At <m>\left(\frac{1}{2},-\frac{3}{2}\right)</m> we have
+        <m>x+y=-1</m>, so <m>D = -36 \lt 0</m>; hence <m>f</m> has a saddle
+        point at <m>\left(\frac{1}{2},-\frac{3}{2}\right)</m>.
+      </p>
+    </solution>
+  </example>
+
+</section>

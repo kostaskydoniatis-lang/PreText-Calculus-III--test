@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- CLAUDE 2026-09-17: chapter 4, lecture-notes files 14-22 on your instruction. The     -->
+<!-- chapter title and the one-sentence introduction are Claude's wording; edit freely.  -->
+<!-- To undo: delete this file and its xi:include line in main.ptx.                       -->
+
+<chapter xml:id="ch-04-Integration" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>4. Integration</title>
+
+  <introduction>
+    <p> This chapter covers arc length and scalar line integrals, double integrals in Cartesian and polar coordinates, change of variables, and triple integrals in Cartesian, cylindrical and spherical coordinates. </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-ch04-01-ArcLength.ptx" />
+  <xi:include href="sec-ch04-02-ScalarLineIntegrals.ptx" />
+  <xi:include href="sec-ch04-03-DoubleIntegralsRectangularRegions.ptx" />
+  <xi:include href="sec-ch04-04-DoubleIntegralsGeneralRegionsPart1.ptx" />
+  <xi:include href="sec-ch04-05-ChangingOrderOfIntegration.ptx" />
+  <xi:include href="sec-ch04-06-PolarCoordinates.ptx" />
+  <xi:include href="sec-ch04-07-ChangeOfVariables.ptx" />
+  <xi:include href="sec-ch04-08-TripleIntegralsCartesian.ptx" />
+  <xi:include href="sec-ch04-09-TripleIntegralsCylindricalSpherical.ptx" />
+</chapter>

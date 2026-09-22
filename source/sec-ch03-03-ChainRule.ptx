@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch03-03-ChainRule.ptx : converted from
+  "9. Multi-Variable Chain Rule - Solutions.tex" by the bbeaccess-pretext skill
+  (2026-09-17). Fragment for xi:include into
+  ch-03-DerivativesOfVectorAndScalarValuedFunctions.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch03-03 (lecture file 9, chapter 3) on your instruction.
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): ...fd41g-6.png (Example 9.4, sphere with
+     the curve above y=x+1) and ...fd41g-7.png (Example 9.5, sphere with the curve
+     above the circle). Both are 3D, probably CalcPlot3D scenes in the end.
+  3. Other-book images, plain captioned figures with no interactive, caption written
+     "From OpenStax, Calculus Volume 3, Section 4.5" (the .tex says "openstax";
+     capitalisation follows sec-ch01-02): fig-ch03-03-chain-rule-case-1 (...fd41g-1.jpg,
+     the only .jpg) and fig-ch03-03-chain-rule-case-2 (...fd41g-4.png).
+  4. The two sphere pictures each have a legend line typed under the image inside the
+     same center block ("y=x+1 in purple and z(t,t+1) in yellow";
+     "(x-0.5)^2+(y-1.5)^2=1 in purple and z(cos(t)+0.5, sin(t)+1.5) in yellow. blue").
+     The caption rule keeps the alt text as the caption, so each legend is kept as a
+     <p> right after its figure (the solutions refer to "the yellow curve"). The stray
+     word "blue" at the end of the second legend is a source typo, preserved.
+  5. "Example 9.5" (part (a)) + "[Continuation of 9.5]" (picture, legend, part (b))
+     merged into ONE <example> in source order: statement, (a), figure, legend, (b),
+     then one <solution> per box. ptx_check therefore reports 6 examples in the .tex vs
+     5 here. The \setcounter{tcb@cnt@example}{4} is dropped. Examples 9.1 and 9.3
+     likewise keep (a)/(b) as paragraphs with two <solution>s (house practice; <task>s
+     not used unasked).
+  6. Figure placement: both sphere pictures stay in the <statement> at the position
+     they have in the .tex (the solutions say "in the picture").
+  7. The Case 2 formulas (\begin{aligned} with a leading & on each line) and the
+     three-variable remark are <md>s (align mode) with one <mrow> per line and the
+     leading \amp kept.
+  8. Typeset <description>s are the conversion's own text; review. The two sphere alt
+     texts have no final period and say "parametrised" (UK); kept verbatim in all
+     three places.
+  9. Template width constants replace the .tex widths (0.75\textwidth, max
+     width=\textwidth, 0.5\textwidth). The OpenStax figures use width="50%".
+ 10. No \mathbf in this file. \textbf{just the variable} is an <alert>.
+ 11. Relative references left as prose: "which agrees with the answer from part (a)"
+     (9.1, 9.3), "This is the yellow curve in the picture" (9.4).
+ 12. Source quirks preserved: "$z=cos(x) \sin (y^2)$" with a missing backslash on cos
+     (Example 9.3); "( $s$ and $t$ )" and "(the surface restricted to inputs coming
+     from $C$ )" spacing; "$y=y(s, t), f$ is still" with f inside the math; "Another
+     argument that arrives in the same conclusion is that denominator is always
+     non-negative"; the quoted "intermediate variables" are <q>s; "substituting $x=t$
+     and $y= t+1$" spacing.
+ 13. Every \newpage/\vspace, the figure[H]/center wrappers, \captionsetup, \\ and
+     \setcounter dropped.
+-->
+
+<section xml:id="sec-ch03-03-ChainRule" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Multi-Variable Chain Rule</title>
+
+  <note>
+    <p>
+      In this section we will consider two different cases when taking
+      derivatives:
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p>
+            You have a function <m>z=f(x, y)</m> where <m>x=x(t)</m> and
+            <m>y=y(t)</m> (both <m>x</m> and <m>y</m> are themselves
+            functions of single variable <m>t</m> ).
+          </p>
+        </li>
+
+        <li>
+          <p>
+            You have a function <m>z=f(x, y)</m> where <m>x=x(s, t)</m> and
+            <m>y=y(s, t)</m> (both <m>x</m> and <m>y</m> are themselves
+            functions of multiple variables <m>s</m> and <m>t</m> ).
+          </p>
+        </li>
+      </ol>
+    </p>
+  </note>
+
+  <remark>
+    <title>Chain Rule in Case 1</title>
+
+    <p>
+      Given a function <m>z=f(x, y)</m> where <m>x=x(t)</m> and
+      <m>y=y(t)</m>, then the derivative of <m>f(x, y)</m> with respect to
+      <m>t</m> is given by
+      <md>
+        \frac{d f}{d t}=\frac{\partial f}{\partial x} \frac{d x}{d t}+\frac{\partial f}{\partial y} \frac{d y}{d t}
+      </md>.
+    </p>
+  </remark>
+
+  <note>
+    <p>
+      In this case we can use the usual derivative notation since
+      <m>f(x, y)</m> is a function of <alert>just the variable</alert>
+      <m>t</m> if we replace <m>x</m> with <m>x(t)</m> and <m>y</m> with
+      <m>y(t)</m>.
+    </p>
+  </note>
+
+  <figure xml:id="fig-ch03-03-chain-rule-case-1">
+    <caption>From OpenStax, Calculus Volume 3, Section 4.5</caption>
+
+    <image source="/images/2025_09_10_3643f349c031f748fd41g-1.jpg" width="50%">
+      <shortdescription>A dependency diagram showing z as a function of x and y, each depending on t, illustrating the chain rule case 1.</shortdescription>
+      <description>
+        <p>A dependency diagram showing <m>z</m> as a function of <m>x</m> and <m>y</m>, each depending on <m>t</m>, illustrating the chain rule case 1.</p>
+      </description>
+    </image>
+  </figure>
+
+  <example xml:id="example-ch03-03-ex-9-1">
+    <statement>
+      <p>
+        Find <m>z^{\prime}(t)</m>, where
+        <m>z=x^{3}-y, x=(t-1)^{2}, y=t^{3}+1</m>, in the following ways:
+      </p>
+
+      <p>
+        (a) First make the substitutions <m>x=x(t)</m> and <m>y=y(t)</m>,
+        and write <m>z</m> as a function of <m>t</m>.
+      </p>
+
+      <p>(b) Using the Chain Rule.</p>
+    </statement>
+
+    <solution>
+      <p>
+        Substituting <m>x=(t-1)^2</m> and <m>y=t^3+1</m> into <m>z</m>
+        writes <m>z</m> as a function of just the variable <m>t</m>:
+        <md>
+          z(t) = \left( (t-1)^2 \right)^3 - (t^3+1) = (t-1)^6 - t^3 - 1
+        </md>
+        Differentiating with respect to <m>t</m>, using the single-variable
+        chain rule on <m>(t-1)^6</m>:
+        <md>
+          z'(t) = 6(t-1)^5 - 3t^2
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        The partial derivatives of <m>z</m> and the derivatives of <m>x</m>
+        and <m>y</m> are
+        <md>
+          \frac{\partial z}{\partial x} = 3x^2, \quad \frac{\partial z}{\partial y} = -1, \quad \frac{dx}{dt} = 2(t-1), \quad \frac{dy}{dt} = 3t^2
+        </md>
+        so by the Chain Rule
+        <md>
+          \frac{dz}{dt} = \frac{\partial z}{\partial x} \frac{dx}{dt} + \frac{\partial z}{\partial y} \frac{dy}{dt} = 3x^2 \cdot 2(t-1) + (-1) \cdot 3t^2
+        </md>
+        Substituting <m>x=(t-1)^2</m> to express everything in terms of
+        <m>t</m>:
+        <md>
+          z'(t) = 3\left( (t-1)^2 \right)^2 \cdot 2(t-1) - 3t^2 = 6(t-1)^5 - 3t^2
+        </md>
+        which agrees with the answer from part (a).
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      The Chain Rule is an important tool because in many applications, you
+      don't know specific expressions for <m>f(x, y), x(t)</m> or
+      <m>y(t)</m>, but do know the corresponding rates of change.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch03-03-ex-9-2">
+    <statement>
+      <p>
+        Consider the Cobb-Douglas Production function <m>P(L,K)</m> where
+        <m>P</m> represents production, <m>K</m> represents availability of
+        capital, and <m>L</m> represents availability of labor. Suppose that
+        both <m>L</m> and <m>K</m> are also functions of time <m>t</m>
+        (which makes sense as the availability of capital and labor may
+        change depending on time). Moreover, assume that
+      </p>
+
+      <p>
+        <ul>
+          <li>
+            <p>
+              <m>L</m> increases by 2 units when <m>t</m> increases 1 unit
+              and <m>P</m> increases by 7 units when <m>L</m> increases 1
+              unit.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>K</m> increases by 0.5 units when <m>t</m> increases 1 unit
+              and <m>P</m> increases by 3 units when <m>K</m> increases 1
+              unit.
+            </p>
+          </li>
+        </ul>
+      </p>
+
+      <p>
+        When <m>t</m> increases by 1 unit, how many units does <m>P</m>
+        increase by?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Here <m>P</m> depends on the intermediate variables <m>L</m> and
+        <m>K</m>, and both are functions of <m>t</m>, so by the Chain Rule
+        <md>
+          \frac{dP}{dt} = \frac{\partial P}{\partial L} \frac{dL}{dt} + \frac{\partial P}{\partial K} \frac{dK}{dt}
+        </md>
+        The given information is exactly these four rates of change:
+        <m>\frac{dL}{dt} = 2</m> and <m>\frac{\partial P}{\partial L} = 7</m>
+        from the first bullet point, and <m>\frac{dK}{dt} = 0.5</m> and
+        <m>\frac{\partial P}{\partial K} = 3</m> from the second. Hence
+        <md>
+          \frac{dP}{dt} = 7(2) + 3(0.5) = 14 + 1.5 = 15.5
+        </md>
+        so when <m>t</m> increases by 1 unit, production <m>P</m> increases
+        by approximately 15.5 units. Notice that we never needed explicit
+        formulas for <m>P(L,K)</m>, <m>L(t)</m>, or <m>K(t)</m>; the rates
+        of change were enough.
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      The Chain Rule formula works no matter how many <q>intermediate
+      variables</q> you have. For example, suppose <m>w=f(x, y, z)</m> and
+      <m>x=x(t), y=y(t)</m>, and <m>z=z(t)</m> (here, <m>x, y, z</m> are
+      your intermediate variables). Then
+      <md>
+        \frac{d f}{d t}=\frac{\partial f}{\partial x} \frac{d x}{d t}+\frac{\partial f}{\partial y} \frac{d y}{d t}+\frac{\partial f}{\partial z} \frac{d z}{d t}
+      </md>.
+    </p>
+  </note>
+
+  <remark>
+    <title>Chain Rule in Case 2</title>
+
+    <p>
+      Given a function <m>z=f(x, y)</m> where <m>x=x(s, t)</m> and
+      <m>y=y(s, t)</m>, then the partial derivatives of <m>f</m> with
+      respect to <m>s</m> and <m>t</m> have the following formulas:
+      <md>
+        <mrow>\amp \frac{\partial f}{\partial s}=\frac{\partial f}{\partial x} \frac{\partial x}{\partial s}+\frac{\partial f}{\partial y} \frac{\partial y}{\partial s}</mrow>
+        <mrow>\amp \frac{\partial f}{\partial t}=\frac{\partial f}{\partial x} \frac{\partial x}{\partial t}+\frac{\partial f}{\partial y} \frac{\partial y}{\partial t}</mrow>
+      </md>
+    </p>
+  </remark>
+
+  <note>
+    <p>
+      Here we must use the partial derivative notation since even if we
+      substitute <m>x=x(s, t)</m> and <m>y=y(s, t), f</m> is still a
+      function of two variables ( <m>s</m> and <m>t</m> ).
+    </p>
+  </note>
+
+  <figure xml:id="fig-ch03-03-chain-rule-case-2">
+    <caption>From OpenStax, Calculus Volume 3, Section 4.5</caption>
+
+    <image source="/images/2025_09_10_3643f349c031f748fd41g-4.png" width="50%">
+      <shortdescription>A dependency diagram showing z as a function of x and y, each depending on u and v, illustrating the chain rule case 2.</shortdescription>
+      <description>
+        <p>A dependency diagram showing <m>z</m> as a function of <m>x</m> and <m>y</m>, each depending on <m>u</m> and <m>v</m>, illustrating the chain rule case 2.</p>
+      </description>
+    </image>
+  </figure>
+
+  <example xml:id="example-ch03-03-ex-9-3">
+    <statement>
+      <p>
+        Let <m>z=cos(x) \sin (y^2)</m> where <m>x=s+t</m> and <m>y=s-t</m>.
+        Compute <m>z_{t}</m> in the following ways:
+      </p>
+
+      <p>
+        (a) First make the substitutions <m>x=x(s, t)</m> and
+        <m>y=y(s, t)</m>, and write <m>z</m> as a function of <m>s</m> and
+        <m>t</m>.
+      </p>
+
+      <p>(b) Using the Chain Rule.</p>
+    </statement>
+
+    <solution>
+      <p>
+        Substituting <m>x=s+t</m> and <m>y=s-t</m> into <m>z</m>:
+        <md>
+          z(s,t) = \cos(s+t) \sin\left( (s-t)^2 \right)
+        </md>
+        Differentiating with respect to <m>t</m> (treating <m>s</m> as a
+        constant), using the product rule and the single-variable chain
+        rule:
+        <md alignment="gather">
+          <mrow>z_t = -\sin(s+t) \sin\left( (s-t)^2 \right) + \cos(s+t) \cos\left( (s-t)^2 \right) \cdot 2(s-t)(-1)</mrow>
+          <mrow>= -\sin(s+t) \sin\left( (s-t)^2 \right) - 2(s-t) \cos(s+t) \cos\left( (s-t)^2 \right)</mrow>
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        The partial derivatives of <m>z</m>, <m>x</m>, and <m>y</m> are
+        <md>
+          \frac{\partial z}{\partial x} = -\sin(x) \sin(y^2), \quad \frac{\partial z}{\partial y} = 2y \cos(x) \cos(y^2), \quad \frac{\partial x}{\partial t} = 1, \quad \frac{\partial y}{\partial t} = -1
+        </md>
+        so by the Chain Rule
+        <md>
+          z_t = \frac{\partial z}{\partial x} \frac{\partial x}{\partial t} + \frac{\partial z}{\partial y} \frac{\partial y}{\partial t} = -\sin(x) \sin(y^2)(1) + 2y \cos(x) \cos(y^2)(-1)
+        </md>
+        Substituting <m>x=s+t</m> and <m>y=s-t</m>:
+        <md>
+          z_t = -\sin(s+t) \sin\left( (s-t)^2 \right) - 2(s-t) \cos(s+t) \cos\left( (s-t)^2 \right)
+        </md>
+        which agrees with the answer from part (a).
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <p>
+      This formula works no matter how many <q>intermediate variables</q>
+      you have. For example, suppose <m>w=f(x, y, z)</m> and
+      <m>x=x(s, t), y=y(s, t)</m>, and <m>z=z(s, t)</m> (here,
+      <m>x, y, z</m> are your intermediate variables). Then
+      <md>
+        <mrow>\amp \frac{\partial w}{\partial s}=\frac{\partial w}{\partial x} \frac{\partial x}{\partial s}+\frac{\partial w}{\partial y} \frac{\partial y}{\partial s}+\frac{\partial w}{\partial z} \frac{\partial z}{\partial s}</mrow>
+        <mrow>\amp \frac{\partial w}{\partial t}=\frac{\partial w}{\partial x} \frac{\partial x}{\partial t}+\frac{\partial w}{\partial y} \frac{\partial y}{\partial t}+\frac{\partial w}{\partial z} \frac{\partial z}{\partial t}</mrow>
+      </md>
+    </p>
+  </remark>
+
+  <note>
+    <title>Restricting the Domain of a Surface to a Curve</title>
+
+    <p>
+      Given a surface <m>z=f(x, y)</m>, we sometimes are only interested in
+      certain parts of the surface. Specifically, we can restrict the inputs
+      of a surface to a curve in its domain by using appropriate
+      substitutions <m>x=x(t)</m> and <m>y=y(t)</m>.
+    </p>
+  </note>
+
+  <example xml:id="example-ch03-03-ex-9-4">
+    <statement>
+      <p>
+        Suppose we are walking on the surface of a part of a sphere
+        <m>z=\sqrt{4-(x-1)^{2}-(y-2)^{2}}</m> but we only want to walk above
+        the line <m>y= x+1</m> in its domain. We can do this by substituting
+        <m>x=t</m> and <m>y= t+1</m>.
+      </p>
+
+      <figure xml:id="fig-ch03-03-ex-9-4">
+        <caption>The sphere along with curve on the sphere above the line parametrised by x = t, y = t plus 1</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_10_3643f349c031f748fd41g-6. -->
+        <interactive xml:id="interactive-ch03-03-ex-9-4" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_09_10_3643f349c031f748fd41g-6.png">
+              <shortdescription>The sphere along with curve on the sphere above the line parametrised by x = t, y = t plus 1</shortdescription>
+              <description>
+                <p>The sphere along with curve on the sphere above the line parametrised by <m>x = t</m>, <m>y = t+1</m></p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        <m>y= x+1</m> in purple and <m>z(t, t+1)</m> in yellow
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Making the substitutions <m>x=t</m> and <m>y=t+1</m> restricts the
+        inputs of the surface to the line <m>y=x+1</m>, and the height of
+        the surface becomes a function of the single variable <m>t</m>:
+        <md>
+          z(t) = \sqrt{4 - (t-1)^2 - \left( (t+1)-2 \right)^2} = \sqrt{4 - (t-1)^2 - (t-1)^2} = \sqrt{4 - 2(t-1)^2}
+        </md>
+        This is the yellow curve in the picture. Note that for <m>z(t)</m>
+        to be defined we need
+        <m>4 - 2(t-1)^2 \geq 0 \Rightarrow (t-1)^2 \leq 2 \Rightarrow 1-\sqrt{2} \leq t \leq 1+\sqrt{2}</m>;
+        these are exactly the values of <m>t</m> for which the line lies
+        underneath the part of the sphere.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch03-03-ex-9-5">
+    <statement>
+      <p>
+        Consider the surface of a part of a sphere
+        <m>z=\sqrt{4-(x-1)^{2}-(y-2)^{2}}</m>  and the curve <m>C</m> in the
+        <m>x y</m>-plane given parametrically as <m>x= \cos (t)+0.5</m> and
+        <m>y= \sin (t)+1.5</m>, where <m>0 \leq t \leq 2 \pi</m>.
+      </p>
+
+      <p>(a) Find <m>z^{\prime}(t)</m>.</p>
+
+      <figure xml:id="fig-ch03-03-ex-9-5">
+        <caption>The sphere along with curve on the sphere above the circle parametrised by x = cosine of t plus 0.5, y = sine of t plus 1.5</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_10_3643f349c031f748fd41g-7. -->
+        <interactive xml:id="interactive-ch03-03-ex-9-5" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_09_10_3643f349c031f748fd41g-7.png">
+              <shortdescription>The sphere along with curve on the sphere above the circle parametrised by x = cosine of t plus 0.5, y = sine of t plus 1.5</shortdescription>
+              <description>
+                <p>The sphere along with curve on the sphere above the circle parametrised by <m>x = \cos(t)+0.5</m>, <m>y = \sin(t)+1.5</m></p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        <m>(x-0.5)^2+(y-1.5)^2=1</m> in purple and
+        <m>z( \cos (t)+0.5,  \sin (t)+1.5)</m> in yellow. blue
+      </p>
+
+      <p>
+        (b) Imagine that you are walking on the surface directly above the
+        curve <m>C</m> (the surface restricted to inputs coming from
+        <m>C</m> ). Find the values of <m>t</m> for which you are walking
+        uphill ( <m>z(t)</m> is increasing).
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We use the Chain Rule. Treating <m>y</m> and <m>x</m> as constants
+        respectively, the partial derivatives of <m>z</m> are
+        <md>
+          \frac{\partial z}{\partial x} = \frac{-(x-1)}{\sqrt{4-(x-1)^2-(y-2)^2}}, \quad \frac{\partial z}{\partial y} = \frac{-(y-2)}{\sqrt{4-(x-1)^2-(y-2)^2}}
+        </md>
+        and the derivatives of the parametrization are
+        <m>\frac{dx}{dt} = -\sin(t)</m> and <m>\frac{dy}{dt} = \cos(t)</m>.
+        Hence
+        <md>
+          z'(t) = \frac{\partial z}{\partial x} \frac{dx}{dt} + \frac{\partial z}{\partial y} \frac{dy}{dt} = \frac{(x-1)\sin(t) - (y-2)\cos(t)}{\sqrt{4-(x-1)^2-(y-2)^2}}
+        </md>
+        Substituting <m>x-1 = \cos(t)-0.5</m> and <m>y-2 = \sin(t)-0.5</m>,
+        the numerator becomes
+        <md alignment="gather">
+          <mrow>\left( \cos(t)-0.5 \right)\sin(t) - \left( \sin(t)-0.5 \right)\cos(t)</mrow>
+          <mrow>= \cos(t)\sin(t) - 0.5\sin(t) - \sin(t)\cos(t) + 0.5\cos(t) = 0.5\left( \cos(t) - \sin(t) \right)</mrow>
+        </md>
+        and the expression under the square root becomes
+        <md alignment="gather">
+          <mrow>4 - \left( \cos(t)-0.5 \right)^2 - \left( \sin(t)-0.5 \right)^2 = 4 - \left( \cos^2(t) + \sin^2(t) - \cos(t) - \sin(t) + 0.5 \right)</mrow>
+          <mrow>= 2.5 + \cos(t) + \sin(t)</mrow>
+        </md>
+        Hence
+        <md>
+          z'(t) = \frac{0.5\left( \cos(t) - \sin(t) \right)}{\sqrt{2.5 + \cos(t) + \sin(t)}}
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        We are walking uphill when <m>z'(t) \gt 0</m>. Since
+        <m>\cos(t)+\sin(t) \geq -2</m>, the denominator satisfies
+        <m>\sqrt{2.5+\cos(t)+\sin(t)} \geq \sqrt{2.5-2} \gt 0</m>, so the
+        sign of <m>z'(t)</m> is the sign of the numerator
+        <m>0.5\left( \cos(t)-\sin(t) \right)</m>. Another argument that
+        arrives in the same conclusion is that denominator is always
+        non-negative (as a square root) and well defined (not zero). Solving
+        <m>\cos(t) = \sin(t)</m> on <m>[0, 2\pi]</m> gives
+        <m>\tan(t) = 1 \Rightarrow t = \frac{\pi}{4}</m> or
+        <m>t = \frac{5\pi}{4}</m>. Testing a value in each of the resulting
+        intervals: at <m>t=0 \in [0,\frac{\pi}{4}]</m> we get
+        <m>\cos(0)-\sin(0) = 1 \gt 0</m>; at
+        <m>t=\pi\in [\frac{\pi}{4},\frac{5\pi}{4}]</m> we get
+        <m>\cos(\pi)-\sin(\pi) = -1 \lt 0</m>; and at
+        <m>t=\frac{3\pi}{2}\in [\frac{5\pi}{4},2\pi]</m> we get
+        <m>\cos\left(\frac{3\pi}{2}\right)-\sin\left(\frac{3\pi}{2}\right) = 0-(-1) = 1 \gt 0</m>.
+        Hence <m>z(t)</m> is increasing, and we are walking uphill, for
+        <md>
+          0 \leq t \lt \frac{\pi}{4} \quad \text{and} \quad \frac{5\pi}{4} \lt t \leq 2\pi
+        </md>
+      </p>
+    </solution>
+  </example>
+
+</section>

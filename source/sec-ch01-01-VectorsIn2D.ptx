@@ -82,10 +82,11 @@
             Two vectors drawn in the <m>xy</m>-plane: <m> \vec{PQ} </m> with initial point  <m>(0,0)</m> and terminal point <m>(3,2)</m>, and vector <m> \vec{RS} </m> with initial point <m>(0.5,2)</m> and terminal point <m>(3.5,4)</m>.
         </caption>
         <interactive xml:id="interactive-ch01-01-ex-1-1" width="85%" aspect="4:3"
-          iframe="https://www.desmos.com/calculator/ffkjxxfmap?embed">
+          desmos="ffkjxxfmap">
           <instructions>
             <p>
-              The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/ffkjxxfmap" target="_blank" rel="noopener noreferrer">link to the graph</url>
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+              <url href="https://www.desmos.com/calculator/ffkjxxfmap" target="_blank" rel="noopener noreferrer">link to the graph</url>
             </p>
           </instructions>
 
@@ -197,10 +198,11 @@
         </caption>
 
         <interactive xml:id="interactive-ch01-01-ex-1-2" width="85%" aspect="4:3"
-          iframe="https://www.desmos.com/calculator/jppqa3slgf?embed">
+          desmos="jppqa3slgf">
           <instructions>
             <p>
-              The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/jppqa3slgf" target="_blank" rel="noopener noreferrer">link to the graph</url>
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+              <url href="https://www.desmos.com/calculator/jppqa3slgf" target="_blank" rel="noopener noreferrer">link to the graph</url>
             </p>
           </instructions>
 
@@ -283,10 +285,11 @@
         </caption>
 
         <interactive xml:id="interactive-ch01-01-ex-1-3" width="85%" aspect="4:3"
-          iframe="https://www.desmos.com/calculator/ysp6xaf8mq?embed">
+          desmos="ysp6xaf8mq">
           <instructions>
             <p>
-              The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/ysp6xaf8mq" target="_blank" rel="noopener noreferrer">link to the graph</url>
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+              <url href="https://www.desmos.com/calculator/ysp6xaf8mq" target="_blank" rel="noopener noreferrer">link to the graph</url>
             </p>
           </instructions>
 
@@ -374,10 +377,11 @@
         </caption>
 
         <interactive xml:id="interactive-ch01-01-ex-1-4" width="85%" aspect="4:2"
-          iframe="https://www.desmos.com/calculator/u2zjru9ihk?embed">
+          desmos="u2zjru9ihk">
           <instructions>
             <p>
-              The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/u2zjru9ihk" target="_blank" rel="noopener noreferrer">link to the graph</url>
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+              <url href="https://www.desmos.com/calculator/u2zjru9ihk" target="_blank" rel="noopener noreferrer">link to the graph</url>
             </p>
           </instructions>
 
@@ -530,7 +534,8 @@
 </figure>
 
 <figure xml:id="Vector-Addition-Animation-Print" component="print">
-    <caption>For an animated version of this figure, see the web version of this figure at the <url href="https://kostaskydoniatis-lang.github.io/PreText-Calculus-III--test" target="_blank" rel="noopener noreferrer">online notes</url></caption>
+    <caption>For an animated version of this figure, see the web version of this figure at the
+    <url href="https://kostaskydoniatis-lang.github.io/PreText-Calculus-III--test" target="_blank" rel="noopener noreferrer">online notes</url></caption>
     <image source="images/GIF/L1-AnimatedExample.jpg" width="50%">
         <shortdescription>
             An animation that slides vector u from the origin to the tip of vector v, showing the sum u plus v.
@@ -554,10 +559,11 @@
         </caption>
 
         <interactive xml:id="interactive-ch01-01-ex-1-6" width="85%" aspect="4:3"
-          iframe="https://www.desmos.com/calculator/bdv2oivnna?embed">
+          desmos="bdv2oivnna">
           <instructions>
             <p>
-              The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/bdv2oivnna" target="_blank" rel="noopener noreferrer">link to the graph</url>
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+              <url href="https://www.desmos.com/calculator/bdv2oivnna" target="_blank" rel="noopener noreferrer">link to the graph</url>
             </p>
           </instructions>
 
@@ -687,7 +693,8 @@
 </figure>
 
 <figure xml:id="Vector-Multiplication-Animation-Print" component="print">
-    <caption>For an animated version of this figure, see the web version of this figure at the <url href="https://kostaskydoniatis-lang.github.io/PreText-Calculus-III--test" target="_blank" rel="noopener noreferrer">online notes</url></caption>
+    <caption>For an animated version of this figure, see the web version of this figure at the
+    <url href="https://kostaskydoniatis-lang.github.io/PreText-Calculus-III--test" target="_blank" rel="noopener noreferrer">online notes</url></caption>
     <image source="images/GIF/L2-AnimatedExample.jpg" width="50%">
         <shortdescription>
             An animation that illustrates the geometric interpretation of multiplying a vector u by a scalar c, showing how the vector is stretched, compressed, or flipped depending on the value of c.
@@ -730,10 +737,11 @@
             The vector <m>\vec{v}</m> with coordinates <m>x = -1, y = 1</m>, and the scaled vector <m>4\vec{v}</m> with coordinates <m>x = -4, y = 4</m>.
             </caption>
             <interactive xml:id="interactive-ch01-01-ex-1-8a" width="85%" aspect="4:3"
-              iframe="https://www.desmos.com/calculator/wyy5tliu4r?embed">
+              desmos="wyy5tliu4r">
               <!--<instructions>
                 <p>
-                  The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/wyy5tliu4r" target="_blank" rel="noopener noreferrer">link to the graph</url>
+                  You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+                  <url href="https://www.desmos.com/calculator/wyy5tliu4r" target="_blank" rel="noopener noreferrer">link to the graph</url>
                 </p>
               </instructions>-->
 
@@ -755,10 +763,11 @@
             </caption>
 
             <interactive xml:id="interactive-ch01-01-ex-1-8b" width="85%" aspect="4:3"
-              iframe="https://www.desmos.com/calculator/9hybq5dgmi?embed">
+              desmos="9hybq5dgmi">
               <!--<instructions>
                 <p>
-                  The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/9hybq5dgmi" target="_blank" rel="noopener noreferrer">link to the graph</url>
+                  You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+                  <url href="https://www.desmos.com/calculator/9hybq5dgmi" target="_blank" rel="noopener noreferrer">link to the graph</url>
                 </p>
               </instructions>-->
 
@@ -782,7 +791,9 @@
 
       </figure>
       <p>
-         The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/wyy5tliu4r" target="_blank" rel="noopener noreferrer">link to the left graph</url>, <url href="https://www.desmos.com/calculator/9hybq5dgmi" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+         You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+         <url href="https://www.desmos.com/calculator/wyy5tliu4r" target="_blank" rel="noopener noreferrer">link to the left graph</url>,
+         <url href="https://www.desmos.com/calculator/9hybq5dgmi" target="_blank" rel="noopener noreferrer">link to the right graph</url>
       </p>
     </solution>
   </example>
@@ -905,10 +916,11 @@
         </caption>
 
         <interactive xml:id="interactive-ch01-01-ex-1-10" width="60%" aspect="3:2"
-          iframe="https://www.desmos.com/calculator/vqavop8m24?embed">
+          desmos="vqavop8m24">
           <instructions>
             <p>
-              The graph above shows only the plot; you can drag and zoom it. To see the expressions behind it, or to save a copy and create your own version of the graph, open it in a new page from here: <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url>
+              You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+              <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url>
             </p>
           </instructions>
 

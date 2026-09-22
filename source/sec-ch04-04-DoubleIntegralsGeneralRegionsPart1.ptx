@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch04-04-DoubleIntegralsGeneralRegionsPart1.ptx : converted from
+  "17. Double Integrals (General Regions) Part 1 - Solutions.tex" by the
+  bbeaccess-pretext skill (2026-09-17). Fragment for xi:include into
+  ch-04-Integration.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch04-04 (lecture file 17, chapter 4) on your instruction.
+     TITLE: the .tex \chapter is again "Double Integrals in Cartesian Coordinates"
+     with a centred bold "General Regions" line; <title> = the \chapter title and
+     <subtitle>General Regions</subtitle> (same title as sec-ch04-03; rename if you
+     want distinct entries in the table of contents).
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): all ten pictures - ...8980g-01-1.png (region
+     between f and g, 2D), ...8980g-02-1.png (rectangles inside R, 2D), ...8980g-02.png
+     and ...8980g-03-1.png (cross-section pairs, 3D), ...8980g-03.png (Example 17.1),
+     ...8980g-04.png (17.2, 3D), ...8980g-07.png (17.3, 3D), ...8980g-08.png (left/right
+     bounded region, 2D), ...8980g-10.png (17.5, 2D), ...8980g-13.png (17.7, 2D).
+  3. Image names: the .tex "(1)" parts are "-1" in assets/images (...-01(1) -> -01-1,
+     -02(1) -> -02-1, -03(1) -> -03-1). All ten are .png.
+  4. Source captions NOT carried (the caption rule replaces them): "Left: a cross
+     section with x=c_1; Right: the net area of the cross section" (picture ...-02) and
+     "Left: a cross section for a different value of x; Right: the net area of the
+     cross section" (picture ...-03-1). Note the two alt texts and the two captions
+     are crossed in the .tex (the alt of -02 says "for a given value of x", its
+     caption says "x=c_1"; the alt of -03-1 says "x equals c 1", its caption says "a
+     different value of x"); kept as written. The legends under the Example 17.2, 17.3
+     and 17.5 pictures are kept as a <p> after each figure inside the statement.
+  5. The commented-out figure after the second note (%\includegraphics{...-01} with
+     the caption "Portion of R covered with rectangles (completely in R) in orange") is
+     kept as an XML comment where it stood. The ...-02-1 figure has an empty
+     \captionsetup and no \caption in the .tex.
+  6. Alt-text quirks kept verbatim: several alt texts have no final period ("The area
+     between the function f and the function g", "The area of the cross section",
+     "The surface of the function f and the net volume" twice, "The region R and its
+     partition into R 1 and R 2", "The domain of integration"); the ...-02-1 alt ends
+     "inside R. " with a trailing space, which is trimmed here.
+  7. The note before "In this case, we use cross sections parallel to the x-axis" says
+     "functions of $\mathbf{y}$" - a bold variable, not a vector; kept as \mathbf{y}
+     (as in sec-ch03-02). No other \mathbf in the file.
+  8. Figure placement: the pictures of Examples 17.1, 17.2, 17.3, 17.5, 17.7 are inside
+     their statements where the .tex has them; the ...-08 picture stays inside its
+     <note>; the others are section-level figures where the .tex has them.
+  9. Cross-references: "the result from Example 17.3" and "the net volume from Example
+     17.5 Use the order dxdy" -> <xref>s (the missing period after "17.5" preserved).
+     Relative references left as prose: "as shown below" (three times), "from step 2",
+     "as mentioned above".
+ 10. Single-line align* blocks (17.1, 17.2, 17.3, 17.4) are one-line <md>s; the
+     two-row gather* of 17.4 is an <md alignment="gather">. Trailing periods/commas
+     moved after </md>.
+ 11. Typeset <description>s are the conversion's own text; review.
+ 12. Template width constants replace the .tex widths (max width=0.4/0.3/0.75
+     \textwidth, 0.75\textwidth, 0.5\textwidth).
+ 13. Source quirks preserved: "center , alt={...}" spacing in the .tex (dropped);
+     "In this section we will do the same thing we did in the previous:"; the
+     Partitioning remark ends with a comma; the second integral of Example 17.5's
+     answer reads "dx dy" though the order is dy dx (copied verbatim); "(1, 2)" with no
+     final period (17.6); "i.e.\ " is "i.e. "; "the horizontal lines intersects second";
+     "wedgelike"; both remarks share the title "Evaluating Double Integrals as
+     Iterated Integrals".
+ 14. Every \newpage/\vspace, the figure[H]/center wrappers, \captionsetup and \\
+     dropped.
+-->
+
+<section xml:id="sec-ch04-04-DoubleIntegralsGeneralRegionsPart1" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Double Integrals in Cartesian Coordinates</title>
+  <subtitle>General Regions</subtitle>
+
+  <note>
+    <p>
+      In this section we will do the same thing we did in the previous: We
+      will find the net volume bounded by a surface <m>f(x, y)</m> and the
+      <m>x y</m>-plane, restricted to a region <m>R</m> in its domain.
+    </p>
+  </note>
+
+  <p>
+    However, we will now consider regions in the plane whose upper and
+    lower bounds are given by curves (rather than straight lines as with
+    rectangles), as shown below:
+  </p>
+
+  <figure xml:id="fig-ch04-04-region-between-curves">
+    <caption>The area between the function f and the function g</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_10_21_8b2f41f086d94a698980g-01(1). -->
+    <interactive xml:id="interactive-ch04-04-region-between-curves" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_10_21_8b2f41f086d94a698980g-01-1.png">
+          <shortdescription>The area between the function f and the function g</shortdescription>
+          <description>
+            <p>The area between the function <m>f</m> and the function <m>g</m></p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <note>
+    <p>
+      The process to find the net volume is exactly the same as before. We
+      still partition the region <m>R</m> into rectangles, although at
+      first they won't fit inside very nicely.
+    </p>
+  </note>
+
+  <!--\begin{figure}[H]
+  \includegraphics[max width=0.5\textwidth, center]{2025_10_21_8b2f41f086d94a698980g-01}
+  \caption*{
+  Portion of $R$ covered with rectangles (completely in $R$ ) in orange}
+  \end{figure}-->
+
+  <p>
+    As we increase the number of rectangles, we will get a better fit. When
+    we take the number of rectangles to approach infinity, we theoretically
+    cover the whole region <m>R</m>.
+  </p>
+
+  <figure xml:id="fig-ch04-04-rectangles-inside-region">
+    <caption>Portion of region R covered with rectangles that lie completely inside R.</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_10_21_8b2f41f086d94a698980g-02(1). -->
+    <interactive xml:id="interactive-ch04-04-rectangles-inside-region" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_10_21_8b2f41f086d94a698980g-02-1.png">
+          <shortdescription>Portion of region R covered with rectangles that lie completely inside R.</shortdescription>
+          <description>
+            <p>Portion of region <m>R</m> covered with rectangles that lie completely inside <m>R</m>.</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <p>
+    Since the height of each rectangular prism is still given by
+    <m>f\left(x_{k}, y_{k}\right)</m> (where <m>\left(x_{k}, y_{k}\right)</m>
+    is a point in the <m>k</m>-th rectangle) and the area of each rectangle
+    is still <m>A_{k}=\Delta x_{k} \Delta y_{k}</m>, we get the same
+    formula for the net volume:
+    <md>
+      V=\lim _{n \rightarrow \infty} \sum_{k=1}^{n} f\left(x_{k}, y_{k}\right) \Delta A_{k}=\iint_{R} f(x, y) d A
+    </md>
+  </p>
+
+  <note>
+    <title>Evaluating Double Integrals over General Regions</title>
+
+    <p>
+      As before, we will partition the net volume into cross sections, with
+      net area <m>A(x)</m>, parallel to the <m>y</m>-axis (keep <m>x</m> as
+      a constant); the difference is the upper and lower bounds of the
+      region <m>R</m> are now functions <m>g(x)</m> and <m>h(x)</m> (instead
+      of constants)
+    </p>
+  </note>
+
+  <figure xml:id="fig-ch04-04-cross-section-1">
+    <caption>Left: a cross section for a given value of x; Right: the net area of the cross section</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_10_21_8b2f41f086d94a698980g-02. -->
+    <interactive xml:id="interactive-ch04-04-cross-section-1" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_10_21_8b2f41f086d94a698980g-02.png">
+          <shortdescription>Left: a cross section for a given value of x; Right: the net area of the cross section</shortdescription>
+          <description>
+            <p>Left: a cross section for a given value of <m>x</m>; Right: the net area of the cross section</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <figure xml:id="fig-ch04-04-cross-section-2">
+    <caption>Left: a cross section with x equals c 1; Right: the net area of the cross section</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_10_21_8b2f41f086d94a698980g-03(1). -->
+    <interactive xml:id="interactive-ch04-04-cross-section-2" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_10_21_8b2f41f086d94a698980g-03-1.png">
+          <shortdescription>Left: a cross section with x equals c 1; Right: the net area of the cross section</shortdescription>
+          <description>
+            <p>Left: a cross section with <m>x=c_1</m>; Right: the net area of the cross section</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <example xml:id="example-ch04-04-ex-17-1">
+    <statement>
+      <p>
+        Suppose we want to integrate the function <m>f(x, y)=3 x+ y</m> on
+        the region <m>R</m> bounded above by <m>y=x</m> and below by
+        <m>y=\frac{1}{2} x</m>, for <m>0 \leq x \leq 2</m>, as shown below.
+        Find the net area of the cross section corresponding to <m>x=1</m>.
+      </p>
+
+      <figure xml:id="fig-ch04-04-ex-17-1">
+        <caption>The area of the cross section</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_21_8b2f41f086d94a698980g-03. -->
+        <interactive xml:id="interactive-ch04-04-ex-17-1" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_21_8b2f41f086d94a698980g-03.png">
+              <shortdescription>The area of the cross section</shortdescription>
+              <description>
+                <p>The area of the cross section</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        At <m>x=1</m> the region <m>R</m> has <m>y</m> ranging from the
+        lower bound <m>y=\frac{1}{2}x</m> to the upper bound <m>y=x</m>.
+        Substituting <m>x=1</m> gives <m>y</m> ranging from
+        <m>\frac{1}{2}</m> to <m>1</m>. The net area of the cross section
+        is the integral of <m>f(1, y) = 3 + y</m> with respect to <m>y</m>
+        over this interval:
+        <md>
+          A(1) = \int_{1/2}^{1} (3 + y)\, dy = \left. 3y + \frac{y^2}{2} \right|_{1/2}^{1} = \left(3 + \frac{1}{2}\right) - \left(\frac{3}{2} + \frac{1}{8}\right) = \frac{7}{2} - \frac{13}{8} = \frac{28}{8} - \frac{13}{8} = \frac{15}{8}
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    More generally, to find the net area of an arbitrary cross section, we
+    integrate <m>f(x, y)</m> with respect to <m>y</m> with the bounds of
+    integration given by the upper and lower bounds of <m>R</m>. That is,
+    <md>
+      A(x)=\int_{g(x)}^{h(x)} f(x, y) d y
+    </md>
+  </p>
+
+  <p>
+    Consequently, the net volume of the whole region is given by
+    <md>
+      V=\int_{a}^{b} A(x) d x
+    </md>
+  </p>
+
+  <remark>
+    <title>Evaluating Double Integrals as Iterated Integrals</title>
+
+    <p>
+      To integrate a continuous function <m>f(x, y)</m> over a region
+      <m>R</m> bounded by continuous functions <m>y=g(x)</m> and
+      <m>y=h(x)</m> from <m>x=a</m> to <m>x=b</m>, use the formula
+      <md>
+        \iint_{R} f(x, y) d A=\int_{a}^{b} \int_{g(x)}^{h(x)} f(x, y) d y d x
+      </md>
+    </p>
+  </remark>
+
+  <note>
+    <p>
+      To find the bounds <m>y=g(x)</m> and <m>y=h(x)</m> when integrating
+      in the order <m>d y d x</m> :
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p>Draw a sketch of the region <m>R</m> in the <m>x y</m>-plane.</p>
+        </li>
+
+        <li>
+          <p>Draw vertical lines from bottom to top.</p>
+        </li>
+
+        <li>
+          <p>
+            Whichever boundary the vertical lines (from step 2) intersect
+            first (as they enter the region) is the lower bound
+            <m>y=g(x)</m> of the region.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Whichever boundary the vertical lines (from step 2) intersect
+            second (as they leave the region) is the upper bound
+            <m>y=h(x)</m> of the region.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </note>
+
+  <example xml:id="example-ch04-04-ex-17-2">
+    <statement>
+      <p>
+        Evaluate <m>\iint_{R} 2 x y d A</m> where <m>R</m> is the region
+        bounded by the parabolas <m>y=\sqrt{x}</m> and <m>y=x^{2}</m>.
+      </p>
+
+      <figure xml:id="fig-ch04-04-ex-17-2">
+        <caption>The surface of the function f and the net volume</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_21_8b2f41f086d94a698980g-04. -->
+        <interactive xml:id="interactive-ch04-04-ex-17-2" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_21_8b2f41f086d94a698980g-04.png">
+              <shortdescription>The surface of the function f and the net volume</shortdescription>
+              <description>
+                <p>The surface of the function <m>f</m> and the net volume</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        The surface <m>f(x, y)= xy</m> in blue and the net volume in orange
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        First we find where the two curves intersect to determine the
+        <m>x</m>-bounds. Setting <m>\sqrt{x} = x^2</m> gives <m>x = x^4</m>,
+        hence <m>x(x^3-1)=0</m>, so <m>x=0</m> or <m>x=1</m>. The curves
+        meet at <m>(0,0)</m> and <m>(1,1)</m>, giving <m>0\leq x\leq 1</m>.
+        For a fixed <m>x\in[0,1]</m> a vertical line enters the region at
+        <m>y=x^2</m> (the lower boundary, since <m>x^2\leq\sqrt{x}</m> on
+        <m>[0,1]</m>) and exits at <m>y=\sqrt{x}</m> (the upper boundary).
+        Hence
+        <md>
+          \iint_{R} 2xy\, dA = \int_{0}^{1} \int_{x^2}^{\sqrt{x}} 2xy\, dy\, dx
+        </md>.
+        Evaluating the inner integral with <m>x</m> treated as a constant:
+        <md>
+          \int_{x^2}^{\sqrt{x}} 2xy\, dy = \left. xy^2 \right|_{x^2}^{\sqrt{x}} = x(\sqrt{x})^2 - x(x^2)^2 = x^2 - x^5
+        </md>.
+        Then integrating with respect to <m>x</m>:
+        <md>
+          \int_{0}^{1} (x^2 - x^5)\, dx = \left. \frac{x^3}{3} - \frac{x^6}{6} \right|_{0}^{1} = \frac{1}{3} - \frac{1}{6} = \frac{1}{6}
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch04-04-ex-17-3">
+    <statement>
+      <p>
+        Find the (net) volume of the prism whose base is the triangle in
+        the <m>x y</m>-plane bounded by <m>x</m>-axis and the lines
+        <m>y=x</m> and <m>x=1</m> and whose top lies on the plane
+        <m>z=6-3 x^2-2y</m>.
+      </p>
+
+      <figure xml:id="fig-ch04-04-ex-17-3">
+        <caption>The surface of the function f and the net volume</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_21_8b2f41f086d94a698980g-07. -->
+        <interactive xml:id="interactive-ch04-04-ex-17-3" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_21_8b2f41f086d94a698980g-07.png">
+              <shortdescription>The surface of the function f and the net volume</shortdescription>
+              <description>
+                <p>The surface of the function <m>f</m> and the net volume</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        The surface <m>f(x, y)=6-3 x^2-2y</m> in blue and the net volume in
+        orange
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The three boundary lines <m>y=0</m>, <m>y=x</m>, and <m>x=1</m> meet
+        at <m>(0,0)</m>, <m>(1,0)</m>, and <m>(1,1)</m>. For a fixed
+        <m>x\in[0,1]</m> a vertical line enters the triangle at <m>y=0</m>
+        and exits at <m>y=x</m>, giving the bounds <m>0\leq y\leq x</m> and
+        <m>0\leq x\leq 1</m>. Hence
+        <md>
+          V = \int_{0}^{1} \int_{0}^{x} (6 - 3x^2 - 2y)\, dy\, dx
+        </md>.
+        Evaluating the inner integral:
+        <md>
+          \int_{0}^{x} (6 - 3x^2 - 2y)\, dy = \left. (6 - 3x^2)y - y^2 \right|_{0}^{x} = (6 - 3x^2)x - x^2 = 6x - 3x^3 - x^2
+        </md>.
+        Then integrating with respect to <m>x</m>:
+        <md>
+          \int_{0}^{1} (6x - 3x^3 - x^2)\, dx = \left. 3x^2 - \frac{3x^4}{4} - \frac{x^3}{3} \right|_{0}^{1} = 3 - \frac{3}{4} - \frac{1}{3} = \frac{36}{12} - \frac{9}{12} - \frac{4}{12} = \frac{23}{12}
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      Sometimes the region of integration <m>R</m> is more easily described
+      as being bounded to the left and right instead of below and above. In
+      this case, the boundaries are functions of <m>\mathbf{y}</m>, as shown
+      below:
+    </p>
+
+    <figure xml:id="fig-ch04-04-region-left-right">
+      <caption>The area between the function f and the function g</caption>
+
+      <!-- This interactive is PENDING, it should correspond to 2025_10_21_8b2f41f086d94a698980g-08. -->
+      <interactive xml:id="interactive-ch04-04-region-left-right" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <instructions>
+          <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+          <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+        </instructions>
+        <static>
+          <image source="/images/2025_10_21_8b2f41f086d94a698980g-08.png">
+            <shortdescription>The area between the function f and the function g</shortdescription>
+            <description>
+              <p>The area between the function <m>f</m> and the function <m>g</m></p>
+            </description>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+  </note>
+
+  <p>
+    In this case, we use cross sections parallel to the <m>x</m>-axis
+    (treat <m>y</m> as a constant). Now, we have that the net area of the
+    cross sections is given by
+    <md>
+      A(y)=\int_{g(y)}^{h(y)} f(x, y) d x
+    </md>
+    and the net volume is given by
+    <md>
+      V=\int_{c}^{d} A(y) d y
+    </md>
+  </p>
+
+  <remark>
+    <title>Evaluating Double Integrals as Iterated Integrals</title>
+
+    <p>
+      To integrate a continuous function <m>f(x, y)</m> over a region
+      <m>R</m> bounded by continuous functions <m>x=g(y)</m> and
+      <m>x=h(y)</m> from <m>y=c</m> to <m>y=d</m>, use the formula
+      <md>
+        \iint_{R} f(x, y) d A=\int_{c}^{d} \int_{g(y)}^{h(y)} f(x, y) d x d y
+      </md>
+    </p>
+  </remark>
+
+  <note>
+    <p>
+      To find the bounds <m>x=g(y)</m> and <m>x=h(y)</m> when integrating
+      in the order <m>d x d y</m> :
+    </p>
+
+    <p>
+      <ol>
+        <li>
+          <p>Draw a sketch of the region <m>R</m> in the <m>x y</m>-plane.</p>
+        </li>
+
+        <li>
+          <p>Draw horizontal lines from left to right.</p>
+        </li>
+
+        <li>
+          <p>
+            Whichever boundary the horizontal lines intersect first (as
+            they enter the region) is the lower (leftmost) bound
+            <m>x=g(y)</m> of the region.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Whichever boundary the horizontal lines intersects second (as
+            they leave the region) is the upper (rightmost) bound
+            <m>x=h(y)</m> of the region.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </note>
+
+  <example xml:id="example-ch04-04-ex-17-4">
+    <statement>
+      <p>
+        Find the (net) volume of the prism whose base is the triangle in
+        the <m>x y</m>-plane bounded by <m>x</m>-axis and the lines
+        <m>y=x</m> and <m>x=1</m> and whose top lies on the plane
+        <m>z=6-3 x^2-2y</m> (in the order <m>d x d y</m> ).
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The triangle has vertices <m>(0,0)</m>, <m>(1,0)</m>, and
+        <m>(1,1)</m>. For a fixed <m>y\in[0,1]</m> a horizontal line enters
+        the triangle at <m>x=y</m> (from the line <m>y=x</m> solved for
+        <m>x</m>) and exits at <m>x=1</m>, giving the bounds
+        <m>y\leq x\leq 1</m> and <m>0\leq y\leq 1</m>. Hence
+        <md>
+          V = \int_{0}^{1} \int_{y}^{1} (6 - 3x^2 - 2y)\, dx\, dy
+        </md>.
+        Evaluating the inner integral:
+        <md alignment="gather">
+          <mrow>\int_{y}^{1} (6 - 3x^2 - 2y)\, dx = \left. 6x - x^3 - 2yx \right|_{y}^{1} = (6 - 1 - 2y) - (6y - y^3 - 2y^2)</mrow>
+          <mrow>= y^3 + 2y^2 - 8y + 5</mrow>
+        </md>.
+        Then integrating with respect to <m>y</m>:
+        <md>
+          \int_{0}^{1} (y^3 + 2y^2 - 8y + 5)\, dy = \left. \frac{y^4}{4} + \frac{2y^3}{3} - 4y^2 + 5y \right|_{0}^{1} = \frac{1}{4} + \frac{2}{3} - 4 + 5 = \frac{3}{12} + \frac{8}{12} + \frac{12}{12} = \frac{23}{12}
+        </md>,
+        which matches the result from <xref ref="example-ch04-04-ex-17-3"/>,
+        as expected.
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <title>Partitioning Regions of Integration</title>
+
+    <p>
+      Suppose we are evaluating an iterated integral using the order
+      <m>d y d x</m> (cross sections parallel to the <m>y</m>-axis). If the
+      lower and upper bounds of <m>R</m> change throughout the region, you
+      must partition <m>R</m> every time such a change occurs and integrate
+      over each piece separately,
+    </p>
+  </remark>
+
+  <example xml:id="example-ch04-04-ex-17-5">
+    <statement>
+      <p>
+        Using the order <m>d y d x</m>, set up (but do not evaluate) an
+        iterated integral(s) that give the (net) volume of the wedgelike
+        solid that lies beneath the surface <m>z=1-x-y</m> and above the
+        region <m>R</m> bounded by the curve <m>y= \frac{3}{2}\sqrt{x}</m>,
+        the line <m>y= x-1</m>, and the <m>x</m>-axis.
+      </p>
+
+      <figure xml:id="fig-ch04-04-ex-17-5">
+        <caption>The region R and its partition into R 1 and R 2</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_21_8b2f41f086d94a698980g-10. -->
+        <interactive xml:id="interactive-ch04-04-ex-17-5" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_21_8b2f41f086d94a698980g-10.png">
+              <shortdescription>The region R and its partition into R 1 and R 2</shortdescription>
+              <description>
+                <p>The region <m>R</m> and its partition into <m>R_{1}</m> and <m>R_{2}</m></p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        The region <m>R</m> and its partition into <m>R_{1}</m> and
+        <m>R_{2}</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We first find the intersection points of the three boundary curves.
+        Setting <m>\frac{3}{2}\sqrt{x}=x-1</m> and letting <m>u=\sqrt{x}</m>
+        gives <m>\frac{3}{2}u=u^2-1</m>, i.e. <m>2u^2-3u-2=0</m>, which
+        factors as <m>(2u+1)(u-2)=0</m>. Since <m>u\geq 0</m> we get
+        <m>u=2</m>, so <m>x=4</m> and <m>y=3</m>. The curve meets the
+        <m>x</m>-axis (<m>y=0</m>) at <m>(0,0)</m> and the line meets the
+        <m>x</m>-axis (<m>y=0</m>) at <m>(1,0)</m>.
+      </p>
+
+      <p>
+        For a fixed <m>x</m>, a vertical line crosses the region differently
+        depending on <m>x</m>: for <m>0\leq x\leq 1</m> the lower boundary is
+        the line <m>y=0</m> (<m>x</m>-axis) and the upper boundary is the
+        parabola <m>y=\frac{3}{2}\sqrt{x}</m>, while for <m>1\leq x\leq 4</m>
+        the lower boundary is the line <m>y=x-1</m> and the upper boundary
+        remains <m>y=\frac{3}{2}\sqrt{x}</m>. Hence
+        <md>
+          V = \int_0^1 \int_{0}^{\frac{3}{2}\sqrt{x}} 1- x - y\, dy\, dx + \int_1^{4} \int_{x-1}^{\frac{3}{2}\sqrt{x}} 1-x-y\, dx\, dy
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      Similarly, when integrating in the order <m>d x d y</m>, if the
+      leftmost or rightmost bounds change, you need to partition the region
+      <m>R</m>.
+    </p>
+  </note>
+
+  <example xml:id="example-ch04-04-ex-17-6">
+    <statement>
+      <p>
+        Using the order <m>d x d y</m>, set up (but do not evaluate) an
+        iterated integral(s) that gives the net volume bounded by
+        <m>f(x, y)=2</m> and the <m>x y</m>-plane restricted to the region
+        <m>R</m> bounded by <m>x=0, y=2^{x}</m>, and <m>y=4-2 x</m>. You can
+        assume the two curves intersect only at the point (1, 2)
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The exponential <m>y=2^x</m> passes through <m>(0,1)</m> and the
+        line <m>y=4-2x</m> has <m>y</m>-intercept <m>(0,4)</m> and meets the
+        exponential at <m>(1,2)</m>, as mentioned above. The <m>y</m>-axis
+        (<m>x=0</m>) meets the exponential at <m>(0,1)</m> and the line at
+        <m>(0,4)</m>. For a fixed <m>y</m>, a horizontal line crosses the
+        region differently depending on <m>y</m>: for <m>1\leq y\leq 2</m>
+        the left boundary is the exponential <m>x=\log_2 y</m> and the right
+        boundary is the line <m>x=\frac{4-y}{2}</m>, while for
+        <m>2\leq y\leq 4</m> the left boundary is the <m>y</m>-axis
+        <m>x=0</m> and the right boundary remains <m>x=\frac{4-y}{2}</m>.
+        Hence
+        <md>
+          V = \int_1^2 \int_{\log_2 y}^{\frac{4-y}{2}} 2\, dx\, dy + \int_2^4 \int_0^{\frac{4-y}{2}} 2\, dx\, dy
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      Sometimes, changing the order of integration simplifies the amount of
+      work when integrating.
+    </p>
+  </note>
+
+  <example xml:id="example-ch04-04-ex-17-7">
+    <statement>
+      <p>
+        Set up (but do not evaluate) an iterated integral(s) that gives the
+        net volume from <xref ref="example-ch04-04-ex-17-5"/> Use the order
+        <m>d x d y</m>. (Beneath the surface <m>z=1-x-y</m> and above the
+        region <m>R</m> bounded by the curve <m>y= \frac{3}{2}\sqrt{x}</m>,
+        the line <m>y= x-1</m>, and the <m>x</m>-axis.)
+      </p>
+
+      <figure xml:id="fig-ch04-04-ex-17-7">
+        <caption>The domain of integration</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_21_8b2f41f086d94a698980g-13. -->
+        <interactive xml:id="interactive-ch04-04-ex-17-7" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_21_8b2f41f086d94a698980g-13.png">
+              <shortdescription>The domain of integration</shortdescription>
+              <description>
+                <p>The domain of integration</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        We first find the intersection points of the three boundary curves.
+        Setting <m>\frac{3}{2}\sqrt{x}=x-1</m> and letting <m>u=\sqrt{x}</m>
+        gives <m>\frac{3}{2}u=u^2-1</m>, i.e. <m>2u^2-3u-2=0</m>, which
+        factors as <m>(2u+1)(u-2)=0</m>. Since <m>u\geq 0</m> we do not
+        consider the case <m>u=-\frac{1}{2}</m>, we only get <m>u=2</m>, so
+        <m>x=4</m> and <m>y=3</m>. The curve meets the <m>x</m>-axis
+        (<m>y=0</m>) at <m>(0,0)</m> and the line meets the <m>x</m>-axis
+        (<m>y=0</m>) at <m>(1,0)</m>.
+      </p>
+
+      <p>
+        Solving the boundary curves for <m>x</m> in terms of <m>y</m>: from
+        <m>y=\frac{3}{2}\sqrt{x}</m> we get <m>x=\frac{4y^2}{9}</m>, and from
+        <m>y=x-1</m> we get <m>x=y+1</m>. For a fixed <m>y\in[0,3]</m> a
+        horizontal line enters the region at the curve
+        <m>x=\frac{4y^2}{9}</m> and exits at the line <m>x=y+1</m>, with no
+        change in which boundary is which throughout the entire interval.
+        Hence only a single integral is needed:
+        <md>
+          V = \int_0^3 \int_{\frac{4y^2}{9}}^{y+1} (1 - x - y)\, dx\, dy
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+</section>

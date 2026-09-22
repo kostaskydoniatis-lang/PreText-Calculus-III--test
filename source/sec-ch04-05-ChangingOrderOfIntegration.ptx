@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch04-05-ChangingOrderOfIntegration.ptx : converted from
+  "18. Double Integrals (General Regions) - Solutions.tex" (whose \chapter title is
+  "Changing Order of Integration") by the bbeaccess-pretext skill (2026-09-17).
+  Fragment for xi:include into ch-04-Integration.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch04-05 (lecture file 18, chapter 4) on your instruction. The
+     <title> is the \chapter title "Changing Order of Integration"; the file name
+     follows it (the .tex file is named "Double Integrals (General Regions)").
+     CAPTION RULE (2026-09-13): a single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>; "PENDING" lives in an XML comment after
+     the caption. Interactives follow the 2026-09-15 iframe template.
+  2. PENDING (placeholder graph vqavop8m24): Example-18.1.png and Example-18.2.png
+     (the two sketches, 2D, Desmos can do them), ...b0d0g-4.png (Example 18.3, 3D).
+  3. Image names: "Example 18.1" / "Example 18.2" in the .tex are Example-18.1.png /
+     Example-18.2.png in assets/images (renamed today from the old-numbering
+     Example-19.1.png / Example-19.2.png on your instruction). All three are .png.
+  4. Merged continuations (one <example> each, the repeated "Given the integral ... :"
+     header of each continuation dropped, parts (a)/(b)/(c) as paragraphs of one
+     statement, one <solution> per box): 18.1 + "[Continuation of 18.1]" (three
+     solutions), 18.2 + "[Continuation of 18.2]" (three solutions). ptx_check
+     therefore reports 6 examples in the .tex vs 4 here. \setcounter lines dropped.
+  5. Figure placement: the sketches of Examples 18.1 and 18.2 are the answers to
+     "Draw a sketch of the region of integration", and the .tex puts them inside the
+     first solution box, so they sit inside <solution> 1 (revealed with the answer).
+     The commented-out %\includegraphics{...b0d0g-2} / {...b0d0g-3} placeholders that
+     follow them are kept as XML comments. Example 18.3's picture is inside its
+     statement with the legend "The volume bounded by the given surfaces" as a <p>
+     after the figure.
+  6. Fubini's Theorem is a <theorem> with <statement>; its enumerate is interrupted
+     twice by a display (item 1 ... $$ ... \setcounter{enumi}{1} item 2 ... $$), so
+     here it is ONE <ol> with each display inside its item's paragraph. Item 2 reads
+     "g_2(y) <= y <= h_2(y)" in the .tex (y where x is meant); copied verbatim.
+  7. The solution of Example 18.3 contains "$ \geq xy +5 \geq 5 > 4 \geq 2x+2y$" with
+     a leading \geq and nothing before it, and the sentence has no final period;
+     copied verbatim. "i.e.\ " is "i.e. ".
+  8. The multi-row gather* blocks (18.1 (c), 18.2 (c)) are <md alignment="gather">,
+     one <mrow> per \\-separated row; the .tex breaks single rows over several source
+     lines without \\, which are joined.
+  9. Alt-text quirks kept verbatim: the two sketch alt texts have no final period.
+ 10. No \mathbf in this file.
+ 11. Typeset <description>s are the conversion's own text; review.
+ 12. Template width constants replace the .tex widths (max width=0.3/0.5\textwidth).
+ 13. Relative references left as prose: "Use your sketch" (18.1 (b), 18.2 (b)), "as
+     mentioned above" style phrases none; "Evaluating using the original order is more
+     straightforward here" (twice).
+ 14. Every \newpage/\vspace, the center wrappers, \captionsetup and \\ dropped.
+-->
+
+<section xml:id="sec-ch04-05-ChangingOrderOfIntegration" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Changing Order of Integration</title>
+
+  <note>
+    <p>
+      As with double integrals over rectangular regions, under some
+      continuity assumptions, we may change the order of integration.
+    </p>
+  </note>
+
+  <theorem>
+    <title>Fubini's Theorem (General Regions)</title>
+
+    <statement>
+      <p>Let <m>f(x, y)</m> be continuous on a region <m>R</m>.</p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              If <m>R</m> is defined by
+              <m>a \leq x \leq b, g_{1}(x) \leq y \leq h_{1}(x)</m>, with
+              <m>g_{1}</m> and <m>h_{1}</m> continuous on <m>[a, b]</m>, then
+              <md>
+                \iint_{R} f(x, y) d A=\int_{a}^{b} \int_{g_{1}(x)}^{h_{1}(x)} f(x, y) d y d x
+              </md>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              If <m>R</m> is defined by
+              <m>c \leq y \leq d, g_{2}(y) \leq y \leq h_{2}(y)</m>, with
+              <m>g_{2}</m> and <m>h_{2}</m> continuous on <m>[c, d]</m>, then
+              <md>
+                \iint_{R} f(x, y) d A=\int_{c}^{d} \int_{g_{2}(y)}^{h_{2}(y)} f(x, y) d x d y
+              </md>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+
+  <remark>
+    <p>
+      Changing the order of integration over regions that are not
+      rectangular requires more work. An easy way to do it is by drawing a
+      sketch of the region of integration.
+    </p>
+
+    <p>
+      This means that we should be able to draw the region of integration
+      just by looking at the bounds of integration from the iterated
+      integrals.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch04-05-ex-18-1">
+    <statement>
+      <p>
+        Given the integral
+        <m>\int_{-1}^{1} \int_{ x^{2}}^{2- x^2} 2xy d y d x</m> :
+      </p>
+
+      <p>(a) Draw a sketch of the region of integration.</p>
+
+      <p>(b) Use your sketch to change the order of integration.</p>
+
+      <p>(c) Evaluate the double integral.</p>
+    </statement>
+
+    <solution>
+      <p>
+        The bounds <m>-1\leq x \leq 1</m> and <m>x^2\leq y \leq 2-x^2</m>
+        describe the region between the upward-opening parabola
+        <m>y=x^2</m> and the downward-opening parabola <m>y=2-x^2</m>. They
+        intersect when
+        <m>x^2=2-x^2 \Rightarrow x^2=1 \Rightarrow x=\pm 1</m>, confirming
+        the outer bounds. The region lies between the two parabolas for
+        <m>-1\leq x\leq 1</m>.
+      </p>
+
+      <figure xml:id="fig-ch04-05-ex-18-1">
+        <caption>The domain of integration, the area between the parabolas</caption>
+
+        <!-- This interactive is PENDING, it should correspond to Example 18.1. -->
+        <interactive xml:id="interactive-ch04-05-ex-18-1" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/Example-18.1.png">
+              <shortdescription>The domain of integration, the area between the parabolas</shortdescription>
+              <description>
+                <p>The domain of integration, the area between the parabolas</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+      <!--\includegraphics[max width=0.5\textwidth, center]{2025_10_25_a794e0d5148c83ceb0d0g-2}-->
+    </solution>
+
+    <solution>
+      <p>
+        To integrate in the order <m>dx\,dy</m>, we need to express
+        <m>x</m> as a function of <m>y</m>. From the two parabolas:
+        <m>y=x^2</m> gives <m>x=\pm\sqrt{y}</m>, and <m>y=2-x^2</m> gives
+        <m>x=\pm\sqrt{2-y}</m>. The region has <m>y</m> ranging from the
+        bottom of the lower parabola to the top of the upper one. The lower
+        parabola has its vertex at <m>(0,0)</m> and the upper at
+        <m>(0,2)</m>; they meet at <m>y=1</m>. For <m>0\leq y\leq 1</m> the
+        horizontal cross-section is bounded on the left and right by
+        <m>x=-\sqrt{y}</m> and <m>x=\sqrt{y}</m>. For <m>1\leq y\leq 2</m>
+        the cross-section is bounded by <m>x=-\sqrt{2-y}</m> and
+        <m>x=\sqrt{2-y}</m>. Hence, the integral with reversed order is
+        <md>
+          \int_0^1\int_{-\sqrt{y}}^{\sqrt{y}} 2xy\, dx\, dy + \int_1^2\int_{-\sqrt{2-y}}^{\sqrt{2-y}} 2xy\, dx\, dy
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Evaluating using the original order is more straightforward here.
+        <md alignment="gather">
+          <mrow>\int_{-1}^{1} \int_{x^{2}}^{2-x^2} 2xy\, dy\, dx = \int_{-1}^{1} \left. xy^2 \right|_{x^2}^{2-x^2} dx = \int_{-1}^{1} x\left[(2-x^2)^2 - x^4\right] dx</mrow>
+          <mrow>= \int_{-1}^{1} x\left[4 - 4x^2 + x^4 - x^4\right] dx = \int_{-1}^{1} x(4-4x^2)\, dx</mrow>
+          <mrow>= \int_{-1}^{1} 4x - 4x^3\, dx = \left. 2x^2 - x^4 \right|_{-1}^{1} = (2-1)-(2-1) = 0</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch04-05-ex-18-2">
+    <statement>
+      <p>
+        Given the integral
+        <m>\int_{-1}^{0} \int_{x}^{-x^2} 2x+2y\, d y\, d x</m> :
+      </p>
+
+      <p>(a) Draw a sketch of the region of integration.</p>
+
+      <p>(b) Use your sketch to change the order of integration.</p>
+
+      <p>(c) Evaluate the double integral.</p>
+    </statement>
+
+    <solution>
+      <p>
+        The bounds <m>-1\leq x\leq 0</m> and <m>x\leq y\leq -x^2</m>
+        describe the region above the line <m>y=x</m> and below the
+        downward-opening parabola <m>y=-x^2</m>. They intersect when
+        <m>x=-x^2 \Rightarrow x^2+x=0 \Rightarrow x(x+1)=0</m>, giving
+        <m>x=0</m> and <m>x=-1</m>, confirming the outer bounds. For
+        <m>-1\leq x\leq 0</m> the line lies below the parabola.
+      </p>
+
+      <figure xml:id="fig-ch04-05-ex-18-2">
+        <caption>The domain of integration, the area between the parabola and the line</caption>
+
+        <!-- This interactive is PENDING, it should correspond to Example 18.2. -->
+        <interactive xml:id="interactive-ch04-05-ex-18-2" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/Example-18.2.png">
+              <shortdescription>The domain of integration, the area between the parabola and the line</shortdescription>
+              <description>
+                <p>The domain of integration, the area between the parabola and the line</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+      <!--\includegraphics[max width=0.5\textwidth, center]{2025_10_25_a794e0d5148c83ceb0d0g-3}-->
+    </solution>
+
+    <solution>
+      <p>
+        To integrate in the order <m>dx\,dy</m>, we express <m>x</m> as a
+        function of <m>y</m>. From <m>y=-x^2</m> we get <m>x=-\sqrt{-y}</m>
+        (taking the negative square root since <m>x\leq 0</m>), so the
+        parabola gives the left boundary. From <m>y=x</m> we get
+        <m>x=y</m>, which gives the right boundary. The variable <m>y</m>
+        ranges from the bottom intersection point to the top. At
+        <m>(-1,-1)</m> both curves meet, giving <m>y=-1</m> as the lower
+        bound. The parabola reaches <m>y=0</m> at <m>x=0</m>, and the line
+        also passes through <m>(0,0)</m>, giving <m>y=0</m> as the upper
+        bound. Hence the reversed integral is
+        <md>
+          \int_{-1}^{0}\int_{-\sqrt{-y}}^{y} 2x+2y\, dx\, dy
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Evaluating using the original order is more straightforward here.
+        <md alignment="gather">
+          <mrow>\int_{-1}^{0}\int_{x}^{-x^2} 2x+2y\, dy\, dx = \int_{-1}^{0} \left. 2xy + y^2 \right|_{x}^{-x^2} dx</mrow>
+          <mrow>= \int_{-1}^{0} \left[2x(-x^2)+(-x^2)^2\right] - \left[2x(x)+x^2\right] dx</mrow>
+          <mrow>= \int_{-1}^{0} \left[-2x^3 + x^4\right] - \left[2x^2+x^2\right] dx</mrow>
+          <mrow>= \int_{-1}^{0} x^4 - 2x^3 - 3x^2\, dx</mrow>
+          <mrow>= \left. \frac{x^5}{5} - \frac{x^4}{2} - x^3 \right|_{-1}^{0} = 0 - \left(-\frac{1}{5} - \frac{1}{2} + 1\right) = \frac{1}{5}+\frac{1}{2}-1 = -\frac{3}{10}</mrow>
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <title>Volume Between Surfaces and Area</title>
+
+    <p>
+      Just like in Calculus II we were able to find area bounded between
+      functions, we can similarly find the volume bounded between surfaces.
+    </p>
+  </note>
+
+  <remark>
+    <title>Volume Between Surfaces</title>
+
+    <p>
+      Suppose that <m>f(x, y)</m> and <m>g(x, y)</m> are continuous on a
+      region <m>R</m> and that <m>f(x, y) \geq g(x, y)</m> on <m>R</m>. Then
+      the volume bounded by <m>f(x, y)</m> and <m>g(x, y)</m> on <m>R</m> is
+      given by
+      <md>
+        V=\iint_{R}(f(x, y)-g(x, y)) d A
+      </md>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch04-05-ex-18-3">
+    <statement>
+      <p>
+        Set up (but do not evaluate) an iterated integral that gives the
+        volume of the solid in the first octant ( <m>x, y, z \geq 0</m> )
+        bounded by the surfaces <m>z=xy+5</m>, <m>z=2x+2y</m> above the
+        circle <m>x^{2}+y^2=1</m>.
+      </p>
+
+      <figure xml:id="fig-ch04-05-ex-18-3">
+        <caption>The surface z equals x times y plus 5, the plane 2 x plus 2 y, and the area above the unit circle in the first octant between the surface and the plane.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_10_25_a794e0d5148c83ceb0d0g-4. -->
+        <interactive xml:id="interactive-ch04-05-ex-18-3" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_10_25_a794e0d5148c83ceb0d0g-4.png">
+              <shortdescription>The surface z equals x times y plus 5, the plane 2 x plus 2 y, and the area above the unit circle in the first octant between the surface and the plane.</shortdescription>
+              <description>
+                <p>The surface <m>z=xy+5</m>, the plane <m>2x+2y</m>, and the area above the unit circle in the first octant between the surface and the plane.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        The volume bounded by the given surfaces
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        First we determine which surface is on top. The region of
+        integration <m>R</m> is the part of the unit disk
+        <m>x^2+y^2\leq 1</m> in the first quadrant, i.e.
+        <m>1\geq x\geq 0</m> and <m>1\geq y\geq 0</m>. This implies that
+        <m> \geq xy +5 \geq 5 \gt 4 \geq 2x+2y</m>
+      </p>
+
+      <p>
+        For a fixed <m>x\in[0,1]</m>, <m>y</m> ranges from <m>0</m> to
+        <m>\sqrt{1-x^2}</m>. Hence the volume is
+        <md>
+          V = \int_0^1\int_0^{\sqrt{1-x^2}} \left[(xy+5)-(2x+2y)\right] dy\, dx = \int_0^1\int_0^{\sqrt{1-x^2}} xy - 2x - 2y + 5\, dy\, dx
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <remark>
+    <title>Finding Area Using Double Integrals</title>
+
+    <p>
+      Suppose you have a region <m>R</m> in the <m>x y</m>-plane, you can
+      find the area of <m>R</m> by using the double integral
+      <md>
+        \iint_{R} d A
+      </md>
+    </p>
+
+    <p>
+      That is, integrating the function <m>f(x, y)=1</m> over <m>R</m>.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch04-05-ex-18-4">
+    <statement>
+      <p>
+        Explain geometrically why the area of <m>R</m> is given by
+        <m>\iint_{R} d A</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Recall that <m>\iint_R f(x,y)\, dA</m> gives the net volume of the
+        solid bounded by the surface <m>z=f(x,y)</m> and the
+        <m>xy</m>-plane, over the region <m>R</m>. Choosing
+        <m>f(x,y)=1</m> means the surface is the horizontal plane
+        <m>z=1</m>, which sits exactly one unit above the <m>xy</m>-plane at
+        every point of <m>R</m>. The solid bounded between <m>z=0</m> and
+        <m>z=1</m> over <m>R</m> is therefore a slab of uniform height 1.
+        Its volume equals base area times height, that is
+        <m>\text{Area}(R)\times 1 = \text{Area}(R)</m>. Hence
+        <md>
+          \iint_R 1\, dA = \text{Area}(R)
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+</section>

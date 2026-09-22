@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  sec-ch03-02-PartialDerivatives.ptx : converted from
+  "8. Partial Derivatives of Scalar-Valued Functions - Solutions.tex" by the
+  bbeaccess-pretext skill (2026-09-17). Fragment for xi:include into
+  ch-03-DerivativesOfVectorAndScalarValuedFunctions.ptx; not standalone.
+
+  FLAGGED FOR YOUR DECISION (nothing below was silently resolved):
+  1. Section placed at ch03-02 (lecture file 8, chapter 3) on your instruction.
+     CAPTION RULE (2026-09-13): every single-image figure's <caption> is exactly its
+     image's <shortdescription> (the .tex alt text verbatim); the <description> is the
+     same text with the mathematics set in <m>. The "PENDING, should correspond to ..."
+     sentence lives in an XML comment after the caption. Interactives follow the
+     2026-09-15 template: iframe="https://www.desmos.com/calculator/<id>?embed" with the
+     "The graph above shows only the plot" instructions.
+  2. PENDING (placeholder graph vqavop8m24): ...abdg-01.png (tangent line, 2D, Desmos
+     can do it), ...abdg-03.png and ...abdg-03-1.png (Example 8.2, 3D cross-sections),
+     ...abdg-05.png and ...abdg-05-1.png (the two-panel figure after the y-definition,
+     3D), ...abdg-10.png (graph of f from Example 8.7, 3D). The 3D ones will probably be
+     CalcPlot3D scenes.
+  3. The CalcPlot3D links in the .tex are all inside commented-out \caption* lines
+     under the two subfigures ("Plane" / "Paraboloid": copy-paste residue of the
+     Example 6.2 scenes, as in sec-ch02-02). Not live, so not used; the panels are
+     PENDING. ptx_check reports them as unmatched links; expected.
+  4. Example 8.7 says "Consider the surface" with "surface" hyperlinked to a Desmos 3D
+     graph (https://www.desmos.com/3d/g2wwd8hvrj). Following the sec-ch02-02 decision the
+     link is kept in the prose as a <url> and the picture of that surface (...abdg-10,
+     after the example) stays PENDING. NOTE: now that the interactives use iframe=, that
+     3D graph could be embedded directly (iframe="https://www.desmos.com/3d/g2wwd8hvrj?embed")
+     if you want it; I did not.
+  5. Image names: "(1)" in the .tex is "-1" in assets/images (...abdg-03(1) ->
+     ...abdg-03-1.png). All six files are .png.
+  6. The two-panel figure (…-05, …-05-1) is one outer figure whose caption is the .tex
+     \caption ("The curve f(0,y) and the tangent line at ( 0,0, f(0,0) )", spacing kept)
+     with a <sidebyside widths="45% 45%">; per-panel <instructions> commented out and
+     one <p> after the figure carries the boilerplate with a left/right link each (the
+     sec-ch01-01 fix). The .tex source caption of the first picture ("Graph of f(x)
+     (red) and its tangent line at (a, f(a)) (blue)") is commented out in the .tex and is
+     kept as an XML comment; the following sentence "Above we see..." is live prose.
+  7. "Example 8.3" (part (a)) + "[Continuation of 8.3]" (part (b)) merged into ONE
+     <example> with parts (a)/(b) as paragraphs and one <solution> per box (house
+     practice; <task>s not used unasked). Likewise Example 8.4 (a)/(b) and Example 8.5
+     (parts "1)", "2)", "3)", three solutions). ptx_check therefore reports 9 examples
+     in the .tex vs 8 here. The \setcounter{tcb@cnt@example}{2} is dropped.
+  8. Example 8.2 has no solution box (its answer is the pair of pictures); <statement>
+     only, both pictures at the positions they have in the .tex.
+  9. \mathbf: the remark ends "the change is happening in the $\mathbf{x}$-coordinate,
+     and we leave the $\mathbf{y}$ coordinate unchanged" - bold coordinate names, not
+     vectors. Kept as \mathbf{x}, \mathbf{y} (turning them into \vec would be wrong);
+     say if you prefer plain x, y. No other \mathbf in the file.
+ 10. The second-order partial derivative table (\begin{aligned} with & alignment) is an
+     <md> (align mode) with one <mrow> per line and \amp kept. Example 8.7's piecewise
+     definition keeps its \begin{cases}...\end{cases} verbatim (\amp for the column
+     separator); ptx_check flags the environment as a remnant - false positive, MathJax
+     needs it.
+ 11. Typeset <description>s are the conversion's own text; review. The alt text of the
+     Example 8.7 picture, "A surface z equals f of x and y, from example 8.7", has no
+     final period and says "example 8.7"; kept verbatim in all three places.
+ 12. Template width constants replace the .tex widths (0.5\textwidth, max width=0.5,
+     subfigure 0.3\textwidth, 0.40\textwidth).
+ 13. Cross-references: "Note that in Example 8.8" -> <xref ref="example-ch03-02-ex-8-8"/>
+     (word "Example" dropped). Relative references left as prose: "Above we see" (twice),
+     "as shown below" (8.2), "This matches the picture below" (8.7 solution), "below" in
+     the second-order remark.
+ 14. Source quirks preserved: "( a, b )" spacing (several places); both definitions
+     read "(or at the point (a, b, f(a, b)) is defined as" with the closing parenthesis
+     missing; "1)Find" with no space, "For  this value" double space, "$k$" lower-case
+     in part 3) of Example 8.5, and parts 2) and 3) have no question mark; "Above we see
+     the curve f(x, 0) and the tangent line at (0,0, f(0,0))" has no final period; the
+     quoted words "partial" and "usual" are <q>s; "whilst".
+ 15. Commented-out .tex material kept as XML comments where it stood: the \caption of
+     the first figure, the \caption of the Example 8.2 second picture ("The curve f(x,0)
+     and the tangent line at (0,0,f(0,0))"). The commented-out \caption*{\href...}
+     lines under the subfigures (item 3) are not kept.
+ 16. Every \newpage/\vspace, the figure[H]/center/subfigure wrappers, \captionsetup,
+     \\ and \setcounter dropped.
+-->
+
+<section xml:id="sec-ch03-02-PartialDerivatives" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <title>Partial Derivatives of Scalar-Valued Functions</title>
+
+  <note>
+    <p>
+      Defining the derivative of a vector-valued function was simple because
+      we only had one input variable (as in Calculus I).
+    </p>
+
+    <p>
+      If we want to define a similar concept for functions of the form
+      <m>z=f(x, y)</m>, we can do it by remembering that derivatives
+      represent rates of change.
+    </p>
+  </note>
+
+  <remark>
+    <p>
+      Given a function <m>f(x)</m>, we know that
+      <md>
+        f^{\prime}(a)=\lim _{h \rightarrow 0} \frac{f(a+h)-f(a)}{h}
+      </md>
+      represents:
+    </p>
+
+    <p>
+      <ul>
+        <li>
+          <p>
+            The slope of the tangent line to the graph of <m>f</m> at the
+            point <m>(a, f(a))</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The rate of change of <m>f</m> at <m>x=a</m> in the direction of
+            the positive <m>x</m>-axis.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <figure xml:id="fig-ch03-02-tangent-line">
+      <caption>The curve y equals f of x, and its tangent line at x equals a.</caption>
+
+      <!-- This interactive is PENDING, it should correspond to 2025_09_10_93272473a72f5ce70abdg-01. -->
+      <interactive xml:id="interactive-ch03-02-tangent-line" width="85%" aspect="4:3" desmos="vqavop8m24">
+        <instructions>
+          <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+          <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+        </instructions>
+        <static>
+          <image source="/images/2025_09_10_93272473a72f5ce70abdg-01.png">
+            <shortdescription>The curve y equals f of x, and its tangent line at x equals a.</shortdescription>
+            <description>
+              <p>The curve <m>y=f(x)</m>, and its tangent line at <m>x=a</m>.</p>
+            </description>
+          </image>
+        </static>
+      </interactive>
+    </figure>
+    <!--\caption{Graph of $f(x)$ (red) and its tangent line at $(a, f(a))$ (blue)}-->
+
+    <p>
+      Above we see the graph of <m>f(x)</m> (red) and its tangent line at
+      <m>(a, f(a))</m> (blue).
+    </p>
+
+    <p>
+      We build up on this definition and define the rate of change of
+      <m>z=f(x, y)</m>, at the input ( <m>a, b</m> ), in the direction of
+      the positive <m>x</m>-axis, as
+      <md>
+        \frac{\partial f}{\partial x}(a, b)=\lim _{h \rightarrow 0} \frac{f(a+h, b)-f(a, b)}{h}
+      </md>.
+    </p>
+
+    <p>
+      Note that the change is happening in the <m>\mathbf{x}</m>-coordinate,
+      and we leave the <m>\mathbf{y}</m> coordinate unchanged.
+    </p>
+  </remark>
+
+  <example xml:id="example-ch03-02-ex-8-1">
+    <statement>
+      <p>
+        Find the rate of change of <m>f=x^{3}+y^{2}</m>, at the input
+        <m>(1,1)</m>, in the direction of the positive <m>y</m>-axis.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The rate of change of <m>f</m> at the input <m>(1,1)</m> in the
+        direction of the positive <m>y</m>-axis is found just like the rate
+        of change in the direction of the positive <m>x</m>-axis, except now
+        the change happens in the <m>y</m>-coordinate and we leave the
+        <m>x</m>-coordinate unchanged. Using the corresponding limit:
+        <md alignment="gather">
+          <mrow>\frac{\partial f}{\partial y}(1,1) = \lim_{h \to 0} \frac{f(1, 1+h)-f(1,1)}{h} = \lim_{h \to 0} \frac{\left[ 1^3 + (1+h)^2 \right] - \left[ 1^3 + 1^2 \right]}{h}</mrow>
+          <mrow>= \lim_{h \to 0} \frac{1 + 1 + 2h + h^2 - 2}{h} = \lim_{h \to 0} \frac{2h + h^2}{h} = \lim_{h \to 0} \left( 2 + h \right) = 2</mrow>
+        </md>
+        So at the input <m>(1,1)</m>, the function <m>f</m> increases at a
+        rate of 2 units per unit of change in <m>y</m>.
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      Since in our definition of <m>\frac{\partial f}{\partial x}(a, b)</m>,
+      the <m>y</m>-coordinate is kept constant at <m>y=b</m>, we can
+      interpret this geometrically as intersecting the surface
+      <m>z=f(x, y)</m> with the plane <m>y=b</m> to get the level curve
+      <m>f(x, b)</m>.
+    </p>
+  </note>
+
+  <example xml:id="example-ch03-02-ex-8-2">
+    <statement>
+      <p>
+        Suppose we have the surface <m>f=\sin (x+y)\cos (y-x)</m> and that
+        we want to compute <m>\frac{\partial f}{\partial x}(0,0)</m>. Below
+        is a picture of this surface intersected with the plane <m>y=0</m>.
+      </p>
+
+      <figure xml:id="fig-ch03-02-ex-8-2-surface">
+        <caption>A cross-section of z equals f of x and y, parallel to the xz-plane at y equals b, showing the partial derivative with respect to x at x equals a.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_10_93272473a72f5ce70abdg-03. -->
+        <interactive xml:id="interactive-ch03-02-ex-8-2-surface" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_09_10_93272473a72f5ce70abdg-03.png">
+              <shortdescription>A cross-section of z equals f of x and y, parallel to the xz-plane at y equals b, showing the partial derivative with respect to x at x equals a.</shortdescription>
+              <description>
+                <p>A cross-section of <m>z=f(x, y)</m>, parallel to the <m>xz</m>-plane at <m>y=b</m>, showing the partial derivative with respect to <m>x</m> at <m>x=a</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <p>
+        When we compute <m>\frac{\partial f}{\partial x}(0,0)</m>,
+        geometrically, we are computing the slope of the tangent line to the
+        curve <m>f(x, 0)</m> at the input <m>(0,0)</m>, as shown below:
+      </p>
+
+      <figure xml:id="fig-ch03-02-ex-8-2-tangent">
+        <caption>The trace y equals b, and the tangent line of the trace at x equals a.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_10_93272473a72f5ce70abdg-03(1). -->
+        <interactive xml:id="interactive-ch03-02-ex-8-2-tangent" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>
+          <static>
+            <image source="/images/2025_09_10_93272473a72f5ce70abdg-03-1.png">
+              <shortdescription>The trace y equals b, and the tangent line of the trace at x equals a.</shortdescription>
+              <description>
+                <p>The trace <m>y=b</m>, and the tangent line of the trace at <m>x=a</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+      <!--\caption{The curve $f(x, 0)$ and the tangent line at $(0,0, f(0,0))$}-->
+
+      <p>
+        Above we see the curve <m>f(x, 0)</m> and the tangent line at
+        <m>(0,0, f(0,0))</m>
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    We summarize all of this information below.
+  </p>
+
+  <definition>
+    <title>Partial Derivative with Respect to <m>x</m></title>
+
+    <statement>
+      <p>
+        Given a scalar-valued function <m>z=f(x, y)</m>, its partial
+        derivative with respect to <m>x</m> at the input <m>(a, b)</m> (or
+        at the point <m>(a, b, f(a, b))</m> is defined as
+        <md>
+          \frac{\partial f}{\partial x}(a, b)=f_{x}(a, b)=\lim _{h \rightarrow 0} \frac{f(a+h, b)-f(a, b)}{h}
+        </md>.
+      </p>
+
+      <p>
+        We interpret <m>f_{x}(a, b)</m> as:
+      </p>
+
+      <p>
+        <ul>
+          <li>
+            <p>
+              The slope of the tangent line to the curve <m>f(x, b)</m> at
+              the point <m>(a, b, f(a, b))</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The rate of change of <m>f</m> at the input <m>(a, b)</m> in
+              the direction of the positive <m>x</m>-axis.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+
+  <note>
+    <p>
+      We have a similar definition for <m>f_{y}(a, b)</m> with a similar
+      geometric interpretation.
+    </p>
+  </note>
+
+  <definition>
+    <title>Partial Derivative with Respect to <m>y</m></title>
+
+    <statement>
+      <p>
+        Given a scalar-valued function <m>z=f(x, y)</m>, its partial
+        derivative with respect to <m>y</m> at the input <m>(a, b)</m> (or
+        at the point <m>(a, b, f(a, b))</m> is defined as
+        <md>
+          \frac{\partial f}{\partial y}(a, b)=f_{y}(a, b)=\lim _{h \rightarrow 0} \frac{f(a, b+h)-f(a, b)}{h}
+        </md>
+      </p>
+
+      <p>
+        We interpret <m>f_{y}(a, b)</m> as:
+      </p>
+
+      <p>
+        <ul>
+          <li>
+            <p>
+              The slope of the tangent line to the curve <m>f(a, y)</m> at
+              the point <m>(a, b, f(a, b))</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The rate of change of <m>f</m> at the input <m>(a, b)</m> in
+              the direction of the positive <m>y</m>-axis.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+
+  <figure xml:id="fig-ch03-02-partial-y-traces">
+    <caption>The curve <m>f(0, y)</m> and the tangent line at ( <m>0,0, f(0,0)</m> )</caption>
+
+    <sidebyside widths="45% 45%" margins="auto" valign="middle">
+      <figure xml:id="fig-ch03-02-partial-y-traces-a">
+        <caption>A cross-section of z equals f of x and y, parallel to the yz-plane at x equals a.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_10_93272473a72f5ce70abdg-05. -->
+        <interactive xml:id="interactive-ch03-02-partial-y-traces-a" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_09_10_93272473a72f5ce70abdg-05.png">
+              <shortdescription>A cross-section of z equals f of x and y, parallel to the yz-plane at x equals a.</shortdescription>
+              <description>
+                <p>A cross-section of <m>z=f(x, y)</m>, parallel to the <m>yz</m>-plane at <m>x=a</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+
+      <figure xml:id="fig-ch03-02-partial-y-traces-b">
+        <caption>The trace x equals a, and the tangent line of the trace at y equals b.</caption>
+
+        <!-- This interactive is PENDING, it should correspond to 2025_09_10_93272473a72f5ce70abdg-05-1. -->
+        <interactive xml:id="interactive-ch03-02-partial-y-traces-b" width="85%" aspect="4:3" desmos="vqavop8m24">
+          <!--<instructions>
+            <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+            <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+          </instructions>-->
+          <static>
+            <image source="/images/2025_09_10_93272473a72f5ce70abdg-05-1.png">
+              <shortdescription>The trace x equals a, and the tangent line of the trace at y equals b.</shortdescription>
+              <description>
+                <p>The trace <m>x=a</m>, and the tangent line of the trace at <m>y=b</m>.</p>
+              </description>
+            </image>
+          </static>
+        </interactive>
+      </figure>
+    </sidebyside>
+  </figure>
+  <p>
+    The graphs above show only the plots; you can drag and zoom them. To see the expressions behind them, or to save a copy and create your own version of the graphs, open them in a new page from here:
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the left graph</url>,
+    <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the right graph</url>
+  </p>
+
+  <remark>
+    <p>
+      It is important we use proper notation when working with partial
+      derivatives. Make sure to use the <q>partial</q> symbol and always
+      refer to it as a partial derivative (not just a derivative).
+    </p>
+  </remark>
+
+  <note>
+    <title>Computing Partial Derivatives</title>
+
+    <p>
+      As is expected, we don't need to use limits every time we want to
+      compute partial derivatives.
+    </p>
+  </note>
+
+  <definition>
+    <title>Partial Derivatives (Computational)</title>
+
+    <statement>
+      <p>
+        Given a scalar-valued function <m>z=f(x, y)</m>, to compute
+        <m>f_{x}</m>, take (algorithmically) the <q>usual</q> derivative of
+        <m>f(x, y)</m> with respect to <m>x</m> whilst treating the variable
+        <m>y</m> as a constant. (Similarly for <m>f_{y}</m> ).
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="example-ch03-02-ex-8-3">
+    <statement>
+      <p>Given <m>f(x, y)=(x+y)^2-e^y</m>, compute</p>
+
+      <p>(a) <m>f_{x}</m>.</p>
+
+      <p>(b) <m>f_{y}</m>.</p>
+    </statement>
+
+    <solution>
+      <p>
+        Treating <m>y</m> as a constant, the term <m>e^y</m> contains no
+        <m>x</m> at all, so from the point of view of <m>x</m> it is just a
+        fixed number (for example, if <m>y</m> were held at <m>y=1</m>, then
+        <m>e^y = e^1 = e \approx 2.718</m>, a constant). The derivative of
+        any constant is 0, so
+        <md>
+          \frac{\partial}{\partial x}\left( e^y \right) = 0
+        </md>.
+        The term <m>(x+y)^2</m> does depend on <m>x</m> and is
+        differentiated using the (single-variable) chain rule, treating
+        <m>y</m> as a constant. Putting the two pieces together:
+        <md>
+          f_x(x,y) = 2(x+y) \cdot \frac{\partial}{\partial x}(x+y) - \frac{\partial}{\partial x}\left( e^y \right) = 2(x+y)\cdot 1 - 0 = 2(x+y)
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Treating <m>x</m> as a constant, both terms now depend on <m>y</m>:
+        <md>
+          f_y(x,y) = 2(x+y) \cdot \frac{\partial}{\partial y}(x+y) - e^y = 2(x+y) - e^y
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch03-02-ex-8-4">
+    <statement>
+      <p>Given <m>f(x, y)=\ln (x^4y^2+1)</m>, compute</p>
+
+      <p>(a) <m>f_{x}</m>.</p>
+
+      <p>(b) <m>f_{y}</m>.</p>
+    </statement>
+
+    <solution>
+      <p>
+        Treating <m>y</m> as a constant and using the chain rule with outer
+        function <m>\ln</m>:
+        <md>
+          f_x(x,y) = \frac{1}{x^4y^2+1} \cdot \frac{\partial}{\partial x}\left( x^4y^2+1 \right) = \frac{4x^3y^2}{x^4y^2+1}
+        </md>
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        Treating <m>x</m> as a constant:
+        <md>
+          f_y(x,y) = \frac{1}{x^4y^2+1} \cdot \frac{\partial}{\partial y}\left( x^4y^2+1 \right) = \frac{2x^4y}{x^4y^2+1}
+        </md>
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch03-02-ex-8-5">
+    <statement>
+      <p>
+        Consider the Cobb-Douglas Production function (L=labor, K = capital):
+        <md>
+          P(L,K)= 10L^{0.9}K^{0.1}
+        </md>
+      </p>
+
+      <p>
+        1)Find the marginal productivity of labor and marginal productivity
+        of capital when 20 units of labor and 10 units of capital are
+        invested.
+      </p>
+
+      <p>
+        2) For  this value of <m>L</m> is this Cobb-Douglas Production
+        function an increasing or decreasing function of <m>K</m>
+      </p>
+
+      <p>
+        3) For this value of <m>k</m> is this Cobb-Douglas Production
+        function an increasing or decreasing function of <m>L</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The marginal productivity of labor is the partial derivative
+        <m>P_L</m> and the marginal productivity of capital is the partial
+        derivative <m>P_K</m>. Treating <m>K</m> and <m>L</m> as constants
+        respectively:
+        <md alignment="gather">
+          <mrow>P_L(L,K) = 10(0.9)L^{-0.1}K^{0.1} = 9L^{-0.1}K^{0.1}</mrow>
+          <mrow>P_K(L,K) = 10(0.1)L^{0.9}K^{-0.9} = L^{0.9}K^{-0.9}</mrow>
+        </md>
+        Evaluating at the input <m>(L,K) = (20,10)</m>:
+        <md alignment="gather">
+          <mrow>P_L(20,10) = 9(20)^{-0.1}(10)^{0.1} = 9\left( \frac{10}{20} \right)^{0.1} = \frac{9}{2^{0.1}} \approx 8.40</mrow>
+          <mrow>P_K(20,10) = (20)^{0.9}(10)^{-0.9} = \left( \frac{20}{10} \right)^{0.9} = 2^{0.9} \approx 1.87</mrow>
+        </md>
+        So at this investment level, one additional unit of labor increases
+        production by approximately 8.40 units, while one additional unit of
+        capital increases production by approximately 1.87 units.
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        The rate of change of <m>P</m> with respect to <m>K</m> is
+        <m>P_K = L^{0.9}K^{-0.9}</m>, which for <m>L=20</m> is
+        <m>P_K = (20)^{0.9}K^{-0.9} \gt 0</m> for every <m>K \gt 0</m> (in
+        particular <m>P_K(20,10) = 2^{0.9} \approx 1.87 \gt 0</m>). Since the
+        partial derivative with respect to <m>K</m> is positive, the
+        production function is an increasing function of <m>K</m>.
+      </p>
+    </solution>
+
+    <solution>
+      <p>
+        The rate of change of <m>P</m> with respect to <m>L</m> is
+        <m>P_L = 9L^{-0.1}K^{0.1}</m>, which for <m>K=10</m> is
+        <m>P_L = 9(10)^{0.1}L^{-0.1} \gt 0</m> for every <m>L \gt 0</m> (in
+        particular <m>P_L(20,10) \approx 8.40 \gt 0</m>). Since the partial
+        derivative with respect to <m>L</m> is positive, the production
+        function is an increasing function of <m>L</m>.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="example-ch03-02-ex-8-6">
+    <statement>
+      <p>
+        Given <m>f(x, y)= x^{3} \sqrt y</m>, what would be the approximate
+        effect on <m>f</m> of increasing <m>x</m> from 2 to 3 while keeping
+        <m>y</m> fixed at 25 units? What about decreasing <m>y</m> from 25
+        to 24 units while keeping <m>x</m> fixed at 2 units?
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        For the first change we keep <m>y</m> fixed at 25 and increase
+        <m>x</m> by <m>\Delta x = 1</m>, so we use the approximation
+        <m>f(a+\Delta x, b) - f(a,b) \approx f_x(a,b) \Delta x</m>. Treating
+        <m>y</m> as a constant, <m>f_x = 3x^2\sqrt{y}</m>, so
+        <md>
+          f_x(2,25) = 3(2)^2\sqrt{25} = 3(4)(5) = 60 \Rightarrow f(3,25) - f(2,25) \approx 60(1) = 60
+        </md>
+        and the approximate effect is an increase of about 60 units in
+        <m>f</m>. For the second change we keep <m>x</m> fixed at 2 and
+        decrease <m>y</m> by <m>\Delta y = -1</m>, so we use
+        <m>f(a, b+\Delta y) - f(a,b) \approx f_y(a,b) \Delta y</m>. Treating
+        <m>x</m> as a constant, <m>f_y = \frac{x^3}{2\sqrt{y}}</m>, so
+        <md>
+          f_y(2,25) = \frac{2^3}{2\sqrt{25}} = \frac{8}{10} = 0.8 \Rightarrow f(2,24) - f(2,25) \approx 0.8(-1) = -0.8
+        </md>
+        and the approximate effect is a decrease of about 0.8 units in
+        <m>f</m>.
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <title>Differentiability</title>
+
+    <p>
+      We can talk about a function <m>f(x, y)</m> being differentiable at an
+      input <m>(a, b)</m>. However, it isn't as easy as just saying that
+      <m>f_{x}(a, b)</m> and <m>f_{y}(a, b)</m> exist.
+    </p>
+  </note>
+
+  <definition>
+    <title>Differentiability</title>
+
+    <statement>
+      <p>
+        A function <m>f(x, y)</m> is differentiable at the input
+        <m>(a, b)</m> provided that <m>f_{x}(a, b)</m> and <m>f_{y}(a, b)</m>
+        exist and that
+        <md>
+          f(x, y)=f(a, b)+f_{x}(a, b)(x-a)+f_{y}(a, b)(y-b)+E(x, y)
+        </md>
+        where <m>E(x, y)</m> approaches 0 as <m>x</m> approaches <m>a</m>
+        and <m>y</m> approaches <m>b</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <remark>
+    <p>
+      Geometrically, this means that <m>f(x, y)</m> is differentiable at
+      the input <m>(a, b)</m> if as you zoom into the point
+      ( <m>a, b, f(a, b)</m> ), the graph of <m>f</m> looks like a plane (is
+      smooth).
+    </p>
+  </remark>
+
+  <example xml:id="example-ch03-02-ex-8-7">
+    <statement>
+      <p>
+        Consider the
+        <url href="https://www.desmos.com/3d/g2wwd8hvrj" target="_blank" rel="noopener noreferrer">surface</url>
+        <md>
+          f(x, y)= \begin{cases}\frac{xy}{x^2+y^2} \amp (x,y)\not = (0,0) \\ 0, \amp (x,y) = (0,0) \end{cases}
+        </md>
+      </p>
+
+      <p>
+        You can verify that <m>f_{x}(0,0)=f_{y}(0,0)=0</m> (they exist), but
+        <m>f(x, y)</m> is not differentiable at <m>(0,0)</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We first verify that both partial derivatives exist at <m>(0,0)</m>
+        using the limit definitions. Along the <m>x</m>-axis (<m>y=0</m>)
+        the function is <m>f(h,0) = \frac{h \cdot 0}{h^2+0^2} = 0</m> for
+        every <m>h \neq 0</m>, so
+        <md>
+          f_x(0,0) = \lim_{h \to 0} \frac{f(h,0)-f(0,0)}{h} = \lim_{h \to 0} \frac{0-0}{h} = 0
+        </md>
+        and similarly along the <m>y</m>-axis (<m>x=0</m>) we have
+        <m>f(0,h) = 0</m>, so <m>f_y(0,0) = 0</m>. Both partial derivatives
+        exist.
+      </p>
+
+      <p>
+        Now suppose <m>f</m> were differentiable at <m>(0,0)</m>. Then the
+        error term
+        <md>
+          E(x,y) = f(x,y) - f(0,0) - f_x(0,0)(x-0) - f_y(0,0)(y-0) = f(x,y)
+        </md>
+        would have to approach 0 as <m>x</m> approaches 0 and <m>y</m>
+        approaches 0. But if we approach the origin along the line
+        <m>y=x</m>, then for every <m>x \neq 0</m>
+        <md>
+          E(x,x) = f(x,x) = \frac{x \cdot x}{x^2+x^2} = \frac{x^2}{2x^2} = \frac{1}{2}
+        </md>
+        which does not approach 0. Hence <m>f</m> is not differentiable at
+        <m>(0,0)</m>. This matches the picture below: no matter how far we
+        zoom in at the origin, the graph never flattens out to look like a
+        plane.
+      </p>
+    </solution>
+  </example>
+
+  <figure xml:id="fig-ch03-02-ex-8-7">
+    <caption>A surface z equals f of x and y, from example 8.7</caption>
+
+    <!-- This interactive is PENDING, it should correspond to 2025_09_10_93272473a72f5ce70abdg-10. -->
+    <interactive xml:id="interactive-ch03-02-ex-8-7" width="85%" aspect="4:3" desmos="vqavop8m24">
+      <instructions>
+        <p>You can minimize the side bar by clicking on the arrow icon. You can save a copy and create your own version of the graph by clicking on the "Save" button in the upper right corner of the graph. You can open in a new page from here:
+        <url href="https://www.desmos.com/calculator/vqavop8m24" target="_blank" rel="noopener noreferrer">link to the graph</url></p>
+      </instructions>
+      <static>
+        <image source="/images/2025_09_10_93272473a72f5ce70abdg-10.png">
+          <shortdescription>A surface z equals f of x and y, from example 8.7</shortdescription>
+          <description>
+            <p>A surface <m>z=f(x, y)</m>, from example 8.7</p>
+          </description>
+        </image>
+      </static>
+    </interactive>
+  </figure>
+
+  <note>
+    <p>
+      As with traditional derivatives, you can compute partial derivatives
+      multiple times (even with respect to different variables).
+    </p>
+  </note>
+
+  <remark>
+    <title>Second-Order Partial Derivatives</title>
+
+    <p>
+      Below is a list of the four second-order partial derivatives of a
+      function <m>f</m> and how we represent them symbolically:
+      <md>
+        <mrow>\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}\right) \amp =\frac{\partial^{2} f}{\partial x^{2}}=f_{x x}</mrow>
+        <mrow>\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial y}\right) \amp =\frac{\partial^{2} f}{\partial y^{2}}=f_{y y}</mrow>
+        <mrow>\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right) \amp =\frac{\partial^{2} f}{\partial y \partial x}=f_{x y}</mrow>
+        <mrow>\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}\right) \amp =\frac{\partial^{2} f}{\partial x \partial y}=f_{y x}</mrow>
+      </md>
+    </p>
+  </remark>
+
+  <example xml:id="example-ch03-02-ex-8-8">
+    <statement>
+      <p>
+        Find all four second-order partial derivatives of
+        <m>z= \cos(x) \ln y</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We first compute the two first-order partial derivatives, treating
+        <m>y</m> and <m>x</m> as constants respectively:
+        <md>
+          z_x = -\sin(x) \ln y, \quad z_y = \frac{\cos(x)}{y}
+        </md>
+        Differentiating each of these once more, with respect to each
+        variable:
+        <md alignment="gather">
+          <mrow>z_{xx} = \frac{\partial}{\partial x}\left( -\sin(x) \ln y \right) = -\cos(x) \ln y</mrow>
+          <mrow>z_{yy} = \frac{\partial}{\partial y}\left( \frac{\cos(x)}{y} \right) = -\frac{\cos(x)}{y^2}</mrow>
+          <mrow>z_{xy} = \frac{\partial}{\partial y}\left( -\sin(x) \ln y \right) = -\frac{\sin(x)}{y}</mrow>
+          <mrow>z_{yx} = \frac{\partial}{\partial x}\left( \frac{\cos(x)}{y} \right) = -\frac{\sin(x)}{y}</mrow>
+        </md>
+        Note that the two mixed partial derivatives are equal,
+        <m>z_{xy} = z_{yx}</m>, as expected since both are continuous
+        functions (wherever <m>y \gt 0</m>, which is the domain of <m>z</m>).
+      </p>
+    </solution>
+  </example>
+
+  <note>
+    <p>
+      Note that in <xref ref="example-ch03-02-ex-8-8"/>,
+      <m>z_{x y}=z_{y x}</m>. This isn't always the case, but it is the case
+      if <m>z_{x y}</m> and <m>z_{y x}</m> are continuous functions.
+    </p>
+  </note>
+
+</section>
